@@ -248,31 +248,57 @@
         summary.textContent = tweet.summary;
         li.appendChild(summary);
 
-        // Twitter oEmbed blockquote — rendered by widgets.js
-        const blockquote = document.createElement("blockquote");
-        blockquote.className = "twitter-tweet";
-        blockquote.dataset.conversation = "none"; // don't show reply chain
-        blockquote.dataset.dnt = "true"; // do not track
+        // Extract tweet ID from URL for iframe embed
+        const tweetId = extractTweetId(tweet.tweet_url);
+        if (tweetId) {
+            // Use iframe embed — more reliable than blockquote + widgets.js
+            const wrapper = document.createElement("div");
+            wrapper.className = "tweet-embed-wrapper";
+            wrapper.innerHTML = `<blockquote class="twitter-tweet" data-conversation="none" data-dnt="true"><a href="${escapeHtml(tweet.tweet_url)}"></a></blockquote>`;
+            li.appendChild(wrapper);
+        } else {
+            // Fallback: just link to the tweet
+            const meta = document.createElement("div");
+            meta.className = "tweet-meta";
+            const author = tweet.author_username ? `@${escapeHtml(tweet.author_username)} · ` : "";
+            meta.innerHTML = `${author}<a href="${escapeHtml(tweet.tweet_url)}" target="_blank" rel="noopener">View tweet &rarr;</a>`;
+            li.appendChild(meta);
+        }
 
-        const embedLink = document.createElement("a");
-        embedLink.href = tweet.tweet_url;
-        blockquote.appendChild(embedLink);
-
-        li.appendChild(blockquote);
         return li;
     }
 
-    /** Load Twitter widgets.js once, then re-render embeds */
+    function extractTweetId(url) {
+        if (!url) return null;
+        const match = url.match(/(?:twitter\.com|x\.com)\/\w+\/status\/(\d+)/);
+        return match ? match[1] : null;
+    }
+
+    /** Load Twitter widgets.js and render embeds */
+    let twitterScriptLoaded = false;
     function loadTwitterEmbeds() {
         if (window.twttr && window.twttr.widgets) {
-            window.twttr.widgets.load();
+            // Script already loaded — just re-render new blockquotes
+            window.twttr.widgets.load(document.getElementById("tweets-tab"));
             return;
         }
-        if (document.getElementById("twitter-wjs")) return;
+        if (twitterScriptLoaded) return;
+        twitterScriptLoaded = true;
+
+        // Set up the twttr ready callback before loading the script
+        window.twttr = window.twttr || {};
+        window.twttr._e = window.twttr._e || [];
+        window.twttr.ready = function (fn) {
+            window.twttr._e.push(fn);
+        };
+        window.twttr.ready(function (twttr) {
+            twttr.widgets.load(document.getElementById("tweets-tab"));
+        });
+
         const script = document.createElement("script");
-        script.id = "twitter-wjs";
         script.src = "https://platform.twitter.com/widgets.js";
         script.async = true;
+        script.charset = "utf-8";
         document.head.appendChild(script);
     }
 
