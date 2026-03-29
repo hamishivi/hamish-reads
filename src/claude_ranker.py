@@ -180,8 +180,8 @@ def summarize_tweets(
 
 1. **paper_announcements**: Tweets announcing new papers, models, or datasets. This includes authors sharing their own new work AND announcements of new model/dataset releases (e.g. "We release X", "Our new paper on X", "Introducing X dataset"). If it links to arxiv, huggingface, or a blog post announcing new work, it likely belongs here.
 2. **discussions**: AI/ML-related discussions ONLY — opinions, debates, commentary on papers or methods, technical threads, hot takes, observations about AI/ML. NOT paper announcements.
-3. **announcements**: AI/ML product launches, company news, hiring, events, benchmark results, tool releases that aren't papers/models/datasets.
-4. **other**: Interesting tweets that are NOT about AI/ML — politics, culture, humor, personal updates, other fields.
+3. **announcements**: AI/ML-specific product launches, company news, hiring, events, benchmark results, tool releases that aren't papers/models/datasets. ONLY AI/ML related — videogames, anime, pop culture, etc. go in other.
+4. **other**: Anything NOT about AI/ML — politics, culture, humor, personal updates, videogames, anime, other fields.
 
 For each entry, provide a 1-2 sentence summary and the original tweet URL.
 
