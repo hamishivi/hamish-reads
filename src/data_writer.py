@@ -69,7 +69,7 @@ def write_daily_data(
     tweets_data = {
         "date": date_str,
         "generated_at": generated_at,
-        "paper_threads": tweet_digest.paper_threads,
+        "paper_announcements": tweet_digest.paper_announcements,
         "announcements": tweet_digest.announcements,
         "discussions": tweet_digest.discussions,
     }

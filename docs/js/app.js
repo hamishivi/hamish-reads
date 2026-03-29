@@ -246,7 +246,7 @@
             return;
         }
 
-        const threads = data.paper_threads || [];
+        const threads = data.paper_announcements || [];
         const announcements = data.announcements || [];
         const discussions = data.discussions || [];
 
