@@ -120,7 +120,7 @@ def main():
     total_cost = claude_usage.estimated_cost_usd + twitter_usage.estimated_cost_usd
     print(f"\nCost summary:")
     print(f"  Claude: {claude_usage.api_calls} calls, {claude_usage.input_tokens:,} in / {claude_usage.output_tokens:,} out, ${claude_usage.estimated_cost_usd:.4f}")
-    print(f"  Twitter: {twitter_usage.api_calls} calls, {twitter_usage.tweets_read} tweets read, {twitter_usage.credits_used} credits, ${twitter_usage.estimated_cost_usd:.4f}")
+    print(f"  Twitter: {twitter_usage.api_calls} calls, {twitter_usage.posts_read} posts read (${twitter_usage.posts_read * 0.005:.2f}), {twitter_usage.users_read} users read (${twitter_usage.users_read * 0.01:.2f}), total ${twitter_usage.estimated_cost_usd:.4f}")
     print(f"  Total: ${total_cost:.4f}")
 
     print("Done!")

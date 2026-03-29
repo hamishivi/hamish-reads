@@ -25,32 +25,29 @@ class Tweet:
 @dataclass
 class TwitterUsageStats:
     api_calls: int = 0
-    tweets_read: int = 0
-    # Credit costs per endpoint (configurable — check your X Developer Console)
-    # Defaults based on pay-as-you-go tier: ~50 credits for bulk, ~25 for search
-    credits_used: int = 0
+    posts_read: int = 0
+    users_read: int = 0
     estimated_cost_usd: float = 0.0
 
-    # Approximate $/credit — adjust based on your plan
-    COST_PER_CREDIT: float = 0.0002  # ~$0.01 per 50-credit call
+    # X API pay-per-use pricing (as of March 2026)
+    COST_PER_POST_READ: float = 0.005
+    COST_PER_USER_READ: float = 0.01
 
-    def add_call(self, endpoint: str, items_returned: int = 0):
+    def add_call(self, endpoint: str, posts_returned: int = 0, users_returned: int = 0):
         self.api_calls += 1
-        if endpoint == "get_users_following":
-            credits = 50
-        elif endpoint == "search_recent_tweets":
-            credits = 25
-        else:
-            credits = 10
-        self.credits_used += credits
-        self.estimated_cost_usd = round(self.credits_used * self.COST_PER_CREDIT, 4)
-        self.tweets_read += items_returned
+        self.posts_read += posts_returned
+        self.users_read += users_returned
+        self.estimated_cost_usd = round(
+            self.posts_read * self.COST_PER_POST_READ
+            + self.users_read * self.COST_PER_USER_READ,
+            4,
+        )
 
     def to_dict(self) -> dict:
         return {
             "api_calls": self.api_calls,
-            "tweets_read": self.tweets_read,
-            "credits_used": self.credits_used,
+            "posts_read": self.posts_read,
+            "users_read": self.users_read,
             "estimated_cost_usd": self.estimated_cost_usd,
         }
 
@@ -155,7 +152,8 @@ def fetch_tweets(
             max_results=200,
             user_fields=["username", "name"],
         )
-        usage.add_call("get_users_following", 0)
+        users_fetched = len(following_resp.data) if following_resp.data else 0
+        usage.add_call("get_users_following", users_returned=users_fetched)
 
         if not following_resp.data:
             print("Warning: No following data returned from Twitter API")
@@ -189,8 +187,8 @@ def fetch_tweets(
                 expansions=["author_id"],
                 user_fields=["username", "name"],
             )
-            items_returned = len(search_resp.data) if search_resp.data else 0
-            usage.add_call("search_recent_tweets", items_returned)
+            posts_returned = len(search_resp.data) if search_resp.data else 0
+            usage.add_call("search_recent_tweets", posts_returned=posts_returned)
 
             # Build user map from expansions
             if search_resp.includes and "users" in search_resp.includes:
