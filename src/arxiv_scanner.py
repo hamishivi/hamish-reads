@@ -1,12 +1,20 @@
-"""Fetch recent arxiv papers and filter by followed authors."""
+"""Fetch recent arxiv papers using RSS feeds (no rate limiting issues)."""
 
 from __future__ import annotations
 
-import time
-from dataclasses import dataclass, field
-from datetime import datetime, timedelta, timezone
+import re
+import xml.etree.ElementTree as ET
+from dataclasses import dataclass
+from datetime import datetime, timezone
+from email.utils import parsedate_to_datetime
 
-import arxiv
+import httpx
+
+RSS_URL = "https://rss.arxiv.org/rss/{category}"
+
+# Namespaces used in arxiv RSS
+DC_NS = "http://purl.org/dc/elements/1.1/"
+ARXIV_NS = "http://arxiv.org/schemas/atom"
 
 
 @dataclass
@@ -24,68 +32,128 @@ class Paper:
     relevance_reason: str = ""
 
 
+def _parse_arxiv_rss(xml_text: str) -> list[Paper]:
+    """Parse arxiv RSS 2.0 feed into Paper objects.
+
+    Item format:
+      <title>Paper Title</title>
+      <link>https://arxiv.org/abs/XXXX.XXXXX</link>
+      <description>arXiv:XXXX.XXXXXvN Announce Type: new\nAbstract: ...</description>
+      <dc:creator>Author One, Author Two</dc:creator>
+      <category>cs.CL</category>
+      <pubDate>Fri, 28 Mar 2026 00:00:00 -0400</pubDate>
+      <arxiv:announce_type>new</arxiv:announce_type>
+    """
+    papers = []
+    try:
+        root = ET.fromstring(xml_text)
+    except ET.ParseError:
+        return []
+
+    for item in root.iter("item"):
+        # Skip replacements — only show new and cross-listed papers
+        announce_el = item.find(f"{{{ARXIV_NS}}}announce_type")
+        announce_type = announce_el.text.strip() if announce_el is not None and announce_el.text else "new"
+        if announce_type in ("replace", "replace-cross"):
+            continue
+
+        title_el = item.find("title")
+        link_el = item.find("link")
+        desc_el = item.find("description")
+        creator_el = item.find(f"{{{DC_NS}}}creator")
+        pubdate_el = item.find("pubDate")
+
+        if title_el is None or not title_el.text:
+            continue
+
+        title = title_el.text.strip()
+        link = link_el.text.strip() if link_el is not None and link_el.text else ""
+
+        # Extract arxiv ID from link: https://arxiv.org/abs/2503.12345
+        arxiv_id = link.rstrip("/").split("/")[-1] if link else ""
+
+        # Parse authors from dc:creator (comma-separated)
+        authors = []
+        if creator_el is not None and creator_el.text:
+            # Handle HTML entities and tags
+            creator_text = re.sub(r"<[^>]+>", "", creator_el.text)
+            authors = [a.strip() for a in creator_text.split(",") if a.strip()]
+
+        # Parse abstract from description
+        abstract = ""
+        if desc_el is not None and desc_el.text:
+            desc = desc_el.text.strip()
+            # Format: "arXiv:XXXX.XXXXXvN Announce Type: new\nAbstract: actual abstract"
+            abstract_match = re.search(r"Abstract:\s*(.*)", desc, re.DOTALL)
+            if abstract_match:
+                abstract = abstract_match.group(1).strip()
+                # Clean up HTML
+                abstract = re.sub(r"<[^>]+>", "", abstract)
+                abstract = abstract.replace("\n", " ").strip()
+
+        # Parse date
+        published = datetime.now(timezone.utc)
+        if pubdate_el is not None and pubdate_el.text:
+            try:
+                published = parsedate_to_datetime(pubdate_el.text)
+            except (ValueError, TypeError):
+                pass
+
+        # Parse categories
+        categories = []
+        for cat_el in item.findall("category"):
+            if cat_el.text:
+                categories.append(cat_el.text.strip())
+
+        abs_url = link or f"https://arxiv.org/abs/{arxiv_id}"
+        pdf_url = f"https://arxiv.org/pdf/{arxiv_id}" if arxiv_id else ""
+
+        papers.append(Paper(
+            arxiv_id=arxiv_id,
+            title=title,
+            authors=authors,
+            abstract=abstract,
+            categories=categories,
+            published=published,
+            abs_url=abs_url,
+            pdf_url=pdf_url,
+        ))
+
+    return papers
+
+
 def fetch_recent_papers(
     categories: list[str],
     max_per_category: int = 100,
     hours_back: int = 48,
     target_date: datetime | None = None,
 ) -> list[Paper]:
-    """Fetch papers published around the target date.
+    """Fetch recent papers via arxiv RSS feeds.
 
-    For backfills, filters to a 24h window around the target date.
-    For live runs, fetches papers from the last `hours_back` hours.
+    RSS feeds return the latest daily batch — one HTTP request per category,
+    no pagination, no rate limiting. On weekends the feeds are empty.
     """
-    if target_date and target_date.date() < datetime.now(timezone.utc).date():
-        # Backfill: filter to that day's 24h window
-        window_start = target_date.replace(hour=0, minute=0, second=0)
-        window_end = window_start + timedelta(hours=24)
-    else:
-        window_end = datetime.now(timezone.utc)
-        window_start = window_end - timedelta(hours=hours_back)
-
     seen_ids: set[str] = set()
     papers: list[Paper] = []
 
-    # Single combined query to minimize API calls
-    query = " OR ".join(f"cat:{cat}" for cat in categories)
-    max_results = max_per_category * len(categories)
+    with httpx.Client(timeout=30.0, follow_redirects=True) as client:
+        for category in categories:
+            url = RSS_URL.format(category=category)
+            try:
+                resp = client.get(url, headers={"User-Agent": "hamish-reads/1.0"})
+                resp.raise_for_status()
+                category_papers = _parse_arxiv_rss(resp.text)
 
-    search = arxiv.Search(
-        query=query,
-        max_results=max_results,
-        sort_by=arxiv.SortCriterion.SubmittedDate,
-        sort_order=arxiv.SortOrder.Descending,
-    )
+                for paper in category_papers:
+                    if paper.arxiv_id and paper.arxiv_id not in seen_ids:
+                        seen_ids.add(paper.arxiv_id)
+                        papers.append(paper)
 
-    # Be very conservative with rate limiting — arxiv is strict
-    client = arxiv.Client(page_size=50, delay_seconds=10.0, num_retries=5)
+                print(f"  {category}: {len(category_papers)} papers ({len(category_papers) - len([p for p in category_papers if p.arxiv_id in seen_ids])} new)")
+            except Exception as e:
+                print(f"  {category}: failed ({e})")
 
-    for result in client.results(search):
-        pub = result.published.replace(tzinfo=timezone.utc)
-        # Stop once we're past the window
-        if pub < window_start:
-            break
-        # Skip papers after the window end (for backfills)
-        if pub > window_end:
-            continue
-
-        if result.entry_id in seen_ids:
-            continue
-        seen_ids.add(result.entry_id)
-
-        papers.append(
-            Paper(
-                arxiv_id=result.entry_id.split("/")[-1],
-                title=result.title.replace("\n", " ").strip(),
-                authors=[a.name for a in result.authors],
-                abstract=result.summary.replace("\n", " ").strip(),
-                categories=[c for c in result.categories],
-                published=result.published,
-                abs_url=result.entry_id,
-                pdf_url=result.pdf_url,
-            )
-        )
-
+    print(f"  Total: {len(papers)} unique papers")
     return papers
 
 
