@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import json
 import os
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 
 import anthropic
 
@@ -12,12 +12,61 @@ from .arxiv_scanner import Paper
 from .notion_client import ProjectTopic
 from .twitter_scanner import Tweet
 
+# Pricing per million tokens (as of 2025)
+MODEL_PRICING = {
+    "claude-sonnet-4-20250514": {"input": 3.00, "output": 15.00},
+    "claude-haiku-4-5-20251001": {"input": 0.80, "output": 4.00},
+    "claude-opus-4-6-20250528": {"input": 15.00, "output": 75.00},
+}
+DEFAULT_PRICING = {"input": 3.00, "output": 15.00}  # fallback to sonnet pricing
+
+
+@dataclass
+class UsageStats:
+    input_tokens: int = 0
+    output_tokens: int = 0
+    api_calls: int = 0
+    estimated_cost_usd: float = 0.0
+
+    def add(self, response, model: str):
+        usage = response.usage
+        self.input_tokens += usage.input_tokens
+        self.output_tokens += usage.output_tokens
+        self.api_calls += 1
+
+        pricing = MODEL_PRICING.get(model, DEFAULT_PRICING)
+        self.estimated_cost_usd += (
+            usage.input_tokens * pricing["input"] / 1_000_000
+            + usage.output_tokens * pricing["output"] / 1_000_000
+        )
+
+    def to_dict(self) -> dict:
+        return {
+            "input_tokens": self.input_tokens,
+            "output_tokens": self.output_tokens,
+            "api_calls": self.api_calls,
+            "estimated_cost_usd": round(self.estimated_cost_usd, 4),
+        }
+
 
 @dataclass
 class TweetDigest:
-    paper_threads: list[dict]  # [{summary, tweet_url, author_name, author_username}]
-    announcements: list[dict]
-    discussions: list[dict]
+    paper_threads: list[dict] = field(default_factory=list)
+    announcements: list[dict] = field(default_factory=list)
+    discussions: list[dict] = field(default_factory=list)
+
+
+# Module-level usage tracker, reset each run
+usage = UsageStats()
+
+
+def reset_usage():
+    global usage
+    usage = UsageStats()
+
+
+def get_usage() -> UsageStats:
+    return usage
 
 
 def _get_client() -> anthropic.Anthropic:
@@ -75,6 +124,8 @@ Only include papers with score >= 3. Be selective.""",
             ],
         )
 
+        usage.add(response, model)
+
         try:
             text = response.content[0].text
             # Handle potential markdown code blocks
@@ -109,7 +160,7 @@ def summarize_tweets(
 ) -> TweetDigest:
     """Categorize and summarize tweets into paper threads, announcements, and discussions."""
     if not tweets:
-        return TweetDigest(paper_threads=[], announcements=[], discussions=[])
+        return TweetDigest()
 
     client = _get_client()
 
@@ -145,6 +196,8 @@ Return ONLY valid JSON:
         ],
     )
 
+    usage.add(response, model)
+
     try:
         text = response.content[0].text
         if "```" in text:
@@ -160,4 +213,4 @@ Return ONLY valid JSON:
         )
     except (json.JSONDecodeError, KeyError) as e:
         print(f"Warning: Failed to parse Claude tweet summary: {e}")
-        return TweetDigest(paper_threads=[], announcements=[], discussions=[])
+        return TweetDigest()

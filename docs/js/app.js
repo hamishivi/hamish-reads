@@ -104,20 +104,16 @@
         datePicker.value = dateStr;
         updateNavButtons();
 
-        // Load papers and tweets in parallel
-        const [papers, tweets] = await Promise.all([
+        // Load papers, tweets, and cost in parallel
+        const [papers, tweets, cost] = await Promise.all([
             fetchJSON(`${DATA_BASE}/${dateStr}/papers.json`),
             fetchJSON(`${DATA_BASE}/${dateStr}/tweets.json`),
+            fetchJSON(`${DATA_BASE}/${dateStr}/cost.json`),
         ]);
 
         renderPapers(papers);
         renderTweets(tweets);
-
-        const genAt = papers?.generated_at || tweets?.generated_at || "";
-        if (genAt) {
-            document.getElementById("generated-at").textContent =
-                "Generated " + new Date(genAt).toLocaleString();
-        }
+        renderFooter(papers, tweets, cost);
     }
 
     async function fetchJSON(url) {
@@ -252,6 +248,35 @@
             </div>
         `;
         return li;
+    }
+
+    // --- Footer ---
+    function renderFooter(papers, tweets, cost) {
+        const footer = document.getElementById("generated-at");
+        const parts = [];
+
+        const genAt = papers?.generated_at || tweets?.generated_at || "";
+        if (genAt) {
+            parts.push("Generated " + new Date(genAt).toLocaleString());
+        }
+
+        if (cost) {
+            parts.push(
+                `Cost: $${cost.estimated_cost_usd.toFixed(4)} (${cost.input_tokens.toLocaleString()} in / ${cost.output_tokens.toLocaleString()} out, ${cost.api_calls} calls)`
+            );
+        }
+
+        footer.innerHTML = parts.join("<br>");
+
+        // Also load cumulative cost
+        fetchJSON(`${DATA_BASE}/cost_log.json`).then((log) => {
+            if (log && log.total_cost_usd > 0) {
+                const cumulative = document.createElement("span");
+                cumulative.className = "cumulative-cost";
+                cumulative.textContent = ` · All-time: $${log.total_cost_usd.toFixed(4)} over ${log.days.length} days`;
+                footer.appendChild(cumulative);
+            }
+        });
     }
 
     // --- Util ---

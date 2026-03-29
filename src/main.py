@@ -9,7 +9,7 @@ from pathlib import Path
 import yaml
 
 from .arxiv_scanner import fetch_recent_papers, filter_by_authors
-from .claude_ranker import TweetDigest, rank_papers, summarize_tweets
+from .claude_ranker import TweetDigest, get_usage, rank_papers, reset_usage, summarize_tweets
 from .data_writer import write_daily_data
 from .notion_client import fetch_project_topics
 from .twitter_scanner import fetch_tweets
@@ -25,6 +25,7 @@ def main():
     config = load_config()
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     print(f"Generating digest for {today}")
+    reset_usage()
 
     # 1. Fetch arxiv papers
     print("Fetching arxiv papers...")
@@ -81,8 +82,16 @@ def main():
 
     # 6. Write data
     print("Writing data...")
-    day_dir = write_daily_data(today, author_papers, ranked_papers, tweet_digest)
+    usage_stats = get_usage()
+    day_dir = write_daily_data(today, author_papers, ranked_papers, tweet_digest, usage_stats)
     print(f"  Written to {day_dir}")
+
+    # 7. Cost summary
+    print(f"\nCost summary:")
+    print(f"  API calls: {usage_stats.api_calls}")
+    print(f"  Input tokens: {usage_stats.input_tokens:,}")
+    print(f"  Output tokens: {usage_stats.output_tokens:,}")
+    print(f"  Estimated cost: ${usage_stats.estimated_cost_usd:.4f}")
 
     print("Done!")
 
