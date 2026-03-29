@@ -12,6 +12,7 @@ import yaml
 from .arxiv_scanner import fetch_recent_papers, filter_by_authors
 from .claude_ranker import TweetDigest, get_usage as get_claude_usage, rank_papers, reset_usage as reset_claude_usage, summarize_tweets
 from .data_writer import write_daily_data
+from .news_scanner import fetch_news
 from .notion_client import fetch_project_topics
 from .twitter_scanner import fetch_tweets, get_usage as get_twitter_usage, reset_usage as reset_twitter_usage
 
@@ -103,14 +104,20 @@ def main():
     discuss_count = len(tweet_digest.discussions)
     print(f"  {thread_count} paper threads, {announce_count} announcements, {discuss_count} discussions")
 
-    # 6. Write data
+    # 6. Fetch news headlines
+    print("Fetching news headlines...")
+    news_feeds = fetch_news()
+    total_articles = sum(len(f.articles) for f in news_feeds)
+    print(f"  {total_articles} articles from {len(news_feeds)} publications")
+
+    # 7. Write data
     print("Writing data...")
     claude_usage = get_claude_usage()
     twitter_usage = get_twitter_usage()
-    day_dir = write_daily_data(date_str, author_papers, ranked_papers, tweet_digest, claude_usage, twitter_usage)
+    day_dir = write_daily_data(date_str, author_papers, ranked_papers, tweet_digest, news_feeds, claude_usage, twitter_usage)
     print(f"  Written to {day_dir}")
 
-    # 7. Cost summary
+    # 8. Cost summary
     total_cost = claude_usage.estimated_cost_usd + twitter_usage.estimated_cost_usd
     print(f"\nCost summary:")
     print(f"  Claude: {claude_usage.api_calls} calls, {claude_usage.input_tokens:,} in / {claude_usage.output_tokens:,} out, ${claude_usage.estimated_cost_usd:.4f}")

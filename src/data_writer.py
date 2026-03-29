@@ -9,6 +9,7 @@ from pathlib import Path
 
 from .arxiv_scanner import Paper
 from .claude_ranker import TweetDigest, UsageStats
+from .news_scanner import PublicationFeed
 from .twitter_scanner import TwitterUsageStats
 
 DOCS_DIR = Path(__file__).parent.parent / "docs"
@@ -36,6 +37,7 @@ def write_daily_data(
     author_papers: list[Paper],
     ranked_papers: list[Paper],
     tweet_digest: TweetDigest,
+    news_feeds: list[PublicationFeed] | None = None,
     claude_usage: UsageStats | None = None,
     twitter_usage: TwitterUsageStats | None = None,
 ) -> Path:
@@ -73,6 +75,26 @@ def write_daily_data(
     }
     with open(day_dir / "tweets.json", "w") as f:
         json.dump(tweets_data, f, indent=2)
+
+    # Write news.json
+    if news_feeds:
+        news_data = {
+            "date": date_str,
+            "generated_at": generated_at,
+            "publications": [
+                {
+                    "name": f.name,
+                    "short_name": f.short_name,
+                    "domain": f.domain,
+                    "url": f.url,
+                    "logo_url": f.logo_url,
+                    "articles": [{"title": a.title, "url": a.url} for a in f.articles],
+                }
+                for f in news_feeds
+            ],
+        }
+        with open(day_dir / "news.json", "w") as f:
+            json.dump(news_data, f, indent=2)
 
     # Write cost.json
     if cost_info:

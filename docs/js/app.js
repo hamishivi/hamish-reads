@@ -104,15 +104,17 @@
         datePicker.value = dateStr;
         updateNavButtons();
 
-        // Load papers, tweets, and cost in parallel
-        const [papers, tweets, cost] = await Promise.all([
+        // Load papers, tweets, news, and cost in parallel
+        const [papers, tweets, news, cost] = await Promise.all([
             fetchJSON(`${DATA_BASE}/${dateStr}/papers.json`),
             fetchJSON(`${DATA_BASE}/${dateStr}/tweets.json`),
+            fetchJSON(`${DATA_BASE}/${dateStr}/news.json`),
             fetchJSON(`${DATA_BASE}/${dateStr}/cost.json`),
         ]);
 
         renderPapers(papers);
         renderTweets(tweets);
+        renderNews(news);
         renderFooter(papers, tweets, cost);
     }
 
@@ -272,6 +274,45 @@
         script.src = "https://platform.twitter.com/widgets.js";
         script.async = true;
         document.head.appendChild(script);
+    }
+
+    // --- Render news ---
+    function renderNews(data) {
+        const grid = document.getElementById("news-grid");
+        const newsEmpty = document.getElementById("news-empty");
+        grid.innerHTML = "";
+
+        if (!data || !data.publications || data.publications.length === 0) {
+            newsEmpty.style.display = "block";
+            return;
+        }
+
+        newsEmpty.style.display = "none";
+
+        data.publications.forEach((pub) => {
+            const card = document.createElement("div");
+            card.className = "news-card";
+
+            let articlesHtml = "";
+            if (pub.articles && pub.articles.length > 0) {
+                const items = pub.articles
+                    .map(
+                        (a) =>
+                            `<li><a href="${escapeHtml(a.url)}" target="_blank" rel="noopener">${escapeHtml(a.title)}</a></li>`
+                    )
+                    .join("");
+                articlesHtml = `<ul class="news-card-articles">${items}</ul>`;
+            }
+
+            card.innerHTML = `
+                <div class="news-card-header">
+                    <img src="${escapeHtml(pub.logo_url)}" alt="" loading="lazy">
+                    <a href="${escapeHtml(pub.url)}" target="_blank" rel="noopener">${escapeHtml(pub.name)}</a>
+                </div>
+                ${articlesHtml}
+            `;
+            grid.appendChild(card);
+        });
     }
 
     // --- Footer ---
