@@ -103,12 +103,14 @@ def fetch_tweets(
 
     client = _get_client(token)
 
-    if target_date and target_date.date() < datetime.now(timezone.utc).date():
+    now = datetime.now(timezone.utc)
+    if target_date and target_date.date() < now.date():
         # Backfill: 24h window for that day
         start_time = target_date.replace(hour=0, minute=0, second=0)
         end_time = start_time + timedelta(hours=24)
     else:
-        end_time = datetime.now(timezone.utc)
+        # end_time must be at least 10 seconds in the past per Twitter API
+        end_time = now - timedelta(seconds=30)
         start_time = end_time - timedelta(hours=hours_back)
     seen_ids: set[str] = set()
     tweets: list[Tweet] = []
@@ -140,12 +142,12 @@ def fetch_tweets(
     # Twitter API v2 search supports "from:" operators
     following_usernames = [u for u, _ in user_map.values()]
 
-    # Process in batches (search query has length limits)
-    batch_size = 20
+    # Process in batches — Twitter query max is 512 chars
+    # "from:username" = ~15 chars + " OR " = ~19 chars per user → ~25 per batch is safe
+    batch_size = 10  # conservative to stay under 512 char limit
     for i in range(0, len(following_usernames), batch_size):
         batch = following_usernames[i : i + batch_size]
-        query = " OR ".join(f"from:{u}" for u in batch)
-        query += " -is:reply"  # exclude replies to reduce noise
+        query = "(" + " OR ".join(f"from:{u}" for u in batch) + ") -is:reply"
 
         try:
             search_resp = client.search_recent_tweets(
@@ -199,7 +201,7 @@ def fetch_tweets(
                 )
 
         except tweepy.errors.TweepyException as e:
-            print(f"Warning: Twitter search failed for batch: {e}")
+            print(f"Warning: Twitter search failed for batch (query len={len(query)}): {e}")
             continue
 
     # Sort by engagement
