@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Research Digest</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/typography.css">
+</head>
+<body>
+    <div id="wrapper">
+        <header id="header">
+            <div class="header-left">
+                <h1 class="site-title">Research Digest</h1>
+            </div>
+            <div class="header-right">
+                <button class="nav-arrow" id="prev-day" title="Previous day">&larr;</button>
+                <button class="date-display" id="date-display" title="Pick a date"></button>
+                <button class="nav-arrow" id="next-day" title="Next day">&rarr;</button>
+                <input type="date" id="date-picker" class="date-picker-hidden">
+            </div>
+        </header>
+
+        <nav class="tab-bar">
+            <button class="tab active" data-tab="papers">Papers</button>
+            <button class="tab" data-tab="tweets">Tweets</button>
+        </nav>
+
+        <main id="main">
+            <div id="papers-tab" class="tab-content active">
+                <section id="author-papers">
+                    <h2>From researchers you follow</h2>
+                    <ul class="paper-list" id="author-paper-list"></ul>
+                    <p class="empty-state" id="author-papers-empty" style="display:none">No papers from followed researchers today.</p>
+                </section>
+                <section id="relevant-papers">
+                    <h2>Relevant to your projects</h2>
+                    <ul class="paper-list" id="ranked-paper-list"></ul>
+                    <p class="empty-state" id="ranked-papers-empty" style="display:none">No project-relevant papers found today.</p>
+                </section>
+            </div>
+
+            <div id="tweets-tab" class="tab-content">
+                <section id="paper-threads">
+                    <h2>Paper threads</h2>
+                    <ul class="tweet-list" id="paper-threads-list"></ul>
+                </section>
+                <section id="announcements">
+                    <h2>Announcements</h2>
+                    <ul class="tweet-list" id="announcements-list"></ul>
+                </section>
+                <section id="discussions">
+                    <h2>Discussions</h2>
+                    <ul class="tweet-list" id="discussions-list"></ul>
+                </section>
+                <p class="empty-state" id="tweets-empty" style="display:none">No tweets available for this day.</p>
+            </div>
+        </main>
+
+        <footer id="footer">
+            <p id="generated-at"></p>
+        </footer>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
