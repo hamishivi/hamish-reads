@@ -147,7 +147,8 @@ def fetch_tweets(
                         user_map[uid] = (user.username, user.name)
                         new_users += 1
 
-            usage.add_call(posts_returned=posts_returned, users_returned=new_users)
+            # Only count post reads — user data from expansions is included free
+            usage.add_call(posts_returned=posts_returned)
             print(f"  Page {page + 1}: {posts_returned} posts, {new_users} new users")
 
             if not resp.data:
