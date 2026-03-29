@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 import os
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from datetime import datetime, timedelta, timezone
 
 import tweepy
@@ -20,6 +20,52 @@ class Tweet:
     retweets: int
     url: str
     urls_in_tweet: list[str]
+
+
+@dataclass
+class TwitterUsageStats:
+    api_calls: int = 0
+    tweets_read: int = 0
+    # Credit costs per endpoint (configurable — check your X Developer Console)
+    # Defaults based on pay-as-you-go tier: ~50 credits for bulk, ~25 for search
+    credits_used: int = 0
+    estimated_cost_usd: float = 0.0
+
+    # Approximate $/credit — adjust based on your plan
+    COST_PER_CREDIT: float = 0.0002  # ~$0.01 per 50-credit call
+
+    def add_call(self, endpoint: str, items_returned: int = 0):
+        self.api_calls += 1
+        if endpoint == "get_users_following":
+            credits = 50
+        elif endpoint == "search_recent_tweets":
+            credits = 25
+        else:
+            credits = 10
+        self.credits_used += credits
+        self.estimated_cost_usd = round(self.credits_used * self.COST_PER_CREDIT, 4)
+        self.tweets_read += items_returned
+
+    def to_dict(self) -> dict:
+        return {
+            "api_calls": self.api_calls,
+            "tweets_read": self.tweets_read,
+            "credits_used": self.credits_used,
+            "estimated_cost_usd": self.estimated_cost_usd,
+        }
+
+
+# Module-level usage tracker
+usage = TwitterUsageStats()
+
+
+def reset_usage():
+    global usage
+    usage = TwitterUsageStats()
+
+
+def get_usage() -> TwitterUsageStats:
+    return usage
 
 
 def _get_client(bearer_token: str | None = None) -> tweepy.Client:
@@ -69,6 +115,8 @@ def fetch_tweets(
             max_results=200,
             user_fields=["username", "name"],
         )
+        usage.add_call("get_users_following", 0)
+
         if not following_resp.data:
             print("Warning: No following data returned from Twitter API")
             return []
@@ -100,6 +148,8 @@ def fetch_tweets(
                 expansions=["author_id"],
                 user_fields=["username", "name"],
             )
+            items_returned = len(search_resp.data) if search_resp.data else 0
+            usage.add_call("search_recent_tweets", items_returned)
 
             # Build user map from expansions
             if search_resp.includes and "users" in search_resp.includes:

@@ -9,10 +9,10 @@ from pathlib import Path
 import yaml
 
 from .arxiv_scanner import fetch_recent_papers, filter_by_authors
-from .claude_ranker import TweetDigest, get_usage, rank_papers, reset_usage, summarize_tweets
+from .claude_ranker import TweetDigest, get_usage as get_claude_usage, rank_papers, reset_usage as reset_claude_usage, summarize_tweets
 from .data_writer import write_daily_data
 from .notion_client import fetch_project_topics
-from .twitter_scanner import fetch_tweets
+from .twitter_scanner import fetch_tweets, get_usage as get_twitter_usage, reset_usage as reset_twitter_usage
 
 
 def load_config() -> dict:
@@ -25,7 +25,8 @@ def main():
     config = load_config()
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     print(f"Generating digest for {today}")
-    reset_usage()
+    reset_claude_usage()
+    reset_twitter_usage()
 
     # 1. Fetch arxiv papers
     print("Fetching arxiv papers...")
@@ -82,16 +83,17 @@ def main():
 
     # 6. Write data
     print("Writing data...")
-    usage_stats = get_usage()
-    day_dir = write_daily_data(today, author_papers, ranked_papers, tweet_digest, usage_stats)
+    claude_usage = get_claude_usage()
+    twitter_usage = get_twitter_usage()
+    day_dir = write_daily_data(today, author_papers, ranked_papers, tweet_digest, claude_usage, twitter_usage)
     print(f"  Written to {day_dir}")
 
     # 7. Cost summary
+    total_cost = claude_usage.estimated_cost_usd + twitter_usage.estimated_cost_usd
     print(f"\nCost summary:")
-    print(f"  API calls: {usage_stats.api_calls}")
-    print(f"  Input tokens: {usage_stats.input_tokens:,}")
-    print(f"  Output tokens: {usage_stats.output_tokens:,}")
-    print(f"  Estimated cost: ${usage_stats.estimated_cost_usd:.4f}")
+    print(f"  Claude: {claude_usage.api_calls} calls, {claude_usage.input_tokens:,} in / {claude_usage.output_tokens:,} out, ${claude_usage.estimated_cost_usd:.4f}")
+    print(f"  Twitter: {twitter_usage.api_calls} calls, {twitter_usage.tweets_read} tweets read, {twitter_usage.credits_used} credits, ${twitter_usage.estimated_cost_usd:.4f}")
+    print(f"  Total: ${total_cost:.4f}")
 
     print("Done!")
 

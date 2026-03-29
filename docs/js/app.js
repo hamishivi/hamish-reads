@@ -261,9 +261,14 @@
         }
 
         if (cost) {
-            parts.push(
-                `Cost: $${cost.estimated_cost_usd.toFixed(4)} (${cost.input_tokens.toLocaleString()} in / ${cost.output_tokens.toLocaleString()} out, ${cost.api_calls} calls)`
-            );
+            const costParts = [];
+            if (cost.claude) {
+                costParts.push(`Claude $${cost.claude.estimated_cost_usd.toFixed(4)}`);
+            }
+            if (cost.twitter) {
+                costParts.push(`Twitter $${cost.twitter.estimated_cost_usd.toFixed(4)}`);
+            }
+            parts.push(`Today's cost: $${cost.total_estimated_cost_usd.toFixed(4)} (${costParts.join(" + ")})`);
         }
 
         footer.innerHTML = parts.join("<br>");

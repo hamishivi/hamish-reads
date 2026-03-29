@@ -9,6 +9,7 @@ from pathlib import Path
 
 from .arxiv_scanner import Paper
 from .claude_ranker import TweetDigest, UsageStats
+from .twitter_scanner import TwitterUsageStats
 
 DOCS_DIR = Path(__file__).parent.parent / "docs"
 DATA_DIR = DOCS_DIR / "data"
@@ -35,13 +36,22 @@ def write_daily_data(
     author_papers: list[Paper],
     ranked_papers: list[Paper],
     tweet_digest: TweetDigest,
-    usage_stats: UsageStats | None = None,
+    claude_usage: UsageStats | None = None,
+    twitter_usage: TwitterUsageStats | None = None,
 ) -> Path:
     """Write papers.json and tweets.json for a given date, and update dates.json."""
     day_dir = DATA_DIR / date_str
     day_dir.mkdir(parents=True, exist_ok=True)
     generated_at = datetime.now(timezone.utc).isoformat()
-    cost_info = usage_stats.to_dict() if usage_stats else None
+
+    claude_cost = claude_usage.to_dict() if claude_usage else None
+    twitter_cost = twitter_usage.to_dict() if twitter_usage else None
+    total_cost = (claude_usage.estimated_cost_usd if claude_usage else 0) + (twitter_usage.estimated_cost_usd if twitter_usage else 0)
+    cost_info = {
+        "claude": claude_cost,
+        "twitter": twitter_cost,
+        "total_estimated_cost_usd": round(total_cost, 4),
+    } if (claude_cost or twitter_cost) else None
 
     # Write papers.json
     papers_data = {
@@ -100,16 +110,15 @@ def _update_cost_log(date_str: str, cost_info: dict | None):
         with open(cost_log_file) as f:
             log = json.load(f)
     else:
-        log = {"days": [], "total_cost_usd": 0.0, "total_input_tokens": 0, "total_output_tokens": 0, "total_api_calls": 0}
+        log = {"days": [], "total_cost_usd": 0.0}
 
     # Avoid duplicate entries for same date
     existing_dates = {entry["date"] for entry in log["days"]}
     if date_str not in existing_dates:
         log["days"].append({"date": date_str, **cost_info})
-        log["total_cost_usd"] = round(log["total_cost_usd"] + cost_info["estimated_cost_usd"], 4)
-        log["total_input_tokens"] += cost_info["input_tokens"]
-        log["total_output_tokens"] += cost_info["output_tokens"]
-        log["total_api_calls"] += cost_info["api_calls"]
+        log["total_cost_usd"] = round(
+            log["total_cost_usd"] + cost_info["total_estimated_cost_usd"], 4
+        )
 
     with open(cost_log_file, "w") as f:
         json.dump(log, f, indent=2)
