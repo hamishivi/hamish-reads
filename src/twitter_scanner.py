@@ -88,6 +88,37 @@ def _tweet_url(username: str, tweet_id: str) -> str:
     return f"https://x.com/{username}/status/{tweet_id}"
 
 
+def _build_query_batches(usernames: list[str], max_len: int, suffix: str) -> list[str]:
+    """Build query strings that each fit within max_len characters.
+
+    Each query looks like: (from:user1 OR from:user2 OR ...) -is:reply
+    """
+    batches = []
+    current_parts: list[str] = []
+    # Account for "(" prefix and suffix
+    overhead = len("(") + len(suffix)
+
+    for username in usernames:
+        part = f"from:{username}"
+        # Calculate what the query would be if we add this user
+        if current_parts:
+            candidate = "(" + " OR ".join(current_parts + [part]) + suffix
+        else:
+            candidate = "(" + part + suffix
+
+        if len(candidate) > max_len and current_parts:
+            # Flush current batch
+            batches.append("(" + " OR ".join(current_parts) + suffix)
+            current_parts = [part]
+        else:
+            current_parts.append(part)
+
+    if current_parts:
+        batches.append("(" + " OR ".join(current_parts) + suffix)
+
+    return batches
+
+
 def fetch_tweets(
     user_id: str,
     min_engagement: int = 10,
@@ -142,12 +173,12 @@ def fetch_tweets(
     # Twitter API v2 search supports "from:" operators
     following_usernames = [u for u, _ in user_map.values()]
 
-    # Process in batches — Twitter query max is 512 chars
-    # "from:username" = ~15 chars + " OR " = ~19 chars per user → ~25 per batch is safe
-    batch_size = 10  # conservative to stay under 512 char limit
-    for i in range(0, len(following_usernames), batch_size):
-        batch = following_usernames[i : i + batch_size]
-        query = "(" + " OR ".join(f"from:{u}" for u in batch) + ") -is:reply"
+    # Build batches that fit within Twitter's 512 char query limit
+    suffix = ") -is:reply"
+    max_query_len = 512
+    batches = _build_query_batches(following_usernames, max_query_len, suffix)
+
+    for query in batches:
 
         try:
             search_resp = client.search_recent_tweets(
