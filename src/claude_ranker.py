@@ -52,8 +52,9 @@ class UsageStats:
 @dataclass
 class TweetDigest:
     paper_announcements: list[dict] = field(default_factory=list)
-    announcements: list[dict] = field(default_factory=list)
     discussions: list[dict] = field(default_factory=list)
+    announcements: list[dict] = field(default_factory=list)
+    other: list[dict] = field(default_factory=list)
 
 
 # Module-level usage tracker, reset each run
@@ -175,13 +176,12 @@ def summarize_tweets(
         messages=[
             {
                 "role": "user",
-                "content": f"""Categorize and summarize these AI/ML tweets. Group them into three categories:
+                "content": f"""Categorize and summarize these tweets into four categories:
 
-1. **paper_announcements**: ONLY tweets where someone is announcing or sharing a NEW paper they authored or co-authored (e.g. "Our new paper on X is out!", linking to arxiv). Do NOT include tweets that merely discuss, comment on, or react to someone else's paper — those go in discussions.
-2. **announcements**: Product launches, model releases, company news, tool releases, dataset releases, benchmark results.
-3. **discussions**: Everything else of interest — opinions, debates, commentary on papers or methods, technical threads, hot takes, interesting observations about AI/ML.
-
-Be strict about paper_announcements: if the tweet is commenting on or discussing a paper rather than announcing their own new work, it belongs in discussions.
+1. **paper_announcements**: Tweets announcing new papers, models, or datasets. This includes authors sharing their own new work AND announcements of new model/dataset releases (e.g. "We release X", "Our new paper on X", "Introducing X dataset"). If it links to arxiv, huggingface, or a blog post announcing new work, it likely belongs here.
+2. **discussions**: AI/ML-related discussions ONLY — opinions, debates, commentary on papers or methods, technical threads, hot takes, observations about AI/ML. NOT paper announcements.
+3. **announcements**: AI/ML product launches, company news, hiring, events, benchmark results, tool releases that aren't papers/models/datasets.
+4. **other**: Interesting tweets that are NOT about AI/ML — politics, culture, humor, personal updates, other fields.
 
 For each entry, provide a 1-2 sentence summary and the original tweet URL.
 
@@ -191,8 +191,9 @@ For each entry, provide a 1-2 sentence summary and the original tweet URL.
 Return ONLY valid JSON:
 {{
   "paper_announcements": [{{"summary": "...", "tweet_url": "...", "author_name": "...", "author_username": "..."}}],
+  "discussions": [{{"summary": "...", "tweet_url": "...", "author_name": "...", "author_username": "..."}}],
   "announcements": [{{"summary": "...", "tweet_url": "...", "author_name": "...", "author_username": "..."}}],
-  "discussions": [{{"summary": "...", "tweet_url": "...", "author_name": "...", "author_username": "..."}}]
+  "other": [{{"summary": "...", "tweet_url": "...", "author_name": "...", "author_username": "..."}}]
 }}""",
             }
         ],
@@ -210,8 +211,9 @@ Return ONLY valid JSON:
         result = json.loads(text)
         return TweetDigest(
             paper_announcements=result.get("paper_announcements", []),
-            announcements=result.get("announcements", []),
             discussions=result.get("discussions", []),
+            announcements=result.get("announcements", []),
+            other=result.get("other", []),
         )
     except (json.JSONDecodeError, KeyError) as e:
         print(f"Warning: Failed to parse Claude tweet summary: {e}")

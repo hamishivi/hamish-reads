@@ -97,12 +97,9 @@ def main():
     # 5. Summarize tweets
     print("Summarizing tweets...")
     tweet_digest = summarize_tweets(tweets, model=model) if tweets else TweetDigest(
-        paper_announcements=[], announcements=[], discussions=[]
+        paper_announcements=[], discussions=[], announcements=[], other=[]
     )
-    thread_count = len(tweet_digest.paper_announcements)
-    announce_count = len(tweet_digest.announcements)
-    discuss_count = len(tweet_digest.discussions)
-    print(f"  {thread_count} paper threads, {announce_count} announcements, {discuss_count} discussions")
+    print(f"  {len(tweet_digest.paper_announcements)} papers, {len(tweet_digest.discussions)} discussions, {len(tweet_digest.announcements)} announcements, {len(tweet_digest.other)} other")
 
     # 6. Fetch news headlines
     print("Fetching news headlines...")

@@ -70,8 +70,9 @@ def write_daily_data(
         "date": date_str,
         "generated_at": generated_at,
         "paper_announcements": tweet_digest.paper_announcements,
-        "announcements": tweet_digest.announcements,
         "discussions": tweet_digest.discussions,
+        "announcements": tweet_digest.announcements,
+        "other": tweet_digest.other,
     }
     with open(day_dir / "tweets.json", "w") as f:
         json.dump(tweets_data, f, indent=2)

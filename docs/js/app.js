@@ -232,30 +232,34 @@
 
     // --- Render tweets ---
     function renderTweets(data) {
-        const threadsList = document.getElementById("paper-threads-list");
-        const announcementsList = document.getElementById("announcements-list");
+        const paperList = document.getElementById("paper-announcements-list");
         const discussionsList = document.getElementById("discussions-list");
+        const announcementsList = document.getElementById("announcements-list");
+        const otherList = document.getElementById("other-list");
         const tweetsEmpty = document.getElementById("tweets-empty");
 
-        threadsList.innerHTML = "";
-        announcementsList.innerHTML = "";
+        paperList.innerHTML = "";
         discussionsList.innerHTML = "";
+        announcementsList.innerHTML = "";
+        otherList.innerHTML = "";
 
         if (!data) {
             tweetsEmpty.style.display = "block";
             return;
         }
 
-        const threads = data.paper_announcements || [];
-        const announcements = data.announcements || [];
+        const papers = data.paper_announcements || [];
         const discussions = data.discussions || [];
+        const announcements = data.announcements || [];
+        const other = data.other || [];
 
-        const hasAny = threads.length + announcements.length + discussions.length > 0;
+        const hasAny = papers.length + discussions.length + announcements.length + other.length > 0;
         tweetsEmpty.style.display = hasAny ? "none" : "block";
 
-        threads.forEach((t) => threadsList.appendChild(createTweetEl(t)));
-        announcements.forEach((t) => announcementsList.appendChild(createTweetEl(t)));
+        papers.forEach((t) => paperList.appendChild(createTweetEl(t)));
         discussions.forEach((t) => discussionsList.appendChild(createTweetEl(t)));
+        announcements.forEach((t) => announcementsList.appendChild(createTweetEl(t)));
+        other.forEach((t) => otherList.appendChild(createTweetEl(t)));
 
         if (hasAny) loadTwitterEmbeds();
     }
