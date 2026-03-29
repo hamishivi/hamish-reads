@@ -88,6 +88,7 @@ def main():
     user_id = twitter_cfg.get("user_id", "")
     tweets = fetch_tweets(
         user_id=user_id,
+        max_pages=twitter_cfg.get("max_pages", 3),
         hours_back=int(hours_since_target),
         target_date=target_date,
     ) if user_id else []
