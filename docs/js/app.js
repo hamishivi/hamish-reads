@@ -22,6 +22,7 @@
     async function init() {
         setupTabs();
         setupDatePicker();
+        window.addEventListener("hashchange", onHashChange);
         await loadDates();
     }
 
@@ -48,22 +49,19 @@
             const val = datePicker.value;
             const idx = availableDates.indexOf(val);
             if (idx >= 0) {
-                currentDateIndex = idx;
-                loadDay(availableDates[currentDateIndex]);
+                navigateToDate(idx);
             }
         });
 
         prevBtn.addEventListener("click", () => {
             if (currentDateIndex < availableDates.length - 1) {
-                currentDateIndex++;
-                loadDay(availableDates[currentDateIndex]);
+                navigateToDate(currentDateIndex + 1);
             }
         });
 
         nextBtn.addEventListener("click", () => {
             if (currentDateIndex > 0) {
-                currentDateIndex--;
-                loadDay(availableDates[currentDateIndex]);
+                navigateToDate(currentDateIndex - 1);
             }
         });
     }
@@ -83,17 +81,41 @@
         });
     }
 
+    function navigateToDate(idx) {
+        currentDateIndex = idx;
+        const dateStr = availableDates[currentDateIndex];
+        window.location.hash = dateStr;
+        loadDay(dateStr);
+    }
+
+    function onHashChange() {
+        const hash = window.location.hash.replace("#", "");
+        if (hash && /^\d{4}-\d{2}-\d{2}$/.test(hash)) {
+            const idx = availableDates.indexOf(hash);
+            if (idx >= 0 && idx !== currentDateIndex) {
+                currentDateIndex = idx;
+                loadDay(availableDates[currentDateIndex]);
+            }
+        }
+    }
+
     // --- Data loading ---
     async function loadDates() {
         try {
             const resp = await fetch(`${DATA_BASE}/dates.json`);
             availableDates = await resp.json();
-            if (availableDates.length > 0) {
-                currentDateIndex = 0;
-                loadDay(availableDates[0]);
-            } else {
+            if (availableDates.length === 0) {
                 showEmpty();
+                return;
             }
+
+            // Check URL hash for a specific date
+            const hash = window.location.hash.replace("#", "");
+            const hashIdx = hash ? availableDates.indexOf(hash) : -1;
+            currentDateIndex = hashIdx >= 0 ? hashIdx : 0;
+
+            window.location.hash = availableDates[currentDateIndex];
+            loadDay(availableDates[currentDateIndex]);
         } catch (e) {
             showEmpty();
         }
@@ -275,30 +297,27 @@
     }
 
     /** Load Twitter widgets.js and render embeds */
-    let twitterScriptLoaded = false;
+    let twitterScriptLoading = false;
     function loadTwitterEmbeds() {
+        const container = document.getElementById("tweets-tab");
         if (window.twttr && window.twttr.widgets) {
-            // Script already loaded — just re-render new blockquotes
-            window.twttr.widgets.load(document.getElementById("tweets-tab"));
+            window.twttr.widgets.load(container);
             return;
         }
-        if (twitterScriptLoaded) return;
-        twitterScriptLoaded = true;
-
-        // Set up the twttr ready callback before loading the script
-        window.twttr = window.twttr || {};
-        window.twttr._e = window.twttr._e || [];
-        window.twttr.ready = function (fn) {
-            window.twttr._e.push(fn);
-        };
-        window.twttr.ready(function (twttr) {
-            twttr.widgets.load(document.getElementById("tweets-tab"));
-        });
+        if (twitterScriptLoading) return;
+        twitterScriptLoading = true;
 
         const script = document.createElement("script");
         script.src = "https://platform.twitter.com/widgets.js";
         script.async = true;
         script.charset = "utf-8";
+        script.onload = function () {
+            // widgets.js auto-scans the page on load, but call load()
+            // explicitly to be safe
+            if (window.twttr && window.twttr.widgets) {
+                window.twttr.widgets.load(container);
+            }
+        };
         document.head.appendChild(script);
     }
 
