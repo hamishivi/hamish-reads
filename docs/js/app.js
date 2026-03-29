@@ -260,6 +260,9 @@
         if (hasAny) loadTwitterEmbeds();
     }
 
+    /** Pending tweet embeds to render once widgets.js loads */
+    let pendingTweetEmbeds = [];
+
     function createTweetEl(tweet) {
         const li = document.createElement("li");
         li.className = "tweet-item";
@@ -270,16 +273,13 @@
         summary.textContent = tweet.summary;
         li.appendChild(summary);
 
-        // Extract tweet ID from URL for iframe embed
         const tweetId = extractTweetId(tweet.tweet_url);
         if (tweetId) {
-            // Use iframe embed — more reliable than blockquote + widgets.js
-            const wrapper = document.createElement("div");
-            wrapper.className = "tweet-embed-wrapper";
-            wrapper.innerHTML = `<blockquote class="twitter-tweet" data-conversation="none" data-dnt="true"><a href="${escapeHtml(tweet.tweet_url)}"></a></blockquote>`;
-            li.appendChild(wrapper);
+            const embedTarget = document.createElement("div");
+            embedTarget.className = "tweet-embed-target";
+            li.appendChild(embedTarget);
+            pendingTweetEmbeds.push({ el: embedTarget, id: tweetId });
         } else {
-            // Fallback: just link to the tweet
             const meta = document.createElement("div");
             meta.className = "tweet-meta";
             const author = tweet.author_username ? `@${escapeHtml(tweet.author_username)} · ` : "";
@@ -296,12 +296,21 @@
         return match ? match[1] : null;
     }
 
-    /** Load Twitter widgets.js and render embeds */
+    /** Render all pending tweet embeds using twttr.widgets.createTweet */
+    function renderPendingEmbeds() {
+        if (!window.twttr || !window.twttr.widgets) return;
+        const opts = { conversation: "none", dnt: true };
+        pendingTweetEmbeds.forEach(({ el, id }) => {
+            window.twttr.widgets.createTweet(id, el, opts);
+        });
+        pendingTweetEmbeds = [];
+    }
+
+    /** Load Twitter widgets.js, then render embeds */
     let twitterScriptLoading = false;
     function loadTwitterEmbeds() {
-        const container = document.getElementById("tweets-tab");
         if (window.twttr && window.twttr.widgets) {
-            window.twttr.widgets.load(container);
+            renderPendingEmbeds();
             return;
         }
         if (twitterScriptLoading) return;
@@ -312,11 +321,7 @@
         script.async = true;
         script.charset = "utf-8";
         script.onload = function () {
-            // widgets.js auto-scans the page on load, but call load()
-            // explicitly to be safe
-            if (window.twttr && window.twttr.widgets) {
-                window.twttr.widgets.load(container);
-            }
+            renderPendingEmbeds();
         };
         document.head.appendChild(script);
     }
