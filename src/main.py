@@ -88,7 +88,6 @@ def main():
     user_id = twitter_cfg.get("user_id", "")
     tweets = fetch_tweets(
         user_id=user_id,
-        min_engagement=twitter_cfg.get("min_engagement", 10),
         hours_back=int(hours_since_target),
         target_date=target_date,
     ) if user_id else []

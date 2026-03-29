@@ -299,7 +299,8 @@
     /** Render all pending tweet embeds using twttr.widgets.createTweet */
     function renderPendingEmbeds() {
         if (!window.twttr || !window.twttr.widgets) return;
-        const opts = { conversation: "none", dnt: true };
+        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const opts = { conversation: "none", dnt: true, theme: prefersDark ? "dark" : "light", align: "center" };
         pendingTweetEmbeds.forEach(({ el, id }) => {
             window.twttr.widgets.createTweet(id, el, opts);
         });

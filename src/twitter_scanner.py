@@ -121,7 +121,6 @@ def _build_query_batches(usernames: list[str], max_len: int, suffix: str) -> lis
 
 def fetch_tweets(
     user_id: str,
-    min_engagement: int = 10,
     hours_back: int = 24,
     bearer_token: str | None = None,
     target_date: datetime | None = None,
@@ -209,9 +208,6 @@ def fetch_tweets(
                 metrics = tweet_data.public_metrics or {}
                 likes = metrics.get("like_count", 0)
                 retweets = metrics.get("retweet_count", 0)
-
-                if likes + retweets < min_engagement:
-                    continue
 
                 seen_ids.add(tid)
                 author_id = str(tweet_data.author_id)
