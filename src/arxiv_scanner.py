@@ -28,9 +28,21 @@ def fetch_recent_papers(
     categories: list[str],
     max_per_category: int = 100,
     hours_back: int = 48,
+    target_date: datetime | None = None,
 ) -> list[Paper]:
-    """Fetch papers published in the last `hours_back` hours across categories."""
-    cutoff = datetime.now(timezone.utc) - timedelta(hours=hours_back)
+    """Fetch papers published around the target date.
+
+    For backfills, filters to a 24h window around the target date.
+    For live runs, fetches papers from the last `hours_back` hours.
+    """
+    if target_date and target_date.date() < datetime.now(timezone.utc).date():
+        # Backfill: filter to that day's 24h window
+        window_start = target_date.replace(hour=0, minute=0, second=0)
+        window_end = window_start + timedelta(hours=24)
+    else:
+        window_end = datetime.now(timezone.utc)
+        window_start = window_end - timedelta(hours=hours_back)
+
     seen_ids: set[str] = set()
     papers: list[Paper] = []
 
@@ -49,9 +61,13 @@ def fetch_recent_papers(
     client = arxiv.Client(page_size=50, delay_seconds=10.0, num_retries=5)
 
     for result in client.results(search):
-        # Stop once we hit papers older than cutoff
-        if result.published.replace(tzinfo=timezone.utc) < cutoff:
+        pub = result.published.replace(tzinfo=timezone.utc)
+        # Stop once we're past the window
+        if pub < window_start:
             break
+        # Skip papers after the window end (for backfills)
+        if pub > window_end:
+            continue
 
         if result.entry_id in seen_ids:
             continue

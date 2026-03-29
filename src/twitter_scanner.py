@@ -93,6 +93,7 @@ def fetch_tweets(
     min_engagement: int = 10,
     hours_back: int = 24,
     bearer_token: str | None = None,
+    target_date: datetime | None = None,
 ) -> list[Tweet]:
     """Fetch recent tweets from accounts the user follows, plus their liked/retweeted content."""
     token = bearer_token or os.environ.get("TWITTER_BEARER_TOKEN", "")
@@ -101,7 +102,14 @@ def fetch_tweets(
         return []
 
     client = _get_client(token)
-    cutoff = datetime.now(timezone.utc) - timedelta(hours=hours_back)
+
+    if target_date and target_date.date() < datetime.now(timezone.utc).date():
+        # Backfill: 24h window for that day
+        start_time = target_date.replace(hour=0, minute=0, second=0)
+        end_time = start_time + timedelta(hours=24)
+    else:
+        end_time = datetime.now(timezone.utc)
+        start_time = end_time - timedelta(hours=hours_back)
     seen_ids: set[str] = set()
     tweets: list[Tweet] = []
 
@@ -143,7 +151,8 @@ def fetch_tweets(
             search_resp = client.search_recent_tweets(
                 query=query,
                 max_results=100,
-                start_time=cutoff,
+                start_time=start_time,
+                end_time=end_time,
                 tweet_fields=["public_metrics", "created_at", "entities", "author_id"],
                 expansions=["author_id"],
                 user_fields=["username", "name"],

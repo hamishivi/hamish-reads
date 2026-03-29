@@ -2,8 +2,9 @@
 
 from __future__ import annotations
 
+import argparse
 import os
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 import yaml
@@ -22,11 +23,28 @@ def load_config() -> dict:
 
 
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--date", help="Date to generate digest for (YYYY-MM-DD). Defaults to today.")
+    args = parser.parse_args()
+
     config = load_config()
-    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-    print(f"Generating digest for {today}")
+
+    if args.date:
+        target_date = datetime.strptime(args.date, "%Y-%m-%d").replace(tzinfo=timezone.utc)
+        date_str = args.date
+    else:
+        target_date = datetime.now(timezone.utc)
+        date_str = target_date.strftime("%Y-%m-%d")
+
+    print(f"Generating digest for {date_str}")
     reset_claude_usage()
     reset_twitter_usage()
+
+    # Calculate hours_back: for backfills, look at papers from that day
+    # arxiv posts at 8pm ET (~00:00 UTC next day), so for a given date
+    # we want papers from roughly that 24h window
+    now = datetime.now(timezone.utc)
+    hours_since_target = max(24, (now - target_date).total_seconds() / 3600)
 
     # 1. Fetch arxiv papers
     print("Fetching arxiv papers...")
@@ -34,6 +52,8 @@ def main():
     all_papers = fetch_recent_papers(
         categories=arxiv_cfg["categories"],
         max_per_category=arxiv_cfg.get("max_papers_per_category", 100),
+        hours_back=int(hours_since_target),
+        target_date=target_date,
     )
     print(f"  Found {len(all_papers)} papers")
 
@@ -68,6 +88,8 @@ def main():
     tweets = fetch_tweets(
         user_id=user_id,
         min_engagement=twitter_cfg.get("min_engagement", 10),
+        hours_back=int(hours_since_target),
+        target_date=target_date,
     ) if user_id else []
     print(f"  Found {len(tweets)} tweets")
 
@@ -85,7 +107,7 @@ def main():
     print("Writing data...")
     claude_usage = get_claude_usage()
     twitter_usage = get_twitter_usage()
-    day_dir = write_daily_data(today, author_papers, ranked_papers, tweet_digest, claude_usage, twitter_usage)
+    day_dir = write_daily_data(date_str, author_papers, ranked_papers, tweet_digest, claude_usage, twitter_usage)
     print(f"  Written to {day_dir}")
 
     # 7. Cost summary
