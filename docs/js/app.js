@@ -232,22 +232,46 @@
         threads.forEach((t) => threadsList.appendChild(createTweetEl(t)));
         announcements.forEach((t) => announcementsList.appendChild(createTweetEl(t)));
         discussions.forEach((t) => discussionsList.appendChild(createTweetEl(t)));
+
+        if (hasAny) loadTwitterEmbeds();
     }
 
     function createTweetEl(tweet) {
         const li = document.createElement("li");
         li.className = "tweet-item";
-        const author = tweet.author_username
-            ? `@${escapeHtml(tweet.author_username)}`
-            : "";
-        li.innerHTML = `
-            <p class="tweet-summary">${escapeHtml(tweet.summary)}</p>
-            <div class="tweet-meta">
-                ${author ? `<span>${author}</span> · ` : ""}
-                <a href="${escapeHtml(tweet.tweet_url)}" target="_blank" rel="noopener">View tweet &rarr;</a>
-            </div>
-        `;
+
+        // Summary line above the embed
+        const summary = document.createElement("p");
+        summary.className = "tweet-summary";
+        summary.textContent = tweet.summary;
+        li.appendChild(summary);
+
+        // Twitter oEmbed blockquote — rendered by widgets.js
+        const blockquote = document.createElement("blockquote");
+        blockquote.className = "twitter-tweet";
+        blockquote.dataset.conversation = "none"; // don't show reply chain
+        blockquote.dataset.dnt = "true"; // do not track
+
+        const embedLink = document.createElement("a");
+        embedLink.href = tweet.tweet_url;
+        blockquote.appendChild(embedLink);
+
+        li.appendChild(blockquote);
         return li;
+    }
+
+    /** Load Twitter widgets.js once, then re-render embeds */
+    function loadTwitterEmbeds() {
+        if (window.twttr && window.twttr.widgets) {
+            window.twttr.widgets.load();
+            return;
+        }
+        if (document.getElementById("twitter-wjs")) return;
+        const script = document.createElement("script");
+        script.id = "twitter-wjs";
+        script.src = "https://platform.twitter.com/widgets.js";
+        script.async = true;
+        document.head.appendChild(script);
     }
 
     // --- Footer ---
