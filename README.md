@@ -1,4 +1,4 @@
-# AI Research Digest
+# hamish-reads
 
 A daily, automated research digest that surfaces arxiv papers and Twitter discussions relevant to your work — so you can stop doomscrolling and still stay current.
 
@@ -57,8 +57,8 @@ Inspired by [fresh-finds](https://github.com/davidheineman/fresh-finds). Vanilla
 ### 1. Clone and configure
 
 ```bash
-git clone https://github.com/hamishivi/ai-research-digest.git
-cd ai-research-digest
+git clone https://github.com/hamishivi/hamish-reads.git
+cd hamish-reads
 ```
 
 Edit `config.yaml`:
