@@ -34,39 +34,41 @@ def fetch_recent_papers(
     seen_ids: set[str] = set()
     papers: list[Paper] = []
 
-    for category in categories:
-        search = arxiv.Search(
-            query=f"cat:{category}",
-            max_results=max_per_category,
-            sort_by=arxiv.SortCriterion.SubmittedDate,
-            sort_order=arxiv.SortOrder.Descending,
-        )
+    # Single combined query to minimize API calls
+    query = " OR ".join(f"cat:{cat}" for cat in categories)
+    max_results = max_per_category * len(categories)
 
-        client = arxiv.Client(page_size=50, delay_seconds=3.0)
-        for result in client.results(search):
-            # Stop once we hit papers older than cutoff
-            if result.published.replace(tzinfo=timezone.utc) < cutoff:
-                break
+    search = arxiv.Search(
+        query=query,
+        max_results=max_results,
+        sort_by=arxiv.SortCriterion.SubmittedDate,
+        sort_order=arxiv.SortOrder.Descending,
+    )
 
-            if result.entry_id in seen_ids:
-                continue
-            seen_ids.add(result.entry_id)
+    # Be very conservative with rate limiting — arxiv is strict
+    client = arxiv.Client(page_size=50, delay_seconds=10.0, num_retries=5)
 
-            papers.append(
-                Paper(
-                    arxiv_id=result.entry_id.split("/")[-1],
-                    title=result.title.replace("\n", " ").strip(),
-                    authors=[a.name for a in result.authors],
-                    abstract=result.summary.replace("\n", " ").strip(),
-                    categories=[c for c in result.categories],
-                    published=result.published,
-                    abs_url=result.entry_id,
-                    pdf_url=result.pdf_url,
-                )
+    for result in client.results(search):
+        # Stop once we hit papers older than cutoff
+        if result.published.replace(tzinfo=timezone.utc) < cutoff:
+            break
+
+        if result.entry_id in seen_ids:
+            continue
+        seen_ids.add(result.entry_id)
+
+        papers.append(
+            Paper(
+                arxiv_id=result.entry_id.split("/")[-1],
+                title=result.title.replace("\n", " ").strip(),
+                authors=[a.name for a in result.authors],
+                abstract=result.summary.replace("\n", " ").strip(),
+                categories=[c for c in result.categories],
+                published=result.published,
+                abs_url=result.entry_id,
+                pdf_url=result.pdf_url,
             )
-
-        # Be polite to the arxiv API between categories
-        time.sleep(3)
+        )
 
     return papers
 
