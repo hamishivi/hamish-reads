@@ -1,0 +1,637 @@
+{
+  "date": "2026-04-07",
+  "generated_at": "2026-04-07T03:37:17.992548+00:00",
+  "author_papers": [
+    {
+      "arxiv_id": "2604.02485",
+      "title": "Failing to Falsify: Evaluating and Mitigating Confirmation Bias in Language Models",
+      "authors": [
+        "Ayush Rajesh Jhaveri",
+        "Anthony GX-Chen",
+        "Ilia Sucholutsky",
+        "Eunsol Choi"
+      ],
+      "abstract": "Confirmation bias, the tendency to seek evidence that supports rather than challenges one's belief, hinders one's reasoning ability. We examine whether large language models (LLMs) exhibit confirmation bias by adapting the rule-discovery study from human psychology: given a sequence of three numbers (a \"triple\"), an agent engages in an interactive feedback loop where it (1) proposes a new triple, (2) receives feedback on whether it satisfies the hidden rule, and (3) guesses the rule. Across eleven LLMs of multiple families and scales, we find that LLMs exhibit confirmation bias, often proposing triples to confirm their hypothesis rather than trying to falsify it. This leads to slower and less frequent discovery of the hidden rule. We further explore intervention strategies (e.g., encouraging the agent to consider counter examples) developed for humans. We find prompting LLMs with such instruction consistently decreases confirmation bias in LLMs, improving rule discovery rates from 42% to 56% on average. Lastly, we mitigate confirmation bias by distilling intervention-induced behavior into LLMs, showing promising generalization to a new task, the Blicket test. Our work shows that confirmation bias is a limitation of LLMs in hypothesis exploration, and that it can be mitigated via injecting interventions designed for humans.",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "published": "2026-04-06T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.02485",
+      "pdf_url": "https://arxiv.org/pdf/2604.02485",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2604.03058",
+      "title": "Verbalizing LLMs' assumptions to explain and control sycophancy",
+      "authors": [
+        "Myra Cheng",
+        "Isabel Sieh",
+        "Humishka Zope",
+        "Sunny Yu",
+        "Lujain Ibrahim",
+        "Aryaman Arora",
+        "Jared Moore",
+        "Desmond Ong",
+        "Dan Jurafsky",
+        "Diyi Yang"
+      ],
+      "abstract": "LLMs can be socially sycophantic, affirming users when they ask questions like \"am I in the wrong?\" rather than providing genuine assessment. We hypothesize that this behavior arises from incorrect assumptions about the user, like underestimating how often users are seeking information over reassurance. We present Verbalized Assumptions, a framework for eliciting these assumptions from LLMs. Verbalized Assumptions provide insight into LLM sycophancy, delusion, and other safety issues, e.g., the top bigram in LLMs' assumptions on social sycophancy datasets is ``seeking validation.'' We provide evidence for a causal link between Verbalized Assumptions and sycophantic model behavior: our assumption probes (linear probes trained on internal representations of these assumptions) enable interpretable fine-grained steering of social sycophancy. We explore why LLMs default to sycophantic assumptions: on identical queries, people expect more objective and informative responses from AI than from other humans, but LLMs trained on human-human conversation do not account for this difference in expectations. Our work contributes a new understanding of assumptions as a mechanism for sycophancy.",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.CY"
+      ],
+      "published": "2026-04-06T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.03058",
+      "pdf_url": "https://arxiv.org/pdf/2604.03058",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2604.03136",
+      "title": "StoryScope: Investigating idiosyncrasies in AI fiction",
+      "authors": [
+        "Jenna Russell",
+        "Rishanth Rajendhran",
+        "Mohit Iyyer",
+        "John Wieting"
+      ],
+      "abstract": "As AI-generated fiction becomes increasingly prevalent, questions of authorship and originality are becoming central to how written work is evaluated. While most existing work in this space focuses on identifying surface-level signatures of AI writing, we ask instead whether AI-generated stories can be distinguished from human ones without relying on stylistic signals, focusing on discourse-level narrative choices such as character agency and chronological discontinuity. We propose StoryScope, a pipeline that automatically induces a fine-grained, interpretable feature space of discourse-level narrative features across 10 dimensions. We apply StoryScope to a parallel corpus of 10,272 writing prompts, each written by a human author and five LLMs, yielding 61,608 stories, each ~5,000 words, and 304 extracted features per story. Narrative features alone achieve 93.2% macro-F1 for human vs. AI detection and 68.4% macro-F1 for six-way authorship attribution, retaining over 97% of the performance of models that include stylistic cues. A compact set of 30 core narrative features captures much of this signal: AI stories over-explain themes and favor tidy, single-track plots while human stories frame protagonist' choices as more morally ambiguous and have increased temporal complexity. Per-model fingerprint features enable six-way attribution: for example, Claude produces notably flat event escalation, GPT over-indexes on dream sequences, and Gemini defaults to external character description. We find that AI-generated stories cluster in a shared region of narrative space, while human-authored stories exhibit greater diversity. More broadly, these results suggest that differences in underlying narrative construction, not just writing style, can be used to separate human-written original works from AI-generated fiction.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-04-06T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.03136",
+      "pdf_url": "https://arxiv.org/pdf/2604.03136",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2604.03141",
+      "title": "Beyond Precision: Importance-Aware Recall for Factuality Evaluation in Long-Form LLM Generation",
+      "authors": [
+        "Nazanin Jafari",
+        "James Allan",
+        "Mohit Iyyer"
+      ],
+      "abstract": "Evaluating the factuality of long-form output generated by large language models (LLMs) remains challenging, particularly when responses are open-ended and contain many fine-grained factual statements. Existing evaluation methods primarily focus on precision: they decompose a response into atomic claims and verify each claim against external knowledge sources such as Wikipedia. However, this overlooks an equally important dimension of factuality: recall, whether the generated response covers the relevant facts that should be included. We propose a comprehensive factuality evaluation framework that jointly measures precision and recall. Our method leverages external knowledge sources to construct reference facts and determine whether they are captured in generated text. We further introduce an importance-aware weighting scheme based on relevance and salience. Our analysis reveals that current LLMs perform substantially better on precision than on recall, suggesting that factual incompleteness remains a major limitation of long-form generation and that models are generally better at covering highly important facts than the full set of relevant facts.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-04-06T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.03141",
+      "pdf_url": "https://arxiv.org/pdf/2604.03141",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2604.02598",
+      "title": "Making Written Theorems Explorable by Grounding Them in Formal Representations",
+      "authors": [
+        "Hita Kambhamettu",
+        "Will Crichton",
+        "Sean Welleck",
+        "Harrison Goldstein",
+        "Andrew Head"
+      ],
+      "abstract": "LLM-generated explanations can make technical content more accessible, but there is a ceiling on what they can support interactively. Because LLM outputs are static text, they cannot be executed or stepped through. We argue that grounding explanations in a formalized representation enables interactive affordances beyond what static text supports. We instantiate this idea for mathematical proof comprehension with explorable theorems, a system that uses LLMs to translate a theorem and its written proof into Lean, a programming language for machine-checked proofs, and links the written proof with the Lean code. Readers can work through the proof at a step-level granularity, test custom examples or counterexamples, and trace the logical dependencies bridging each step. Each worked-out step is produced by executing the Lean proof on that example and extracting its intermediate state. A user study ($n = 16$) shows potential advantages of this approach: in a proof-reading task, participants who had access to the provided explorability features gave better, more correct, and more detailed answers to comprehension questions, demonstrating a stronger overall understanding of the underlying mathematics.",
+      "categories": [
+        "cs.HC",
+        "cs.AI",
+        "cs.PL"
+      ],
+      "published": "2026-04-06T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.02598",
+      "pdf_url": "https://arxiv.org/pdf/2604.02598",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2604.02694",
+      "title": "DocShield: Towards AI Document Safety via Evidence-Grounded Agentic Reasoning",
+      "authors": [
+        "Fanwei Zeng",
+        "Changtao Miao",
+        "Jing Huang",
+        "Zhiya Tan",
+        "Shutao Gong",
+        "Xiaoming Yu",
+        "Yang Wang",
+        "Weibin Yao",
+        "Joey Tianyi Zhou",
+        "Jianshu Li",
+        "Yin Yan"
+      ],
+      "abstract": "The rapid progress of generative AI has enabled increasingly realistic text-centric image forgeries, posing major challenges to document safety. Existing forensic methods mainly rely on visual cues and lack evidence-based reasoning to reveal subtle text manipulations. Detection, localization, and explanation are often treated as isolated tasks, limiting reliability and interpretability. To tackle these challenges, we propose DocShield, the first unified framework formulating text-centric forgery analysis as a visual-logical co-reasoning problem. At its core, a novel Cross-Cues-aware Chain of Thought (CCT) mechanism enables implicit agentic reasoning, iteratively cross-validating visual anomalies with textual semantics to produce consistent, evidence-grounded forensic analysis. We further introduce a Weighted Multi-Task Reward for GRPO-based optimization, aligning reasoning structure, spatial evidence, and authenticity prediction. Complementing the framework, we construct RealText-V1, a multilingual dataset of document-like text images with pixel-level manipulation masks and expert-level textual explanations. Extensive experiments show DocShield significantly outperforms existing methods, improving macro-average F1 by 41.4% over specialized frameworks and 23.4% over GPT-4o on T-IC13, with consistent gains on the challenging T-SROIE benchmark. Our dataset, model, and code will be publicly released.",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "published": "2026-04-06T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.02694",
+      "pdf_url": "https://arxiv.org/pdf/2604.02694",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2604.02524",
+      "title": "AQVolt26: High-Temperature r$^2$SCAN Halide Dataset for Universal ML Potentials and Solid-State Batteries",
+      "authors": [
+        "Jiyoon Kim",
+        "Chuhong Wang",
+        "Aayush R. Singh",
+        "Tyler Sours",
+        "Shivang Agarwal",
+        "AJ Nish",
+        "Paul Abruzzo",
+        "Ang Xiao",
+        "Omar Allam"
+      ],
+      "abstract": "The demand for safe, high-energy-density batteries has spotlighted halide solid-state electrolytes, which offer the potential for enhanced ionic mobility, electrochemical stability, and interfacial deformability. Accelerating their discovery requires extensive molecular dynamics, which has been increasingly enabled by universal machine learning interatomic potentials trained on foundational datasets. However, the dynamic softness of halides poses a stringent test of whether general-purpose models can reliably replace first-principles calculations under the highly distorted, elevated-temperature regimes necessary to probe ion transport. Here, we present AQVolt26, a dataset of 322,656 r$^2$SCAN single-point calculations for lithium halides, generated via high-temperature configurational sampling across $\\sim$5K structures. We demonstrate that foundational datasets provide a strong baseline for stable halide chemistries and transfer local forces well, however absolute energy predictions degrade in distorted higher-temperature regimes. Co-training with AQVolt26 resolves this blind spot. Furthermore, incorporating Materials Project relaxation data improves near-equilibrium performance but degrades extreme-strain robustness without enhancing high-temperature force accuracy. These results demonstrate that domain-specific configurational sampling is essential for the reliable dynamic screening of halide electrolytes. Furthermore, our findings suggest that while foundational models provide a robust base, they are most effective for dynamically soft solid-state chemistries when augmented with targeted, high-temperature data. Finally, we show that near-equilibrium relaxation data serves as a task-specific complement rather than a universally beneficial addition.",
+      "categories": [
+        "cond-mat.mtrl-sci",
+        "cs.LG"
+      ],
+      "published": "2026-04-06T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.02524",
+      "pdf_url": "https://arxiv.org/pdf/2604.02524",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    }
+  ],
+  "ranked_papers": [
+    {
+      "arxiv_id": "2604.02621",
+      "title": "Reinforcement Learning-based Knowledge Distillation with LLM-as-a-Judge",
+      "authors": [
+        "Yiyang Shen",
+        "Lifu Tu",
+        "Weiran Wang"
+      ],
+      "abstract": "Reinforcement Learning (RL) has been shown to substantially improve the reasoning capability of small and large language models (LLMs), but existing approaches typically rely on verifiable rewards, hence ground truth labels. We propose an RL framework that uses rewards from an LLM that acts as a judge evaluating model outputs over large amounts of unlabeled data, enabling label-free knowledge distillation and replacing the need of ground truth supervision. Notably, the judge operates with a single-token output, making reward computation efficient. When combined with verifiable rewards, our approach yields substantial performance gains across math reasoning benchmarks. These results suggest that LLM-based evaluators can produce effective training signals for RL fine-tuning.",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "published": "2026-04-06T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.02621",
+      "pdf_url": "https://arxiv.org/pdf/2604.02621",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Directly addresses reinforcement learning with LLM-as-a-Judge for knowledge distillation, closely matching the Hunter Prep project on scaling up feedback and on-policy distillation."
+    },
+    {
+      "arxiv_id": "2604.02507",
+      "title": "Reinforcement Learning from Human Feedback: A Statistical Perspective",
+      "authors": [
+        "Pangpang Liu",
+        "Chengchun Shi",
+        "Will Wei Sun"
+      ],
+      "abstract": "Reinforcement learning from human feedback (RLHF) has emerged as a central framework for aligning large language models (LLMs) with human preferences. Despite its practical success, RLHF raises fundamental statistical questions because it relies on noisy, subjective, and often heterogeneous feedback to learn reward models and optimize policies. This survey provides a statistical perspective on RLHF, focusing primarily on the LLM alignment setting. We introduce the main components of RLHF, including supervised fine-tuning, reward modeling, and policy optimization, and relate them to familiar statistical ideas such as Bradley-Terry-Luce (BTL) model, latent utility estimation, active learning, experimental design, and uncertainty quantification. We review methods for learning reward functions from pairwise preference data and for optimizing policies through both two-stage RLHF pipelines and emerging one-stage approaches such as direct preference optimization. We further discuss recent extensions including reinforcement learning from AI feedback, inference-time algorithms, and reinforcement learning from verifiable rewards, as well as benchmark datasets, evaluation protocols, and open-source frameworks that support RLHF research. We conclude by highlighting open challenges in RLHF. An accompanying GitHub demo https://github.com/Pangpang-Liu/RLHF_demo illustrates key components of the RLHF pipeline.",
+      "categories": [
+        "stat.ML",
+        "cs.LG"
+      ],
+      "published": "2026-04-06T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.02507",
+      "pdf_url": "https://arxiv.org/pdf/2604.02507",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Directly addresses RLHF statistical foundations, which is highly relevant to the project on LM judge weaknesses and grading evaluation mentioned in Hunter Prep."
+    },
+    {
+      "arxiv_id": "2604.02359",
+      "title": "Using LLM-as-a-Judge/Jury to Advance Scalable, Clinically-Validated Safety Evaluations of Model Responses to Users Demonstrating Psychosis",
+      "authors": [
+        "May Lynn Reese",
+        "Markela Zeneli",
+        "Mindy Ng",
+        "Jacob Haimes",
+        "Andreea Damien",
+        "Elizabeth Stade"
+      ],
+      "abstract": "General-purpose Large Language Models (LLMs) are becoming widely adopted by people for mental health support. Yet emerging evidence suggests there are significant risks associated with high-frequency use, particularly for individuals suffering from psychosis, as LLMs may reinforce delusions and hallucinations. Existing evaluations of LLMs in mental health contexts are limited by a lack of clinical validation and scalability of assessment. To address these issues, this research focuses on psychosis as a critical condition for LLM safety evaluation by (1) developing and validating seven clinician-informed safety criteria, (2) constructing a human-consensus dataset, and (3) testing automated assessment using an LLM as an evaluator (LLM-as-a-Judge) or taking the majority vote of several LLM judges (LLM-as-a-Jury). Results indicate that LLM-as-a-Judge aligns closely with the human consensus (Cohen's $\\kappa_{\\text{human} \\times \\text{gemini}} = 0.75$, $\\kappa_{\\text{human} \\times \\text{qwen}} = 0.68$, $\\kappa_{\\text{human} \\times \\text{kimi}} = 0.56$) and that the best judge slightly outperforms LLM-as-a-Jury (Cohen's $\\kappa_{\\text{human} \\times \\text{jury}} = 0.74$). Overall, these findings have promising implications for clinically grounded, scalable methods in LLM safety evaluations for mental health contexts.",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-04-06T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.02359",
+      "pdf_url": "https://arxiv.org/pdf/2604.02359",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Directly addresses LLM-as-a-Judge evaluation methods for safety assessments, which aligns with the current project focus on grading and evaluation using LM judges."
+    },
+    {
+      "arxiv_id": "2604.02972",
+      "title": "NeuReasoner: Towards Explainable, Controllable, and Unified Reasoning via Mixture-of-Neurons",
+      "authors": [
+        "Haonan Dong",
+        "Kehan Jiang",
+        "Haoran Ye",
+        "Wenhao Zhu",
+        "Zhaolu Kang",
+        "Guojie Song"
+      ],
+      "abstract": "Large Reasoning Models (LRMs) have recently achieved remarkable success in complex reasoning tasks. However, closer scrutiny reveals persistent failure modes compromising performance and cost: I) Intra-step level, marked by calculation or derivation errors; II) Inter-step level, involving oscillation and stagnation; and III) Instance level, causing maladaptive over-thinking. Existing endeavors target isolated levels without unification, while their black-box nature and reliance on RL hinder explainability and controllability. To bridge these gaps, we conduct an in-depth white-box analysis, identifying key neurons (Mixture of Neurons, MoN) and their fluctuation patterns associated with distinct failures. Building upon these insights, we propose NeuReasoner, an explainable, controllable, and unified reasoning framework driven by MoN. Technically, NeuReasoner integrates lightweight MLPs for failure detection with a special token-triggered self-correction mechanism learned via SFT. During inference, special tokens are inserted upon failure detection to actuate controllable remedial behaviors. Extensive evaluations across six benchmarks, six backbone models (8B~70B) against nine competitive baselines, demonstrate that NeuReasoner achieves performance gains of up to 27.0% while reducing token consumption by 19.6% ~ 63.3%.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-04-06T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.02972",
+      "pdf_url": "https://arxiv.org/pdf/2604.02972",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Directly addresses long horizon scientific tasks and self-correction evaluation from Google Brainstorming, focusing on reasoning failure modes and controllable reasoning approaches."
+    },
+    {
+      "arxiv_id": "2604.03098",
+      "title": "Co-Evolution of Policy and Internal Reward for Language Agents",
+      "authors": [
+        "Xinyu Wang",
+        "Hanwei Wu",
+        "Jingwei Song",
+        "Shuyuan Zhang",
+        "Jiayi Zhang",
+        "Fanqi Kong",
+        "Tung Sum Thomas Kwok",
+        "Xiao-Wen Chang",
+        "Yuyu Luo",
+        "Chenglin Wu",
+        "Bang Liu"
+      ],
+      "abstract": "Large language model (LLM) agents learn by interacting with environments, but long-horizon training remains fundamentally bottlenecked by sparse and delayed rewards. Existing methods typically address this challenge through post-hoc credit assignment or external reward models, which provide limited guidance at inference time and often separate reward improvement from policy improvement. We propose Self-Guide, a self-generated internal reward for language agents that supports both inference-time guidance and training-time supervision. Specifically, the agent uses Self-Guide as a short self-guidance signal to steer the next action during inference, and converts the same signal into step-level internal reward for denser policy optimization during training. This creates a co-evolving loop: better policy produces better guidance, and better guidance further improves policy as internal reward. Across three agent benchmarks, inference-time self-guidance already yields clear gains, while jointly evolving policy and internal reward with GRPO brings further improvements (8\\%) over baselines trained solely with environment reward. Overall, our results suggest that language agents can improve not only by collecting more experience, but also by learning to generate and refine their own internal reward during acting and learning.",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-04-06T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.03098",
+      "pdf_url": "https://arxiv.org/pdf/2604.03098",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Co-evolution of policy and internal reward for language agents tackles long-horizon tasks and sparse reward problems, highly relevant to both long horizon scientific tasks and feedback/distillation interests."
+    },
+    {
+      "arxiv_id": "2604.02869",
+      "title": "Multi-Turn Reinforcement Learning for Tool-Calling Agents with Iterative Reward Calibration",
+      "authors": [
+        "Wachiravit Modecrua",
+        "Krittanon Kaewtawee",
+        "Krittin Pachtrachai",
+        "Touchapon Kraisingkorn"
+      ],
+      "abstract": "Training tool-calling agents with reinforcement learning on multi-turn tasks remains challenging due to sparse outcome rewards and difficult credit assignment across conversation turns. We present the first application of MT-GRPO (Multi-Turn Group Relative Policy Optimization) combined with GTPO (Generalized Token-level Policy Optimization) for training a tool-calling agent on realistic customer service tasks with an LLM-based user simulator. Through systematic analysis of training rollouts, we discover that naively designed dense per-turn rewards degrade performance by up to 14 percentage points due to misalignment between reward discriminativeness and advantage direction. We introduce Iterative Reward Calibration, a methodology for designing per-turn rewards using empirical discriminative analysis of rollout data, and show that our GTPO hybrid advantage formulation eliminates the advantage misalignment problem. Applied to the Tau-Bench airline benchmark, our approach improves Qwen3.5-4B from 63.8 percent to 66.7 percent (+2.9pp) and Qwen3-30B-A3B from 58.0 percent to 69.5 percent (+11.5pp) -- with the trained 4B model exceeding GPT-4.1 (49.4 percent) and GPT-4o (42.8 percent) despite being 50 times smaller, and the 30.5B MoE model approaching Claude Sonnet 4.5 (70.0 percent). To our knowledge, these are the first published RL training results on Tau-Bench. We release our code, reward calibration analysis, and training recipes.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-04-06T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.02869",
+      "pdf_url": "https://arxiv.org/pdf/2604.02869",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Multi-turn reinforcement learning with iterative reward calibration directly addresses scale-up feedback and on-policy distillation challenges mentioned in Hunter prep."
+    },
+    {
+      "arxiv_id": "2604.02341",
+      "title": "LLM Reasoning with Process Rewards for Outcome-Guided Steps",
+      "authors": [
+        "Mohammad Rezaei",
+        "Jens Lehmann",
+        "Sahar Vahdati"
+      ],
+      "abstract": "Mathematical reasoning in large language models has improved substantially with reinforcement learning using verifiable rewards, where final answers can be checked automatically and converted into reliable training signals. Most such pipelines optimize outcome correctness only, which yields sparse feedback for long, multi-step solutions and offers limited guidance on intermediate reasoning errors. Recent work therefore introduces process reward models (PRMs) to score intermediate steps and provide denser supervision. In practice, PRM scores are often imperfectly aligned with final correctness and can reward locally fluent reasoning that still ends in an incorrect answer. When optimized as absolute rewards, such signals can amplify fluent failure modes and induce reward hacking.   We propose PROGRS, a framework that leverages PRMs while keeping outcome correctness dominant. PROGRS treats process rewards as relative preferences within outcome groups rather than absolute targets. We introduce outcome-conditioned centering, which shifts PRM scores of incorrect trajectories to have zero mean within each prompt group. It removes systematic bias while preserving informative rankings. PROGRS combines a frozen quantile-regression PRM with a multi-scale coherence evaluator. We integrate the resulting centered process bonus into Group Relative Policy Optimization (GRPO) without auxiliary objectives or additional trainable components. Across MATH-500, AMC, AIME, MinervaMath, and OlympiadBench, PROGRS consistently improves Pass@1 over outcome-only baselines and achieves stronger performance with fewer rollouts. These results show that outcome-conditioned centering enables safe and effective use of process rewards for mathematical reasoning.",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-04-06T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.02341",
+      "pdf_url": "https://arxiv.org/pdf/2604.02341",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Process rewards for mathematical reasoning directly relates to better grading of long rollouts and addresses the challenge of sparse feedback in multi-step solutions."
+    },
+    {
+      "arxiv_id": "2604.02458",
+      "title": "When simulations look right but causal effects go wrong: Large language models as behavioral simulators",
+      "authors": [
+        "Zonghan Li",
+        "Feng Ji"
+      ],
+      "abstract": "Behavioral simulation is increasingly used to anticipate responses to interventions. Large language models (LLMs) enable researchers to specify population characteristics and intervention context in natural language, but it remains unclear to what extent LLMs can use these inputs to infer intervention effects. We evaluated three LLMs on 11 climate-psychology interventions using a dataset of 59,508 participants from 62 countries, and replicated the main analysis in two additional datasets (12 and 27 countries). LLMs reproduced observed patterns in attitudinal outcomes (e.g., climate beliefs and policy support) reasonably well, and prompting refinements improved this descriptive fit. However, descriptive fit did not reliably translate into causal fidelity (i.e., accurate estimates of intervention effects), and these two dimensions of accuracy followed different error structures. This descriptive-causal divergence held across the three datasets, but varied across intervention logics, with larger errors for interventions that depended on evoking internal experience than on directly conveying reasons or social cues. It was more pronounced for behavioral outcomes, where LLMs imposed stronger attitude-behavior coupling than in human data. Countries and population groups appearing well captured descriptively were not necessarily those with lower causal errors. Relying on descriptive fit alone may therefore create unwarranted confidence in simulation results, misleading conclusions about intervention effects and masking population disparities that matter for fairness.",
+      "categories": [
+        "cs.CY",
+        "cs.AI",
+        "cs.ET"
+      ],
+      "published": "2026-04-06T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.02458",
+      "pdf_url": "https://arxiv.org/pdf/2604.02458",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Directly addresses how LLMs handle behavioral simulation and intervention effects, which aligns well with the research interest in testing models with surprising information and hypothesis formation from noisy observations."
+    },
+    {
+      "arxiv_id": "2604.02648",
+      "title": "GBQA: A Game Benchmark for Evaluating LLMs as Quality Assurance Engineers",
+      "authors": [
+        "Shufan Jiang",
+        "Chios Chen",
+        "Zhiyang Chen"
+      ],
+      "abstract": "The autonomous discovery of bugs remains a significant challenge in modern software development. Compared to code generation, the complexity of dynamic runtime environments makes bug discovery considerably harder for large language models (LLMs). In this paper, we take game development as a representative domain and introduce the Game Benchmark for Quality Assurance (GBQA), a benchmark containing 30 games and 124 human-verified bugs across three difficulty levels, to evaluate whether LLMs can autonomously detect software bugs. The benchmark is constructed using a multi-agent system that develops games and injects bugs in a scalable manner, with human experts in the loop to ensure correctness. Moreover, we provide a baseline interactive agent equipped with a multi-round ReAct loop and a memory mechanism, enabling long-horizon exploration of game environments for bug detection across different LLMs. Extensive experiments on frontier LLMs demonstrate that autonomous bug discovery remains highly challenging: the best-performing model, Claude-4.6-Opus in thinking mode, identifies only 48.39% of the verified bugs. We believe GBQA provides an adequate testbed and evaluation criterion, and that further progress on it will help close the gap in autonomous software engineering.",
+      "categories": [
+        "cs.SE",
+        "cs.AI"
+      ],
+      "published": "2026-04-06T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.02648",
+      "pdf_url": "https://arxiv.org/pdf/2604.02648",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "GBQA introduces a benchmark for evaluating LLMs as quality assurance engineers in game development, which aligns well with creating concrete evaluation tasks for model capabilities and self-correction."
+    },
+    {
+      "arxiv_id": "2604.03179",
+      "title": "Understanding the Role of Hallucination in Reinforcement Post-Training of Multimodal Reasoning Models",
+      "authors": [
+        "Gengwei Zhang",
+        "Jie Peng",
+        "Zhen Tan",
+        "Mufan Qiu",
+        "Hossein Nourkhiz Mahjoub",
+        "Vaishnav Tadiparthi",
+        "Kwonjoon Lee",
+        "Yanyong Zhang",
+        "Tianlong Chen"
+      ],
+      "abstract": "The recent success of reinforcement learning (RL) in large reasoning models has inspired the growing adoption of RL for post-training Multimodal Large Language Models (MLLMs) to enhance their visual reasoning capabilities. Although many studies have reported improved performance, it remains unclear whether RL training truly enables models to learn from visual information. In this work, we propose the Hallucination-as-Cue Framework, an analytical framework designed to investigate the effects of RL-based post-training on multimodal reasoning models from the perspective of model hallucination. Specifically, we introduce hallucination-inductive, modality-specific corruptions that remove or replace essential information required to derive correct answers, thereby forcing the model to reason by hallucination. By applying these corruptions during both training and evaluation, our framework provides a unique perspective for diagnosing RL training dynamics and understanding the intrinsic properties of datasets. Through extensive experiments and analyses across multiple multimodal reasoning benchmarks, we reveal that the role of model hallucination for RL-training is more significant than previously recognized. For instance, we find that RL post-training under purely hallucination-inductive settings can still significantly improve models' reasoning performance, and in some cases even outperform standard training. These findings challenge prevailing assumptions about MLLM reasoning training and motivate the development of more modality-aware RL-based training designs.",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CV"
+      ],
+      "published": "2026-04-06T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.03179",
+      "pdf_url": "https://arxiv.org/pdf/2604.03179",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Highly relevant to understanding reinforcement learning in multimodal reasoning models and addresses the core question of whether models truly learn from visual information, connecting to self-correction and evaluation themes."
+    },
+    {
+      "arxiv_id": "2604.02543",
+      "title": "Overconfidence and Calibration in Medical VQA: Empirical Findings and Hallucination-Aware Mitigation",
+      "authors": [
+        "Ji Young Byun",
+        "Young-Jin Park",
+        "Jean-Philippe Corbeil",
+        "Asma Ben Abacha"
+      ],
+      "abstract": "As vision-language models (VLMs) are increasingly deployed in clinical decision support, more than accuracy is required: knowing when to trust their predictions is equally critical. Yet, a comprehensive and systematic investigation into the overconfidence of these models remains notably scarce in the medical domain. We address this gap through a comprehensive empirical study of confidence calibration in VLMs, spanning three model families (Qwen3-VL, InternVL3, LLaVA-NeXT), three model scales (2B--38B), and multiple confidence estimation prompting strategies, across three medical visual question answering (VQA) benchmarks. Our study yields three key findings: First, overconfidence persists across model families and is not resolved by scaling or prompting, such as chain-of-thought and verbalized confidence variants. Second, simple post-hoc calibration approaches, such as Platt scaling, reduce calibration error and consistently outperform the prompt-based strategy. Third, due to their (strict) monotonicity, these post-hoc calibration methods are inherently limited in improving the discriminative quality of predictions, leaving AUROC at the same level. Motivated by these findings, we investigate hallucination-aware calibration (HAC), which incorporates vision-grounded hallucination detection signals as complementary inputs to refine confidence estimates. We find that leveraging these hallucination signals improves both calibration and AUROC, with the largest gains on open-ended questions. Overall, our findings suggest post-hoc calibration as standard practice for medical VLM deployment over raw confidence estimates, and highlight the practical usefulness of hallucination signals to enable more reliable use of VLMs in medical VQA.",
+      "categories": [
+        "cs.CV",
+        "cs.LG"
+      ],
+      "published": "2026-04-06T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.02543",
+      "pdf_url": "https://arxiv.org/pdf/2604.02543",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Studies overconfidence and calibration in vision-language models, which directly relates to the project concerns about LM judge weaknesses and model reliability."
+    },
+    {
+      "arxiv_id": "2604.02423",
+      "title": "SWAY: A Counterfactual Computational Linguistic Approach to Measuring and Mitigating Sycophancy",
+      "authors": [
+        "Joy Bhalla",
+        "Kristina Gligori\\'c"
+      ],
+      "abstract": "Large language models exhibit sycophancy: the tendency to shift outputs toward user-expressed stances, regardless of correctness or consistency. While prior work has studied this issue and its impacts, rigorous computational linguistic metrics are needed to identify when models are being sycophantic. Here, we introduce SWAY, an unsupervised computational linguistic measure of sycophancy. We develop a counterfactual prompting mechanism to identify how much a model's agreement shifts under positive versus negative linguistic pressure, isolating framing effects from content. Applying this metric to benchmark 6 models, we find that sycophancy increases with epistemic commitment. Leveraging our metric, we introduce a counterfactual mitigation strategy teaching models to consider what the answer would be if opposite assumptions were suggested. While baseline mitigation instructing to be explicitly anti-sycophantic yields moderate reductions, and can backfire, our counterfactual CoT mitigation drives sycophancy to near zero across models, commitment levels, and clause types, while not suppressing responsiveness to genuine evidence. Overall, we contribute a metric for benchmarking sycophancy and a mitigation informed by it.",
+      "categories": [
+        "cs.CL",
+        "cs.CY"
+      ],
+      "published": "2026-04-06T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.02423",
+      "pdf_url": "https://arxiv.org/pdf/2604.02423",
+      "is_author_match": false,
+      "relevance_score": 7.0,
+      "relevance_reason": "Introduces computational linguistic metrics for measuring sycophancy in LLMs, which relates to understanding model failure modes and self-correction capabilities mentioned in the brainstorming notes."
+    },
+    {
+      "arxiv_id": "2604.02795",
+      "title": "Rubrics to Tokens: Bridging Response-level Rubrics and Token-level Rewards in Instruction Following Tasks",
+      "authors": [
+        "Tianze Xu",
+        "Yanzhao Zheng",
+        "Pengrui Lu",
+        "Lyumanshan Ye",
+        "Yong Wu",
+        "Zhentao Zhang",
+        "Yuanqiang Yu",
+        "Chao Ma",
+        "Jihuai Zhu",
+        "Pengfei Liu",
+        "Baohua Dong",
+        "Hangcheng Zhu",
+        "Ruohui Huang",
+        "Gang Yu"
+      ],
+      "abstract": "Rubric-based Reinforcement Learning (RL) has emerged as a promising approach for aligning Large Language Models (LLMs) with complex, open-domain instruction following tasks. However, existing methods predominantly rely on response-level rewards, introducing severe reward sparsity and reward ambiguity problems. To address these issues, we propose Rubrics to Tokens (RTT), a novel rubric-based RL framework that bridges coarse response-level scores and fine-grained token-level credit assignment. RTT introduces a Token-Level Relevance Discriminator to predict which tokens in the response are responsible for a specific constraint, and optimizes the policy model via RTT-GRPO, which integrates response-level and token-level advantages within a unified framework. Furthermore, when transitioning from one-dimensional, outcome-level reward to three-dimensional reward space in the token-level rubric-based RL, we propose a novel group normalization method, called Intra-sample Token Group Normalization, to accommodate this shift. Extensive experiments and benchmarks demonstrate that RTT consistently outperforms other baselines in both instruction- and rubric-level accuracy across different models.",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-04-06T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.02795",
+      "pdf_url": "https://arxiv.org/pdf/2604.02795",
+      "is_author_match": false,
+      "relevance_score": 7.0,
+      "relevance_reason": "Addresses the reward sparsity problem in RL by bridging response-level and token-level rewards, directly relevant to improving grading of long rollouts."
+    },
+    {
+      "arxiv_id": "2604.02923",
+      "title": "Council Mode: Mitigating Hallucination and Bias in LLMs via Multi-Agent Consensus",
+      "authors": [
+        "Shuai Wu",
+        "Xue Li",
+        "Yanna Feng",
+        "Yufang Li",
+        "Zhijun Wang"
+      ],
+      "abstract": "Large Language Models (LLMs), particularly those employing Mixture-of-Experts (MoE) architectures, have achieved remarkable capabilities across diverse natural language processing tasks. However, these models frequently suffer from hallucinations -- generating plausible but factually incorrect content -- and exhibit systematic biases that are amplified by uneven expert activation during inference. In this paper, we propose the Council Mode, a novel multi-agent consensus framework that addresses these limitations by dispatching queries to multiple heterogeneous frontier LLMs in parallel and synthesizing their outputs through a dedicated consensus model. The Council pipeline operates in three phases: (1) an intelligent triage classifier that routes queries based on complexity, (2) parallel expert generation across architecturally diverse models, and (3) a structured consensus synthesis that explicitly identifies agreement, disagreement, and unique findings before producing the final response. We implement and evaluate this architecture within an open-source AI workspace. Our comprehensive evaluation across multiple benchmarks demonstrates that the Council Mode achieves a 35.9% relative reduction in hallucination rates on the HaluEval benchmark and a 7.8-point improvement on TruthfulQA compared to the best-performing individual model, while maintaining significantly lower bias variance across domains. We provide the mathematical formulation of the consensus mechanism, detail the system architecture, and present extensive empirical results with ablation studies.",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-04-06T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.02923",
+      "pdf_url": "https://arxiv.org/pdf/2604.02923",
+      "is_author_match": false,
+      "relevance_score": 7.0,
+      "relevance_reason": "Directly relevant to Hunter Prep project on LM judge weaknesses and grading improvements, as it addresses mitigating hallucination and bias in LLMs via multi-agent consensus."
+    },
+    {
+      "arxiv_id": "2604.03004",
+      "title": "R2-Write: Reflection and Revision for Open-Ended Writing with Deep Reasoning",
+      "authors": [
+        "Wanlong Liu",
+        "Bo Zhang",
+        "Chenliang Li",
+        "Shaopeng Lai",
+        "Yuning Wu",
+        "Xuanyu Lei",
+        "Ming Yan"
+      ],
+      "abstract": "While deep reasoning with long chain-of-thought has dramatically improved large language models in verifiable domains like mathematics, its effectiveness for open-ended tasks such as writing remains unexplored. In this paper, we conduct a systematic investigation revealing that existing mainstream reasoning models achieve limited gains on open-ended writing tasks. Our further analysis shows that these models lack deep reflection and revision patterns in open-ended writing, resulting in substantially smaller improvements compared to mathematical reasoning tasks. To address this limitation, we introduce R2-Write: an automated framework that synthesizes high-quality thinking trajectories enriched with explicit reflection and revision patterns through iterative writer-judge interaction. To prevent redundant reflections, we design a process reward mechanism that supervises reflection quality during reinforcement learning, improving both performance and token efficiency. Extensive experiments across multiple creative writing and deep-research benchmarks demonstrate significant improvements, validating that explicitly incorporating reflection and revision patterns unlocks deep reasoning capabilities for open-ended writing tasks.",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-04-06T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.03004",
+      "pdf_url": "https://arxiv.org/pdf/2604.03004",
+      "is_author_match": false,
+      "relevance_score": 7.0,
+      "relevance_reason": "Relevant to self-correction evaluation and long horizon tasks, as it investigates deep reasoning with reflection and revision for open-ended writing tasks."
+    },
+    {
+      "arxiv_id": "2604.02967",
+      "title": "FoE: Forest of Errors Makes the First Solution the Best in Large Reasoning Models",
+      "authors": [
+        "Kehan Jiang",
+        "Haonan Dong",
+        "Zhaolu Kang",
+        "Zhengzhou Zhu",
+        "Guojie Song"
+      ],
+      "abstract": "Recent Large Reasoning Models (LRMs) like DeepSeek-R1 have demonstrated remarkable success in complex reasoning tasks, exhibiting human-like patterns in exploring multiple alternative solutions. Upon closer inspection, however, we uncover a surprising phenomenon: The First is The Best, where alternative solutions are not merely suboptimal but potentially detrimental. This observation challenges widely accepted test-time scaling laws, leading us to hypothesize that errors within the reasoning path scale concurrently with test time. Through comprehensive empirical analysis, we characterize errors as a forest-structured Forest of Errors (FoE) and conclude that FoE makes the First the Best, which is underpinned by rigorous theoretical analysis. Leveraging these insights, we propose RED, a self-guided efficient reasoning framework comprising two components: I) Refining First, which suppresses FoE growth in the first solution; and II) Discarding Subs, which prunes subsequent FoE via dual-consistency. Extensive experiments across five benchmarks and six backbone models demonstrate that RED outperforms eight competitive baselines, achieving performance gains of up to 19.0% while reducing token consumption by 37.7% ~ 70.4%. Moreover, comparative experiments on FoE metrics shed light on how RED achieves effectiveness.",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-04-06T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.02967",
+      "pdf_url": "https://arxiv.org/pdf/2604.02967",
+      "is_author_match": false,
+      "relevance_score": 7.0,
+      "relevance_reason": "Directly addresses self-correction evaluation by studying how large reasoning models explore alternative solutions, which aligns with the brainstorming interest in explicit self-correction type evaluations."
+    },
+    {
+      "arxiv_id": "2604.03128",
+      "title": "Self-Distilled RLVR",
+      "authors": [
+        "Chenxu Yang",
+        "Chuanyu Qin",
+        "Qingyi Si",
+        "Minghui Chen",
+        "Naibin Gu",
+        "Dingyu Yao",
+        "Zheng Lin",
+        "Weiping Wang",
+        "Jiaqi Wang",
+        "Nan Duan"
+      ],
+      "abstract": "On-policy distillation (OPD) has become a popular training paradigm in the LLM community. This paradigm selects a larger model as the teacher to provide dense, fine-grained signals for each sampled trajectory, in contrast to reinforcement learning with verifiable rewards (RLVR), which only obtains sparse signals from verifiable outcomes in the environment. Recently, the community has explored on-policy self-distillation (OPSD), where the same model serves as both teacher and student, with the teacher receiving additional privileged information such as reference answers to enable self-evolution. This paper demonstrates that learning signals solely derived from the privileged teacher result in severe information leakage and unstable long-term training. Accordingly, we identify the optimal niche for self-distillation and propose \\textbf{RLSD} (\\textbf{RL}VR with \\textbf{S}elf-\\textbf{D}istillation). Specifically, we leverage self-distillation to obtain token-level policy differences for determining fine-grained update magnitudes, while continuing to use RLVR to derive reliable update directions from environmental feedback (e.g., response correctness). This enables RLSD to simultaneously harness the strengths of both RLVR and OPSD, achieving a higher convergence ceiling and superior training stability.",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "published": "2026-04-06T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.03128",
+      "pdf_url": "https://arxiv.org/pdf/2604.03128",
+      "is_author_match": false,
+      "relevance_score": 7.0,
+      "relevance_reason": "Self-distilled RLVR focuses on on-policy distillation and dense vs sparse signals, directly addressing the Hunter prep interests in scaling feedback and on-policy distillation."
+    },
+    {
+      "arxiv_id": "2604.02734",
+      "title": "Aligning Progress and Feasibility: A Neuro-Symbolic Dual Memory Framework for Long-Horizon LLM Agents",
+      "authors": [
+        "Bin Wen",
+        "Ruoxuan Zhang",
+        "Yang Chen",
+        "Hongxia Xie",
+        "Lan-Zhe Guo"
+      ],
+      "abstract": "Large language models (LLMs) have demonstrated strong potential in long-horizon decision-making tasks, such as embodied manipulation and web interaction. However, agents frequently struggle with endless trial-and-error loops or deviate from the main objective in complex environments. We attribute these failures to two fundamental errors: global Progress Drift and local Feasibility Violation. Existing methods typically attempt to address both issues simultaneously using a single paradigm. However, these two challenges are fundamentally distinct: the former relies on fuzzy semantic planning, while the latter demands strict logical constraints and state validation. The inherent limitations of such a single-paradigm approach pose a fundamental challenge for existing models in handling long-horizon tasks. Motivated by this insight, we propose a Neuro-Symbolic Dual Memory Framework that explicitly decouples semantic progress guidance from logical feasibility verification. Specifically, during the inference phase, the framework invokes both memory mechanisms synchronously: on one hand, a neural-network-based Progress Memory extracts semantic blueprints from successful trajectories to guide global task advancement; on the other hand, a symbolic-logic-based Feasibility Memory utilizes executable Python verification functions synthesized from failed transitions to perform strict logical validation. Experiments demonstrate that this method significantly outperforms existing competitive baselines on ALFWorld, WebShop, and TextCraft, while drastically reducing the invalid action rate and average trajectory length.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-04-06T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.02734",
+      "pdf_url": "https://arxiv.org/pdf/2604.02734",
+      "is_author_match": false,
+      "relevance_score": 7.0,
+      "relevance_reason": "Addresses long-horizon LLM agents and trial-and-error loops through dual memory framework, highly relevant to long horizon scientific tasks and complex domain evaluation."
+    },
+    {
+      "arxiv_id": "2604.02794",
+      "title": "CharTool: Tool-Integrated Visual Reasoning for Chart Understanding",
+      "authors": [
+        "Situo Zhang",
+        "Yifan Zhang",
+        "Zichen Zhu",
+        "Da Ma",
+        "Lei Pan",
+        "Danyang Zhang",
+        "Zihan Zhao",
+        "Lu Chen",
+        "Kai Yu"
+      ],
+      "abstract": "Charts are ubiquitous in scientific and financial literature for presenting structured data. However, chart reasoning remains challenging for multimodal large language models (MLLMs) due to the lack of high-quality training data, as well as the need for fine-grained visual grounding and precise numerical computation. To address these challenges, we first propose DuoChart, a scalable dual-source data pipeline that combines synthesized charts with real-world charts to construct diverse, high-quality chart training data. We then introduce CharTool, which equips MLLMs with external tools, including image cropping for localized visual perception and code-based computation for accurate numerical reasoning. Through agentic reinforcement learning on DuoChart, CharTool learns tool-integrated reasoning grounded in chart content. Extensive experiments on six chart benchmarks show that our method consistently improves over strong MLLM baselines across model scales. Notably, CharTool-7B outperforms the base model by **+8.0%** on CharXiv (Reasoning) and **+9.78%** on ChartQAPro, while achieving competitive performance with substantially larger or proprietary models. Moreover, CharTool demonstrates positive generalization to out-of-domain visual math reasoning benchmarks.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-04-06T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.02794",
+      "pdf_url": "https://arxiv.org/pdf/2604.02794",
+      "is_author_match": false,
+      "relevance_score": 7.0,
+      "relevance_reason": "Tool-integrated visual reasoning aligns with long-horizon scientific tasks and grading complex rollouts, plus addresses model limitations in chart understanding which could inform LM judge weaknesses."
+    },
+    {
+      "arxiv_id": "2604.03016",
+      "title": "Agentic-MME: What Agentic Capability Really Brings to Multimodal Intelligence?",
+      "authors": [
+        "Qianshan Wei",
+        "Yishan Yang",
+        "Siyi Wang",
+        "Jinglin Chen",
+        "Binyu Wang",
+        "Jiaming Wang",
+        "Shuang Chen",
+        "Zechen Li",
+        "Yang Shi",
+        "Yuqi Tang",
+        "Weining Wang",
+        "Yi Yu",
+        "Chaoyou Fu",
+        "Qi Li",
+        "Yi-Fan Zhang"
+      ],
+      "abstract": "Multimodal Large Language Models (MLLMs) are evolving from passive observers into active agents, solving problems through Visual Expansion (invoking visual tools) and Knowledge Expansion (open-web search). However, existing evaluations fall short: they lack flexible tool integration, test visual and search tools separately, and evaluate primarily by final answers. Consequently, they cannot verify if tools were actually invoked, applied correctly, or used efficiently. To address this, we introduce Agentic-MME, a process-verified benchmark for Multimodal Agentic Capabilities. It contains 418 real-world tasks across 6 domains and 3 difficulty levels to evaluate capability synergy, featuring over 2,000 stepwise checkpoints that average 10+ person-hours of manual annotation per task. Each task includes a unified evaluation framework supporting sandboxed code and APIs, alongside a human reference trajectory annotated with stepwise checkpoints along dual-axis: S-axis and V-axis. To enable true process-level verification, we audit fine-grained intermediate states rather than just final answers, and quantify efficiency via an overthinking metric relative to human trajectories. Experimental results show the best model, Gemini3-pro, achieves 56.3% overall accuracy, which falls significantly to 23.0% on Level-3 tasks, underscoring the difficulty of real-world multimodal agentic problem solving.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-04-06T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.03016",
+      "pdf_url": "https://arxiv.org/pdf/2604.03016",
+      "is_author_match": false,
+      "relevance_score": 7.0,
+      "relevance_reason": "Evaluation of agentic capabilities in multimodal intelligence addresses gaps in testing complex reasoning and tool use, relevant to long-horizon scientific tasks."
+    }
+  ]
+}
