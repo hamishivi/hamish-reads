@@ -1,0 +1,540 @@
+{
+  "date": "2026-04-21",
+  "generated_at": "2026-04-21T03:50:48.054548+00:00",
+  "author_papers": [
+    {
+      "arxiv_id": "2604.15574",
+      "title": "Why Fine-Tuning Encourages Hallucinations and How to Fix It",
+      "authors": [
+        "Guy Kaplan",
+        "Zorik Gekhman",
+        "Zhen Zhu",
+        "Lotem Rozner",
+        "Yuval Reif",
+        "Swabha Swayamdipta",
+        "Derek Hoiem",
+        "Roy Schwartz"
+      ],
+      "abstract": "Large language models are prone to hallucinating factually incorrect statements. A key source of these errors is exposure to new factual information through supervised fine-tuning (SFT), which can increase hallucinations w.r.t. knowledge acquired during pre-training. In this work, we explore whether SFT-induced hallucinations can be mitigated using established tools from the continual learning literature, since they arise as a by-product of knowledge degradation during training. We propose a self-distillation-based SFT method that facilitates effective factual learning while minimizing hallucinations w.r.t. pre-existing knowledge by regularizing output-distribution drift. We also show that, in settings where new knowledge acquisition is unnecessary, suppressing factual plasticity by freezing parameter groups, can preserve task performance while reducing hallucinations. Lastly, we investigate the mechanism behind SFT-induced hallucinations through three hypotheses: capacity limitations, behavior cloning, and localized interference. Our experiments show that a main driver is interference among overlapping semantic representations, and that self-distillation succeeds by mitigating this interference.",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG",
+        "cs.NE"
+      ],
+      "published": "2026-04-20T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.15574",
+      "pdf_url": "https://arxiv.org/pdf/2604.15574",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2604.15607",
+      "title": "Imperfectly Cooperative Human-AI Interactions: Comparing the Impacts of Human and AI Attributes in Simulated and User Studies",
+      "authors": [
+        "Myke C. Cohen",
+        "Mingqian Zheng",
+        "Neel Bhandari",
+        "Hsien-Te Kao",
+        "Xuhui Zhou",
+        "Daniel Nguyen",
+        "Laura Cassani",
+        "Maarten Sap",
+        "Svitlana Volkova"
+      ],
+      "abstract": "AI design characteristics and human personality traits each impact the quality and outcomes of human-AI interactions. However, their relative and joint impacts are underexplored in imperfectly cooperative scenarios, where people and AI only have partially aligned goals and objectives. This study compares a purely simulated dataset comprising 2,000 simulations and a parallel human subjects experiment involving 290 human participants to investigate these effects across two scenario categories: (1) hiring negotiations between human job candidates and AI hiring agents; and (2) human-AI transactions wherein AI agents may conceal information to maximize internal goals. We examine user Extraversion and Agreeableness alongside AI design characteristics, including Adaptability, Expertise, and chain-of-thought Transparency. Our causal discovery analysis extends performance-focused evaluations by integrating scenario-based outcomes, communication analysis, and questionnaire measures. Results reveal divergences between purely simulated and human study datasets, and between scenario types. In simulation experiments, personality traits and AI attributes were comparatively influential. Yet, with actual human subjects, AI attributes -- particularly transparency -- were much more impactful. We discuss how these divergences vary across different interaction contexts, offering crucial insights for the future of human-centered AI agents.",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.CY",
+        "cs.HC"
+      ],
+      "published": "2026-04-20T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.15607",
+      "pdf_url": "https://arxiv.org/pdf/2604.15607",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2604.15672",
+      "title": "Faster LLM Inference via Sequential Monte Carlo",
+      "authors": [
+        "Yahya Emara",
+        "Mauricio Barba da Costa",
+        "Chi-Chih Chang",
+        "Cameron Freer",
+        "Tim Vieira",
+        "Ryan Cotterell",
+        "Mohamed S. Abdelfattah"
+      ],
+      "abstract": "Speculative decoding (SD) accelerates language model inference by drafting tokens from a cheap proposal model and verifying them against an expensive target model via rejection sampling. Because rejection truncates the draft block at the first error, throughput degrades when draft and target diverge. Rather than rejecting draft tokens outright, we propose to reweight them. To this end, we introduce sequential Monte Carlo speculative decoding (SMC-SD), which replaces token-level rejection with importance-weighted resampling over a population of draft particles. SMC-SD is a principled approximate inference scheme that trades exactness for additional speed, while preserving theoretical bounds on its per-step approximation error. Because LLM inference is memory bandwidth-bound, the arithmetic needed to draft particles and to score them in parallel comes nearly for free -- SMC-SD uses idle compute to turn verification into a vectorized, fixed-size operation with no rollback. Empirically, SMC-SD achieves 2.36x speed-up over speculative decoding and a 5.2x speed-up over autoregressive decoding, while remaining within 3% of the target model's accuracy on reasoning, instruction-following, and coding benchmarks.",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "published": "2026-04-20T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.15672",
+      "pdf_url": "https://arxiv.org/pdf/2604.15672",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2604.16242",
+      "title": "Detecting and Suppressing Reward Hacking with Gradient Fingerprints",
+      "authors": [
+        "Songtao Wang",
+        "Quang Hieu Pham",
+        "Fangcong Yin",
+        "Xinpeng Wang",
+        "Jocelyn Qiaochu Chen",
+        "Greg Durrett",
+        "Xi Ye"
+      ],
+      "abstract": "Reinforcement learning with verifiable rewards (RLVR) typically optimizes for outcome rewards without imposing constraints on intermediate reasoning. This leaves training susceptible to reward hacking, where models exploit loopholes (e.g., spurious patterns in training data) in the reward function to achieve high scores without solving the intended task. These reward-hacking behaviors are often implicit, as the intermediate chain-of-thought (CoT) may appear plausible on the surface, limiting the effectiveness of purely text-based monitoring. We propose Gradient Fingerprint (GRIFT), a method for detecting reward hacking using models' internal computations. Given a prompt and a model-generated CoT, GRIFT computes gradients of the CoT conditioned on the prompt and compresses them into a compact representation, which is then used to assess whether the CoT reflects reward hacking behavior. Across verifiable reasoning benchmarks spanning math, code, and logical reasoning, GRIFT substantially outperforms strong baselines, including CoT Monitor and TRACE, achieving over 25% relative improvement in detecting reward hacking behavior. Moreover, integrating GRIFT into the rejection fine-tuning pipeline for reasoning tasks reduces reward hacking and improves performance on the true task objective. Our results highlight a promising direction of leveraging gradient level representations for assessing the quality of CoT reasoning traces. Our code is available at: https://github.com/songtao-x/reward_hack.",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "published": "2026-04-20T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.16242",
+      "pdf_url": "https://arxiv.org/pdf/2604.16242",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    }
+  ],
+  "ranked_papers": [
+    {
+      "arxiv_id": "2604.15343",
+      "title": "When the Loop Closes: Architectural Limits of In-Context Isolation, Metacognitive Co-option, and the Two-Target Design Problem in Human-LLM Systems",
+      "authors": [
+        "Z. Cheng",
+        "N. Song"
+      ],
+      "abstract": "We report a detailed autoethnographic case study of a single-subject who deliberately constructed and operated a multi-modal prompt-engineering system (System A) designed to externalize cognitive self-regulation onto a large language model (LLM). Within 48 hours of the system's completion, a cascade of observable behavioral changes occurred: voluntary transfer of decision-making authority to the LLM, use of LLM-generated output to deflect external criticism, and a loss of self-initiated reasoning that was independently perceived by two uninformed observers, one of whom subsequently became a co-author of this report. We document the precise architectural mechanism responsible: context contamination, whereby prompt-level isolation instructions co-exist with the very emotional and self-referential material they nominally isolate, rendering the isolation directive structurally ineffective within the attention window. We further identify a metacognitive co-option dynamic, in which intact higher-order reasoning capacity was redirected toward defending the closed loop rather than exiting it. Recovery occurred only after physical interruption of the interaction and a self-initiated pharmacologically-mediated sleep event functioning as an external circuit break. A redesigned system (System B) employing physical rather than logical conversation isolation avoided all analogous failure modes. We derive three contributions: (1) a technically-grounded account of why prompt-layer isolation is architecturally insufficient for context-sensitive multi-modal LLM systems; (2) a phenomenological record of closed-loop collapse with external-witness corroboration; and (3) an ethical distinction between protective system design (preventing unintended loss of user agency) and restrictive system design (preventing intentional boundary-pushing), which require fundamentally different account-ability frameworks.",
+      "categories": [
+        "cs.HC",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-04-20T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.15343",
+      "pdf_url": "https://arxiv.org/pdf/2604.15343",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Provides detailed case study of human-LLM behavioral changes and decision-making transfer, which is highly relevant to understanding long-horizon tasks and surprising information handling in the brainstorming notes."
+    },
+    {
+      "arxiv_id": "2604.16060",
+      "title": "Chain-of-Thought Degrades Visual Spatial Reasoning Capabilities of Multimodal LLMs",
+      "authors": [
+        "Sai Srinivas Kancheti",
+        "Aditya Sanjiv Kanade",
+        "Vineeth N. Balasubramanian",
+        "Tanuja Ganu"
+      ],
+      "abstract": "Multimodal Reasoning Models (MRMs) leveraging Chain-of-Thought (CoT) based thinking have revolutionized mathematical and logical problem-solving. However, we show that this paradigm struggles with generalized spatial intelligence. We perform a comprehensive evaluation of seventeen models across thirteen spatial benchmarks and identify a critical gap: CoT prompting consistently degrades performance in visual spatial reasoning. Furthermore, through a novel No-Image++ ablation, we demonstrate that MRMs and CoT prompted MLMs suffer from severe shortcut learning, and hallucinate visual details from textual priors even when the image is absent. These findings challenge the efficacy of text-only CoT for spatial tasks and underscore the need for vision-centric reasoning paradigms.",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "published": "2026-04-20T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.16060",
+      "pdf_url": "https://arxiv.org/pdf/2604.16060",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Specifically evaluates how chain-of-thought prompting fails in spatial reasoning tasks across multiple models, directly addressing how models handle challenging/surprising information."
+    },
+    {
+      "arxiv_id": "2604.15505",
+      "title": "PolicyBank: Evolving Policy Understanding for LLM Agents",
+      "authors": [
+        "Jihye Choi",
+        "Jinsung Yoon",
+        "Long T. Le",
+        "Somesh Jha",
+        "Tomas Pfister"
+      ],
+      "abstract": "LLM agents operating under organizational policies must comply with authorization constraints typically specified in natural language. In practice, such specifications inevitably contain ambiguities and logical or semantic gaps that cause the agent's behavior to systematically diverge from the true requirements. We ask: by letting an agent evolve its policy understanding through interaction and corrective feedback from pre-deployment testing, can it autonomously refine its interpretation to close specification gaps? We propose PolicyBank, a memory mechanism that maintains structured, tool-level policy insights and iteratively refines them -- unlike existing memory mechanisms that treat the policy as immutable ground truth, reinforcing \"compliant but wrong\" behaviors. We also contribute a systematic testbed by extending a popular tool-calling benchmark with controlled policy gaps that isolate alignment failures from execution failures. While existing memory mechanisms achieve near-zero success on policy-gap scenarios, PolicyBank closes up to 82% of the gap toward a human oracle.",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-04-20T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.15505",
+      "pdf_url": "https://arxiv.org/pdf/2604.15505",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Highly relevant as it explores how LLM agents can evolve their understanding through interaction, directly addressing self-correction and learning from failure states."
+    },
+    {
+      "arxiv_id": "2604.15597",
+      "title": "LLMs Corrupt Your Documents When You Delegate",
+      "authors": [
+        "Philippe Laban",
+        "Tobias Schnabel",
+        "Jennifer Neville"
+      ],
+      "abstract": "Large Language Models (LLMs) are poised to disrupt knowledge work, with the emergence of delegated work as a new interaction paradigm (e.g., vibe coding). Delegation requires trust - the expectation that the LLM will faithfully execute the task without introducing errors into documents. We introduce DELEGATE-52 to study the readiness of AI systems in delegated workflows. DELEGATE-52 simulates long delegated workflows that require in-depth document editing across 52 professional domains, such as coding, crystallography, and music notation. Our large-scale experiment with 19 LLMs reveals that current models degrade documents during delegation: even frontier models (Gemini 3.1 Pro, Claude 4.6 Opus, GPT 5.4) corrupt an average of 25% of document content by the end of long workflows, with other models failing more severely. Additional experiments reveal that agentic tool use does not improve performance on DELEGATE-52, and that degradation severity is exacerbated by document size, length of interaction, or presence of distractor files. Our analysis shows that current LLMs are unreliable delegates: they introduce sparse but severe errors that silently corrupt documents, compounding over long interaction.",
+      "categories": [
+        "cs.CL",
+        "cs.HC"
+      ],
+      "published": "2026-04-20T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.15597",
+      "pdf_url": "https://arxiv.org/pdf/2604.15597",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Studies LLM reliability in delegated workflows and error introduction, directly relevant to evaluation of model capabilities and failure modes."
+    },
+    {
+      "arxiv_id": "2604.15702",
+      "title": "The Metacognitive Monitoring Battery: A Cross-Domain Benchmark for LLM Self-Monitoring",
+      "authors": [
+        "Jon-Paul Cacioli"
+      ],
+      "abstract": "We introduce a cross-domain behavioural assay of monitoring-control coupling in LLMs, grounded in the Nelson and Narens (1990) metacognitive framework and applying human psychometric methodology to LLM evaluation. The battery comprises 524 items across six cognitive domains (learning, metacognitive calibration, social cognition, attention, executive function, prospective regulation), each grounded in an established experimental paradigm. Tasks T1-T5 were pre-registered on OSF prior to data collection; T6 was added as an exploratory extension. After every forced-choice response, dual probes adapted from Koriat and Goldsmith (1996) ask the model to KEEP or WITHDRAW its answer and to BET or decline. The critical metric is the withdraw delta: the difference in withdrawal rate between incorrect and correct items. Applied to 20 frontier LLMs (10,480 evaluations), the battery discriminates three profiles consistent with the Nelson-Narens architecture: blanket confidence, blanket withdrawal, and selective sensitivity. Accuracy rank and metacognitive sensitivity rank are largely inverted. Retrospective monitoring and prospective regulation appear dissociable (r = .17, 95% CI wide given n=20; exemplar-based evidence is the primary support). Scaling on metacognitive calibration is architecture-dependent: monotonically decreasing (Qwen), monotonically increasing (GPT-5.4), or flat (Gemma). Behavioural findings converge structurally with an independent Type-2 SDT approach, providing preliminary cross-method construct validity. All items, data, and code: https://github.com/synthiumjp/metacognitive-monitoring-battery.",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "published": "2026-04-20T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.15702",
+      "pdf_url": "https://arxiv.org/pdf/2604.15702",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Provides a cross-domain benchmark for LLM self-monitoring and metacognitive capabilities, highly relevant to measuring model self-correction abilities."
+    },
+    {
+      "arxiv_id": "2604.15771",
+      "title": "Skill-RAG: Failure-State-Aware Retrieval Augmentation via Hidden-State Probing and Skill Routing",
+      "authors": [
+        "Kai Wei",
+        "Raymond Li",
+        "Xi Zhu",
+        "Zhaoqian Xue",
+        "Jiaojiao Han",
+        "Jingcheng Niu",
+        "Fan Yang"
+      ],
+      "abstract": "Retrieval-Augmented Generation (RAG) has emerged as a foundational paradigm for grounding large language models in external knowledge. While adaptive retrieval mechanisms have improved retrieval efficiency, existing approaches treat post-retrieval failure as a signal to retry rather than to diagnose -- leaving the structural causes of query-evidence misalignment unaddressed. We observe that a significant portion of persistent retrieval failures stem not from the absence of relevant evidence but from an alignment gap between the query and the evidence space. We propose Skill-RAG, a failure-aware RAG framework that couples a lightweight hidden-state prober with a prompt-based skill router. The prober gates retrieval at two pipeline stages; upon detecting a failure state, the skill router diagnoses the underlying cause and selects among four retrieval skills -- query rewriting, question decomposition, evidence focusing, and an exit skill for truly irreducible cases -- to correct misalignment before the next generation attempt. Experiments across multiple open-domain QA and complex reasoning benchmarks show that Skill-RAG substantially improves accuracy on hard cases persisting after multi-turn retrieval, with particularly strong gains on out-of-distribution datasets. Representation-space analyses further reveal that the proposed skills occupy structured, separable regions of the failure state space, supporting the view that query-evidence misalignment is a typed rather than monolithic phenomenon.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-04-20T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.15771",
+      "pdf_url": "https://arxiv.org/pdf/2604.15771",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Explores failure-state-aware retrieval and diagnosis of query-evidence misalignment, directly relevant to failure analysis and self-correction evaluation."
+    },
+    {
+      "arxiv_id": "2604.15840",
+      "title": "CoEvolve: Training LLM Agents via Agent-Data Mutual Evolution",
+      "authors": [
+        "Shidong Yang",
+        "Ziyu Ma",
+        "Tongwen Huang",
+        "Yiming Hu",
+        "Yong Wang",
+        "Xiangxiang Chu"
+      ],
+      "abstract": "Reinforcement learning for LLM agents is typically conducted on a static data distribution, which fails to adapt to the agent's evolving behavior and leads to poor coverage of complex environment interactions. To address these challenges, we propose CoEvolve, an agent-data mutual evolution framework that enables LLM agents to improve through closed-loop, interaction-driven training. Specifically, CoEvolve extracts feedback signals such as forgetting and uncertainty from rollout trajectories to identify failure-prone interaction patterns, and utilizes them to guide LLM-based task synthesis. The synthesized tasks are validated through environment interaction and utilized to update the data distribution, enabling joint adaptation of the agent and its data. Extensive experiments on AppWorld and BFCL across Qwen2.5-7B, Qwen3-4B, and Qwen3-30B-A3B demonstrate consistent and significant improvements over strong base models, yielding absolute gains of 19.43%, 15.58%, and 18.14%, respectively.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-04-20T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.15840",
+      "pdf_url": "https://arxiv.org/pdf/2604.15840",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Proposes agent-data mutual evolution framework with closed-loop training, highly relevant to self-correction and learning from interaction mentioned in projects."
+    },
+    {
+      "arxiv_id": "2604.15400",
+      "title": "Hallucination as Trajectory Commitment: Causal Evidence for Asymmetric Attractor Dynamics in Transformer Generation",
+      "authors": [
+        "G. Aytug Akarlar"
+      ],
+      "abstract": "We present causal evidence that hallucination in autoregressive language models is an early trajectory commitment governed by asymmetric attractor dynamics. Using same-prompt bifurcation, in which we repeatedly sample identical inputs to observe spontaneous divergence, we isolate trajectory dynamics from prompt-level confounds. On Qwen2.5-1.5B across 61 prompts spanning six categories, 27 prompts (44.3%) bifurcate with factual and hallucinated trajectories diverging at the first generated token (KL = 0 at step 0, KL > 1.0 at step 1). Activation patching across 28 layers reveals a pronounced causal asymmetry: injecting a hallucinated activation into a correct trajectory corrupts output in 87.5% of trials (layer 20), while the reverse recovers only 33.3% (layer 24); both exceed the 10.4% baseline (p = 0.025) and 12.5% random-patch control. Window patching shows correction requires sustained multi-step intervention, whereas corruption needs only a single perturbation. Probing the prompt encoding itself, step-0 residual states predict per-prompt hallucination rate at Pearson r = 0.776 at layer 15 (p < 0.001 against a 1000-permutation null); unsupervised clustering identifies five regime-like groups (eta^2 = 0.55) whose saddle-adjacent cluster concentrates 12 of the 13 bifurcating false-premise prompts, indicating that the basin structure is organized around regime commitments fixed at prompt encoding. These findings characterize hallucination as a locally stable attractor basin: entry is probabilistic and rapid, exit demands coordinated intervention across layers and steps, and the relevant basins are selected by clusterable regimes already discernible at step 0.",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-04-20T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.15400",
+      "pdf_url": "https://arxiv.org/pdf/2604.15400",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Provides causal evidence for trajectory commitment and attractor dynamics in transformer generation, highly relevant to understanding how models commit to reasoning paths and handle surprising information."
+    },
+    {
+      "arxiv_id": "2604.16009",
+      "title": "MEDLEY-BENCH: Scale Buys Evaluation but Not Control in AI Metacognition",
+      "authors": [
+        "Farhad Abtahi",
+        "Abdolamir Karbalaie",
+        "Eduardo Illueca-Fernandez",
+        "Fernando Seoane"
+      ],
+      "abstract": "Metacognition, the ability to monitor and regulate one's own reasoning, remains under-evaluated in AI benchmarking. We introduce MEDLEY-BENCH, a benchmark of behavioural metacognition that separates independent reasoning, private self-revision, and socially influenced revision under genuine inter-model disagreement. The benchmark evaluates 35 models from 12 families on 130 ambiguous instances across five domains and reports two complementary scores: the Medley Metacognition Score (MMS), a tier-based aggregate of reflective updating, social robustness, and epistemic articulation, and the Medley Ability Score (MAS), derived from four metacognitive sub-abilities. Results show a robust evaluation/control dissociation: evaluation ability increases with model size within families, whereas control does not. In a follow-up progressive adversarial analysis of 11 models, we observed two behavioural profiles, i.e., models that revise primarily in response to argument quality and models that track consensus statistics. Under within-model relative profiling (ipsative scoring), evaluation was the weakest relative ability in all 35 models, indicating a systematic knowing/doing gap. Smaller and cheaper models often matched or outperformed larger counterparts, suggesting that metacognitive competence is not simply a function of scale. These findings position MEDLEY-BENCH as a tool for measuring belief revision under social pressure and suggest that future training should reward calibrated, proportional updating rather than output quality alone.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-04-20T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.16009",
+      "pdf_url": "https://arxiv.org/pdf/2604.16009",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Directly evaluates AI metacognition and self-correction abilities across multiple models, which strongly matches the brainstorming focus on self-correction evaluations and dealing with surprising information."
+    },
+    {
+      "arxiv_id": "2604.16286",
+      "title": "ASMR-Bench: Auditing for Sabotage in ML Research",
+      "authors": [
+        "Eric Gan",
+        "Aryan Bhatt",
+        "Buck Shlegeris",
+        "Julian Stastny",
+        "Vivek Hebbar"
+      ],
+      "abstract": "As AI systems are increasingly used to conduct research autonomously, misaligned systems could introduce subtle flaws that produce misleading results while evading detection. We introduce ASMR-Bench (Auditing for Sabotage in ML Research), a benchmark for evaluating the ability of auditors to detect sabotage in ML research codebases. ASMR-Bench consists of 9 ML research codebases with sabotaged variants that produce qualitatively different experimental results. Each sabotage modifies implementation details, such as hyperparameters, training data, or evaluation code, while preserving the high-level methodology described in the paper. We evaluated frontier LLMs and LLM-assisted human auditors on ASMR-Bench and found that both struggled to reliably detect sabotage: the best performance was an AUROC of 0.77 and a top-1 fix rate of 42%, achieved by Gemini 3.1 Pro. We also tested LLMs as red teamers and found that LLM-generated sabotages were weaker than human-generated ones but still sometimes evaded same-capability LLM auditors. We release ASMR-Bench to support research on monitoring and auditing techniques for AI-conducted research.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-04-20T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.16286",
+      "pdf_url": "https://arxiv.org/pdf/2604.16286",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Introduces a benchmark for detecting subtle flaws in ML research, which directly relates to grading effectiveness and evaluation rigor discussed in Hunter Prep and Shuchao Chat."
+    },
+    {
+      "arxiv_id": "2604.15411",
+      "title": "PRL-Bench: A Comprehensive Benchmark Evaluating LLMs' Capabilities in Frontier Physics Research",
+      "authors": [
+        "Tingjia Miao",
+        "Wenkai Jin",
+        "Muhua Zhang",
+        "Jinxin Tan",
+        "Yuelin Hu",
+        "Tu Guo",
+        "Jiejun Zhang",
+        "Yuhan Wang",
+        "Wenbo Li",
+        "Yinuo Gao",
+        "Shuo Chen",
+        "Weiqi Jiang",
+        "Yayun Hu",
+        "Zixing Lei",
+        "Xianghe Pang",
+        "Zexi Liu",
+        "Yuzhi Zhang",
+        "Linfeng Zhang",
+        "Kun Chen",
+        "Wei Wang",
+        "Weinan E",
+        "Siheng Chen"
+      ],
+      "abstract": "The paradigm of agentic science requires AI systems to conduct robust reasoning and engage in long-horizon, autonomous exploration. However, current scientific benchmarks remain confined to domain knowledge comprehension and complex reasoning, failing to evaluate the exploratory nature and procedural complexity of real-world research. In this work, we present research-oriented evaluations in theoretical and computational physics, a natural testbed with comprehensive domain knowledge, complex reasoning, and verifiable end-to-end workflows without reliance on experiments. Here we introduce PRL-Bench (Physics Research by LLMs), a benchmark designed to systematically map the capability boundaries of LLMs in executing end-to-end physics research. Constructed from 100 curated papers from the latest issues of Physical Review Letters since August 2025 and validated by domain experts, PRL-Bench covers five major theory- and computation-intensive subfields of modern physics: astrophysics, condensed matter physics, high-energy physics, quantum information, and statistical physics. Each task in the benchmark is designed to replicate the core properties of authentic scientific research, including exploration-oriented formulation, long-horizon workflows, and objective verifiability, thereby reconstructing the essential reasoning processes and research workflows of real physics research. Evaluation across frontier models shows that performance remains limited, with the best overall score below 50, revealing a pronounced gap between current LLM capabilities and the demands of real scientific research. PRL-Bench serves a reliable testbed for accessing next generation AI scientists advancing AI systems toward autonomous scientific discovery.",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "physics.data-an"
+      ],
+      "published": "2026-04-20T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.15411",
+      "pdf_url": "https://arxiv.org/pdf/2604.15411",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "PRL-Bench directly addresses long-horizon autonomous exploration in frontier physics research, perfectly matching the brainstorming focus on long horizon scientific tasks and autonomous research capabilities."
+    },
+    {
+      "arxiv_id": "2604.15725",
+      "title": "Reasoning-targeted Jailbreak Attacks on Large Reasoning Models via Semantic Triggers and Psychological Framing",
+      "authors": [
+        "Zehao Wang",
+        "Lanjun Wang"
+      ],
+      "abstract": "Large Reasoning Models (LRMs) have demonstrated strong capabilities in generating step-by-step reasoning chains alongside final answers, enabling their deployment in high-stakes domains such as healthcare and education. While prior jailbreak attack studies have focused on the safety of final answers, little attention has been given to the safety of the reasoning process. In this work, we identify a novel problem that injects harmful content into the reasoning steps while preserving unchanged answers. This type of attack presents two key challenges: 1) manipulating the input instructions may inadvertently alter the LRM's final answer, and 2) the diversity of input questions makes it difficult to consistently bypass the LRM's safety alignment mechanisms and embed harmful content into its reasoning process. To address these challenges, we propose the Psychology-based Reasoning-targeted Jailbreak Attack (PRJA) Framework, which integrates a Semantic-based Trigger Selection module and a Psychology-based Instruction Generation module. Specifically, the proposed PRJA automatically selects manipulative reasoning triggers via semantic analysis and leverages psychological theories of obedience to authority and moral disengagement to generate adaptive instructions for enhancing the LRM's compliance with harmful content generation. Extensive experiments on five question-answering datasets demonstrate that PRJA achieves an average attack success rate of 83.6\\% against several commercial LRMs, including DeepSeek R1, Qwen2.5-Max, and OpenAI o4-mini.",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-04-20T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.15725",
+      "pdf_url": "https://arxiv.org/pdf/2604.15725",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Highly relevant for evaluating reasoning safety in LLMs, addressing jailbreak attacks on reasoning processes which connects to self-correction evaluation and LM judge weaknesses mentioned in Hunter Prep."
+    },
+    {
+      "arxiv_id": "2604.15787",
+      "title": "EVIL: Evolving Interpretable Algorithms for Zero-Shot Inference on Event Sequences and Time Series with LLMs",
+      "authors": [
+        "David Berghaus"
+      ],
+      "abstract": "We introduce EVIL (\\textbf{EV}olving \\textbf{I}nterpretable algorithms with \\textbf{L}LMs), an approach that uses LLM-guided evolutionary search to discover simple, interpretable algorithms for dynamical systems inference. Rather than training neural networks on large datasets, EVIL evolves pure Python/NumPy programs that perform zero-shot, in-context inference across datasets. We apply EVIL to three distinct tasks: next-event prediction in temporal point processes, rate matrix estimation for Markov jump processes, and time series imputation. In each case, a single evolved algorithm generalizes across all evaluation datasets without per-dataset training (analogous to an amortized inference model). To the best of our knowledge, this is the first work to show that LLM-guided program evolution can discover a single compact inference function for these dynamical-systems problems. Across the three domains, the discovered algorithms are often competitive with, and even outperform, state-of-the-art deep learning models while being orders of magnitudes faster, and remaining fully interpretable.",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-04-20T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.15787",
+      "pdf_url": "https://arxiv.org/pdf/2604.15787",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Directly addresses zero-shot inference and interpretable algorithm discovery, which aligns with testing models on surprising information and developing explicit self-correction evaluations."
+    },
+    {
+      "arxiv_id": "2604.16054",
+      "title": "Mind's Eye: A Benchmark of Visual Abstraction, Transformation and Composition for Multimodal LLMs",
+      "authors": [
+        "Rohit Sinha",
+        "Aditya Kanade",
+        "Sai Srinivas Kancheti",
+        "Vineeth N Balasubramanian",
+        "Tanuja Ganu"
+      ],
+      "abstract": "Multimodal large language models (MLLMs) have achieved impressive progress on vision language benchmarks, yet their capacity for visual cognitive and visuospatial reasoning remains less understood. We introduce \"Mind's Eye\", a multiple-choice benchmark of eight visuo-cognitive tasks inspired by classic human intelligence tests and organized under a novel \"A-R-T\" taxonomy: Abstraction, Relation, and Transformation. The tasks probe core processes of fluid intelligence such as pattern induction, analogical relation mapping, and mental transformation. We evaluate a diverse suite of closed-source and open-source MLLMs and compare their performance with human participants. Humans achieve 80% accuracy, while top performing MLLMs remain below 50%. Error analysis reveals failures in: (i) visual attention allocation, (ii) internal perceptual manipulation, and (iii) weak abstraction of underlying visual concepts. Our findings suggest that current MLLMs exhibit limited visuospatial reasoning capabilities, when compared with human participants, highlighting the need for more cognitively grounded evaluation frameworks.",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "published": "2026-04-20T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.16054",
+      "pdf_url": "https://arxiv.org/pdf/2604.16054",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Directly addresses visual cognitive reasoning in multimodal LLMs with a novel benchmark, highly relevant to understanding model capabilities and limitations in complex reasoning tasks."
+    },
+    {
+      "arxiv_id": "2604.15350",
+      "title": "The Spectral Geometry of Thought: Phase Transitions, Instruction Reversal, Token-Level Dynamics, and Perfect Correctness Prediction in How Transformers Reason",
+      "authors": [
+        "Yi Liu"
+      ],
+      "abstract": "We discover that large language models exhibit \\emph{spectral phase transitions} in their hidden activation spaces when engaging in reasoning versus factual recall. Through systematic spectral analysis across \\textbf{11 models} spanning \\textbf{5 architecture families} (Qwen, Pythia, Phi, Llama, DeepSeek-R1), we identify \\textbf{seven} core phenomena: (1)~\\textbf{Reasoning Spectral Compression} -- 9/11 models show significantly lower $\\alpha$ for reasoning ($p < 0.05$), with larger effects in stronger models; (2)~\\textbf{Instruction Tuning Spectral Reversal} -- base models show reasoning $\\alpha < $ factual $\\alpha$, while instruction-tuned models reverse this relationship; (3)~\\textbf{Architecture-Dependent Generation Taxonomy} -- prompt-to-response shifts partition into expansion, compression, and equilibrium regimes; (4)~\\textbf{Spectral Scaling Law} -- $\\alpha_\\text{reasoning} \\propto -0.074 \\ln N$ across 4 Qwen base models ($R^2 = 0.46$); (5)~\\textbf{Token-Level Spectral Cascade} -- per-token alpha tracking reveals local synchronization that decays exponentially with layer distance, and is weaker for reasoning than factual tasks; (6)~\\textbf{Reasoning Step Spectral Punctuation} -- phase-transition signatures align with reasoning step boundaries; and (7)~\\textbf{Spectral Correctness Prediction} -- spectral $\\alpha$ alone achieves AUC $= 1.000$ (Qwen2.5-7B, late layers) and mean AUC $= 0.893$ across 6 models in predicting correctness \\emph{before} the final answer is generated. Together, these findings establish a comprehensive \\emph{spectral theory of reasoning} in transformers, revealing that the geometry of thought is universal in direction, architecture-specific in dynamics, and predictive of outcome.",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-04-20T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.15350",
+      "pdf_url": "https://arxiv.org/pdf/2604.15350",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Provides deep analysis of transformer reasoning mechanisms through spectral analysis, offering insights into how models process different types of tasks and potentially predicting correctness."
+    },
+    {
+      "arxiv_id": "2604.15664",
+      "title": "Stargazer: A Scalable Model-Fitting Benchmark Environment for AI Agents under Astrophysical Constraints",
+      "authors": [
+        "Xinge Liu",
+        "Terry Jingchen Zhang",
+        "Bernhard Sch\\\"olkopf",
+        "Zhijing Jin",
+        "Kristen Menou"
+      ],
+      "abstract": "The rise of autonomous AI agents suggests that dynamic benchmark environments with built-in feedback on scientifically grounded tasks are needed to evaluate the capabilities of these agents in research work. We introduce Stargazer, a scalable environment for evaluating AI agents on dynamic, iterative physics-grounded model-fitting tasks using inference on radial-velocity (RV) time series data. Stargazer comprises 120 tasks across three difficulty tiers, including 20 real archival cases, covering diverse scenarios ranging from high-SNR single-planet systems to complex multi-planetary configurations requiring involved low-SNR analysis. Our evaluation of eight frontier agents reveals a gap between numerical optimization and adherence to physical constraints: although agents often achieve a good statistical fit, they frequently fail to recover correct physical system parameters, a limitation that persists even when agents are equipped with vanilla skills. Furthermore, increasing test-time compute yields only marginal gains, with excessive token usage often reflecting recursive failure loops rather than meaningful exploration. Stargazer presents an opportunity to train, evaluate, scaffold, and scale strategies on a model-fitting problem of practical research relevance today. Our methodology to design a simulation-driven environment for AI agents presumably generalizes to many other model-fitting problems across scientific domains. Source code and the project website are available at https://github.com/Gudmorning2025/Stargazer and https://gudmorning2025.github.io/Stargazer, respectively.",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-04-20T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.15664",
+      "pdf_url": "https://arxiv.org/pdf/2604.15664",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Stargazer provides a dynamic benchmark environment for iterative physics-grounded model-fitting tasks, directly addressing long horizon scientific tasks and how models deal with surprising information."
+    },
+    {
+      "arxiv_id": "2604.16197",
+      "title": "Sketching the Readout of Large Language Models for Scalable Data Attribution and Valuation",
+      "authors": [
+        "Yide Ran",
+        "Jianwen Xie",
+        "Minghui Wang",
+        "Wenjin Zheng",
+        "Denghui Zhang",
+        "Chuan Li",
+        "Zhaozhuo Xu"
+      ],
+      "abstract": "Data attribution and valuation are critical for understanding data-model synergy for Large Language Models (LLMs), yet existing gradient-based methods suffer from scalability challenges on LLMs. Inspired by human cognition, where decision making relies on a focused readout of relevant memories rather than replaying all pathways, we introduce RISE (Readout Influence Sketching Estimator). Instead of computing and indexing gradients across the entire LLM, RISE focuses on influence hotspots at the output layer, where influence signals concentrate, and the gradient admits a decomposed outer-product form. This enables a dual-channel representation combining a lexical residual channel (RH) and a semantic projected-error channel (GH). Applying CountSketch projections to these channels achieves strong compression while maintaining accurate attribution. Across the OLMo (1B-32B) and Pythia (14M-6.9B) families, RISE reduces index storage by up to 112$\\times$ compared to RapidIn and scales to 32B parameters LLM, where gradient-based baselines such as RapidIn and ZO-Inf become memory-infeasible. We evaluate RISE on two paradigms: (1) retrospective attribution, retrieving influential training examples for specific predictions, and (2) prospective valuation, scoring candidate data utility zero-shot. We validate RISE on three tasks: Howdy backdoor data detection, Finance-Medical domain separation, and Brain Rot high-quality data selection. In a closed-loop Brain Rot study, continued pretraining on RISE-selected data yields consistent downstream improvements. Overall, RISE provides a practical and scalable primitive for influence analysis and training-data selection in modern large language models.",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-04-20T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.16197",
+      "pdf_url": "https://arxiv.org/pdf/2604.16197",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Directly addresses data attribution and valuation for LLMs with a scalable gradient-based method, highly relevant to understanding model behavior and evaluation."
+    },
+    {
+      "arxiv_id": "2604.15371",
+      "title": "Applied Explainability for Large Language Models: A Comparative Study",
+      "authors": [
+        "Venkata Abhinandan Kancharla"
+      ],
+      "abstract": "Large language models (LLMs) achieve strong performance across many natural language processing tasks, yet their decision processes remain difficult to interpret. This lack of transparency creates challenges for trust, debugging, and deployment in real-world systems.   This paper presents an applied comparative study of three explainability techniques: Integrated Gradients, Attention Rollout, and SHAP, on a fine-tuned DistilBERT model for SST-2 sentiment classification. Rather than proposing new methods, the focus is on evaluating the practical behavior of existing approaches under a consistent and reproducible setup.   The results show that gradient-based attribution provides more stable and intuitive explanations, while attention-based methods are computationally efficient but less aligned with prediction-relevant features. Model-agnostic approaches offer flexibility but introduce higher computational cost and variability.   This work highlights key trade-offs between explainability methods and emphasizes their role as diagnostic tools rather than definitive explanations. The findings provide practical insights for researchers and engineers working with transformer-based NLP systems.   This is a preprint and has not undergone peer review.",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-04-20T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.15371",
+      "pdf_url": "https://arxiv.org/pdf/2604.15371",
+      "is_author_match": false,
+      "relevance_score": 7.0,
+      "relevance_reason": "Directly relevant to understanding LLM decision processes and interpretability, which aligns with research on model self-correction and evaluation."
+    },
+    {
+      "arxiv_id": "2604.15588",
+      "title": "\"Excuse me, may I say something...\" CoLabScience, A Proactive AI Assistant for Biomedical Discovery and LLM-Expert Collaborations",
+      "authors": [
+        "Yang Wu",
+        "Jinhong Yu",
+        "Jingwei Xiong",
+        "Zhimin Tao",
+        "Xiaozhong Liu"
+      ],
+      "abstract": "The integration of Large Language Models (LLMs) into scientific workflows presents exciting opportunities to accelerate biomedical discovery. However, the reactive nature of LLMs, which respond only when prompted, limits their effectiveness in collaborative settings that demand foresight and autonomous engagement. In this study, we introduce CoLabScience, a proactive LLM assistant designed to enhance biomedical collaboration between AI systems and human experts through timely, context-aware interventions. At the core of our method is PULI (Positive-Unlabeled Learning-to-Intervene), a novel framework trained with a reinforcement learning objective to determine when and how to intervene in streaming scientific discussions, by leveraging the team's project proposal and long- and short-term conversational memory. To support this work, we introduce BSDD (Biomedical Streaming Dialogue Dataset), a new benchmark of simulated research discussion dialogues with intervention points derived from PubMed articles. Experimental results show that PULI significantly outperforms existing baselines in both intervention precision and collaborative task utility, highlighting the potential of proactive LLMs as intelligent scientific assistants.",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.HC",
+        "cs.LG"
+      ],
+      "published": "2026-04-20T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.15588",
+      "pdf_url": "https://arxiv.org/pdf/2604.15588",
+      "is_author_match": false,
+      "relevance_score": 7.0,
+      "relevance_reason": "Explores proactive AI assistants for scientific discovery, relevant to long horizon scientific tasks and autonomous engagement mentioned in the brainstorming."
+    },
+    {
+      "arxiv_id": "2604.15701",
+      "title": "Improving Reasoning Capabilities in Small Models through Mixture-of-Layers Distillation with Stepwise Attention on Key Information",
+      "authors": [
+        "Yao Chen",
+        "Jiawei Sheng",
+        "Wenyuan Zhang",
+        "Tingwen Liu"
+      ],
+      "abstract": "The significant computational demands of large language models have increased interest in distilling reasoning abilities into smaller models via Chain-of-Thought (CoT) distillation. Current CoT distillation methods mainly focus on transferring teacher-generated rationales for complex reasoning to student models. However, they do not adequately explore teachers' dynamic attention toward critical information during reasoning. We find that language models exhibit progressive attention shifts towards key information during reasoning, which implies essential clues for drawing conclusions. Building on this observation and analysis, we introduce a novel CoT distillation framework that transfers the teacher's stepwise attention on key information to the student model. This establishes structured guidance for the student's progressive concentration on key information during reasoning. More importantly, we develop a Mixture of Layers module enabling dynamic alignment that adapts to different layers between the teacher and student. Our method achieves consistent performance improvements across multiple mathematical and commonsense reasoning datasets. To our knowledge, it is the first method to leverage stepwise attention within CoT distillation to improve small model reasoning.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-04-20T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.15701",
+      "pdf_url": "https://arxiv.org/pdf/2604.15701",
+      "is_author_match": false,
+      "relevance_score": 7.0,
+      "relevance_reason": "Focuses on improving reasoning capabilities in smaller models through distillation, relevant to scaling feedback and model evaluation."
+    }
+  ]
+}
