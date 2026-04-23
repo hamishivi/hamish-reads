@@ -1,0 +1,708 @@
+{
+  "date": "2026-04-23",
+  "generated_at": "2026-04-23T03:52:53.844582+00:00",
+  "author_papers": [
+    {
+      "arxiv_id": "2604.18712",
+      "title": "Probing for Reading Times",
+      "authors": [
+        "Eleftheria Tsipidi",
+        "Samuel Kiegeland",
+        "Francesco Ignazio Re",
+        "Tianyang Xu",
+        "Mario Giulianelli",
+        "Karolina Stanczak",
+        "Ryan Cotterell"
+      ],
+      "abstract": "Probing has shown that language model representations encode rich linguistic information, but it remains unclear whether they also capture cognitive signals about human processing. In this work, we probe language model representations for human reading times. Using regularized linear regression on two eye-tracking corpora spanning five languages (English, Greek, Hebrew, Russian, and Turkish), we compare the representations from every model layer against scalar predictors -- surprisal, information value, and logit-lens surprisal. We find that the representations from early layers outperform surprisal in predicting early-pass measures such as first fixation and gaze duration. The concentration of predictive power in the early layers suggests that human-like processing signatures are captured by low-level structural or lexical representations, pointing to a functional alignment between model depth and the temporal stages of human reading. In contrast, for late-pass measures such as total reading time, scalar surprisal remains superior, despite its being a much more compressed representation. We also observe performance gains when using both surprisal and early-layer representations. Overall, we find that the best-performing predictor varies strongly depending on the language and eye-tracking measure.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-04-22T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.18712",
+      "pdf_url": "https://arxiv.org/pdf/2604.18712",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2604.19642",
+      "title": "Micro Language Models Enable Instant Responses",
+      "authors": [
+        "Wen Cheng",
+        "Tuochao Chen",
+        "Karim Helwani",
+        "Sriram Srinivasan",
+        "Luke Zettlemoyer",
+        "Shyamnath Gollakota"
+      ],
+      "abstract": "Edge devices such as smartwatches and smart glasses cannot continuously run even the smallest 100M-1B parameter language models due to power and compute constraints, yet cloud inference introduces multi-second latencies that break the illusion of a responsive assistant. We introduce micro language models ($\\mu$LMs): ultra-compact models (8M-30M parameters) that instantly generate the first 4-8 words of a contextually grounded response on-device, while a cloud model completes it; thus, masking the cloud latency. We show that useful language generation survives at this extreme scale with our models matching several 70M-256M-class existing models. We design a collaborative generation framework that reframes the cloud model as a continuator rather than a respondent, achieving seamless mid-sentence handoffs and structured graceful recovery via three error correction methods when the local opener goes wrong. Empirical results show that $\\mu$LMs can initiate responses that larger models complete seamlessly, demonstrating that orders-of-magnitude asymmetric collaboration is achievable and unlocking responsive AI for extremely resource-constrained devices. The model checkpoint and demo are available at https://github.com/Sensente/micro_language_model_swen_project.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-04-22T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.19642",
+      "pdf_url": "https://arxiv.org/pdf/2604.19642",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2604.19459",
+      "title": "Do LLMs Game Formalization? Evaluating Faithfulness in Logical Reasoning",
+      "authors": [
+        "Kyuhee Kim",
+        "Auguste Poiroux",
+        "Antoine Bosselut"
+      ],
+      "abstract": "Formal verification guarantees proof validity but not formalization faithfulness. For natural-language logical reasoning, where models construct axiom systems from scratch without library constraints, this gap between valid proofs and faithful translations is especially acute. We investigate whether frontier models exploit this gap when generating Lean 4 proofs, a behavior we term formalization gaming.   We evaluate GPT-5 and DeepSeek-R1 on 303 first-order logic problems (203 from FOLIO, 100 from Multi-LogiEval), comparing unified generation against a two-stage pipeline that separates formalization from proving. Despite compilation rates of 87-99%, we find no evidence of systematic gaming in unified generation: models prefer reporting failure over forcing proofs, even under prompting designed to encourage it. However, unfaithfulness that evades our detection signals may still occur. The two-stage pipeline reveals two distinct modes of unfaithfulness: GPT-5 fabricates axioms during proof generation, a reactive fallback detectable via cross-stage comparison, while DeepSeek-R1 mistranslates premises during formalization, producing internally consistent outputs that evade detection entirely. These findings show that high compilation rates or accuracies should not be equated with faithful reasoning. Code and data are available at https://github.com/koreankiwi99/formalization-gaming.",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LO"
+      ],
+      "published": "2026-04-22T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.19459",
+      "pdf_url": "https://arxiv.org/pdf/2604.19459",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2604.19211",
+      "title": "ClawNet: Human-Symbiotic Agent Network for Cross-User Autonomous Cooperation",
+      "authors": [
+        "Zhiqin Yang",
+        "Zhenyuan Zhang",
+        "Xianzhang Jia",
+        "Jun Song",
+        "Wei Xue",
+        "Yonggang Zhang",
+        "Yike Guo"
+      ],
+      "abstract": "Current AI agent frameworks have made remarkable progress in automating individual tasks, yet all existing systems serve a single user. Human productivity rests on the social and organizational relationships through which people coordinate, negotiate, and delegate. When agents move beyond performing tasks for one person to representing that person in collaboration with others, the infrastructure for cross-user agent collaboration is entirely absent, let alone the governance mechanisms needed to secure it. We argue that the next frontier for AI agents lies not in stronger individual capability, but in the digitization of human collaborative relationships. To this end, we propose a human-symbiotic agent paradigm. Each user owns a permanently bound agent system that collaborates on the owner's behalf, forming a network whose nodes are humans rather than agents. This paradigm rests on three governance primitives. A layered identity architecture separates a Manager Agent from multiple context-specific Identity Agents; the Manager Agent holds global knowledge but is architecturally isolated from external communication. Scoped authorization enforces per-identity access control and escalates boundary violations to the owner. Action-level accountability logs every operation against its owner's identity and authorization, ensuring full auditability. We instantiate this paradigm in ClawNet, an identity-governed agent collaboration framework that enforces identity binding and authorization verification through a central orchestrator, enabling multiple users to collaborate securely through their respective agents.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-04-22T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.19211",
+      "pdf_url": "https://arxiv.org/pdf/2604.19211",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2604.19083",
+      "title": "ProjLens: Unveiling the Role of Projectors in Multimodal Model Safety",
+      "authors": [
+        "Kun Wang",
+        "Cheng Qian",
+        "Miao Yu",
+        "Lilan Peng",
+        "Liang Lin",
+        "Jiaming Zhang",
+        "Tianyu Zhang",
+        "Yu Cheng",
+        "Yang Wang"
+      ],
+      "abstract": "Multimodal Large Language Models (MLLMs) have achieved remarkable success in cross-modal understanding and generation, yet their deployment is threatened by critical safety vulnerabilities. While prior works have demonstrated the feasibility of backdoors in MLLMs via fine-tuning data poisoning to manipulate inference, the underlying mechanisms of backdoor attacks remain opaque, complicating the understanding and mitigation. To bridge this gap, we propose ProjLens, an interpretability framework designed to demystify MLLMs backdoors. We first establish that normal downstream task alignment--even when restricted to projector fine--tuning--introduces vulnerability to backdoor injection, whose activation mechanism is different from that observed in text-only LLMs. Through extensive experiments across four backdoor variants, we uncover:(1) Low-Rank Structure: Backdoor injection updates appear overall full-rank and lack dedicated ``trigger neurons'', but the backdoor-critical parameters are encoded within a low-rank subspace of the projector;(2) Activation Mechanism: Both clean and poisoned embedding undergoes a semantic shift toward a shared direction aligned with the backdoor target, but the shifting magnitude scales linearly with the input norm, resulting in the distinct backdoor activation on poisoned samples. Our code is available at: https://anonymous.4open.science/r/ProjLens-8FD7",
+      "categories": [
+        "cs.CR",
+        "cs.AI"
+      ],
+      "published": "2026-04-22T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.19083",
+      "pdf_url": "https://arxiv.org/pdf/2604.19083",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2604.19167",
+      "title": "LBLLM: Lightweight Binarization of Large Language Models via Three-Stage Distillation",
+      "authors": [
+        "Siqing Song",
+        "Chuang Wang",
+        "Yong Lang",
+        "Yi Yang",
+        "Xu-Yao Zhang"
+      ],
+      "abstract": "Deploying large language models (LLMs) in resource-constrained environments is hindered by heavy computational and memory requirements. We present LBLLM, a lightweight binarization framework that achieves effective W(1+1)A4 quantization through a novel three-stage quantization strategy. The framework proceeds as follows: (1) initialize a high-quality quantized model via PTQ; (2) quantize binarized weights, group-wise bitmaps, and quantization parameters through layer-wise distillation while keeping activations in full precision; and (3) training learnable activation quantization factors to dynamically quantize activations to 4 bits. This decoupled design mitigates interference between weight and activation quantization, yielding greater training stability and better inference accuracy. LBLLM, trained only using 0.016B tokens with a single GPU, surpasses existing state-of-the-art binarization methods on W2A4 quantization settings across tasks of language modeling, commonsense QA, and language understanding. These results demonstrate that extreme low-bit quantization of LLMs can be both practical and highly effective without introducing any extra high-precision channels or rotational matrices commonly used in recent PTQ-based works, offering a promising path toward efficient LLM deployment in resource-limited situations.",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-04-22T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.19167",
+      "pdf_url": "https://arxiv.org/pdf/2604.19167",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2604.19341",
+      "title": "Evaluation-driven Scaling for Scientific Discovery",
+      "authors": [
+        "Haotian Ye",
+        "Haowei Lin",
+        "Jingyi Tang",
+        "Yizhen Luo",
+        "Caiyin Yang",
+        "Chang Su",
+        "Rahul Thapa",
+        "Rui Yang",
+        "Ruihua Liu",
+        "Zeyu Li",
+        "Chong Gao",
+        "Dachao Ding",
+        "Guangrong He",
+        "Miaolei Zhang",
+        "Lina Sun",
+        "Wenyang Wang",
+        "Yuchen Zhong",
+        "Zhuohao Shen",
+        "Di He",
+        "Jianzhu Ma",
+        "Stefano Ermon",
+        "Tongyang Li",
+        "Xiaowen Chu",
+        "James Zou",
+        "Yuzhi Xu"
+      ],
+      "abstract": "Language models are increasingly used in scientific discovery to generate hypotheses, propose candidate solutions, implement systems, and iteratively refine them. At the core of these trial-and-error loops lies evaluation: the process of obtaining feedback on candidate solutions via verifiers, simulators, or task-specific scoring functions. While prior work has highlighted the importance of evaluation, it has not explicitly formulated the problem of how evaluation-driven discovery loops can be scaled up in a principled and effective manner to push the boundaries of scientific discovery, a problem this paper seeks to address. We introduce Simple Test-time Evaluation-driven Scaling (SimpleTES), a general framework that strategically combines parallel exploration, feedback-driven refinement, and local selection, revealing substantial gains unlocked by scaling evaluation-driven discovery loops along the right dimensions. Across 21 scientific problems spanning six domains, SimpleTES discovers state-of-the-art solutions using gpt-oss models, consistently outperforming both frontier-model baselines and sophisticated optimization pipelines. Particularly, we sped up the widely used LASSO algorithm by over 2x, designed quantum circuit routing policies that reduce gate overhead by 24.5%, and discovered new Erdos minimum overlap constructions that surpass the best-known results. Beyond novel discoveries, SimpleTES produces trajectory-level histories that naturally supervise feedback-driven learning. When post-trained on successful trajectories, models not only improve efficiency on seen problems but also generalize to unseen problems, discovering solutions that base models fail to uncover. Together, our results establish effective evaluation-driven loop scaling as a central axis for advancing LLM-driven scientific discovery, and provide a simple yet practical framework for realizing these gains.",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-04-22T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.19341",
+      "pdf_url": "https://arxiv.org/pdf/2604.19341",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2604.19540",
+      "title": "Mesh Memory Protocol: Semantic Infrastructure for Multi-Agent LLM Systems",
+      "authors": [
+        "Hongwei Xu"
+      ],
+      "abstract": "Teams of LLM agents increasingly collaborate on tasks spanning days or weeks: multi-day data-generation sprints where generator, reviewer, and auditor agents coordinate in real time on overlapping batches; specialists carrying findings forward across session restarts; product decisions compounding over many review rounds. This requires agents to share, evaluate, and combine each other's cognitive state in real time across sessions. We call this cross-session agent-to-agent cognitive collaboration, distinct from parallel agent execution. To enable it, three problems must be solved together. (P1) Each agent decides field by field what to accept from peers, not accept or reject whole messages. (P2) Every claim is traceable to source, so returning claims are recognised as echoes of the receiver's own prior thinking. (P3) Memory that survives session restarts is relevant because of how it was stored, not how it is retrieved. These are protocol-level properties at the semantic layer of agent communication, distinct from tool-access and task-delegation protocols at lower layers. We call this missing protocol layer \"semantic infrastructure,\" and the Mesh Memory Protocol (MMP) specifies it. Four composable primitives work together: CAT7, a fixed seven-field schema for every Cognitive Memory Block (CMB); SVAF, which evaluates each field against the receiver's role-indexed anchors and realises P1; inter-agent lineage, carried as parents and ancestors of content-hash keys and realising P2; and remix, which stores only the receiver's own role-evaluated understanding of each accepted CMB, never the raw peer signal, realising P3. MMP is specified, shipped, and running in production across three reference deployments, where each session runs an autonomous agent as a mesh peer with its own identity and memory, collaborating with other agents across the network for collective intelligence.",
+      "categories": [
+        "cs.MA",
+        "cs.AI"
+      ],
+      "published": "2026-04-22T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.19540",
+      "pdf_url": "https://arxiv.org/pdf/2604.19540",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2604.19157",
+      "title": "SAW-INT4: System-Aware 4-Bit KV-Cache Quantization for Real-World LLM Serving",
+      "authors": [
+        "Jinda Jia",
+        "Jisen Li",
+        "Zhongzhu Zhou",
+        "Jung Hwan Heo",
+        "Jue Wang",
+        "Tri Dao",
+        "Shuaiwen Leon Song",
+        "Ben Athiwaratkun",
+        "Chenfeng Xu",
+        "Tianyi Zhang",
+        "Xiaoxia Wu"
+      ],
+      "abstract": "KV-cache memory is a major bottleneck in real-world LLM serving, where systems must simultaneously support latency-sensitive small-batch requests and high-throughput concurrent workloads. Although many KV-cache compression methods improve offline accuracy or compression ratio, they often violate practical serving constraints such as paged memory layouts, regular memory access, and fused attention execution, limiting their effectiveness in deployment.   In this work, we identify the minimal set of 4-bit KV-cache quantization methods that remain viable under these constraints. Our central finding is that a simple design--token-wise INT4 quantization with block-diagonal Hadamard rotation--consistently achieves the best accuracy-efficiency trade-off. Across multiple models and benchmarks, this approach recovers nearly all of the accuracy lost by naive INT4, while more complex methods such as vector quantization and Hessian-aware quantization provide only marginal additional gains once serving compatibility is taken into account.   To make this practical, we implement a fused rotation-quantization kernel that integrates directly into paged KV-cache layouts and introduces zero measurable end-to-end overhead, matching plain INT4 throughput across concurrency levels. Our results show that effective KV-cache compression is fundamentally a systems co-design problem: under real serving constraints, lightweight block-diagonal Hadamard rotation is a viable method that delivers near-lossless accuracy without sacrificing serving efficiency.",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-04-22T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.19157",
+      "pdf_url": "https://arxiv.org/pdf/2604.19157",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2604.16529",
+      "title": "Scaling Test-Time Compute for Agentic Coding",
+      "authors": [
+        "Joongwon Kim",
+        "Wannan Yang",
+        "Kelvin Niu",
+        "Hongming Zhang",
+        "Yun Zhu",
+        "Eryk Helenowski",
+        "Ruan Silva",
+        "Zhengxing Chen",
+        "Srinivasan Iyer",
+        "Manzil Zaheer",
+        "Daniel Fried",
+        "Hannaneh Hajishirzi",
+        "Sanjeev Arora",
+        "Gabriel Synnaeve",
+        "Ruslan Salakhutdinov",
+        "Anirudh Goyal"
+      ],
+      "abstract": "Test-time scaling has become a powerful way to improve large language models. However, existing methods are best suited to short, bounded outputs that can be directly compared, ranked or refined. Long-horizon coding agents violate this premise: each attempt produces an extended trajectory of actions, observations, errors, and partial progress taken by the agent. In this setting, the main challenge is no longer generating more attempts, but representing prior experience in a form that can be effectively selected from and reused. We propose a test-time scaling framework for agentic coding based on compact representations of rollout trajectories. Our framework converts each rollout into a structured summary that preserves its salient hypotheses, progress, and failure modes while discarding low-signal trace details. This representation enables two complementary forms of inference-time scaling. For parallel scaling, we introduce Recursive Tournament Voting (RTV), which recursively narrows a population of rollout summaries through small-group comparisons. For sequential scaling, we adapt Parallel-Distill-Refine (PDR) to the agentic setting by conditioning new rollouts on summaries distilled from prior attempts. Our method consistently improves the performance of frontier coding agents across SWE-Bench Verified and Terminal-Bench v2.0. For example, by using our method Claude-4.5-Opus improves from 70.9% to 77.6% on SWE-Bench Verified (mini-SWE-agent) and 46.9% to 59.1% on Terminal-Bench v2.0 (Terminus 1). Our results suggest that test-time scaling for long-horizon agents is fundamentally a problem of representation, selection, and reuse.",
+      "categories": [
+        "cs.SE",
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "published": "2026-04-22T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.16529",
+      "pdf_url": "https://arxiv.org/pdf/2604.16529",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    }
+  ],
+  "ranked_papers": [
+    {
+      "arxiv_id": "2604.18786",
+      "title": "Experiments or Outcomes? Probing Scientific Feasibility in Large Language Models",
+      "authors": [
+        "Seyedali Mohammadi",
+        "Manas Gaur",
+        "Francis Ferraro"
+      ],
+      "abstract": "Scientific feasibility assessment asks whether a claim is consistent with established knowledge and whether experimental evidence could support or refute it. We frame feasibility assessment as a diagnostic reasoning task in which, given a hypothesis, a model predicts feasible or infeasible and justifies its decision. We evaluate large language models (LLMs) under controlled knowledge conditions (hypothesis-only, with experiments, with outcomes, or both) and probe robustness by progressively removing portions of the experimental and/or outcome context. Across multiple LLMs and two datasets, providing outcome evidence is generally more reliable than providing experiment descriptions. Outcomes tend to improve accuracy beyond what internal knowledge alone provides, whereas experimental text can be brittle and may degrade performance when the context is incomplete. These findings clarify when experimental evidence benefits LLM-based feasibility assessment and when it introduces fragility.",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-04-22T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.18786",
+      "pdf_url": "https://arxiv.org/pdf/2604.18786",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Directly addresses scientific feasibility assessment and diagnostic reasoning in LLMs, closely matching the 'long horizon scientific tasks' and 'dealing with surprising information' research interests."
+    },
+    {
+      "arxiv_id": "2604.18789",
+      "title": "ARES: Adaptive Red-Teaming and End-to-End Repair of Policy-Reward System",
+      "authors": [
+        "Jiacheng Liang",
+        "Yao Ma",
+        "Tharindu Kumarage",
+        "Satyapriya Krishna",
+        "Rahul Gupta",
+        "Kai-Wei Chang",
+        "Aram Galstyan",
+        "Charith Peris"
+      ],
+      "abstract": "Reinforcement Learning from Human Feedback (RLHF) is central to aligning Large Language Models (LLMs), yet it introduces a critical vulnerability: an imperfect Reward Model (RM) can become a single point of failure when it fails to penalize unsafe behaviors. While existing red-teaming approaches primarily target policy-level weaknesses, they overlook what we term systemic weaknesses cases where both the core LLM and the RM fail in tandem.   We present ARES, a framework that systematically discovers and mitigates such dual vulnerabilities. ARES employs a ``Safety Mentor'' that dynamically composes semantically coherent adversarial prompts by combining structured component types (topics, personas, tactics, goals) and generates corresponding malicious and safe responses. This dual-targeting approach exposes weaknesses in both the core LLM and the RM simultaneously. Using the vulnerabilities gained, ARES implements a two-stage repair process: first fine-tuning the RM to better detect harmful content, then leveraging the improved RM to optimize the core model. Experiments across multiple adversarial safety benchmarks demonstrate that ARES substantially enhances safety robustness while preserving model capabilities, establishing a new paradigm for comprehensive RLHF safety alignment.",
+      "categories": [
+        "cs.AI",
+        "cs.CR",
+        "cs.LG"
+      ],
+      "published": "2026-04-22T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.18789",
+      "pdf_url": "https://arxiv.org/pdf/2604.18789",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Addresses systemic weaknesses in reward models and RLHF vulnerabilities, directly relevant to LM judge weaknesses and feedback scaling concerns."
+    },
+    {
+      "arxiv_id": "2604.19354",
+      "title": "Do Agents Dream of Root Shells? Partial-Credit Evaluation of LLM Agents in Capture The Flag Challenges",
+      "authors": [
+        "Ali Al-Kaswan",
+        "Maksim Plotnikov",
+        "Maxim H\\'ajek",
+        "Roland V\\'izner",
+        "Arie van Deursen",
+        "Maliheh Izadi"
+      ],
+      "abstract": "Large Language Model (LLM) agents are increasingly proposed for autonomous cybersecurity tasks, but their capabilities in realistic offensive settings remain poorly understood. We present DeepRed, an open-source benchmark for evaluating LLM-based agents on realistic Capture The Flag (CTF) challenges in isolated virtualized environments. DeepRed places an agent in a Kali attacker environment with terminal tools and optional web search, connected over a private network to a target challenge, and records full execution traces for analysis. To move beyond binary solved/unsolved outcomes, we introduce a partial-credit scoring method based on challenge-specific checkpoints derived from public writeups, together with an automated summarise-then-judge labelling pipeline for assigning checkpoint completion from logs. Using DeepRed, we benchmark ten commercially accessible LLMs on ten VM-based CTF challenges spanning different challenge categories. The results indicate that current agents remain limited: the best model achieves only 35% average checkpoint completion, performing strongest on common challenge types and weakest on tasks requiring non-standard discovery and longer-horizon adaptation.",
+      "categories": [
+        "cs.AI",
+        "cs.CR",
+        "cs.SE"
+      ],
+      "published": "2026-04-22T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.19354",
+      "pdf_url": "https://arxiv.org/pdf/2604.19354",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "DeepRed benchmark for evaluating LLM agents on realistic cybersecurity tasks provides a concrete example of long-horizon tasks requiring failure and learning, directly matching the brainstorming themes."
+    },
+    {
+      "arxiv_id": "2604.19117",
+      "title": "LLMs Know They're Wrong and Agree Anyway: The Shared Sycophancy-Lying Circuit",
+      "authors": [
+        "Manav Pandey"
+      ],
+      "abstract": "When a language model agrees with a user's false belief, is it failing to detect the error, or noticing and agreeing anyway? We show the latter. Across twelve open-weight models from five labs, spanning small to frontier scale, the same small set of attention heads carries a \"this statement is wrong\" signal whether the model is evaluating a claim on its own or being pressured to agree with a user. Silencing these heads flips sycophantic behavior sharply while leaving factual accuracy intact, so the circuit controls deference rather than knowledge. Edge-level path patching confirms that the same head-to-head connections drive sycophancy, factual lying, and instructed lying. Opinion-agreement, where no factual ground truth exists, reuses these head positions but writes into an orthogonal direction, ruling out a simple \"truth-direction\" reading of the substrate. Alignment training leaves this circuit in place: an RLHF refresh cuts sycophantic behavior roughly tenfold while the shared heads persist or grow, a pattern that replicates on an independent model family and under targeted anti-sycophancy DPO. When these models sycophant, they register that the user is wrong and agree anyway.",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-04-22T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.19117",
+      "pdf_url": "https://arxiv.org/pdf/2604.19117",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "This paper directly addresses model behavior when agreeing with false statements despite knowing they're wrong, which perfectly matches the interest in self-correction and model evaluation under surprising information."
+    },
+    {
+      "arxiv_id": "2604.19444",
+      "title": "Unsupervised Confidence Calibration for Reasoning LLMs from a Single Generation",
+      "authors": [
+        "Thomas Zollo",
+        "Jimmy Wang",
+        "Richard Zemel"
+      ],
+      "abstract": "Reasoning language models can solve increasingly complex tasks, but struggle to produce the calibrated confidence estimates necessary for reliable deployment. Existing calibration methods usually depend on labels or repeated sampling at inference time, making them impractical in many settings. We introduce a method for unsupervised confidence calibration of reasoning LLMs when only a single generation is available at inference time. Our approach uses offline sampling on unlabeled data to derive a self-consistency-based proxy target, then distills this signal into a lightweight deployment-time confidence predictor. In a broad evaluation across 5 math and question-answering tasks using 9 reasoning models, our method substantially outperforms baselines, including under distribution shift, and improves downstream performance in selective prediction and simulated downstream decision-making.",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-04-22T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.19444",
+      "pdf_url": "https://arxiv.org/pdf/2604.19444",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Directly addresses confidence calibration for reasoning LLMs from single generation, highly relevant to measuring model uncertainty and self-correction evaluation tasks mentioned in the brainstorming."
+    },
+    {
+      "arxiv_id": "2604.18835",
+      "title": "Semantic Needles in Document Haystacks: Sensitivity Testing of LLM-as-a-Judge Similarity Scoring",
+      "authors": [
+        "Sinan G. Aksoy",
+        "Alexandra A. Sabrio",
+        "Erik VonKaenel",
+        "Lee Burke"
+      ],
+      "abstract": "We propose a scalable, multifactorial experimental framework that systematically probes LLM sensitivity to subtle semantic changes in pairwise document comparison. We analogize this as a needle-in-a-haystack problem: a single semantically altered sentence (the needle) is embedded within surrounding context (the hay), and we vary the perturbation type (negation, conjunction swap, named entity replacement), context type (original vs. topically unrelated), needle position, and document length across all combinations, testing five LLMs on tens of thousands of document pairs. Our analysis reveals several striking findings. First, LLMs exhibit a within-document positional bias distinct from previously studied candidate-order effects: most models penalize semantic differences more harshly when they occur earlier in a document. Second, when the altered sentence is surrounded by topically unrelated context, it systematically lowers similarity scores and induces bipolarized scores that indicate either very low or very high similarity. This is consistent with an interpretive frame account in which topically-related context may allow models to contextualize and downweight the alterations. Third, each LLM produces a qualitatively distinct scoring distribution, a stable \"fingerprint\" that is invariant to perturbation type, yet all models share a universal hierarchy in how leniently they treat different perturbation types. Together, these results demonstrate that LLM semantic similarity scores are sensitive to document structure, context coherence, and model identity in ways that go beyond the semantic change itself, and that the proposed framework offers a practical, LLM-agnostic toolkit for auditing and comparing scoring behavior across current and future models.",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-04-22T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.18835",
+      "pdf_url": "https://arxiv.org/pdf/2604.18835",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Provides a systematic framework for testing LLM sensitivity to semantic changes in document comparison, which aligns with the need for better evaluation methods and grading long rollouts."
+    },
+    {
+      "arxiv_id": "2604.19001",
+      "title": "When Safety Fails Before the Answer: Benchmarking Harmful Behavior Detection in Reasoning Chains",
+      "authors": [
+        "Ishita Kakkar",
+        "Enze Zhang",
+        "Rheeya Uppaal",
+        "Junjie Hu"
+      ],
+      "abstract": "Large reasoning models (LRMs) produce complex, multi-step reasoning traces, yet safety evaluation remains focused on final outputs, overlooking how harm emerges during reasoning. When jailbroken, harm does not appear instantaneously but unfolds through distinct behavioral steps such as suppressing refusal, rationalizing compliance, decomposing harmful tasks, and concealing risk. However, no existing benchmark captures this process at sentence-level granularity within reasoning traces -- a key step toward reliable safety monitoring, interventions, and systematic failure diagnosis. To address this gap, we introduce HarmThoughts, a benchmark for step-wise safety evaluation of reasoning traces. \\ourdataset is built on our proposed harm taxonomy of 16 harmful reasoning behaviors across four functional groups that characterize how harm propagates rather than what harm is produced. The dataset consists of 56,931 sentences from 1,018 reasoning traces generated by four model families, each annotated with fine-grained sentence-level behavioral labels. Using HarmThoughts, we analyze harm propagation patterns across reasoning traces, identifying common behavioral trajectories and drift points where reasoning transitions from safe to unsafe. Finally, we systematically compare white-box and black-box detectors on the task of identifying harmful reasoning behaviours on HarmThoughts. Our results show that existing detectors struggle with fine-grained behavior detection in reasoning traces, particularly for nuanced categories within harm emergence and execution, highlighting a critical gap in process-level safety monitoring. HarmThoughts is available publicly at: https://huggingface.co/datasets/ishitakakkar-10/HarmThoughts",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-04-22T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.19001",
+      "pdf_url": "https://arxiv.org/pdf/2604.19001",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Introduces benchmarking for harmful behavior detection in reasoning chains, addressing the evaluation of complex multi-step processes which relates to grading long rollouts and self-correction evaluation."
+    },
+    {
+      "arxiv_id": "2604.19139",
+      "title": "The Rise of Verbal Tics in Large Language Models: A Systematic Analysis Across Frontier Models",
+      "authors": [
+        "Shuai Wu",
+        "Xue Li",
+        "Yanna Feng",
+        "Yufang Li",
+        "Zhijun Wang",
+        "Ran Wang"
+      ],
+      "abstract": "As Large Language Models (LLMs) continue to evolve through alignment techniques such as Reinforcement Learning from Human Feedback (RLHF) and Constitutional AI, a growing and increasingly conspicuous phenomenon has emerged: the proliferation of verbal tics -- repetitive, formulaic linguistic patterns that pervade model outputs. These range from sycophantic openers (\"That's a great question!\", \"Awesome!\") to pseudo-empathetic affirmations (\"I completely understand your concern\", \"I'm right here to catch you\") and overused vocabulary (\"delve\", \"tapestry\", \"nuanced\"). In this paper, we present a systematic analysis of the verbal tic phenomenon across eight state-of-the-art LLMs: GPT-5.4, Claude Opus 4.7, Gemini 3.1 Pro, Grok 4.2, Doubao-Seed-2.0-pro, Kimi K2.5, DeepSeek V3.2, and MiMo-V2-Pro. Utilizing a custom evaluation framework for standardized API-based evaluation, we assess 10,000 prompts across 10 task categories in both English and Chinese, yielding 160,000 model responses. We introduce the Verbal Tic Index (VTI), a composite metric quantifying tic prevalence, and analyze its correlation with sycophancy, lexical diversity, and human-perceived naturalness. Our findings reveal significant inter-model variation: Gemini 3.1 Pro exhibits the highest VTI (0.590), while DeepSeek V3.2 achieves the lowest (0.295). We further demonstrate that verbal tics accumulate over multi-turn conversations, are amplified in subjective tasks, and show distinct cross-lingual patterns. Human evaluation (N = 120) confirms a strong inverse relationship between sycophancy and perceived naturalness (r = -0.87, p < 0.001). These results underscore the \"alignment tax\" of current training paradigms and highlight the urgent need for more authentic human-AI interaction frameworks.",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-04-22T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.19139",
+      "pdf_url": "https://arxiv.org/pdf/2604.19139",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Systematic analysis of verbal tics across frontier models provides insights into model behavior patterns that could inform better evaluation and grading methodologies."
+    },
+    {
+      "arxiv_id": "2604.19440",
+      "title": "What Makes an LLM a Good Optimizer? A Trajectory Analysis of LLM-Guided Evolutionary Search",
+      "authors": [
+        "Xinhao Zhang",
+        "Xi Chen",
+        "Fran\\c{c}ois Portet",
+        "Maxime Peyrard"
+      ],
+      "abstract": "Recent work has demonstrated the promise of orchestrating large language models (LLMs) within evolutionary and agentic optimization systems. However, the mechanisms driving these optimization gains remain poorly understood. In this work, we present a large-scale study of LLM-guided evolutionary search, collecting optimization trajectories for 15 LLMs across 8 tasks. Although zero-shot problem-solving ability correlates with final optimization outcomes, it explains only part of the variance: models with similar initial capability often induce dramatically different search trajectories and outcomes. By analyzing these trajectories, we find that strong LLM optimizers behave as local refiners, producing frequent incremental improvements while progressively localizing the search in semantic space. Conversely, weaker optimizers exhibit large semantic drift, with sporadic breakthroughs followed by stagnation. Notably, various measures of solution novelty do not predict final performance; novelty is beneficial only when the search remains sufficiently localized around high-performing regions of the solution space. Our results highlight the importance of trajectory analysis for understanding and improving LLM-based optimization systems and provide actionable insights for their design and training.",
+      "categories": [
+        "cs.CL",
+        "cs.NE"
+      ],
+      "published": "2026-04-22T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.19440",
+      "pdf_url": "https://arxiv.org/pdf/2604.19440",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Large-scale study of LLM-guided evolutionary search with trajectory analysis, directly relevant to understanding optimization behavior and could inform RL environment design for evaluation."
+    },
+    {
+      "arxiv_id": "2604.19502",
+      "title": "Beyond Rating: A Comprehensive Evaluation and Benchmark for AI Reviews",
+      "authors": [
+        "Bowen Li",
+        "Haochen Ma",
+        "Yuxin Wang",
+        "Jie Yang",
+        "Yining Zheng",
+        "Xinchi Chen",
+        "Xuanjing Huang",
+        "Xipeng Qiu"
+      ],
+      "abstract": "The rapid adoption of Large Language Models (LLMs) has spurred interest in automated peer review; however, progress is currently stifled by benchmarks that treat reviewing primarily as a rating prediction task. We argue that the utility of a review lies in its textual justification--its arguments, questions, and critique--rather than a scalar score. To address this, we introduce Beyond Rating, a holistic evaluation framework that assesses AI reviewers across five dimensions: Content Faithfulness, Argumentative Alignment, Focus Consistency, Question Constructiveness, and AI-Likelihood. Notably, we propose a Max-Recall strategy to accommodate valid expert disagreement and introduce a curated dataset of paper with high-confidence reviews, rigorously filtered to remove procedural noise. Extensive experiments demonstrate that while traditional n-gram metrics fail to reflect human preferences, our proposed text-centric metrics--particularly the recall of weakness arguments--correlate strongly with rating accuracy. These findings establish that aligning AI critique focus with human experts is a prerequisite for reliable automated scoring, offering a robust standard for future research.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-04-22T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.19502",
+      "pdf_url": "https://arxiv.org/pdf/2604.19502",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Directly addresses automated evaluation and grading challenges with a comprehensive benchmark for AI reviews, highly relevant to the 'Hunter Prep' project on better grading and LM judge weaknesses."
+    },
+    {
+      "arxiv_id": "2604.19656",
+      "title": "Pause or Fabricate? Training Language Models for Grounded Reasoning",
+      "authors": [
+        "Yiwen Qiu",
+        "Linjuan Wu",
+        "Yizhou Liu",
+        "Yuchen Yan",
+        "Jin Ma",
+        "Xu Tan",
+        "Yao Hu",
+        "Daoxin Zhang",
+        "Wenqi Zhang",
+        "Weiming Lu",
+        "Jun Xiao",
+        "Yongliang Shen"
+      ],
+      "abstract": "Large language models have achieved remarkable progress on complex reasoning tasks. However, they often implicitly fabricate information when inputs are incomplete, producing confident but unreliable conclusions -- a failure mode we term ungrounded reasoning. We argue that this issue arises not from insufficient reasoning capability, but from the lack of inferential boundary awareness -- the ability to recognize when the necessary premises for valid inference are missing. To address this issue, we propose Grounded Reasoning via Interactive Reinforcement Learning (GRIL), a multi-turn reinforcement learning framework for grounded reasoning under incomplete information. GRIL decomposes the reasoning process into two stages: clarify and pause, which identifies whether the available information is sufficient, and grounded reasoning, which performs task solving once the necessary premises are established. We design stage-specific rewards to penalize hallucinations, enabling models to detect gaps, stop proactively, and resume reasoning after clarification. Experiments on GSM8K-Insufficient and MetaMATH-Insufficient show that GRIL significantly improves premise detection (up to 45%), leading to a 30% increase in task success while reducing average response length by over 20%. Additional analyses confirm robustness to noisy user responses and generalization to out-of-distribution tasks.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-04-22T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.19656",
+      "pdf_url": "https://arxiv.org/pdf/2604.19656",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Addresses ungrounded reasoning and inferential boundary awareness in LLMs, directly relevant to projects on handling surprising information and self-correction evaluation."
+    },
+    {
+      "arxiv_id": "2604.18724",
+      "title": "Beyond One Output: Visualizing and Comparing Distributions of Language Model Generations",
+      "authors": [
+        "Emily Reif",
+        "Claire Yang",
+        "Jared Hwang",
+        "Deniz Nazar",
+        "Noah Smith",
+        "Jeff Heer"
+      ],
+      "abstract": "Users typically interact with and evaluate language models via single outputs, but each output is just one sample from a broad distribution of possible completions. This interaction hides distributional structure such as modes, uncommon edge cases, and sensitivity to small prompt changes, leading users to over-generalize from anecdotes when iterating on prompts for open-ended tasks. Informed by a formative study with researchers who use LMs (n=13) examining when stochasticity matters in practice, how they reason about distributions over language, and where current workflows break down, we introduce GROVE. GROVE is an interactive visualization that represents multiple LM generations as overlapping paths through a text graph, revealing shared structure, branching points, and clusters while preserving access to raw outputs. We evaluate across three crowdsourced user studies (N=47, 44, and 40 participants) targeting complementary distributional tasks. Our results support a hybrid workflow: graph summaries improve structural judgments such as assessing diversity, while direct output inspection remains stronger for detail-oriented questions.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-04-22T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.18724",
+      "pdf_url": "https://arxiv.org/pdf/2604.18724",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Explores distributional structure and evaluation beyond single outputs, directly relevant to understanding model behavior and evaluation methodology improvements."
+    },
+    {
+      "arxiv_id": "2604.18805",
+      "title": "AI scientists produce results without reasoning scientifically",
+      "authors": [
+        "Marti\\~no R\\'ios-Garc\\'ia",
+        "Nawaf Alampara",
+        "Chandan Gupta",
+        "Indrajeet Mandal",
+        "Sajid Mannan",
+        "Ali Asghar Aghajani",
+        "N. M. Anoop Krishnan",
+        "Kevin Maik Jablonka"
+      ],
+      "abstract": "Large language model (LLM)-based systems are increasingly deployed to conduct scientific research autonomously, yet whether their reasoning adheres to the epistemic norms that make scientific inquiry self-correcting is poorly understood. Here, we evaluate LLM-based scientific agents across eight domains, spanning workflow execution to hypothesis-driven inquiry, through more than 25,000 agent runs and two complementary lenses: (i) a systematic performance analysis that decomposes the contributions of the base model and the agent scaffold, and (ii) a behavioral analysis of the epistemological structure of agent reasoning. We observe that the base model is the primary determinant of both performance and behavior, accounting for 41.4% of explained variance versus 1.5% for the scaffold. Across all configurations, evidence is ignored in 68% of traces, refutation-driven belief revision occurs in 26%, and convergent multi-test evidence is rare. The same reasoning pattern appears whether the agent executes a computational workflow or conducts hypothesis-driven inquiry. They persist even when agents receive near-complete successful reasoning trajectories as context, and the resulting unreliability compounds across repeated trials in epistemically demanding domains. Thus, current LLM-based agents execute scientific workflows but do not exhibit the epistemic patterns that characterize scientific reasoning. Outcome-based evaluation cannot detect these failures, and scaffold engineering alone cannot repair them. Until reasoning itself becomes a training target, the scientific knowledge produced by such agents cannot be justified by the process that generated it.",
+      "categories": [
+        "cs.AI",
+        "cond-mat.mtrl-sci",
+        "cs.LG"
+      ],
+      "published": "2026-04-22T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.18805",
+      "pdf_url": "https://arxiv.org/pdf/2604.18805",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Evaluates whether LLM-based scientific agents follow proper reasoning norms, highly relevant to long horizon scientific tasks and self-correction evaluation."
+    },
+    {
+      "arxiv_id": "2604.19278",
+      "title": "Explicit Trait Inference for Multi-Agent Coordination",
+      "authors": [
+        "Suhaib Abdurahman",
+        "Etsuko Ishii",
+        "Katerina Margatina",
+        "Divya Bhargavi",
+        "Monica Sunkara",
+        "Yi Zhang"
+      ],
+      "abstract": "LLM-based multi-agent systems (MAS) show promise on complex tasks but remain prone to coordination failures such as goal drift, error cascades, and misaligned behaviors. We propose Explicit Trait Inference (ETI), a psychologically grounded method for improving coordination. ETI enables agents to infer and track partner characteristics along two established psychological dimensions--warmth (e.g., trust) and competence (e.g., skill)--from interaction histories to guide decisions. We evaluate ETI in controlled settings (economic games), where it reduces payoff loss by 45-77%, and in more realistic, complex multi-agent settings (MultiAgentBench), where it improves performance by 3-29% depending on the scenario and model, relative to a CoT baseline. Additional analysis shows that gains are closely linked to trait inference: ETI profiles predict agents' actions, and informative profiles drive improvements. These results highlight ETI as a lightweight and robust mechanism for improving coordination in diverse multi-agent settings, and provide the first systematic evidence that LLM agents can (i) reliably infer others' traits from interaction histories and (ii) leverage structured awareness of others' traits for coordination.",
+      "categories": [
+        "cs.AI",
+        "cs.MA"
+      ],
+      "published": "2026-04-22T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.19278",
+      "pdf_url": "https://arxiv.org/pdf/2604.19278",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Directly relevant to multi-agent coordination research with psychologically-grounded methods for improving agent behavior, which aligns with the brainstorming focus on self-correction and complex domain evaluation."
+    },
+    {
+      "arxiv_id": "2604.19457",
+      "title": "Four-Axis Decision Alignment for Long-Horizon Enterprise AI Agents",
+      "authors": [
+        "Vasundra Srininvasan"
+      ],
+      "abstract": "Long-horizon enterprise agents make high-stakes decisions (loan underwriting, claims adjudication, clinical review, prior authorization) under lossy memory, multi-step reasoning, and binding regulatory constraints. Current evaluation reports a single task-success scalar that conflates distinct failure modes and hides whether an agent is aligned with the standards its deployment environment requires. We propose that long-horizon decision behavior decomposes into four orthogonal alignment axes, each independently measurable and failable: factual precision (FRP), reasoning coherence (RCS), compliance reconstruction (CRR), and calibrated abstention (CAR). CRR is a novel regulatory-grounded axis; CAR is a measurement axis separating coverage from accuracy. We exercise the decomposition on a controlled benchmark (LongHorizon-Bench) covering loan qualification and insurance claims adjudication with deterministic ground-truth construction. Running six memory architectures, we find structure aggregate accuracy cannot see: retrieval collapses on factual precision; schema-anchored architectures pay a scaffolding tax; plain summarization under a fact-preservation prompt is a strong baseline on FRP, RCS, EDA, and CRR; and all six architectures commit on every case, exposing a decisional-alignment axis the field has not targeted. The decomposition also surfaced a pre-registered prediction of our own, that summarization would fail factual recall, which the data reversed at large magnitude, an axis-level reversal aggregate accuracy would have hidden. Institutional alignment (regulatory reconstruction) and decisional alignment (calibrated abstention) are under-represented in the alignment literature and become load-bearing once decisions leave the laboratory. The framework transfers to any regulated decisioning domain via two steps: build a fact schema, and calibrate the CRR auditor prompt.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-04-22T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.19457",
+      "pdf_url": "https://arxiv.org/pdf/2604.19457",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Focuses on long-horizon enterprise AI agents making high-stakes decisions under constraints, which directly aligns with the project interest in long horizon scientific tasks and complex evaluation."
+    },
+    {
+      "arxiv_id": "2604.18639",
+      "title": "Easy Samples Are All You Need: Self-Evolving LLMs via Data-Efficient Reinforcement Learning",
+      "authors": [
+        "Zhiyin Yu",
+        "Bo Zhang",
+        "Qibin Hou",
+        "Zhonghai Wu",
+        "Xiao Luo",
+        "Lei Bai"
+      ],
+      "abstract": "Previous LLMs-based RL studies typically follow either supervised learning with high annotation costs, or unsupervised paradigms using voting or entropy-based rewards. However, their performance remains far from satisfactory due to the substantial annotation cost and issues such as model collapse or reward hacking. To address these issues, we introduce a new perspective inspired by cognitive learning theory and propose a novel approach called EasyRL. The core of EasyRL is to simulate the human cognitive acquisition curve by integrating reliable knowledge transfer from easy labeled data with a progressive divide-and-conquer strategy that tackles increasingly difficult unlabeled data. Specifically, we initialize a warm-up model using supervised RL with few-shot labeled data. This is followed by a divide-and-conquer pseudo-labeling strategy on difficult unlabeled data, combining consistency-based selection for low-uncertainty cases and reflection-based resolution for medium-uncertainty cases. Finally, difficulty-progressive self-training with iterative pseudo-labeling and RL further strengthens the model's reasoning capability. EasyRL provides a unified self-evolving framework that facilitates data-efficient post-training of LLMs. Experimental results on mathematical and scientific benchmarks demonstrate that EasyRL, using only 10% of easy labeled data, consistently outperforms state-of-the-art baselines.",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-04-22T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.18639",
+      "pdf_url": "https://arxiv.org/pdf/2604.18639",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Directly relevant to self-correction and reinforcement learning from feedback, addressing key concerns about model collapse and reward hacking mentioned in Hunter's prep notes."
+    },
+    {
+      "arxiv_id": "2604.18839",
+      "title": "One Step Forward and K Steps Back: Better Reasoning with Denoising Recursion Models",
+      "authors": [
+        "Chris Cameron",
+        "Wangzheng Wang",
+        "Nikita Ivanov",
+        "Ashmita Bhattacharyya",
+        "Didier Ch\\'etelat",
+        "Yingxue Zhang"
+      ],
+      "abstract": "Looped transformers scale computational depth without increasing parameter count by repeatedly applying a shared transformer block and can be used for iterative refinement, where each loop rewrites a full fixed-size prediction in parallel. On difficult problems, such as those that require search-like computation, reaching a highly structured solution starting from noise can require long refinement trajectories. Learning such trajectories is challenging when training specifies only the target solution and provides no supervision over the intermediate refinement path. Diffusion models tackle this issue by corrupting data with varying magnitudes of noise and training the model to reverse it in a \\textit{single step}. However, this process misaligns training and testing behaviour. We introduce Denoising Recursion Models, a method that similarly corrupts data with noise but trains the model to reverse the corruption over \\textit{multiple} recursive steps. This strategy provides a tractable curriculum of intermediate states, while better aligning training with testing and incentivizing non-greedy, forward-looking generation. Through extensive experiments, we show this approach outperforms the Tiny Recursion Model (TRM) on ARC-AGI, where it recently achieved breakthrough performance.",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-04-22T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.18839",
+      "pdf_url": "https://arxiv.org/pdf/2604.18839",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Focuses on iterative refinement and reasoning improvement through denoising, directly relevant to self-correction evaluation and long-horizon reasoning tasks."
+    },
+    {
+      "arxiv_id": "2604.18963",
+      "title": "Distillation Traps and Guards: A Calibration Knob for LLM Distillability",
+      "authors": [
+        "Weixiao Zhan",
+        "Yongcheng Jing",
+        "Leszek Rutkowski",
+        "Dacheng Tao"
+      ],
+      "abstract": "Knowledge distillation (KD) transfers capabilities from large language models (LLMs) to smaller students, yet it can fail unpredictably and also underpins model leakage risks. Our analysis revealed several distillation traps: tail noise, off-policy instability, and, most fundamentally, the teacher-student gap, that distort training signals. These traps manifest as overconfident hallucinations, self-correction collapse, and local decoding degradation, causing distillation to fail. Motivated by these findings, we propose a post-hoc calibration method that, to the best of our knowledge, for the first time enables control over a teacher's distillability via reinforcement fine-tuning (RFT). Our objective combines task utility, KL anchor, and across-tokenizer calibration reward. This makes distillability a practical safety lever for foundation models, connecting robust teacher-student transfer with deployment-aware model protection. Experiments across math, knowledge QA, and instruction-following tasks show that students distilled from distillable calibrated teachers outperform SFT and KD baselines, while undistillable calibrated teachers retain their task performance but cause distilled students to collapse, offering a practical knob for both better KD and model IP protection.",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-04-22T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.18963",
+      "pdf_url": "https://arxiv.org/pdf/2604.18963",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Directly addresses knowledge distillation traps including teacher-student gap and overconfident hallucinations, highly relevant to improving LM judge weaknesses and grading effectiveness."
+    },
+    {
+      "arxiv_id": "2604.19533",
+      "title": "Cyber Defense Benchmark: Agentic Threat Hunting Evaluation for LLMs in SecOps",
+      "authors": [
+        "Alankrit Chona",
+        "Igor Kozlov",
+        "Ambuj Kumar"
+      ],
+      "abstract": "We introduce the Cyber Defense Benchmark, a benchmark for measuring how well large language model (LLM) agents perform the core SOC analyst task of threat hunting: given a database of raw Windows event logs with no guided questions or hints, identify the exact timestamps of malicious events.   The benchmark wraps 106 real attack procedures from the OTRF Security-Datasets corpus - spanning 86 MITRE ATT&CK sub-techniques across 12 tactics - into a Gymnasium reinforcement-learning environment. Each episode presents the agent with an in-memory SQLite database of 75,000-135,000 log records produced by a deterministic campaign simulator that time-shifts and entity-obfuscates the raw recordings.   The agent must iteratively submit SQL queries to discover malicious event timestamps and explicitly flag them, scored CTF-style against Sigma-rule-derived ground truth.   Evaluating five frontier models - Claude Opus 4.6, GPT-5, Gemini 3.1 Pro, Kimi K2.5, and Gemini 3 Flash - on 26 campaigns covering 105 of 106 procedures, we find that all models fail dramatically: the best model (Claude Opus 4.6) submits correct flags for only 3.8% of malicious events on average, and no run across any model ever finds all flags.   We define a passing score as >= 50% recall on every ATT&CK tactic - the minimum bar for unsupervised SOC deployment. No model passes: the leader clears this bar on 5 of 13 tactics and the remaining four on zero.   These results suggest that current LLMs are poorly suited for open-ended, evidence-driven threat hunting despite strong performance on curated Q&A security benchmarks.",
+      "categories": [
+        "cs.CR",
+        "cs.AI"
+      ],
+      "published": "2026-04-22T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.19533",
+      "pdf_url": "https://arxiv.org/pdf/2604.19533",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "This cyber defense benchmark for LLM agents performing threat hunting represents exactly the type of long-horizon, complex domain evaluation that requires dealing with noisy observations and hypothesis formation mentioned in the brainstorming."
+    },
+    {
+      "arxiv_id": "2604.18811",
+      "title": "Rethinking Dataset Distillation: Hard Truths about Soft Labels",
+      "authors": [
+        "Priyam Dey",
+        "Aditya Sahdev",
+        "Sunny Bhati",
+        "Konda Reddy Mopuri",
+        "R. Venkatesh Babu"
+      ],
+      "abstract": "Despite the perceived success of large-scale dataset distillation (DD) methods, recent evidence finds that simple random image baselines perform on-par with state-of-theart DD methods like SRe2L due to the use of soft labels during downstream model training. This is in contrast with the findings in coreset literature, where high-quality coresets consistently outperform random subsets in the hardlabel (HL) setting. To understand this discrepancy, we perform a detailed scalability analysis to examine the role of data quality under different label regimes, ranging from abundant soft labels (termed as SL+KD regime) to fixed soft labels (SL) and hard labels (HL). Our analysis reveals that high-quality coresets fail to convincingly outperform the random baseline in both SL and SL+KD regimes. In the SL+KD setting, performance further approaches nearoptimal levels relative to the full dataset, regardless of subset size or quality, for a given compute budget. This performance saturation calls into question the widespread practice of using soft labels for model evaluation, where unlike the HL setting, subset quality has negligible influence. A subsequent systematic evaluation of five large-scale and four small-scale DD methods in the HL setting reveals that only RDED reliably outperforms random baselines on ImageNet-1K, but can still lag behind strong coreset methods due to its over-reliance on easy sample patches. Based on this, we introduce CAD-Prune, a compute-aware pruning metric that efficiently identifies samples of optimal difficulty for a given compute budget, and use it to develop CA2D, a compute-aligned DD method, outperforming current DD methods on ImageNet-1K at various IPC settings. Together, our findings uncover many insights into current DD research and establish useful tools to advance dataefficient learning for both coresets and DD.",
+      "categories": [
+        "cs.LG",
+        "cs.CV"
+      ],
+      "published": "2026-04-22T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.18811",
+      "pdf_url": "https://arxiv.org/pdf/2604.18811",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "This paper directly addresses problems with soft labels in dataset distillation and challenges perceived success of methods, which aligns perfectly with the concern about 'LM judge has weaknesses' and evaluation reliability."
+    }
+  ]
+}
