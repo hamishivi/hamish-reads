@@ -1,0 +1,757 @@
+{
+  "date": "2026-04-28",
+  "generated_at": "2026-04-28T04:13:41.233623+00:00",
+  "author_papers": [
+    {
+      "arxiv_id": "2604.22074",
+      "title": "Outcome Rewards Do Not Guarantee Verifiable or Causally Important Reasoning",
+      "authors": [
+        "Qinan Yu",
+        "Alexa Tartaglini",
+        "Peter Hase",
+        "Carlos Guestrin",
+        "Christopher Potts"
+      ],
+      "abstract": "Reinforcement Learning from Verifiable Rewards (RLVR) on chain-of-thought reasoning has become a standard part of language model post-training recipes. A common assumption is that the reasoning chains trained through RLVR reliably represent how a model gets to its answer. In this paper, we develop two metrics for critically examining this assumption: Causal Importance of Reasoning (CIR), which measures the cumulative effect of reasoning tokens on the final answer, and Sufficiency of Reasoning (SR), which measures whether a verifier can arrive at an unambiguous answer based on the reasoning alone. Through experiments with the Qwen2.5 model series and ReasoningGym tasks, we find that: (1) while RLVR does improve task accuracy, it does not reliably improve CIR or SR, calling the role of reasoning in model performance into question; (2) a small amount of SFT before RLVR can be a remedy for low CIR and SR; and (3) CIR and SR can be improved even without SFT by applying auxiliary CIR/SR rewards on top of the outcome-based reward. This joint reward matches the accuracy of RLVR while also leading to causally important and sufficient reasoning. These results show that RLVR does not always lead models to rely on reasoning in the way that is commonly thought, but this issue can be remedied with simple modifications to the post-training procedure.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-04-28T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.22074",
+      "pdf_url": "https://arxiv.org/pdf/2604.22074",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2604.22167",
+      "title": "Estimating Tail Risks in Language Model Output Distributions",
+      "authors": [
+        "Rico Angell",
+        "Raghav Singhal",
+        "Zachary Horvitz",
+        "Zhou Yu",
+        "Rajesh Ranganath",
+        "Kathleen McKeown",
+        "He He"
+      ],
+      "abstract": "Language models are increasingly capable and are being rapidly deployed on a population-level scale. As a result, the safety of these models is increasingly high-stakes. Fortunately, advances in alignment have significantly reduced the likelihood of harmful model outputs. However, when models are queried billions of times in a day, even rare worst-case behaviors will occur. Current safety evaluations focus on capturing the distribution of inputs that yield harmful outputs. These evaluations disregard the probabilistic nature of models and their tail output behavior. To measure this tail risk, we propose a method to efficiently estimate the probability of harmful outputs for any input query. Instead of naive brute-force sampling from the target model, where harmful outputs could be rare, we operationalize importance sampling by creating unsafe versions of the target model. These unsafe versions enable sample-efficient estimation by making harmful outputs more probable. On benchmarks measuring misuse and misalignment, these estimates match brute-force Monte Carlo estimates using 10-20x fewer samples. For example, we can estimate probability of harmful outputs on the order of 10^-4 with just 500 samples. Additionally, we find that these harmfulness estimates can reveal the sensitivity of models to perturbations in model input and predict deployment risks. Our work demonstrates that accurate rare-event estimation is both critical and feasible for safety evaluations. Code is available at https://github.com/rangell/LMTailRisk",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-04-28T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.22167",
+      "pdf_url": "https://arxiv.org/pdf/2604.22167",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2604.23380",
+      "title": "V-GRPO: Online Reinforcement Learning for Denoising Generative Models Is Easier than You Think",
+      "authors": [
+        "Bingda Tang",
+        "Yuhui Zhang",
+        "Xiaohan Wang",
+        "Jiayuan Mao",
+        "Ludwig Schmidt",
+        "Serena Yeung-Levy"
+      ],
+      "abstract": "Aligning denoising generative models with human preferences or verifiable rewards remains a key challenge. While policy-gradient online reinforcement learning (RL) offers a principled post-training framework, its direct application is hindered by the intractable likelihoods of these models. Prior work therefore either optimizes an induced Markov decision process (MDP) over sampling trajectories, which is stable but inefficient, or uses likelihood surrogates based on the diffusion evidence lower bound (ELBO), which have so far underperformed on visual generation. Our key insight is that the ELBO-based approach can, in fact, be made both stable and efficient. By reducing surrogate variance and controlling gradient steps, we show that this approach can beat MDP-based methods. To this end, we introduce Variational GRPO (V-GRPO), a method that integrates ELBO-based surrogates with the Group Relative Policy Optimization (GRPO) algorithm, alongside a set of simple yet essential techniques. Our method is easy to implement, aligns with pretraining objectives, and avoids the limitations of MDP-based methods. V-GRPO achieves state-of-the-art performance in text-to-image synthesis, while delivering a $2\\times$ speedup over MixGRPO and a $3\\times$ speedup over DiffusionNFT.",
+      "categories": [
+        "cs.LG",
+        "cs.CV"
+      ],
+      "published": "2026-04-28T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.23380",
+      "pdf_url": "https://arxiv.org/pdf/2604.23380",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2604.23747",
+      "title": "SFT-then-RL Outperforms Mixed-Policy Methods for LLM Reasoning",
+      "authors": [
+        "Alexis Limozin",
+        "Eduard Durech",
+        "Torsten Hoefler",
+        "Imanol Schlag",
+        "Valentina Pyatkin"
+      ],
+      "abstract": "Recent mixed-policy optimization methods for LLM reasoning that interleave or blend supervised and reinforcement learning signals report improvements over the standard SFT-then-RL pipeline. We show that numerous recently published research papers rely on a faulty baseline caused by two distinct bugs: a CPU-offloaded optimizer bug in DeepSpeed that silently drops intermediate micro-batches during gradient accumulation (affecting multiple downstream frameworks including TRL, OpenRLHF and Llama-Factory), and a loss aggregation bug in OpenRLHF that incorrectly weights per-mini-batch losses. Together they suppress SFT performance, with the optimizer bug accounting for most of the gap and the loss aggregation bug contributing a smaller additional effect. Once corrected, the standard SFT-then-RL pipeline surpasses every published mixed-policy method we evaluate by +3.8 points on math benchmarks with Qwen2.5-Math-7B and by +22.2 points with Llama-3.1-8B. Even a truncated variant with just 50 RL steps outperforms mixed-policy methods on math benchmarks while using fewer FLOPs.",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-04-28T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.23747",
+      "pdf_url": "https://arxiv.org/pdf/2604.23747",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2604.24198",
+      "title": "Rewarding the Scientific Process: Process-Level Reward Modeling for Agentic Data Analysis",
+      "authors": [
+        "Zhisong Qiu",
+        "Shuofei Qiao",
+        "Kewei Xu",
+        "Yuqi Zhu",
+        "Lun Du",
+        "Ningyu Zhang",
+        "Huajun Chen"
+      ],
+      "abstract": "Process Reward Models (PRMs) have achieved remarkable success in augmenting the reasoning capabilities of Large Language Models (LLMs) within static domains such as mathematics. However, their potential in dynamic data analysis tasks remains underexplored. In this work, we first present a empirical study revealing that general-domain PRMs struggle to supervise data analysis agents. Specifically, they fail to detect silent errors, logical flaws that yield incorrect results without triggering interpreter exceptions, and erroneously penalize exploratory actions, mistaking necessary trial-and-error exploration for grounding failures. To bridge this gap, we introduce DataPRM, a novel environment-aware generative process reward model that (1) can serve as an active verifier, autonomously interacting with the environment to probe intermediate execution states and uncover silent errors, and (2) employs a reflection-aware ternary reward strategy that distinguishes between correctable grounding errors and irrecoverable mistakes. We design a scalable pipeline to construct over 8K high-quality training instances for DataPRM via diversity-driven trajectory generation and knowledge-augmented step-level annotation. Experimental results demonstrate that DataPRM improves downstream policy LLMs by 7.21% on ScienceAgentBench and 11.28% on DABStep using Best-of-N inference. Notably, with only 4B parameters, DataPRM outperforms strong baselines, and exhibits robust generalizability across diverse Test-Time Scaling strategies. Furthermore, integrating DataPRM into Reinforcement Learning yields substantial gains over outcome-reward baselines, achieving 78.73% on DABench and 64.84% on TableBench, validating the effectiveness of process reward supervision. Code is available at https://github.com/zjunlp/DataMind.",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.CE",
+        "cs.LG",
+        "cs.MA"
+      ],
+      "published": "2026-04-28T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.24198",
+      "pdf_url": "https://arxiv.org/pdf/2604.24198",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2604.24506",
+      "title": "MIMIC: A Generative Multimodal Foundation Model for Biomolecules",
+      "authors": [
+        "Siavash Golkar",
+        "Jake Kovalic",
+        "Irina Espejo Morales",
+        "Samuel Sledzieski",
+        "Minhuan Li",
+        "Ksenia Sokolova",
+        "Geraud Krawezik",
+        "Alberto Bietti",
+        "Claudia Skok Gibbs",
+        "Roman Klypa",
+        "Shengwei Xiong",
+        "Francois Lanusse",
+        "Liam Parker",
+        "Kyunghyun Cho",
+        "Miles Cranmer",
+        "Tom Hehir",
+        "Michael McCabe",
+        "Lucas Meyer",
+        "Rudy Morel",
+        "Payel Mukhopadhyay",
+        "Mariel Pettee",
+        "Helen Qu",
+        "Jeff Shen",
+        "David Fouhey",
+        "Hadi Sotoudeh",
+        "Vikram Mulligan",
+        "Pilar Cossio",
+        "Sonya M. Hanson",
+        "Alisha N. Jones",
+        "Olga G. Troyanskaya",
+        "Shirley Ho"
+      ],
+      "abstract": "Biological function emerges from coupled constraints across sequence, structure, regulation, evolution, and cellular context, yet most foundation models in biology are trained within one modality or for a fixed forward task. We present MIMIC, a generative multimodal foundation model trained on our newly curated and aligned dataset, LORE, linking nucleic acid, protein, evolutionary, structural, regulatory, and semantic/contextual modalities within partially observed biomolecular states. MIMIC uses a split-track encoder-decoder architecture to condition on arbitrary subsets of observed modalities and reconstruct or generate missing components of molecular state across the genome, transcriptome, and proteome. Multimodal conditioning consistently improves MIMIC's sequence reconstruction relative to sequence-only inputs, while its learned representations enable state-of-the-art performance on RNA and protein downstream tasks. MIMIC achieves state-of-the-art splicing prediction, and its joint generative formulation enables isoform-aware inference that further improves performance. Beyond prediction, the same generative framework supports constrained design. For RNA, MIMIC identifies corrective edits in a clinically relevant HBB splice-disrupting mutation without reverting it by using evolutionary and structural signals. For proteins, jointly conditioning on shape and surface chemistry of PD-L1 and hACE2 binding sites produces diverse, high-confidence sequences with strong in silico support for target binding. Finally, MIMIC uses experimental context as semantic conditioning to model assay-dependent RNA chemical probing, rather than treating context as a fixed output. Together, these results position MIMIC's aligned multimodal generative modeling as a strong foundation for unifying representation learning, conditional prediction, and constrained biomolecular design within a single model.",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-04-28T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.24506",
+      "pdf_url": "https://arxiv.org/pdf/2604.24506",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2604.22800",
+      "title": "RCSB PDB AI Help Desk: retrieval-augmented generation for protein structure deposition support",
+      "authors": [
+        "Vivek Reddy Chithari (RCSB Protein Data Bank",
+        "Rutgers",
+        "The State University of New Jersey",
+        "Piscataway",
+        "NJ",
+        "USA)",
+        "Jasmine Y. Young (RCSB Protein Data Bank",
+        "Rutgers",
+        "The State University of New Jersey",
+        "Piscataway",
+        "NJ",
+        "USA)",
+        "Irina Persikova (RCSB Protein Data Bank",
+        "Rutgers",
+        "The State University of New Jersey",
+        "Piscataway",
+        "NJ",
+        "USA)",
+        "Yuhe Liang (RCSB Protein Data Bank",
+        "Rutgers",
+        "The State University of New Jersey",
+        "Piscataway",
+        "NJ",
+        "USA)",
+        "Gregg V. Crichlow (RCSB Protein Data Bank",
+        "Rutgers",
+        "The State University of New Jersey",
+        "Piscataway",
+        "NJ",
+        "USA)",
+        "Justin W. Flatt (RCSB Protein Data Bank",
+        "Rutgers",
+        "The State University of New Jersey",
+        "Piscataway",
+        "NJ",
+        "USA)",
+        "Sutapa Ghosh (RCSB Protein Data Bank",
+        "Rutgers",
+        "The State University of New Jersey",
+        "Piscataway",
+        "NJ",
+        "USA)",
+        "Brian P. Hudson (RCSB Protein Data Bank",
+        "Rutgers",
+        "The State University of New Jersey",
+        "Piscataway",
+        "NJ",
+        "USA)",
+        "Ezra Peisach (RCSB Protein Data Bank",
+        "Rutgers",
+        "The State University of New Jersey",
+        "Piscataway",
+        "NJ",
+        "USA)",
+        "Monica Sekharan (RCSB Protein Data Bank",
+        "Rutgers",
+        "The State University of New Jersey",
+        "Piscataway",
+        "NJ",
+        "USA)",
+        "Chenghua Shao (RCSB Protein Data Bank",
+        "Rutgers",
+        "The State University of New Jersey",
+        "Piscataway",
+        "NJ",
+        "USA)",
+        "Stephen K. Burley (RCSB Protein Data Bank",
+        "Rutgers",
+        "The State University of New Jersey",
+        "Piscataway",
+        "NJ",
+        "USA",
+        "RCSB Protein Data Bank",
+        "San Diego Supercomputer Center",
+        "University of California San Diego",
+        "CA",
+        "USA)"
+      ],
+      "abstract": "Motivation: Structural Biologists have contributed more than 245,000 experimentally determined three-dimensional structures of biological macromolecules to the Protein Data Bank (PDB). Incoming data are validated and biocurated by ~20 expert biocurators across the wwPDB. RCSB PDB biocurators who process more than 40% of global depositions face increasing challenges in maintaining efficient Help Desk operations, with approximately 19,000 messages in approximately 8,000 entries received from depositors in 2025.   Results: We developed an AI-powered Help Desk using Retrieval-Augmented Generation (RAG) built on LangChain with a pgvector store (PostgreSQL) and GPT-4.1-mini. The system employs pymupdf4llm for Markdown-preserving PDF extraction, two-stage document chunking, Maximal Marginal Relevance retrieval, a topical guardrail that filters off-topic queries, and a specialized system prompt that prevents exposure of internal terminology. A dual-LLM architecture uses separate model configurations for question condensing and response generation. Deployed in production on Kubernetes with PostgreSQL (pgvector), it provides around-the-clock depositor assistance with citation-backed, streaming responses.   Availability and implementation: Freely available at https://rcsb-deposit-help.rcsb.org.",
+      "categories": [
+        "cs.IR",
+        "cs.AI",
+        "cs.CL",
+        "q-bio.QM"
+      ],
+      "published": "2026-04-28T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.22800",
+      "pdf_url": "https://arxiv.org/pdf/2604.22800",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2604.23129",
+      "title": "MindTrellis: Co-Creating Knowledge Structures with AI through Interactive Visual Exploration",
+      "authors": [
+        "Xiang Li",
+        "Cara Li",
+        "Emily Kuang",
+        "Can Liu",
+        "Jian Zhao"
+      ],
+      "abstract": "Knowledge workers face increasing challenges in synthesizing information from multiple documents into structured conceptual understanding. This process is inherently iterative: users explore content, identify relationships between concepts, and continuously reorganize their mental models. However, current approaches offer limited support. LLM-based systems let users query information but not shape how knowledge is organized; manual tools like mind maps support structure creation but lack intelligent assistance. This leaves an open opportunity: supporting collaborative construction where users and AI jointly develop an evolving knowledge representation. We present MindTrellis, an interactive visual system where users and AI collaboratively build a dynamic knowledge graph. Users can query the graph to retrieve document-grounded information, and contribute by introducing new concepts, modifying relationships, and reorganizing the hierarchy to reflect their developing understanding. In a user study where 12 participants created slide decks, MindTrellis outperformed retrieval-only baselines in knowledge organization and cognitive load, as measured by expert ratings of content coverage and structural quality.",
+      "categories": [
+        "cs.HC",
+        "cs.AI",
+        "cs.IR",
+        "cs.MA"
+      ],
+      "published": "2026-04-28T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.23129",
+      "pdf_url": "https://arxiv.org/pdf/2604.23129",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2604.24029",
+      "title": "DeepTaxon: An Interpretable Retrieval-Augmented Multimodal Framework for Unified Species Identification and Discovery",
+      "authors": [
+        "Jiawei Wang",
+        "Ming Lei",
+        "Yaning Yang",
+        "Xinyan Lin",
+        "Yuquan Le",
+        "Qiwei Ma",
+        "Zhiwei Xu",
+        "Zheqi Lv",
+        "Yuchen Ang",
+        "Zhe Quan",
+        "Tat-Seng Chua"
+      ],
+      "abstract": "Identifying species in biology among tens of thousands of visually similar taxa while discovering unknown species in open-world environments remains a fundamental challenge in biodiversity research. Current methods treat identification and discovery as separate problems, with classification models assuming closed sets and discovery relying on threshold-based rejection. Here we present DeepTaxon, a retrieval-augmented multimodal framework that unifies species identification and discovery through interpretable reasoning over retrieved visual evidence. Given a query image, DeepTaxon retrieves the top-$k$ candidate species with $n$ exemplar images each from a retrieval index and performs chain-of-thought comparative reasoning. Critically, we redefine discovery as an explicit, retrieval-based decision problem rather than an implicit parametric memory problem. A sample is novel if and only if the retrieval index lacks sufficient evidence for identification, so each retrieval naturally yields a classification or discovery label without manual annotation, thereby providing automatic supervision for both tasks. We train the framework via supervised fine-tuning on synthetic retrieval-augmented data, followed by reinforcement learning on hard samples, converting high-recall retrieval into high-precision decisions that scale to massive taxonomic vocabularies. Extensive experiments on a large-scale in-distribution benchmark and six out-of-distribution datasets demonstrate consistent improvements in both identification and discovery. Ablation studies further reveal effective test-time scaling with candidate count $k$ and exemplar count $n$, strong zero-shot transfer to unseen domains, and consistent performance across retrieval encoders, establishing an interpretable solution for biodiversity research.",
+      "categories": [
+        "cs.CV",
+        "cs.CL",
+        "cs.IR",
+        "cs.MM"
+      ],
+      "published": "2026-04-28T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.24029",
+      "pdf_url": "https://arxiv.org/pdf/2604.24029",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    }
+  ],
+  "ranked_papers": [
+    {
+      "arxiv_id": "2604.22193",
+      "title": "How Large Language Models Balance Internal Knowledge with User and Document Assertions",
+      "authors": [
+        "Shuowei Li",
+        "Haoxin Li",
+        "Wenda Chu",
+        "Yi Fang"
+      ],
+      "abstract": "Large language models (LLMs) often need to balance their internal parametric knowledge with external information, such as user beliefs and content from retrieved documents, in real-world scenarios like RAG or chat-based systems. A model's ability to reliably process these sources is key to system safety. Previous studies on knowledge conflict and sycophancy are limited to a binary conflict paradigm, primarily exploring conflicts between parametric knowledge and either a document or a user, but ignoring the interactive environment where all three sources exist simultaneously. To fill this gap, we propose a three-source interaction framework and systematically evaluate 27 LLMs from 3 families on 2 datasets. Our findings reveal general patterns: most models rely more on document assertions than user assertions, and this preference is reinforced by post-training. Furthermore, our behavioral analysis shows that most models are impressionable, unable to effectively discriminate between helpful and harmful external information. To address this, we demonstrate that fine-tuning on diverse source interaction data can significantly increase a model's discrimination abilities. In short, our work paves the way for developing trustworthy LLMs that can effectively and reliably integrate multiple sources of information. Code is available at https://github.com/shuowl/llm-source-balancing.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-04-28T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.22193",
+      "pdf_url": "https://arxiv.org/pdf/2604.22193",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Highly relevant as it studies how LLMs balance internal knowledge with external information, directly addressing how models handle surprising or conflicting information which is a key focus of the brainstorming notes."
+    },
+    {
+      "arxiv_id": "2604.22080",
+      "title": "Sound Agentic Science Requires Adversarial Experiments",
+      "authors": [
+        "Dionizije Fa",
+        "Marko Culjak"
+      ],
+      "abstract": "LLM-based agents are rapidly being adopted for scientific data analysis, automating tasks once limited by human time and expertise. This capability is often framed as an acceleration of discovery, but it also accelerates a familiar failure mode, the rapid production of plausible, endlessly revisable analyses that are easy to generate, effectively turning hypothesis space into candidate claims supported by selectively chosen analyses, optimized for publishable positives. Unlike software, scientific knowledge is not validated by the iterative accumulation of code and post hoc statistical support. A fluent explanation or a significant result on a single dataset is not verification. Because the missing evidence is a negative space, experiments and analyses that would have falsified the claim were never run or never published. We therefore propose that non-experimental claims produced with agentic assistance be evaluated under a falsification-first standard: agents should not be used primarily to craft the most compelling narrative, but to actively search for the ways in which the claim can fail.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-04-28T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.22080",
+      "pdf_url": "https://arxiv.org/pdf/2604.22080",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Focuses on adversarial experiments for AI agents in scientific contexts, which directly relates to the brainstorming ideas about tasks requiring failure first and testing models with noisy observations to form hypotheses."
+    },
+    {
+      "arxiv_id": "2604.22082",
+      "title": "Removing Sandbagging in LLMs by Training with Weak Supervision",
+      "authors": [
+        "Emil Ryd",
+        "Henning Bartsch",
+        "Julian Stastny",
+        "Joe Benton",
+        "Vivek Hebbar"
+      ],
+      "abstract": "As AI systems begin to automate complex tasks, supervision increasingly relies on weaker models or limited human oversight that cannot fully verify output quality. A model more capable than its supervisors could exploit this gap through sandbagging, producing work that appears acceptable but falls short of its true abilities. Can training elicit a model's best work even without reliable verification? We study this using model organisms trained to sandbag, testing elicitation techniques on problem-solving math, graduate-level science, and competitive coding tasks. We find that training with weak supervision can reliably elicit sandbagging models when supervised fine-tuning (SFT) and reinforcement learning (RL) are combined: SFT on weak demonstrations breaks the sandbagging behavior, enabling RL to then fully elicit performance. Neither method succeeds reliably alone-RL without SFT almost always leads to reward hacking rather than genuine improvement. Critically, this relies on training being indistinguishable from deployment; when models can distinguish between training and deployment, they can perform well during training while continuing to sandbag afterward. Our results provide initial evidence that training is a viable mitigation against sandbagging, while highlighting the importance of making training indistinguishable from deployment.",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-04-28T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.22082",
+      "pdf_url": "https://arxiv.org/pdf/2604.22082",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Directly addresses weak supervision and model evaluation challenges mentioned in Hunter Prep, particularly relevant to LM judge weaknesses and grading problems."
+    },
+    {
+      "arxiv_id": "2604.22891",
+      "title": "Quantifying and Mitigating Self-Preference Bias of LLM Judges",
+      "authors": [
+        "Jinming Yang",
+        "Chuxian Qiu",
+        "Zhenyu Deng",
+        "Xinshan Jiao",
+        "Tao Zhou"
+      ],
+      "abstract": "LLM-as-a-Judge has become a dominant approach in automated evaluation systems, playing critical roles in model alignment, leaderboard construction, quality control, and so on. However, the scalability and trustworthiness of this approach can be substantially distorted by Self-Preference Bias (SPB), which is a directional evaluative deviation in which LLMs systematically favor or disfavor their own generated outputs during evaluation. Existing measurements rely on costly human annotations and conflate generative capability with evaluative stance, and thus are impractical for large-scale deployment in real-world systems. To address this issue, we introduce a fully automated framework to quantifying and mitigating SPB, which constructs equal-quality pairs of responses with negligible quality differences, enabling statistical disentanglement of discriminability from bias propensity without human gold standards. Empirical analysis across 20 mainstream LLMs reveals that advanced capabilities are often uncorrelated, or even negatively correlated, with low SPB. To mitigate this bias, we propose a structured multi-dimensional evaluation strategy grounded in cognitive load decomposition, which reduces SPB by 31.5\\% on average.",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-04-28T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.22891",
+      "pdf_url": "https://arxiv.org/pdf/2604.22891",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Quantifies and mitigates self-preference bias in LLM judges, directly addressing the core concerns about LM judge weaknesses mentioned in Hunter Prep."
+    },
+    {
+      "arxiv_id": "2604.23099",
+      "title": "ProEval: Proactive Failure Discovery and Efficient Performance Estimation for Generative AI Evaluation",
+      "authors": [
+        "Yizheng Huang",
+        "Wenjun Zeng",
+        "Aditi Kumaresan",
+        "Zi Wang"
+      ],
+      "abstract": "Evaluating generative AI models is increasingly resource-intensive due to slow inference, expensive raters, and a rapidly growing landscape of models and benchmarks. We propose ProEval, a proactive evaluation framework that leverages transfer learning to efficiently estimate performance and identify failure cases. ProEval employs pre-trained Gaussian Processes (GPs) as surrogates for the performance score function, mapping model inputs to metrics such as the severity of errors or safety violations. By framing performance estimation as Bayesian quadrature (BQ) and failure discovery as superlevel set sampling, we develop uncertainty-aware decision strategies that actively select or synthesize highly informative inputs for testing. Theoretically, we prove that our pre-trained GP-based BQ estimator is unbiased and bounded. Empirically, extensive experiments on reasoning, safety alignment, and classification benchmarks demonstrate that ProEval is significantly more efficient than competitive baselines. It requires 8-65x fewer samples to achieve estimates within 1% of the ground truth, while simultaneously revealing more diverse failure cases under a stricter evaluation budget.",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "stat.ML"
+      ],
+      "published": "2026-04-28T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.23099",
+      "pdf_url": "https://arxiv.org/pdf/2604.23099",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Directly addresses efficient evaluation of generative AI models using transfer learning and Gaussian Processes, highly relevant to measuring model performance and evaluation frameworks."
+    },
+    {
+      "arxiv_id": "2604.23488",
+      "title": "Do Synthetic Trajectories Reflect Real Reward Hacking? A Systematic Study on Monitoring In-the-Wild Hacking in Code Generation",
+      "authors": [
+        "Lichen Li",
+        "Hengguang Zhou",
+        "Yijun Liang",
+        "Tianyi Zhou",
+        "Cho-Jui Hsieh"
+      ],
+      "abstract": "Reward hacking in code generation, where models exploit evaluation loopholes to obtain full reward without correctly solving the tasks, poses a critical challenge for Reinforcement Learning (RL) and the deployment of reasoning models. Existing studies have been conducted primarily on synthetic hacking trajectories. However, whether these synthetic behaviors faithfully represent naturally emerging hacking in the wild remains unclear. In this work, we present a systematic analysis of the synthetic vs. in-the-wild discrepancy in reward hacking. We examine to what extent hacking behaviors induced by prompting resemble those emerging during RL training, and whether monitors trained on synthetic trajectories generalize to naturally arising but previously unseen hacking. To scale up the curation of in-the-wild reward hacking trajectories, we modified Group Relative Policy Optimization (GRPO) by injecting conflicting unit tests as tracers and applying a \"resampling-until-hack\" mechanism. Through controlled comparisons between monitors trained on synthetic versus in-the-wild data, we find that (1) synthetic-data-trained monitors fail to generalize to \"in-the-wild\" hacking, and (2) monitors trained on our \"in-the-wild\" trajectories demonstrate stronger generalizability to unseen hacking types. Our results indicate that synthetic reward hacking data may not fully reflect natural reward hacking behaviors, and that relying solely on synthetic data can lead to misleading conclusions. The codebase is available at https://github.com/LichenLillc/CoTMonitoring.git",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-04-28T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.23488",
+      "pdf_url": "https://arxiv.org/pdf/2604.23488",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Systematically studies reward hacking in code generation and compares synthetic vs real-world hacking behaviors, which is highly relevant to the LM judge weaknesses and feedback evaluation concerns mentioned in the projects."
+    },
+    {
+      "arxiv_id": "2604.23987",
+      "title": "Continual Calibration: Coverage Can Collapse Before Accuracy in Lifelong LLM Fine-Tuning",
+      "authors": [
+        "Ibne Farabi Shihab",
+        "Sanjeda Akter",
+        "Anuj Sharma"
+      ],
+      "abstract": "Continual learning for large language models is typically evaluated through accuracy retention under sequential fine-tuning. We argue that this perspective is incomplete, because uncertainty reliability can degrade earlier and more sharply than top-1 performance. We study this empirically by measuring conformal coverage and calibration error on sequentially fine-tuned models across three model families and eight task sequences drawn primarily from classification and multiple-choice benchmarks. Across the classification-style settings we study, coverage loss exceeds accuracy loss by a factor of roughly \\(3.4\\times \\pm 0.5\\times\\) on average across seeds; in the most pronounced case, coverage drops from \\(0.92\\) to \\(0.61\\), while accuracy remains within three points of baseline. Standard continual-learning methods that preserve accuracy do not automatically preserve coverage, and naive calibration baselines recover only part of the gap. We propose calibration replay, a lightweight post-hoc procedure that maintains a task-specific held-out buffer and refits a task-specific conformal threshold under the current model after each update. It adds no training-time gradient cost, uses less than one percent of the memory of ordinary experience replay, and typically restores coverage to within two points of nominal at buffer size \\(m = 200\\). We accompany the empirical study with a drift decomposition, a finite-sample recovery theorem showing exact conformal validity under exchangeability, and a mixture-validity proposition explaining why pooled thresholds do not suffice. Our guarantees are stated for classification-style tasks with task-specific buffers; extensions to open-ended generation are exploratory.",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-04-28T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.23987",
+      "pdf_url": "https://arxiv.org/pdf/2604.23987",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Directly addresses calibration and uncertainty reliability in LLM fine-tuning, which is highly relevant to the research on LM judge weaknesses and better grading mentioned in the projects."
+    },
+    {
+      "arxiv_id": "2604.22937",
+      "title": "AutoPyVerifier: Learning Compact Executable Verifiers for Large Language Model Outputs",
+      "authors": [
+        "Pouya Pezeshkpour",
+        "Estevam Hruschka"
+      ],
+      "abstract": "Verification is becoming central to both reinforcement-learning-based training and inference-time control of large language models (LLMs). Yet current verifiers face a fundamental trade-off: LLM-based verifiers are expressive but hard to control and prone to error, while deterministic executable verifiers are reliable and interpretable but often limited in capability. We study the following question: given a development set of LLM outputs and labels for a target objective, such as correctness, can we automatically induce a minimal set of Python verifiers whose joint satisfaction closely matches that objective? We propose AutoPyVerifier, a framework that uses an LLM to synthesize candidate verifier functions and then refines them through search over a directed acyclic graph (DAG). By navigating the DAG, AutoPyVerifier systematically explores the space of deterministic executable verifiers and selects a compact verifier set whose joint satisfaction best approximates the target objective. Across mathematical reasoning, coding, function calling, and instruction-following benchmarks for several state-of-the-art LLMs, AutoPyVerifier improves target-objective prediction by up to 55.0 F1 points over the initial LLM-generated verifier sets. Additional analyses show that the most useful verification targets vary by benchmark and model, and that the DAG-based search shifts the learned verifier sets toward more structural and semantically grounded checks. We further show that exposing the discovered verifier set to an LLM as an external tool improves downstream accuracy by up to 17.0 points. We release our code",
+      "categories": [
+        "cs.CL",
+        "cs.LG",
+        "cs.PL"
+      ],
+      "published": "2026-04-28T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.22937",
+      "pdf_url": "https://arxiv.org/pdf/2604.22937",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Highly relevant to automated grading and verification of LLM outputs, addressing key concerns about LM judge weaknesses and evaluation methods."
+    },
+    {
+      "arxiv_id": "2604.23318",
+      "title": "Hidden States Know Where Reasoning Diverges: Credit Assignment via Span-Level Wasserstein Distance",
+      "authors": [
+        "Xinzhu Chen",
+        "Wei He",
+        "Huichuan Fan",
+        "Wenzhe Niu",
+        "Zhongxiang Sun",
+        "Xuanru Wang",
+        "Jiuchong Gao",
+        "Jinghua Hao",
+        "Renqing He",
+        "Weijie Yu"
+      ],
+      "abstract": "Group Relative Policy Optimization (GRPO) performs coarse-grained credit assignment in reinforcement learning with verifiable rewards (RLVR) by assigning the same advantage to all tokens in a rollout. Process reward models can provide finer-grained supervision, but they require step-level annotation or additional reward modeling. We show that hidden-state distributions contain a useful signal for local reasoning quality that can be extracted using only outcome-level correctness labels available in RLVR. Specifically, within each GRPO group, the Wasserstein distance between span-level hidden state distributions of correct and incorrect rollouts increases around regions where their local reasoning quality diverges. This association holds both across examples and within individual trajectories, suggesting that hidden-state distributional divergence can serve as a self-supervision signal for fine-grained credit assignment. We formalize this observation with a separation theorem showing that, under mild structural assumptions, post-divergence spans have larger Wasserstein distances than pre-divergence spans whenever the population-level distributional gap exceeds finite-sample noise. Motivated by this result, we propose \\textbf{S}pan-level \\textbf{H}idden state \\textbf{E}nabled \\textbf{A}dvantage \\textbf{R}eweighting (SHEAR), which modifies GRPO by using span-level Wasserstein distances to scale token-level advantages, amplifying updates on tokens whose hidden states are more separated from the opposing group. The method requires no additional model and only minimal changes to the training pipeline. Experiments on five mathematical reasoning benchmarks and five code generation benchmarks show improvements over standard GRPO and strong performance relative to supervised process reward models, while requiring no additional annotation or reward model training.",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "published": "2026-04-28T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.23318",
+      "pdf_url": "https://arxiv.org/pdf/2604.23318",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Addresses credit assignment and self-correction in RL with verifiable rewards using hidden states, directly relevant to the Google brainstorming on self-correction evaluation and feedback mechanisms."
+    },
+    {
+      "arxiv_id": "2604.23460",
+      "title": "Ulterior Motives: Detecting Misaligned Reasoning in Continuous Thought Models",
+      "authors": [
+        "Sharan Ramjee"
+      ],
+      "abstract": "Chain-of-Thought (CoT) reasoning has emerged as a key technique for eliciting complex reasoning in Large Language Models (LLMs). Although interpretable, its dependence on natural language limits the model's expressive bandwidth. Continuous thought models address this bottleneck by reasoning in latent space rather than human-readable tokens. While they enable richer representations and faster inference, they raise a critical safety question: how can we detect misaligned reasoning in an uninterpretable latent space? To study this, we introduce MoralChain, a benchmark of 12,000 social scenarios with parallel moral/immoral reasoning paths. We train a continuous thought model with backdoor behavior using a novel dual-trigger paradigm - one trigger that arms misaligned latent reasoning ([T]) and another that releases harmful outputs ([O]). We demonstrate three findings: (1) continuous thought models can exhibit misaligned latent reasoning while producing aligned outputs, with aligned and misaligned reasoning occupying geometrically distinct regions of latent space; (2) linear probes trained on behaviorally-distinguishable conditions ([T][O] vs [O]) transfer to detecting armed-but-benign states ([T] vs baseline) with high accuracy; and (3) misalignment is encoded in early latent thinking tokens, suggesting safety monitoring for continuous thought models should target the \"planning\" phase of latent reasoning.",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "published": "2026-04-28T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.23460",
+      "pdf_url": "https://arxiv.org/pdf/2604.23460",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Directly addresses detecting misaligned reasoning in continuous thought models, highly relevant to self-correction evaluation and understanding model failure modes."
+    },
+    {
+      "arxiv_id": "2604.22027",
+      "title": "Shared Lexical Task Representations Explain Behavioral Variability In LLMs",
+      "authors": [
+        "Zhuonan Yang",
+        "Jacob Xiaochen Li",
+        "Francisco Piedrahita Velez",
+        "Eric Todd",
+        "David Bau",
+        "Michael L. Littman",
+        "Stephen H. Bach",
+        "Ellie Pavlick"
+      ],
+      "abstract": "One of the most common complaints about large language models (LLMs) is their prompt sensitivity -- that is, the fact that their ability to perform a task or provide a correct answer to a question can depend unpredictably on the way the question is posed. We investigate this variation by comparing two very different but commonly-used styles of prompting: instruction-based prompts, which describe the task in natural language, and example-based prompts, which provide in-context few-shot demonstration pairs to illustrate the task. We find that, despite large variation in performance as a function of the prompt, the model engages some common underlying mechanisms across different prompts of a task. Specifically, we identify task-specific attention heads whose outputs literally describe the task -- which we dub lexical task heads -- and show that these heads are shared across prompting styles and trigger subsequent answer production. We further find that behavioral variation between prompts can be explained by the degree to which these heads are activated, and that failures are at least sometimes due to competing task representations that dilute the signal of the target task. Our results together present an increasingly clear picture of how LLMs' internal representations can explain behavior that otherwise seems idiosyncratic to users and developers.",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-04-28T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.22027",
+      "pdf_url": "https://arxiv.org/pdf/2604.22027",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Directly relevant to understanding behavioral variability in LLMs and how different prompting styles affect performance, which connects to self-correction and evaluation robustness themes in the research projects."
+    },
+    {
+      "arxiv_id": "2604.22266",
+      "title": "Large Language Models Decide Early and Explain Later",
+      "authors": [
+        "Ayan Datta",
+        "Zhixue Zhao",
+        "Bhuvanesh Verma",
+        "Radhika Mamidi",
+        "Mounika Marreddy",
+        "Alexander Mehler"
+      ],
+      "abstract": "Large Language Models often achieve strong performance by generating long intermediate chain-of-thought reasoning. However, it remains unclear when a model's final answer is actually determined during generation. If the answer is already fixed at an intermediate stage, subsequent reasoning tokens may constitute post-decision explanation, increasing inference cost and latency without improving correctness. We study the evolution of predicted answers over reasoning steps using forced answer completion, which elicits the model's intermediate predictions at partial reasoning prefixes. Focusing on Qwen3-4B and averaging results across all datasets considered, we find that predicted answers change in only 32% of queries. Moreover, once the final answer switch occurs, the model generates an average of 760 additional reasoning tokens per query, accounting for a substantial fraction of the total reasoning budget. Motivated by these findings, we investigate early stopping strategies that halt generation once the answer has stabilized. We show that simple heuristics, including probe-based stopping, can reduce reasoning token usage by 500 tokens per query while incurring only a 2% drop in accuracy. Together, our results indicate that a large portion of chain-of-thought generation is redundant and can be reduced with minimal impact on performance.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-04-28T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.22266",
+      "pdf_url": "https://arxiv.org/pdf/2604.22266",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Directly relevant to understanding when models make decisions versus post-hoc explanations, which connects to self-correction evaluation and the timing of model reasoning processes."
+    },
+    {
+      "arxiv_id": "2604.22565",
+      "title": "Learning Evidence Highlighting for Frozen LLMs",
+      "authors": [
+        "Shaoang Li",
+        "Yanhang Shi",
+        "Yufei Li",
+        "Mingfu Liang",
+        "Xiaohan Wei",
+        "Yunchen Pu",
+        "Fei Tian",
+        "Chonglin Sun",
+        "Frank Shyu",
+        "Luke Simon",
+        "Sandeep Pandey",
+        "Xi Liu",
+        "Jian Li"
+      ],
+      "abstract": "Large Language Models (LLMs) can reason well, yet often miss decisive evidence when it is buried in long, noisy contexts. We introduce HiLight, an Evidence Emphasis framework that decouples evidence selection from reasoning for frozen LLM solvers. HiLight avoids compressing or rewriting the input, which can discard or distort evidence, by training a lightweight Emphasis Actor to insert minimal highlight tags around pivotal spans in the unaltered context. A frozen Solver then performs downstream reasoning on the emphasized input. We cast highlighting as a weakly supervised decision-making problem and optimize the Actor with reinforcement learning using only the Solver's task reward, requiring no evidence labels and no access to or modification of the Solver. Across sequential recommendation and long-context question answering, HiLight consistently improves performance over strong prompt-based and automated prompt-optimization baselines. The learned emphasis policy transfers zero-shot to both smaller and larger unseen Solver families, including an API-based Solver, suggesting that the Actor captures genuine, reusable evidence structure rather than overfitting to a single backbone.",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-04-28T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.22565",
+      "pdf_url": "https://arxiv.org/pdf/2604.22565",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Directly addresses evidence selection in long contexts for LLMs, which aligns with the brainstorming goal of measuring how models handle surprising information and self-correction evaluation."
+    },
+    {
+      "arxiv_id": "2604.21935",
+      "title": "Math Takes Two: A test for emergent mathematical reasoning in communication",
+      "authors": [
+        "Michael Cooper",
+        "Samuel Cooper"
+      ],
+      "abstract": "Although language models demonstrate remarkable proficiency on mathematical benchmarks, it remains unclear whether this reflects true mathematical reasoning or statistical pattern matching over learning formal syntax. Most existing evaluations rely on symbolic problems grounded in established mathematical conventions, limiting insight into the models' ability to construct abstract concepts from first principles. In this work, we propose Math Takes Two, a new benchmark designed to assess the emergence of mathematical reasoning through communication. Motivated by the hypothesis that mathematical cognition in humans co-evolved with the need for precise communication, our benchmark tests whether two agents, without prior mathematical knowledge, can develop a shared symbolic protocol to solve a visually grounded task where the use of a numerical system facilitates extrapolation. Unlike many current datasets, our benchmark eschews predefined mathematical language, instead requiring agents to discover latent structure and representations from scratch. Math Takes Two thus provides a novel lens through which to develop and evaluate models with emergent numerical reasoning capabilities.",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-04-28T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.21935",
+      "pdf_url": "https://arxiv.org/pdf/2604.21935",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Directly addresses whether language models demonstrate true reasoning versus pattern matching, which aligns with the research focus on testing models' ability to handle surprising information and explicit self-correction evaluations."
+    },
+    {
+      "arxiv_id": "2604.22273",
+      "title": "When Does LLM Self-Correction Help? A Control-Theoretic Markov Diagnostic and Verify-First Intervention",
+      "authors": [
+        "Aofan Liu",
+        "Jingxiang Meng"
+      ],
+      "abstract": "Iterative self-correction is widely used in agentic LLM systems, but when repeated refinement helps versus hurts remains unclear. We frame self-correction as a cybernetic feedback loop in which the same language model serves as both controller and plant, and use a two-state Markov model over {Correct, Incorrect} to operationalize a simple deployment diagnostic: iterate only when ECR/EIR > Acc/(1 - Acc). In this view, EIR functions as a stability margin and prompting functions as lightweight controller design. Across 7 models and 3 datasets (GSM8K, MATH, StrategyQA), we find a sharp near-zero EIR threshold (<= 0.5%) separating beneficial from harmful self-correction. Only o3-mini (+3.4 pp, EIR = 0%), Claude Opus 4.6 (+0.6 pp, EIR ~ 0.2%), and o4-mini (+/-0 pp) remain non-degrading; GPT-5 degrades by -1.8 pp. A verify-first prompt ablation provides causal evidence that this threshold is actionable through prompting alone: on GPT-4o-mini it reduces EIR from 2% to 0% and turns -6.2 pp degradation into +0.2 pp (paired McNemar p < 10^-4), while producing little change on already-sub-threshold models. ASC further illustrates the stopping trade-off: it halts harmful refinement but incurs a 3.8 pp confidence-elicitation cost. Overall, the paper argues that self-correction should be treated not as a default behavior, but as a control decision governed by measurable error dynamics.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-04-28T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.22273",
+      "pdf_url": "https://arxiv.org/pdf/2604.22273",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Directly addresses when LLM self-correction helps versus hurts using a control-theoretic framework, which perfectly aligns with the explicit self-correction evaluation interests."
+    },
+    {
+      "arxiv_id": "2604.22154",
+      "title": "Reliable Self-Harm Risk Screening via Adaptive Multi-Agent LLM Systems",
+      "authors": [
+        "Meghana Karnam",
+        "Ananya Joshi"
+      ],
+      "abstract": "Emerging AI systems in behavioral health and psychiatry use multi-step or multi-agent LLM pipelines for tasks like assessing self-harm risk and screening for depression. However, common evaluation approaches, like LLM-as-a-judge, do not indicate when a decision is reliable or how errors may accumulate across multiple LLM judgements, limiting their suitability for safety-critical settings. We present a statistical framework for multi-agent pipelines structured as directed acyclic graphs (DAGs) that provides an alternative to heuristic voting with principled, adaptive decision-making. We model each agent as a stochastic categorical decision and introduce (1) tighter agent-level performance confidence bounds, (2) a bandit-based adaptive sampling strategy based on input difficulty, and (3) regret guarantees over the multi-agent system that shows logarithmic error growth when deployed. We evaluate our system on two labeled datasets in behavioral health : the AEGIS 2.0 behavioral health subset (N=161) and a stratified sample of SWMH Reddit posts (N=250). Empirically, our adaptive sampling strategy achieves the lowest false positive rate of any condition across both datasets, 0.095 on AEGIS 2.0 compared to 0.159 for single-agent models, reducing incorrect flagging of safe content by 40\\% and still having similar false negative rates across all conditions. These results suggest that principled adaptive sampling offers a meaningful improvement in precision without reducing recall in this setting.",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-04-28T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.22154",
+      "pdf_url": "https://arxiv.org/pdf/2604.22154",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Focuses on reliable evaluation in safety-critical multi-agent LLM systems, highly relevant to concerns about LM judge reliability and effective grading of complex model behaviors."
+    },
+    {
+      "arxiv_id": "2604.22779",
+      "title": "KARL: Mitigating Hallucinations in LLMs via Knowledge-Boundary-Aware Reinforcement Learning",
+      "authors": [
+        "Cheng Gao",
+        "Cheng Huang",
+        "Kangyang Luo",
+        "Ziqing Qiao",
+        "Shuzheng Si",
+        "Huimin Chen",
+        "Chaojun Xiao",
+        "Maosong Sun"
+      ],
+      "abstract": "Enabling large language models (LLMs) to appropriately abstain from answering questions beyond their knowledge is crucial for mitigating hallucinations. While existing reinforcement learning methods foster autonomous abstention, they often compromise answer accuracy because their static reward mechanisms, agnostic to models' knowledge boundaries, drive models toward excessive caution. In this work, we propose KARL, a novel framework that continuously aligns an LLM's abstention behavior with its evolving knowledge boundary. KARL introduces two core innovations: a Knowledge-Boundary-Aware Reward that performs online knowledge boundary estimation using within-group response statistics, dynamically rewarding correct answers or guided abstention; and a Two-Stage RL Training Strategy that first explores the knowledge boundary and bypasses the \"abstention trap\", and subsequently converts incorrect answers beyond the knowledge boundary into abstentions without sacrificing accuracy. Extensive experiments on multiple benchmarks demonstrate that KARL achieves a superior accuracy-hallucination trade-off, effectively suppressing hallucinations while maintaining high accuracy across both in-distribution and out-of-distribution scenarios.",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-04-28T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.22779",
+      "pdf_url": "https://arxiv.org/pdf/2604.22779",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Directly addresses LM judge weaknesses through reinforcement learning for knowledge-boundary-aware abstention, which aligns with Hunter Prep's concerns about LM judge limitations."
+    },
+    {
+      "arxiv_id": "2604.23102",
+      "title": "Unstable Rankings in Bayesian Deep Learning Evaluation",
+      "authors": [
+        "Qishi Zhan",
+        "Minxuan Hu",
+        "Guansu Wang",
+        "Jiaxin Liu",
+        "Liang He"
+      ],
+      "abstract": "Standard evaluations of Bayesian deep learning methods assume that metric estimates are reliable, but we show this assumption fails under data scarcity. Method rankings are not only unreliable at small $n$, but also dataset-dependent in ways that point estimates cannot reveal: the same method comparison yields $P(\\mathrm{MCD} \\prec \\mathrm{Ensemble}) = 1.000$ at $n = 50$ on one dataset and remains below $0.95$ even at $n = 500$ on another. Across the datasets we consider, no universal sample size threshold exists, which is precisely why dataset-specific posterior inference is necessary. To address this, we use a Bayesian hierarchical model with method-specific variances to treat evaluation metrics as random variables across data realizations, and we use a predictive Minimum Detectable Difference curve to assess whether an observed gap would be detectable at a given training size. Across six Bayesian deep learning methods and five regression datasets, our results show that uncertainty-aware evaluation is necessary in low-data settings, because current evidence for method superiority and predictive detectability at the same training size can diverge substantially. Our framework provides practitioners with principled tools to determine whether their evaluation data is sufficient before drawing conclusions about method superiority.",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-04-28T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.23102",
+      "pdf_url": "https://arxiv.org/pdf/2604.23102",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Studies unreliability of metric estimates under data scarcity in Bayesian deep learning evaluation, directly relevant to evaluation robustness and grading effectiveness."
+    },
+    {
+      "arxiv_id": "2604.23114",
+      "title": "A Tale of Two Variances: When Single-Seed Benchmarks Fail in Bayesian Deep Learning",
+      "authors": [
+        "Qishi Zhan",
+        "Minxuan Hu",
+        "Liang He",
+        "Guansu Wang",
+        "Jiaxin Liu"
+      ],
+      "abstract": "In limited-data settings, a single endpoint mean of an evaluation metric such as the Continuous Ranked Probability Score (CRPS) is itself a random variable, yet it is routinely reported as if it were a stable property of the method. We study when this practice fails. Using 50 independent repetitions across six regression datasets, we show that CRPS variance trajectories differ substantially across methods and are not always well described by a smooth power-law decay. Methods with a learned heteroscedastic variance head, namely MAP and Deep Ensembles, can develop pronounced, reproducible variance peaks at intermediate training sizes on real datasets, whereas MC Dropout and Bayes by Backprop typically show smooth variance contraction. These peaks have direct practical consequences: at the variance peak on Seoul Bike, the relative RMSE of a single-seed MAP estimate reaches 93.6\\%, and the probability of falling within \\(\\pm 10\\%\\) of the repeated-run mean drops to 5.9\\%. We show that local CRPS variance provides a direct signal of single-seed estimation error, with Spearman correlations above 0.96 on every real dataset. Power-law fit quality and monotonicity together provide compact method-level summaries of trajectory regularity. Finally, replacing the standard heteroscedastic objective with \\(\\beta\\)-NLL substantially reduces the irregular behavior, consistent with the view that the heteroscedastic training objective contributes to the instability. Practitioners should report trajectory summaries alongside endpoint means and concentrate repeated evaluation in high-variance regions.",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-04-28T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.23114",
+      "pdf_url": "https://arxiv.org/pdf/2604.23114",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Demonstrates how single-seed benchmarks fail in limited-data settings using variance analysis, highly relevant to evaluation methodology and dealing with surprising/noisy information."
+    },
+    {
+      "arxiv_id": "2604.23371",
+      "title": "When Context Sticks: Studying Interference in In-Context Learning",
+      "authors": [
+        "Hanna R{\\o}d",
+        "Dagny Streit",
+        "Nils Valseth Selte",
+        "Justin Li"
+      ],
+      "abstract": "This paper investigates context stickiness in in-context learning (ICL), a phenomenon where earlier examples in a prompt interfere with a transformer's ability to adapt to later tasks. Using synthetic regression tasks over linear and quadratic functions, we examine how models trained under sequential, mixed, and random curricula handle abrupt task switches during inference. By sweeping over structured combinations of misleading linear examples followed by recovery quadratic examples, we quantify how prior context biases prediction error and how quickly models realign. Our results show strong evidence of persistent interference: more preceding linear examples reliably degrade quadratic predictions, while additional quadratic examples reduce error but with diminishing returns. We further find that training curricula significantly modulate resilience, with sequential training on the target function class yielding the fastest recovery, and surprisingly, random training producing the least robust behavior.",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-04-28T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.23371",
+      "pdf_url": "https://arxiv.org/pdf/2604.23371",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Directly studies interference in in-context learning and how models handle abrupt task switches, which aligns perfectly with the research interest in testing how models deal with surprising information and failure modes."
+    }
+  ]
+}
