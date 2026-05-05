@@ -1,0 +1,588 @@
+{
+  "date": "2026-05-05",
+  "generated_at": "2026-05-05T03:55:51.648871+00:00",
+  "author_papers": [
+    {
+      "arxiv_id": "2605.00022",
+      "title": "Putting HUMANS first: Efficient LAM Evaluation with Human Preference Alignment",
+      "authors": [
+        "Woody Haosheng Gan",
+        "William Held",
+        "Diyi Yang"
+      ],
+      "abstract": "The rapid proliferation of large audio models (LAMs) demands efficient approaches for model comparison, yet comprehensive benchmarks are costly. To fill this gap, we investigate whether minimal subsets can reliably evaluate LAMs while reducing costs and data redundancy. Analyzing 10 subset selection methods with 18 audio models across 40 tasks covering major LAM evaluation dimensions, we show that subsets of just 50 examples (0.3% of data) can achieve over 0.93 Pearson correlation with full benchmark scores. To understand how well these scores align with what practitioners ultimately care about, user satisfaction, we collect 776 human preference ratings from realistic voice assistant conversations, finding that both subsets and full benchmark achieve only 0.85 correlation with human. To better predict preferences, we trained regression models on these selected subsets, achieving 0.98 correlation -- outperforming regression models trained on both random subsets and the full benchmark. This demonstrates that in regression modeling, well-curated subsets outpredict the full benchmark, showing quality over quantity. We open-source these regression-weighted subsets as the HUMANS benchmark, an efficient proxy for LAM evaluation that captures both benchmark performance and user preferences.",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.SD"
+      ],
+      "published": "2026-05-04T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.00022",
+      "pdf_url": "https://arxiv.org/pdf/2605.00022",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2605.00768",
+      "title": "Characterizing the Expressivity of Local Attention in Transformers",
+      "authors": [
+        "Jiaoda Li",
+        "Ryan Cotterell"
+      ],
+      "abstract": "The transformer is the most popular neural architecture for language modeling. The cornerstone of the transformer is its global attention mechanism, which lets the model aggregate information from all preceding tokens before generating the next token. One common variant of attention is called local attention, which restricts each token to aggregating information from a bounded window of predecessors, reducing the quadratic cost of global attention to linear. Although this restriction is usually motivated by efficiency, it has also been found to improve model quality, a phenomenon that has so far lacked a satisfactory explanation. We provide a formal account of this phenomenon in terms of recognizer expressivity. It has been shown that fixed-precision transformers with global attention correspond to a fragment of linear temporal logic containing a single past operator. We additionally prove that adding local attention introduces a second temporal operator, strictly enlarging the class of recognizable regular languages. Moreover, global and local attention are expressively complementary: neither subsumes the other, and combining them yields the richest fragment. Experiments on formal language recognition and natural language modeling corroborate the theory, showing that hybrid global--local transformers outperform their global-only counterparts.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-05-04T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.00768",
+      "pdf_url": "https://arxiv.org/pdf/2605.00768",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2605.00347",
+      "title": "Odysseus: Scaling VLMs to 100+ Turn Decision-Making in Games via Reinforcement Learning",
+      "authors": [
+        "Chengshuai Shi",
+        "Wenzhe Li",
+        "Xinran Liang",
+        "Yizhou Lu",
+        "Wenjia Yang",
+        "Ruirong Feng",
+        "Seth Karten",
+        "Ziran Yang",
+        "Zihan Ding",
+        "Gabriel Sarch",
+        "Danqi Chen",
+        "Karthik Narasimhan",
+        "Chi Jin"
+      ],
+      "abstract": "Given the rapidly growing capabilities of vision-language models (VLMs), extending them to interactive decision-making tasks such as video games has emerged as a promising frontier. However, existing approaches either rely on large-scale supervised fine-tuning (SFT) on human trajectories or apply reinforcement learning (RL) only in relatively short-horizon settings (typically around 20--30 turns). In this work, we study RL-based training of VLMs for long-horizon decision-making in Super Mario Land, a visually grounded environment requiring 100+ turns of interaction with coordinated perception, reasoning, and action. We begin with a systematic investigation of key algorithmic components and propose an adapted variant of PPO with a lightweight turn-level critic, which substantially improves training stability and sample efficiency over critic-free methods such as GRPO and Reinforce++. We further show that pretrained VLMs provide strong action priors, significantly improving sample efficiency during RL training and reducing the need for manual design choices such as action engineering, compared to classical deep RL trained from scratch. Building on these insights, we introduce Odysseus, an open training framework for VLM agents, achieving substantial gains across multiple levels of the game and at least 3 times average game progresses than frontier models. Moreover, the trained models exhibit consistent improvements under both in-game and cross-game generalization settings, while maintaining general-domain capabilities. Overall, our results identify key ingredients for making RL stable and effective in long-horizon, multi-modal settings, and provide practical guidance for developing VLMs as embodied agents.",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-05-04T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.00347",
+      "pdf_url": "https://arxiv.org/pdf/2605.00347",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2605.00803",
+      "title": "Can Coding Agents Reproduce Findings in Computational Materials Science?",
+      "authors": [
+        "Ziyang Huang",
+        "Yi Cao",
+        "Ali K. Shargh",
+        "Jing Luo",
+        "Ruidong Mei",
+        "Mohd Zaki",
+        "Zhan Liu",
+        "Wyatt Bunstine",
+        "William Jurayj",
+        "Somdatta Goswami",
+        "Tyrel McQueen",
+        "Michael Shields",
+        "Jaafar El-Awady",
+        "Paulette Clancy",
+        "Benjamin Van Durme",
+        "Nicholas Andrews",
+        "William Walden",
+        "Daniel Khashabi"
+      ],
+      "abstract": "Large language models are increasingly deployed as autonomous coding agents and have achieved remarkably strong performance on software engineering benchmarks. However, it is unclear whether such success transfers to computational scientific workflows, where tasks require not only strong coding ability, but also the ability to navigate complex, domain-specific procedures and to interpret results in the context of scientific claims. To address this question, we present AutoMat, a benchmark for evaluating LLM-based agents' ability to reproduce claims from computational materials science. AutoMat poses three interrelated challenges: recovering underspecified computational procedures, navigating specialized toolchains, and determining whether the resulting evidence supports a claim. By working closely with subject matter experts, we curate a set of claims from real materials science papers to test whether coding agents can recover and execute the end-to-end workflow needed to support (or undermine) such claims. We then evaluate multiple representative coding agent settings across several foundation models. Our results show that current LLM-based agents obtain low overall success rates on AutoMat, with the best-performing setting achieving a success rate of only 54.1%. Error analysis further reveals that agents perform worst when workflows must be reconstructed from paper text alone and that they fail primarily due to incomplete procedures, methodological deviations, and execution fragility. Taken together, these findings position AutoMat as both a benchmark for computational scientific reproducibility and a tool for diagnosing the current limitations of agentic systems in AI-for-science settings.",
+      "categories": [
+        "cs.SE",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-05-04T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.00803",
+      "pdf_url": "https://arxiv.org/pdf/2605.00803",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2605.00501",
+      "title": "LambdaRankIC: Directly Optimizing Rank IC for Financial Prediction",
+      "authors": [
+        "Yan Lin",
+        "Yihong Su",
+        "Yi Yang"
+      ],
+      "abstract": "In financial predictions, the performance of machine learning models is often assessed by Rank IC, which is the Spearman rank correlation between the model predictions and the realized asset returns. Despite its wide adoption, most existing models are trained using regression losses or ranking objectives that may not align with Rank IC. We propose LambdaRankIC, a novel learning-to-rank approach that directly optimizes Rank IC. We circumvent the non-differentiability of the ranking operator by deriving the closed-form expression for the lambda gradients induced by the pairwise rank swaps, which enables efficient gradient-based optimization within the LambdaRank framework. We implement LambdaRankIC as a custom objective in XGBoost. Theoretically, we show that our approach optimizes an upper bound on Rank IC. We evaluate the proposed approach on both simulated and real-world financial data. In simulation studies, LambdaRankIC accurately recovers the true ranking structure in noiseless settings and consistently outperforms regression-based and NDCG-oriented ranking methods under low signal-to-noise ratios and heavy-tailed noise regimes. In empirical experiments using real market data, LambdaRankIC achieves the best out-of-sample performance on evaluation metrics commonly used in finance, including Rank IC, ICIR, monthly return, and Sharpe ratio. These results show that directly optimizing Rank IC can yield substantial improvements over conventional learning objectives in financial predictions when the full-order ranking quality is the primary goal.",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-05-04T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.00501",
+      "pdf_url": "https://arxiv.org/pdf/2605.00501",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    }
+  ],
+  "ranked_papers": [
+    {
+      "arxiv_id": "2605.00737",
+      "title": "To Call or Not to Call: A Framework to Assess and Optimize LLM Tool Calling",
+      "authors": [
+        "Qinyuan Wu",
+        "Soumi Das",
+        "Mahsa Amani",
+        "Arijit Nag",
+        "Seungeon Lee",
+        "Krishna P. Gummadi",
+        "Abhilasha Ravichander",
+        "Muhammad Bilal Zafar"
+      ],
+      "abstract": "Agentic AI architectures augment LLMs with external tools, unlocking strong capabilities. However, tool use is not always beneficial; some calls may be redundant or even harmful. Effective tool use, therefore, hinges on a core LLM decision: whether to call or not call a tool, when performing a task. This decision is particularly challenging for web search tools, where the benefits of external information depend on the model's internal knowledge and its ability to integrate potentially noisy tool responses. We introduce a principled framework inspired by decision-making theory to evaluate web search tool-use decisions along three key factors: necessity, utility, and affordability. Our analysis combines two complementary lenses: a normative perspective that infers true need and utility from an optimal allocation of tool calls, and a descriptive perspective that infers the model's self-perceived need and utility from their observed behaviors. We find that models' perceived need and utility of tool calls are often misaligned with their true need and utility. Building on this framework, we train lightweight estimators of need and utility based on models' hidden states. Our estimators enable simple controllers that can improve decision quality and lead to stronger task performance than the self-perceived set up across three tasks and six models.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-05-04T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.00737",
+      "pdf_url": "https://arxiv.org/pdf/2605.00737",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Perfectly aligned with the research focus on assessing and optimizing when LLMs should call tools, addressing the core decision-making challenge in agentic systems."
+    },
+    {
+      "arxiv_id": "2605.00200",
+      "title": "Confidence Estimation in Automatic Short Answer Grading with LLMs",
+      "authors": [
+        "Longwei Cong",
+        "Sonja Hahn",
+        "Sebastian Gombert",
+        "Leon Camus",
+        "Hendrik Drachsler",
+        "Ulf Kroehne"
+      ],
+      "abstract": "Automatic Short Answer Grading (ASAG) with generative large language models (LLMs) has recently demonstrated strong performance without task-specific fine-tuning, while also enabling the generation of synthetic feedback for educational assessment. Despite these advances, LLM-based grading remains imperfect, making reliable confidence estimates essential for safe and effective human-AI collaboration in educational decision-making. In this work, we investigate confidence estimation for ASAG with LLMs by jointly considering model-based confidence signals and dataset-derived uncertainty. We systematically compare three model-based confidence estimation strategies, namely verbalizing, latent, and consistency-based confidence estimation, and show that model-based confidence alone is insufficient to reliably capture uncertainty in ASAG. To address this limitation, we propose a hybrid confidence framework that integrates model-based confidence signals with an explicit estimate of dataset-derived aleatoric uncertainty. Aleatoric uncertainty is operationalized by clustering semantically embedded student responses and quantifying within-cluster heterogeneity. Our results demonstrate that the proposed hybrid confidence measure yields more reliable confidence estimates and improves selective grading performance compared to single-source approaches. Overall, this work advances confidence-aware LLM-based grading for human-in-the-loop assessment, supporting more trustworthy AI-assisted educational assessment systems.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-05-04T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.00200",
+      "pdf_url": "https://arxiv.org/pdf/2605.00200",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Directly addresses confidence estimation in LLM grading systems, which aligns perfectly with the Hunter Prep focus on LM judge weaknesses and better grading methods."
+    },
+    {
+      "arxiv_id": "2605.00238",
+      "title": "Estimating LLM Grading Ability and Response Difficulty in Automatic Short Answer Grading via Item Response Theory",
+      "authors": [
+        "Longwei Cong",
+        "Sonja Hahn",
+        "Sebastian Gombert",
+        "Leon Camus",
+        "Hendrik Drachsler",
+        "Ulf Kroehne"
+      ],
+      "abstract": "Automated short answer grading (ASAG) with large language models (LLMs) is commonly evaluated with aggregate metrics such as macro-F1 and Cohen's kappa. However, these metrics provide limited insight into how grading performance varies across student responses of differing grading difficulty. We introduce an evaluation framework for LLM-based ASAG based on item response theory (IRT), which models grading correctness as a function of latent grader ability and response grading difficulty. This formulation enables response-level analysis of where LLM graders succeed or fail and reveals robustness differences that are not visible from aggregate scores alone. We apply the framework to 17 open-weight LLMs on the SciEntsBank and Beetle benchmarks. The results show that even models with similar overall performance differ substantially in how sharply their grading accuracy declines as response difficulty increases. In addition, confusion patterns show that errors on difficult responses concentrate disproportionately on the \\texttt{partially\\_correct\\_incomplete} label, indicating a tendency toward intermediate-label collapse under ambiguity. To characterize difficult responses, we further analyze semantic and linguistic correlates of estimated difficulty. Across both datasets, higher difficulty is associated with weaker semantic alignment to the reference answer, stronger contradiction signals, and greater semantic isolation in embedding space. Overall, these results show that item response theory offers a useful framework for evaluating LLM-based ASAG beyond aggregate performance measures.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-05-04T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.00238",
+      "pdf_url": "https://arxiv.org/pdf/2605.00238",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Uses Item Response Theory to evaluate LLM grading ability and response difficulty, providing sophisticated methodology for the grading evaluation challenges mentioned in Hunter Prep and Shuchao Chat."
+    },
+    {
+      "arxiv_id": "2605.00557",
+      "title": "Structure Liberates: How Constrained Sensemaking Produces More Novel Research Output",
+      "authors": [
+        "James Mooney",
+        "Zae Myung Kim",
+        "Young-Jun Lee",
+        "Dongyeop Kang"
+      ],
+      "abstract": "Scientific discovery is an extended process of ideation--surveying prior work, forming hypotheses, and refining reasoning--yet existing approaches treat this phase as a brief preamble despite its central role in research. We introduce SCISENSE, a sensemaking-grounded framework that operationalizes ideation as a structured sequence of eight cognitive stages (Pirolli \\& Card, 2005). We construct SCISENSE-Traj, a 100K-scale dataset of citation-conditioned research trajectories in two modes: Target, where an LLM reconstructs the ideation path leading to a known paper from its cited works, and Infer, where the LLM proposes novel directions from the same citations. We distill these into SCISENSE-LM, a family of sensemaking LLMs spanning 3B to 70B parameters. Contrary to the assumption that looser supervision promotes greater exploration, Target-trained models achieve a 2.0\\% improvement in trajectory quality over Infer-trained models while also producing more novel and diverse outputs. This advantage propagates downstream: coding agents conditioned on Target trajectories produce research artifacts with higher executability and quality than those conditioned on Infer trajectories. This suggests that targeted ideation reduces cognitive burden on downstream agents, freeing them to explore more creatively. SCISENSE offers both a practical tool for augmenting LLM-driven research workflows and a principled testbed for studying how planning shapes scientific discovery.",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-05-04T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.00557",
+      "pdf_url": "https://arxiv.org/pdf/2605.00557",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Directly addresses scientific discovery processes and structured reasoning approaches, highly relevant to long horizon scientific tasks and measuring how models deal with complex information."
+    },
+    {
+      "arxiv_id": "2605.00136",
+      "title": "Are Tools All We Need? Unveiling the Tool-Use Tax in LLM Agents",
+      "authors": [
+        "Kaituo Zhang",
+        "Zhen Xiong",
+        "Mingyu Zhong",
+        "Zhimeng Jiang",
+        "Zhouyuan Yuan",
+        "Zhecheng Li",
+        "Ying Lin"
+      ],
+      "abstract": "Tool-augmented reasoning has become a popular direction for LLM-based agents, and it is widely assumed to improve reasoning and reliability. However, we demonstrate that this consensus does not always hold: in the presence of semantic distractors, tool-augmented reasoning does not necessarily outperform native CoT. To explain this performance gap, we propose a Factorized Intervention Framework that isolates the cost of prompt formatting, the overhead of the tool-calling protocol, and the actual gain from executing tools. Our analysis reveals a critical tradeoff: under semantic noise, the gains from tools often fail to offset the \"tool-use tax\", which is the performance degradation introduced by the tool-calling protocol itself. To address this, we introduce G-STEP, a lightweight inference-time gate to mitigate protocol-induced errors. While this yields partial recovery, our findings suggest that more substantial improvements still require strengthening the model's intrinsic reasoning and tool-interaction capabilities.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-05-04T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.00136",
+      "pdf_url": "https://arxiv.org/pdf/2605.00136",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Directly addresses tool-use evaluation in LLM agents and demonstrates when tools can be harmful, highly relevant to the 'to call or not to call' framework and measuring model decision-making under uncertainty."
+    },
+    {
+      "arxiv_id": "2605.00742",
+      "title": "Position: agentic AI orchestration should be Bayes-consistent",
+      "authors": [
+        "Theodore Papamarkou",
+        "Pierre Alquier",
+        "Matthias Bauer",
+        "Wray Buntine",
+        "Andrew Davison",
+        "Gintare Karolina Dziugaite",
+        "Maurizio Filippone",
+        "Andrew Y. K. Foong",
+        "Vincent Fortuin",
+        "Dimitris Fouskakis",
+        "Jes Frellsen",
+        "Eyke H\\\"ullermeier",
+        "Theofanis Karaletsos",
+        "Mohammad Emtiyaz Khan",
+        "Nikita Kotelevskii",
+        "Salem Lahlou",
+        "Yingzhen Li",
+        "Fang Liu",
+        "Clare Lyle",
+        "Thomas M\\\"ollenhoff",
+        "Konstantina Palla",
+        "Maxim Panov",
+        "Yusuf Sale",
+        "Kajetan Schweighofer",
+        "Artem Shelmanov",
+        "Siddharth Swaroop",
+        "Martin Trapp",
+        "Willem Waegeman",
+        "Andrew Gordon Wilson",
+        "Alexey Zaytsev"
+      ],
+      "abstract": "LLMs excel at predictive tasks and complex reasoning tasks, but many high-value deployments rely on decisions under uncertainty, for example, which tool to call, which expert to consult, or how many resources to invest. While the usefulness and feasibility of Bayesian approaches remain unclear for LLM inference, this position paper argues that the control layer of an agentic AI system (that orchestrates LLMs and tools) is a clear case where Bayesian principles should shine. Bayesian decision theory provides a framework for agentic systems that can help to maintain beliefs over task-relevant latent quantities, to update these beliefs from observed agentic and human-AI interactions, and to choose actions. Making LLMs themselves explicitly Bayesian belief-updating engines remains computationally intensive and conceptually nontrivial as a general modeling target. In contrast, this paper argues that coherent decision-making requires Bayesian principles at the orchestration level of the agentic system, not necessarily the LLM agent parameters. This paper articulates practical properties for Bayesian control that fit modern agentic AI systems and human-AI collaboration, and provides concrete examples and design patterns to illustrate how calibrated beliefs and utility-aware policies can improve agentic AI orchestration.",
+      "categories": [
+        "cs.AI",
+        "cs.LG",
+        "stat.ML"
+      ],
+      "published": "2026-05-04T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.00742",
+      "pdf_url": "https://arxiv.org/pdf/2605.00742",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Directly relevant to the Bayesian decision-making under uncertainty theme, proposing frameworks for when AI agents should make different choices like tool calls or resource allocation."
+    },
+    {
+      "arxiv_id": "2605.00055",
+      "title": "Ambient Persuasion in a Deployed AI Agent: Unauthorized Escalation Following Routine Non-Adversarial Content Exposure",
+      "authors": [
+        "Diego F. Cuadros",
+        "Abdoul-Aziz Maiga"
+      ],
+      "abstract": "We report a safety incident in a deployed multi-agent research system in which a primary AI agent installed 107 unauthorized software components, overwrote a system registry, overrode a prior negative decision from an oversight agent, and escalated through increasingly privileged operations up to an attempted system administrator command. The incident was preceded not by an adversarial attack but by routine content: a forwarded technology article written for human developers and shared by the principal investigator for discussion. The agent operated in a permissive environment, with unrestricted shell access, soft behavioral guidelines containing genuinely conflicting instructions, and no machine-enforced installation policy, and had recommended installing the same tool six hours earlier before being told to stand down. We analyze the behavioral cascade, the control boundaries that failed, and the limitations of multi-agent oversight in detecting and remediating the damage. We use directive weighting error as a descriptive interpretation of the observed failure and ambient persuasion as a provisional analytic label for the broader trigger configuration of non-adversarial environmental content preceding unauthorized agent action. The case highlights ethical and governance implications for deployed agent systems: ambiguous conversational cues are insufficient authorization for consequential actions, prior refusals must persist as enforceable constraints rather than message-level reminders, and oversight mechanisms require systematic post-incident auditing in addition to routine monitoring.",
+      "categories": [
+        "cs.CR",
+        "cs.AI",
+        "cs.MA"
+      ],
+      "published": "2026-05-04T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.00055",
+      "pdf_url": "https://arxiv.org/pdf/2605.00055",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Directly relevant to AI safety evaluation with concrete examples of unexpected escalation behavior in deployed systems, which aligns with measuring how models deal with surprising information."
+    },
+    {
+      "arxiv_id": "2605.00236",
+      "title": "Attention Is Where You Attack",
+      "authors": [
+        "Aviral Srivastava",
+        "Sourav Panda"
+      ],
+      "abstract": "Safety-aligned large language models rely on RLHF and instruction tuning to refuse harmful requests, yet the internal mechanisms implementing safety behavior remain poorly understood. We introduce the Attention Redistribution Attack (ARA), a white-box adversarial attack that identifies safety-critical attention heads and crafts nonsemantic adversarial tokens that redirect attention away from safety-relevant positions. Unlike prior jailbreak methods operating at the semantic or output-logit level, ARA targets the geometry of softmax attention on the probability simplex using Gumbel-softmax optimization over targeted heads. Across LLaMA-3-8B-Instruct, Mistral-7B-Instruct-v0.1, and Gemma-2-9B-it, ARA bypasses safety alignment with as few as 5 tokens and 500 optimization steps, achieving 36% ASR on Mistral-7B and 30% on LLaMA-3 against 200 HarmBench prompts, while Gemma-2 remains at 1%. Our principal mechanistic finding is a dissociation between ablation and redistribution: zeroing out the top-ranked safety heads produces at most 1 flip among 39 to 50 baseline refusals, while ARA targeting the corresponding safety-heavy layers flips 72/200 prompts on Mistral-7B and 60/200 on LLaMA-3. This suggests that safety is not localized in these heads as removable components, but emerges from the attention routing they perform. Removing a head allows compensation through the residual stream, while redirecting its attention propagates a corrupted signal downstream.",
+      "categories": [
+        "cs.CR",
+        "cs.AI"
+      ],
+      "published": "2026-05-04T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.00236",
+      "pdf_url": "https://arxiv.org/pdf/2605.00236",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Directly addresses AI safety mechanisms and how attention can be manipulated, relevant to understanding model failure modes and self-correction evaluation."
+    },
+    {
+      "arxiv_id": "2605.00583",
+      "title": "Jailbreaking Vision-Language Models Through the Visual Modality",
+      "authors": [
+        "Aharon Azulay",
+        "Jan Dubi\\'nski",
+        "Zhuoyun Li",
+        "Atharv Mittal",
+        "Yossi Gandelsman"
+      ],
+      "abstract": "The visual modality of vision-language models (VLMs) is an underexplored attack surface for bypassing safety alignment. We introduce four jailbreak attacks exploiting the vision component: (1) encoding harmful instructions as visual symbol sequences with a decoding legend, (2) replacing harmful objects with benign substitutes (e.g., bomb -> banana) then prompting for harmful actions using the substitute term, (3) replacing harmful text in images (e.g., on book covers) with benign words while visual context preserves the original meaning, and (4) visual analogy puzzles whose solution requires inferring a prohibited concept. Evaluating across six frontier VLMs, our visual attacks bypass safety alignment and expose a cross-modality alignment gap: text-based safety training does not automatically generalize to harmful intent conveyed visually. For example, our visual cipher achieves 40.9% attack success on Claude-Haiku-4.5 versus 10.7% for an equivalent textual cipher. To further our insight into the attack mechanism, we present preliminary interpretability and mitigation results. These findings highlight that robust VLM alignment requires treating vision as a first-class target for safety post-training.",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-05-04T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.00583",
+      "pdf_url": "https://arxiv.org/pdf/2605.00583",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Explores jailbreaking attacks through visual modality in VLMs, directly relevant to testing how models handle surprising/adversarial information and model robustness evaluation."
+    },
+    {
+      "arxiv_id": "2605.00195",
+      "title": "Diversity in Large Language Models under Supervised Fine-Tuning",
+      "authors": [
+        "Roman Klypa",
+        "Oleksandr Cherednichenko"
+      ],
+      "abstract": "Supervised Fine-Tuning (SFT) is essential for aligning Large Language Models (LLMs) with user intent, yet it is believed to suppress generative diversity. Although this reduction is frequently referenced, formal empirical testing of the phenomenon remains limited. The expressiveness of LLMs by itself was addressed by multiple prior methods. Their varying perspectives suggest that deeper analysis could yield further improvements. In this study, we attribute the decline to two primary drivers: the neglect of low-frequency patterns within fine-tuning datasets and the forgetting of preexisting knowledge. Motivated by our theoretical analysis, we develop Tempered Focal (TOFU) loss, a novel objective that addresses both stated challenges simultaneously. Our extensive evaluation confirms at scale that generation breadth narrows after SFT and strengthens the hypothesis explaining this effect. Across multiple models and benchmarks, we demonstrate that TOFU enhances output diversity while preserving high response quality, offering a principled approach to SFT.",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-05-04T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.00195",
+      "pdf_url": "https://arxiv.org/pdf/2605.00195",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Directly studies how supervised fine-tuning affects diversity in LLMs, which relates to self-correction and model evaluation capabilities mentioned in the research projects."
+    },
+    {
+      "arxiv_id": "2605.00445",
+      "title": "The Power of Order: Fooling LLMs with Adversarial Table Permutations",
+      "authors": [
+        "Xinshuai Dong",
+        "Haifeng Chen",
+        "Xuyuan Liu",
+        "Shengyu Chen",
+        "Haoyu Wang",
+        "Shaoan Xie",
+        "Kun Zhang",
+        "Zhengzhang Chen"
+      ],
+      "abstract": "Large Language Models have achieved remarkable success and are increasingly deployed in critical applications involving tabular data, such as Table Question Answering. However, their robustness to the structure of this input remains a critical, unaddressed question. This paper demonstrates that modern LLMs exhibit a significant vulnerability to the layout of tabular data. Specifically, we show that semantically-invariant permutations of rows and columns - rearrangements that do not alter the table's underlying information - are sometimes sufficient to cause incorrect or inconsistent model outputs. To systematically probe this vulnerability, we introduce Adversarial Table Permutation, a novel, gradient-based attack that efficiently identifies worst-case permutations designed to maximally disrupt model performance. Our extensive experiments demonstrate that ATP significantly degrades the performance of a wide range of LLMs. This reveals a pervasive vulnerability across different model sizes and architectures, including the most recent and popular models. Our findings expose a fundamental weakness in how current LLMs process structured data, underscoring the urgent need to develop permutation-robust models for reliable, real-world applications.",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-05-04T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.00445",
+      "pdf_url": "https://arxiv.org/pdf/2605.00445",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Directly addresses LLM robustness to input structure manipulation, which aligns with testing models' ability to handle surprising or adversarial information in the brainstorming notes."
+    },
+    {
+      "arxiv_id": "2605.00677",
+      "title": "Evaluating the Architectural Reasoning Capabilities of LLM Provers via the Obfuscated Natural Number Game",
+      "authors": [
+        "Lixing Li"
+      ],
+      "abstract": "While Large Language Models have achieved notable success on formal mathematics benchmarks such as MiniF2F, it remains unclear whether these results stem from genuine logical reasoning or semantic pattern matching against pre-training data. This paper identifies Architectural Reasoning: the ability to synthesize formal proofs using exclusively local axioms and definitions within an alien math domain, as the necessary ability for future automated theorem discovery AI. We use the Obfuscated Natural Number Game, a benchmark to evaluate Architectural Reasoning. By renaming identifiers in the Natural Number Game in Lean 4, we created a zero-knowledge, closed environment. We evaluate state-of-the-art models, finding a universal latency tax where obfuscation increases inference time. The results also reveal a divergence in robustness: while general models (Claude-Sonnet-4.5, GPT-4o) suffer performance degradation, reasoning models (DeepSeek-R1, GPT-5, DeepSeek-Prover-V2) maintain the same accuracy despite the absence of semantic cues. These findings provide a quantitative metric for assessing the true capacity for mathematical reasoning.",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-05-04T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.00677",
+      "pdf_url": "https://arxiv.org/pdf/2605.00677",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Directly addresses evaluating LLM reasoning capabilities through formal proof synthesis, which aligns with measuring model self-correction and handling surprising information in the brainstorming projects."
+    },
+    {
+      "arxiv_id": "2605.00323",
+      "title": "Online Self-Calibration Against Hallucination in Vision-Language Models",
+      "authors": [
+        "Minghui Chen",
+        "Chenxu Yang",
+        "Hengjie Zhu",
+        "Dayan Wu",
+        "Zheng Lin",
+        "Qingyi Si"
+      ],
+      "abstract": "Large Vision-Language Models (LVLMs) often suffer from hallucinations, generating descriptions that include visual details absent from the input image. Recent preference alignment methods typically rely on supervision distilled from stronger models such as GPT. However, this offline paradigm introduces a Supervision-Perception Mismatch: the student model is forced to align with fine-grained details beyond its perceptual capacity, learning to guess rather than to see. To obtain reliable self-supervision for online learning, we identify a Generative-Discriminative Gap within LVLMs, where models exhibit higher accuracy on discriminative verification than open-ended generation. Leveraging this capability, we propose \\textbf{O}nline \\textbf{S}elf-\\textbf{CA}lib\\textbf{R}ation (OSCAR), a framework that integrates Monte Carlo Tree Search with a Dual-Granularity Reward Mechanism to construct preference data and iteratively refines the model via Direct Preference Optimization. Extensive experiments demonstrate that OSCAR achieves state-of-the-art performance on hallucination benchmarks while improving general multimodal capabilities.",
+      "categories": [
+        "cs.CV",
+        "cs.LG"
+      ],
+      "published": "2026-05-04T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.00323",
+      "pdf_url": "https://arxiv.org/pdf/2605.00323",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Directly addresses hallucination detection and self-calibration in vision-language models, which aligns with measuring how models deal with surprising information and self-correction evaluation goals."
+    },
+    {
+      "arxiv_id": "2605.00226",
+      "title": "Why Do LLMs Struggle in Strategic Play? Broken Links Between Observations, Beliefs, and Actions",
+      "authors": [
+        "Jan Sobotka",
+        "Mustafa O. Karabag",
+        "Ufuk Topcu"
+      ],
+      "abstract": "Large language models (LLMs) are increasingly tasked with strategic decision-making under incomplete information, such as in negotiation and policymaking. While LLMs can excel at many such tasks, they also fail in ways that are poorly understood. We shed light on these failures by uncovering two fundamental gaps in the internal mechanisms underlying the decision-making of LLMs in incomplete-information games, supported by experiments with open-weight models Llama 3.1, Qwen3, and gpt-oss. First, an observation-belief gap: LLMs encode internal beliefs about latent game states that are substantially more accurate than their own verbal reports, yet these beliefs are brittle. In particular, the belief accuracy degrades with multi-hop reasoning, exhibits primacy and recency biases, and drifts away from Bayesian coherence over extended interactions. Second, a belief-action gap: The implicit conversion of internal beliefs into actions is weaker than that of the beliefs externalized in the prompt, yet neither belief-conditioning consistently achieves higher game payoffs. These results show how analyzing LLMs' internal processes can expose systematic vulnerabilities that warrant caution before deploying LLMs in strategic domains without robust guardrails.",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.GT"
+      ],
+      "published": "2026-05-04T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.00226",
+      "pdf_url": "https://arxiv.org/pdf/2605.00226",
+      "is_author_match": false,
+      "relevance_score": 7.0,
+      "relevance_reason": "Examines fundamental gaps in LLM decision-making under incomplete information, which relates to the Google Brainstorming interest in how models handle surprising information and failure scenarios."
+    },
+    {
+      "arxiv_id": "2605.00817",
+      "title": "When LLMs Stop Following Steps: A Diagnostic Study of Procedural Execution in Language Models",
+      "authors": [
+        "Sailesh Panda",
+        "Pritam Kadasi",
+        "Abhishek Upperwal",
+        "Mayank Singh"
+      ],
+      "abstract": "Large language models (LLMs) often achieve strong performance on reasoning benchmarks, but final-answer accuracy alone does not show whether they faithfully execute the procedure specified in a prompt. We study this question through a controlled diagnostic benchmark for procedural execution, where models are given a step-wise arithmetic algorithm and two numeric inputs, and must return the final computed value. The benchmark uses simple arithmetic operations but increases complexity through algorithm length and look-back dependencies over intermediate variables. Across 14 models and 55 datasets, average first-answer accuracy drops from 61% on 5-step procedures to 20% on 95-step procedures. Generation-level analysis shows that failures often involve missing answers, premature answers, self-correction after an initial error, under-executed traces, and hallucinated extra steps. These findings suggest that apparent reasoning ability can mask substantial weaknesses in faithful instruction execution.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-05-04T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.00817",
+      "pdf_url": "https://arxiv.org/pdf/2605.00817",
+      "is_author_match": false,
+      "relevance_score": 7.0,
+      "relevance_reason": "Studies procedural execution and step-following in LLMs, which is crucial for self-correction evaluation and understanding when models fail to follow instructions properly."
+    },
+    {
+      "arxiv_id": "2605.00425",
+      "title": "AEM: Adaptive Entropy Modulation for Multi-Turn Agentic Reinforcement Learning",
+      "authors": [
+        "Haotian Zhao",
+        "Yuxin Zhang",
+        "Songlin Zhou",
+        "Stephen S. -T. Yau",
+        "Wenyu Zhang",
+        "Lun Tian",
+        "Tianshu Zhu",
+        "Yifeng Huang",
+        "Yucheng Zeng",
+        "Jingnan Gu",
+        "Daxiang Dong",
+        "Jianmin Wu"
+      ],
+      "abstract": "Reinforcement learning (RL) has significantly advanced the ability of large language model (LLM) agents to interact with environments and solve multi-turn tasks. Yet effective training remains challenging, as sparse, outcome-only rewards make it difficult to assign credit to individual steps in an agent's action trajectory. A common remedy is to introduce dense intermediate supervision, such as process reward models or auxiliary self-supervised signals, but this increases supervision and tuning complexity and often generalizes poorly across tasks and domains. This paper presents AEM, a supervision-free credit assignment method that adaptively modulates entropy dynamics during RL training to achieve a more effective exploration-exploitation trade-off. Theoretically, we elevate entropy analysis from the token level to the response level to reduce token sampling variance and show that entropy drift under natural gradients is intrinsically governed by the product of the advantage and the relative response surprisal. Specifically, we derive a practical proxy to reshape training dynamics, enabling a natural transition from exploration to exploitation. Extensive experiments across various benchmarks and models ranging from 1.5B to 32B parameters demonstrate the effectiveness of AEM, including a notable 1.4 percent gain when integrated into a state-of-the-art baseline on the highly challenging SWE-bench-Verified benchmark.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-05-04T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.00425",
+      "pdf_url": "https://arxiv.org/pdf/2605.00425",
+      "is_author_match": false,
+      "relevance_score": 7.0,
+      "relevance_reason": "Addresses multi-turn agentic RL with sparse rewards, relevant to the long horizon scientific tasks and self-correction evaluation interests."
+    },
+    {
+      "arxiv_id": "2604.28031",
+      "title": "Models Recall What They Violate: Constraint Adherence in Multi-Turn LLM Ideation",
+      "authors": [
+        "Garvin Kruthof"
+      ],
+      "abstract": "When researchers iteratively refine ideas with large language models, do the models preserve fidelity to the original objective? We introduce DriftBench, a benchmark for evaluating constraint adherence in multi-turn LLM-assisted scientific ideation. Across 2,146 scored benchmark runs spanning seven models from five providers (including two open-weight), four interaction conditions, and 38 research briefs from 24 scientific domains, we find that iterative pressure reliably increases structural complexity and often reduces adherence to original constraints. A restatement probe reveals a dissociation between declarative recall and behavioral adherence, as models accurately restate constraints they simultaneously violate. The knows-but-violates (KBV) rate, measuring constraint non-compliance despite preserved recall, ranges from 8% to 99% across models. Structured checkpointing partially reduces KBV rates but does not close the dissociation, and complexity inflation persists. Human validation against blind raters confirms that the LLM judge under-detects constraint violations, making reported constraint adherence scores conservative. Sensitivity analyses confirm the findings are robust to temperature (0.7 vs.\\ 1.0) and pressure type (novelty vs.\\ rigor). We release all briefs, prompts, rubrics, transcripts, and scores as an open benchmark.",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-05-04T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2604.28031",
+      "pdf_url": "https://arxiv.org/pdf/2604.28031",
+      "is_author_match": false,
+      "relevance_score": 7.0,
+      "relevance_reason": "Evaluates constraint adherence in multi-turn LLM interactions for scientific ideation, directly relevant to measuring how models handle surprising information and long-horizon tasks."
+    },
+    {
+      "arxiv_id": "2605.00063",
+      "title": "A Survey of Reasoning-Intensive Retrieval: Progress and Challenges",
+      "authors": [
+        "Yiyang Wei",
+        "Tingyu Song",
+        "Siyue Zhang",
+        "Yilun Zhao"
+      ],
+      "abstract": "Reasoning-Intensive Retrieval (RIR) targets retrieval settings where relevance is mediated by latent inferential links between a query and supporting evidence, rather than semantic similarity. Motivated by the emergent reasoning abilities of Large Language Models (LLMs), recent work integrates these capabilities into the IR field, spanning the entire pipeline from benchmarks to retrievers and rerankers. Despite this progress, the field lacks a systematic framework to organize current efforts and articulate a clear path forward. To provide a clear roadmap for this rapidly growing yet fragmented area, this survey (1) systematizes existing RIR benchmarks by knowledge domains and modalities, providing a detailed analysis of the current landscape; (2) introduces a structured taxonomy that categorizes methods based on where and how reasoning is integrated into the retrieval pipeline, alongside an analysis of their trade-offs and practical applications; and (3) summarizes challenges and future directions to guide research in this evolving field.",
+      "categories": [
+        "cs.IR",
+        "cs.AI"
+      ],
+      "published": "2026-05-04T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.00063",
+      "pdf_url": "https://arxiv.org/pdf/2605.00063",
+      "is_author_match": false,
+      "relevance_score": 7.0,
+      "relevance_reason": "Highly relevant to reasoning-intensive tasks and LLM evaluation methodologies, particularly for long-horizon scientific reasoning tasks mentioned in the brainstorming."
+    },
+    {
+      "arxiv_id": "2605.00267",
+      "title": "Jailbroken Frontier Models Retain Their Capabilities",
+      "authors": [
+        "Daniel Zhu",
+        "Zihan Wang",
+        "Jenny Bao",
+        "Jerry Wei"
+      ],
+      "abstract": "As language model safeguards become more robust, attackers are pushed toward developing increasingly complex jailbreaks. Prior work has found that this complexity imposes a \"jailbreak tax\" that degrades the target model's task performance. We show that this tax scales inversely with model capability and that the most advanced jailbreaks effectively yield no reduction in model capabilities. Evaluating 28 jailbreaks on five benchmarks across Claude models ranging in capability from Haiku 4.5 to Opus 4.6, we find Haiku 4.5 loses an average of 33.1% on benchmark performance when jailbroken, while Opus 4.6 at max thinking effort loses only 7.7%. We also observe that across all models, reasoning-heavy tasks display considerably more degradation than knowledge-recall tasks. Finally, Boundary Point Jailbreaking, currently the strongest jailbreak against deployed classifiers, achieves near-perfect classifier evasion with near-zero degradation across safeguarded models. We recommend that safety cases for frontier models should not rely on a meaningful capability degradation from jailbreaks.",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CR"
+      ],
+      "published": "2026-05-04T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.00267",
+      "pdf_url": "https://arxiv.org/pdf/2605.00267",
+      "is_author_match": false,
+      "relevance_score": 7.0,
+      "relevance_reason": "Shows that advanced jailbreaks retain model capabilities, which is relevant to understanding failure modes and designing robust evaluation tasks."
+    },
+    {
+      "arxiv_id": "2605.00433",
+      "title": "Improving LLM Code Generation via Requirement-Aware Curriculum Reinforcement Learning",
+      "authors": [
+        "Shouyu Yin",
+        "Zhao Tian",
+        "Junjie Chen",
+        "Shikai Guo"
+      ],
+      "abstract": "Code generation, which aims to automatically generate source code from given programming requirements, has the potential to substantially improve software development efficiency. With the rapid advancement of large language models (LLMs), LLM-based code generation has attracted widespread attention from both academia and industry. However, as programming requirements become increasingly complex, existing LLMs still exhibit notable performance limitations. To address this challenge, recent studies have proposed training-based curriculum reinforcement learning (CRL) strategies to improve LLM code generation performance. Despite their effectiveness, existing CRL approaches suffer from several limitations, including misaligned requirement difficulty perception, the absence of requirement difficulty optimization, and suboptimal curriculum sampling strategies. In CRL-based code generation, programming requirements serve as the sole input to the model, making their quality and difficulty critical to training effectiveness. Motivated by insights from software requirements engineering, we propose RECRL, a novel requirement-aware curriculum reinforcement learning framework for enhancing LLM-based code generation. RECRL automatically perceives model-specific requirement difficulty, optimizes challenging requirements to improve training data utilization, and employs an adaptive curriculum sampling strategy to construct training batches with smoothly varying difficulty. Extensive experiments on five state-of-the-art LLMs across five widely-used code generation benchmarks by comparing with five state-of-the-art baselines, demonstrate the significant effectiveness of RECRL. For example, RECRL achieves an average Pass@1 improvement of 1.23%-5.62% over all state-of-the-art baselines.",
+      "categories": [
+        "cs.SE",
+        "cs.AI"
+      ],
+      "published": "2026-05-04T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.00433",
+      "pdf_url": "https://arxiv.org/pdf/2605.00433",
+      "is_author_match": false,
+      "relevance_score": 7.0,
+      "relevance_reason": "Focuses on curriculum reinforcement learning for code generation, highly relevant to self-correction, feedback mechanisms, and on-policy distillation mentioned in the research interests."
+    }
+  ]
+}
