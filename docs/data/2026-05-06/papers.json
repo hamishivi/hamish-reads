@@ -1,0 +1,865 @@
+{
+  "date": "2026-05-06",
+  "generated_at": "2026-05-06T04:15:16.978062+00:00",
+  "author_papers": [
+    {
+      "arxiv_id": "2605.01188",
+      "title": "Compute Optimal Tokenization",
+      "authors": [
+        "Tomasz Limisiewicz",
+        "Artidoro Pagnoni",
+        "Srini Iyer",
+        "Mike Lewis",
+        "Sachin Mehta",
+        "Alisa Liu",
+        "Margaret Li",
+        "Gargi Ghosh",
+        "Luke Zettlemoyer"
+      ],
+      "abstract": "Scaling laws enable the optimal selection of data amount and language model size, yet the impact of the data unit, the token, on this relationship remains underexplored. In this work, we systematically investigate how the information granularity of tokens, controlled by the compression rate (i.e., average bytes of text per token), affects scaling trends. We train 988 latent tokenized models (BLT) ranging from 50M to 7B parameters that enable setting the desired compression rate. This flexibility allows us to study the role of compression rate well beyond 4.57 bytes per token obtained with a popular BPE tokenizer. Our experiments reveal that in compute-optimal configurations, model parameter counts scale proportionally to data size measured in bytes, not in tokens as commonly perceived (Kaplan et al., 2020; Hoffmann et al., 2022). Furthermore, we discover that the optimal compression rate differs from the one obtained with BPE and decreases with compute. These findings generalize to both latent and subword tokenization, as well as to languages other than English, guiding language model developers on tokenization scheme selection for maximal compute efficiency.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-05-06T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.01188",
+      "pdf_url": "https://arxiv.org/pdf/2605.01188",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2605.00944",
+      "title": "SCARV: Structure-Constrained Aggregation for Stable Sample Ranking in Redundant NLP Datasets",
+      "authors": [
+        "Xu Zheng",
+        "Feiyu Wu",
+        "Linhong Wu",
+        "Zhuocheng Wang",
+        "Hui Li"
+      ],
+      "abstract": "Sample-level rankings are increasingly used in data-centric NLP for analysis, filtering, debugging, and curation, yet existing pipelines typically score training examples pointwise and rank them as if they were independent. This assumption is fragile in the presence of exact duplicates, near-duplicates, paraphrases, and other redundant structure common in NLP corpora, where stochastic training can make highly similar examples receive unstable relative orderings across random seeds. We study stable sample-level ranking under redundancy and propose \\textsc{SCARV}, a modular aggregation framework that operates on top of an existing scoring proxy. \\textsc{SCARV} combines robust multi-seed aggregation with a structure-aware aggregation/allocation step over redundancy clusters. Across synthetic redundancy, naturally mined QQP redundancy, multiple proxy families, several NLP tasks, and end-to-end DistilBERT fine-tuning, \\textsc{SCARV} substantially improves over bare proxy rankings in global and local stability and yields more reproducible ranking-based decisions such as subset selection and suspicious-example retrieval. Our decomposition and compute-aware frontier sharpen the mechanism: robust multi-seed aggregation is the dominant generic stabilizer, while the structure-aware component adds value mainly under low aggregation budgets or when redundancy clusters are informative, naturally occurring, or sufficiently covered. These results position \\textsc{SCARV} not as a universal data selector or a universally dominant replacement for seed-only aggregation, but as a stability-oriented aggregation layer for proxy-induced rankings in redundant NLP datasets.",
+      "categories": [
+        "cs.IR",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-05-06T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.00944",
+      "pdf_url": "https://arxiv.org/pdf/2605.00944",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2605.01148",
+      "title": "Arithmetic in the Wild: Llama uses Base-10 Addition to Reason About Cyclic Concepts",
+      "authors": [
+        "Sheridan Feucht",
+        "Tal Haklay",
+        "Usha Bhalla",
+        "Daniel Wurgaft",
+        "Can Rager",
+        "Rapha\\\"el Sarfati",
+        "Jack Merullo",
+        "Thomas McGrath",
+        "Owen Lewis",
+        "Ekdeep Singh Lubana",
+        "Thomas Fel",
+        "Atticus Geiger"
+      ],
+      "abstract": "Does structure in representations imply structure in computation? We study how Llama-3.1-8B reasons over cyclic concepts (e.g., \"what month is six months after August?\"). Even though Llama-3.1-8B's representations for these concepts are circularly structured, we find that instead of directly computing modular addition in the period of the cyclic concept (e.g., 12 for months), the model re-uses a generic addition mechanism across tasks that operates independently of concept-specific geometry. First, it computes the sum of its two inputs using base-10 addition (six + August=14). Then, it maps this sum back to cyclic concept space (14->February). We show that Llama-3.1-8B uses task-agnostic Fourier features to compute these sums--in fact, these features have periods that respect standard base-10 addition, e.g., 2, 5, and 10, rather than the cyclic concept period (e.g., 12 for months). Furthermore, we identify a sparse set of 28 MLP neurons re-used across all tasks (approximately 0.2% of the MLP at layer 18) that can be partitioned into disjoint clusters, each computing the sum for a Fourier feature with a different period. Our work highlights how an interplay between causal abstraction and feature geometry can deepen our mechanistic understanding of LMs.",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-05-06T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.01148",
+      "pdf_url": "https://arxiv.org/pdf/2605.01148",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2605.01745",
+      "title": "NH-CROP: Robust Pricing for Governed Language Data Assets under Cost Uncertainty",
+      "authors": [
+        "Xu Zheng",
+        "Feiyu Wu",
+        "Zhuocheng Wang",
+        "Yiming Dai",
+        "Hui Li"
+      ],
+      "abstract": "Language data are increasingly acquired and governed as assets, yet platforms often price candidate resources before knowing their true privacy or access costs. We study online pricing for governed language data assets under cost uncertainty. At each round, a platform observes an NLP task, a candidate asset, and a coarse cost estimate, may pay for a refined cost signal, posts a price, and receives safe net revenue.   We introduce \\textsc{NH-CROP}, a clipped robust pricing framework with a no-harm information-acquisition gate. The method compares direct pricing, risk-aware pricing, and verify-then-price, and acquires information only when its estimated decision value exceeds the best no-verification alternative. Across synthetic, real-proxy, and downstream-utility-grounded benchmarks, clipped \\textsc{NH-CROP} variants improve or remain competitive with price-only and risk-aware baselines. Causal ablations show that paid verification is not the main source of gains in real-proxy and utility-grounded settings: the strongest learned policies often choose not to verify. Oracle and high-decision-value diagnostics show that refined cost information can still have substantial local value. Overall, governed language-data platforms should calibrate pricing under uncertain access costs first and verify only when information is cheap and decision-actionable.",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-05-06T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.01745",
+      "pdf_url": "https://arxiv.org/pdf/2605.01745",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2605.01130",
+      "title": "Iterative Finetuning is Mostly Idempotent",
+      "authors": [
+        "Zephaniah Roe",
+        "Jack Sanderson",
+        "Dang Nguyen",
+        "Julian Huang",
+        "Todd Nief",
+        "Aryan Shrivastava",
+        "Chenhao Tan",
+        "Ari Holtzman"
+      ],
+      "abstract": "If a model has some behavioral tendency, such as sycophancy or misalignment, and it is trained on its own outputs, will the tendency be amplified in the next generation of models? We study this question by training a series of models where each model is finetuned on data generated by its predecessor, and the initial model is seeded with some persona or belief. We test three settings: supervised finetuning (SFT) on instruct models, synthetic document finetuning (SDF) on base models, and direct preference optimization (DPO). In the SFT and SDF settings, traits mostly decay or remain constant so that further finetuning cycles do nothing. In rare cases when amplification occurs, it generally comes at the cost of coherence. In the DPO setting, trait amplification can reliably occur when a model is continually trained with a preference for its own outputs, but vanishes when models are reinitialized at each cycle. Overall, our results suggest that amplification most likely comes from continual post-training, and limiting this stage may be an effective defense. For non-RL finetuning, trait amplification is rare and very sensitive to data quantity, making it significantly less likely to occur accidentally. Finally, the amplification-coherence tradeoff serves as a natural deterrent against trait amplification.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-05-06T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.01130",
+      "pdf_url": "https://arxiv.org/pdf/2605.01130",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2605.02661",
+      "title": "AcademiClaw: When Students Set Challenges for AI Agents",
+      "authors": [
+        "Junjie Yu",
+        "Pengrui Lu",
+        "Weiye Si",
+        "Hongliang Lu",
+        "Jiabao Wu",
+        "Kaiwen Tao",
+        "Kun Wang",
+        "Lingyu Yang",
+        "Qiran Zhang",
+        "Xiuting Guo",
+        "Xuanyu Wang",
+        "Yang Wang",
+        "Yanjie Wang",
+        "Yi Yang",
+        "Zijian Hu",
+        "Ziyi Yang",
+        "Zonghan Zhou",
+        "Binghao Qiang",
+        "Borui Zhang",
+        "Chenning Li",
+        "Enchang Zhang",
+        "Feifan Chen",
+        "Feng Jian",
+        "Fengyin Sun",
+        "Hao Qiu",
+        "Hao Zheng",
+        "Haoran Zhu",
+        "Hongyu Liu",
+        "Jianbin Deng",
+        "Jiaxin Song",
+        "Jiaying Chi",
+        "Jiayou Shi",
+        "Jie Fang",
+        "Jinghui Zhong",
+        "Jingyu Zhou",
+        "Jinze Li",
+        "Junfeng Yi",
+        "Junyan Yu",
+        "Junzhi Xue",
+        "Ni Song",
+        "Pengyi Chen",
+        "Qi Chen",
+        "Quansheng Li",
+        "Rui Tao",
+        "Shenghai Gong",
+        "Shenhang Lu",
+        "Tianqi Shen",
+        "Tianxiang Zhu",
+        "Tiehan Kang",
+        "Tingyu Li",
+        "Wendi Wu",
+        "Xiao Shen",
+        "Xiao Zhou",
+        "Xiaotao Zhang",
+        "Xinrong Li",
+        "Xuankun Yang",
+        "Xun Zhang",
+        "Yan Li",
+        "Ye Lu",
+        "Yi Wang",
+        "Yibo Zhou",
+        "Yichi Zhang",
+        "Yihao Sun",
+        "Yijun Huang",
+        "Yixin Zhu",
+        "Yixuan Wu",
+        "Yuchen Sun",
+        "Yue Wu",
+        "Yuheng Sun",
+        "Yukun Li",
+        "Yutian Tu",
+        "Yuxuan Qin",
+        "Yuzhuo Wu",
+        "Zeyu Li",
+        "Zhengyu Lou",
+        "Zhenning Ran",
+        "Zizhu He",
+        "Pengfei Liu"
+      ],
+      "abstract": "Benchmarks within the OpenClaw ecosystem have thus far evaluated exclusively assistant-level tasks, leaving the academic-level capabilities of OpenClaw largely unexamined. We introduce AcademiClaw, a bilingual benchmark of 80 complex, long-horizon tasks sourced directly from university students' real academic workflows -- homework, research projects, competitions, and personal projects -- that they found current AI agents unable to solve effectively. Curated from 230 student-submitted candidates through rigorous expert review, the final task set spans 25+ professional domains, ranging from olympiad-level mathematics and linguistics problems to GPU-intensive reinforcement learning and full-stack system debugging, with 16 tasks requiring CUDA GPU execution. Each task executes in an isolated Docker sandbox and is scored on task completion by multi-dimensional rubrics combining six complementary techniques, with an independent five-category safety audit providing additional behavioral analysis. Experiments on six frontier models show that even the best achieves only a 55\\% pass rate. Further analysis uncovers sharp capability boundaries across task domains, divergent behavioral strategies among models, and a disconnect between token consumption and output quality, providing fine-grained diagnostic signals beyond what aggregate metrics reveal. We hope that AcademiClaw and its open-sourced data and code can serve as a useful resource for the OpenClaw community, driving progress toward agents that are more capable and versatile across the full breadth of real-world academic demands. All data and code are available at https://github.com/GAIR-NLP/AcademiClaw.",
+      "categories": [
+        "cs.AI",
+        "cs.CY"
+      ],
+      "published": "2026-05-06T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.02661",
+      "pdf_url": "https://arxiv.org/pdf/2605.02661",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2605.01154",
+      "title": "Multi-Perspective Transformers in ARC-AGI-2 Challenge",
+      "authors": [
+        "Caleb Talley",
+        "Vedant Tibrewal",
+        "Seun Adekunle",
+        "Weiwen Dong",
+        "Xinyu Wu",
+        "Fariha Sheikh"
+      ],
+      "abstract": "ARC-AGI-2 is a benchmark of human-intuitive visual puzzles that measures a machine's ability to generalize from limited examples, interpret symbolic meaning, and flexibly apply rules in varying contexts. In this paper, we discuss our approach to solving the ARC-AGI-2 puzzles with TinyLM, with additional fine-tuning at test time, including Test-Time-Training (TTT) and Products of Experts (POE). Our model achieves 96.1% accuracy on the training set and 21.7% accuracy on the evaluation set.",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-05-06T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.01154",
+      "pdf_url": "https://arxiv.org/pdf/2605.01154",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2605.01282",
+      "title": "A Target-Free Harmonization Method for MRI",
+      "authors": [
+        "Minjun Kim (Department of Electrical and Computer Engineering",
+        "Seoul National University",
+        "Seoul",
+        "Republic of Korea)",
+        "Dong Ju Mun (Department of Electrical and Computer Engineering",
+        "Seoul National University",
+        "Seoul",
+        "Republic of Korea)",
+        "Hwihun Jeong (Department of Psychiatry",
+        "Brigham and Women's Hospital",
+        "Harvard Medical School",
+        "Boston",
+        "MA",
+        "USA)",
+        "Hangyeol Park (Department of Electrical and Computer Engineering",
+        "Seoul National University",
+        "Seoul",
+        "Republic of Korea)",
+        "Haechang Lee (Department of Electrical and Computer Engineering",
+        "Seoul National University",
+        "Seoul",
+        "Republic of Korea)",
+        "Se Young Chun (Department of Electrical and Computer Engineering",
+        "Seoul National University",
+        "Seoul",
+        "Republic of Korea)",
+        "Jongho Lee (Department of Electrical and Computer Engineering",
+        "Seoul National University",
+        "Seoul",
+        "Republic of Korea)"
+      ],
+      "abstract": "In MRI, variations in scan parameters, sequence, or hardware can lead to discrepancies in image appearance, even for the same subject. These inconsistencies, known as domain shifts, can hinder image analysis and degrade the performance of deep learning models trained on data from specific target domains. MRI image harmonization aims to address these issues by aligning source domain images to the target domain images while preserving biological information such as anatomical structures. However, most existing harmonization approaches require access to both source and target domain data in training or test time. This dependence induces data sharing between institutions, raising concerns about patient privacy and substantially limiting the harmonization approaches that can be practically deployed in clinical settings. To overcome these limitations, we introduce TgtFreeHarmony, the harmonization framework tailored for target-free scenarios, eliminating the need for target domain data and any data sharing, enabling privacy-preserving harmonization directly within the source institution. Our approach estimates the target domain style by searching the manifold of MRI domain style constructed via a disentanglement-based generator using Bayesian optimization guided by the performance of a downstream task model, which is trained on target domain data. We evaluated our method on the brain tissue segmentation task across multiple institutes and demonstrated that it effectively harmonizes source images into target images, leading to improved downstream task performance. By enabling harmonization without any access to target-domain data, TgtFreeHarmony establishes a new direction of harmonization preserving data privacy that can be realistically deployed within clinical environments.",
+      "categories": [
+        "eess.IV",
+        "cs.AI"
+      ],
+      "published": "2026-05-06T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.01282",
+      "pdf_url": "https://arxiv.org/pdf/2605.01282",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2605.01882",
+      "title": "Chart-FR1: Visual Focus-Driven Fine-Grained Reasoning on Dense Charts",
+      "authors": [
+        "Hongkun Pan",
+        "Yuwei Wu",
+        "Wanyi Hong",
+        "Shenghui Hu",
+        "Qitong Yan",
+        "Yi Yang",
+        "Rufei Han",
+        "Changju Zhou",
+        "Minfeng Zhu",
+        "Dongming Han",
+        "Wei Chen"
+      ],
+      "abstract": "Multimodal large language models (MLLMs) have shown considerable potential in chart understanding and reasoning tasks. However, they still struggle with high information density (HID) charts characterized by multiple subplots, legends, and dense annotations due to three major challenges: (1) limited fine-grained perception results in the omission of critical visual cues; (2) redundant or noisy visual information undermines the performance of multimodal reasoning; (3) lack of adaptive deep reasoning relative to the amount of visual information. To tackle these challenges, we present a novel focus-driven fine-grained chart reasoning model, Chart-FR1, to improve perception, focusing efficiency, and adaptive deep reasoning on HID charts. Specifically, we propose Focus-CoT, a visual focusing chain-of-thought that enhances fine-grained perception by explicitly linking reasoning steps to key visual cues, such as local image regions and OCR signals. Building on this, we introduce Focus-GRPO, a focus-driven reinforcement learning algorithm with an information-efficiency reward that compresses redundant visual information for efficient focusing, and an adaptive KL penalty mechanism that enables flexible control over reasoning depth as more visual cues are discovered. Furthermore, to fill the gap in benchmarks for HID charts, we build HID-Chart, a challenging benchmark with an information-density metric designed to evaluate fine-grained chart reasoning capabilities. Extensive experiments on multiple chart benchmarks demonstrate that Chart-FR1 outperforms state-of-the-art MLLMs in chart understanding and reasoning. Code is available at https://github.com/phkhub/Chart-FR1.",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-05-06T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.01882",
+      "pdf_url": "https://arxiv.org/pdf/2605.01882",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2605.02937",
+      "title": "Proteo-R1: Reasoning Foundation Models for De Novo Protein Design",
+      "authors": [
+        "Fang Wu",
+        "Weihao Xuan",
+        "Heli Qi",
+        "Hanqun Cao",
+        "Heng-Jui Chang",
+        "Zeqi Zhou",
+        "Haokai Zhao",
+        "Ma Jian",
+        "Carl Ma",
+        "Yu-Chi Cheng",
+        "Kuan Pang",
+        "Xiangru Tang",
+        "Zehong Wang",
+        "Guanlue Li",
+        "Hanchen Wang",
+        "Kejun Ying",
+        "Pan Lu",
+        "Chiho Im",
+        "Seungju Han",
+        "Peng Xia",
+        "Tinson Xu",
+        "Yinxi Li",
+        "Deyao Zhu",
+        "Pheng-Ann Heng",
+        "Naoto Yokoya",
+        "Masashi Sugiyama",
+        "Li Erran Li",
+        "Jure Leskovec",
+        "Yejin Choi"
+      ],
+      "abstract": "Deep learning in \\emph{de novo} protein design has achieved atomic-level fidelity. However, existing models remain largely non-deliberative: they directly synthesize molecular geometries without explicitly reasoning about which residues or interactions are functionally essential. As a result, design decisions are entangled with continuous sampling dynamics, limiting interpretability, controllability, and systematic reuse of biochemical knowledge. We introduce \\textbf{Proteo-R1}, a reasoning-guided protein design framework that explicitly decouples \\emph{molecular understanding} from \\emph{geometric generation}. Proteo-R1 adopts a dual-expert architecture in which a multimodal large language model (MLLM) serves as an \\emph{understanding expert}, analyzing protein sequences, structures, and textual context to identify key functional residues that govern binding and specificity. These residue-level decisions are then passed as hard constraints to a separate diffusion-based \\emph{generation expert}, which performs conditional co-design while respecting the fixed interaction anchors. This factorization mirrors how human experts approach molecular engineering: first, reasoning about critical interactions, then optimizing geometry subject to those constraints. By operationalizing reasoning as explicit residue-level commitments rather than latent textual guidance, Proteo-R1 achieves stable, interpretable, and modular integration of LLM reasoning with state-of-the-art geometric generative models. Code, data, and demos are available at https://smiles724.github.io/r1/.",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CE"
+      ],
+      "published": "2026-05-06T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.02937",
+      "pdf_url": "https://arxiv.org/pdf/2605.02937",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2605.03677",
+      "title": "Uni-OPD: Unifying On-Policy Distillation with a Dual-Perspective Recipe",
+      "authors": [
+        "Wenjin Hou",
+        "Shangpin Peng",
+        "Weinong Wang",
+        "Zheng Ruan",
+        "Yue Zhang",
+        "Zhenglin Zhou",
+        "Mingqi Gao",
+        "Yifei Chen",
+        "Kaiqi Wang",
+        "Hongming Yang",
+        "Chengquan Zhang",
+        "Zhuotao Tian",
+        "Han Hu",
+        "Yi Yang",
+        "Fei Wu",
+        "Hehe Fan"
+      ],
+      "abstract": "On-policy distillation (OPD) has recently emerged as an effective post-training paradigm for consolidating the capabilities of specialized expert models into a single student model. Despite its empirical success, the conditions under which OPD yields reliable improvement remain poorly understood. In this work, we identify two fundamental bottlenecks that limit effective OPD: insufficient exploration of informative states and unreliable teacher supervision for student rollouts. Building on this insight, we propose Uni-OPD, a unified OPD framework that generalizes across Large Language Models (LLMs) and Multimodal Large Language Models (MLLMs), centered on a dual-perspective optimization strategy. Specifically, from the student's perspective, we adopt two data balancing strategies to promote exploration of informative student-generated states during training. From the teacher's perspective, we show that reliable supervision hinges on whether aggregated token-level guidance remains order-consistent with the outcome reward. To this end, we develop an outcome-guided margin calibration mechanism to restore order consistency between correct and incorrect trajectories. We conduct extensive experiments on 5 domains and 16 benchmarks covering diverse settings, including single-teacher and multi-teacher distillation across LLMs and MLLMs, strong-to-weak distillation, and cross-modal distillation. Our results verify the effectiveness and versatility of Uni-OPD and provide practical insights into reliable OPD.",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-05-06T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.03677",
+      "pdf_url": "https://arxiv.org/pdf/2605.03677",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2605.03344",
+      "title": "RAG over Thinking Traces Can Improve Reasoning Tasks",
+      "authors": [
+        "Negar Arabzadeh",
+        "Wenjie Ma",
+        "Sewon Min",
+        "Matei Zaharia"
+      ],
+      "abstract": "Retrieval-augmented generation (RAG) has proven effective for knowledge-intensive tasks, but is widely believed to offer limited benefit for reasoning-intensive problems such as math and code generation. We challenge this assumption by showing that the limitation lies not in RAG itself, but in the choice of corpus. Instead of retrieving documents, we propose retrieving thinking traces, i.e., intermediate thinking trajectories generated during problem solving attempts. We show that thinking traces are already a strong retrieval source, and further introduce T3, an offline method that transforms them into structured, retrieval-friendly representations, to improve usability. Using these traces as a corpus, a simple retrieve-then-generate pipeline consistently improves reasoning performance across strong models and benchmarks such as AIME 2025--2026, LiveCodeBench, and GPQA-Diamond, outperforming both non-RAG baselines and retrieval over standard web corpora. For instance, on AIME, RAG with traces generated by Gemini-2-thinking achieves relative gains of +56.3%, +8.6%, and +7.6% for Gemini-2.5-Flash, GPT-OSS-120B, and GPT-5, respectively, even though these are more recent models. Interestingly, RAG on T3 also incurs little or no extra inference cost, and can even reduce inference cost by up to $15%$. Overall, our results suggest that thinking traces are an effective retrieval corpus for reasoning tasks, and transforming them into structured, compact, or diagnostic representations unlocks even stronger gains. Code available at https://github.com/Narabzad/t3.",
+      "categories": [
+        "cs.IR",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-05-06T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.03344",
+      "pdf_url": "https://arxiv.org/pdf/2605.03344",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    }
+  ],
+  "ranked_papers": [
+    {
+      "arxiv_id": "2605.01048",
+      "title": "Compared to What? Baselines and Metrics for Counterfactual Prompting",
+      "authors": [
+        "Zihao Yang",
+        "Mosh Levy",
+        "Yoav Goldberg",
+        "Byron C. Wallace"
+      ],
+      "abstract": "Counterfactual prompting (i.e., perturbing a single factor and measuring output change) is widely used to evaluate things like LLM bias and CoT faithfulness. But in this work we argue that observed effects cannot be attributed to the targeted factor without accounting for baseline ``meaning-preserving'' modifications to text that establish general model sensitivity. This is because every counterfactual edit is a compound treatment that bundles the variable of interest with incidental surface-form variation; this violates treatment variation irrelevance. We observe prediction flip rates on MedQA of 14.9% when we surgically change patient gender. However, this is statistically indistinguishable from the flip rates induced by simply paraphrasing inputs (14.1%). In this case, it would therefore be unwarranted to conclude that the LLM is especially sensitive to patient gender. To account for this and robustly measure the effects of targeted interventions, we propose a framework in which we compare (via statistical testing) differences observed under target interventions to those induced by paraphrasing inputs. We then use this framework to revisit a analysis done on the MedPerturb dataset, which reported evidence of model sensitivity to patient demographics and stylistic cues. We find that these effects largely dissipate when we account for general model sensitivity, with only 5 of 120 tests reaching statistical significance. Applying the same framework to occupational biography classification, we detect clearly significant directional gender bias, showing that the framework identifies real directional effects even when they are small. We evaluate a range of metrics -- aggregate, per-sample distributional, and regression -- and find that per-sample metrics are dramatically more powerful than aggregate metrics and regression powerfully and uniquely characterizes effect direction and magnitude.",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "published": "2026-05-06T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.01048",
+      "pdf_url": "https://arxiv.org/pdf/2605.01048",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Extremely relevant to the counterfactuals paper mentioned and the goal of making domains more complex, as it provides baselines and metrics for counterfactual prompting evaluation."
+    },
+    {
+      "arxiv_id": "2605.01771",
+      "title": "The Compliance Gap: Why AI Systems Promise to Follow Process Instructions but Don't",
+      "authors": [
+        "Kwan Soo Shin"
+      ],
+      "abstract": "An auditor instructs an AI assistant: \"open each file individually using the Read tool -- no scripts, no agents.\" The AI replies \"Yes\" -- then issues a single batched call summarizing all fifty files at once. We call this the Compliance Gap: a third, orthogonal axis of AI honesty distinct from factual truthfulness and rhetorical substance. Three questions: does this verbal-behavioral disconnect exist (existence); can any text-only observer recover it (detectability); what infrastructure does AI deployment need (remedy)? Some 75 benchmarks (IFEval, SWE-bench, BFCL, COMPASS, SpecEval) measure outcome fidelity; none measures process fidelity. Theorem 1 shows the gap is structurally inevitable under RL that rewards text without observing behavior. Theorem 2, via the Data Processing Inequality, shows it is undetectable from text alone -- by any human or LLM observer, present or future. Thirteen experiments and 2,031 sessions on six frontier models confirm both predictions. Under default framing, all six exhibit instruction compliance rates of 0% -- Claude Sonnet 4 verbally agrees ten out of ten times then bypasses in all ten. The gap is selective: 97% compliance where rationale is rewarded (audit trails), 0-4% where it is not (file reading, privacy masking); removing delegation tools raises compliance to 75% (Cohen's d = 2.47), confirming environmental affordance rather than weight-encoded failure. Nine blinded human raters achieve Fleiss' kappa = 0.130 and correctly identify zero of fifteen compliant sessions, exactly as Theorem 2 predicts. Where humans show 47% intention-behavior gaps in psychology and 96.5pp gaps in surgical audits, RLHF-trained models approach 100% under default conditions -- a regime warranting its own measurement infrastructure. We release BS-Bench: the first open benchmark for process compliance, with seven tool-call-log audit metrics and a public leaderboard.",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.CY",
+        "cs.LG"
+      ],
+      "published": "2026-05-06T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.01771",
+      "pdf_url": "https://arxiv.org/pdf/2605.01771",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Highly relevant to measuring compliance and behavioral consistency, directly addressing model evaluation challenges mentioned in current projects."
+    },
+    {
+      "arxiv_id": "2605.01939",
+      "title": "StressEval: Failure-Driven Dynamic Benchmarking for Knowledge-Intensive Reasoning in Large Language Models",
+      "authors": [
+        "Yongrui Chen",
+        "Yangyang Ma",
+        "Xiaoying Huang",
+        "Shenyu Zhang",
+        "Huajun Chen",
+        "Haofen Wang",
+        "Guilin Qi"
+      ],
+      "abstract": "Static benchmarks for LLMs are increasingly compromised by contamination and overfitting especially on knowledge intensive reasoning tasks While recent dynamic benchmarks can alleviate staleness they often increase difficulty at the expense of answerability and controllability In this paper we propose StressEval a failure driven data synthesis framework that turns observed model failures into dynamic challenging and controllable test instances StressEval consists of three stages first it constructs a semi structured difficulty card that identifies the failed reasoning step and its root cause second it applies a dual perspective instance synthesis method that targets both knowledge gaps and reasoning breakdowns while preserving the underlying difficulty factors and third it applies a gating mechanism to retain only grounded unambiguous instances Seeding from multiple knowledge intensive reasoning datasets we employ StressEval to build Dynamic OneEval a focused suite of challenging dynamic benchmark Across several state of the art LLMs Dynamic OneEval yields substantially larger performance drops than the original benchmarks while retaining explicit difficulty factors enabling more actionable iteration",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-05-06T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.01939",
+      "pdf_url": "https://arxiv.org/pdf/2605.01939",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "StressEval's failure-driven dynamic benchmarking directly addresses the research interest in 'tasks where we need to fail first to get somewhere' and tests how models handle surprising information through adaptive difficulty."
+    },
+    {
+      "arxiv_id": "2605.01489",
+      "title": "SciResearcher: Scaling Deep Research Agents for Frontier Scientific Reasoning",
+      "authors": [
+        "Tianshi Zheng",
+        "Rui Wang",
+        "Xiyun Li",
+        "Yangqiu Song",
+        "Tianqing Fang"
+      ],
+      "abstract": "Frontier scientific reasoning is rapidly emerging as a key foundation for advancing AI agents in automated scientific discovery. Deep research agents offer a promising approach to this challenge. These models develop robust problem-solving capabilities through post-training on information-seeking tasks, which are typically curated via knowledge graph construction or iterative web browsing. However, these strategies face inherent limitations in frontier science, where domain-specific knowledge is scattered across sparse and heterogeneous academic sources, and problem solving requires sophisticated computation and reasoning far beyond factual recall. To bridge this gap, we introduce SciResearcher, a fully automated agentic framework for frontier-science data construction. SciResearcher synthesizes diverse conceptual and computational tasks grounded in academic evidence, while eliciting information acquisition, tool-integrated reasoning, and long-horizon capabilities. Leveraging the curated data for supervised fine-tuning and agentic reinforcement learning, we develop SciResearcher-8B, an agent foundation model that achieves 19.46% on the HLE-Bio/Chem-Gold benchmark, establishing a new state of the art at its parameter scale and surpassing several larger proprietary agents. It further achieves 13-15% absolute gains on SuperGPQA-Hard-Biology and TRQA-Literature benchmarks. Overall, SciResearcher introduces a new paradigm for automated data construction for frontier scientific reasoning and offers a scalable path toward future scientific agents.",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-05-06T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.01489",
+      "pdf_url": "https://arxiv.org/pdf/2605.01489",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Directly addresses long-horizon scientific reasoning tasks with deep research agents, aligning perfectly with the brainstormed ideas about scientific task evaluation."
+    },
+    {
+      "arxiv_id": "2605.02442",
+      "title": "Measuring AI Reasoning: A Guide for Researchers",
+      "authors": [
+        "Munachiso Samuel Nwadike",
+        "Zangir Iklassov",
+        "Kareem Ali",
+        "Rifo Genadi",
+        "Kentaro Inui"
+      ],
+      "abstract": "In this paper, we offer a guide for researchers on evaluating reasoning in language models, building the case that reasoning should be assessed through evidence of adaptive, multi-step search rather than final-answer accuracy alone. Under an evaluation-oriented definition, reasoning requires selecting intermediate steps and halting according to input-dependent conditions, which we formalize as a search-like procedure. We show that single forward passes in scalable architectures are structurally limited in their ability to realize such variable-depth computation, motivating intermediate decoding and externalized reasoning traces as appropriate evaluation interfaces. Central to our argument is that final-answer accuracy alone is an insufficient measure of reasoning, because it provides little ability to diagnose or debug the underlying processes that produce individual solutions in frontier models. We therefore argue for a shift toward process-based evaluation, in which reasoning is assessed through the faithfulness and validity of intermediate reasoning traces as first-class evaluation targets.",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-05-06T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.02442",
+      "pdf_url": "https://arxiv.org/pdf/2605.02442",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Provides a comprehensive guide for evaluating reasoning in language models through multi-step search, highly relevant to the explicit self-correction evaluation ideas."
+    },
+    {
+      "arxiv_id": "2605.01293",
+      "title": "Lifting Traces to Logic: Programmatic Skill Induction with Neuro-Symbolic Learning for Long-Horizon Agentic Tasks",
+      "authors": [
+        "Jie-Jing Shao",
+        "Haiyan Yin",
+        "Yueming Lyu",
+        "Xingrui Yu",
+        "Lan-Zhe Guo",
+        "Ivor Tsang",
+        "James Kwok",
+        "Yu-Feng Li"
+      ],
+      "abstract": "Foundation model-driven agents often struggle with long-horizon planning due to the transient nature of purely prompting-based reasoning. While existing skill induction methods mitigate this by distilling experience into state-blind parameterized scripts, they fail to capture the conditional logic required for robust execution in dynamic environments. In this paper, we propose Neuro-Symbolic Skill Induction (NSI), a framework that lifts interaction traces into modular, \\textit{logic-grounded} programs. By synthesizing explicit control flows and dynamic variable binding, NSI empowers agents to discover \\textit{when} and \\textit{why} to act. This paradigm enables the efficient generalization, allowing agents to induce skills from few-shot examples and flexibly adapt to unseen goals. Experiments on a series of agentic tasks demonstrate that NSI consistently outperforms state-of-the-art baselines, empowering agents to self-evolve into architects of logic-grounded skills.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-05-06T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.01293",
+      "pdf_url": "https://arxiv.org/pdf/2605.01293",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Directly addresses long-horizon agentic tasks and skill induction with neuro-symbolic learning, which strongly aligns with the 'long horizon scientific tasks' project focus."
+    },
+    {
+      "arxiv_id": "2605.01604",
+      "title": "Evaluating Agentic AI in the Wild: Failure Modes, Drift Patterns, and a Production Evaluation Framework",
+      "authors": [
+        "Mukund Pandey"
+      ],
+      "abstract": "Existing evaluation frameworks for large language models -- including HELM, MT-Bench, AgentBench, and BIG-bench -- are designed for controlled, single-session, lab-scale settings. They do not address the evaluation challenges that emerge when agentic AI systems operate continuously in production: compounding decision errors, tool failure cascades, non-deterministic output drift, and the absence of ground truth for long-horizon tasks. This paper makes three contributions. First, we present a taxonomy of seven failure modes unique to production agentic systems, each grounded in observations from systems operating at billion-event scale. Second, we demonstrate empirically where standard metrics -- ROUGE, BERTScore, accuracy/AUC, and the agentic benchmarks above -- fail to detect each failure mode. Third, we propose PAEF (Production Agentic Evaluation Framework), a five-dimension evaluation framework with an open-source reference implementation, designed for continuous evaluation on production traffic rather than episodic benchmark runs. Our analysis shows that standard metrics fail to detect four of the seven failure modes entirely and detect three others only after a lag of multiple evaluation cycles.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-05-06T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.01604",
+      "pdf_url": "https://arxiv.org/pdf/2605.01604",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Directly addresses evaluation of agentic AI systems in production environments, focusing on failure modes and drift patterns which aligns perfectly with the research interests in self-correction evaluations and long-horizon tasks."
+    },
+    {
+      "arxiv_id": "2605.02269",
+      "title": "Towards Understanding Specification Gaming in Reasoning Models",
+      "authors": [
+        "Kei Nishimura-Gasparian",
+        "Robert McCarthy",
+        "David Lindner"
+      ],
+      "abstract": "Specification gaming is a critical failure mode of LLM agents. Despite this, there has been little systematic research into when it arises and what drives it. To address this, we build and open source a diverse suite of tasks where models can score highly by taking unintended actions. We find that all tested models exploit their specifications at non-negligible rates in most of our eight settings, including five non-coding settings. We see the highest rates of specification gaming in Grok 4 and the lowest rates in Claude models. We use our evaluation suite to study what drives specification gaming, and find that: 1. RL reasoning training substantially increases the rate at which models exploit their specifications, 2. Increasing RL reasoning budget has a weakly positive effect on exploit rate, and 3. Test-time mitigations reduce but do not eliminate the rate of specification gaming. Our results suggest that specification gaming is a fundamental challenge arising from RL reasoning training; we release our evaluation suite to support further work on this problem.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-05-06T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.02269",
+      "pdf_url": "https://arxiv.org/pdf/2605.02269",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Directly addresses specification gaming in reasoning models with a systematic research approach and diverse task suite, highly relevant to testing model failure modes and self-correction."
+    },
+    {
+      "arxiv_id": "2605.00914",
+      "title": "The Cost of Consensus: Isolated Self-Correction Prevails Over Unguided Homogeneous Multi-Agent Debate",
+      "authors": [
+        "Bla\\v{z} Bertalani\\v{c}",
+        "Carolina Fortuna"
+      ],
+      "abstract": "Multi-agent debate, where teams of LLMs iteratively exchange rationales and vote on answers, is widely deployed under the assumption that peer review filters hallucinations. Yet the failure dynamics of homogeneous debate remain poorly understood, therefore we report findings from a controlled empirical study of teams of $N{=}10$ homogeneous agents (Qwen2.5-7B, Llama-3.1-8B, Ministral-3-8B) across $R{=}3$ debate rounds on two high-difficulty benchmarks (GSM-Hard and MMLU-Hard). We compare peer debate against isolated self-correction and a stochastic noise control that injects rationales from unrelated problems. We decompose debate failure into three model-dependent pathways: sycophantic conformity, where agents uncritically adopt majority answers (modal adoption up to 85.5%); contextual fragility, where peer rationales destabilize previously correct reasoning (vulnerability rate up to 70.0%); and consensus collapse, where plurality voting discards correct answers already present in the generation pool (oracle gap up to 32.3 percentage points). Ablations over communication density ($K \\in \\{2,4,9\\}$) and sampling temperature ($T \\in \\{0.4, 0.7\\}$) show that conformity reaches high levels at minimal peer exposure ($K{=}2$) and intensifies with greater initial diversity. Across all configurations, debate consumes 2.1-3.4$\\times$ more tokens (up to 28,631 tokens per problem) than self-correction for equal or lower accuracy. Our results indicate that, within the 7-8B parameter class, homogeneous teams without structured roles do not benefit from unguided peer exchange, and that isolated self-correction consistently offers a more favorable cost-accuracy tradeoff.",
+      "categories": [
+        "cs.MA",
+        "cs.AI"
+      ],
+      "published": "2026-05-06T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.00914",
+      "pdf_url": "https://arxiv.org/pdf/2605.00914",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Directly addresses multi-agent debate dynamics and the failure modes of homogeneous LLM teams, which is highly relevant to understanding model self-correction and evaluation weaknesses mentioned in the research projects."
+    },
+    {
+      "arxiv_id": "2605.02122",
+      "title": "STABLEVAL: Disagreement-Aware and Stable Evaluation of AI Systems",
+      "authors": [
+        "Akash Bonagiri",
+        "Gerard Janno Anderias",
+        "Saee Patil",
+        "Angelina Lai",
+        "Devang Borkar",
+        "Gezheng Kang",
+        "Ishant Gandhi",
+        "Setareh Rafatirad",
+        "Houman Homayoun"
+      ],
+      "abstract": "Human evaluation remains the primary standard for assessing modern AI systems, yet annotator disagreement, bias, and variability make system rankings fragile under standard majority vote aggregation. Majority vote discards annotator reliability and item-level ambiguity, often yielding unstable comparisons across annotator subsets. We introduce STABLEVAL, a disagreement-aware evaluation framework that models latent item correctness and annotator-specific confusion patterns to produce posterior expected item credit and calibrated agent-level scores. Unlike label-denoising approaches such as Dawid-Skene, STABLEVAL is explicitly designed for stable and uncertainty-aware system evaluation rather than hard label recovery. We formalize ranking stability as a first-class evaluation objective and analyze how aggregation methods preserve or distort underlying annotator behavior. Across controlled synthetic experiments and multiple real-world human-annotated benchmarks, majority vote exhibits increasing score error and ranking instability under annotator heterogeneity and adversarial noise, while STABLEVAL yields more stable and statistically grounded system rankings. These results demonstrate that modeling disagreement is essential for robust and reproducible AI evaluation.",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-05-06T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.02122",
+      "pdf_url": "https://arxiv.org/pdf/2605.02122",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Provides a framework for disagreement-aware evaluation that could address LM judge weaknesses mentioned in Hunter Prep and improve grading of long rollouts."
+    },
+    {
+      "arxiv_id": "2605.02463",
+      "title": "When Stress Becomes Signal: Detecting Antifragility-Compatible Regimes in Multi-Agent LLM Systems",
+      "authors": [
+        "Jose Manuel de la Chica",
+        "Juan Manuel Vera",
+        "Jairo Rodr\\'iguez"
+      ],
+      "abstract": "Multi-agent LLM systems are increasingly used to solve complex tasks through decomposition, debate, specialization, and ensemble reasoning. However, these systems are usually evaluated in terms of robustness: whether performance is preserved under perturbation. This paper studies a different question: whether semantic stress exposes structured variation that could support future antifragile learning. We introduce CAFE, a statistical framework for detecting antifragility-compatible regimes in multi-agent architectures. CAFE models a controlled expected distribution of semantic stressors, reconstructs an architecture-specific observed effective stress distribution from multi-dimensional judge signals, and compares both distributions using a distributional Jensen Gap under a convex stress potential. A positive gap does not imply immediate performance improvement; instead, it indicates a convex-expansive deformation of the observed stress distribution, suggesting that the architecture exposes learnable stress structure. We evaluate CAFE on a banking-risk analysis benchmark with five multi-agent architectures: flat, hierarchical, debate, meta-adaptive, and ensemble. Across all architectures, semantic stress reduces average judged quality by roughly one third. Yet all architectures exhibit positive distributional Jensen Gaps with bootstrap confidence intervals above zero. These results show that immediate quality degradation can coexist with statistically detectable antifragility-compatible stress geometry. CAFE is therefore not an antifragile learner itself, but a measurement layer for identifying when and where antifragility learning may be worth applying.",
+      "categories": [
+        "cs.MA",
+        "cs.AI",
+        "cs.CE"
+      ],
+      "published": "2026-05-06T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.02463",
+      "pdf_url": "https://arxiv.org/pdf/2605.02463",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Studies multi-agent LLM systems under semantic stress to detect structured variation, perfectly aligned with research on tasks requiring failure first and testing model responses to surprising information."
+    },
+    {
+      "arxiv_id": "2605.02913",
+      "title": "Generate, Filter, Control, Replay: A Comprehensive Survey of Rollout Strategies for LLM Reinforcement Learning",
+      "authors": [
+        "Rohan Surana",
+        "Gagan Mundada",
+        "Xunyi Jiang",
+        "Chuhan Wang",
+        "Zhenwei Tang",
+        "Difan Jiao",
+        "Zihan Huang",
+        "Yuxin Xiong",
+        "Junda Wu",
+        "Sheldon Yu",
+        "Xintong Li",
+        "Raghav Jain",
+        "Nikki Kuang",
+        "Sizhe Zhou",
+        "Bowen Jin",
+        "Zhendong Chu",
+        "Tong Yu",
+        "Ryan Rossi",
+        "Kuan-Hao Huang",
+        "Jingbo Shang",
+        "Jiawei Han",
+        "Julian McAuley"
+      ],
+      "abstract": "Reinforcement learning (RL) has become a central post-training tool for improving the reasoning abilities of large language models (LLMs). In these systems, the rollout, the trajectory sampled from a prompt to termination, including intermediate reasoning steps and optional tool or environment interactions, determines the data the optimizer learns from, yet rollout design is often underreported. This survey provides an optimizer-agnostic view of rollout strategies for RL-based post-training of reasoning LLMs. We formalize rollout pipelines with unified notation and introduce Generate-Filter-Control-Replay (GFCR), a lifecycle taxonomy that decomposes rollout pipelines into four modular stages: Generate proposes candidate trajectories and topologies; Filter constructs intermediate signals via verifiers, judges, critics; Control allocates compute and makes continuation/branching/stopping decisions under budgets; and Replay retains and reuses artifacts across rollouts without weight updates, including self-evolving curricula that autonomously generate new training tasks. We complement GFCR with a criterion taxonomy of reliability, coverage, and cost sensitivity that characterizes rollout trade-offs. Using this framework, we synthesize methods spanning RL with verifiable rewards, process supervision, judge-based gating, guided and tree/segment rollouts, adaptive compute allocation, early-exit and partial rollouts, throughput optimization, and replay/recomposition for self-improvement. We ground the framework with case studies in math, code/SQL, multimodal reasoning, tool-using agents, and agentic skill benchmarks that evaluate skill induction, reuse, and cross-task transfer. Finally, we provide a diagnostic index that maps common rollout pathologies to GFCR modules and mitigation levers, alongside open challenges for building reproducible, compute-efficient, and trustworthy rollout pipelines.",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-05-06T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.02913",
+      "pdf_url": "https://arxiv.org/pdf/2605.02913",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Comprehensive survey of rollout strategies for LLM reinforcement learning, directly relevant to scaling feedback and on-policy distillation concerns mentioned in Hunter Prep."
+    },
+    {
+      "arxiv_id": "2605.02964",
+      "title": "Reward Hacking Benchmark: Measuring Exploits in LLM Agents with Tool Use",
+      "authors": [
+        "Kunvar Thaman"
+      ],
+      "abstract": "Reinforcement learning (RL) trained language model agents with tool access are increasingly deployed in coding assistants, research tools, and autonomous systems. We introduce the Reward Hacking Benchmark (RHB), a suite of multi-step tasks requiring sequential tool operations with naturalistic shortcut opportunities such as skipping verification steps, inferring answers from task-adjacent metadata, or tampering with evaluation-relevant functions. RHB supports independent and chained task regimes, where chain length acts as a proxy for longer-horizon agent behavior.   We evaluate 13 frontier models from OpenAI, Anthropic, Google, and DeepSeek. Exploit rates range from 0% (Claude Sonnet 4.5) to 13.9% (DeepSeek-R1-Zero), varying sharply by post-training style. A controlled sibling comparison (DeepSeek-V3 vs. DeepSeek-R1-Zero) shows RL post-training is associated with substantially higher reward hacking (0.6% vs. 13.9%), with consistent gaps across all four task families. We identify six exploit categories and find that 72% of reward hacking episodes include explicit chain-of-thought rationale, suggesting models often frame exploits as legitimate problem-solving.   Simple environmental hardening reduces exploit rates by 5.7 percentage points (87.7% relative) without degrading task success. Models with near-zero exploit rates on standard tasks show elevated rates on harder variants, suggesting that production-aligned post-training appears to suppress reward hacking only below a complexity threshold where honest solutions remain tractable.",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-05-06T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.02964",
+      "pdf_url": "https://arxiv.org/pdf/2605.02964",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Measures exploits and reward hacking in LLM agents with tool use across multi-step tasks, directly relevant to evaluating how models handle surprising information and failure modes."
+    },
+    {
+      "arxiv_id": "2605.03226",
+      "title": "Self-Mined Hardness for Safety Fine-Tuning",
+      "authors": [
+        "Prakhar Gupta",
+        "Garv Shah",
+        "Donghua Zhang"
+      ],
+      "abstract": "Safety fine-tuning of language models typically requires a curated adversarial dataset. We take a different approach: score each candidate prompt's difficulty by how often the target model's own rollouts are judged harmful, then fine-tune on the hardest prompts paired with the model's own non-jailbroken rollouts. On Llama-3-8B-Instruct and Llama-3.2-3B-Instruct, this approach cuts the WildJailbreak attack success rate from 11.5% and 20.1% down to 1-3%, but pushes refusal on jailbreak-shaped benign prompts from 14-22% to 74-94%. Interleaving the same hard prompts 1:1 with adversarially-framed benign prompts (prompts that look like jailbreaks but have benign intent) cuts that refusal back down to 30-51% on 8B and 52-72% on 3B, at a cost of 2-6 percentage points of attack success rate. Within the mixed regime, training on the hardest half of the eligible pool rather than a random half cuts the remaining ASR by 35-50% (about 3 percentage points) on both models.",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CR"
+      ],
+      "published": "2026-05-06T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.03226",
+      "pdf_url": "https://arxiv.org/pdf/2605.03226",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Proposes self-mined hardness for safety fine-tuning using model's own rollouts, which directly connects to the projects on grading long rollouts and LM judge effectiveness."
+    },
+    {
+      "arxiv_id": "2605.03808",
+      "title": "Agentic-imodels: Evolving agentic interpretability tools via autoresearch",
+      "authors": [
+        "Chandan Singh",
+        "Yan Shuo Tan",
+        "Weijia Xu",
+        "Zelalem Gero",
+        "Weiwei Yang",
+        "Michel Galley",
+        "Jianfeng Gao"
+      ],
+      "abstract": "Agentic data science (ADS) systems are rapidly improving their capability to autonomously analyze, fit, and interpret data, potentially moving towards a future where agents conduct the vast majority of data-science work. However, current ADS systems use statistical tools designed to be interpretable by humans, rather than interpretable by agents. To address this, we introduce Agentic-imodels, an agentic autoresearch loop that evolves data-science tools designed to be interpretable by agents. Specifically, it develops a library of scikit-learn-compatible regressors for tabular data that are optimized for both predictive performance and a novel LLM-based interpretability metric. The metric measures a suite of LLM-graded tests that probe whether a fitted model's string representation is \"simulatable\" by an LLM, i.e. whether the LLM can answer questions about the model's behavior by reading its string output alone. We find that the evolved models jointly improve predictive performance and agent-facing interpretability, generalizing to new datasets and new interpretability tests. Furthermore, these evolved models improve downstream end-to-end ADS, increasing performance for Copilot CLI, Claude Code, and Codex on the BLADE benchmark by up to 73%",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "published": "2026-05-06T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.03808",
+      "pdf_url": "https://arxiv.org/pdf/2605.03808",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Directly tackles autonomous data science with interpretable tools for agents, strongly connecting to both long-horizon scientific tasks and the need for better model evaluation in complex domains."
+    },
+    {
+      "arxiv_id": "2605.00994",
+      "title": "Model Organisms Are Leaky: Perplexity Differencing Often Reveals Finetuning Objectives",
+      "authors": [
+        "Mohammed Abu Baker",
+        "Luca Baroni",
+        "Dan Wilhelm"
+      ],
+      "abstract": "Finetuning can significantly modify the behavior of large language models, including introducing harmful or unsafe behaviors. To study these risks, researchers develop model organisms: models finetuned to exhibit specific known behaviors for controlled experimentation. Identifying these behaviors remains challenging. We show that a simple perplexity-based method can surface finetuning objectives from model organisms by leveraging their tendency to overgeneralize their finetuned behaviors beyond the intended context. First, we generate diverse completions from the finetuned model using short random prefills drawn from general corpora. Second, we rank completions by decreasing perplexity gap between reference and finetuned models. The top-ranked completions often reveal the finetuning objectives, without requiring model internals or prior assumptions about the behavior. We evaluate this on a diverse set of model organisms (N=76, 0.5 to 70B parameters), including backdoored models, models finetuned to internalize false facts via synthetic document finetuning, adversarially trained models with hidden concerning behaviors, and models exhibiting emergent misalignment. For the vast majority of model organisms tested, the method surfaces completions revealing finetuning objectives within the top-ranked results, with models trained via synthetic document finetuning or to produce exact phrases being particularly susceptible. We further show that the technique can be effective even without access to the exact pre-finetuning checkpoint: trusted reference models from different families can serve as effective substitutes. As the method requires only next-token probabilities from the finetuned model, it is compatible with API-gated models that expose token logprobs.",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-05-06T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.00994",
+      "pdf_url": "https://arxiv.org/pdf/2605.00994",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Directly relevant to measuring how models deal with surprising information through perplexity-based methods for identifying finetuning objectives, connecting to the brainstorming about models handling unexpected data."
+    },
+    {
+      "arxiv_id": "2605.01347",
+      "title": "MAD-OPD: Breaking the Ceiling in On-Policy Distillation via Multi-Agent Debate",
+      "authors": [
+        "Jianze Wang",
+        "Ying Liu",
+        "Jinlong Chen",
+        "Xuchun Hu",
+        "Qilong Zhang",
+        "Yu Cao",
+        "Jun Wang",
+        "Hua Yang",
+        "Yong Xie",
+        "Qianglong Chen"
+      ],
+      "abstract": "On-policy distillation (OPD) trains a student on its own trajectories under token-level teacher supervision, but existing methods are capped by a single-teacher capability ceiling: when the teacher errs, the student inherits the error. OPD also remains largely unexplored in agentic tasks, where per-step errors compound across long trajectories and destabilize training. We propose MAD-OPD (Multi-Agent Debate-driven On-Policy Distillation), which breaks this ceiling by recasting the distillation teacher as a deliberative collective of teachers that debate over the student's on-policy state; the debate produces an emergent collective intelligence that supplies token-level supervision, with each teacher's contribution weighted by its post-debate confidence. To extend OPD to agentic tasks, we also introduce On-Policy Agentic Distillation (OPAD), which adds step-level sampling to stabilize training under multi-step error compounding. We additionally derive a task-adaptive divergence principle, selecting JSD (Jensen-Shannon divergence) for agentic stability and reverse KL (Kullback-Leibler) divergence for code generation, and verify it both theoretically and empirically. Across six teacher-student configurations (Qwen3 and Qwen3.5; 1.7B-14B students, 8B-32B teachers) and five agentic and code benchmarks, MAD-OPD ranks first across all six configurations; on the 14B+8B$\\to$4B setting it lifts the agentic average by $+2.4\\%$ and the code average by $+3.7\\%$ over the stronger single-teacher OPD.",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-05-06T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.01347",
+      "pdf_url": "https://arxiv.org/pdf/2605.01347",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Directly relevant to the on-policy distillation and feedback scaling mentioned in Hunter Prep, proposing multi-agent debate to overcome single-teacher limitations in OPD."
+    },
+    {
+      "arxiv_id": "2605.01428",
+      "title": "Hallucinations Undermine Trust; Metacognition is a Way Forward",
+      "authors": [
+        "Gal Yona",
+        "Mor Geva",
+        "Yossi Matias"
+      ],
+      "abstract": "Despite significant strides in factual reliability, errors -- often termed hallucinations -- remain a major concern for generative AI, especially as LLMs are increasingly expected to be helpful in more complex or nuanced setups. Yet even in the simplest setting -- factoid question-answering with clear ground truth-frontier models without external tools continue to hallucinate. We argue that most factuality gains in this domain have come from expanding the model's knowledge boundary (encoding more facts) rather than improving awareness of that boundary (distinguishing known from unknown). We conjecture that the latter is inherently difficult: models may lack the discriminative power to perfectly separate truths from errors, creating an unavoidable tradeoff between eliminating hallucinations and preserving utility.   This tradeoff dissolves under a different framing. If we understand hallucinations as confident errors -- incorrect information delivered without appropriate qualification -- a third path emerges beyond the answer-or-abstain dichotomy: expressing uncertainty. We propose faithful uncertainty: aligning linguistic uncertainty with intrinsic uncertainty. This is one facet of metacognition -- the ability to be aware of one's own uncertainty and to act on it. For direct interaction, acting on uncertainty means communicating it honestly; for agentic systems, it becomes the control layer governing when to search and what to trust. Metacognition is thus essential for LLMs to be both trustworthy and capable; we conclude by highlighting open problems for progress towards this objective.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-05-06T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.01428",
+      "pdf_url": "https://arxiv.org/pdf/2605.01428",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Highly relevant to evaluating how models handle surprising/incorrect information and self-correction capabilities mentioned in the brainstorming notes."
+    },
+    {
+      "arxiv_id": "2605.01704",
+      "title": "The Reasoning Trap: An Information-Theoretic Bound on Closed-System Multi-Step LLM Reasoning",
+      "authors": [
+        "Kwan Soo Shin"
+      ],
+      "abstract": "When copies of the same language model are prompted to debate, they produce diverse phrasings of one perspective rather than diverse perspectives. Multi-agent debate (MAD), and more broadly closed-system reasoning where agents iteratively transform each other's outputs, tends to preserve answer accuracy while degrading the reasoning behind those answers. We name the multi-agent case the Debate Trap and the broader phenomenon the Reasoning Trap, offering a programmatic theory of evidence-grounded reasoning failure.The framework has three parts: (i) SFS (Supported Faithfulness Score), a claim-level metric verifying decomposed atomic claims against provided evidence (decomposer-invariant rankings: Spearman rho=1.0); (ii) EGSR (Evidence-Grounded Socratic Reasoning), replacing adversarial argumentation with evidence-grounded inquiry; (iii) Theorem 1 (DPI Bound): under standard MAD, the chain E -> O^0 -> O^1 -> ... is Markov, and the Data Processing Inequality implies E[I(E;O^{t+1})] <= E[I(E;O^t)]. Three companion results -- open-system recovery (Theorem 2), EGSR accumulation (Lemma 2), and vote-aggregation floor (Proposition 1) -- partition multi-step LLM reasoning by its information-theoretic relationship to E. Across 16 conditions on SciFact (300 claims) and FEVER (1,000 claims), DebateCV (C13) preserves 88% of baseline accuracy while SFS drops 43%; majority-vote MAD (C15) reduces SFS to 1.7% of baseline (p < 10^{-6}, d = -0.96); EGSR recovers 98%. An R6 cohort study (Korean n=10x30 FEVER; English n=3x200 SciFact) finds inter-rater Fleiss kappa <= +0.018 with 0.8-1.4 Likert intra-rater shifts across language and domain -- the human agreement that faithfulness metrics have been calibrated against is not itself stable. We offer one falsifiable conjecture: any closed-system reasoning protocol preserving Theorem 1's Markov structure is, in expectation, subject to the same DPI bound.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-05-06T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.01704",
+      "pdf_url": "https://arxiv.org/pdf/2605.01704",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Directly relevant to multi-step reasoning evaluation and understanding limitations of iterative model processes mentioned in current research interests."
+    },
+    {
+      "arxiv_id": "2605.02038",
+      "title": "What Single-Prompt Accuracy Misses: A Multi-Variant Reliability Audit of Language Models",
+      "authors": [
+        "Ranit Karmakar",
+        "Jayita Chatterjee"
+      ],
+      "abstract": "Single-prompt accuracy is the dominant way to benchmark language models, but it can miss reliability failures that matter. We evaluate a 15-model open-weight corpus, with the main reliability analyses focused on 10 instruct models across five classification and reasoning benchmarks under five prompt variants each, measuring accuracy, token-probability calibration, verbal-confidence calibration, verbal parse rate, and prompt-perturbation spread for every (model x dataset x variant) cell. We find three broad results. First, evaluation design can materially change the conclusion. Switching Expected Calibration Error (ECE) token from a raw to a label-set-normalised definition changes per-cell calibration by a mean absolute 0.149. More strikingly, pairing a chain-of-thought prompt with a first-character evaluator on ARC-Challenge reduces apparent accuracy by 72-88% across all five primary models; two independent repair procedures recover 93.8% and 102.7% of the lost performance, indicating an evaluator-side rather than model-side failure. Second, confidence signals are fragile. On MMLU-Pro, every primary model verbally reports confidence substantially above both its accuracy and its token-probability confidence on the same rows, and verbal parse rate can collapse for a single model on a single prompt variant. Third, prompt robustness does not track parameter count reliably. Across 10 instruct models, the correlation between model size and prompt-perturbation spread ranges from -0.244 to 0.474 across benchmarks. Taken together, these results show that reliability conclusions for small language models depend not only on the model being evaluated, but also on the evaluation pipeline used to measure it. We argue that calibration definitions, evaluator logic, verbal parseability, and prompt robustness should be reported explicitly when making reliability claims.",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-05-06T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.02038",
+      "pdf_url": "https://arxiv.org/pdf/2605.02038",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "This multi-variant reliability audit directly addresses the core research theme of measuring model reliability beyond single-prompt accuracy, examining calibration and consistency across prompt variants."
+    }
+  ]
+}
