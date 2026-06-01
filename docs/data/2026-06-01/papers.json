@@ -1,0 +1,788 @@
+{
+  "date": "2026-06-01",
+  "generated_at": "2026-06-01T05:25:28.096659+00:00",
+  "author_papers": [
+    {
+      "arxiv_id": "2605.30407",
+      "title": "Exploring Autonomous Agentic Data Engineering for Model Specialization",
+      "authors": [
+        "Yujie Luo",
+        "Xiangyuan Ru",
+        "Jingsheng Zheng",
+        "Jingjing Wang",
+        "Yuqi Zhu",
+        "Jintian Zhang",
+        "Runnan Fang",
+        "Kewei Xu",
+        "Ye Liu",
+        "Zheng Wei",
+        "Jiang Bian",
+        "Zang Li",
+        "Shumin Deng"
+      ],
+      "abstract": "Large Language Models (LLMs) have demonstrated strong performance on general tasks, while often struggling to adapt to specialized domains without high-quality domain-specific data. Existing LLM-based data curation methods primarily rely on human-designed workflows, leaving it unexamined whether LLMs can autonomously execute an end-to-end data engineering pipeline for model specialization. We formalize \\textbf{Autonomous Agentic Data Engineering}, a novel task designed to evaluate LLMs as autonomous data engineers that drive model specialization through end-to-end data curation. We frame data as an optimizable component and study agents that plan, generate, and iteratively optimize training data across multiple domains, guided by post-training performance improvement. Experiments show that autonomous LLM data engineers yield substantial gains, as GPT-5.2 constructs a training curriculum that improves a student model by \\textbf{57.29\\%}, entirely through iterative, agent-driven data adaptation. By illuminating both potential and bottlenecks, our study establishes autonomous data engineering as a measurable capability and charts a path toward agent-driven model specialization\\footnote{Code will be released at https://github.com/zjunlp/DataAgent.}.",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.IR",
+        "cs.LG"
+      ],
+      "published": "2026-06-01T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.30407",
+      "pdf_url": "https://arxiv.org/pdf/2605.30407",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2605.30723",
+      "title": "Skill is Not One-Size-Fits-All: Model-Aware Skill Alignment for LLM Agents",
+      "authors": [
+        "Jianxiang Yu",
+        "Jiapeng Zhu",
+        "Bochen Lin",
+        "Qier Cui",
+        "Zichen Ding",
+        "Xiang Li"
+      ],
+      "abstract": "LLM agents increasingly retrieve externally curated skills-procedural instructions retrieved at decision time-to improve performance on long-horizon interactive tasks. Existing skill libraries are typically treated as model-agnostic, reusing the same skill formulations across backbones with substantially different capacities and behaviors. However, our controlled experiments across multiple model scales show that skill effectiveness is strongly model-dependent: a skill that benefits one backbone can harm another. Motivated by this observation, we propose MASA Model-Aware Skill Alignment, a framework that adapts skills to each target backbone without modifying agent weights. MASA operates in two stages: (1) a hierarchical skill evolution pipeline that iteratively rewrites general and task-specific skills using hill climbing and UCB-driven tree search, guided by environment feedback and model capability profiles; and (2) a lightweight model-conditioned skill rewriter trained on evolution trajectories to reproduce the adaptation in a single forward pass. Experiments across three interactive environments and four backbones show that MASA consistently achieves the best overall performance, with gains of up to 25.8 points over the strongest baseline. The learned rewriter further generalizes to unseen tasks and environments without additional search, consistently outperforming a much larger teacher LLM at a fraction of the inference cost.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-06-01T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.30723",
+      "pdf_url": "https://arxiv.org/pdf/2605.30723",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2605.31238",
+      "title": "Scaling Multi-Hop Training Data via Graph-Constrained Path Selection",
+      "authors": [
+        "Pengyu Chen",
+        "Yonggang Zhang",
+        "Mingming Chen",
+        "Jun Song",
+        "Wei Xue",
+        "Yike Guo"
+      ],
+      "abstract": "Endowing large language models with compositional reasoning over specialized documents requires multi-hop training data at scale, where such data rarely exists outside of curated benchmarks built on structured sources. To construct it directly from plain, unannotated text, existing methods ask a single teacher model to jointly discover an evidence path through a document and verbalize it as a question-answer pair. However, these methods degrade sharply when documents are structured around repetitive templates and densely cross-referencing clauses, conditions that characterize most real-world specialized corpora. In this work, we decouple the two operations: reasoning paths are enumerated offline over a graph of contextual keyword centroids, and the teacher is invoked only to verbalize pre-validated paths. The graph enforces five geometric admissibility constraints, for which we provide Gram-matrix arguments establishing that local similarity bounds alone admit endpoint drift up to ${\\sim}91^{\\circ}$, and that an upper similarity bound is necessary to exit dense embedding cliques formed by boilerplate text. A matched-size ablation isolates the mechanism: at equal training scale, constrained and unconstrained chains yield indistinguishable downstream performance, and the gain at full scale comes from a 4.4$\\times$ expansion of the usable corpus rather than from higher per-chain quality -- reframing the role of graph constraints, in this setting, as raising teacher synthesizability rather than improving chain content. Fine-tuning Qwen3-32B on 80K examples constructed from the CUAD legal contract corpus improves closed-book Token F1 from 21.66% to 38.58%. We have released our codes at https://github.com/hkgai-official/GCSCS.",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "published": "2026-06-01T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.31238",
+      "pdf_url": "https://arxiv.org/pdf/2605.31238",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2605.30434",
+      "title": "LongDS-Bench: On the Failure of Long-Horizon Agentic Data Analysis",
+      "authors": [
+        "Kewei Xu",
+        "Xiaoben Lu",
+        "Shuofei Qiao",
+        "Zihan Ding",
+        "Haoming Xu",
+        "Lei Liang",
+        "Ningyu Zhang"
+      ],
+      "abstract": "Real-world data analysis is inherently iterative, yet existing benchmarks mostly evaluate isolated or short interactive tasks, leaving agents' ability to track evolving analytical context over long horizons untested. We introduce LongDS, a benchmark for long-horizon, multi-turn data analysis where agents must maintain, update, restore, and compose evolving analytical states. LongDS comprises 68 tasks constructed from real-world Kaggle notebooks, spanning 2,225 turns across six domains including Geoscience, Business, and Education. Tasks are designed around state-evolution patterns (e.g., counterfactual perturbation, rollback, multi-state composition), with an average dependency span of 11.3 turns. Evaluating five state-of-the-art models, we find that the best model reaches only 48.45% average accuracy, performance drops nearly 47 points from early to late turns, and long-horizon errors account for 52%--69% of failures. Further analysis shows that additional agent steps do not necessarily improve performance, suggesting that the key bottleneck is maintaining a correct analytical state rather than increasing interaction budget. We release LongDS to support research on reliable long-horizon agentic data analysis. Code and data will be released at https://github.com/zjunlp/DataMind.",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL",
+        "cs.MA"
+      ],
+      "published": "2026-06-01T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.30434",
+      "pdf_url": "https://arxiv.org/pdf/2605.30434",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2605.30523",
+      "title": "Revisiting Padded Transformer Expressivity: Which Architectural Choices Matter and Which Don't",
+      "authors": [
+        "Anej Svete",
+        "William Merrill",
+        "Ryan Cotterell",
+        "Ashish Sabharwal"
+      ],
+      "abstract": "Recent work describes what transformers can and cannot compute through connections to boolean circuits, but existing results lack exact characterizations and are sensitive to modeling choices. Padded transformers -- to whose input filler symbols such as ``...'' are appended -- emerge as a useful gadget for establishing equivalences to circuit classes by providing polynomial space for adaptive parallel computation. However, only a limited set of padded transformer idealizations has been studied, leaving open how robustly these equivalences hold under changes to attention type, model width, and uniformity. We find that, under practical assumptions, padded transformers are surprisingly robust to all of these, and identify numeric precision and model depth as the main factors affecting expressivity. Concretely, we prove that polynomially padded $\\text{L-uniform}$ constant-precision transformers are equivalent to $\\text{L-uniform AC}^0$, while growing-precision ones achieve $\\text{L-uniform TC}^0$ regardless of width. Furthermore, looping enables sequential processing analogous to circuits: $\\log^d N$-looped constant-precision transformers reach $\\text{FO-uniform AC}^d$, and growing-precision ones reach $\\text{FO-uniform TC}^d$. Interestingly, growing width or precision beyond logarithmic does not increase expressivity, and all our results hold for both softmax and average hard attention transformers.",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CC",
+        "cs.CL",
+        "cs.FL"
+      ],
+      "published": "2026-06-01T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.30523",
+      "pdf_url": "https://arxiv.org/pdf/2605.30523",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2605.30621",
+      "title": "Harness Updating Is Not Harness Benefit: Disentangling Evolution Capabilities in Self-Evolving LLM Agents",
+      "authors": [
+        "Minhua Lin",
+        "Juncheng Wu",
+        "Zijun Wang",
+        "Zhan Shi",
+        "Yisi Sang",
+        "Bing He",
+        "Zewen Liu",
+        "Tianxin Wei",
+        "Zongyu Wu",
+        "Zhiwei Zhang",
+        "Dakuo Wang",
+        "Xiang Zhang",
+        "Benoit Dumoulin",
+        "Cihang Xie",
+        "Yuyin Zhou",
+        "Suhang Wang",
+        "Hanqing Lu"
+      ],
+      "abstract": "LLM agents are increasingly deployed as systems built around editable external harnesses, including prompts, skills, memories and tools, that shape task execution without changing model parameters. Harness self-evolution adapts such agents by updating these harnesses from execution evidence. Yet it remains unclear whether a model's base capability in task-solving predicts its capabilities in harness self-evolution: which models produce useful harness updates, and which actually benefit from them? We analyze two harness self-evolution capabilities: (i) harness-updating, the capability to produce useful persistent harness updates from execution evidence; (ii) harness-benefit, the capability to benefit from updated harnesses during task solving. Our analysis reveals two findings. First, harness-updating is flat in base capability: models from different capability tiers produce harness updates that lead to surprisingly similar gains; even Qwen3.5-9B's updates yield gains comparable to those of Claude Opus~4.6. Second, harness-benefit is non-monotonic in base capability: weak-tier models benefit little from updated harnesses, mid-tier models benefit most, and strong-tier models benefit less than mid-tier. We trace low gains at the weak tier to two failure modes: weak-tier models may fail to activate relevant harness artifacts, or activate them but fail to follow them faithfully. These findings suggest investing capability budget in the task-solving agent rather than the evolver, and targeting harness invocation and long-horizon instruction following in agent training. Our source code is publicly available at https://github.com/A-EVO-Lab/a-evolve/tree/release/harness-evolution.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-06-01T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.30621",
+      "pdf_url": "https://arxiv.org/pdf/2605.30621",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2605.30838",
+      "title": "COMPASS: Cognitive MCTS-Guided Process Alignment for Safe Search Agents",
+      "authors": [
+        "Wenkai Shen",
+        "Pengyang Zhou",
+        "Jiahe Xu",
+        "Jiaming Qian",
+        "Haozhe He",
+        "Zhihao Huang",
+        "Chaochao Chen",
+        "Xiaolin Zheng"
+      ],
+      "abstract": "LLM-powered search agents enable multi-step reasoning and tool use. However, these capabilities introduce retrieval-induced safety degradation, as harmful intents may decompose into seemingly innocuous sub-queries that lead to unsafe outcomes. Existing alignment methods struggle to capture sparse safety signals and fail to supervise diverse violations across multi-step interactions. We propose COMPASS, a Cognitive MCTS-Guided Process Alignment framework designed to achieve robust safety alignment throughout the agent workflow while preserving general utility. COMPASS integrates cognitive tree exploration (CTE) to efficiently synthesize stealthy attack trajectories, and introspective step-wise alignment (ISA) to isolate risky intermediate actions for fine-grained process supervision. Empirical results show that COMPASS achieves a favorable safety-utility trade-off while requiring substantially less training data.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-06-01T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.30838",
+      "pdf_url": "https://arxiv.org/pdf/2605.30838",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2605.31468",
+      "title": "AutoSci: A Memory-Centric Agentic System for the Full Scientific Research Lifecycle",
+      "authors": [
+        "Weitong Qian",
+        "Beicheng Xu",
+        "Zhongao Xie",
+        "Bowen Fan",
+        "Guozheng Tang",
+        "Jiale Chen",
+        "Xinzhe Wu",
+        "Mingtian Yang",
+        "Chenyang Di",
+        "Jiajun Li",
+        "Lingching Tung",
+        "Peichao Lai",
+        "Yifei Xia",
+        "Ziyi Guo",
+        "Yanwei Xu",
+        "Yanzhao Qin",
+        "Shaoduo Gan",
+        "Xupeng Miao",
+        "Bin Cui"
+      ],
+      "abstract": "Scientific research has traditionally been human-intensive, requiring researchers to coordinate literature, ideas, experiments, manuscripts, and review responses across long project cycles. The rise of LLM-based scientific agents creates an opportunity to automate this process. Such a system must support the full research lifecycle, maintain structured persistent memory across projects, and improve its own research procedures over time. However, existing systems either partially satisfy or fail to satisfy these requirements, leaving a gap for a unified automated scientific research system. As a result, we present AutoSci, a memory-centric agentic system for the full scientific research lifecycle. AutoSci is organized around four modules. SciMem provides schema-governed research memory, separating Long-Term Knowledge Memory for reusable scientific knowledge from Active Research Memory for project-level artifacts such as ideas, experiments, manuscripts, and reviews. SciFlow executes a five-stage lifecycle from literature understanding to rebuttal through a harness that controls state, context, verification, feedback, and orchestration. SciDAG augments difficult skills with DAG-shaped multi-agent operators and reusable stage-specific templates. SciEvolve converts feedback signals from users, experiments, reviews, and external environments into versioned updates to SciMem organization, SciFlow skills, and SciDAG templates. Together, these modules make AutoSci a persistent research environment that can execute, remember, and evolve across research projects. The code repository is available at https://github.com/skyllwt/AutoSci.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-06-01T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.31468",
+      "pdf_url": "https://arxiv.org/pdf/2605.31468",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2605.30899",
+      "title": "A Unified and Reproducible Experimentation Framework for Speech Understanding",
+      "authors": [
+        "Jing Peng",
+        "Junhao Du",
+        "Chenghao Wang",
+        "Hanqi Li",
+        "Yi Yang",
+        "Yixuan Wang",
+        "Xiaoyu Gu",
+        "Guanyu Chen",
+        "Yucheng Wang",
+        "Jiang Li",
+        "Zhangjie Zhao",
+        "Haoran Wang",
+        "Wenming Tu",
+        "Haoyu Li",
+        "Duo Ma",
+        "Lirong Qian",
+        "Yu Xi",
+        "Wen Wen",
+        "Jiaqi Guo",
+        "Hui Zhang",
+        "Shuai Fan",
+        "Wenbin Jiang",
+        "Shuai Wang",
+        "Kai Yu"
+      ],
+      "abstract": "Speech foundation models and Speech LLMs have advanced speech understanding, yet deployment-oriented model selection is hindered by non-comparable evaluations caused by mismatched post-processing, and by training results that are hard to reproduce across data scales and pipelines. We present SURE, a unified experimentation framework that standardizes prediction formats, normalization, and scoring. SURE evaluates strong systems across paradigms, from conventional pipelines to Speech LLMs, on representative tasks under realistic acoustic and linguistic stressors. Beyond evaluation, SURE introduces an agent-assisted training conversion flow that maps paper and code into versioned, runnable training pipelines under a unified protocol on matched open-data subsets. Overall, SURE improves comparability and reproducibility for deployment-oriented evaluation.",
+      "categories": [
+        "eess.AS",
+        "cs.AI",
+        "cs.SD"
+      ],
+      "published": "2026-06-01T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.30899",
+      "pdf_url": "https://arxiv.org/pdf/2605.30899",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2605.30713",
+      "title": "Diversity Matters: Revisiting Test-Time Compute in Vision-Language Models",
+      "authors": [
+        "Yijie Tong",
+        "Yifan Hou",
+        "Shaobo Cui",
+        "Antoine Bosselut",
+        "Mrinmaya Sachan"
+      ],
+      "abstract": "Test-time compute (TTC) strategies have emerged as a lightweight approach to boost reasoning in large language models (LLMs). However, their application and benefits for vision-language models (VLMs) remain underexplored. We present a systematic study of TTC across seven VLMs and six benchmarks, specifically analyzing feature-based scoring and majority voting methods. We find that feature heuristics fail and voting yields only modest gains in single-model settings. We theoretically show that this limitation stems from a lack of prediction diversity: when outputs are highly correlated, voting provides little benefit. In contrast, multi-model ensembles offer richer diversity, yet standard majority voting fails to account for varying model capabilities. To address this, we propose Entropy-based TTC (ETTC), which selects the most confident prediction based on predictive entropy. Our method reduces to majority voting in the single-model case, but in model ensembles, it leverages confidence disparities to prioritize stronger models. We prove that ETTC outperforms majority voting under mild assumptions and empirically demonstrate that it consistently surpasses both voting and the best individual model. Crucially, our results show that smaller models can synergistically enhance larger ones, unlocking ensembling gains not achievable with standard strategies.",
+      "categories": [
+        "cs.LG",
+        "cs.CV",
+        "cs.MM"
+      ],
+      "published": "2026-06-01T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.30713",
+      "pdf_url": "https://arxiv.org/pdf/2605.30713",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2605.30916",
+      "title": "Welfare, Improvability, and Variance: A Principal-Agent Approach to Optimal Benchmark Item Aggregation",
+      "authors": [
+        "Andreas Haupt",
+        "Justin Hartenstein",
+        "Anka Reuel",
+        "Mykel Kochenderfer",
+        "Sanmi Koyejo"
+      ],
+      "abstract": "AI benchmarks have well-documented limitations, with prior work examining contamination, saturation, and construct underspecification. Aggregation has received far less attention: benchmarks are typically summarized by uniformly averaging item-level scores, implicitly treating every test item as equally valuable. We model benchmarking as a multitask principal-agent game and show that the welfare loss from a benchmark is determined jointly by three item-level primitives: alignment with normative welfare priorities, marginal improvability, and performance variance. We translate the theory into an audit framework that ranks items along each of these three axes, and apply it to OLMES items using WORKBank for welfare, the EvoLM 4B suite for improvability, and the PolyPythias 410M panel for variance. The framework surfaces items that are Pareto-inferior within OLMES subject to a pro-worker welfare operationalization. All code is available at https://github.com/stair-lab/principal-agent-benchmarks.",
+      "categories": [
+        "cs.LG",
+        "cs.GT",
+        "econ.TH"
+      ],
+      "published": "2026-06-01T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.30916",
+      "pdf_url": "https://arxiv.org/pdf/2605.30916",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2605.31000",
+      "title": "HetCCL: Enabling Collective Communication For Mixed-Vendor Heterogeneous Clusters",
+      "authors": [
+        "Yuejie Wang",
+        "Tao Chang",
+        "Yuanyuan Zhao",
+        "Yulong Ao",
+        "Zeyu Gu",
+        "Zhiyu Li",
+        "Yanmin Jia",
+        "Yan Zhang",
+        "Mingjun Zhang",
+        "He Liu",
+        "Yongzhe He",
+        "Yonghua Lin",
+        "Guyue Liu"
+      ],
+      "abstract": "Training Large Language Models (LLMs) on heterogeneous clusters presents significant challenges for collective communication, as hardware from multiple vendors introduces diverse network and computational characteristics. Existing collective communication frameworks (e.g., NCCL, RCCL) designed for homogeneous environments fail to address mixed-hardware setups, while communication libraries with heterogeneous support (e.g., Gloo, OpenMPI) incur heavy overhead in the data path.   This paper presents HetCCL, a framework that enables heterogeneous collective communication by efficient P2P transport across heterogeneous devices (e.g., GPUs), eliminating the host-device memory copy overhead while offloading the control to the CPUs. For combining collectives (e.g., AllReduce, ReduceScatter), HetCCL introduces a border-communicator mechanism that achieves vendor independence by using the intrinsic reduction in the combining collectives in vendor collective communication libraries. With efficient heterogeneous P2P transport and portable reduction mechanism, HetCCL proposes a hierarchical topology abstraction for heterogeneous clusters, dissecting collective communication into cluster-level primitives that guarantee optimal cross-cluster data transfer volume and optimal bandwidth utilization.   We implement HetCCL with 4 different vendor support and evaluate it in 4 heterogeneous settings with benchmarks and end-to-end LLM tasks. Our evaluation shows that HetCCL achieves 17-19x higher bandwidth than Gloo in heterogeneous communications, and speeds up end-to-end training by up to 16.9% in the per-step-time.",
+      "categories": [
+        "cs.NI",
+        "cs.LG"
+      ],
+      "published": "2026-06-01T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.31000",
+      "pdf_url": "https://arxiv.org/pdf/2605.31000",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    }
+  ],
+  "ranked_papers": [
+    {
+      "arxiv_id": "2605.30833",
+      "title": "Your Teacher Can't Help You Here: Combating Supervision Fidelity Decay in On-Policy Distillation",
+      "authors": [
+        "Yanjiang Liu",
+        "Jie Lou",
+        "Xinyan Guan",
+        "Yuqiu Ji",
+        "Hongyu Lin",
+        "Ben He",
+        "Xianpei Han",
+        "Le Sun",
+        "Xing Yu",
+        "Yaojie Lu"
+      ],
+      "abstract": "On-policy distillation transfers reasoning capabilities by training a student model on its own generated trajectories using token-level feedback from a teacher. However, we identify a critical bottleneck, \\textbf{Supervision Fidelity Decay (SFD)}: as student-generated prefixes lengthen, the teacher's next-token distribution becomes less confident and less discriminative. Consequently, the teacher-dependent corrective signal in reverse-KL distillation weakens, causing student drift to compound across long reasoning chains. To mitigate SFD, we introduce \\textbf{Lookahead Group Reward (\\ours{})}. Building on the insight that next-step teacher confidence reflects the discriminative strength of future reverse-KL supervision, \\ours{} evaluates the student's top-K candidate tokens by the teacher confidence they induce at the subsequent step and assigns a group-normalized reward. To maintain computational efficiency, we further design an entropy-triggered tree-attention mechanism. Across six math and code benchmarks, \\ours{} improves mean@8 by \\textbf{2.57} points over OPD for a 7B student, with gains increasing in longer-generation and reaching +\\textbf{4.92} points on AIME-26 at 39k tokens.",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-06-01T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.30833",
+      "pdf_url": "https://arxiv.org/pdf/2605.30833",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Directly addresses supervision fidelity decay in on-policy distillation, which is highly relevant to the Hunter Prep project on scaling up feedback and on-policy distillation problems."
+    },
+    {
+      "arxiv_id": "2605.31490",
+      "title": "Are Full Rollouts Necessary for On-Policy Distillation?",
+      "authors": [
+        "Yaocheng Zhang",
+        "Jiajun Chai",
+        "Songjun Tu",
+        "Yuqian Fu",
+        "Xiaohan Wang",
+        "Wei Lin",
+        "Guojun Yin",
+        "Qichao Zhang",
+        "Yuanheng Zhu",
+        "Dongbin Zhao"
+      ],
+      "abstract": "On-policy distillation (OPD) provides dense teacher feedback along rollouts generated by the student and has emerged as a promising post-training paradigm for long-horizon reasoning. However, standard OPD typically generates full rollouts during training, which is computationally expensive and may expose the student to unreliable teacher feedback at late rollout positions, especially during early training. We identify the rollout horizon as a key bottleneck in OPD that substantially impacts training efficiency. Unlike Reinforcement Learning with Verifiable Rewards (RLVR), OPD does not require a complete trajectory or a final answer reward to provide learning signals. This observation suggests that full rollouts may not always be necessary for effective OPD. Motivated by this insight, we propose two simple horizon-control strategies: Progressive OPD (POPD), which gradually expands the rollout horizon during training, and Truncated OPD (TOPD), which permanently performs distillation on reliable truncated rollouts. Experiments on mathematical reasoning show that POPD improves the training efficiency of OPD by up to 3$\\times$, while TOPD matches OPD performance using only 10\\% of the rollout horizon, leading to substantial wall-clock and memory reductions. These results demonstrate that controlling the rollout horizon offers a simple and practical path to more efficient OPD.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-06-01T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.31490",
+      "pdf_url": "https://arxiv.org/pdf/2605.31490",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Perfectly aligned with on-policy distillation and feedback scaling interests mentioned in Hunter Prep, specifically examining computational efficiency of full rollouts."
+    },
+    {
+      "arxiv_id": "2605.30803",
+      "title": "PReMISE: Policy Rubrics as Measurement Specifications for LLM Judges",
+      "authors": [
+        "Swastik Roy",
+        "Rajkumar Pujari",
+        "Tharindu Kumarage",
+        "Charith Peris",
+        "Rahul Gupta",
+        "Anna Rumshisky",
+        "Pradeep Natarajan",
+        "Venkatesh Saligrama"
+      ],
+      "abstract": "LLM judges are increasingly used to evaluate open-ended responses, but their scores depend strongly on the rubrics that condition them. A vague rubric asking for a response to be ``helpful and factual'' can reward polished answers that invent facts or violate user intent. We treat reusable rubrics as measurement specifications: changing the rubric changes the response quality measurement induced by a fixed judge. We introduce PReMISE, a framework that, given pairwise human-preference data, (i) discovers a policy-level rubric set, and (ii) audits any rubric set under LLM-judge use along four axes: structural adequacy, reliability, preference fit, and adversarial robustness. Across rubric sources no raw source is simultaneously reliable, preference-predictive, and adversarially robust; and high inter-rater agreement does not imply low exploitability. PReMISE is the only rubric source to score non-trivially on applicability, specificity, and effective dimensionality simultaneously. We contribute two audit-targeted repair operations: preference-rank selection raises judge accuracy on paired responses from $65.0\\%$ to $68.6\\%$, competitive with the strongest rubric-discovery baselines and leading on two of three judges in our cross-judge sweep; reliability-constrained refinement reduces the rate at which exploit responses receive high scores from $46.4\\%$ to $36.0\\%$ with little change in inter-judge agreement ($\\alpha{=}.531\\to.519$).",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-06-01T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.30803",
+      "pdf_url": "https://arxiv.org/pdf/2605.30803",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Directly addresses LLM judge evaluation with reusable rubrics as measurement specifications, highly relevant to the Hunter Prep project on improving grading and addressing LM judge weaknesses."
+    },
+    {
+      "arxiv_id": "2605.30381",
+      "title": "When LLMs Learn to Be Consistently Wrong: A Multi-Model Study of Linear Representations of Synthetic Deception",
+      "authors": [
+        "Vahideh Zolfaghari"
+      ],
+      "abstract": "Deceptive alignment, in which models maintain accurate internal representations while deliberately producing false outputs, remains a central challenge in AI safety. While strategic deception is the primary long-term concern, synthetic dishonesty - induced via direct optimization on incorrect answers - provides a controlled testbed for studying the representational basis of learned deception. We introduce a multi-model paradigm in which honest and deceptive variants of five transformer models (Pythia-1.4B, Gemma-2-2B/9B, Qwen2.5-7B, Llama-3.1-8B) are fine-tuned using LoRA on the same question distribution. Linear probes trained on mean-pooled hidden states detect synthetic dishonesty with near-perfect AUC (greater than or equal to 0.99) as early as layers 1-3 in four architectures, while Pythia-1.4B reaches a peak of 0.705. Logistic regression probes consistently match or outperform MLP probes, supporting the Linear Representation Hypothesis. Probes trained on TruthfulQA generalize with near-zero loss (Delta AUC approx. 0) to held-out MMLU subjects. Late-layer representations show strong robustness to Gaussian noise, with Gemma-2 models exhibiting exceptional stability. Mechanistic analysis of Fisher Discriminant Ratio, effective rank, centroid geometry, directional stability, cross-domain alignment, and calibration (ECE) reveals two regimes: representational collapse in Pythia/Llama/Qwen versus high-dimensional preservation in Gemma-2. Across all models, the dishonesty direction consolidates progressively in deeper layers, with optimal calibration (ECE less than 0.01 except Pythia) achievable in layers 1-4. These results demonstrate that robust, domain-invariant dishonesty representations can be rapidly entrenched via modest supervised fine-tuning, with implications for activation-based monitoring.",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-06-01T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.30381",
+      "pdf_url": "https://arxiv.org/pdf/2605.30381",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Studies linear representations of synthetic deception in LLMs across multiple models, which is highly relevant to understanding how models handle surprising/misleading information and self-correction mechanisms."
+    },
+    {
+      "arxiv_id": "2605.30451",
+      "title": "VeriGate: Verifier-Gated Step-Level Supervision for GRPO",
+      "authors": [
+        "Aakriti Agrawal",
+        "Minghui Liu",
+        "Furong Huang"
+      ],
+      "abstract": "Group Relative Policy Optimization (GRPO) is an effective recipe for training reasoning models with verifier-based outcome rewards, but its supervision is sparse: when all sampled trajectories for a prompt receive the same verifier reward, the group-relative advantage collapses to zero and learning stalls. Outcome-only rewards also provide no step-level credit assignment, limiting exploration and making it harder to learn robust reasoning. We present VeriGate (Verifier-Gated Step-Level GRPO), a verifier-gated extension of GRPO that addresses these limitations with three design choices. First, VeriGate keeps the verifier in charge whenever verifier rewards induce a meaningful preference among sampled trajectories, and uses process supervision only when verifier rewards are degenerate. Second, instead of collapsing Process Reward Model (PRM) step scores into a single trajectory reward, VeriGate converts them into future-cumulated rewards to assign continuation-aware credit. Third, VeriGate transforms these rewards into group-normalized token-level advantages, restoring informative gradients and fine-grained credit assignment while remaining less susceptible to reward hacking than methods that optimize aggregated PRM scores. Empirically, training on MATH with 1.5B and 7B Qwen2.5-Instruct models and evaluating on six reasoning benchmarks, VeriGate improves average accuracy by about 20% and 12% for 1.5B and 7B models respectively, substantially reduces zero-gradient failures, decreases reward-hacking behavior, and improves reasoning quality relative to outcome-only GRPO and PRM-as-outcome baselines.",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-06-01T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.30451",
+      "pdf_url": "https://arxiv.org/pdf/2605.30451",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "VeriGate's verifier-gated supervision for GRPO directly addresses the research focus on scaling up feedback and on-policy distillation, while also tackling LM judge weaknesses mentioned in the Hunter prep notes."
+    },
+    {
+      "arxiv_id": "2605.30487",
+      "title": "Configurable Reward Model for Balanced Safety Alignment",
+      "authors": [
+        "Zhengping Jiang",
+        "Mehran Khodabandeh",
+        "Akash Bharadwaj",
+        "Manik Bhandari",
+        "Mayur Srungarapu",
+        "Anqi Liu",
+        "Benjamin Van Durme",
+        "Li Chen"
+      ],
+      "abstract": "Aligning large language models (LLMs) to heterogeneous and rapidly evolving safety requirements remains a critical challenge. Existing instruction-tuned LLMs and standalone safety classifiers often fail to generalize to new safety configurations, motivating the need for Reward Models (RMs) that are explicitly configurable to changing specifications. We introduce the Configurable Safety Reward Model (CSRM), which is jointly optimized for calibrated safety compliance and reward modeling. Our approach is supported by configuration-targeted data augmentation that enforces instruction adherence while preserving relative severity structure. The resulting RM is sensitive to fine-grained safety configurations and conversational nuances, substantially improving generalization to previously unseen safety configurations. CSRM achieves state-of-the-art performance on recent configurable safety benchmarks, including CoSApien (94.6% F1) and DynaBench (75.8% F1), without requiring additional human annotation. When used for downstream safety alignment, CSRM yields LLMs with a significantly improved helpfulness-safety tradeoff compared to existing baselines.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-06-01T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.30487",
+      "pdf_url": "https://arxiv.org/pdf/2605.30487",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Highly relevant to configurable reward models for safety alignment, directly addressing the Hunter Prep focus on scaling up feedback and improving LM judge capabilities for long rollout evaluation."
+    },
+    {
+      "arxiv_id": "2605.30568",
+      "title": "Generating and Refining Dynamic Evaluation Rubrics for LLM-as-a-Judge",
+      "authors": [
+        "Zijie Wang",
+        "Eduardo Blanco"
+      ],
+      "abstract": "LLM-as-a-Judge is a scalable alternative to human evaluation, yet existing rubric-based methods rely on human-annotated data such as reference answers or expert-crafted rubrics. We propose to automatically generate fine-grained evaluation rubrics without any human annotation. Our training-free method generates rubrics at dataset-specific and instance-specific granularities, achieving performance competitive with existing methods across four benchmarks. We further present a method that iteratively fine-tunes a rubric generator model via meta-judge reward signals. The fine-tuned generator outperforms all existing baselines in both pairwise and pointwise evaluation. Notably, a fine-tuned 14B rubric generator outperforms a much larger proprietary model at rubric generation, showing the effectiveness of our fine-tuning strategy.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-06-01T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.30568",
+      "pdf_url": "https://arxiv.org/pdf/2605.30568",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Highly relevant to the grading focus, presenting methods for automatically generating evaluation rubrics without human annotation, directly addressing the need for better grading of long rollouts."
+    },
+    {
+      "arxiv_id": "2605.30888",
+      "title": "The Flip Side of RLHF: On-Policy Feedback for Reward Model Self-Supervised Improvement",
+      "authors": [
+        "Xiaobo Wang",
+        "Tong Wu",
+        "Min Tang",
+        "Jiaqi Li",
+        "Qi Liu",
+        "Zilong Zheng"
+      ],
+      "abstract": "Building strong reward models (RMs) for language model alignment is bottlenecked by the cost and difficulty of acquiring diverse and reliable preference data from human annotation or judge models. It is dramatically worse as the policy evolves beyond the static RM training. Therefore, we propose SAVE (Self-supervised reward model improvement via Value-Anchored On-policy feedback), a framework that grades on-policy responses as feedback by using the value function for on-policy RM training. SAVE naturally converts the reward-graded on-policy responses into supervision with a prompt-specific value head as an adaptive anchor. It computes RM advantages and filters ambiguous samples to update the RM via a contrastive objective. The effectiveness of SAVE for enhancing RM training is strongly validated through rigorous empirical evaluation across six diverse benchmarks. It achieves outperforming results across all datasets while maintaining consistent improvements across three RL algorithms (GRPO, RLOO, GSPO) and different policy backbones.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-06-01T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.30888",
+      "pdf_url": "https://arxiv.org/pdf/2605.30888",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Focuses on self-supervised reward model improvement with on-policy feedback, directly relevant to the Hunter and Shuchao collaboration on better grading and LM judge weaknesses."
+    },
+    {
+      "arxiv_id": "2605.31381",
+      "title": "LLM Judges Inconsistently Disagree Across Safety Criteria and Harm Categories",
+      "authors": [
+        "Krishnapriya Vishnubhotla",
+        "Soumya Vajjala",
+        "Akriti Vij",
+        "Isar Nejadgholi"
+      ],
+      "abstract": "We evaluate the consistency of automated judges in conducting a multi-dimensional safety evaluation in a reference-free setup. Our results indicate that Large Language Models are unreliable judges in identifying safety issues related to machine-generated advice in regulated domains such as finance, although they are more reliable at identifying more overt forms of unsafe/harmful content such as violence. The degree of inconsistency in a model's judgments can vary significantly by the chosen safety criteria and can be impacted by the language of the content and its linguistic style as well. Finally, there is high disagreement among different judges for the same output, across domains, safety criteria, and languages. These findings provide new insights on the practice of using LLMs as evaluators and offer several recommendations for practitioners on how to use automated judges in practical scenarios.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-06-01T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.31381",
+      "pdf_url": "https://arxiv.org/pdf/2605.31381",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Extremely relevant to the grading focus as it evaluates consistency of LLM judges across safety criteria, directly addressing weaknesses in LM judges mentioned in the projects."
+    },
+    {
+      "arxiv_id": "2605.31433",
+      "title": "SCOPE: Self-Play via Co-Evolving Policies for Open-Ended Tasks",
+      "authors": [
+        "Wai-Chung Kwan",
+        "Aryo Pradipta Gema",
+        "Joshua Ong Jun Leang",
+        "Pasquale Minervini"
+      ],
+      "abstract": "Self-play can train language models without external supervision. However, existing methods require rule-checkable answers, leaving open-ended tasks dependent on curated prompts or frontier-model judges. We introduce SCOPE, a data-free self-play framework for open-ended tasks that co-evolves two policies: a Challenger that generates document-grounded tasks, and a Solver that answers them through multi-turn retrieval. A frozen copy of the initial model serves as the self-judge, which writes task-specific rubrics from the source document and grades Solver responses against them. Across three 7-8B instruction-tuned models (Qwen2.5, Qwen3, OLMo-3), SCOPE improves open-ended performance by up to +10.4 points on eight benchmarks and matches or exceeds GRPO_data trained on ~9K curated prompts. Although trained only on open-ended tasks, SCOPE also improves held-out short-form QA by up to +13.8 points on seven held-out benchmarks, surpassing GRPO_data on all three models. Ablations show that co-evolving the Challenger is necessary to keep tasks near the Solver's frontier, that gains arise from improvements in both retrieval and synthesis with the relative contribution varying by task, and that rubric generation quality is the bottleneck for self-judging.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-06-01T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.31433",
+      "pdf_url": "https://arxiv.org/pdf/2605.31433",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Directly addresses self-play frameworks and grading challenges without external supervision, highly relevant to the grading improvements and feedback systems discussed in current projects."
+    },
+    {
+      "arxiv_id": "2605.31545",
+      "title": "Preference-Aware Rubric Learning for Personalized Evaluation",
+      "authors": [
+        "Yilun Qiu",
+        "Xiaoyan Zhao",
+        "Yang Zhang",
+        "Yuxin Chen",
+        "Cilin Yan",
+        "Jiayin Cai",
+        "Xiaolong Jiang",
+        "Yao Hu",
+        "Yoko Yamakata",
+        "Tat-Seng Chua"
+      ],
+      "abstract": "As Large Language Models (LLMs) evolve from general-purpose assistants to user-centric agents, personalization has become central to aligning model behavior with individual preferences, making the evaluation of personalized alignment a critical bottleneck. Existing evaluation methods-ranging from automatic metrics to LLM-as-a-judge approaches-fail to capture subjective, user-specific preferences embedded in long-term interaction histories. We identify three essential principles for reliable and effective personalized evaluation: Representativeness, User-Consistency, and Discriminativeness. To address these principles, we introduce Personalized Evaluation as Learning, a paradigm that formulates personalized evaluation as a learning problem rather than a static judgment. Under this paradigm, we propose PARL (Preference-Aware Rubric Learning for Personalized Evaluation), a framework that learns to induce preference-aware evaluation rubrics directly from raw user histories and performs a self-validation mechanism to ensure consistency with the user's preferences. PARL integrates rubric induction with a discriminative reinforcement learning objective that contrasts user-authored responses against competitive personalized model outputs, enabling the learned rubrics to capture precise, user-specific decision boundaries. Experiments on real-world personalized text generation tasks show that PARL consistently induces high-fidelity rubrics that reliably identify user-aligned responses and generalize across users and tasks, while capturing stable stylistic preferences and fine-grained evaluative patterns. To ensure reproducibility, our code is available at https://github.com/SnowCharmQ/PARL.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-06-01T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.31545",
+      "pdf_url": "https://arxiv.org/pdf/2605.31545",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Directly addresses personalized evaluation and LLM-as-a-judge weaknesses mentioned in Hunter Prep, providing frameworks for better grading systems."
+    },
+    {
+      "arxiv_id": "2605.30930",
+      "title": "TUX: Measuring Human--AI Tacit Understanding",
+      "authors": [
+        "Yueshen Li",
+        "Hanyi Min",
+        "Vedant Das Swain",
+        "Koustuv Saha"
+      ],
+      "abstract": "As large language models (LLMs) increasingly act as collaborative partners, human--AI alignment is often evaluated through explicit task success, accuracy, or reward optimization. Yet many collaborative settings depend on tacit understanding: whether an agent can align with a human's evaluative stance or representational priors without clear objectives, communication, or feedback. To study this capacity, we develop a spectrum-placement task inspired by the social party game Wavelength, in which humans and agents independently place concepts along subjective spectra. We operationalize the Tacit Understanding Index (TUX) as a pairwise measure of similarity between human and agent judgments, and evaluate it with 241 human participants and 200 profile-conditioned LLM agents across four models. We find that nearest human--agent pairs in trait space achieve significantly higher TUX, suggesting that tacit alignment is structured by person-level characteristics rather than random similarity. Regression analyses show that TUX becomes more explainable as predictor sets become richer, with individual traits, decision-making styles, and confidence improving over aggregate trait-distance baselines. These findings suggest that tacit understanding between humans and LLMs is measurable, while revealing the limits of profile-based conditioning for capturing deeper representational alignment.",
+      "categories": [
+        "cs.HC",
+        "cs.AI",
+        "cs.CL",
+        "cs.CY"
+      ],
+      "published": "2026-06-01T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.30930",
+      "pdf_url": "https://arxiv.org/pdf/2605.30930",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Directly measures human-AI tacit understanding and alignment without explicit feedback, highly relevant to the evaluation and grading challenges discussed in current projects."
+    },
+    {
+      "arxiv_id": "2605.31278",
+      "title": "Industrializing Prediction-Powered Inference: The GLIDE Library for Reliable GenAI and Agentic Systems Evaluation",
+      "authors": [
+        "Gr\\'egoire Martinon",
+        "Ibrahim Merad",
+        "Mohammed Raki"
+      ],
+      "abstract": "Reliable evaluation of agentic systems requires unbiased estimates with valid uncertainty, but standard practice navigates between costly human annotation and biased LLM-as-judge proxies. Prediction-powered inference (PPI) combines both into debiased estimates with valid confidence intervals, yet its various methods remain scattered across papers under partial implementations. We introduce GLIDE, an open-source Python library that unifies state-of-the-art PPI estimators (PPI++, Stratified PPI, Predict-Then-Debias and its stratified variants, Active Statistical Inference) and samplers (uniform, stratified, active, cost-optimal) under a scipy-style API specialized to mean estimation. GLIDE ships with a reproducible Monte Carlo validation suite, an empirically grounded decision tree for method selection, and an agentic evaluation case study showing substantial annotation savings at equivalent precision. The GLIDE package is available at this URL: https://github.com/EmertonData/glide",
+      "categories": [
+        "cs.AI",
+        "cs.LG",
+        "stat.ME"
+      ],
+      "published": "2026-06-01T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.31278",
+      "pdf_url": "https://arxiv.org/pdf/2605.31278",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Provides a framework (GLIDE) for reliable evaluation of agentic systems using prediction-powered inference, directly addressing the challenge of evaluating long rollouts mentioned in the Shuchao Chat project."
+    },
+    {
+      "arxiv_id": "2605.28918",
+      "title": "When LLM Reward Design Fails: Diagnostic-Driven Refinement for Sparse Structured RL",
+      "authors": [
+        "Youting Wang",
+        "Yuan Tang",
+        "Bowen Liu",
+        "Xuan Liu",
+        "Dingyan Shang"
+      ],
+      "abstract": "For sparse, structured reinforcement-learning tasks with semantic reward-function interfaces, LLM-generated reward shaping is better framed as debugging than one-shot generation. We study PPO-trained agents using MiniGrid as core evaluation and MuJoCo as boundary stress test. Our audit finds two dominant one-shot failure modes -- reward flooding and semantic/API misunderstanding -- plus a rarer weak-shaping case. We propose diagnostic-driven iterative refinement, where training diagnostics and a failure-mode taxonomy guide targeted reward-function revision. Refinement improves DoorKey-8x8 from 2.3% to 97.6% and KeyCorridor from 31.2% to 86.7% with high seed-to-seed variance. Controls show these gains are not from retrying or extra training: metrics-only re-prompting yields large drops, while a static-vocabulary control recovers much of the gap (87.6%; 70.7%), showing the taxonomy prompt is a major mechanism and dynamic labels provide only partially isolated incremental evidence. Budget-matched and Best-of-3 comparisons separate refinement from selection and training-time effects. Component-removal tests, sensitivity analyses, and an audit against author labels provide converging evidence for the debugging interpretation while revealing calibration limits. Continuous-control results show the boundary: success-based diagnostics can misfire in dense-reward locomotion, and return-trend feedback removes one false-positive mechanism without robust gains. The low-call protocol is a cost contrast with population-based reward search, not a benchmark comparison. In four crossed-variance-design environments, point estimates suggest larger gains when LLM reward-function variance dominates but bootstrap intervals are wide. The method is bounded to sparse structured tasks with reliable interfaces under PPO; fields like event_text may help, hurt, or be neutral.",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.IR"
+      ],
+      "published": "2026-06-01T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.28918",
+      "pdf_url": "https://arxiv.org/pdf/2605.28918",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Directly addresses LLM reward design failures in RL and proposes diagnostic-driven refinement, which aligns well with the projects on LM judge weaknesses and self-correction evaluation."
+    },
+    {
+      "arxiv_id": "2605.30619",
+      "title": "Reward Learning from Best-of-$N$ Preference Data: Targets, Tradeoffs, and Design Principles",
+      "authors": [
+        "Rattana Pukdee",
+        "Maria-Florina Balcan",
+        "Pradeep Ravikumar"
+      ],
+      "abstract": "Best-of-$N$ sampling is widely used to construct pairwise preference data: $N$ candidates are drawn from a base distribution, and the best is paired with a rejected response. Despite its widespread use, what Bradley--Terry (BT) reward learning extracts from such data, and how to choose $N$ and the base distribution, remain unclear. We specialize a recent analysis of preference data via its induced conditional distribution to Best-of-$N$. For independent-reference variants, we derive closed-form reward targets as explicit functions of $N$ and the base distribution, and show that they preserve the latent reward ranking. For the practical Best-vs-Random and Best-vs-Worst variants, chosen and rejected responses are coupled through the same candidate set, so exact BT representability generally fails; nevertheless, bounded-class minimizers approach the reference targets as $N$ grows. Although margin and connectivity are known to govern sample efficiency in pairwise preference learning, Best-of-$N$ couples them through $N$ in opposing directions: larger $N$ widens pairwise margins but reduces connectivity. This trade-off yields two design principles: use larger $N$ when preference labels are the bottleneck, smaller $N$ when generation is the bottleneck; and shape the base distribution to place mass between the responses whose comparison matters most at test time. Experiments on synthetic and real preference data support the predicted dependence on sample size and base-distribution shape.",
+      "categories": [
+        "stat.ML",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-06-01T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.30619",
+      "pdf_url": "https://arxiv.org/pdf/2605.30619",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Directly addresses reward learning and preference data methodology, which is highly relevant to the 'LM judge has weaknesses' concern and grading improvements mentioned in the projects."
+    },
+    {
+      "arxiv_id": "2605.31159",
+      "title": "Trust-Region Behavior Blending for On-Policy Distillation",
+      "authors": [
+        "Daniil Plyusov",
+        "Alexey Gorbatovski",
+        "Alexey Malakhov",
+        "Nikita Balagansky",
+        "Boris Shaposhnikov",
+        "Daria Korotyshova",
+        "Daniil Gavrilov"
+      ],
+      "abstract": "On-policy distillation (OPD) trains a student on prefixes sampled from its own policy while matching a stronger teacher. This addresses the prefix mismatch of offline distillation, but early student rollouts can still be poor, placing teacher supervision on weak or low-quality prefixes. We propose Trust-Region behavior Blending (TRB), a warmup method that replaces the early rollout policy with the closest-to-teacher behavior policy inside a student-centered KL trust region, while keeping the per-prefix reverse-KL OPD loss unchanged. The KL budget is annealed to zero, so training returns to pure student rollouts after warmup. Across two math-reasoning distillation settings, TRB attains the strongest average among the compared methods.",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-06-01T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.31159",
+      "pdf_url": "https://arxiv.org/pdf/2605.31159",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Directly addresses on-policy distillation improvements mentioned in Hunter Prep, proposing Trust-Region behavior Blending to address early rollout quality issues."
+    },
+    {
+      "arxiv_id": "2605.31509",
+      "title": "Skill Reuse as Compression in Agentic RL",
+      "authors": [
+        "Zhikun Xu",
+        "Yu Feng",
+        "Jacob Dineen",
+        "Taiwei Shi",
+        "Jieyu Zhao",
+        "Ben Zhou"
+      ],
+      "abstract": "Large language model agents trained with reinforcement learning (RL) often learn brittle, task-specific shortcuts. We hypothesize that agents generalize better when their successful trajectories are structurally compressible, decomposed into a small set of reusable abstract patterns. To formalize this, we introduce ReuseRL, which grounds agentic RL in the Minimum Description Length (MDL) principle. ReuseRL extracts a shared skill dictionary from successful trajectories and augments the RL objective with a segmentation cost, explicitly penalizing idiosyncratic behaviors that encode poorly. We prove a PAC-Bayes generalization bound for this compression penalty. Across ALFWorld, TextWorld-Cooking, and Countdown-Stepwise, ReuseRL improves in- and out-of-distribution success over vanilla GRPO and strong round-length baselines.",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-06-01T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.31509",
+      "pdf_url": "https://arxiv.org/pdf/2605.31509",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "This paper directly addresses long-horizon RL tasks with skill reuse and compression principles, which aligns perfectly with the research interest in long horizon scientific tasks and making models deal with complex, structured problems."
+    },
+    {
+      "arxiv_id": "2605.30537",
+      "title": "The Long-Term Effects of Data Selection in LLM Fine-Tuning",
+      "authors": [
+        "Yuxin Yang",
+        "Aoxiong Zeng",
+        "Xiangquan Yang"
+      ],
+      "abstract": "Data selection is increasingly used to reduce the cost of large language model (LLM) fine-tuning, with recent methods prioritizing samples by current utility, diversity, quality, or influence. This paper studies a different question: when fine-tuning occurs over multiple stages, can selection strategies that look optimal now make the model less adaptable later? We introduce a long-horizon view of LLM data selection in which a selector is evaluated not only by immediate task performance, but also by future adaptation speed, forgetting, capability imbalance, and out-of-distribution robustness. We compare representative random, loss-based, gradient-based, diversity-based, quality-based, and utility-diversity selection families under a unified multi-stage protocol. Through controlled experiments designed to instantiate this protocol, we show how short-term selectors can exhibit rank reversal: they improve the current stage while slowing subsequent learning and increasing forgetting. We formalize this behavior as \\emph{myopic selection}, provide a simple local analysis of why it can occur, and propose a diagnostic Long-Horizon Aware Selection (LHAS) objective that augments immediate utility with coverage, future-proxy transfer, and anti-concentration terms. The study argues that data selection should be evaluated as a training intervention that shapes the model's learning trajectory, rather than only as a local data-efficiency mechanism.",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-06-01T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.30537",
+      "pdf_url": "https://arxiv.org/pdf/2605.30537",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "The focus on long-term effects of data selection in multi-stage fine-tuning aligns with research interests in long horizon tasks and understanding how training decisions affect future adaptability."
+    },
+    {
+      "arxiv_id": "2605.30660",
+      "title": "BOKBO (Best of K Bad Options): Calibrated Abstention for VLA Policies",
+      "authors": [
+        "Anya Singh",
+        "Cabrel Happi",
+        "Jai Relan",
+        "Varun Nair",
+        "Vidyut Baradwaj"
+      ],
+      "abstract": "Test-time scaling for vision-language-action (VLA) policies, methods such as RoboMonkey, SEAL, MG-Select, and V-GPS, samples K candidate action chunks at inference and executes the verifier-best. When all K candidates are unsafe, the system executes a violating action with no warning. We propose BOKBO, the first conformal abstention layer for K-sample VLA inference, providing finite-sample distribution-free guarantees on executed-violation rate. We provide both global and per-task (Mondrian) variants, with the per-task variant closing the conditional gap on the hardest tasks.   Our analysis exposes a structural failure of policy-internal nonconformity scores under perturbation-based K-sampling: the base-policy confidence proxy and K-sample disagreement correlate at 0.98 with the action-noise hyperparameter $\\sigma$, while correlating at the noise floor with actual safety violations. We test the failure's scope by replicating the analysis under token-level temperature sampling and find the failure is mechanism-specific and partially mitigated under policy-stochasticity-based sampling. A learned violation predictor conditioned on semantic visual features and task identity supports tight calibration: at $\\epsilon$ = 0.05 on libero_object_temp_x0.1 with OpenVLA-OFT, the conditional CRC bound holds on 86% of bootstrap splits with 78% coverage and 70% net task success. Mondrian-BOKBO raises the minimum per-task conditional hold fraction from 0.71 to 0.93. Results are stable across 5 training seeds, replicate within bootstrap noise on $\\pi_0$-FAST, hold on libero_spatial_temp_x0.1 as a co-equal benchmark, and survive four within-suite distribution shifts. We additionally identify and correct a methodological pitfall: globally-set force thresholds well below expert-typical manipulation forces conflate unsafe behavior with normal manipulation, inflating violation rates by $5\\times$.",
+      "categories": [
+        "cs.LG",
+        "cs.RO"
+      ],
+      "published": "2026-06-01T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.30660",
+      "pdf_url": "https://arxiv.org/pdf/2605.30660",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Proposes BOKBO for calibrated abstention in VLA policies when all candidates are unsafe, directly relevant to measuring how models deal with surprising information and fail-safe behaviors."
+    },
+    {
+      "arxiv_id": "2605.30807",
+      "title": "Conformal Reliability: A New Evaluation Metric for Conditional Generation",
+      "authors": [
+        "Yachen Gao",
+        "Xinwei Sun",
+        "Yikai Wang",
+        "Ye Shi",
+        "Jingya Wang",
+        "Jianfeng Feng",
+        "Yanwei Fu"
+      ],
+      "abstract": "Conditional generative models have recently achieved remarkable success in various applications. However, a suitable metric for evaluating the reliability of these models, which takes into account their inherent uncertainty, is still lacking. Existing metrics, which typically assess a single output, may fail to capture the variability or potential risks in generation. In this paper, we propose a novel evaluation metric called reliability score based on conformal prediction, which measures the worst-case performance within the prediction set at a pre-specified confidence level. However, computing this score is challenging due to the high-dimensional nature of the output space and the nonconvexity of both the metric function and the prediction set. To efficiently compute this score, we introduce Conformal ReLiability (CReL), a framework that can (i) construct the prediction set with desired coverage; and (ii) accurately optimize the reliability score within the constructed prediction set. We provide theoretical results on coverage and demonstrate empirically that our method produces more informative prediction sets than existing approaches. Experiments on synthetic data and the image-to-text and text-to-image tasks further demonstrate the interpretability of our new metric, and the validity and effectiveness of our computational framework. Source code can be found at https://ggc29.github.io/CReL/.",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-06-01T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2605.30807",
+      "pdf_url": "https://arxiv.org/pdf/2605.30807",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Conformal Reliability metric for evaluating conditional generation under uncertainty is highly relevant to grading long rollouts and measuring model reliability."
+    }
+  ]
+}
