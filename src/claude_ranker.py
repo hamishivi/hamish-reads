@@ -14,6 +14,7 @@ from .twitter_scanner import Tweet
 
 # Pricing per million tokens (as of 2025)
 MODEL_PRICING = {
+    "claude-sonnet-4-5": {"input": 3.00, "output": 15.00},
     "claude-sonnet-4-20250514": {"input": 3.00, "output": 15.00},
     "claude-haiku-4-5-20251001": {"input": 0.80, "output": 4.00},
     "claude-opus-4-6-20250528": {"input": 15.00, "output": 75.00},
@@ -77,7 +78,7 @@ def _get_client() -> anthropic.Anthropic:
 def rank_papers(
     papers: list[Paper],
     project_topics: list[ProjectTopic],
-    model: str = "claude-sonnet-4-20250514",
+    model: str = "claude-sonnet-4-5",
     max_results: int = 20,
 ) -> list[Paper]:
     """Score papers by relevance to current project topics using Claude."""
@@ -157,7 +158,7 @@ Only include papers with score >= 3. Be selective.""",
 
 def summarize_tweets(
     tweets: list[Tweet],
-    model: str = "claude-sonnet-4-20250514",
+    model: str = "claude-sonnet-4-5",
 ) -> TweetDigest:
     """Categorize and summarize tweets into paper threads, announcements, and discussions."""
     if not tweets:

@@ -73,7 +73,7 @@ def main():
     # 3. Rank papers by project relevance
     print("Ranking papers by relevance...")
     claude_cfg = config.get("claude", {})
-    model = claude_cfg.get("model", "claude-sonnet-4-20250514")
+    model = claude_cfg.get("model", "claude-sonnet-4-5")
     ranked_papers = rank_papers(
         other_papers,
         project_topics,
