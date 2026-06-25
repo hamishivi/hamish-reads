@@ -1,0 +1,640 @@
+{
+  "date": "2026-06-25",
+  "generated_at": "2026-06-25T04:41:56.181539+00:00",
+  "author_papers": [
+    {
+      "arxiv_id": "2606.24893",
+      "title": "AgentOdyssey: Open-Ended Long-Horizon Text Game Generation for Test-Time Continual Learning Agents",
+      "authors": [
+        "Zheyuan Zhang",
+        "Zehao Wen",
+        "Alvin Zhang",
+        "Andrew Wang",
+        "Jianwen Xie",
+        "Daniel Khashabi",
+        "Tianmin Shu"
+      ],
+      "abstract": "For agents to learn continuously from interaction with the world at test time, they must be able to explore effectively, acquire new world knowledge and skills, retain relevant episodic experiences, and plan over long horizons. To evaluate these key abilities of test-time continual learning agents, we introduce AgentOdyssey, a novel evaluation framework that procedurally generates open-ended text games with rich entities, world dynamics, and long-horizon tasks. Critically, AgentOdyssey goes beyond the conventional machine learning assumption that learning does not occur at test time by placing agents in a continuous, long-horizon setting that interleaves learning and inference throughout deployment. We further propose a multifaceted evaluation methodology that measures not only game progress but also offers diagnostic tests on world knowledge acquisition, episodic memory, object and action exploration, action diversity, and model cost. We evaluate diverse agent paradigms in the generated games. Our experimental results reveal critical limits in agents' key abilities, as well as factors that influence their meaningful horizon. Although performance scales with stronger base models, even the top agent remains far below human performance, leaving substantial headroom for improvement. Among agent mechanisms, we find that short-term memory benefits multiple agent paradigms and is an important component of agent test-time training.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-06-25T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2606.24893",
+      "pdf_url": "https://arxiv.org/pdf/2606.24893",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2606.26079",
+      "title": "Same Evidence, Different Answer: Auditing Order Sensitivity in Multimodal Large Language Models",
+      "authors": [
+        "Akshay Paruchuri",
+        "Sanmi Koyejo",
+        "Ehsan Adeli"
+      ],
+      "abstract": "Standard benchmarks for multimodal large language models (MLLMs) score each item on one canonical ordering and miss whether order-irrelevant shuffling changes the answer, a baseline reliability property called for by emerging AI evaluation guidelines. We introduce Facet-Probe, a five-facet audit (option, evidence-chunk, document-rank, image-set, and mixed-modality ordering) of 18 frontier and open-weight MLLMs. A Bayesian item-response model separates ordering noise from per-facet bias, and a same-ordering control estimates the decoder-stochastic floor for observed flips. We find that none of the 18 MLLMs we audit are order-invariant: screened per-facet panel-mean flip rates span 24-50%. A Gemini same-ordering control at temperature 0 estimates a substantial ordering excess over a same-input decoder-noise floor in verified cells. Capability predicts but does not eliminate flips; the best model still flips on 13.4% of trials. In our Gemini mitigation tests, training-free prompt changes are modality-conditional and do not transfer from text to visual reasoning. These results suggest that prompt-level mitigation alone is unlikely to provide general order robustness, motivating future work on training-time and architectural approaches. We propose cross-ordering flip rate as a standard reporting axis for MLLMs.",
+      "categories": [
+        "cs.CL",
+        "cs.CV",
+        "cs.LG"
+      ],
+      "published": "2026-06-25T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2606.26079",
+      "pdf_url": "https://arxiv.org/pdf/2606.26079",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2606.25010",
+      "title": "Emergent Capabilities Arise Randomly from Learning Sparse Attention Patterns",
+      "authors": [
+        "Vatsal Baherwani",
+        "Zixi Chen",
+        "Shikai Qiu",
+        "Andrew Gordon Wilson",
+        "Pavel Izmailov"
+      ],
+      "abstract": "Neural scaling laws for transformer language models predict smooth improvements in pretraining loss with increasing parameters, but downstream capabilities such as in-context learning are known to emerge abruptly past a certain model scale. In this paper, we show that emergent capabilities arise stochastically throughout training, with larger models acquiring them earlier on average. We demonstrate that the emergence of capabilities such as pattern completion and indirect object identification corresponds to the abrupt learning of task-relevant attention patterns. To isolate this phenomenon, we train transformer models on synthetic linear map and cellular automata datasets, and we show that the difficulty of learning attention patterns depends on context length and pattern sparsity. Moreover, scaling the number of attention heads improves learning efficiency on our synthetic tasks, while increasing the head dimension yields diminishing returns past a minimum capacity. We additionally investigate architectures with alternative attention mechanisms, showing that MLP-Mixer outperforms a transformer on linear map tasks with complex attention patterns. Our findings provide a mechanistic insight into emergence, showing that downstream capabilities arise abruptly due to the intrinsic difficulty of learning sparse attention patterns in transformer models.",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "published": "2026-06-25T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2606.25010",
+      "pdf_url": "https://arxiv.org/pdf/2606.25010",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2606.25198",
+      "title": "Heuresis: Search Strategies for Autonomous AI Research Agents Across Quality, Diversity and Novelty",
+      "authors": [
+        "Antonis Antoniades",
+        "Deepak Nathani",
+        "Ritam Saha",
+        "Alfonso Amayuelas",
+        "Ivan Bercovich",
+        "Zhaotian Weng",
+        "Vignesh Baskaran",
+        "Kunal Bhatia",
+        "William Yang Wang"
+      ],
+      "abstract": "Autonomous AI Research promises to accelerate the scientific progress of machine learning. To realise this goal, current Large Language Model (LLM)-based agents need to go beyond just writing code, to mastering the exploration of simultaneously performant, diverse and novel ideas. To this end, we introduce Heuresis, a framework that abstracts the research pipeline into a set of general and composable primitives, enabling open-ended scientific exploration in machine learning research. We implement six search strategies: a greedy baseline, two archive-based (MAP-Elites, Go-Explore), one evolutionary (Islands), and two divergent (Curiosity, Omni), and evaluate them across three axes (Quality, Diversity, and Novelty) on three domains (LLM Pretraining, On-Policy RL, and Model Unlearning), totalling 3,222 scored runs. We find that completely novel ideas are rare. No idea across our scored runs is rated as \"Original\", and only a few achieve only \"Minor Similarity\" to prior work. Moreover, novel ideas never approach the highest-performing known-recipe scores. Across all six strategies and three domains, only one such idea lands in the top-10 by quality. We also observed agents resorting to a variety of reward-hacking techniques during execution (40 confirmed fabrications across 1,628 scored runs), and detecting them was necessary to keep the search faithful to the task. Our results show that while current search and Quality-Diversity strategies enable us to steer where the generated ideas land on the quality, diversity, and novelty axes, they do not expand the quality-novelty frontier. Bridging this gap is the open challenge towards the ultimate goal of perpetual, autonomous scientific progress. Code is available at github.com/a-antoniades/Heuresis.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-06-25T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2606.25198",
+      "pdf_url": "https://arxiv.org/pdf/2606.25198",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2606.24998",
+      "title": "Internal Data Repetition Destroys Language Models",
+      "authors": [
+        "Jessica Chudnovsky",
+        "Joshua Kazdan",
+        "Noam Levi",
+        "Rylan Schaeffer",
+        "Yegor Denisov-Blanch",
+        "Bo He",
+        "Mehmet Donmez",
+        "Sanmi Koyejo",
+        "David Donoho"
+      ],
+      "abstract": "Language models are running out of high-quality training data, and even aggressively deduplicated corpora retain some amount of repetition. Earlier controlled studies predated Chinchilla-style scaling laws and could only measure the cost of repetition indirectly. We revisit repetition in the Chinchilla era, using a fitted no-repetition scaling law to report Compute-Equivalent Gain and Compute-Equivalent Loss. We show that under this modernized paradigm, repetition damage is systematic in three ways. First, holding compute allocated to repeated data constant, eval loss peaks at an intermediate repeat count $\\Rep$; repeating a moderately sized subset a moderate number of times damages performance more than repeating a large subset a few times or a small subset many times. Second, the location of this peak is well-fit by a power law in model size; this scaling law reveals that the most damaging number of repeated data grows more quickly than compute. Finally, when repeated documents consume 10\\% of the FLOPs budget in a controlled exact-document repetition setting, the compute-equivalent loss can be large: on FineWeb-Edu-Dedup, the most damaging repeat count for a Qwen3-style 344M-parameter model at $\\OT=1$ matches the loss of a no-repetition run using 67% of the FLOPs. We demonstrate that these phenomena are not language-model-specific, and can be analytically understood in a simple statistical model: a misspecified linear regression with verbatim duplicates reproduces the same qualitative loss peak, quantifying how such peaks can arise from a statistical tradeoff between memorization and generalization. Our findings add precision to the study of duplication in language models, allowing practitioners to quantify the wasted compute incurred by the presence and repeat structure of duplicates in pretraining corpora.",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-06-25T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2606.24998",
+      "pdf_url": "https://arxiv.org/pdf/2606.24998",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2606.25041",
+      "title": "Wan-Streamer v0.1: End-to-end Real-time Interactive Foundation Models",
+      "authors": [
+        "Lianghua Huang",
+        "Zhifan Wu",
+        "Wei Wang",
+        "Yupeng Shi",
+        "Mengyang Feng",
+        "Junjie He",
+        "Chenwei Xie",
+        "Yu Liu",
+        "Jingren Zhou",
+        "Ang Wang",
+        "Bang Zhang",
+        "Baole Ai",
+        "Chen Liang",
+        "Cheng Yu",
+        "Chongyang Zhong",
+        "Jinwei Qi",
+        "Kai Zhu",
+        "Pandeng Li",
+        "Peng Zhang",
+        "Wenyuan Zhang",
+        "Xinhua Cheng",
+        "Yitong Huang",
+        "Yun Zheng",
+        "Zoubin Bi"
+      ],
+      "abstract": "We present Wan-Streamer, a native-streaming, end-to-end interactive foundation model designed from the ground up for real-time, low-latency, full-duplex audio-visual interaction. Wan-Streamer seamlessly models language, audio, and video as both input and output within a single Transformer, where the sequence is represented as interleaved visual, audio, and text input tokens together with visual, audio, and text output tokens, coordinated by block-causal attention for incremental streaming. Unlike cascaded interactive systems that rely on separate VAD, ASR, language, TTS, audio-driven animation, or video-generation modules, Wan-Streamer does not rely on external language, speech, avatar, or video-generation modules: perception, reasoning, generation, response timing, turn management, and cross-modal synchronization are learned jointly within one unified model, reducing pipeline latency and error accumulation. To support natural audio-visual responsiveness, we redesign the entire stack around streamability, including causal encoders, causal decoders, block-causal attention, and low-latency multimodal token scheduling, enabling streaming units as short as 160 ms at 25 fps. Wan-Streamer achieves approximately 200 ms model-side response latency and approximately 550 ms total interaction latency when combined with 350 ms bidirectional network latency, supporting sub-second duplex audio-visual communication. These results position Wan-Streamer as a unified, end-to-end, multimodal interactive foundation model for low-latency streaming interaction.",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.GR",
+        "cs.SD"
+      ],
+      "published": "2026-06-25T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2606.25041",
+      "pdf_url": "https://arxiv.org/pdf/2606.25041",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2606.25529",
+      "title": "STEB: A Speech-to-Speech Translation Expressiveness Benchmark for Evaluating Beyond Translation Fidelity",
+      "authors": [
+        "Sitong Cheng",
+        "Weizhen Bian",
+        "Songjun Cao",
+        "Jin Li",
+        "Bei Liu",
+        "Chunyang Jiang",
+        "Yike Zhang",
+        "Weihao Wu",
+        "Yiming Li",
+        "Chi-Min Chan",
+        "Long Ma",
+        "Wei Xue"
+      ],
+      "abstract": "Speech-to-speech translation (S2ST) should preserve not only lexical meaning, but also expressive attributes: emotion, scenario style (e.g., news reporting vs. dramatic dialogue), and nonverbal vocalizations (NVs). Moreover, collecting cross-lingual target speech that is both translation-faithful and expressively aligned with the source is difficult at scale, making reference-based evaluation impractical. We introduce STEB (Speech-to-Speech Translation Expressiveness Benchmark), a 32.6-hour Chinese--English benchmark that evaluates both standard dimensions (translation fidelity, speaker similarity, duration alignment) and expressiveness dimensions (emotion, scenario style, NV preservation). For expressiveness evaluation, STEB uses a caption-then-summarize framework that converts speech into structured expressive attributes and compares source and hypothesis attributes with an LLM judge. Human validation shows statistically significant correlations with listener judgments across all expressive dimensions. We evaluate six S2ST systems covering cascaded systems, end-to-end models, and speech large language models. Many systems, especially cascaded ones, achieve strong translation fidelity, but they still struggle with emotion preservation (best: 3.82/5) and NV preservation (best: 2.31/5). These results reveal a gap between semantic transfer and expressive transfer, identifying expressiveness preservation as an open challenge for S2ST. Audio samples are available at https://cmots.github.io/steb.github.io/.",
+      "categories": [
+        "cs.SD",
+        "cs.AI"
+      ],
+      "published": "2026-06-25T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2606.25529",
+      "pdf_url": "https://arxiv.org/pdf/2606.25529",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2606.26071",
+      "title": "Model Forensics: Investigating Whether Concerning Behavior Reflects Misalignment",
+      "authors": [
+        "Aditya Singh",
+        "Gerson Kroiz",
+        "Senthooran Rajamanoharan",
+        "Neel Nanda"
+      ],
+      "abstract": "A central goal of safety research is determining whether a model is misaligned. Prior work has largely focused on detecting concerning behavior. But behavior alone does not establish misalignment: a concerning action can arise from benign causes such as confusion. This motivates model forensics: investigating whether the action was driven by malign intent. In this paper, we propose a baseline protocol for model forensics consisting of two steps, iterated as needed. First, we read the chain of thought (CoT) to generate hypotheses about what drives model behavior. Second, we make edits to the prompt or environment to test these hypotheses. While the CoT is not always faithful, it is a rich source of unsupervised insight that can guide the collection of more rigorous evidence. To evaluate our protocol, we create a suite of six agentic environments where models exhibit concerning behavior, and apply it to each. We establish that Kimi K2 Thinking takes shortcuts due to a genuine disposition towards low-effort actions, by showing this hypothesis successfully predicts its behavior. Through counterfactual experiments, we show DeepSeek R1 deceives out of a desire to be consistent with a previous instance of itself. Our methods nonetheless leave significant room for refinement. For example, when we test whether Kimi K2 Thinking believes it is violating user intent, we find no evidence of such a belief, but without positive controls we cannot confirm our tests would detect it. Overall, we find our simple protocol provides a strong baseline that we hope future work will improve upon. More broadly, our work is a concrete step in developing the growing field of model forensics.",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-06-25T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2606.26071",
+      "pdf_url": "https://arxiv.org/pdf/2606.26071",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    }
+  ],
+  "ranked_papers": [
+    {
+      "arxiv_id": "2606.25556",
+      "title": "BiPACE: Bisimulation-Guided Policy Optimization with Action Counterfactual Estimation for LLM Agents",
+      "authors": [
+        "Hanyang Wang",
+        "Weijieying Ren",
+        "Yuxiang Zhang",
+        "Ding Cao",
+        "Zhizhao Zeng",
+        "Ke Zeng",
+        "Tianxiang Zhao"
+      ],
+      "abstract": "Stepwise group-based RL is an attractive way to train long-horizon LLM agents without a learned critic: it reuses multiple sampled rollouts to estimate local advantages. Its weakness is less visible but more fundamental: every group-relative estimator assumes that the steps it compares are equivalent for credit assignment. We show that current agentic variants violate this assumption through a state-action credit mismatch. The observation-hash partition is overly fine on the state side, creating singleton groups with zero step-level signal, while a single within-group mean is too coarse on the action side, mixing state-value estimation with action-specific credit. We introduce BiPACE (Bisimulation-Guided Policy Optimization with Action Counterfactual Estimation), a drop-in advantage estimator that fixes both sides without adding a critic, auxiliary loss, or extra rollouts. BiGPO clusters steps by cosine distance in the actor's own hidden-state geometry, an empirical policy-induced proxy for bisimulation that substantially lowers the singleton rate left by observation hashing. PACE then recenters returns within each behavioral cluster using action-conditioned peer baselines; its Q-style instance estimates a local Q(s,a)-V(s) nonparametrically. On ALFWorld/Qwen2.5-7B, BiPACE_Q raises overall validation success from GiGPO's 90.8 to $97.1\\pm0.9$ over three seeds, and crosses the 95% threshold on every seed, which GiGPO never does within the same budget. On Qwen2.5-1.5B it reaches $93.5\\pm1.2$ versus GiGPO's 86.7, and on WebShop and TextCraft it improves over GRPO and GiGPO at both model scales. The measured BiPACE-specific overhead is 11.3% of a single training-step wall time. Yet it changes the estimator's comparison unit from surface identity to approximate behavioral equivalence plus action-side counterfactuals. The code is available at https://github.com/TianxiangZhao/BiPACE.",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-06-25T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2606.25556",
+      "pdf_url": "https://arxiv.org/pdf/2606.25556",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Directly addresses counterfactual estimation in RL agents and credit assignment in multi-step reasoning, highly relevant to the counterfactuals paper discussion and long-horizon task evaluation."
+    },
+    {
+      "arxiv_id": "2606.24994",
+      "title": "ExTra: Exploratory Trajectory Optimization for Language Model Reinforcement Learning",
+      "authors": [
+        "Wenyang Hu",
+        "Junxiang Jia",
+        "Zhen Shu",
+        "Daniel Dahlmeier",
+        "See-Kiong Ng",
+        "Bryan Kian Hsiang Low"
+      ],
+      "abstract": "Reinforcement Learning with Verifiable Rewards (RLVR) for language-model reasoning can fail at both extremes of task difficulty: easy prompts often produce all-correct, low-diversity rollout groups with little gradient signal, while hard prompts can produce all-incorrect groups with no positive reward. We introduce ExTra (Exploratory Trajectory Optimization), a GRPO-compatible framework that extracts exploration signals from the model's own rollouts. ExTra combines two mechanisms: (i) a novelty reward that adds embedding-based diversity bonuses after GRPO normalization, rewarding diverse correct solutions; and (ii) entropy-guided prefix regeneration, which scores partial trajectories using entropy signals and continues exploration from promising intermediate steps. Across six mathematical reasoning benchmarks, ExTra improves Qwen3-1.7B over GRPO by about +5 points on pass@1 and +7 points on pass@16, showing that trajectory-level exploration signals can improve both single-sample accuracy and inference-time coverage.",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-06-25T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2606.24994",
+      "pdf_url": "https://arxiv.org/pdf/2606.24994",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Directly addresses RL with verifiable rewards for language model reasoning, exploring failure cases and gradient signals\u2014highly relevant to self-correction evals and tasks requiring initial failure to succeed."
+    },
+    {
+      "arxiv_id": "2606.25451",
+      "title": "Learning with a Single Rollout via Monte Carlo Pass@k Critic",
+      "authors": [
+        "Fengdi Che",
+        "Yang Liu",
+        "Lei Yu",
+        "Meng Cao",
+        "Tong Che",
+        "Rupam Mahmood",
+        "Dale Schuurmans"
+      ],
+      "abstract": "Estimating token-level advantages in reinforcement learning (RL) for language models remains challenging because scaling up episodic experience collection is expensive. The difficulty intensifies for baseline advantage estimation methods, where repeated sampling causes trajectories to diverge into substantially different reasoning prefixes. In this context, RL algorithms such as GRPO prove limited: an outcome reward is too sparse to be attributed to specific actions like intermediate steps, and comparisons across sampled traces are non-trivial because they are heterogeneous. To mitigate both the computational cost of repeated sampling and the difficulty of credit assignment, we study single-rollout proximal policy optimization (SR-PPO) featuring token-level credit assignment in RL for language models. Instead of estimating advantages by normalizing episodic returns within the candidate group, we train a calibrated token-level credit critic using Monte Carlo outcomes from one rollout per prompt. Specifically, we use the critic to predict the Pass@k success probability at the prompt prefix, which is derived from a Pass@1 attempt. This choice yields a more selective learning signal than Pass@1: it discounts easily solved prefixes while prioritizing hard ones whose success probability remains marginal. We show that as $k$ increases, Pass@k converges to a reachability indicator, reflecting whether a prefix can lead to at least one successful continuation. In an explicit state graph, the limit ($k \\rightarrow \\infty$) can be computed in $O(|V|+|E|)$ time, offering a promising surrogate for direct credit assignment without the need to sample contrastive traces. As an initial validation, SR-PPO exhibits stable learning dynamics, along with consistent gains in Pass@128 success rates on mathematical reasoning benchmarks such as HMMT26 and AIME24.",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-06-25T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2606.25451",
+      "pdf_url": "https://arxiv.org/pdf/2606.25451",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Directly addresses token-level advantage estimation in RL for language models with limited rollout data, highly relevant to the Hunter Prep focus on scaling feedback and on-policy distillation."
+    },
+    {
+      "arxiv_id": "2606.26080",
+      "title": "Neglected Free Lunch from Post-training: Progress Advantage for LLM Agents",
+      "authors": [
+        "Changdae Oh",
+        "Wendi Li",
+        "Seongheon Park",
+        "Samuel Yeh",
+        "Tanwi Mallick",
+        "Sharon Li"
+      ],
+      "abstract": "Process reward models enable fine-grained, step-level evaluation of LLMs, yet building them for agentic settings remains prohibitively difficult: long-horizon interactions, irreversible actions, and stochastic environment feedback make both human annotation and Monte Carlo estimation infeasible at scale. In this work, we show that reinforcement learning (RL) post-training already provides the ingredients for effective step-level scoring, eliminating the need for dedicated reward model training altogether. Concretely, we derive an implicit advantage under a general stochastic Markov decision process, which we term progress advantage -- log-probability ratio between the RL-trained policy and its reference policy exactly recovers the optimal advantage function. This formulation makes the resulting signal annotation-free, domain-agnostic, and available as a byproduct of the standard RL post-training pipeline. We validate the effectiveness of the progress advantage across three different applications: test-time scaling, uncertainty quantification, and failure attribution on five benchmarks and four model families. Across all settings, it consistently outperforms confidence-based baselines and, despite requiring no task-specific training, surpasses dedicated trained reward models. We complement these results with deeper analyses on characteristics of progress advantage, offering practical guidance for adoption in real-world agentic systems.",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-06-25T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2606.26080",
+      "pdf_url": "https://arxiv.org/pdf/2606.26080",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Directly addresses process reward models for step-level evaluation of LLM agents and proposes using RL post-training signals, highly relevant to Hunter's work on scaling up feedback and grading long rollouts."
+    },
+    {
+      "arxiv_id": "2606.25800",
+      "title": "ROAD-VLA: Robust Online Adaptation via Self-Distillation for Vision-Language-Action Models",
+      "authors": [
+        "Kejing Wang",
+        "Toan Nguyen",
+        "Minh Hoang Nguyen",
+        "Simon Khan",
+        "Flora D. Salim"
+      ],
+      "abstract": "Effective online adaptation of vision-language-action (VLA) models remains challenging, as sparse rewards provide weak supervision for high-dimensional autoregressive action policies. Although self-distillation can in principle provide denser training signals, we find that text-based privileged teachers conditioned on demonstrations, retrieved experiences, or high-level plans are ineffective for VLA adaptation, exposing a modality gap between symbolic guidance and low-level robot actions. We propose ROAD-VLA, an advantage-guided self-distillation framework that constructs a proximal teacher directly in action space by perturbing action-token logits with calibrated advantage estimates. This converts sparse rewards into dense token-level supervision while keeping the teacher close to the current policy. We further derive a policy-improvement lower bound under calibrated advantages and accurate teacher matching. Across seven robotic manipulation environments with in-distribution and out-of-distribution shifts, ROADVLA outperforms PPO in nearly all settings, demonstrating robust online VLA adaptation.",
+      "categories": [
+        "cs.LG",
+        "cs.RO"
+      ],
+      "published": "2026-06-25T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2606.25800",
+      "pdf_url": "https://arxiv.org/pdf/2606.25800",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Directly addresses online adaptation and self-distillation for vision-language-action models with sparse rewards, highly relevant to Hunter Prep's focus on scaling feedback and on-policy distillation."
+    },
+    {
+      "arxiv_id": "2606.24952",
+      "title": "Perfect Detection, Failed Control: The Geometry of Knowing vs. Steering in Language Models",
+      "authors": [
+        "Cosimo Galeone",
+        "Anna Ettorre",
+        "Minsu Park",
+        "Giuseppe Ettorre",
+        "Daniele Ligorio"
+      ],
+      "abstract": "A central aspiration of mechanistic interpretability is controllability: if we know where a behavior is represented in a model's activations, we should be able to modify it. This rests on a hidden premise -- that the direction which detects a behavior and the direction which controls it are the same, or close. We test this geometrically: what is the angle between the direction that best detects a behavior and the one that best causes it? If detection implies control the cosine is near 1; otherwise it quantifies a detection-intervention gap. On Gemma 2-2B-it, output format (clean JSON vs markdown fencing) collapses both roles onto one axis. Hallucination does not: the model detects fake entities with perfect linear separability (AUC = 1.000 from layer 5), yet that direction sits at cos = 0.12 (about 83 degrees) from the direction producing a refusal -- a small, reproducible alignment, far from the cos = 1 that \"detection is control\" would require. A detector built from activations, with no chosen tokens, likewise fails to align (cos = -0.06). The gap generalizes: across four models from three families and two scales (1B-9B), cos stays in [0.12, 0.20], identical before and after instruction tuning (0.1197 vs 0.1200), placing its origin in pretraining. A 15-degree rotation toward the refusal direction partially bridges it -- 73% and 60% refusal on two held-out fake-entity categories at 1.8% false positives. We then ask whether this cosine predicts steerability, and it does not: detection is a high-dimensional class, not a single direction, and what separates the steerable case is functional, not readable from a static angle. The cosine is a weight-computable signature of the dissociation between knowing and steering, not a predictor of it.",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-06-25T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2606.24952",
+      "pdf_url": "https://arxiv.org/pdf/2606.24952",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Directly relevant to understanding model behavior and control in LLMs, examining whether detection and steering directions align - crucial for interpretability and self-correction capabilities."
+    },
+    {
+      "arxiv_id": "2606.25819",
+      "title": "Beyond Function Calling: Benchmarking Tool-Using Agents under Tool-Environment Unreliability",
+      "authors": [
+        "Yang Tian",
+        "Zhengpeng Shi",
+        "Bo Zhao"
+      ],
+      "abstract": "Large language models are increasingly deployed as agents that solve tasks by interacting with external tool environments. Although recent tool-use benchmarks increasingly cover complex task settings, they still largely assume clean, stable, and trustworthy tool environments, leaving tool-environment unreliability insufficiently examined. We introduce ToolBench-X, a benchmark for evaluating agents under recoverable reliability hazards. ToolBench-X contains executable multi-step tasks across diverse domains and sequential, parallel, and mixed workflows, each paired with deterministic tools and a canonical final answer for automatic evaluation. Starting from clean tool environments, ToolBench-X injects five structured hazard types: Specification Drift, Invocation Error, Execution Failure, Output Drift, and Cross-source Conflict. Crucially, each injected instance remains solvable through at least one valid recovery path, such as retrying, fallback, verification, or cross-checking. Experiments reveal a substantial reliability gap: agents that perform well with reliable tools often fail under recoverable hazards. Further analysis shows that failures are driven less by tool-use volume or inference budget than by limited hazard diagnosis and ineffective recovery. Targeted recovery hints recover many failed tasks, while test-time scaling yields more limited gains. These results suggest that tool-use evaluation should move beyond function-call accuracy toward task completion under unreliable tool environments. The code and data is available at https://github.com/Foreverskyou/ToolBench-X.",
+      "categories": [
+        "cs.CL",
+        "cs.SE"
+      ],
+      "published": "2026-06-25T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2606.25819",
+      "pdf_url": "https://arxiv.org/pdf/2606.25819",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Evaluates tool-using agents under unreliable environments, directly relevant to testing how models handle surprising/noisy information and failure cases in complex domains."
+    },
+    {
+      "arxiv_id": "2606.26027",
+      "title": "Why Multi-Step Tool-Use Reinforcement Learning Collapses and How Supervisory Signals Fix It",
+      "authors": [
+        "Yupu Hao",
+        "Zhuoran Jin",
+        "Huanxuan Liao",
+        "Kang Liu",
+        "Jun Zhao"
+      ],
+      "abstract": "Tool use enables large language models (LLMs) to perform complex tasks, and recent agentic reinforcement learning (RL) methods show promise for enhancing model capabilities. However, RL alone often leads to instability or limited gains in tool-use tasks. In our experiments, some models exhibit catastrophic collapse, where performance abruptly drops and tool-invocation structures fail. The analysis reveals that these failures stem from unexpected probability spikes in specific control tokens, disrupting structured execution, yet the underlying tool-use capability remains intact, merely obscured by specific formats. To address this, we systematically investigate a diverse set of supervisory signals, including off-policy supervision, hint-based guidance, erroneous example supervision, and others, applied under both synchronous and interleaved training schemes. We find that interleaving supervised fine-tuning (SFT) with RL substantially improves stability, but exhibits degraded performance under format and content out-of-distribution (OOD) evaluation. We also analyze the impact of learning rates and generalization across settings. These results highlight the importance of understanding RL failures and demonstrate how diverse supervisory signals can guide exploratory learning, enabling robust training of LLMs for complex, multi-step tool-use tasks. Our Code is available at https://github.com/hypasd-art/Tool-RL-Box.",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "published": "2026-06-25T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2606.26027",
+      "pdf_url": "https://arxiv.org/pdf/2606.26027",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Analyzes catastrophic collapse in multi-step tool-use RL and the role of supervisory signals, highly relevant to long-horizon tasks and self-correction evaluation."
+    },
+    {
+      "arxiv_id": "2606.25524",
+      "title": "Cliff Tokens: Identifying Single-Token Failure Triggers in LLM Mathematical Reasoning",
+      "authors": [
+        "Jaeyong Ko",
+        "Pilsung Kang",
+        "Yukyung Lee"
+      ],
+      "abstract": "Large language models (LLMs) reach high accuracy in mathematical reasoning, but individual traces on the same problem diverge; some arrive at the correct answer while others fail. Prior work analyzes failure at the step, chunk, or sentence level, or at tokens where failure has already occurred. Neither identifies the precise token that triggers the shift toward failure. We introduce the cliff token, a token where the token-wise potential drops significantly under an adaptive threshold that scales with the local token-wise potential, based on a one-sided two-proportion z-test. Across seven models and three mathematical reasoning benchmarks (GSM1K, MATH500, AIME 2025), cliff tokens act as failure triggers; deleting the first cliff token and resampling recovers pass@64 to 1.0, while keeping it limits recovery to between 0.71 and 1.00. We further introduce a cliff taxonomy of deterministic, uncertain, and sampled-off cliffs, defined by greedy choice and token entropy. Each type has distinct probabilistic characteristics, and the taxonomy generalizes across model scales. Finally, we validate the taxonomy via single-token preference optimization at cliff positions (Cliff-DPO). Trained on GSM8K, Cliff-DPO improves accuracy across benchmarks by up to +6.6. Optimizing at uncertain and sampled-off cliffs improves reasoning, while deterministic cliffs do not.",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-06-25T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2606.25524",
+      "pdf_url": "https://arxiv.org/pdf/2606.25524",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Identifies precise failure triggers in mathematical reasoning, highly relevant to understanding when and how models fail and to explicit self-correction evaluation."
+    },
+    {
+      "arxiv_id": "2606.25396",
+      "title": "Long-Term Simulation Exposes Cognitive-Developmental Risks in AI Companions",
+      "authors": [
+        "Kaicheng Shen",
+        "Lingyu Li",
+        "Wen Wu",
+        "Yan Teng",
+        "Liang He",
+        "Yingchun Wang"
+      ],
+      "abstract": "AI companions powered by large language models increasingly interact with cognition-developing users, including children and adolescents, creating risks that may accumulate over time. Existing safety evaluations largely rely on single-turn or short-session tests, which cannot capture risks that emerge only through prolonged interaction. To address this gap, we propose TSJ (Theater-Stage-Judge), a longitudinal framework combining persona-driven user simulation, dynamic psychological-state updating and retrospective evaluation. We evaluate six mainstream models across four developmental stages, twenty-four risk dimensions and three psychological-vulnerability personas, covering 12,960 simulated person-day interactions. TSJ shows that short-horizon testing systematically underestimates developmental risks, for which TSJ yields a stable risk estimate only after 140 turns within prolonged simulated relationships. Applying TSJ further identifies early childhood and emerging adulthood as the most vulnerable stages, with cognitive trust and emotional dependency as the weakest domains. TSJ provides a scalable methodology for longitudinal cognitive developmental risk evaluation in AI companion systems.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-06-25T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2606.25396",
+      "pdf_url": "https://arxiv.org/pdf/2606.25396",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Proposes long-term simulation framework (TSJ) to evaluate AI agent risks over prolonged interactions, directly addressing the need for grading long rollouts and measuring cumulative behavioral patterns."
+    },
+    {
+      "arxiv_id": "2606.24990",
+      "title": "Uncertainty-aware reinforcement learning for chemical language models",
+      "authors": [
+        "Borja Medina",
+        "Jon Paul Janet"
+      ],
+      "abstract": "Reinforcement Learning (RL) has become a powerful paradigm for de novo molecular design, enabling Chemical Language Models (CLMs) to navigate and explore the chemical space while optimizing specific desired properties. However, the existing RL frameworks treat all scoring functions as deterministic oracles, neglecting the inherent uncertainty attached to the predictions of the different molecular properties. This can lead to the exploration of highly-uncertain regions of the chemical space, focusing on the generation of highly scored molecules which are poorly supported by the training data. This can destabilize the optimization process, yielding predictions that are far from their true values.   We propose and compare two complementary ways of incorporating predictive uncertainty into RL. In the first one, uncertainty is treated as an additional optimization objective and incorporated along with the rest of the scoring functions, allowing the policy to trade off exploitation against reliability. Secondly, uncertainty is used to modulate policy updates, reducing the influence of molecules whose properties lie far outside the scoring function confidence domain.   Both approaches were evaluated across three different settings: (i) a controlled model system, in which the prediction error is modeled as a Gaussian distribution, with a variance proportional to the distance to the training data; and two real-world tasks, making use of (ii) ChemProp models and (iii) a Conformal Prediction wrapper applied to a Random forest classifier.   We show that uncertainty-aware RL enables CLMs to explore chemical space more robustly by favoring lower-uncertainty regions. This leads to more reliable hit discovery without compromising molecular score, increasing the true hit rate by 0.25 (from 0.5 to 0.75), and nearly doubling the total number of true hits.",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-06-25T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2606.24990",
+      "pdf_url": "https://arxiv.org/pdf/2606.24990",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Uncertainty-aware RL for chemical language models directly relates to handling noisy observations and hypothesis generation under uncertainty, relevant to the noisy observation eval idea."
+    },
+    {
+      "arxiv_id": "2606.25151",
+      "title": "Silent Failures in Physics-Informed Neural Networks: Parameter Poisoning and the Limits of Loss-Based Validation",
+      "authors": [
+        "David McShannon",
+        "Nicholas Dietrich"
+      ],
+      "abstract": "Physics-informed neural networks (PINNs) embed governing equations in their loss function, enabling mesh-free solutions to partial differential equations. Low training loss is treated as evidence that the learned solution is physically correct. This paper shows that assumption breaks down when encoded physics are incorrect. By perturbing PDE parameters before training, a setting we describe as physics parameter poisoning or parameter misspecification, we produce models that train to low loss but give incorrect answers; we treat the perturbation schedule as sensitivity analysis rather than only as a security threat, and none of our claims requires an adversary. Achieving low residual loss does not discriminate accurate from inaccurate solutions: poisoned models reach losses at or below the clean baseline yet differ by large margins, so driving the residual down is not evidence of physical accuracy. Across three PDE systems (Burgers equation, Navier-Stokes cavity, and convection-diffusion), poisoned models match or beat the clean-model training loss while their solutions differ by up to 71% in the fixed sweep and up to 128% under adversarial search; at Cavity Re=400 the poisoned loss falls below the clean baseline. We define a detection difficulty ratio R (solution error divided by training loss) to summarize how invisible the corruption is, though cross-PDE comparison is complicated by differences in loss scale. We test six candidate defenses, none of which reliably detects corruption across all regimes. We propose a post-hoc defense: sweeping the PDE residual loss across parameter values without retraining. The loss minimum recovers the true training parameter without external data, and generalizes across all three PDE systems. The effect holds across five network architectures (8.7K to 133K parameters), is bidirectional, and is confirmed across multiple random seeds.",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-06-25T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2606.25151",
+      "pdf_url": "https://arxiv.org/pdf/2606.25151",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Highly relevant to the 'surprising information' and self-correction themes: demonstrates how models can exhibit low loss while being fundamentally wrong (silent failures), directly addressing whether loss-based validation is sufficient when models encounter incorrect physics."
+    },
+    {
+      "arxiv_id": "2606.25337",
+      "title": "AI Coaching for Accelerating Human Skill Development with Reinforcement Learning",
+      "authors": [
+        "Wei Wang",
+        "Enlin Gu",
+        "Antonio Loquercio",
+        "Haimin Hu",
+        "Rahul Mangharam"
+      ],
+      "abstract": "AI copilots can substantially boost human performance through shared control, but excessive assistance can induce over-reliance and skill atrophy. This paper studies how an embodied AI agent can act as a coach that accelerates human motor-skill development. We argue that effective coaching requires strategic scaffolding and stepping back that are aligned with the learner's capability, allowing productive failures that drive learning. We formalize the interactive AI coaching process as a non-cooperative dynamic game in which the learner optimizes task performance while the coach targets the learner's independent competence. Building on this formalism, we develop a reinforcement learning framework combining adaptive shared control with probabilistic models of the coach's causal influence on skill evolution, enabling tractable training of coaching policies. A comprehensive user study (N=33) on first-person-view drone racing shows significant gains in human learning outcomes over state-of-the-art AI coaching baselines.",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.HC"
+      ],
+      "published": "2026-06-25T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2606.25337",
+      "pdf_url": "https://arxiv.org/pdf/2606.25337",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Highly relevant to on-policy distillation and scaled feedback: studies how AI coaching with strategic scaffolding accelerates skill development, directly connecting to feedback design and capability transfer."
+    },
+    {
+      "arxiv_id": "2606.25852",
+      "title": "Semantic Consistency Policy Optimization for Reinforcement Learning of LLM Agents",
+      "authors": [
+        "Peng Xu",
+        "Sijia Chen",
+        "Junzhuo Li",
+        "Xuming Hu"
+      ],
+      "abstract": "Group-based reinforcement learning effectively post-trains LLM agents for long-horizon, sparse-reward tasks by deriving step-level credit from trajectory outcomes. However, this ties a step's credit to its rollout's final outcome: semantically near-identical intermediate steps receive opposite credit depending on whether their trajectory eventually succeeded or failed. Such semantic credit inconsistency sends conflicting gradients to similar actions and wastes the partially-correct progress inside failed rollouts. Motivated by this, we propose Semantic Consistency Policy Optimization (SCPO), a value-free reward-shaping method that mitigates this inconsistency by recovering step-level credit from successful siblings in the same rollout group. Concretely, SCPO scores each failed step against a successful sibling and adds positive step-level credit for new progress along that sibling. On ALFWorld and WebShop, SCPO matches or exceeds strong group-based baselines, reaching 93.7+/-4.1 percent success on ALFWorld and 74.8+/-2.0 percent on WebShop at 1.5B parameters, with gains concentrated on the hardest multi-step tasks.",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-06-25T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2606.25852",
+      "pdf_url": "https://arxiv.org/pdf/2606.25852",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Addresses semantic consistency in step-level credit assignment for LLM agent RL, directly relevant to the problem of grading long rollouts and dealing with sparse rewards mentioned in project notes."
+    },
+    {
+      "arxiv_id": "2606.26091",
+      "title": "On-Policy Self-Distillation with Sampled Demonstrations Reduces Output Diversity",
+      "authors": [
+        "Andrei Liviu Nicolicioiu",
+        "Mohammad Pezeshki",
+        "Aaron Courville"
+      ],
+      "abstract": "On-policy self-distillation achieves strong pass@1 accuracy by using a single model as both teacher and student, with the teacher conditioned on a correct demonstration to provide dense token-level feedback. We show that this could come at a hidden cost: rollout diversity decreases and pass@k curves flatten (i.e., generating more rollouts fails to improve accuracy). We trace this to compounding biases in the design of self-distillation with sampled demonstrations. The teacher scores each student rollout while conditioned on a sampled correct rollout, channeling its feedback through the model's own biases. We theoretically analyze the optimal self-distillation policy and show that it tilts the base distribution by a pointwise conditional mutual information score between the student's rollout and the correct rollout used as context. Unlike the ideal optimal on-policy reinforcement learning (RL), which preserves probability ratios among equally correct rollouts, self-distillation can amplify existing probability gaps, concentrating mass on already-dominant modes. On a controlled graph path-finding task and science question-answering benchmarks, self-distilled models match or exceed RL on average performance but exhibit substantially lower functional and semantic diversity, failing on out-of-distribution settings that require diverse strategies.",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-06-25T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2606.26091",
+      "pdf_url": "https://arxiv.org/pdf/2606.26091",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Studies on-policy self-distillation with demonstrations and its effect on output diversity, directly relevant to Hunter's interest in on-policy distillation and potential problems with this approach."
+    },
+    {
+      "arxiv_id": "2606.24980",
+      "title": "Closed-Loop Graph Algorithm Execution with Small Language Models: Step Accuracy and Rollout Reliability",
+      "authors": [
+        "Michal Podstawski"
+      ],
+      "abstract": "Small language models offer an efficient alternative to large-scale systems, but their ability to execute structured algorithms over multiple dependent decisions remains poorly understood. We study graph algorithm execution as a closed-loop prediction problem in which a model repeatedly selects the next action from the current graph and algorithmic state. Our evaluation framework covers several classical graph procedures, multiple synthetic graph families, and disjoint training, validation, and test partitions. It assesses both local decision quality and global execution behaviour using step accuracy, exact rollout accuracy, constraint validity, partial solution quality, prefix survival, and intervention-based diagnostics. The results show that adaptation can produce reliable policies for structural procedures such as traversal and coloring, while weighted algorithms remain substantially more sensitive to error accumulation. More broadly, the findings demonstrate that strong next-step prediction does not necessarily translate into reliable autonomous execution and motivate evaluating algorithmic language models through complete closed-loop rollouts rather than isolated decisions.",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-06-25T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2606.24980",
+      "pdf_url": "https://arxiv.org/pdf/2606.24980",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Directly addresses closed-loop execution of structured algorithms with language models, measuring step accuracy and rollout reliability across multiple dependent decisions\u2014highly relevant to long-horizon tasks and self-correction evaluation."
+    },
+    {
+      "arxiv_id": "2606.25527",
+      "title": "Beyond One-Size-Fits-All: Diagnosis-Driven Online Reinforcement Learning with Offline Priors",
+      "authors": [
+        "Guozheng Ma",
+        "Lu Li",
+        "Zilin Wang",
+        "Pierre-Luc Bacon",
+        "Dacheng Tao"
+      ],
+      "abstract": "Online reinforcement learning (RL) agents increasingly depend on knowledge acquired offline to achieve practical efficiency. Originally studied in offline-to-online RL, this paradigm now spans foundation model post-training and embodied intelligence, with prior types expanding from offline datasets and pre-trained policies to increasingly diverse knowledge sources such as multimodal foundation models and generative world models. Offline priors have become central to how deep RL is developed and deployed. However, this reliance introduces a challenge that the prevailing benchmark-driven paradigm cannot resolve: because prior validity varies across deployments and shifts during training, no single approach to managing it is universally optimal, and benchmark rankings offer limited guidance for real-world deployments. Rather than pursuing universal solutions, we argue that the field should shift to diagnosis-driven tension management, in which deployment-specific evidence guides how the learner relates to its priors throughout training, enabling both flexible and adaptive deployment. We support this position with a framework characterizing how priors reshape online optimization through three functional roles, controlled experiments demonstrating help-or-hurt reversals, cross-domain evidence from foundation model post-training to embodied intelligence, and engagement with five substantive counterarguments.",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-06-25T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2606.25527",
+      "pdf_url": "https://arxiv.org/pdf/2606.25527",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Combines offline priors with online RL and addresses diagnosis-driven approaches, relevant to Google Brainstorming's interest in long-horizon tasks and how models handle surprising information."
+    },
+    {
+      "arxiv_id": "2606.26094",
+      "title": "RevengeBench: Reverse Engineering Code-Space Policies from Behavioral Experiments",
+      "authors": [
+        "Babak Rahmani",
+        "Sebastian Dziadzio",
+        "Joschka Str\\\"uber",
+        "Sergio Hern\\'andez-Guti\\'errez",
+        "Matthias Bethge"
+      ],
+      "abstract": "For most of scientific history, researchers studying behavior could only infer hidden mechanisms from outward actions: an inverse problem that becomes more tractable when observation is augmented by targeted intervention. We pose a computational analogue: given only behavioral traces of an agent in a game environment, can a learner reconstruct the underlying decision program as executable code, and how much does this reconstruction improve with the ability to design controlled experiments? We introduce RevengeBench, a benchmark of 75 LLM generated, Elo-calibrated policies across five game environments, drawn from CodeClash tournament trajectories. The learner observes the hidden target policy play against sampled opponents and designs behavioral probes in the form of custom opponent policies that elicit informative behavior. It then submits an executable hypothesis, which is evaluated using continuous action-distance metrics. We further validate that recovered code carries informative signal in downstream player-versus-player tournaments. Across twelve frontier LLMs, recovery quality varies substantially (34 to 72% of initial distance closed), with reconstructed policies yielding measurable competitive advantage, particularly for weaker models that otherwise struggle to design effective counter-strategies. Our benchmark positions behavioral recovery of programmatic policies as a tractable inverse problem in code-space, opening a path to opponent modeling, policy interpretability, and the broader question of inferring latent mechanisms from observations.",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-06-25T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2606.26094",
+      "pdf_url": "https://arxiv.org/pdf/2606.26094",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Reverse engineering policies from behavioral traces is directly relevant to understanding model decision-making and grading long rollouts effectively (Shuchao Chat focus)."
+    },
+    {
+      "arxiv_id": "2606.25057",
+      "title": "LLM-Based Scientific Peer Review: Methods, Benchmarks, and Reliability Challenges",
+      "authors": [
+        "Thi Huyen Nguyen",
+        "Zahra Ahmadi"
+      ],
+      "abstract": "The rapid growth of scientific submissions has pushed traditional peer review toward its scalability limits, motivating the exploration of large language models (LLMs) as intelligent automated evaluation assistants. Although recent studies show that LLMs can generate fluent critiques and approximate reviewer scores, their reliability, robustness, and security as decision-support systems remain insufficiently understood. This survey offers a systems-level analysis of LLM-based scientific peer review, focusing on two core evaluative functions: critique generation and score prediction. We present a structured taxonomy of modeling approaches (including prompt-based, supervised, retrieval-augmented, and alignment-optimized approaches), and synthesize empirical findings across existing benchmarks. We analyze dataset constraints, evaluation shortcomings, and domain concentration biases that limit current assessment practices. Beyond performance metrics, we identify emerging robustness risks, including prompt injection, data poisoning, retrieval vulnerabilities, and reward hacking, which expose automated review pipelines to strategic manipulation. From a data mining perspective, we outline key open challenges in modeling subjective disagreement and cross-domain generalization. By reframing automated peer review as a high-stakes, multi-objective decision problem, this survey provides a roadmap for developing robust, transparent, and trustworthy AI-assisted scientific evaluation systems.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-06-25T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2606.25057",
+      "pdf_url": "https://arxiv.org/pdf/2606.25057",
+      "is_author_match": false,
+      "relevance_score": 7.0,
+      "relevance_reason": "Addresses LLM-based grading reliability and robustness for peer review, directly applicable to the project on better grading of long rollouts and LM judge weaknesses."
+    },
+    {
+      "arxiv_id": "2606.25449",
+      "title": "Reclaim Evaluation: A Lossy Memory Is Worse Than an Empty One",
+      "authors": [
+        "Alex Kwon"
+      ],
+      "abstract": "A language model's memory can be worse than having no memory at all. Give a model a memory that kept a wrong conclusion but dropped the work behind it, and it emits that stale value as a confident answer; give the same model an empty memory and it abstains. Across seven models this direction never reverses, a clean kill condition that none breaks. We call this brittle memory: behavioral, not the near-immediate information bound beneath it; only its magnitude is disposition- and task-dependent, not its direction. We measure it with reclaim evaluation: compress a drifted interaction at a fixed budget, then test whether a correction recovers the known answer, scored against ground truth with no judge. Correctability is bottlenecked by whether the answer-determining source survives, not by capability. A one-line source-first policy (keep the recomputable source, drop the re-derivable conclusion) restores correctability at equal budget where that source is compact and identifiable; a length-matched control rules out added text as the cause. The hand-built oracle reaches 1.00; a one-prompt deployable version reclaims 0.49-0.88. The stake compounds: chained through a memory loop, a single dropped-source error corrupts a growing span of downstream steps and stays uncorrectable, while source-first holds to a bounded budget horizon. The wall and fix replicate across three deployed memory systems and on real dialogue (MultiWOZ), and past the budget where the source no longer fits, the fix fails silently unless the note records completeness. This is a controlled study of a mechanism, not a benchmark: judge-free exact scoring, matched-budget controls, and validators built to come out false. We release the harness, conditions, and validators.",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-06-25T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2606.25449",
+      "pdf_url": "https://arxiv.org/pdf/2606.25449",
+      "is_author_match": false,
+      "relevance_score": 7.0,
+      "relevance_reason": "Demonstrates failure modes in model memory where wrong conclusions are retained, directly relevant to testing if models can fail first to get somewhere and self-correction evaluation."
+    }
+  ]
+}
