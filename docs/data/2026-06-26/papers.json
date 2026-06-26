@@ -1,0 +1,636 @@
+{
+  "date": "2026-06-26",
+  "generated_at": "2026-06-26T04:49:55.317210+00:00",
+  "author_papers": [
+    {
+      "arxiv_id": "2606.26437",
+      "title": "ConflictScore: Identifying and Measuring How Language Models Handle Conflicting Evidence",
+      "authors": [
+        "Siyi Liu",
+        "Aaron Halfaker",
+        "Dan Roth",
+        "Patrick Xia"
+      ],
+      "abstract": "Existing metrics for factuality and faithfulness evaluate whether an answer is supported or contradicted by its grounding documents, but they fail to capture when both supporting and contradicting evidence coexist. We introduce ConflictScore, a novel metric that quantifies how well a model's response acknowledges conflicting evidence in its grounding documents. Our framework decomposes responses into atomic claims, labels each claim against each grounding document, and then aggregates these labels into two complementary measures: ConflictScore-Count (CS-C), the proportion of claims exhibiting conflicts, and ConflictScore-Ratio (CS-R), the balance between supporting and contradicting evidence. We develop ConflictBench, a benchmark covering diverse forms of conflicts such as ambiguity, contradiction, and divergent opinions, to systematically evaluate our metric. Experiments show that ConflictScore effectively detects overconfident claims across domains and can serve as a corrective feedback mechanism that improves truthfulness on TruthfulQA.",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-06-26T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2606.26437",
+      "pdf_url": "https://arxiv.org/pdf/2606.26437",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2606.26466",
+      "title": "Soft Token Alignment for Cross-Lingual Reasoning",
+      "authors": [
+        "Jiayi He",
+        "Jungsoo Park",
+        "Wei Xu",
+        "Alan Ritter"
+      ],
+      "abstract": "Multilingual large language models often produce inconsistent reasoning and answers for semantically equivalent prompts in different languages. Prior work suggests that intermediate representations can be relatively language-agnostic, but generation becomes increasingly language-specific as models commit to discrete output tokens. This is problematic because language-specific lexical choices can cause semantically equivalent reasoning paths to diverge across languages. These divergences motivate searching for a cross-lingual alignment signal that is less tied to any single vocabulary item or script. We propose SOLAR, an auxiliary objective for supervised fine-tuning that aligns soft-token representations across languages, using English as a pivot. Soft tokens are probability-weighted mixtures over the vocabulary embeddings, yielding continuous representations that can aggregate information from semantically related tokens across languages. We then align each non-English soft-token summary to its English counterpart in the shared embedding space. Across four multilingual reasoning benchmarks, SOLAR improves accuracy by up to +17.7 points over the base model and +3.8 over standard supervised fine-tuning, with the largest gains on low-resource languages. SOLAR also strengthens final-layer cross-lingual similarity and substantially reduces language-cluster separability, suggesting that aligning soft-token representations helps preserve shared semantic structure during multilingual reasoning.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-06-26T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2606.26466",
+      "pdf_url": "https://arxiv.org/pdf/2606.26466",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2606.27306",
+      "title": "Multilingual Reasoning Cascades Need More Context",
+      "authors": [
+        "Arnav Mazumder",
+        "Dengjia Zhang",
+        "Shuyue Stella Li",
+        "Yulia Tsvetkov",
+        "Niyati Bafna"
+      ],
+      "abstract": "Translation cascades for reasoning translate the query from another language to English, reason in English, and translate the answer back to the original language. This is a competitive approach to multilingual reasoning, but structurally lossy, since each stage discards information later stages may need, including cues for cultural grounding, register, and disambiguation. We examine the benefits of a simple and training-free intervention: a context-aware translation cascade, which additionally provides the original question, the English translated question, and the reasoning trace to the context of the final translation module. We evaluate gains across nine multilingual benchmarks including various task types, three backbone models, and 285 high-, mid-, and low-resource languages, and demonstrate strong gains for open-ended generation across models and resource regimes. We show that the original language question carries most of the beneficial context. Our study emphasizes the need to better design information flow in machine translation cascades for mitigating error propagation, and provides a simple and actionable default strategy: preserve the original user question until the end of the pipeline.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-06-26T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2606.27306",
+      "pdf_url": "https://arxiv.org/pdf/2606.27306",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2606.26629",
+      "title": "From Weights to Features: SAE-Guided Activation Regularization for LLM Continual Learning",
+      "authors": [
+        "Evan Ning",
+        "Wei Xue",
+        "Dong Lou",
+        "Yike Guo"
+      ],
+      "abstract": "Weight-space regularization methods such as Elastic Weight Consolidation (EWC) are the standard approach to catastrophic forgetting in continual learning. However, those methods tend to underperform when applied to large language models. We argue that such underperformance can be partly explained by the ``polysemantic'' nature of large language models: per-weight importance estimates utilized by EWC-style regularization are too coarse and cannot isolate the knowledge that needs protection. In this paper, we propose regularizing instead in the model's activation space, using pretrained Sparse Autoencoders (SAEs) as a monosemantic feature dictionary. From the perspective of constrained optimization, we derive a new loss function that uses the SAE feature dictionary to explicitly balance stability and plasticity, and show that EWC is a special case in the one-sided weight-space penalty setting. Unlike replay-based methods that store or revisit examples from earlier tasks, our method requires no previous-task data after mask construction: current-task data is used to compute a compact SAE feature mask, and only this mask is retained for later training. Further, since the feature space has significantly lower dimensionality than the parameter space, the proposed method is more memory efficient. On the TRACE and MedCL continual learning benchmarks, the method achieves the strongest result among approaches without introducing task-specific architectural components, also surpassing traditional weight-space regularization methods like EWC. Beyond performance comparisons, we provide empirical evidence for the polysemanticity thesis: task-relevant representations are linearly separable in the SAE feature basis but indistinguishable from chance in the weight basis, and weight-space protection is nearly non-selective at the concept level.",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "published": "2026-06-26T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2606.26629",
+      "pdf_url": "https://arxiv.org/pdf/2606.26629",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2606.26205",
+      "title": "Knowledge-augmented Agentic AI for Mental Health Medication Information Seeking",
+      "authors": [
+        "Huizi Yu",
+        "Jian Liu",
+        "Wenkong Wang",
+        "Lingyao Li",
+        "Jiayan Zhou",
+        "Zhaoqian Xue",
+        "Xiang Li",
+        "Xinxin Lin",
+        "Zhiying Liang",
+        "Zhuoru Wu",
+        "Siyuan Ma",
+        "Xin Ma",
+        "Lizhou Fan"
+      ],
+      "abstract": "Patients increasingly seek medication information online, yet safety knowledge for psychiatric drugs is split between regulatory adverse-event records, which are authoritative but abstract, and patient narratives, which are experience-near but unvalidated. Integrating them without conflating evidence and anecdote is especially consequential in psychiatry, where poorly contextualised information can amplify fear, nocebo responses, and non-adherence. Here we develop a provenance-aware, knowledge-graph-based multi-agent framework unifying 466,525 Reddit posts, 60,782 WebMD reviews, and twenty years of U.S. FDA Adverse Event Reporting System records for nine antidepressants. A large-language-model entity-recognition pipeline benchmarked against physician annotations reached highest F1 scores of 0.969 for medications and 0.973 for conditions. The two community platforms were far more concordant with each other (overlap up to a Jaccard similarity of 0.905) than with regulatory reports, indicating that patient-generated data form a partly independent safety signal. For sertraline, many adverse events appeared in community sources hundreds of days before the corresponding FDA date. A Neo4j knowledge graph grounded in ATC-N, ICD-10, and MedDRA vocabularies preserves provenance, keeping every claim traceable and regulatory facts distinct from patient experience. These results establish source-aware integration as a route to more auditable psychiatric medication information, with usefulness and patient benefit to be tested prospectively.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-06-26T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2606.26205",
+      "pdf_url": "https://arxiv.org/pdf/2606.26205",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2606.26700",
+      "title": "Learning Motion Feasibility from Point Clouds in Cluttered Environments",
+      "authors": [
+        "Sajid Ansari",
+        "Arthi",
+        "Girish Varma",
+        "Antony Thomas"
+      ],
+      "abstract": "Motion feasibility prediction plays a central role in robotics, particularly in task and motion planning and manipulation. A major bottleneck for this problem in cluttered environments is that infeasible planning attempts by Sampling-based motion planners (SBMPs) can incur substantial computational cost. Also existing approaches for infeasibility certification are limited to low-dimensional configuration spaces and often assume simplified geometric environments represented by primitive objects with known parameters. We study the complementary problem of learning motion feasibility prediction directly from raw RGB-D observations for a 7-DOF manipulator operating in realistic cluttered scenes. We introduce the first large-scale benchmark for this setting, comprising 2.7M grasp feasibility labels over 88 scanned objects and 190 cluttered tabletop scenes. We benchmark three representative classifier families spanning MLP- based, volumetric-CNN, and point-cloud-based Transformer architectures under matched training conditions. Our best model, GRASPFC-PTX (a point-cloud transformer), achieves an AUROC of 0.996 on Novel objects while providing predictions significantly faster than SBMPs.",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "published": "2026-06-26T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2606.26700",
+      "pdf_url": "https://arxiv.org/pdf/2606.26700",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2606.27243",
+      "title": "NOVA: A Verification-Aware Agent Harness for Architecture Evolution in Industrial Recommender Systems",
+      "authors": [
+        "Shaohua Liu",
+        "Liang Fang",
+        "Yilong Sun",
+        "Shudong Huang",
+        "Qingsong Luo",
+        "Xiaoyang Chen",
+        "Dongqiang Liu",
+        "Chuangang Ma",
+        "Zhenzhen Chai",
+        "Henghuan Wang",
+        "Shijie Quan",
+        "Changyuan Cui",
+        "Zhangbin Zhu",
+        "Peng Chen",
+        "Wei Xu",
+        "Lei Xiao",
+        "Haijie Gu",
+        "Jie Jiang"
+      ],
+      "abstract": "Industrial advertising recommender models are continuously improved through architecture evolution. Upgrades such as RankMixer, TokenMixer-Large, and MixFormer show that better structures remain a key source of quality and business gains. Yet developing such upgrades in production is expert-intensive and difficult to scale. Existing automation is insufficient: AutoML mainly tunes hyper-parameters, while effective gains often require cross-module changes under strict constraints; generic LLM coding agents optimize for runnable code, but runnable code does not imply a valid recommender architecture. Candidates may pass local tests while causing silent failures that degrade performance.   We present NOVA, a level-aware agent harness for verification-aware architecture evolution. NOVA uses an architecture gradient, an SGD-inspired, non-differentiable update signal that aggregates prior modifications, verification diagnostics, metric feedback, and trajectory memory to guide the next modification. A verification cascade checks structure semantics, local executability, offline effectiveness, and online impact; invalid candidates are blocked early, with failure patterns recorded as forbidden directions. L1--L4 task-level control matches automation to task complexity and risk, routing high-risk tasks to Copilot for human oversight. Deployed in an industrial advertising system, NOVA achieves the highest effective pass rate on L2 ScaleUp and L3 Literature-to-Production tasks (54.5% and 60.0%), reduces silent failures compared with coding-agent baselines, and shortens one literature-to-production cycle by over 13x in human-attended time. In online A/B testing, the selected L3 candidate improves GMV on three pCVR objectives by +1.25%, +1.70%, and +2.02%, while reducing pCVR bias by 58.8%, 66.7%, and 37.3%.",
+      "categories": [
+        "cs.IR",
+        "cs.SE"
+      ],
+      "published": "2026-06-26T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2606.27243",
+      "pdf_url": "https://arxiv.org/pdf/2606.27243",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    }
+  ],
+  "ranked_papers": [
+    {
+      "arxiv_id": "2606.26130",
+      "title": "Thinking Like a Scientist? A Structural Study of LLM-Generated Research Methods",
+      "authors": [
+        "Francesca Carlon",
+        "Brecht Verbeken",
+        "Vincent Ginis",
+        "Andres Algaba"
+      ],
+      "abstract": "Large Language Models (LLMs) are increasingly used to guide research methodology, yet their default methodological tendencies under minimal prompting remain unclear. Here, we prompt GPT-5.1, Gemini 3 Pro, and DeepSeek-V3.2 with an LLM-extracted research question from each of 1,000 recent arXiv computer-science papers and compare the resulting methodology suggestions against a paper-derived experimental inventory. Since we provide only the research question, the differences we measure reflect initial suggestions and not how optimal those suggestions are. We extract structured method features from both sources, map them into a shared taxonomy, and quantify divergence across multiple taxonomy dimensions including model provider, dataset task type, and evaluation metric type. The strongest imbalance appears in provider choice, with Jensen-Shannon divergence about 3-5x larger than any other taxonomy dimension. Other/Academic single-occurrence models are underrepresented by 23-24 percentage points, while reused academic/community models are slightly overrepresented (4-6pp). LLMs also suggest a much narrower range of methods overall: the effective number of model entities contracts from 1,232 to 59-96, and inter-LLM rank correlations (0.55-0.68) generally exceed LLM-to-paper correlations (0.33-0.56), so the distortions are largely shared across models. Popularity baselines, BM25 retrieval calibration, and paper-level similarity tests confirm that the outputs are query-specific responses, but filtered through a narrower set of options. Researchers who rely on LLM suggestions without cross-checking therefore risk narrowing their methodological search space toward a more concentrated default.",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.DL"
+      ],
+      "published": "2026-06-26T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2606.26130",
+      "pdf_url": "https://arxiv.org/pdf/2606.26130",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Directly studies LLM-generated research methods and compares them against actual experimental setups, highly relevant to long-horizon scientific tasks and how models approach research methodology."
+    },
+    {
+      "arxiv_id": "2606.26790",
+      "title": "OPID: On-Policy Skill Distillation for Agentic Reinforcement Learning",
+      "authors": [
+        "Shuo Yang",
+        "Jinyang Wu",
+        "Zhengxi Lu",
+        "Yuhao Shen",
+        "Fan Zhang",
+        "Lang Feng",
+        "Shuai Zhang",
+        "Haoran Luo",
+        "Zheng Lian",
+        "Zhengqi Wen",
+        "Jianhua Tao"
+      ],
+      "abstract": "Outcome-based reinforcement learning provides a stable optimization backbone for language agents, but its sparse trajectory-level rewards provide little guidance on which intermediate decisions should be reinforced or suppressed. On-policy self-distillation offers dense token-level supervision, yet existing skill-conditioned variants often rely on external skill memories or retrieved privileged context, which are costly to maintain and can be mismatched with the state distribution induced by the current policy in multi-turn interaction. We propose \\textbf{OPID} (\\textbf{O}n-\\textbf{P}olicy Sk\\textbf{i}ll \\textbf{D}istillation), a framework that extracts skill supervision directly from completed on-policy trajectories. OPID represents trajectory hindsight as hierarchical skills: episode-level skills capture global workflows or failure-avoidance rules, while step-level skills capture local decision knowledge at critical timesteps. A critical-first routing mechanism uses step-level skills when critical decisions are identified and falls back to episode-level skills as default guidance otherwise. The selected skill is injected into the interaction history, allowing the old policy to re-score the same sampled response under both original and skill-augmented contexts. The resulting log-probability shift yields a token-level self-distillation advantage, which is combined with the outcome advantage for policy optimization. OPID thus preserves RL as the primary training objective while introducing dense, distribution-matched hindsight supervision. Experiments on ALFWorld, WebShop and Search-based QA demonstrate that OPID generally improves agent performance, sample efficiency, and robustness over outcome-only RL and existing skill-distillation baselines. Our code is available at https://github.com/jinyangwu/OPID/tree/main.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-06-26T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2606.26790",
+      "pdf_url": "https://arxiv.org/pdf/2606.26790",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Directly relevant to Hunter Prep's interest in on-policy distillation and feedback scaling, presenting OPID framework for dense token-level supervision in RL agents."
+    },
+    {
+      "arxiv_id": "2606.26300",
+      "title": "The Verification Horizon: No Silver Bullet for Coding Agent Rewards",
+      "authors": [
+        "Binghai Wang",
+        "Chenlong Zhang",
+        "Dayiheng Liu",
+        "Jiajun Zhang",
+        "Jiawei Chen",
+        "Mouxiang Chen",
+        "Rongyao Fang",
+        "Siyuan Zhang",
+        "Xuwu Wang",
+        "Yuheng Jing",
+        "Zeyao Ma",
+        "Zeyu Cui"
+      ],
+      "abstract": "A classical intuition holds that verifying a solution is easier than producing one. For today's coding agents, this intuition is being inverted: as foundation models develop stronger reasoning capabilities and engineering harnesses grow more sophisticated, generating complex candidate solutions is no longer difficult -- reliably verifying them has become the harder problem. Every verifier we can build is only a proxy for human intent, never the intent itself. This makes verification subject to a twofold difficulty: first, intent is underspecified by nature, making it inherently hard to faithfully check whether it has been fulfilled; second, during model training, optimization widens the gap between proxy and intent -- manifesting as reward hacking or signal saturation. To address this, we characterize the quality of verification signals along three dimensions -- scalability, faithfulness, and robustness -- and argue that achieving all three simultaneously is the central challenge. We further study four reward constructions: a test verifier for general coding tasks, a rubric verifier for frontend tasks, the user as verifier for real-world agent tasks, and an automated agent verifier for long-horizon tasks. Across different task types and policy capability levels, we conduct in-depth analysis and experiments on the core challenges of reward design and how to more effectively leverage reward signals. Experiments show that targeted verification design can effectively suppress reward hacking, improve task completion quality, and achieve significant gains across multiple internal and public benchmarks. These experiences collectively point to a core observation: no fixed reward function can remain effective as policy capability continues to grow; and verification must co-evolve with the generator.",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-06-26T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2606.26300",
+      "pdf_url": "https://arxiv.org/pdf/2606.26300",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Directly addresses verification and reward design challenges in coding agents, highly relevant to feedback scaling and LM judge weaknesses discussed in Hunter Prep."
+    },
+    {
+      "arxiv_id": "2606.26918",
+      "title": "Diagnosing Task Insensitivity in Language Agents",
+      "authors": [
+        "Jingyu Liu",
+        "Xiaopeng Wu",
+        "Kehan Chen",
+        "Chuan Yu",
+        "Yong Liu"
+      ],
+      "abstract": "Large language models can serve as capable long-horizon agents, but their out-of-distribution (OOD) generalization remains weak. We identify a key source of this failure as task insensitivity: when faced with similar but distinct tasks, models might apply patterns learned during training and fail to solve the task at hand. We show that models often continue with actions aligned with the original task even when the instruction is semantically corrupted and cannot be directly answered. We further find that, when we replace the task description in a trained prompt with another similar but distinct task, the model may still output the same action. This behavior is accompanied by a consistent training-time attention drift away from task tokens and toward local observations, suggesting an optimization bias toward shortcuts. To mitigate this problem, we propose Task-Perturbed NLL Optimization, a lightweight contrastive regularizer that explicitly encourages action dependence on the task instruction. Extensive evaluations show that our intervention improves task sensitivity and OOD generalization while preserving more stable attention to task tokens.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-06-26T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2606.26918",
+      "pdf_url": "https://arxiv.org/pdf/2606.26918",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Diagnoses task insensitivity in language agents\u2014models failing to adapt to new tasks and applying old patterns\u2014directly relevant to testing whether models handle surprising information and explicit self-correction evaluation."
+    },
+    {
+      "arxiv_id": "2606.26294",
+      "title": "The Red Queen G\\\"odel Machine: Co-Evolving Agents and Their Evaluators",
+      "authors": [
+        "Alex Iacob",
+        "Andrej Jovanovi\\'c",
+        "William F. Shen",
+        "Daniel Burkhardt",
+        "Meghdad Kurmanji",
+        "Nurbek Tastan",
+        "Lorenzo Sani",
+        "Niccol\\`o Alberto Elia Venanzi",
+        "Ambroise Odonnat",
+        "Zeyu Cao",
+        "Bill Marino",
+        "Xinchi Qiu",
+        "Nicholas D. Lane"
+      ],
+      "abstract": "Self-improving agents are state-of-the-art (SOTA) on agentic coding benchmarks and have recently been extended to general domains. However, their search methods generally assume a stationary evaluation criterion: a fixed verifier, benchmark, or labeled dataset that remains valid as the agent improves. This ignores a central feature of evolution: species adapt as their environments change with them. We aim to bring the same principle to recursive self-improvement, making evaluation part of the improvement loop and opening search to evolving evaluators, adversarial objectives, and dynamic utilities that may surpass static benchmarks. We introduce the Red Queen Godel Machine (RQGM), an evolutionary framework for recursive self-improvement under non-stationary utilities. The RQGM makes this possible through controlled utility evolution: search is organized into epochs with a fixed within-epoch evaluation criterion, while the utility can be updated at epoch boundaries, so self-improvement guarantees hold per epoch as the objective evolves across them. We begin by showing that even on verifiable coding tasks, the RQGM improves test pass rate over the prior SOTA by adding a complementary agent-as-a-judge code-review signal. This signal is cheaper and the RQGM uses 1.35x-1.72x fewer tokens. We then turn to scientific paper writing and reviewing, and Olympiad-level proof writing and grading, where the RQGM improves performance over prior self-improving agents: co-evolved writers reach 1.78x-1.86x higher acceptance rates under a diverse agent-as-a-judge panel, while co-evolved graders reach 9% higher ground-truth accuracy. In paper reviewing, the strongest baseline reviewer over-accepts AI-generated papers at up to 1.91x the human rate. The RQGM corrects this by introducing an adversarial objective that discovers reviewers equally stringent on AI and human work.",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.MA",
+        "cs.NE"
+      ],
+      "published": "2026-06-26T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2606.26294",
+      "pdf_url": "https://arxiv.org/pdf/2606.26294",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Core paper on self-improving agents with evolving evaluation criteria, directly relevant to the research interest in tasks requiring failure before success and handling surprising information with non-stationary environments."
+    },
+    {
+      "arxiv_id": "2606.26917",
+      "title": "GEOALIGN: Geometric Rollout Curation for Robust LLM Reinforcement Learning",
+      "authors": [
+        "Ting Zhou",
+        "Zhenqing Ling",
+        "Yiyang Zhao",
+        "Ying Shen",
+        "Daoyuan Chen"
+      ],
+      "abstract": "Online reinforcement learning is widely used to align large language models (LLMs) with reward signals, yet training can be unstable under noisy or misspecified rewards. We identify a failure mode we call directional inconsistency: within a batch, a small set of high-reward rollouts induces representation-space preference directions that sharply disagree with the batch majority, resulting in high-variance and destabilizing updates. We propose geoalign, a lightweight plug-in for rollout curation in iterative policy optimization. Geoalign (i) forms within-prompt preference pairs, (ii) learns an online projector on per-rollout hidden states to concentrate reward-ordered displacement directions, and (iii) detects directionally inconsistent rollouts via their angular deviation from a batch consensus prototype and rectifies them with within-prompt stable alternatives. Geoalign is forward-pass only and adds negligible overhead. Across dialogue alignment with a learned reward model and mathematical reasoning with binary verified rewards, Geoalign improves final performance and reduces training oscillation, outperforming PF-PPO, PAR, PODS, and Seed-GRPO. These results suggest latent directional consensus as an effective reliability signal for online LLM RL.",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-06-26T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2606.26917",
+      "pdf_url": "https://arxiv.org/pdf/2606.26917",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Directly addresses robust RL for LLMs with noisy/misspecified rewards and proposes geometric rollout curation, highly relevant to the 'scale up feedback + on-policy distillation' and grading quality concerns in Hunter Prep."
+    },
+    {
+      "arxiv_id": "2606.27326",
+      "title": "Hallucination in World Models is Predictable and Preventable",
+      "authors": [
+        "Nicklas Hansen",
+        "Xiaolong Wang"
+      ],
+      "abstract": "Modern generative world models render increasingly realistic action-controllable futures, yet they frequently hallucinate: rollouts remain visually fluent while drifting from the ground-truth dynamics. We hypothesize that hallucination concentrates in low-coverage regions of the state-action space, where lightweight data-centric signals can both detect it and guide mitigation. To test this, we introduce MMBench2, a 427-hour, 210-task dataset for visual world modeling with ground-truth actions, rewards, and live simulators, and train a 350M-parameter world model on it. We identify three distinct hallucination modes: perceptual, action-marginalized, and scene-diverging -- each anchored to a different stage of the pipeline, and develop three signals that accurately predict where the model will fail. To close coverage gaps at training time, we develop a coverage-aware sampling technique; to close them online, our hallucination predictors serve as curiosity rewards for targeted data collection, yielding a data-efficient finetuning recipe that adapts the pretrained world model to entirely unseen environments with as few as 50 real environment trajectories. Overall, our findings reveal that hallucination in world models is inherently a data coverage issue, and that the same signals used to detect it can also be used for mitigation.   An interactive web version of our paper is available at https://www.nicklashansen.com/mmbench2",
+      "categories": [
+        "cs.LG",
+        "cs.CV",
+        "cs.RO"
+      ],
+      "published": "2026-06-26T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2606.27326",
+      "pdf_url": "https://arxiv.org/pdf/2606.27326",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Directly addresses detecting and preventing hallucination in world models using data-centric signals, highly relevant to testing models' handling of surprising/noisy information and failure modes in complex domains."
+    },
+    {
+      "arxiv_id": "2606.27359",
+      "title": "When are likely answers right? On Sequence Probability and Correctness in LLMs",
+      "authors": [
+        "Johannes Zenn",
+        "Jonas Geiping"
+      ],
+      "abstract": "Many decoding methods for large language models can be understood as shifting probability mass toward outputs that are more likely under the model, either locally at the token level or globally at the sequence level. Therefore, their success depends on a fundamental question: when does sequence probability, that is, the conditional probability of a continuation given a prompt, actually align with correctness? In this paper, we set out to quantify this relationship across decoding methods, models, and benchmarks at four levels: across decoding methods, across hyperparameters within a method, across prompt-answer pairs within a dataset, and across repeated responses to the same prompt. We find that higher sequence probability is often predictive of correctness across prompt-answer pairs within a fixed dataset. However, this relationship does not generally transfer to decoding decisions: increasing sequence probability by changing hyperparameters or methods does not reliably improve accuracy. Further, sequence probability is not a good indicator of correctness for responses to the same prompt. These findings clarify when decoding can and cannot be expected to improve correctness, and provide practical guidance for decoding, self-consistency, and verifier-free self-improvement.",
+      "categories": [
+        "stat.ML",
+        "cs.LG"
+      ],
+      "published": "2026-06-26T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2606.27359",
+      "pdf_url": "https://arxiv.org/pdf/2606.27359",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Directly addresses the relationship between model confidence (sequence probability) and correctness, highly relevant to self-correction evaluation and handling surprising/noisy information in model outputs."
+    },
+    {
+      "arxiv_id": "2606.26101",
+      "title": "Know2Guess: A Contamination-Aware Multi-Zone Benchmark for Knowledge-Boundary Evaluation in Large Language Models",
+      "authors": [
+        "Renwei Meng",
+        "Bowen Zhang",
+        "Jian Wang",
+        "Xican Wang",
+        "Haoyi Wu",
+        "Xuanyan Qiu",
+        "Shengan Yang"
+      ],
+      "abstract": "Reliable evaluation of large language models should separate supported answering from unsupported guessing without conflating either with data contamination, prompt idiosyncrasy, or generic refusal behavior. We present a contamination-aware, multi-zone benchmark for measuring the transition from answerable knowledge to abstention-expected unknowns under frozen build-time labels. The benchmark contains 1,200 items across five domains, explicit abstention expectations, contamination-risk metadata, and dual parsing with an official strict parser plus a normalized robustness parser. We evaluate FLAN-T5, Qwen2.5-Instruct, and Llama-3-Instruct models under locked answer-or-abstain prompts, answer-only controls, and prompt-template variants. The benchmark is not solved by generic non-answer behavior: FLAN baselines remain weak on productive abstention, while stronger instruction-tuned models expose a selective but incomplete transition from answering to abstaining. Qwen2.5-3B-Instruct achieves the best overall reliability, but answer-expected zones remain difficult, calibration remains poor, and benign-item refusal persists. Prompt and parser robustness analyses preserve the main ranking and qualitative conclusions. The benchmark therefore provides a reproducible protocol for auditing answerability, abstention, refusal, and contamination as distinct but interacting dimensions of LLM reliability.The dataset is publicly available at https://github.com/renweimeng/Know2Guess-A-Contamination-Aware-Multi-Zone-Benchmark.",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-06-26T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2606.26101",
+      "pdf_url": "https://arxiv.org/pdf/2606.26101",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Directly addresses measuring knowledge boundaries and distinguishing supported answering from guessing in LLMs, highly relevant to testing how models deal with surprising information and self-correction evaluation."
+    },
+    {
+      "arxiv_id": "2606.27210",
+      "title": "Paved with True Intents: Intent-Aware Training Improves LLM Safety Classification Across Training Regimes",
+      "authors": [
+        "Jeremias Ferrao",
+        "Niclas M\\\"uller-Hof",
+        "Iustin S\\^irbu",
+        "Traian Rebedea",
+        "Yftah Ziser"
+      ],
+      "abstract": "We argue that safety classifiers should model user intent as an explicit signal between the prompt and the final label. To study this, we introduce AIMS, a human-annotated dataset of 1,724 difficult safety prompts, each paired with an intent description and harm label. We use AIMS to evaluate intent-aware training across supervised fine-tuning, preference learning, reasoning distillation, and reinforcement learning. Despite its size, AIMS enables competitive safety classifiers across training regimes: DPO from model-generated intent errors improves over SFT, and intent-conditioned distillation outperforms reasoning-only distillation in most teacher-student pairs. Most notably, directly rewarding intent faithfulness with GRPO yields the strongest average performance across five external safety benchmarks, while our intent-aware models form the inference latency-F1 Pareto frontier. These results show that faithful intent modeling is a compact, high-quality supervision signal for more robust safety classifiers.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-06-26T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2606.27210",
+      "pdf_url": "https://arxiv.org/pdf/2606.27210",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Highly relevant to Hunter Prep's work on LM judge weaknesses and better grading, evaluating intent-aware training across multiple regimes including preference learning for safety classification."
+    },
+    {
+      "arxiv_id": "2606.26502",
+      "title": "Humans Disengage, Reasoning Models Persist: Separating Difficulty Registration from Deliberation Allocation",
+      "authors": [
+        "Han-yu Wang"
+      ],
+      "abstract": "Large reasoning models (LRMs) take longer on harder problems, just as humans do. This surface similarity hides an opposite pattern within items. When an LRM gets a problem wrong, it spends more tokens than when it gets the same problem right; humans do the reverse, spending less time on the trials they get wrong. We separate two levels of deliberation: how response time tracks difficulty across items (registration), and, with item identity held fixed, whether an agent spends more on its own failures or successes (allocation). On a public matched human-LRM corpus, humans and all five thinking LRMs reproduce the known cross-item alignment (registration) but diverge within items (allocation): every LRM shows a large wrong-vs-right effect (Cohen's d = 1.47-3.13 on H-ARC) while humans show the opposite sign. The comparison stays inside each agent's own scale; we never put seconds and tokens on one axis. The dissociation holds under item fixed effects, replicates across datasets, and is absent in a non-thinking baseline. We read the human pattern as engagement versus abandonment: people stay on items they expect to solve and give up on the rest. We read the LRM pattern as length driven by uncertainty: chains grow when the model is unsure, which is exactly when it tends to fail. Both policies produce the same cross-item correlation with difficulty, so they look aligned on the measure prior work has used; the divergence shows up only once item identity is fixed. Under resource-rational metareasoning, the split is between two stopping policies that share a difficulty signal but implement opposite control; trace length captures the signal and misses the control.",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-06-26T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2606.26502",
+      "pdf_url": "https://arxiv.org/pdf/2606.26502",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Examines how reasoning models allocate deliberation on difficult problems and handle failures, directly relevant to testing if models need to fail first and self-correction evaluation."
+    },
+    {
+      "arxiv_id": "2606.26158",
+      "title": "Life After Benchmark Saturation: A Case Study of CORE-Bench",
+      "authors": [
+        "Nitya Nadgir",
+        "Sayash Kapoor",
+        "Kangheng Liu",
+        "Peter Kirgis",
+        "Matilda Orona",
+        "Stephan Rabanser",
+        "Tilman Bayer",
+        "Abhishek Shetty",
+        "Yue Ling",
+        "Derrick Chan-Sew",
+        "Rumi Nakagawa",
+        "Saiteja Utpala",
+        "Zachary S. Siegel",
+        "Arvind Narayanan"
+      ],
+      "abstract": "When a benchmark's accuracy saturates, it is often retired and replaced with a more challenging version. We show that this approach privileges accuracy and misses the opportunity to study six other key dimensions of agent performance: construct validity issues such as shortcuts, out-of-distribution generalizability, efficiency, reliability, the relative importance of the model versus the scaffold, and uplift from human-agent collaboration. We use CORE-Bench Hard, a benchmark for computational reproducibility of scientific code, as a case study to demonstrate that measuring agents along these dimensions yields meaningful insights into agent performance even after accuracy saturates. First, we surface threats to construct validity in CORE-Bench Hard that are difficult to anticipate with less capable agents. We introduce an improved benchmark, CORE-Bench v1.1, and an out-of-distribution task suite, CORE-Bench OOD. Second, we find that despite accuracy saturation, CORE-Bench v1.1 remains useful for measuring efficiency, reliability, model performance, and scaffold performance. Finally, we conduct a small-scale randomized experiment to measure uplift from human-agent collaboration on real-world computational reproducibility tasks. We find a statistically significant speedup by about a factor of two -- likely underestimated due to one-fifth of human-only reproductions reaching the time limit before completing -- and describe various other findings. Together, our contributions present a more rigorous alternative to the dominant accuracy-centric evaluation paradigm.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-06-26T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2606.26158",
+      "pdf_url": "https://arxiv.org/pdf/2606.26158",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Explores beyond-accuracy evaluation dimensions including shortcuts, OOD generalization, and efficiency\u2014directly aligned with measuring how models handle surprising information and self-correction."
+    },
+    {
+      "arxiv_id": "2606.26722",
+      "title": "Socratic agents for autonomous scientific discovery in high-dimensional physical systems",
+      "authors": [
+        "Xianrui Zeng",
+        "Pengfei Liu",
+        "Yirui Zang",
+        "Yang Shen",
+        "Fei Yu",
+        "Chunlei Yu",
+        "Minghao Liu",
+        "Yang Du"
+      ],
+      "abstract": "The automation of scientific discovery has reached an inflection point. While AI systems now operate instruments, optimize parameters and generate hypotheses, most remain procedural: they execute workflows fixed by human designers. True autonomous science demands epistemic autonomy--the capacity to construct, challenge and revise physical explanations in response to evidence. Here we introduce AHOIS, a multi-agent AI scientist that embeds Socratic midwifery into closed-loop experimentation. A physics-critic agent interrogates hypotheses through causal questioning, constraint checking, counterexample generation and falsification-criteria formulation. We evaluate AHOIS on a real multimode-fibre optical platform, a high-dimensional system with complex wave transformations, indirect detection, environmental drift and multi-modal acquisition. Without prior encoding schemes, classifiers or speckle models, the system autonomously proposed and validated a random-interference encoding hypothesis, discovered task-adaptive sparse-measurement strategies, diagnosed distinct failure modes (encoding instability, fluorescence contamination and detector noise) and translated a published imaging protocol into an executable workflow on a non-original configuration. The discovered encoding yielded 16x16 measurements with effective rank 56.9 and classification accuracies of 76.97% on MNIST and 83.17% on Fashion-MNIST. Ablations show that Socratic interrogation improves physical consistency, hypothesis completeness, uncertainty calibration and experimental-plan validity. These results establish a route from workflow automation towards evidence-grounded, self-correcting autonomous discovery in complex physical environments.",
+      "categories": [
+        "cs.AI",
+        "physics.optics"
+      ],
+      "published": "2026-06-26T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2606.26722",
+      "pdf_url": "https://arxiv.org/pdf/2606.26722",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Highly relevant to long-horizon scientific tasks and autonomous discovery with epistemic autonomy\u2014agents that construct and revise hypotheses from evidence, directly matching Google Brainstorming on scientific tasks and handling surprising information."
+    },
+    {
+      "arxiv_id": "2606.26806",
+      "title": "Memory Depth, Not Memory Access: Selective Parametric Consolidation for Long-Running Language Agents",
+      "authors": [
+        "Haoliang Han"
+      ],
+      "abstract": "Long-running language agents need more than memory access. Retrieval systems can fetch past facts at query time, but they do not decide which experiences should continue to shape behavior after the working context is unloaded. We study this separate problem as memory depth: durable goal-conditioned tendencies written into a small parametric store. We introduce the loop-drift protocol, a controlled stress test in which the retrieval index remains intact while working context is unloaded and goal-conditioned behavior must persist under long-loop interference. We evaluate EVAF, a surprise- and valence-gated LoRA consolidation mechanism. Across GPT-2 and TinyLlama, retrieval is strongest on shallow factual recall (short-fact accuracy 0.956--0.973), while EVAF is strongest on goal persistence and post-unload recovery (0.812--0.904) with only 2--3 parametric writes per 200 events. Mechanism controls show that selective consolidation factorizes into two controllable dimensions: selection and actuation. Matched random gates isolate selection beyond sparse writing; fixed-inner controls across GPT-2, TinyLlama, and Mistral-7B show that inner-loop write strength is model-dependent; and a Mistral-7B matched-gate inversion reveals asymmetric selection-actuation coupling under miscalibrated actuation. Public Memora event streams serve as an external diagnostic, exposing stale-memory invalidation as an unresolved boundary. Within this probe, selective parametric consolidation supplies memory depth distinct from and complementary to retrieval access.",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-06-26T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2606.26806",
+      "pdf_url": "https://arxiv.org/pdf/2606.26806",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Addresses memory depth for long-running agents beyond retrieval, focusing on parametric consolidation of experiences that shape behavior\u2014directly relevant to long-horizon agent capabilities and persistent learning."
+    },
+    {
+      "arxiv_id": "2606.26935",
+      "title": "Where Do CoT Training Gains Land in LLM based Agents?",
+      "authors": [
+        "Jingyu Liu",
+        "Zhiwen Wang",
+        "Yuxin Jing",
+        "Huanyu Zhou",
+        "Yong Liu"
+      ],
+      "abstract": "Chain-of-thought (CoT) reasoning is widely used in language-model agents, but prior work has shown that verbalized CoT is not always faithful and may instead reflect post-hoc reasoning, which means the model already knows the answer before reasoning. We therefore ask what CoT training is actually improving: is the model getting better at changing its action through generated reasoning, or is it getting better at predicting the action directly from the prompt? We study this question by comparing \\emph{prompt actions} (predicting action without CoT) with CoT actions (predicting action with CoT). Across checkpoints, prompt-action quality improves substantially. While interacting with the environment, the relative advantage of CoT actions over prompt actions remains similar, showing that CoT training does not widen the advantage of CoT reasoning, and it helps to improve the quality of prompt actions. We further find that later checkpoints are less likely to revise the action in response to CoT, suggesting greater reliance on the prompt. Motivated by these patterns, we selectively mask action-token supervision on a fraction of training examples. This intervention improves out-of-domain generalization.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-06-26T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2606.26935",
+      "pdf_url": "https://arxiv.org/pdf/2606.26935",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Investigates what CoT training actually improves in agents and whether reasoning is faithful or post-hoc, highly relevant to understanding self-correction mechanisms and grading long rollouts effectively."
+    },
+    {
+      "arxiv_id": "2606.27154",
+      "title": "OpenRCA 2.0: From Outcome Labels to Causal Process Supervision",
+      "authors": [
+        "Aoyang Fang",
+        "Yifan Yang",
+        "Jin'ao Shang",
+        "Qisheng Lu",
+        "Junjielung Xu",
+        "Rui Wang",
+        "Songhan Zhang",
+        "Yuzhong Zhang",
+        "Boxi Yu",
+        "Pinjia He"
+      ],
+      "abstract": "Root cause analysis (RCA) poses a holistic test of LLM agentic capabilities, such as long-context understanding, multi-step reasoning, and tool use. However, existing datasets suffer from a fundamental gap: they label only the root cause, not the propagation path connecting it to the observed symptom, which largely simplifies the task to naive pattern matching. To support rigorous evaluation, we introduce PAVE, a step-wise labeling protocol that leverages known interventions from fault injection to reconstruct causal propagation paths. The mechanism is forward verification: reasoning from cause to effect rather than inferring backward from symptoms. Applying PAVE yields OpenRCA 2.0 (500 instances), the first cross-system RCA benchmark with step-wise causal annotations for LLM agents. Across 11 frontier LLMs, recovering the exact root-cause set succeeds in only 20.7% of cases on average. To locate where this difficulty lies, we relax the criterion and find what we call the ungrounded diagnosis: agents identify at least one correct root-cause service in 76.0% of cases, but ground that service in a verified causal propagation path to the observed symptom in only 61.5%. Outcome-only evaluation hides this failure mode; step-wise causal ground truth is the missing piece for trustworthy LLM-based RCA agents.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-06-26T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2606.27154",
+      "pdf_url": "https://arxiv.org/pdf/2606.27154",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Introduces causal process supervision for root cause analysis beyond outcome labels, directly relevant to evaluating long-horizon reasoning chains and designing tasks requiring multi-step hypothesis formation from observations."
+    },
+    {
+      "arxiv_id": "2606.27288",
+      "title": "When Does Combining Language Models Help? A Co-Failure Ceiling on Routing, Voting, and Mixture-of-Agents Across 67 Frontier Models",
+      "authors": [
+        "Josef Chen"
+      ],
+      "abstract": "Multi-model LLM systems such as routing, voting, cascades, fusion, and mixture-of-agents are used to beat single-model accuracy. We show that their gain is capped by a quantity the field rarely reports. For any policy whose output is one member model answer, accuracy cannot exceed one minus beta, where beta is the rate at which every model is wrong on the same query. In contrast, the usual diagnostic, average pairwise error correlation rho, cannot identify beta: error laws with identical marginals and pairwise correlations can have different all-wrong rates. A Clopper-Pearson bound on beta gives a finite-sample certificate on the largest gain any router, vote, or cascade could deliver before training a router.   Across 67 models from 21 providers, a tetrachoric-calibrated single-factor model still underprices the all-wrong tail: on open-ended mathematics, observed beta is 0.052 versus 0.023 under the full 67-model Gaussian copula, about 2.5 times underpricing, with 90 percent CI 1.7 to 3.4 and k equals 17. The effect recurs on execution-graded code, where beta is 0.079. Re-asking the same GPQA-Diamond questions in free-response rather than multiple-choice form reopens the tail, with beta 0.127 and a five-judge panel with kappa 0.73 to 0.92, locating co-failure in answer format rather than subject. At matched quality, low-rho heterogeneous ensembles beat high-rho Self-MoA, but on checkable tasks in our pool, combining models rarely beats the single best model without a strong query-level routing signal. Gains come from models failing on different questions, not from adding more models.",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-06-26T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2606.27288",
+      "pdf_url": "https://arxiv.org/pdf/2606.27288",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Directly addresses co-failure analysis and upper bounds on multi-model routing/voting systems, highly relevant to understanding when combining LLMs helps and measuring model failure modes."
+    },
+    {
+      "arxiv_id": "2606.26448",
+      "title": "Closing the Loop to Discover Psychological Theories with an Automated Cognitive Scientist",
+      "authors": [
+        "Akshay K. Jagadish",
+        "Younes Strittmatter",
+        "Nori Jacoby",
+        "George Kachergis",
+        "Eric Schulz",
+        "Nathaniel Daw",
+        "Suyog H. Chandramouli",
+        "Thomas L. Griffiths"
+      ],
+      "abstract": "Across the sciences, autonomous systems are increasingly being used in closed-loop discovery, proposing new theories and designing and running experiments to test them. This approach is yet to be applied in the field of cognitive science, where the central bottleneck is theory-building: the creative step of turning the accumulated failures of existing models into better ones. Theory generation has remained manual even as data collection, modeling, and experiment design have been automated. We present the Automated Cognitive Scientist (AutoCog), a fully autonomous agentic-AI system that closes this loop. Large-language-model agents advocate competing theories, each expressed as an executable cognitive model, design experiments that best discriminate them, collect behavioral data from participants recruited online, score theories against collected data based on their generative performance, diagnose why they fail, and synthesize a better successor. Repeating this cycle allows them to search the space of theories, models, and experiments. In the domain of decision-making, AutoCog recovered known decision-making strategies from simulated behavior, including unconventional ones, showing that its discoveries are ultimately driven by the data rather than strictly bound by the priors of the underlying language models. When run with human participants, it produced theories that outperformed the established theories it was seeded with and generalized to held-out studies in two different experimental settings. It also surfaced a novel theory of multi-cue decision-making in which choices show diminishing sensitivity to feature values. The distinctive predictions of this theory were confirmed in a preregistered study with new participants. AutoCog demonstrates how an automated discovery system can be used to turn cognitive theory-building into an explicit, executable, and cumulative science.",
+      "categories": [
+        "q-bio.NC",
+        "cs.AI"
+      ],
+      "published": "2026-06-26T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2606.26448",
+      "pdf_url": "https://arxiv.org/pdf/2606.26448",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Automated cognitive scientist using closed-loop discovery to propose and test theories is highly relevant to long-horizon scientific tasks, hypothesis generation from observations, and self-correction evaluation."
+    },
+    {
+      "arxiv_id": "2606.26990",
+      "title": "Decision-Aligned Evaluation of Uncertainty Quantification",
+      "authors": [
+        "Annika Schneider",
+        "Tommy Rochussen",
+        "Joshua Stiller",
+        "Vincent Fortuin"
+      ],
+      "abstract": "Uncertainty estimates in machine learning are typically evaluated using generic metrics such as the negative log-likelihood and expected calibration error, yet good performance on such metrics does not necessarily imply high utility in downstream decisions. We introduce decision-alignment, a criterion that reveals which evaluation metrics meaningfully align with downstream utilities. Applying this framework, we show that many widely used uncertainty metrics are either misaligned with common decision problems or encode pathological prior beliefs about the downstream task. We then propose prior-weighted utility metrics, a special class of proper scoring rules that provides decision-aligned uncertainty evaluation. Across benchmark experiments and real-world case studies, our metrics consistently align with realized decision utility, while conventional metrics do not. Our results surface flaws in the current UQ evaluation protocol and offer a principled extension of existing metrics toward decision-relevant UQ evaluation.",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "stat.ML"
+      ],
+      "published": "2026-06-26T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2606.26990",
+      "pdf_url": "https://arxiv.org/pdf/2606.26990",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Introduces decision-aligned evaluation criteria for uncertainty quantification that aligns with downstream utility, directly relevant to 'how to do better grading' and evaluating whether metrics meaningfully predict task success."
+    },
+    {
+      "arxiv_id": "2606.27180",
+      "title": "Automating Potential-based Reward Shaping with Vision Language Model Guidance",
+      "authors": [
+        "Henrik M\\\"uller",
+        "Daniel Kudenko"
+      ],
+      "abstract": "Sparse rewards are inherently challenging for reinforcement learning agents as they lack intermediate feedback to guide exploration and to correctly attribute the sparse success rewards to relevant parts of the trajectory. Naive reward shaping can induce reward hacking, yielding policies that exploit auxiliary signals instead of solving the intended task. Potential-based reward shaping (PBRS) guarantees preservation of the optimal policy set, but requires the definition of a heuristic potential function over the state space. In this work, we introduce the VLM-guided PBRS framework VLM-PBRS that learns the potential function directly from vision language model (VLM) feedback. We query a lightweight VLM to obtain preferences over image pairs and train a model of the potential function using these preferences. As this approach is based on potential-based reward shaping, it preserves the original optimal policies, and removes the need for expert-designed reward shaping terms. Because large VLMs are prohibitively expensive to invoke repeatedly during policy learning, we employ smaller, more computationally efficient VLMs. Although the resulting preference labels are less accurate, empirical evidence shows that the preference labels can still be used to accelerate learning. We validate our method empirically in the Meta-World and Franka Kitchen environments and highlight the connection between VLM preference label accuracy and sample efficiency improvements. Our contributions are threefold: (1) the first application of VLM preference-based learning to synthesize a potential function for PBRS, (2) a principled, low-cost solution that leverages small VLMs, and (3) extensive empirical demonstration of improved sample efficiency and robustness to reward hacking.",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.RO"
+      ],
+      "published": "2026-06-26T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2606.27180",
+      "pdf_url": "https://arxiv.org/pdf/2606.27180",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Directly addresses potential-based reward shaping with VLM guidance for RL, highly relevant to long-horizon tasks and feedback mechanisms discussed in Hunter Prep and Google Brainstorming."
+    }
+  ]
+}
