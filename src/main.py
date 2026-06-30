@@ -10,11 +10,21 @@ from pathlib import Path
 import yaml
 
 from .arxiv_scanner import fetch_recent_papers, filter_by_authors
-from .claude_ranker import TweetDigest, get_usage as get_claude_usage, rank_papers, reset_usage as reset_claude_usage, summarize_tweets
 from .data_writer import write_daily_data
 from .news_scanner import fetch_news
 from .notion_client import fetch_project_topics
-from .twitter_scanner import fetch_tweets, get_usage as get_twitter_usage, reset_usage as reset_twitter_usage
+from .openai_ranker import (
+    TweetDigest,
+    get_usage as get_llm_usage,
+    rank_papers,
+    reset_usage as reset_llm_usage,
+    summarize_tweets,
+)
+from .twitter_scanner import (
+    fetch_tweets,
+    get_usage as get_twitter_usage,
+    reset_usage as reset_twitter_usage,
+)
 
 
 def load_config() -> dict:
@@ -38,7 +48,7 @@ def main():
         date_str = target_date.strftime("%Y-%m-%d")
 
     print(f"Generating digest for {date_str}")
-    reset_claude_usage()
+    reset_llm_usage()
     reset_twitter_usage()
 
     # Calculate hours_back: for backfills, look at papers from that day
@@ -72,8 +82,8 @@ def main():
 
     # 3. Rank papers by project relevance
     print("Ranking papers by relevance...")
-    claude_cfg = config.get("claude", {})
-    model = claude_cfg.get("model", "claude-sonnet-4-5")
+    openai_cfg = config.get("openai", {})
+    model = openai_cfg.get("model", "gpt-5.4")
     ranked_papers = rank_papers(
         other_papers,
         project_topics,
@@ -109,16 +119,31 @@ def main():
 
     # 7. Write data
     print("Writing data...")
-    claude_usage = get_claude_usage()
+    llm_usage = get_llm_usage()
     twitter_usage = get_twitter_usage()
-    day_dir = write_daily_data(date_str, author_papers, ranked_papers, tweet_digest, news_feeds, claude_usage, twitter_usage)
+    day_dir = write_daily_data(
+        date_str,
+        author_papers,
+        ranked_papers,
+        tweet_digest,
+        news_feeds,
+        llm_usage,
+        twitter_usage,
+    )
     print(f"  Written to {day_dir}")
 
     # 8. Cost summary
-    total_cost = claude_usage.estimated_cost_usd + twitter_usage.estimated_cost_usd
+    total_cost = llm_usage.estimated_cost_usd + twitter_usage.estimated_cost_usd
     print(f"\nCost summary:")
-    print(f"  Claude: {claude_usage.api_calls} calls, {claude_usage.input_tokens:,} in / {claude_usage.output_tokens:,} out, ${claude_usage.estimated_cost_usd:.4f}")
-    print(f"  Twitter: {twitter_usage.api_calls} calls, {twitter_usage.posts_read} posts read (${twitter_usage.posts_read * 0.005:.2f}), {twitter_usage.users_read} users read (${twitter_usage.users_read * 0.01:.2f}), total ${twitter_usage.estimated_cost_usd:.4f}")
+    print(
+        f"  OpenAI: {llm_usage.api_calls} calls, {llm_usage.input_tokens:,} in / "
+        f"{llm_usage.output_tokens:,} out, ${llm_usage.estimated_cost_usd:.4f}"
+    )
+    print(
+        f"  Twitter: {twitter_usage.api_calls} calls, {twitter_usage.posts_read} posts read "
+        f"(${twitter_usage.posts_read * 0.005:.2f}), {twitter_usage.users_read} users read "
+        f"(${twitter_usage.users_read * 0.01:.2f}), total ${twitter_usage.estimated_cost_usd:.4f}"
+    )
     print(f"  Total: ${total_cost:.4f}")
 
     print("Done!")

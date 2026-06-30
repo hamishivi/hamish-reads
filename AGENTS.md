@@ -4,14 +4,14 @@ This file provides context for AI agents working in this repository.
 
 ## Project overview
 
-Daily AI research digest: fetches arxiv papers, Twitter home timeline, and news headlines. Uses Claude to rank papers and summarize tweets. Publishes a static website via GitHub Pages at https://ivison.id.au/hamish-reads/.
+Daily AI research digest: fetches arxiv papers, Twitter home timeline, and news headlines. Uses OpenAI to rank papers and summarize tweets. Publishes a static website via GitHub Pages at https://ivison.id.au/hamish-reads/.
 
 ## Key concepts
 
 - **Backend** (`src/`): Python scripts orchestrated by `src/main.py`. Each module is independent and returns dataclasses. The orchestrator calls them in sequence. Supports `--date YYYY-MM-DD` for backfills.
 - **Frontend** (`docs/`): Vanilla HTML/CSS/JS static site. No build step, no framework. Data is loaded client-side from JSON files in `docs/data/`. URL hash (`#YYYY-MM-DD`) for date navigation.
 - **Data contract**: The backend writes JSON to `docs/data/YYYY-MM-DD/{papers,tweets,news,cost}.json`. The frontend reads these. `docs/data/dates.json` is the index. `docs/data/cost_log.json` tracks cumulative costs.
-- **Cost tracking**: Every Claude and Twitter API call is tracked. Daily cost written to `cost.json`, cumulative to `cost_log.json`, shown in the page footer.
+- **Cost tracking**: Every OpenAI and Twitter API call is tracked. Daily cost written to `cost.json`, cumulative to `cost_log.json`, shown in the page footer.
 
 ## Module responsibilities
 
@@ -20,17 +20,17 @@ Daily AI research digest: fetches arxiv papers, Twitter home timeline, and news 
 | `src/arxiv_scanner.py` | Fetches papers via RSS feeds, filters by author list | arxiv RSS (via `httpx`) |
 | `src/notion_client.py` | Reads PhD Hub page and its child pages for project topics | Notion API (via `notion-client`) |
 | `src/twitter_scanner.py` | Fetches home timeline via OAuth 1.0a, paginated | Twitter API v2 (via `tweepy`, OAuth 1.0a) |
-| `src/claude_ranker.py` | Ranks papers by relevance, categorizes/summarizes tweets. Tracks token usage and cost. | Anthropic API (via `anthropic`) |
+| `src/openai_ranker.py` | Ranks papers by relevance, categorizes/summarizes tweets. Tracks token usage and cost. | OpenAI API (via `openai`) |
 | `src/news_scanner.py` | Fetches headlines from 9 publications via RSS | RSS feeds (via `httpx`) |
 | `src/data_writer.py` | Writes daily JSON + cost tracking files | None (filesystem only) |
 | `src/main.py` | Orchestrates all modules in sequence | None (calls other modules) |
 
 ## Configuration
 
-`config.yaml` at the repo root: arxiv categories, ~140 author names, Twitter user ID, `max_pages` for Twitter cost control, Notion PhD Hub page ID, Claude model.
+`config.yaml` at the repo root: arxiv categories, ~140 author names, Twitter user ID, `max_pages` for Twitter cost control, Notion PhD Hub page ID, OpenAI model.
 
 Environment variables (set as GitHub repo secrets):
-- `ANTHROPIC_API_KEY`
+- `OPENAI_API_KEY`
 - `TWITTER_API_KEY`, `TWITTER_API_SECRET`, `TWITTER_ACCESS_TOKEN`, `TWITTER_ACCESS_TOKEN_SECRET` (OAuth 1.0a)
 - `NOTION_API_KEY`
 
@@ -61,7 +61,7 @@ The frontend is self-contained in `docs/`. No build step — just edit and reloa
 ### Testing locally
 ```bash
 uv sync
-export ANTHROPIC_API_KEY=...
+export OPENAI_API_KEY=...
 export TWITTER_API_KEY=...
 export TWITTER_API_SECRET=...
 export TWITTER_ACCESS_TOKEN=...

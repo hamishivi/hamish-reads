@@ -382,6 +382,9 @@
 
         if (cost) {
             const costParts = [];
+            if (cost.openai) {
+                costParts.push(`OpenAI $${cost.openai.estimated_cost_usd.toFixed(4)}`);
+            }
             if (cost.claude) {
                 costParts.push(`Claude $${cost.claude.estimated_cost_usd.toFixed(4)}`);
             }

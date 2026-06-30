@@ -60,7 +60,7 @@ def fetch_project_topics(
             try:
                 page_blocks = client.blocks.children.list(block_id=page_id_child)
                 description = _extract_text_from_blocks(page_blocks["results"])
-                # Truncate long descriptions to keep Claude prompts manageable
+                # Truncate long descriptions to keep LLM prompts manageable.
                 if len(description) > 1000:
                     description = description[:1000] + "..."
             except Exception:

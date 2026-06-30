@@ -8,8 +8,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from .arxiv_scanner import Paper
-from .claude_ranker import TweetDigest, UsageStats
 from .news_scanner import PublicationFeed
+from .openai_ranker import TweetDigest, UsageStats
 from .twitter_scanner import TwitterUsageStats
 
 DOCS_DIR = Path(__file__).parent.parent / "docs"
@@ -38,7 +38,7 @@ def write_daily_data(
     ranked_papers: list[Paper],
     tweet_digest: TweetDigest,
     news_feeds: list[PublicationFeed] | None = None,
-    claude_usage: UsageStats | None = None,
+    llm_usage: UsageStats | None = None,
     twitter_usage: TwitterUsageStats | None = None,
 ) -> Path:
     """Write papers.json and tweets.json for a given date, and update dates.json."""
@@ -46,14 +46,16 @@ def write_daily_data(
     day_dir.mkdir(parents=True, exist_ok=True)
     generated_at = datetime.now(timezone.utc).isoformat()
 
-    claude_cost = claude_usage.to_dict() if claude_usage else None
+    openai_cost = llm_usage.to_dict() if llm_usage else None
     twitter_cost = twitter_usage.to_dict() if twitter_usage else None
-    total_cost = (claude_usage.estimated_cost_usd if claude_usage else 0) + (twitter_usage.estimated_cost_usd if twitter_usage else 0)
+    total_cost = (llm_usage.estimated_cost_usd if llm_usage else 0) + (
+        twitter_usage.estimated_cost_usd if twitter_usage else 0
+    )
     cost_info = {
-        "claude": claude_cost,
+        "openai": openai_cost,
         "twitter": twitter_cost,
         "total_estimated_cost_usd": round(total_cost, 4),
-    } if (claude_cost or twitter_cost) else None
+    } if (openai_cost or twitter_cost) else None
 
     # Write papers.json
     papers_data = {
