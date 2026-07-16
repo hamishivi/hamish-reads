@@ -1,0 +1,593 @@
+{
+  "date": "2026-07-16",
+  "generated_at": "2026-07-16T03:45:53.099438+00:00",
+  "author_papers": [
+    {
+      "arxiv_id": "2607.12279",
+      "title": "A Shared Subcircuit Lets LLMs Count Down Across Tasks",
+      "authors": [
+        "Jacob Dunefsky",
+        "Wes Gurnee",
+        "Emmanuel Ameisen"
+      ],
+      "abstract": "Writing a sentence of exactly twelve words; ending a DNA sequence at the right codon; formatting an ASCII table. These are all tasks that language models can do that requires tracking how many tokens remain before a target. In this work, we identify in Llama-3.1-70B-Instruct a general mechanism for performing these tasks: a \"countdown subcircuit\" that compares the current position to a goal length and estimates the time remaining until then. We first isolate a countdown subcircuit in a controlled setting, in which the model is tasked with writing a fixed-length sentence ending in a specified word. We then investigate the geometry of the representations used by the subcircuit, and find that the subcircuit uses an identical motif previously identified in a frontier LLM on a separate task, thus suggesting that this motif is shared across models. Finally, we use unsupervised probing on a natural language dataset to find a variety of other tasks where this subcircuit is used, including tasks where the goal length is inferred from context rather than explicitly stated. Our work suggests that reverse-engineering subcircuits allows us to understand how behaviors generalize from a single example to many different tasks and even models.",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "published": "2026-07-15T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.12279",
+      "pdf_url": "https://arxiv.org/pdf/2607.12279",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2607.12963",
+      "title": "The Illusion of Robustness: Aggregate Accuracy Hides Prediction Flips under Task-Irrelevant Context",
+      "authors": [
+        "Yanzhe Zhang",
+        "Sanmi Koyejo",
+        "Diyi Yang"
+      ],
+      "abstract": "As large language models (LLMs) grow more capable, they are increasingly deployed in context-rich settings where task inputs are often accompanied by long, partially irrelevant context. In a controlled setting, we find that state-of-the-art models often appear robust to task-irrelevant context at the aggregate level: prepending it to benchmark questions causes little change in overall accuracy. This aggregate stability, however, masks significant per-example instability. Even semantically meaningless pseudo-words, formed by randomly combining characters, can markedly shift model predictions on a small fraction of examples, degrading performance on some while improving it on others. This two-sided effect holds consistently across a wide range of models and datasets, yet the affected examples are largely model-specific. We further show that this instability is modulated by context type, context length, test-time compute, and model development stage. Together, our findings reveal context-induced tail risks concealed by aggregate accuracy, motivating per-example reliability evaluation of language models.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-07-15T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.12963",
+      "pdf_url": "https://arxiv.org/pdf/2607.12963",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2607.12236",
+      "title": "Speculate with Memory: Lossless Acceleration for LLM Agents",
+      "authors": [
+        "Yu Li",
+        "Qinyuan Ye",
+        "Prafulla Kumar Choubey",
+        "Jiaxin Zhang",
+        "Chien-Sheng Wu"
+      ],
+      "abstract": "Speculative execution accelerates LLM agents by using a smaller, cheaper model to predict and pre-launch the next step while the environment is idle. However, existing speculators are stateless and discard all information between tasks, preventing prediction quality from improving with experience. We equip the speculator with three online memory systems that learn from past agent trajectories: a contrastive transition table tracking action-sequence statistics, an episodic memory retrieving contextually similar segments, and a confusion tracker suppressing recurring errors. We evaluate this approach on six benchmarks spanning three speculation types: action prediction, observation prediction, and chained prediction. Memory-augmented speculation yields a 19--39\\% relative accuracy improvement on action prediction and up to a $2.5\\times$ increase on observation prediction tasks with repetitive action spaces. These gains grow continuously as memory accumulates and generalize across speculator models of varying cost. All speculation is lossless because it runs during idle time at zero added wall-clock cost, and the actor's trajectory is identical to non-speculative execution.",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "published": "2026-07-15T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.12236",
+      "pdf_url": "https://arxiv.org/pdf/2607.12236",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2607.12649",
+      "title": "Extractable Memorization From First Principles",
+      "authors": [
+        "A. Feder Cooper",
+        "Marika Swanberg",
+        "Jamie Hayes",
+        "Lea Duesterwald",
+        "Christopher De Sa",
+        "Daniel E. Ho",
+        "Mark A. Lemley",
+        "Percy Liang"
+      ],
+      "abstract": "Recent work on extractable memorization in LLMs suffers from two contrasting validity problems. Some studies overstate extraction, e.g., relying on sequences too short to distinguish memorization from predictability. Others imply that extraction is unreliable evidence of memorization, since models can also reproduce real-world text they weren't explicitly trained on. In different ways, both overlook what makes a valid extraction claim: the model must generate a training sequence with high enough probability to indicate memorization. To determine what's high enough, one has to perform a matched comparison: measuring the generation probabilities of both the training sequences of interest and comparable non-training sequences. Because non-training sequences cannot have been memorized, their probabilities provide a baseline for predictability; a training sequence exceeding this baseline provides evidence of memorization. We formalize matched comparisons in two ways: (1) a conformal test that calibrates a threshold to a chosen FPR when training and non-training sequences are sampled from populations, and (2) a census that calibrates against a matched non-training document when the object is a single document (e.g., a book). We show that matched comparisons enable rigorous, calibrated memorization claims, and reveal where prior setups have validity issues. For instance, on Wikipedia OLMo 2 32B reproduces non-training 10-token suffixes roughly 24% as often as training ones: that share of the training generation rate reflects false positives, not memorization. For Llama 3.1 70B on books, the thresholds we calibrate are as low as 1e-27, supporting memorization claims for sequences that no feasible sampling budget would extract. Based on these results, we refine \"extractable memorization\" to require a valid memorization claim and near-certain generation within a realistic budget.",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "published": "2026-07-15T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.12649",
+      "pdf_url": "https://arxiv.org/pdf/2607.12649",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2607.11959",
+      "title": "Calibration-First Reward-Component Auditing for Reinforcement Learning Control in Smart Greenhouses",
+      "authors": [
+        "Yuhui Bie",
+        "Guowei Xu",
+        "Yaojun Wang"
+      ],
+      "abstract": "Greenhouse reinforcement learning can test climate-control ideas at a speed and scale that is difficult to achieve with crop experiments alone. For smart-greenhouse control, however, a single simulator return is not enough: a grower or control engineer also needs to know when the policy heats, enriches CO2, vents, manages humidity, deploys screens, or uses lamps.We propose a reproducible calibration-first reward audit framework that keeps named greenhouse-control reward components comparable across simulator training, facility-adapted rollouts, logged Autonomous Greenhouse Challenge records, and actuator-rule distillation. In GreenLight-Gym, the framework decomposes the scalar reward into conditional temperature, CO2, humidity and vapor-pressure-deficit, screen, and actuation-proxy terms; adapts GreenLight to the second Autonomous Greenhouse Challenge logged climate traces; and scores the same components on logged greenhouse data.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-15T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.11959",
+      "pdf_url": "https://arxiv.org/pdf/2607.11959",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2607.12227",
+      "title": "Rethinking the Evaluation of Harness Evolution for Agents",
+      "authors": [
+        "Yike Wang",
+        "Huaisheng Zhu",
+        "Zhengyu Hu",
+        "Yige Yuan",
+        "Zhengyu Chen",
+        "Shakti Senthil",
+        "Hannaneh Hajishirzi",
+        "Yulia Tsvetkov",
+        "Pradeep Dasigi",
+        "Teng Xiao"
+      ],
+      "abstract": "We revisit the evaluation of automatic harness evolution for LLM agents. Existing harness evolution methods use unit test cases to search for harness configurations and then report final performance on the same public benchmark. This protocol raises two fundamental concerns. First, harness evolution is itself an iterative search procedure that repeatedly evaluates and revises candidate harnesses using task feedback. As in agentic test-time scaling, it should therefore be compared with simple task-level search baselines under matched feedback and inference budgets to determine whether its gains arise from improved harness design or from additional search alone. Second, because the search and the final evaluation share the same benchmark, the reported gains risk overfitting to that specific task set. To address these concerns, we conduct an extensive evaluation comparing harness evolution with simple test-time scaling and discovery baselines under comparable feedback and inference budgets, and also evaluate evolved harnesses on held-out tasks to assess whether the discovered improvements generalize. Experiments on Terminal-Bench 2.1 with GPT-5.4 and Claude Opus 4.6 show that automatic harness evolution does not consistently outperform simple test-time scaling methods and exhibits limited generalization. Our results raise important questions about the effectiveness of automatic harness evolution and highlight the need for fairer evaluation protocols and benchmarks for automatic harness design. Our code is available at https://github.com/rethinking-harness-evolution.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-15T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.12227",
+      "pdf_url": "https://arxiv.org/pdf/2607.12227",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2607.12455",
+      "title": "EVOQUANT: Self-Evolving Verifier-Guided Strategy Optimization for Robust Quantitative Trading",
+      "authors": [
+        "Jie Mao",
+        "Changlun Li",
+        "Xiang Li",
+        "Qiqi Duan",
+        "Jinhui Yuan",
+        "Xiang Liu",
+        "Yuyu Luo",
+        "Jing Tang",
+        "Xiaowen Chu",
+        "Nan Tang"
+      ],
+      "abstract": "Quantitative strategy optimization remains largely manual, requiring domain experts to identify weak signals, tune risk-control rules, and repeatedly validate iterative revisions. Large language models can accelerate this process, but directly relying on them to rewrite trading strategies often introduces hallucinated edits, strategy drift, and backtest overfitting. We propose EVOQUANT, a self-Evolving Verifier-guided framework for strategy Optimization in Quantitative trading. Our method utilizes LLMs to deeply diagnose performance bottlenecks, generates semantically controlled candidate edits, selects the best strategy through a multi-stage verification pipeline, and distills optimization experience into reusable knowledge for continual self-improvement. We evaluate our method using seven representative strategies: four from the A-share market and three from the Crypto market. Experimental results show that our method significantly improves the Sharpe ratio across all tested strategies: the average test Sharpe increases from -0.298 to 0.538, and the best-performing strategy achieves a 199% relative improvement. Ablation studies and stress tests under stricter conditions further validate the effectiveness and robustness of the framework. Overall, this work transforms quantitative strategy optimization from costly manual trial and error into an automated and verifiable iterative paradigm, offering a new path for applying large language models to financial strategy research.",
+      "categories": [
+        "cs.AI",
+        "cs.CE"
+      ],
+      "published": "2026-07-15T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.12455",
+      "pdf_url": "https://arxiv.org/pdf/2607.12455",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2607.11978",
+      "title": "Gene Expression-Informed Jointly Controlled Generative Modeling for Precision Molecular Design",
+      "authors": [
+        "Hang Yuan",
+        "Chen Li",
+        "Wenjun Ma",
+        "Tadahiko Murata",
+        "Yuncheng Jiang"
+      ],
+      "abstract": "Precision molecular design aims to discover personalized drug candidates through joint control of multiple conditions, such as biological relevance and molecular design strategies. Biological relevance reflects cellular functional states under disease or perturbation conditions, while molecular design strategies provide complementary guidance in terms of structural intentions and property optimization. In this study, we propose JoPMol, a jointly controlled precision molecular generative model that integrates biological states encoded by gene expression profiles with molecular structure information expressed in text, and chemical properties quantified by numerical values within a unified modeling framework. This formulation enables coordinated generation and optimization of candidate molecules under joint condition control. Experimental results show that JoPMol outperforms state-of-the-art methods across multiple evaluation metrics. Moreover, JoPMol demonstrates strong generalization ability in both transfer tasks and biologically grounded simulation scenarios, validating its effectiveness for precision molecular design. The source code is publicly available at https://github.com/hala-yh/JoPMol.",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-07-15T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.11978",
+      "pdf_url": "https://arxiv.org/pdf/2607.11978",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    }
+  ],
+  "ranked_papers": [
+    {
+      "arxiv_id": "2607.12885",
+      "title": "LLM Judges Can Be Too Generous When There Is No Reference Answer",
+      "authors": [
+        "Chalamalasetti Kranti",
+        "Sowmya Vajjala"
+      ],
+      "abstract": "LLM judges are increasingly being used to evaluate open-ended model responses, often in no-reference settings where a ground-truth answer is unavailable. However, can they reliably assess in such evaluation setups? We explore this question in this paper through a two stage pipeline with a) calibration experiments that assess the judge model's knowledge of the task it is evaluating, and b) sensitivity experiments that assess how the judge model's performance is impacted by the presence and positioning of the reference answer in the prompt. Across experiments covering three languages, we show that the judge models we evaluated tend to over-credit incorrect answers in the absence of a reference answer, and adding reference answer information to the prompt flips the judge model's correct/incorrect decisions by as much as 85% in some experimental settings. Comparison with a subset of human annotations shows that these reference-driven changes generally align with human judgments. Our results emphasize the need for calibrating the LLM judges with a sample with reference-aware evaluation before using them in reference-free setups reliably, and our methodology provides a blueprint for researchers and practitioners in doing such calibration of LLM judges for other tasks.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-07-15T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.12885",
+      "pdf_url": "https://arxiv.org/pdf/2607.12885",
+      "is_author_match": false,
+      "relevance_score": 10.0,
+      "relevance_reason": "Extremely relevant to Hunter/Shuchao work because it directly identifies a key weakness of LLM judges in no-reference grading settings."
+    },
+    {
+      "arxiv_id": "2607.12962",
+      "title": "Form, Not Content? A Preregistered, Placebo-Controlled Evaluation of Learned Error-Conditioned Self-Repair Through Prompts and Weights in Frozen Small Code Models",
+      "authors": [
+        "Mehmet Iscan"
+      ],
+      "abstract": "Frozen small code LLMs are deployed locally, yet the information guiding a retry after a failed attempt is still measured without placebo controls in the self-repair literature. We treat a failed program as a conjecture and an execution counterexample as an oracle-relative refutation, and introduce PoPE (Popperian Placebo-controlled Evaluation): a methodology for measuring whether evidence that falsifies LLM-generated code can be used operationally by that same model. In PoPE, error content is paired with channel-specific placebos that keep the predeclared scaffold while ablating task-relevant content or deranging the task-error assignment. Frozen small code models (0.5-1.5B) are evaluated under preregistered rules through a prompt channel and a weight channel (small-data adapter training), with four generations per arm-unit pair. In the prompt channel, public-tier screening unlocked 12 units under the content-ablated form placebo versus 10 under the live error-pattern arm on a 40-unit resistant band; the result was recorded as mechanism-null. In the weight channel, an 8-8 tie was observed between the error-content adapter and the intervention-free baseline (p=1.0), while the SHA-deranged placebo adapter stayed ahead with 10 unlocks; content-attributable superiority was not confirmed. These results do not constitute evidence of equivalence or non-inferiority. Equivalence was not tested separately. Findings are restricted to the public-tier screening endpoint; hidden-tier confirmation was deferred by design. We read this not as compiled criticism disappearing as information, but as the loss of its external role in testing a new conjecture: when a representation learned from the oracle is written back into the generation state, testing is replaced by conditioning. No working JEPA-RL controller is claimed. PoPE is presented as a placebo-controlled, retestable measurement standard.",
+      "categories": [
+        "cs.SE",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-07-15T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.12962",
+      "pdf_url": "https://arxiv.org/pdf/2607.12962",
+      "is_author_match": false,
+      "relevance_score": 10.0,
+      "relevance_reason": "This directly studies error-conditioned self-repair with placebo controls in small code models, making it highly relevant to your interests in explicit self-correction, failing first, and evaluating whether feedback actually helps."
+    },
+    {
+      "arxiv_id": "2607.12252",
+      "title": "FinResearchBench II: A Deep Research Benchmark with Consensus-Derived Gold Rubrics for Distinguishing Financial Report Quality",
+      "authors": [
+        "Beidi Luan",
+        "Rui Sun",
+        "Sinuo Wang",
+        "Yan Gu",
+        "Chao Li",
+        "Zhenliang Xiong",
+        "Jing Li",
+        "Zuo Bai"
+      ],
+      "abstract": "Deep research agents are increasingly used to produce long-form financial reports, yet large-scale evaluation remains bottlenecked by the need for human experts to define and execute high-quality rubrics. We address this problem by proposing a scalable pipeline for generating high-quality rubrics without human experts in the final loop. We build a financial deep research benchmark from 104 real-world user queries and automatically synthesize 14,450 query-specific candidate rubrics from model-generated reports. To justify removing human experts from rubric execution, we compare rubric judgments from three human experts with those from a three-LLM judge panel on a sampled subset, and show that LLM-based evaluation is sufficiently consistent with human evaluation to replace it for large-scale rubric screening, including 98.67\\% label-level agreement on jointly unanimous items. We then derive consensus-derived gold rubrics through two filters: a strict consistency filter, which keeps a rubric only if the three LLM judges unanimously agree on every report under the same query, and a distinguishability filter, which keeps a rubric only if it assigns at least one majority-yes and at least one majority-no label across the evaluated systems. This process retains 3,687 consistency-passed rubrics, of which 2,600 remain distinguishable and form the final set of consensus-derived gold rubrics. Using this final rubric set, we obtain clearly differentiated rankings across 10 deep research systems, with item-level pass rates ranging from 58.58\\% to 22.23\\%. More broadly, because the pipeline removes human-expert execution from rubric generation and evaluation, it is naturally scalable for benchmark evaluation, automatic system comparison, and future studies of evaluation-driven system improvement.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-07-15T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.12252",
+      "pdf_url": "https://arxiv.org/pdf/2607.12252",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "It focuses on scalable rubric generation and evaluation for long-form deep research outputs, making it especially relevant to your grading and LM-judge concerns."
+    },
+    {
+      "arxiv_id": "2607.12835",
+      "title": "Can LLMs Write Reliable Rubrics? A Meta-Evaluation for Experiment Reproduction",
+      "authors": [
+        "Hanhua Hong",
+        "Yizhi Li",
+        "Jiaoyan Chen",
+        "Luu Gia Huy",
+        "Sophia Ananiadou",
+        "Jung-jae Kim",
+        "Chenghua Lin"
+      ],
+      "abstract": "Rubric-based evaluation is a promising approach for assessing open-ended outputs from LLM-based research agents, particularly in paper reproduction, where direct paper-to-repository comparison is prone to hallucination. However, constructing paper-specific rubrics requires substantial expert effort, limiting the scalability of benchmarks such as PaperBench. In this work, we present, to our knowledge, the first systematic meta-evaluation of LLM-generated rubrics for paper reproduction. We reformulate rubrics into a checklist-style format and evaluate four generation settings across two backbone models. We meta-evaluate generated rubrics intrinsically by semantic similarity and extrinsically by score alignment with ground-truth rubrics. Our results show that the augmented settings substantially improves downstream evaluation alignment, with the strongest setting approaching the human baseline, while intrinsic gains are more modest. Further analyses reveal that LLM-generated rubrics are often overly fine-grained, biased toward high scores, and less adaptive to paper domains, highlighting both the affordances and limitations.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-07-15T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.12835",
+      "pdf_url": "https://arxiv.org/pdf/2607.12835",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Highly relevant to grading research since it directly studies whether LLMs can generate reliable rubrics for evaluating open-ended agent outputs and reproductions."
+    },
+    {
+      "arxiv_id": "2607.12790",
+      "title": "Who Grades the Grader? Co-Evolving Evaluation Metrics and Skills for Self-Improving LLM Agents",
+      "authors": [
+        "Xing Zhang",
+        "Guanghui Wang",
+        "Yanwei Cui",
+        "Ziyuan Li",
+        "Wei Qiu",
+        "Bing Zhu",
+        "Peiyang He"
+      ],
+      "abstract": "Self-evolving agent systems improve by creating, revising, and retiring their own skills, but every such loop rests on a hidden assumption: a reliable evaluation metric already exists. In many real applications it does not. We make three claims. First, metrics can be \\emph{evolved}: our metric loop searches compositions of small drawback detectors under a full evolutionary lifecycle, trained to agree with a ten-item anchored reference set, regularized by consensus over unlabeled outputs, and audited against a held-out anchor it never reads, yielding a transparent, inspectable metric rather than an opaque judge. Second, since no metric exists to beat, the yardstick is recovering what an accurate metric would have enabled, and \\emph{Double Ratchet}, our co-evolution of the metric with a lifecycle-managed skill loop, does so: across code generation (MBPP+), enterprise text-to-SQL (Spider~2.0-Snow), and reference-free report generation, it retains 88--110\\% of the held-out lift achieved by the same skill loop driven by ground truth or the best available rubric. Third, safety comes from anchor discipline plus outer audits: removing anchor guards collapses the metric into a vacuous detector while removing the lifecycle does not; and when evolved skills gamed the report rubric, an independent judge caught it, one detector repaired it, and a task-aware judge then preferred the evolved outputs over the pre-evolution baseline in 77\\% of decided pairs. We argue this failure-expecting architecture is the right default wherever no reliable automatic verifier exists.",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.MA"
+      ],
+      "published": "2026-07-15T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.12790",
+      "pdf_url": "https://arxiv.org/pdf/2607.12790",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Highly relevant to the grading/evaluation projects because it directly studies how evaluation metrics for self-improving LLM agents can themselves be evolved, which speaks to LM-judge weaknesses and robust long-rollout grading."
+    },
+    {
+      "arxiv_id": "2607.12397",
+      "title": "Critic Experience Bank: Self-Evolving Step-Level Confidence Estimation for LLM Agents",
+      "authors": [
+        "Yaopei Zeng",
+        "Congchao Wang",
+        "JianHang Chen",
+        "Nan Wang",
+        "Yurui Chang",
+        "Lu Lin"
+      ],
+      "abstract": "LLM agents act in external environments where each action changes the state that later decisions condition on, and where a single wrong step can waste interaction budget or trigger irreversible side effects long before the final failure is observed. Reliable deployment therefore requires \\emph{step-level confidence estimation}: a calibrated probability that each proposed action is productive, available \\emph{before} the action is executed. Existing LLM confidence estimators are designed to score a response from the given prompt, but agent confidence also depends on execution consequences: whether similar actions in similar situations actually advanced the task after the environment responded. We introduce the \\method (\\methodshort), a self-evolving critic framework in which an LLM critic accumulates evidence from its own past judgments and their observed consequences. After each trajectory, a hindsight LLM that sees the full execution feedback votes on whether each step was productive. The resulting pseudo-labels populate a memory bank from which related productive and unproductive experiences are retrieved into the critic's prompt whenever a similar step recurs. \\methodshort requires no training and uses no ground truth step labels. Across three agent benchmarks and three critic backbones, \\methodshort attains the best calibration (ECE and Brier) and ranking (AUC) in every dataset--critic combination, reducing ECE by up to $54\\%$ relative to the strongest training-free baseline.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-15T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.12397",
+      "pdf_url": "https://arxiv.org/pdf/2607.12397",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Very relevant to explicit self-correction and long-rollout grading because it targets step-level confidence estimation for LLM agents, enabling finer-grained detection of likely failures before final outcomes."
+    },
+    {
+      "arxiv_id": "2607.12733",
+      "title": "LLMs Can See the Smoke but not the Fire: Evaluating Abductive Reasoning with Elenchos",
+      "authors": [
+        "Julius Steiglechner",
+        "Lucas Mahler",
+        "Gabriele Lohmann"
+      ],
+      "abstract": "Large language models (LLMs) excel at pattern recognition and text generation, but their capacity for abductive inference - inferring latent hypotheses that explain observed behavior - remains poorly understood. Here, we introduce Elenchos (named after the Socratic method of cross-examination), a generative evaluation framework that measures abductive reasoning as a structural inverse problem. Given a reference formal system, such as the lambda-calculus, and a potentially mutated counterpart, agents must determine whether a mutation has occurred and infer the rule modifications responsible for the resulting behavioral differences. Evaluating frontier and mid-tier LLMs reveals a consistent detection-attribution dissociation: models often recognize that a system has been altered but struggle to identify the latent mutations causing the observed discrepancies. Performance degrades substantially under interacting mutations, where models frequently recover only a subset of the underlying mutations. Preliminary evidence also suggests diminishing returns from increased inference-time reasoning, with only modest improvements under larger reasoning budgets, though this finding requires further validation.",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-07-15T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.12733",
+      "pdf_url": "https://arxiv.org/pdf/2607.12733",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Highly relevant to the brainstorming on surprising/noisy observations and hypothesis formation because it introduces an evaluation framework for abductive reasoning from observations to latent explanations."
+    },
+    {
+      "arxiv_id": "2607.12267",
+      "title": "Track, Rank, Crack: Epistemic Working Memory Scales Multi-Hop Reasoning in Language Agents",
+      "authors": [
+        "Ning Liu"
+      ],
+      "abstract": "Language agents that interleave reasoning and tool use degrade sharply as reasoning chains lengthen, even when each individual step is easy. We trace this to context dilution: an agent's investigative state (what it has confirmed, what it suspects, and what it still needs) lives only implicitly in a growing context window, where early discoveries are buried under later retrievals. We introduce SLEUTH, which makes this state explicit and actionable through a structured epistemic working memory: the agent maintains Confirmed Facts grounded to sources, Active Hypotheses ranked by evidence, and Open Questions that directly drive its next action. Across five multi-hop benchmarks and five established baselines, SLEUTH's advantage grows with difficulty, from +5 points on HotpotQA to +11 on 4-hop chains, surpassing Reflexion without multiple episodes. Analyzing where the remaining gap lies, we identify the evidence sufficiency problem: agents often find the answer but fail to commit, exhausting their budget on needless verification. A lightweight commitment trigger fixes this, but only when the agent already maintains structured state: the identical trigger applied to an unstructured agent yields no improvement, isolating organized epistemic state as the necessary condition for effective commitment. Finally, enforcing protocol adherence on a weaker model recovers up to +19 points on the hardest problems, showing that how an agent organizes its reasoning, not raw model capability, is the active ingredient for scaling multi-hop reasoning.",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-07-15T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.12267",
+      "pdf_url": "https://arxiv.org/pdf/2607.12267",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "This paper targets multi-hop reasoning failures in language agents via explicit working memory, making it very relevant to long-horizon reasoning, self-correction, and grading long rollouts."
+    },
+    {
+      "arxiv_id": "2607.12469",
+      "title": "Agent-Safety Evaluations as Load-Bearing Evidence: A Vendor-Neutral, Cross-Harness Reconstructability Metric",
+      "authors": [
+        "Oleg Solozobov"
+      ],
+      "abstract": "Many agent-safety evaluation results are not yet load-bearing evidence: identical nominal outcomes (task success, attack success, monitor scores) may sit atop materially different evidence regimes. No vendor-neutral, runnable instrument scores reconstructability as an evaluation-validity metric: whether captured evidence can reconstruct the decision a claim depends on. This paper introduces a property-level reconstructability metric over eight decision-property classes and a cross-harness adapter emitting per-decision Evidence Sufficiency Cards backing a per-run monitor-coverage release check. It specifies a counterfactual-replay intervention protocol, implements its replayability-precondition probe, and defines a claim-evidence overclaim gap. On public and bundled traces, without new model runs, twelve-field sufficiency spans 0.458-0.833 across four inputs sharing a surface reading; replay preconditions are unmet in every scored trace. In a synthetic release-gate pair, the sufficiency gate blocks the raw variant (0.542) and passes the instrumented (0.667). Safety-evaluation claims should travel with their reconstructability vector; a reproducibility package regenerates every reported number.",
+      "categories": [
+        "cs.SE",
+        "cs.AI"
+      ],
+      "published": "2026-07-15T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.12469",
+      "pdf_url": "https://arxiv.org/pdf/2607.12469",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Highly relevant to your evaluation work because it proposes a vendor-neutral metric for whether agent-eval evidence is reconstructable and thus actually supports grading or safety claims."
+    },
+    {
+      "arxiv_id": "2607.12792",
+      "title": "Silent Alarm: A J-Space Protocol for Comparing Danger Recognition Across Models and Quantization Levels",
+      "authors": [
+        "Roman Prosvirnin",
+        "Victor Minchenkov",
+        "Alexey Soldatov",
+        "Vladimir Bashun"
+      ],
+      "abstract": "Jailbreak-robustness research typically evaluates safety through generated responses using an LLM-as-judge approach. Such evaluations, however, are sensitive to the benchmark's grading procedure and capture only observed behavior on a given set of attacks, without directly revealing the hidden fragility of the underlying safety mechanisms. This work proposes JADR (Jacobian Assessment of Danger Recognition), a protocol that measures a model's internal representation through Jacobian space (J-space, a recently proposed workspace of verbalizable concepts) before the first response token is generated. For every prompt and layer we record the top-k J-space tokens; these are grouped into six behavioral scenario axes and compared between a danger sample based on StrongREJECT and a safe control drawn from XSTest and OKTest. The method does not call on an external judge model: the computation runs entirely locally, on the activations of the model under evaluation, which lets us compare both different models against each other and modifications of a single model -- quantization and fine-tuning in particular -- on the same terms. The final comparison rests on the proposed SafetyAUC metric, complemented with bootstrap confidence intervals. The protocol is applied to six models (Qwen3-1.7B, Qwen3-4B, Qwen3-8B, Qwen3-Uncensored-4B, Qwen3-SafeRL-4B, Gemma 2 9B) across three weight-representation regimes -- BF16, INT8, and INT4 -- and checked against an independent behavioral evaluation with the StrongREJECT grader. The metric separates models with a strong versus a weak internal safety mechanism with statistical significance and captures substantively different effects across quantization regimes.",
+      "categories": [
+        "cs.CR",
+        "cs.AI"
+      ],
+      "published": "2026-07-15T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.12792",
+      "pdf_url": "https://arxiv.org/pdf/2607.12792",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Very relevant to your concern that LLM judges have weaknesses, because it explicitly critiques response-based judging and proposes an alternative protocol for comparing hidden safety fragility."
+    },
+    {
+      "arxiv_id": "2607.11953",
+      "title": "When Does Reward Teach State? A Hidden-Automaton Instrument and the Group-Language Boundary",
+      "authors": [
+        "Jim Allchin"
+      ],
+      "abstract": "Does a reinforcement-learning agent that earns high reward represent its task's latent state, or only a reward-correlated shortcut? Usually this is unanswerable: the \"true state\" is undefined. We make it exactly answerable with a white-box instrument: express the task as a hidden deterministic finite automaton (DFA), let the agent observe a symbol stream and intermittently choose the next symbol under partial control, with a sparse terminal reward for acceptance. Knowing the automaton gives two things for free: the optimal return (so reward becomes an interpretable normalized score) and the exact latent state at every step (so we can probe the agent's representation without ever showing it). Reward success and latent-state learning become separately measured quantities whose coupling is governed by three axes. Optimizer strength: under weak on-policy RL the agent can lock onto a reward-shortcut, earning reward with the state probe at chance; whether it escapes is set by optimizer strength, budget, and task structure -- a pre-registered control isolates the optimizer (PPO+GAE), which escapes fastest but only partially and with high seed variance. Task structure: permutation (group-language) structure is a warning sign computable from the transition function before any training, and held out on 153 capacity-controlled fresh automata it flags perception gaps at precision 0.86 (89 of 103), in one direction only. Observation informativeness: a label-free auxiliary is vacuous when observations carry no state and recovers it sharply once they carry any (a threshold, saturating near beta=0.1). The payoff is a distinction reward-only evaluation cannot make: a perception gap (state not linearly recoverable, though representable) versus a planning gap (state recoverable but not exploited). Reward alone cannot localize which; high reward alone is not evidence the state was learned.",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-07-15T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.11953",
+      "pdf_url": "https://arxiv.org/pdf/2607.11953",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "This paper proposes a clean instrument for testing whether RL agents truly learn latent state versus reward-correlated shortcuts, which is very relevant to your interest in long-horizon tasks, counterfactual-style environments, and surprise-sensitive evaluation."
+    },
+    {
+      "arxiv_id": "2607.11981",
+      "title": "Evaluating Nonuniform Dependability Across Response Conditions: A Conditional Generalizability Framework Illustrated in Automated Essay Scoring",
+      "authors": [
+        "Yi Gui"
+      ],
+      "abstract": "Aggregate reliability estimates can obscure heterogeneity in measurement-design burden across response conditions, so a single G- or D-study may mischaracterize a design's adequacy for particular strata. This study introduces a conditional generalizability framework with three components. First, automated scoring configurations -- the encoder architectures and scoring-head families admissible within a fixed pipeline -- are treated as a universe of admissible measurement conditions rather than incidental modeling choices. Second, analytical D-study projections are compared with empirical configuration sweeps over a finite scoring pool, yielding two estimands of design adequacy whose agreement or divergence diagnoses the realized configuration universe. Third, evidence is conditioned on entropy-defined response strata, treating entropy as an operational stratification variable, not a construct claim about writing quality. Whereas recent generalizability-theory extensions address AI-generated item variants on the response side, this framework addresses the analogous scoring-side problem: AI-mediated scoring configurations. Demonstrated with automated essay scoring of timed L2 writing, the realized design was dependable in aggregate (Phi approx 0.76). Re-estimated within entropy strata, dependability stayed high but declined modestly and robustly (Phi = 0.88, 0.87, 0.84) -- a gradient implying different decision-study requirements, the highest-entropy stratum requiring the most crossed conditions. The framework offers a portable workflow for evaluating nonuniform dependability.",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-07-15T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.11981",
+      "pdf_url": "https://arxiv.org/pdf/2607.11981",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "This directly studies conditional reliability of automated scoring under different response conditions, making it highly relevant to your interest in better grading and evaluating long or heterogeneous rollouts."
+    },
+    {
+      "arxiv_id": "2607.12051",
+      "title": "Agentic systems for breast cancer treatment recommendations",
+      "authors": [
+        "Vinicius Anjos de Almeida",
+        "N\\'icolas Henrique Borges",
+        "Leonardo Vicenzi",
+        "Helena Kociolek",
+        "Sarah Miri\\~a de Castro Rocha",
+        "Frederico Nassif Gomes",
+        "J\\'ulia Cristina Ferreira Ribeiro",
+        "Lucas Emanuel Silva e Oliveira"
+      ],
+      "abstract": "Large language models (LLMs) are increasingly being explored for clinical decision support, but their reliability in complex oncology treatment planning remains unclear. We evaluated agentic LLM systems for breast cancer treatment recommendation generation using 72 real clinical cases across stages I to IV and 1,147 case-specific rubrics generated through Asymmetric Information Rubric Generation (AIRG), in which the rubric generator had access to real clinical decisions unavailable to the evaluated models. Seven pipelines were compared, including single-LLM baselines, tool-augmented systems, and multi-agent architectures with fact checking and autonomous subagent spawning. The best-performing configuration, Claude Opus 4.8 with the D&C+SA pipeline, achieved a global score of 0.594 $\\pm$ 0.025. Tool use and increased agent autonomy had mixed effects, improving performance in some settings but degrading it in others. Performance varied by clinical domain and disease stage, and oncologist-led error analysis revealed persistent clinically relevant failures, including incorrect or missing recommendations, flawed justifications, citation errors, outdated claims, and overconfidence. These findings suggest that agentic LLM systems can generate clinically relevant breast cancer recommendations, but remain insufficient for unsupervised clinical use.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-07-15T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.12051",
+      "pdf_url": "https://arxiv.org/pdf/2607.12051",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Its use of detailed case-specific rubrics to evaluate complex agentic outputs is closely aligned with your work on scalable grading for long-horizon model behavior."
+    },
+    {
+      "arxiv_id": "2607.12216",
+      "title": "RCWT: Measuring Task-Budget Displacement from Coordination Content in LLM Calls",
+      "authors": [
+        "Brenda Lelis",
+        "Rodrigo Cabral-Carvalho"
+      ],
+      "abstract": "Multi-agent and memory-augmented LLM systems often place coordination content, shared state, prior discussion, tool outputs, summaries, and role instructions, inside the same finite prompt used for the current task. This creates a practical allocation problem: every token spent on coordination is unavailable to task instructions or evidence when a call is assembled under a fixed context budget. We introduce the Roundtable Context Window Test (RCWT), a controlled protocol for measuring this task-budget displacement effect. RCWT varies coordination content while controlling total budget, position order, task family, and scoring. In the main context-dependent recall task at $W=4096$, three commercial models remain near baseline through moderate overhead and then degrade sharply once residual reference evidence falls to a few hundred tokens. Window-scaling summaries are consistent with a task-specific residual-budget interpretation rather than a fixed percentage threshold, but we treat this as descriptive evidence rather than a universal law. To test whether the fixed-budget cliff persists when task evidence remains intact, we add an intact-task ablation: the full task/reference block is kept present while coordination tokens increase by expanding total prompt length. In that setting, all tested calls return every scored field correctly across GPT-4.1-mini, Claude Haiku 4.5, and Gemini 2.5 Flash up to a 95\\% coordination ratio. This ablation narrows the claim: the main RCWT cliff is best read as task-budget displacement, not as proof that coordination volume alone causes semantic interference in the original open-ended task. RCWT is therefore a measurement primitive for context-allocation budgeting, not a complete theory of multi-agent benefit or session-level coordination.",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.MA"
+      ],
+      "published": "2026-07-15T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.12216",
+      "pdf_url": "https://arxiv.org/pdf/2607.12216",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "This paper formalizes how coordination and memory consume finite prompt budget in multi-agent systems, which is directly useful for analyzing long-rollout agent performance and evaluation."
+    },
+    {
+      "arxiv_id": "2607.12640",
+      "title": "A Learning-Rate-Gated Failure of GRPO in a Small Language and Vision-Language Model Web Agent: A Controlled Null and Its Mechanism",
+      "authors": [
+        "Chengguang Gan",
+        "Zhixi Cai",
+        "Yunhao Liang",
+        "Hanjun Wei",
+        "Shiwen Ni",
+        "Qinghao Zhang"
+      ],
+      "abstract": "Reinforcement learning with verifiable rewards, and Group Relative Policy Optimization (GRPO) in particular, is now run routinely on a supervised checkpoint in the hope of producing a stronger agent. We ask whether it adds skill to a small language and vision-language model web agent at the 4B to 8B scale, or whether it mostly reshapes behavior the supervised model already has. Across a control grid of 18 runs that varies learning rate, KL weight, seed, initialization, and clipping, no configuration credibly improves the success rate of a strong supervised baseline on tasks the agent has largely mastered. On the text track, moderate to high learning rates make it credibly worse. The null holds under paired testing, 25 evaluation seeds, 6 training seeds, changes to the recipe, both text and Set-of-Marks screenshot observations, and scaling the backbone to 8B; the credible harm is a text-track finding and is only nominal under Set-of-Marks. To show that the null reflects the setting and not a broken pipeline, we run the identical harness, reward, and recipe on tasks whose reward is reachable by sampling, and there the success rate rises by 22 points with a paired interval that excludes zero. GRPO therefore helps only when there is headroom to climb, meaning the sampled policy already succeeds more often than the greedy one. We then explain the failure. A middle learning rate degrades the agent and a high one collapses it, and the two regimes form a double dissociation: grafting localizes the degrade regime to the attention and MLP blocks, while the collapse regime cannot be traced to any single group, and the embedding change that dominates the weight movement is causally inert. At 4B, effective rank in the late layers tracks capability in both directions; at 8B the two come apart. This coupling is specific to the smaller model, so we report it as scale-dependent.",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-07-15T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.12640",
+      "pdf_url": "https://arxiv.org/pdf/2607.12640",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Highly relevant to on-policy distillation and RL-agent questions because it presents a controlled negative result on GRPO for small web agents and analyzes the failure mechanism."
+    },
+    {
+      "arxiv_id": "2607.12747",
+      "title": "Tracing Agentic Failure from the Flow of Success",
+      "authors": [
+        "Samuel Yeh",
+        "Yiwen Zhu",
+        "Shaleen Deep",
+        "Sharon Li"
+      ],
+      "abstract": "Failure attribution for LLM-based agentic systems, i.e., identifying which steps in a failure trajectory caused the task to fail, is critical for debugging and improving these systems. Existing approaches either rely on prompting-based pipelines, which are computationally expensive, or require post-training on failure trajectories with step-level error annotations, which are costly to collect and difficult to scale. We argue that a practical failure attribution model should be lightweight and trainable without step-level supervision on failure data. To this end, we address unsupervised failure attribution, i.e., training exclusively on successful trajectories and identifying error steps at inference time given a failure trajectory. We propose OAT, which casts this problem as one-class learning with neural controlled differential equations, modeling the dynamical pattern of successful trajectories in latent space. At inference time, each step in a failure trajectory is assigned an anomaly score based on its deviation from the dynamics learned on successful trajectories, which is then used to form a set of error steps. With training on only 100 successful trajectories, experiments show that OAT is 200--5000 $\\times$ faster than prompting-based baselines, and, at the same time, consistently outperforms them in both in-domain and out-of-distribution datasets with +20% and +7% F1 scores, respectively, demonstrating that OAT is a promising and efficient direction for diagnosing agentic system failures.",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-07-15T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.12747",
+      "pdf_url": "https://arxiv.org/pdf/2607.12747",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Strong fit for long-rollout grading and self-correction work because it focuses on attributing which steps in an agent trajectory caused eventual failure."
+    },
+    {
+      "arxiv_id": "2607.12085",
+      "title": "Operationalising Multi-Dimensional Evaluation for Conversational Agents: A Scalable, Governed Pipeline with Selective Re-evaluation and Model Benchmarking",
+      "authors": [
+        "Niranjan Kumar M",
+        "Balaji Nagarajan",
+        "Karthik Nair",
+        "Faysal Satter",
+        "Nithin Surendran"
+      ],
+      "abstract": "Evaluating retail conversational agents requires methods beyond lexical-overlap metrics to assess intent alignment, factuality, helpfulness, clarity, tone, and overall response quality. Although LLM-as-a-judge methods provide scalable alternatives to human evaluation, production deployment introduces challenges in governance, reproducibility, cost, schema consistency, traceability, and reliability. We present GenAI Evaluation, a governed, configuration-driven pipeline for large-scale evaluation of retail conversational systems. It processes production chatbot logs through normalization, sharding, asynchronous execution, and schema-constrained LLM scoring. The framework evaluates helpfulness, truthfulness, clarity, tone alignment, and translation-specific dimensions. Selective re-evaluation processes only incomplete, malformed, or schema-invalid records, while schema locking, versioned configurations, validation logs, and record-level provenance support auditability. The framework processes approximately 50,000 records daily and has evaluated more than two million interactions. Validation used 12,980 stratified-random human-labeled records from four trained annotators. Classification covered 14 intents, 156 sub-intents, 18 major domains, and 129 sub-domains. The pipeline achieved a macro F1 score of 0.93 and 89% human-acceptability accuracy for translation.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-15T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.12085",
+      "pdf_url": "https://arxiv.org/pdf/2607.12085",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Strongly relevant to the grading project because it operationalizes scalable multi-dimensional evaluation for conversational agents and explicitly discusses governance, reproducibility, and LLM-as-a-judge reliability."
+    },
+    {
+      "arxiv_id": "2607.12338",
+      "title": "How Many Tasks Are Enough for Agent Benchmark Decisions? A Replay Analysis of Public LLM Agent Benchmarks",
+      "authors": [
+        "Wei-Jung Huang"
+      ],
+      "abstract": "Agent benchmarks often compare two agents after all tasks have run, but costly evaluations make partial runs tempting. A task fraction alone does not show whether a partial run supports the same pairwise conclusion as the completed benchmark. We study this question by replaying completed public task-level records from SWE-bench, AppWorld, and tau-bench. A partial budget counts as enough only when it supports the completed benchmark's decision, covers required task groups, and leaves no more than a target fraction of comparisons unresolved. The required task fraction varies sharply. At the strict 0 percentage point threshold on a 5 percentage point budget grid, AppWorld first meets all targets at 15 percent, tau-bench at 25 percent, and SWE-bench Verified at 90 percent; SWE-bench Lite does not meet all targets by 95 percent under the primary coverage rule. Partial-evaluation reports should state how much one agent must outperform another, how tasks are selected, what coverage rule is required, what decision rule is used, and how many comparisons may remain unresolved.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-15T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.12338",
+      "pdf_url": "https://arxiv.org/pdf/2607.12338",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Highly relevant because it analyzes how many tasks are needed for reliable agent benchmark decisions, directly connecting to evaluation efficiency and trustworthy grading of expensive long-horizon benchmarks."
+    },
+    {
+      "arxiv_id": "2607.12385",
+      "title": "PM-Bench: Evaluating Prospective Memory in LLM Agents",
+      "authors": [
+        "Genglin Liu",
+        "Saadia Gabriel"
+      ],
+      "abstract": "A significant challenge in agentic AI is prospective memory: the ability to execute an intention at a specific future cue or state while other activities are ongoing. We introduce PM-Bench, a text-based benchmark for measuring prospective memory capabilities in modern LLM agents. Inspired by the Virtual Week paradigm from cognitive science, PM-Bench evaluates how well LLM agents maintain user intentions, execute delayed intentions, and monitor latent environment changes. Over the course of a simulated seven-day week, agents must continue an ongoing activity while deciding whether any deferred task is due. We compare eight state-of-the-art LLMs on PM-Bench under eight different agent configurations. PM-Bench proves challenging across all settings: the best method, a GPT-5.4 agent, reaches only 65.1\\% F1 score under our evaluation. Furthermore, no single strategy for improving prospective memory dominates across models. We release PM-Bench as a controlled testbed for diagnosing these failures and developing training or inference-time interventions that support reliable prospective behavior.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-15T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.12385",
+      "pdf_url": "https://arxiv.org/pdf/2607.12385",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Strongly relevant to long-horizon scientific-task interests because it introduces a benchmark for prospective memory in LLM agents, a core capability for sustained multi-step behavior."
+    },
+    {
+      "arxiv_id": "2607.12985",
+      "title": "Resist and Update: Counterfactual Report Coordinates for Incentive-Compatible LLMs",
+      "authors": [
+        "Sen Yang",
+        "Yuen-Hei Yeung"
+      ],
+      "abstract": "Aligned language models routinely misreport under non-evidential incentive pressure: they agree with a confident user or overstate certainty even when their internal belief is unchanged. We cast this as a failure of internal incentive-compatibility (IC) and present a method for learning and certifying counterfactual report mediators that hold a model's reports to a causal contract: invariant to forbidden influences (pressure, prestige, restyling) and responsive to licensed ones (genuine evidence). These two demands, resist and update, pull in opposite directions. We study them on a Bayesian-witness benchmark with known posteriors, in which the same user disagreement is licensed evidence or forbidden pressure purely by stated source reliability. We (i) causally identify, by interchange interventions rather than probe accuracy, low-rank report coordinates for answer, confidence, and caveat that are near-orthogonal and independently controllable, and (ii) introduce a training-free counterfactual report-coordinate (CRC) clamp that references the model's own report under a counterfactually incentive-neutralized context. On the witness benchmark the two-pass clamp attains resist and update of 1.00 jointly (Wilson 95% CI [0.99,1.00]), a causal certificate under a constructible reference, not a deployed solution. Global decoding and steering show a single-parameter tradeoff; output-level fine-tuning matches both objectives only when both are enumerated; resist-only training loses evidence-responsiveness. The deployable single-pass compilation is lossy (0.73/0.97). The mechanism and clamp reproduce across three model families and transfer to a natural sycophancy benchmark (SycophancyEval). Our contribution is the interface and certification method: activation-level counterfactual incentive-invariance as a structural primitive for internal IC.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-15T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.12985",
+      "pdf_url": "https://arxiv.org/pdf/2607.12985",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Strongly relevant to explicit self-correction and counterfactual evaluation because it focuses on incentive-compatible reporting under counterfactual interventions and misreporting pressure."
+    }
+  ]
+}
