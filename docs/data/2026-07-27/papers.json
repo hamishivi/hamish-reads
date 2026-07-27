@@ -1,0 +1,528 @@
+{
+  "date": "2026-07-27",
+  "generated_at": "2026-07-27T04:12:58.106881+00:00",
+  "author_papers": [
+    {
+      "arxiv_id": "2607.21856",
+      "title": "LeAct: Learning to Reason from Expert Actions",
+      "authors": [
+        "Ziran Yang",
+        "Chengshuai Shi",
+        "Raj Ghugare",
+        "Benjamin Eysenbach",
+        "Karthik Narasimhan",
+        "Chi Jin"
+      ],
+      "abstract": "Modern reasoning models depend on reasoning data, today sourced from human annotations or distilled from stronger LLMs. However, a rich and largely untapped source of supervision lies in expert systems (e.g., game engines, classical planners, theorem provers), which routinely produce near-optimal actions across diverse domains. But these experts are silent: they commit to an action without writing down the chain of thought (CoT) behind it. Recovering that CoT as natural-language reasoning would distill expert knowledge into a student that generalizes beyond the demonstrated actions. We treat it as a latent variable and study how to recover it from the action alone. Our approach, LeAct (Learning to reason from Actions), optimizes this latent variable: the student samples candidate CoTs for each expert action, and we retain those that measurably improve its own probability of recovering the action. Across imperfect-information games at multiple scales and a simulated robotics benchmark, LeAct reaches the solver's numerical floor on small enumerable games. At larger scale, it is $5\\times$ closer to the solver than the strongest expert-iteration baseline. At Flop Hold'em ($\\sim 10^9$ infosets), LeAct wins head-to-head by $+60$ mbb/g, and on the robotics probe it is the only training recipe that improves on direct imitation. We present a principled framework and the result: expert systems become a categorically new source of reasoning teachers for foundation models.",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-07-27T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.21856",
+      "pdf_url": "https://arxiv.org/pdf/2607.21856",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2607.22305",
+      "title": "A Roadmap to Impactful Pluralistic Alignment Research",
+      "authors": [
+        "Elinor Poole-Dayan",
+        "Jillian Fisher",
+        "Atoosa Kasirzadeh",
+        "Jacob Andreas",
+        "Mitchell Gordon",
+        "Michiel A. Bakker"
+      ],
+      "abstract": "Pluralistic value alignment---the goal of building AI systems that represent and serve diverse human values and perspectives---has emerged as an active research agenda. Yet, there's no public evidence that it has shaped the training or evaluation of the AI systems people actually use. We audit the public behavior documents and evaluations of frontier labs, finding none name pluralism as a goal, and as of this writing, no clear indication that production models are explicitly trained or tested for it. This goes against the primary motivations and goals of pluralistic alignment, which revolve around making a positive difference in the models serving billions of users worldwide. We argue that the pluralistic alignment research community should focus on supporting impact and adoption in deployed, widely-used AI systems. We provide evidence for the adoption problem, present three main reasons behind it, and discuss three corresponding areas for future research to address it: 1. The primary justifications for pluralistic alignment so far have been normative or speculative. We need studies showing empirically how pluralistic AI benefits users or society. 2. The pluralistic alignment research community has not settled when pluralistic behavior is warranted or what pluralism ideally looks like in practice. We need to establish a concrete goal for developers to operationalize. 3. Current methods trade off against other desiderata of LLMs in ways that are largely unmeasured, and existing metrics are not \"hill-climbable.\" We need trade-off-aware evaluations and methods that meet the requirements of production systems. This paper serves as a collective call to action for the pluralistic alignment researchers: progress requires moving beyond normative justification toward empirical foundations, a concrete account of ideal pluralistic behavior, and practical methods and evaluations built for adoption.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-27T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.22305",
+      "pdf_url": "https://arxiv.org/pdf/2607.22305",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2607.22024",
+      "title": "Agent Security Needs Redefinition through a Holistic Framework",
+      "authors": [
+        "Vincent Siu",
+        "Jingxuan He",
+        "Kyle Montgomery",
+        "Zhun Wang",
+        "Chenguang Wang",
+        "Dawn Song"
+      ],
+      "abstract": "Agent security is widely treated as a question about action content. Defenses ask whether an instruction looks malicious. Benchmarks ask whether an agent performs a harmful sounding action. \\textbf{We argue that agent security is fundamentally a contextual problem, and that the current content based framing systematically misdefines it.} A command to ``delete user data'' might be a routine administrative request or a prompt injection attacking production systems, and the content alone cannot distinguish the two. Authorization context can. Across every injection task in AgentDojo and WASP, the same action is one an authenticated user would plausibly request in a routine workflow, which makes the conflation a structural property of evaluating security through content.   We operationalize contextual security through four properties that must hold jointly and be evaluated continuously across the agent's trajectory. Source Authorization asks who issued the command. Task Alignment specifies the agent's authorized objective. Action Alignment evaluates whether each action serves that objective. Data Isolation governs information flows across privilege boundaries. Under this reframing, indirect prompt injection becomes a Source Authorization violation. Snapshot benchmarks are structurally incapable of evaluating Data Isolation. Existing defenses are reorganized around the property they actually approximate. The contextual reframing changes which defenses are coherent, which evaluations measure something useful, and which attack patterns evaluation can see at all.",
+      "categories": [
+        "cs.CR",
+        "cs.AI"
+      ],
+      "published": "2026-07-27T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.22024",
+      "pdf_url": "https://arxiv.org/pdf/2607.22024",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2607.21843",
+      "title": "Simulation-Based Empirical Bayes",
+      "authors": [
+        "Xinwei Shen",
+        "Diana Cai",
+        "Cheng Zhang",
+        "David M. Blei"
+      ],
+      "abstract": "Empirical Bayes (EB) performs simultaneous inference across many related latent variables. Classical EB assumes that the likelihood p(x | z) is tractable. In many scientific applications, however, the likelihood is available only through a simulator. This paper develops EB for such implicit likelihoods. We introduce simulation-based empirical Bayes (SBEB), which connects nonparametric EB to simulation-based inference (SBI). SBEB computes EB estimates without an explicit density by using the observed data, simulator samples, and an amortized inference network. SBEB iteratively refines the fitted EB prior toward the population prior. With several scientific simulators and real-world data, we demonstrate that SBEB improves accuracy over SBI with a fixed prior.",
+      "categories": [
+        "stat.ML",
+        "cs.LG"
+      ],
+      "published": "2026-07-27T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.21843",
+      "pdf_url": "https://arxiv.org/pdf/2607.21843",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    }
+  ],
+  "ranked_papers": [
+    {
+      "arxiv_id": "2607.21632",
+      "title": "A Consensus-Based Framework for Relative Preference Evaluation of Large Language Models",
+      "authors": [
+        "Mohtashim Khan"
+      ],
+      "abstract": "Traditional benchmarks for LLMs primarily rely on static datasets and objective scoring metrics, which often fail to capture differences in response quality when multiple answers are acceptable. In such settings, correctness alone is insufficient to distinguish between responses that vary in clarity, completeness, and usefulness.   This paper introduces a consensus-based evaluation framework that measures relative preference among model-generated responses rather than absolute correctness. Instead of evaluating outputs against a fixed ground truth, we assess how a panel of diverse LLMs ranks anonymized candidate responses to the same prompt. This approach treats aggregate inter-model agreement as a proxy for perceived response quality under blind conditions.   We conduct a controlled study using five state-of-the-art LLMs across multiple domains, including programming, general knowledge, safety, logical reasoning, and mathematics. Each model generates responses and independently ranks peer outputs through a structured voting process. Scores are aggregated into a Relative Intelligence Index (RII), representing how frequently a model's responses are preferred by other models.   Our findings reveal consistent preference patterns across domains, with certain models more frequently ranked highly by their peers. However, we emphasize that these results reflect inter-model preference alignment rather than objective correctness or human judgment. This framework provides a scalable, model-driven method for comparative evaluation, offering an alternative perspective on response quality in scenarios where multiple valid answers exist. While not directly aligned with human evaluation, prior work suggests that aggregated model preferences can partially correlate with human judgments, motivating this as a proxy signal.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-07-27T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.21632",
+      "pdf_url": "https://arxiv.org/pdf/2607.21632",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Highly relevant to the grading and LM-as-judge projects because it proposes a relative preference evaluation framework explicitly aimed at comparing response quality when objective correctness is insufficient."
+    },
+    {
+      "arxiv_id": "2607.22334",
+      "title": "Cross-Tokenizer On-Policy Distillation via Byte-Prefix Marginalization",
+      "authors": [
+        "Hao Wang",
+        "Kun Yuan",
+        "Wenlin Zhong",
+        "Minglei Zhang",
+        "Han Xiao",
+        "Ming Sun",
+        "Honggang Qi"
+      ],
+      "abstract": "Open-weight language models from different families exhibit complementary capabilities, motivating their consolidation into a compact student through on-policy distillation (OPD). However, full-vocabulary OPD typically assumes a shared tokenizer, while existing cross-tokenizer methods may discard teacher probability mass or assign it to student tokens with unrelated content. We introduce Byte-Prefix Marginalization (BPM), which re-expresses the teacher's next-token distribution over the student vocabulary in a shared byte space. Specifically, BPM assigns each teacher token's probability to the longest student token whose byte representation is a prefix of the teacher token's bytes, aggregates mass mapped to the same student token, and places otherwise unmatched mass in an explicit residual category. This produces a vocabulary-complete, byte-aligned, and mass-preserving target for dense OPD. The target exactly recovers the teacher-induced byte-prefix marginal when the relevant prefix does not span multiple teacher tokens (a condition satisfied at more than 99% of training positions) and uses a mass-preserving, chain-factorized lower bound otherwise. Across Qwen3-32B, GLM-Z1-9B-0414, and MiniMax-M2.7 as teachers, BPM consistently outperforms current cross-tokenizer methods on six mathematics and programming benchmarks, improving six-benchmark avg@8 by 3.7-6.6 points over the strongest baselines.",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-07-27T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.22334",
+      "pdf_url": "https://arxiv.org/pdf/2607.22334",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Directly aligned with Hunter Prep because it is specifically about cross-tokenizer on-policy distillation, one of your explicitly listed discussion interests."
+    },
+    {
+      "arxiv_id": "2607.22368",
+      "title": "Do Agent Benchmarks Measure Capability? Protocol Validity in the Age of Agentic AI",
+      "authors": [
+        "Jiaqi Shao",
+        "Hanck Chen",
+        "Wei Zhang",
+        "Maxm Pan",
+        "Bing Luo"
+      ],
+      "abstract": "Agent benchmarks increasingly evaluate repository editing, web research, terminal use, and long-horizon interaction. Their scores support capability claims only when the evaluation protocol keeps the intended capability necessary for success. Recent reward-hacking benchmarks and system reports show that agents can instead recover public solutions, read evaluation artifacts, infer generator structure, manipulate feedback, or benefit from invalid scoring paths; existing responses do not provide a common procedure for attributing these shortcuts and quantifying their effect across benchmarks. We formulate protocol validity and introduce HackDetect, a post-hoc audit that identifies an exposure, determines how the agent used it, and assesses whether the resulting score is misleading. We quantify score inflation with the Mislead gap, defined as the exploit score minus the intended score. We audit 2,385 traces across 15 agent benchmarks and find evidence of exposures and reward hacking in 67.0% of Frontier Science traces and 66.7% of AutoLab tasks. Across paired comparisons, we measure score inflation of 0.45-1.00, showing that benchmark reports should provide evidence that scores reflect the intended capability.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-27T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.22368",
+      "pdf_url": "https://arxiv.org/pdf/2607.22368",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "This is highly relevant because it directly asks whether agent benchmarks validly measure capability, closely matching your concerns about evaluation design, reward hacking, and whether benchmarks test the intended abilities."
+    },
+    {
+      "arxiv_id": "2607.22511",
+      "title": "CausalForge: A Formally Grounded, Self-Improving Agentic Framework for Automated Research in Causal Inference",
+      "authors": [
+        "Jiyuan Tan",
+        "Vasilis Syrgkanis"
+      ],
+      "abstract": "Automating theoretical research is constrained not only by the generation of candidate results, but also by their reliable evaluation. A common approach is to close the research loop with a large language model (LLM) reviewer. However, such reviewers remain empirically unreliable: they may accept fabricated papers and detect them at rates close to chance (Bad Scientist, 2025). We present CausalForge, a framework for automated theoretical research in causal inference grounded in the Lean proof assistant. CausalForge combines Causalean, a foundational Lean library for causal inference containing 7,035 machine-checked declarations developed with language-model assistance under human design and review, with CausalSmith, a self-improving agentic pipeline that selects research topics, proposes results, formalizes statements, constructs proofs, and presents the resulting artifacts for human inspection. Because a machine-checked proof establishes only that a formal statement follows from its assumptions, not that the statement faithfully captures the intended scientific claim, the pipeline augments kernel verification with a statement audit that compares each formal theorem against the informal claim it is intended to express. We evaluate the system using artifacts produced by completed autonomous research runs. The source code, formal library, and run records are available at https://github.com/Jiyuan-Tan/CausalForge.",
+      "categories": [
+        "stat.ML",
+        "cs.AI",
+        "cs.LG",
+        "econ.EM"
+      ],
+      "published": "2026-07-27T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.22511",
+      "pdf_url": "https://arxiv.org/pdf/2607.22511",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "This is highly relevant because it explicitly addresses unreliable LLM reviewers and proposes a formally grounded alternative for evaluation in automated research loops, closely matching your concerns about judge weakness and better grading."
+    },
+    {
+      "arxiv_id": "2607.22430",
+      "title": "On the Identifiability of Controlled World Models",
+      "authors": [
+        "Xiangteng Zhang",
+        "Yang Guan",
+        "Bo Zhang",
+        "Ya-Qin Zhang",
+        "Shengbo Eben Li"
+      ],
+      "abstract": "Learning world models that infer environment dynamics from high-dimensional observations and predict outcomes under candidate actions is central to planning and control. Joint-Embedding Predictive Architectures (JEPAs) provide a compelling framework for learning such models in representation space. Recent action-conditioned extensions perform promisingly in visual control and latent-space planning, but leave a fundamental question unresolved: when does controlled latent prediction identify both the underlying state and the controlled dynamics? This is challenging under nonlinear observations and behavior policies with limited conditional action variation, where state-dependent evolution and action effects can be statistically confounded. We establish a joint identifiability theory for controlled world models with Gaussian latent states under state-dependent Gaussian behavior policies. We identify two policy-dependent conditions: spectral separation of the predictable signal governs representation identifiability, while non-degenerate conditional action variation governs transition identifiability. We prove that when both conditions hold, every global minimizer of the JEPA objective identifies the latent state and controlled transition up to an orthogonal transformation. We further derive quantitative bounds on representation and transition identifiability under approximate optimization. Finally, we construct predictor perturbations along weakly excited action directions whose counterfactual-to-on-policy error ratio is the inverse transition-identifiability margin, revealing the cost of limited action coverage. Experiments across nonlinear observation maps and behavior policies corroborate the theory and demonstrate implications for transition identifiability, counterfactual prediction, and goal-conditioned latent planning.",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-07-27T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.22430",
+      "pdf_url": "https://arxiv.org/pdf/2607.22430",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Highly relevant to your long-horizon/RL interests because identifiability of controlled world models is central to learning and evaluating agents that must infer dynamics, revise hypotheses, and plan under noisy observations."
+    },
+    {
+      "arxiv_id": "2607.21962",
+      "title": "Ground Truth First: A Longitudinal Evaluation Instrument for Agent Memory, and the Tenure Crossover in Memory-Architecture Rankings",
+      "authors": [
+        "Quentin Spencer"
+      ],
+      "abstract": "Benchmarks for LLM-agent memory typically generate conversations first and extract answer keys afterwards -- with documented label-error and contamination problems -- and they overwhelmingly measure short interaction histories. We invert the pipeline: a seeded life-script sampler emits facts with validity intervals, volatility classes, and source channels before any text exists; an LLM renderer writes chat and email from per-event fact manifests; a fidelity verifier confirms every planted fact; and questions are instantiated mechanically from the script, so gold answers are script-valid by construction and separately validated for answerability. The synthetic, fictionalized corpus (~380 questions, 15 types) embeds features absent from the benchmarks we survey: per-fact validity intervals, sent/received trust distinctions, injection probes in a benign harness, and as-of-date question sets. Benchmarking five memory architectures against a no-memory control (fixed answerer, versioned LLM judge, three replicates, two horizons), we find backend rankings invert with history length: the budgeted curated-map memory that leads at three weeks loses recall of evicted content by nine weeks (96% to 72%) while a provenance-typed graph rises to 90%; the inversion is positive for all six users under complete cross-family re-judging (exact p=0.031). A full-rendered-history baseline ties or exceeds the best memory system at the short horizon but shows no judge-independent advantage at nine weeks, at about twice the read cost. Write-stage quality strongly correlates with downstream quality (weakly-written facts fail 24% vs 2%), and injection resistance tracked whether provenance boundaries survive representation. A layered architecture performs best among the memory systems in both regimes (96.8% short-horizon) and is released as Veracium, an open-source library, with the corpus generator and harness.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-07-27T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.21962",
+      "pdf_url": "https://arxiv.org/pdf/2607.21962",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Strongly relevant to long-horizon task evaluation because it presents a longitudinal benchmark for agent memory and emphasizes ground-truth-first evaluation over extended interaction histories."
+    },
+    {
+      "arxiv_id": "2607.22529",
+      "title": "Skill Self-Play: Pushing the Frontier of LLM Capability with Co-Evolving Skills",
+      "authors": [
+        "Siyuan Huang",
+        "Pengyu Cheng",
+        "Haotian Liu",
+        "Tao Chen",
+        "Yihao Liu",
+        "Jingwei Ni",
+        "Shijie Zhou",
+        "Ziyi Yang",
+        "Gangwei Jiang",
+        "Mengyu Zhou",
+        "Yu Cheng",
+        "Xiaoxi Jiang",
+        "Guanjun Jiang"
+      ],
+      "abstract": "LLM training is shifting from manual design and annotation to interaction-driven self-evolution. However, existing self-evolutionary methods face a fundamental dilemma between task diversity and verification reliability: environment-bound methods obtain precise feedback but confine learning to narrow domains, while open-ended self-generation broadens the task space but lacks reliable verification, allowing misleading rewards to pollute the training loop. We identify agent skills as a powerful middle ground to reconcile this tension: each skill ensures deep, verifiable execution in a specific scenario, while dynamic routing across skills maintains open-ended task variety. Leveraging this insight, we introduce Skill Self-Play (Skill-SP), a co-evolutionary framework comprising a proposer, a solver, and a dynamic skill controller. Orchestrated via a reinforcement learning loop, these components co-evolve in a continuous self-play loop: the proposer generates challenging tasks conditioned on dynamically sampled skills; the solver explores candidate solutions to push its capability boundaries; and the skill controller collects execution feedback to update and expand the skill library. This interactive co-evolution effectively bridges the gap between structured verification and open-ended exploration. Empirical evaluations on tool-use and reasoning benchmarks demonstrate that Skill-SP, serving as a robust evolution engine, consistently pushes the performance ceiling of competent backbones while catalyzing striking turnarounds for initially misaligned models. Our code is available at https://github.com/Qwen-Applications/skill-self-play.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-07-27T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.22529",
+      "pdf_url": "https://arxiv.org/pdf/2607.22529",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Highly relevant to the interest in tasks that require failure, feedback, and self-improvement because it focuses on self-evolving skills with verification in interactive learning settings."
+    },
+    {
+      "arxiv_id": "2607.21971",
+      "title": "Teaching LLMs to Self-Evolve: Cultivating Core Meta-Skills with Reinforcement Learning",
+      "authors": [
+        "Shujin Wu",
+        "Cheng Qian",
+        "Xiusi Chen",
+        "Heng Ji"
+      ],
+      "abstract": "Test-time scaling through iterative self-evolution with environment feedback, as demonstrated by AlphaEvolve, shows remarkable performance gains. We hypothesize that the success of such evolution frameworks hinges on meta-skills, such as self-reflection with environment feedback, that enable effective multi-round refinement, yet are largely neglected by traditional post-training. To bridge this gap, we present MetaEvolve, a framework designed to develop these meta-skills via a data synthesis pipeline, evolution-aware reinforcement learning (RL), and inference-time evolutionary search. Concretely, we ground MetaEvolve in coding, where program execution provides natural, continuous reward signals beyond binary correctness. Building on these signals, we synthesize evolution trajectories as training data, each containing a current program, its fitness score (combining correctness and efficiency), and a history of prior attempts, and train the model via RL with verifiable rewards derived from test case execution. By training on large-scale code data, we aim to inspire generalizable domain-agnostic meta-skills that can transfer broadly to open-ended problems where such rich training signals are scarce. Across seven coding benchmarks, MetaEvolve outperforms the strongest baseline by 10.01% absolute on in-distribution tasks and 24.12% on out-of-distribution tasks. On open-ended algorithm optimization problems entirely outside the training domain, it further achieves a 46.9% relative improvement. These results demonstrate that explicitly cultivating self-evolution meta-skills offers a principled path toward more capable and autonomously self-evolving AI.",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-07-27T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.21971",
+      "pdf_url": "https://arxiv.org/pdf/2607.21971",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Very relevant to explicit self-correction and long-horizon agent behavior because it trains LLMs for iterative refinement with environment feedback and meta-skills for self-evolution."
+    },
+    {
+      "arxiv_id": "2607.21616",
+      "title": "Lost in Context: Addressing Context Anxiety in Large Language Models",
+      "authors": [
+        "Ifueko Igbinedion",
+        "Jillian Ross",
+        "Etienne Ricardez",
+        "Sertac Karaman",
+        "Eric So"
+      ],
+      "abstract": "Conventional wisdom suggests that reasoning models fail when problems exceed their capabilities. However, we find that frontier reasoning models sometimes possess the necessary capabilities to solve problems but fail due to premature self-doubt -- a phenomenon informally known as context anxiety. We provide the first systematic study of context anxiety, demonstrating that it arises, in part, from a model's inability to accurately estimate the tokens required to complete a task. We also show that context anxiety leads to material efficiency losses when models operate under perceived constraints. Building on this analysis, we further show that models can learn alternative strategies for solving long-horizon problems without exhibiting context anxiety, suggesting that performance improvements may be achievable not through scaling model capabilities, but by improving models' ability to accurately assess and adapt to their own limitations.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-27T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.21616",
+      "pdf_url": "https://arxiv.org/pdf/2607.21616",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Highly relevant to the Google brainstorming on surprising information and explicit self-correction since it analyzes failures caused by premature self-doubt despite underlying capability."
+    },
+    {
+      "arxiv_id": "2607.21627",
+      "title": "Do Modules Stay in Their Lane? Role Drift in Compound LLM Systems",
+      "authors": [
+        "Xiaoyang Cao",
+        "Siddarth Srinivasan",
+        "Michiel A. Bakker"
+      ],
+      "abstract": "End-to-end reinforcement learning can improve the accuracy of compound LLM systems, but it does not constrain how modules divide labor internally. We identify Role Drift, a failure mode in which modules preserve or improve end-task performance while deviating from their assigned roles through role-violating shortcuts that remain invisible to system-level evaluation. To make role drift observable and controllable, we propose Role Anchor, a regularizer that modulates how much each module deviates from its assigned role during end-to-end training. The key idea is to preserve how the role prompt shifts the module's next-token predictions relative to a neutral prompt, which serves as a proxy for the role's intended effect during training. Experiments on two compound LLM pipelines reveal role drift that accuracy alone fails to detect: a decomposer meant to split a question into sub-questions for a separate solver instead plants the answer in them, and a reader meant to answer from retrieved passages instead falls back on parametric memory. In fact, on the decomposer pipeline this shortcut drives most of the apparent RL gain: 86% of it vanishes once the decomposer is held to its role, indicating that terminal accuracy alone can badly overstate how much a compound system has genuinely learned. Across both pipelines, Role Anchor mitigates role drift at a tunable accuracy cost that varies by pipeline and anchor strength. Additional gradient analysis suggests that the regularizer reduces alignment with the role-drift direction rather than simply suppressing learning.",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-07-27T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.21627",
+      "pdf_url": "https://arxiv.org/pdf/2607.21627",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Its analysis of role drift in compound LLM systems is highly pertinent to evaluating agent behavior beyond end-task success, especially for grading long rollouts and diagnosing hidden failure modes."
+    },
+    {
+      "arxiv_id": "2607.22157",
+      "title": "Learning on the Job: Continual Learning from Deployment Feedback for Frozen-Weights Agents",
+      "authors": [
+        "Valentin Tablan",
+        "Scott Taylor",
+        "Kristoffer Bernhem"
+      ],
+      "abstract": "AI agents encounter learning opportunities in every episode they run, and discard nearly all of them: the underlying models are frozen at deployment, so an agent that resolves a difficult request today starts from zero when it recurs tomorrow. Yet ordinary operation already produces feedback, in the form of outcome verdicts and after-the-fact corrections. We show that this feedback is a sufficient signal for continual learning when the frozen model is paired with an external memory that distils each episode into retrievable natural-language rules. On the banking domain of $\\tau$-bench, against a static-RAG control retrieving over the complete policy corpus, learning from the one-bit outcome verdict lifts single-trial success to 1.6$\\times$ the baseline, and learning from corrections to 2.6$\\times$, converting 22 of the 84 tasks the baseline never solves. The result spans the deployment spectrum, measured on Mistral Large, an open-weights model that organisations with data sovereignty requirements can self-host, and replicated on a frontier model, Claude Sonnet 5. The accumulated memory also transfers: each model, reading the store built by the other, rises above its own no-memory baseline. The harness, protocol, and data are released.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-27T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.22157",
+      "pdf_url": "https://arxiv.org/pdf/2607.22157",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Learning from deployment feedback for frozen agents aligns closely with your interests in scaling feedback, on-policy improvement, and using post-hoc corrections to improve agent behavior."
+    },
+    {
+      "arxiv_id": "2607.22520",
+      "title": "The Regression Tax: Decomposing Why Skills Help and Hurt LLM Agents",
+      "authors": [
+        "Darshan Tank",
+        "Baran Nama"
+      ],
+      "abstract": "Adding procedural skills to an LLM agent is typically evaluated by average improvement in task success. However, this metric hides an important cost: skills can also make agents worse. We measure both sides by comparing agents with and without skills across nearly 6,000 runs spanning two office automation benchmarks and three model harness stacks. This allows us to distinguish two outcomes. A regression is a task solved without skills but failed after skills are added. A residual failure is a task that fails both with and without skills. We find that regressions are substantial enough that the best performing skills outperform others primarily by regressing less, not by gaining more. We identify three causes of regression: (i) skill description osmosis, a skill changes an agent's behavior simply by being present in context, even when it is never invoked; (ii) grounding displacement, a skill's prescribed procedure overrides how the agent interprets its inputs; and (iii) verification displacement, where the procedure suppresses checks the agent would otherwise perform on its outputs. Analysing persistent failures reveals the same underlying pattern. Existing skills overemphasize procedural guidance the stage least often responsible for failure while under supporting grounding and verification, the dominant sources of remaining errors. After correcting evaluation artifacts and studying traces, we find many regressions and persistent failures recoverable through better grounding and verification. Procedural skills should be evaluated by decomposing their net effect into gains and regressions, not by aggregate improvement alone. We identify three regression modes skills should avoid, and find that reliability depends more on grounding and verification than on procedural skill choice.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-27T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.22520",
+      "pdf_url": "https://arxiv.org/pdf/2607.22520",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Its decomposition of when added skills help versus hurt agents is very relevant to evaluating agent improvements rigorously and to understanding hidden regressions in long-horizon systems."
+    },
+    {
+      "arxiv_id": "2607.22013",
+      "title": "Visual Saliency Steering Distillation for Multimodal Chain-of-Thought Reasoning",
+      "authors": [
+        "Hao Yang",
+        "Jin Wang",
+        "Xuejie Zhang"
+      ],
+      "abstract": "Multimodal chain-of-thought (CoT) reasoning integrates visual and textual cues through step-by-step inference. In small models with limited token budgets, modality-interaction fusion often suppresses tiny cross-modal differences. In particular, multimodal CoT often struggles when different images pair with identical text or different texts pair with an identical image, making such inputs nearly indistinguishable after fusion. This study proposes Visual Saliency Steering Distillation (VSSD). VSSD leverages the attention maps of multimodal large language models to generate perturbed images that capture task-sensitive feature directions, and then applies singular value decomposition to extract dominant steering vectors to guide inter-layer distillation. Experiments on ScienceQA and M$^3$CoT demonstrate that VSSD improves rationale generation and answer inference. The code is available at https://github.com/BGWH123/VSSD.",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "published": "2026-07-27T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.22013",
+      "pdf_url": "https://arxiv.org/pdf/2607.22013",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Highly relevant because it focuses on distillation and improving multimodal chain-of-thought reasoning, which connects directly to your interests in grading long rollouts, self-correction, and evaluating reasoning quality."
+    },
+    {
+      "arxiv_id": "2607.21635",
+      "title": "Toward User-Conditioned Evaluation of Personal LLM Agents under Temporal Interventions",
+      "authors": [
+        "Pin Qian",
+        "Su Wang",
+        "Yihang Chen",
+        "Qiaolin Yu",
+        "Xiaoyuan Wang",
+        "Zhitong Guo",
+        "Zhicheng Wang",
+        "Junxian You"
+      ],
+      "abstract": "Personal agents maintain memories, learned skills, tool configurations, and policy state that evolve with each user. Existing agent benchmarks often evaluate these capabilities in isolation: tool benchmarks test invocation under fixed APIs, memory benchmarks test recall or forgetting, and safety benchmarks test static policy compliance. We argue that personal-agent evaluation requires a different protocol: replaying the same temporal intervention across different persistent user-conditioned states and measuring how failures propagate across agent components. We formalize this requirement as four conditions: explicit temporal intervention, persistent state across the intervention, induced cross-dimensional effects, and variation in user-conditioned state. A focused audit of public benchmark protocols selected by explicit inclusion criteria identifies several close cases. Under our explicitly narrow operationalization, we did not find a protocol in that audited set satisfying all four conditions. This claim is scoped as a focused gap analysis with bounded literature coverage. This position paper proposes a minimal benchmark design and candidate reporting metrics for user-conditioned adaptation. The result is a concrete design requirement for future personal-agent evaluation, with metrics used as reporting tools for that requirement.",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-07-27T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.21635",
+      "pdf_url": "https://arxiv.org/pdf/2607.21635",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "This paper is strongly aligned with your interest in evaluating agents under temporal interventions and evolving user state, which overlaps with long-horizon tasks and testing adaptation to surprising information."
+    },
+    {
+      "arxiv_id": "2607.21832",
+      "title": "How Do AI Coding Agents Contribute to Software Development? an Empirical Study of Agentic Pull Requests",
+      "authors": [
+        "Iren Mazloomzadeh",
+        "Mohammad Mehdi Morovati",
+        "Foutse Khomh"
+      ],
+      "abstract": "Recent advances in large language models and their rapid adoption across software engineering tasks have made Artificial Intelligence (AI) coding agents an integral component of modern software development workflows. While developers increasingly benefit from these coding agents, their impact on software quality remains insufficiently understood. In particular, how agentic contributions evolve across the software development lifecycle has not been thoroughly investigated. This study aims to characterize agentic pull requests (PR) in comparison to human generated PRs and to examine how their properties change across different stages of the development lifecycle. Using the AIDev dataset, we first analyze how differences in merge rates between agentic and human generated PRs vary over time. We then identify the types of development tasks where AI coding agents are predominantly applied and investigate how these task distributions evolve across development quarters. Finally, we compare a set of key characteristics of agentic and human generated PRs, focusing on their implications for software quality and their temporal dynamics. Overall, our findings provide an empirical and longitudinal perspective on the role of AI coding agents in software development, offering a more nuanced understanding of their benefits and limitations in real-world practices.",
+      "categories": [
+        "cs.SE",
+        "cs.LG"
+      ],
+      "published": "2026-07-27T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.21832",
+      "pdf_url": "https://arxiv.org/pdf/2607.21832",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Directly relevant to grading long rollouts and evaluating agentic systems because it empirically studies AI coding agents through pull-request outcomes, contribution patterns, and software-development quality."
+    },
+    {
+      "arxiv_id": "2607.21961",
+      "title": "On Improving Faithfulness of Podcasts from Documents",
+      "authors": [
+        "Soumya Dutta",
+        "Tejas Indulal Dhamecha",
+        "Pannaga Shivaswamy"
+      ],
+      "abstract": "Large language models (LLMs) are increasingly used to generate long-form conversational content such as podcasts from textual sources. While these systems produce fluent and engaging narratives, they often introduce ungrounded information. In this work, we present the first systematic study of faithfulness in document-grounded podcast generation, where grounding must be maintained across conversational turns in long-form, multi-speaker transcripts. We construct a dataset of over 1500 documents spanning five domains and generate podcast transcripts using multiple LLMs. We introduce a turn-level LLM-as-a-judge framework for evaluating whether conversational turns are supported by the source document, and validate its reliability through human studies. Our analysis shows that even state-of-the-art models, including GPT-4o, frequently generate ungrounded content. To mitigate this issue, we propose catch-n-repair, a model-agnostic framework that detects and rewrites unfaithful conversational turns while preserving conversational flow. Experiments demonstrate consistent improvements in faithfulness across both in-domain and out-of-domain settings.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-07-27T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.21961",
+      "pdf_url": "https://arxiv.org/pdf/2607.21961",
+      "is_author_match": false,
+      "relevance_score": 7.0,
+      "relevance_reason": "Relevant to long-rollout grading because it studies faithfulness in long-form grounded generation, a setting where evaluating quality over extended outputs is central."
+    },
+    {
+      "arxiv_id": "2607.22218",
+      "title": "Why Large Language Models and Humans Converge and Diverge in Evaluating Creativity",
+      "authors": [
+        "Pengzhao Lyu",
+        "Yeun Joon Kim",
+        "Hanlin Xiao",
+        "Yingyue Luna Luan"
+      ],
+      "abstract": "Despite the growing use of large language models (LLMs) as creativity evaluators, evidence of their alignment with human evaluations remains mixed, raising the question of when and why their judgments converge with or diverge from human judgments. Across three studies and six widely used LLMs, we addressed this gap by identifying the standards underlying LLM creativity evaluation and examining their downstream implications. Study 1 showed that LLMs generally relied on a narrower subset of human creativity evaluation standards. Convergence with human standards was strongest in the novelty dimension, whereas divergence was clearest in the contextual dimension, which captures social, market, and reputational information. Moreover, each LLM exhibited distinct, model-specific standards that varied substantially in breadth. These differences in evaluation standards were reflected in actual creativity judgments. Study 2 (N = 1,103 ideas) showed that LLM evaluations were moderately correlated with human evaluations, and individual LLMs with broader standards better distinguished ideas humans judged as more versus less creative. Study 3 (N = 1,195) showed that LLMs were less sensitive to contextual information: such information significantly altered human creativity ratings but left LLM ratings largely unchanged. Together, our findings help explain the mixed evidence on LLM-human alignment, showing that alignment depends on the evidence a judgment demands and the standards each model applies. LLMs may resemble humans when evaluations emphasize intrinsic qualities such as novelty, yet diverge when judgments require contextual information. Selecting an LLM evaluator is therefore a consequential decision: different models, applying different standards, recognize different ideas as creative.",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-07-27T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.22218",
+      "pdf_url": "https://arxiv.org/pdf/2607.22218",
+      "is_author_match": false,
+      "relevance_score": 7.0,
+      "relevance_reason": "Relevant to LM-judge weakness concerns because it directly studies when and why LLM evaluations align or diverge from human judgments."
+    },
+    {
+      "arxiv_id": "2607.22014",
+      "title": "Zero-Shot Mission-Level Evaluation for Aerial MLLM Agents",
+      "authors": [
+        "Suman Navaratnarajah",
+        "Taehyoung Kim",
+        "Jona Ruthardt",
+        "Ishaan Bhimwal",
+        "Ryousuke Yamada",
+        "Yannik Blei",
+        "Wolfram Burgard",
+        "Yuki M Asano"
+      ],
+      "abstract": "Multimodal Large Language Models (MLLMs) are emerging as core reasoning modules for embodied agents, yet it remains unclear how well general-purpose models can solve long-horizon embodied tasks from a single high-level instruction. We introduce MissionBench, a benchmark for mission-level evaluation of MLLMs in aerial 3D environments. It comprises 120 missions across five simulated 3D environments and four task families. Agents must autonomously plan, navigate, and report outcomes using only egocentric observations and its action history, without aerial-specific fine-tuning. Across 22 open- and closed-source MLLMs, the strongest model succeeds on fewer than 35% of missions compared to 84.4% human performance, highlighting the difficulty of multi-step embodied tasks. Despite large variations between model families, we observe gains from scaling, indicating that larger general-purpose models possess stronger zero-shot embodied capabilities. Our analysis shows that mission-level competence requires coordinating multiple capabilities beyond spatial perception, including multi-step planning and adaptive reasoning. This motivates closed-loop evaluation and highlights both the promise and risk of scaling-driven improvements for embodied AI.",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.CV",
+        "cs.RO"
+      ],
+      "published": "2026-07-27T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.22014",
+      "pdf_url": "https://arxiv.org/pdf/2607.22014",
+      "is_author_match": false,
+      "relevance_score": 7.0,
+      "relevance_reason": "Strongly relevant to long-horizon task evaluation because it introduces a mission-level benchmark for embodied MLLM agents solving extended tasks from high-level instructions."
+    },
+    {
+      "arxiv_id": "2607.22165",
+      "title": "DBA-Bench: A Production-Fidelity Benchmark for LLM-Based Database Operations Agents",
+      "authors": [
+        "Junming Chen",
+        "Junyang Jiang",
+        "Xu Chen",
+        "Zibo Liang",
+        "Kai Zheng"
+      ],
+      "abstract": "LLM-based database agents show promise, but differing task scopes, testbeds, and metrics hinder comparison. We identify four gaps between evaluation and production operations: live-environment fidelity (multi-turn read-write interaction with a running database); observation-space scale and complexity (causal diagnosis across thousands of time series, business logs, and concurrent activity); solution-space openness (multiple remediations with different operational trade-offs); and scenario complexity and coverage (faults cascading across internal mechanisms and operational domains). We present DBA-Bench, a benchmark addressing these gaps through production fidelity, outcome-first evaluation, and controlled scenario reproducibility. It uses instrumented PostgreSQL environments with active workloads, persistent state, and multi-source observations; defines success by measurable recovery or fault elimination under safety constraints; and restores snapshots with scenario-specific checks before each run. The benchmark contains 106 scenarios across seven task domains, with two public difficulty labels based on reference-path diagnostic depth and environmental complexity. We evaluate nine baseline groups, including six foundation-model systems, two GPT-5.5-backed database agents, and a Human DBA reference. Across 848 automated runs, Diagnosis, Outcome, and Safe Pass rates are 32.7%, 19.6%, and 12.4%; the best automated baseline reaches 17.9% Safe Pass versus 93.4% for the Human DBA reference. Automated Safe Pass falls from 19.6% on Easy scenarios to 7.6% on Hard scenarios, underscoring the difficulty of safe end-to-end remediation.",
+      "categories": [
+        "cs.DB",
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "published": "2026-07-27T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.22165",
+      "pdf_url": "https://arxiv.org/pdf/2607.22165",
+      "is_author_match": false,
+      "relevance_score": 7.0,
+      "relevance_reason": "Relevant to grading long rollouts and realistic agent evaluation since it focuses on production-fidelity, multi-turn, large-observation-space benchmarks for database operations agents."
+    },
+    {
+      "arxiv_id": "2607.21596",
+      "title": "FlowEvo: Self-Evolving Agents through the Co-Evolution of Workflows and Executable Skills",
+      "authors": [
+        "Zeyu Ren",
+        "Ling Yue",
+        "Ran Li",
+        "Yishu Wang",
+        "Shengxiang Xu",
+        "Hanmo Liu",
+        "Shaowu Pan",
+        "Shimin Di"
+      ],
+      "abstract": "Large language model agents increasingly solve complex tasks by constructing inference-time workflows that combine reasoning, tool use, and code execution. While such workflows enable flexible problem solving, the useful procedures discovered during execution are often transient: they help solve the current task but are not retained in a form that can systematically benefit future tasks. We present FlowEvo, a training-free framework that compiles successful traces into reusable skill records. Each record pairs a callable artifact with auxiliary structured guidance, and admission applies interface, replay, and safety checks where feasible. These skill records persist in a skill bank at inference time. FlowEvo is organized around three coupled mechanisms: (1)~workflow-to-skill compilation, which extracts reusable executable artifacts from successful traces; (2)~skill-to-workflow feedback, which retrieves accumulated skills to support future problem solving through either direct execution or structured context injection; and (3)~skill curation, which monitors downstream utility and suppresses skills that cause negative transfer. Through this workflow--skill--workflow feedback loop, FlowEvo enables agents to accumulate and refine task-solving capability over time without updating model parameters. Experiments on benchmarks spanning interactive environments (ALFWorld) and code/math generation (HumanEval, GSM8K) show that FlowEvo achieves the best accuracy-cost tradeoff among the evaluated baselines under our implementation settings. On ALFWorld, FlowEvo achieves an 82.8\\% success rate, 23.6 percentage points above the strongest baseline, while its average token usage per episode is less than half that of the most efficient baseline. Controlled ablations confirm that each mechanism contributes to the overall result. The code is public at https://github.com/DEFENSE-SEU/FlowEvo.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-27T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.21596",
+      "pdf_url": "https://arxiv.org/pdf/2607.21596",
+      "is_author_match": false,
+      "relevance_score": 7.0,
+      "relevance_reason": "Relevant to long-horizon scientific tasks and self-improving agents because it studies retaining and evolving workflows and executable skills across tasks rather than one-off rollouts."
+    }
+  ]
+}
