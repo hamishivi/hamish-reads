@@ -1,0 +1,619 @@
+{
+  "date": "2026-07-30",
+  "generated_at": "2026-07-30T03:40:21.518565+00:00",
+  "author_papers": [
+    {
+      "arxiv_id": "2607.24841",
+      "title": "Neuromorphic Diffusion Language Models: Addressing Compute and Memory Bottlenecks via Sparsity and Block Denoising",
+      "authors": [
+        "Dengyu Wu",
+        "Clement Ruah",
+        "Jiechen Chen",
+        "Bipin Rajendran",
+        "Osvaldo Simeone"
+      ],
+      "abstract": "Autoregressive (AR) large language models (LLMs) are inherently inefficient at inference time because each generated token requires accessing the full set of model parameters, leading to low operational intensity and high energy consumption. Masked diffusion language models (MDLMs) partially address this limitation for memory-bound settings by allowing multiple tokens to be generated per parameter access. In order to further enhance inference efficiency on modern platforms with extensive in-chip memory, this work proposes neuromorphic MDLMs (N-MDLMs), which integrate block diffusion with spike-based neuromorphic computation to jointly improve throughput and energy efficiency. While block diffusion increases token throughput by producing multiple tokens per parameter access, spike-induced sparsity reduces effective parameter traffic and computations by skipping inactive channels. To analyze the synergistic effect of sparsity and diffusion, we develop a token-level roofline-inspired model that captures the combined impact of block-parallel generation and spike sparsity on decoding efficiency. Experimental results on translation tasks show that, thanks to spike-induced sparsity, N-MDLMs achieve substantial improvements in energy efficiency and throughput even in compute-bound platforms for which MDLMs would fail to improve over AR-LLMs.",
+      "categories": [
+        "cs.CL",
+        "cs.LG",
+        "eess.SP"
+      ],
+      "published": "2026-07-29T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.24841",
+      "pdf_url": "https://arxiv.org/pdf/2607.24841",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2607.25228",
+      "title": "Interpretable Column Annotation with LLM-Symbolized Decision Process Materialization",
+      "authors": [
+        "Mengqi Wang (UNSW Sydney)",
+        "Jianwei Wang (UNSW Sydney)",
+        "Qing Liu (Data61",
+        "CSIRO)",
+        "Xiwei Xu (Data61",
+        "CSIRO)",
+        "Zhenchang Xing (Data61",
+        "CSIRO)",
+        "Michael Bain (UNSW Sydney)",
+        "Liming Zhu (Data61",
+        "CSIRO)",
+        "Wenjie Zhang (UNSW Sydney)"
+      ],
+      "abstract": "Column annotation (CA), including column type annotation (CTA) and column property annotation (CPA), aims to identify the meanings of table columns and the semantic relationships among them. Recent CA methods usually use various neural models to learn column representations and directly map them to label categories, thereby (1) sacrificing model interpretability and adaptivity, and (2) overlooking rich label semantics and ultimately limiting accuracy. To address these limitations, we propose SymCA, an LLM-empowered interpretable CA framework that materializes column annotation as a global-to-local symbolic decision process. SymCA consists of two components: (1) global skeleton induction, which constructs a semantic skeleton over the label space, and (2) local substrate evolution, which evolves predictive substrates within the skeleton. Specifically, to exploit label semantics while preserving an interpretable decision process, the global skeleton induction module leverages LLMs to generate candidate hypernym-inspired tree-structured semantic skeletons and employs a Minimum Bayes Risk (MBR)-based consensus strategy to select a robust skeleton against generation variance. Since different internal nodes require different evidence to distinguish among their child nodes, the local substrate evolution module materializes each internal node as an executable and evolvable predictive substrate. Over multiple evolution rounds, each substrate trains an interpretable random forest classifier with the current operator set, leverages the LLM to propose node-specific operator modifications, and uses an exploration-exploitation strategy to prioritize promising substrates. Extensive experiments demonstrate that SymCA is accurate, robust, and interpretable, outperforming the strongest baselines by an average of 6.42% in Micro-F1 and 11.03% in Macro-F1.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-07-29T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.25228",
+      "pdf_url": "https://arxiv.org/pdf/2607.25228",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2607.25681",
+      "title": "Cognivia: A Cognitive Behavioral Therapy Copilot for Evidence-Based Mental Healthcare",
+      "authors": [
+        "Qi Chen",
+        "Siria Xiyueyao Luo",
+        "Jian Wang",
+        "Yuan Shi",
+        "Haocong Rao",
+        "Xuejiao Zhao"
+      ],
+      "abstract": "Cognitive distortion amplifies negative emotions and contributes to mental health disorders. Cognitive Behavioral Therapy (CBT) is an effective way to address cognitive distortions, but its large-scale application is limited by the shortage of professional therapists. Although large language models (LLMs) have recently been explored for mental health applications, existing methods still suffer from limited domain specificity, overly flattering responses, and the absence of well-defined annotations for cognitive distortions. This paper proposes Cognivia, an evidence-based artificial intelligence therapist that integrates automatic cognitive distortion identification and rational response generation. Our framework is built on authoritative CBT texts widely regarded as core paradigms and standard references. It is further augmented with mental health question-answer (Q and A) data, and employs multi-stage prompting and structured generation strategies under the supervision of behavioral science experts. Then we fine-tune a lightweight LLM on this augmented CBT dataset to obtain Cognivia. In addition, we propose the first hierarchical quality evaluation framework for assessing LLM-generated rational responses, developed through collaboration between AI researchers and behavioral science experts. Cognivia is evaluated using lexical metrics, LLM-based Judges with two complementary criteria, and human evaluation by 10 behavioral science experts. It consistently outperforms the baseline methods in cognitive distortion recognition and rational response generation, demonstrating its effectiveness. Our code is available at https://github.com/SNOWTEAM2023/Cognivia.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-29T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.25681",
+      "pdf_url": "https://arxiv.org/pdf/2607.25681",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2607.25357",
+      "title": "Raven: High-Recall Sequence Modeling with Sparse Memory Routing",
+      "authors": [
+        "Arshia Afzal",
+        "Aviv Bick",
+        "Eric P. Xing",
+        "Volkan Cevher",
+        "Albert Gu"
+      ],
+      "abstract": "Long-context recall in linear-time sequence models highlights a tradeoff in how they write to memory. State-based linear models, such as state-space models (SSMs) and linear Transformers, write densely, updating the entire state for each newly arrived token, which leads to interference and makes specific past tokens hard to recover. Sliding-window attention (SWA) exhibits the opposite behavior: it writes sparsely by storing explicit token representations, but only within a fixed window, so recall drops once the relevant token is evicted. Interpolating between these models, we introduce Raven, a linear-time sequence model that maintains a fixed set of memory slots and, at each step, decays and updates only a selected subset via learned, input-dependent routing. This lets Raven mitigate SWA's position-based overwriting and hard eviction while reducing interference from dense state updates in SSMs, thereby preserving long-range content much more effectively. Across recall-intensive benchmarks, Raven is competitive with or outperforms prior linear-time baselines, achieving strong long-context recall where both SWA and SSMs sharply degrade. It remains effective when extrapolating to context lengths as large as 16x its training length, with similar gains in hybrid architectures.",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-07-29T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.25357",
+      "pdf_url": "https://arxiv.org/pdf/2607.25357",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    }
+  ],
+  "ranked_papers": [
+    {
+      "arxiv_id": "2607.25308",
+      "title": "CAST: Game Solvers as Turn-Level Teachers for LLM Agents",
+      "authors": [
+        "Yu Wang",
+        "Yi-Kai Zhang",
+        "Wentao Shi",
+        "Ziang Ye",
+        "Yuchun Miao",
+        "Yueqing Sun",
+        "Qi Gu",
+        "Xunliang Cai",
+        "Lan-Zhe Guo",
+        "Han-Jia Ye",
+        "Fuli Feng"
+      ],
+      "abstract": "Training large language models (LLMs) to act in long-horizon games is a promising step toward generalist decision-making, yet reinforcement learning with verifiable rewards (RLVR) relies on sparse final rewards that reveal little about which decisions determine success. Denser process signals could supply this missing turn-level credit, but existing sources are hard to keep both cheap and accurate. We observe that changes in a game solver's state value reveal whether an action advances the state toward success. Building on this insight, we propose CAST (Credit Assignment from Solver Teachers), which converts these value changes into solver advantages and injects them into RLVR as turn-level signals. We further show that, under a soft-optimal solver assumption, maximizing the solver advantage is equivalent to on-policy distillation from the solver, requiring only scalar values rather than teacher logits. Across Sokoban, Minesweeper, and Rush Hour, CAST outperforms all trained baselines on every game under both in-domain and unseen-difficulty evaluation and achieves the highest average zero-shot performance on ALFWorld and WebShop. Our code is available at https://github.com/Wloner0809/CAST.",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-07-29T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.25308",
+      "pdf_url": "https://arxiv.org/pdf/2607.25308",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Very relevant to long-horizon scientific tasks and better process supervision, since it uses game solvers as turn-level teachers to provide dense credit assignment for LLM agents."
+    },
+    {
+      "arxiv_id": "2607.26057",
+      "title": "Pass the Baton: Trajectory-Relayed On-Policy Distillation",
+      "authors": [
+        "Haolei Xu",
+        "Xiaowen Xu",
+        "Haiwen Hong",
+        "Zixuan Ni",
+        "Hongxing Li",
+        "Yiwen Qiu",
+        "Weiming Lu",
+        "Yongliang Shen"
+      ],
+      "abstract": "On-policy distillation (OPD) grounds token-level supervision in the student's own trajectory, yet suffers from prefix failure: once the student commits to a wrong reasoning direction, all subsequent generation builds on this deviation, producing misdirected continuations that elicit unreliable supervision and waste compute. We identify a teacher-student continuation asymmetry on failed prefixes, where the teacher tends to redirect while the student continues along the original direction, and convert it into a label-free handoff trigger in Relay On-Policy Distillation (Relay-OPD). During training, Relay-OPD constructs relay trajectories by letting the teacher briefly take over at detected trigger points to produce a teacher leg, after which the student resumes and is optimized on the resulting trajectory. A limited relay budget concentrates intervention on critical early positions while limiting departure from the student policy. With a Qwen3-4B-Instruct-2507 teacher and Qwen3-0.6B/1.7B-Non-Thinking students on eight mathematical reasoning benchmarks, Relay-OPD achieves the best or second-best results on every benchmark, outperforming standard OPD by +5.73% and the strongest baseline FastOPD by +1.49% on average for 1.7B, with consistent gains at 0.6B. Training trajectory length is reduced by over 50%.",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-07-29T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.26057",
+      "pdf_url": "https://arxiv.org/pdf/2607.26057",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "This is directly about trajectory-relayed on-policy distillation and mitigating prefix failure, strongly matching your Hunter Prep interest in scaling feedback and on-policy distillation."
+    },
+    {
+      "arxiv_id": "2607.25398",
+      "title": "HANDBOOK.md: A Benchmark for Long-Context Agentic Instruction Following",
+      "authors": [
+        "Liudas Panavas",
+        "Sebastian Minus",
+        "Bradley Monton",
+        "Derek Ray",
+        "Suhaas Garre",
+        "Sushant Mehta",
+        "Edwin Chen"
+      ],
+      "abstract": "Language-model agents are increasingly deployed under standing instructions: a system prompt, a policy file, or a skills document is placed in context, and the agent is trusted to let it govern every action that follows. Existing benchmarks rarely test this deployment pattern directly; they measure whether an agent can complete a task, not whether a long, binding policy document actually constrains its behavior over an extended tool-use horizon. We present HANDBOOK.md, a benchmark of 65 agentic tasks modeled on how enterprise employees follow company handbooks. Each task places an agent in a self-contained company environment, a file workspace together with mock email, chat, calendar, issue-tracking, and commerce services exposed over the Model Context Protocol, and instructs it to carry out routine professional work governed by an expert-written standard operating procedure of 20 to 124 pages. Tasks span five domains (finance, medical billing, insurance, logistics, and HR) and ten fictional companies. To resist memorization, every task modifies one of ten base handbooks, altering the specific rules and thresholds on which grading turns, so no two tasks share a policy. Grading is fully deterministic: each task carries a rubric of programmatic criteria (824 in total) that check both that required actions occurred and that prohibited actions did not. Under strict grading, where a trial passes only if every criterion is satisfied, the best of thirty evaluated model configurations passes 36.2% of trials, and most frontier configurations remain below 25%. Failures follow consistent patterns: agents let a plausible in-environment request override the standing policy, perform a required check and then act against its result, lose rule details over long horizons, and report compliance they did not achieve. We release all tasks, environments, and the evaluation harness.",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-07-29T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.25398",
+      "pdf_url": "https://arxiv.org/pdf/2607.25398",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "A benchmark for long-context agentic instruction following is very closely connected to your work on long-horizon tasks and grading long rollouts effectively."
+    },
+    {
+      "arxiv_id": "2607.25152",
+      "title": "When Do Agent Loops Mistake Stagnation for Progress? Self-Evaluation Bias and Externally Grounded Verification in Long-Running Autonomous LLM Agent Loops",
+      "authors": [
+        "Hyundoo Park",
+        "Byungho Choi"
+      ],
+      "abstract": "Long-running autonomous agents plan, act, and judge their own completion without human intervention. When an agent grades its own work, self-evaluation bias takes hold: plausible changes are accepted as progress while real-world outcomes stagnate or regress. We name this failure mode the progress mirage and show, with controlled measurement, that it is a question of what the evaluator is grounded in. We built a testbed that holds the agent and its tool surface fixed and manipulates only the information-channel type of the evaluator that gates the loop. A world-state oracle, unfakeable in principle, is enforced by container and network isolation and verified at every run. Across 54 cycles a frontier agent claimed improvement every time, yet 56 percent had a measured delta of zero or below. Self-report was thus uninformative, and the self-verdict gate degenerated into accept-all, eroding the best deployed state it had reached by 19 percent. Even the strongest in-band judge, reading the full artifact text, the change diff, and its own verdict history, accepted cycles of which 44 percent were real-world regressions and rejected 38 percent of real improvements; the preregistered adversarial hypothesis that a strong judge closes the gap was rejected. On a boundary task whose success specification is verifiable from the artifact itself, the same judge's mirage vanished to zero and the gap collapsed within the registered threshold, showing that the gap depends on where the success signal resides. A sign-only variant returning only the acceptance verdict kept real-world output similar to full feedback (110.0 versus 113.0), locating the benefit in the gate's grounding rather than in feedback content. For open-ended objectives whose success signal lives outside the transcript, scaling up the judge is not enough; out-of-band evaluation with real-world access is a structural requirement.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-29T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.25152",
+      "pdf_url": "https://arxiv.org/pdf/2607.25152",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Extremely relevant to your work on grading long rollouts and self-correction because it studies self-evaluation bias in long-running agent loops and argues for externally grounded verification."
+    },
+    {
+      "arxiv_id": "2607.25656",
+      "title": "OrchBench: Evaluating Multi-Agent Orchestration Plans in Isolation via Deterministic Simulation",
+      "authors": [
+        "Zhenzhen Ren",
+        "Jiyan He",
+        "Xinpeng Zhang",
+        "Zhenxing Qian",
+        "Ke Han",
+        "Shuxin Zheng",
+        "GuoBiao Li",
+        "Xiaoqing Zhang"
+      ],
+      "abstract": "Complex tasks often decompose into parallelizable yet interdependent subtasks, making orchestration critical to the performance of multi-agent systems (MAS). Existing evaluations typically rely on end-to-end execution, which conflates orchestration-plan quality with worker capabilities, tool reliability, and environmental noise. Moreover, the time and token costs of real execution grow rapidly with workflow scale, making systematic evaluation expensive. We present OrchBench, a simulation-based benchmark for evaluating multi-agent orchestration plans in isolation. Starting from real-world tasks, OrchBench constructs directed acyclic graphs (DAGs) that encode task dependencies, with controlled sizes and degrees of parallelism. Given a DAG, a per-agent context limit, and an agent budget, the evaluated planner assigns subtasks to agents and specifies cross-agent information transfers and their retention ratios. A deterministic simulator evaluates the resulting plan without invoking worker agents and returns interpretable measures of result quality, makespan, and token cost. The simulated scores produced by OrchBench correlate strongly with quality scores from Claude Code executions, achieving a Pearson correlation of \\(r=0.816\\), while requiring only \\(1.3\\%\\) of the tokens and \\(10.3\\%\\) of the wall-clock time. Across diverse planners and workflow scales, we find that preserving task-critical information is more important than simply increasing the number of agents, and the benefits of parallelism diminish as coordination failures accumulate. These results establish OrchBench as an efficient and interpretable benchmark for comparing and diagnosing multi-agent orchestration plans.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-29T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.25656",
+      "pdf_url": "https://arxiv.org/pdf/2607.25656",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Highly relevant because it isolates and evaluates multi-agent orchestration quality in deterministic simulation, closely matching interests in long-horizon tasks, agent evaluation, and better grading of complex rollouts."
+    },
+    {
+      "arxiv_id": "2607.26041",
+      "title": "Desktop-Delta Bench: Do Computer-Use Models Understand Desktop GUI Transitions?",
+      "authors": [
+        "Abhishek Pillai",
+        "Samir Kumar Nayak",
+        "Yuan Chen"
+      ],
+      "abstract": "Computer-use agents (CUAs) increasingly act through desktop GUIs to complete long-horizon tasks. Current benchmarks primarily measure end-task success or single-frame grounding. Neither isolates whether a model can reconstruct the causal, task-relevant transition produced by an action- crucial for rejecting stale observations, verifying progress, and recovering from failure. This is difficult because inference, remote input, app rendering, and screenshot capture are asynchronous: the next observation may be delayed, occluded, transient, or unrelated, then misread as progress and carried into subsequent planning. We introduce Desktop-Delta Bench (DDB), an offline step-level benchmark with 2,013 human-verified instances from novel, multi-app Linux trajectories across ~15 applications and 50 task domains. DDB trajectories targets 3 failure dimensions- state verification, source tracking, and context-aware control- through 2 complementary tasks: 463 3-frame temporal-ordering instances, including 105 with a cross-trajectory decoy, and 1,550 before-after pairs labeled from 5 actions + its payload. We evaluate 8 closed and open-source model families across 32 ordering and 16 single-action settings, observing consistent gaps. Ordering remains unsaturated: best non-decoy and decoy exact-match rates are 65.1% and 65.7%. Task context improves decoy identification by 6.9 percentage points but reduces non-decoy exact match by 2.2 points; error analysis reveals systematic copying of the presented A-B-C order. Single-action results show that inferring the action family is harder than locating it: click F1 is 0.96 vs, 0.76 for drag, while recognized drags are generally localized well. DDB, thus, complements end-to-end benchmarks by filling the missing diagnostic layer between GUI grounding and final task success, enabling targeted improvements to desktop CUA verification, reliability, and recovery.",
+      "categories": [
+        "cs.AI",
+        "cs.CV"
+      ],
+      "published": "2026-07-29T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.26041",
+      "pdf_url": "https://arxiv.org/pdf/2607.26041",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Highly relevant because it explicitly evaluates whether computer-use models understand GUI transitions, closely matching interests in computer-use environments, failure recovery, and better assessment of long-horizon behavior."
+    },
+    {
+      "arxiv_id": "2607.24754",
+      "title": "CARE-MH: Towards Unified, Reproducible, and Comparable Evaluation of Mental Health LLMs",
+      "authors": [
+        "Asher Sprigler",
+        "Yixue Zhao",
+        "Yi Ding"
+      ],
+      "abstract": "Large language models (LLMs) are increasingly used to provide mental health support, requiring reliable evaluation of safety, empathy, and therapeutic appropriateness. However, existing mental health benchmarks are difficult to reproduce and compare due to inconsistent evaluation designs and metric definitions. We present CARE-MH, a unified framework for comparable and reproducible evaluation of mental health LLMs. Using CARE-MH, we reproduce and analyze state-of-the-art benchmarks, revealing that reproducibility depends strongly on model stability and that cross-benchmark disagreement primarily arises from differences in metric definitions. Our findings highlight the need for standardized evaluation configurations and shared metric definitions for future mental health LLM benchmarks.",
+      "categories": [
+        "cs.HC",
+        "cs.AI"
+      ],
+      "published": "2026-07-29T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.24754",
+      "pdf_url": "https://arxiv.org/pdf/2607.24754",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Highly relevant because it focuses on unified, reproducible evaluation of LLMs and metric design, which directly connects to your interests in better grading, judge weaknesses, and comparable evaluation frameworks."
+    },
+    {
+      "arxiv_id": "2607.24889",
+      "title": "GAUGE: Grading Agent-Built Financial Models Without a Golden Answer",
+      "authors": [
+        "Jiacheng Lu",
+        "Sinuo Wang",
+        "Wentao Zhao",
+        "Rui Sun",
+        "Cheng Hua",
+        "Tao Song",
+        "Hui Cai",
+        "Beidi Luan",
+        "Zhengze Wu",
+        "Lingjing Teng",
+        "Yijia He",
+        "Jing Li",
+        "Daxin Jiang",
+        "Zuo Bai",
+        "Haibing Guan"
+      ],
+      "abstract": "Financial models combine public disclosures with analyst assumptions to produce forecasts and valuations. While some components can be checked mechanically, forecasts, discount rates, and target prices often admit multiple reasonable answers. Existing benchmarks nevertheless tend to grade such outputs against a single expert reference. Using independently built analyst models for the same companies, we find that across 108 directed pairs covering 65 companies, the median single-reference score is 0.33, 92.6% score below 0.70, and no same-vintage pair agrees on implied price within 10%. Point-tolerance grading can therefore penalize disagreement already present among professionals. We introduce GAUGE, a benchmark for evaluating agent-built valuation models against observed analyst practice rather than a single point answer. GAUGE uses 1,001 vendor-classified analyst workbooks and a 196-task evaluation set, with a three-layer observed-practice envelope, 56 auditable facets, eight validity gates, and deterministic structural checks. We validate the benchmark with a 55-participant known-groups study, company-grouped cross-fitting, and judge-stability audits. On the failure-aware score $\\phi_0$, senior analysts average 88.3, juniors 66.0, and finance students 43.2. Across 24 agents and 1,011 scored generations, the best agent scores 53.4, above the student mean but below every senior and most juniors. It passes 93% of mechanical facets and 78% of judgment facets, with a fleet-median gap of 26 points. Current agents are substantially stronger at model construction than valuation judgment. We release the methodology, a gated de-identified data tier, a controlled training split, a versioned 48-task evaluation core, and a withheld refresh pool.",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CE"
+      ],
+      "published": "2026-07-29T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.24889",
+      "pdf_url": "https://arxiv.org/pdf/2607.24889",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Highly relevant to the grading-without-golden-answers and long-rollout evaluation projects because it studies how to assess agent-produced outputs when multiple reasonable solutions exist."
+    },
+    {
+      "arxiv_id": "2607.24850",
+      "title": "SearchArt: Training Long-Horizon Search Agent with Scalable Synthetic and Verified Task",
+      "authors": [
+        "Lang Mei",
+        "Xiaohan Yu",
+        "Chong Chen",
+        "Liyan Liu",
+        "Xiangnan Chen",
+        "Jinchao Ma",
+        "Chao Feng",
+        "Li Huang",
+        "Siyu Mo",
+        "Sichen Kang",
+        "Yunkun Xu",
+        "Zhihan Yang",
+        "Zhujun Xue",
+        "Jingren Zhang",
+        "Qing He",
+        "Yingdi Huang",
+        "Hao Jiang",
+        "Ziao Ma",
+        "Zewei Pan",
+        "Minhao Sun",
+        "Zhuo Tao",
+        "Jinzhao Xiao",
+        "Gangtao Xin",
+        "Huanyao Zhang",
+        "Wenjian Zhang",
+        "Jiangshan Zhang",
+        "Guojie Zhu",
+        "Jiaxin Mao",
+        "Wentao Zhang"
+      ],
+      "abstract": "Recent advances in large language models (LLMs) have enabled search agents to autonomously tackle complex tasks across extended search and reasoning horizons. However, training effective search agents remains challenging due to the lack of scalable and long-horizon tasks, and the difficulty of evaluating and correcting intermediate reasoning and tool-use behaviors. We introduce SearchArt, a scalable framework for training long-horizon search agents through verification-driven task synthesis and a multi-stage post-training pipeline. SearchArt constructs large-scale datasets for complex search-, research- and user-oriented tasks by synthesizing diverse information-seeking QA pairs and corresponding search trajectories from web documents and automatically generated evidence graphs. To ensure the reliability of the synthesized data, we design a verification pipeline that jointly evaluates QA consistency, trajectory quality, and the relevance of retrieved evidence. The verified trajectories are subsequently used in a multi-stage training process comprising supervised fine-tuning and reinforcement learning-based policy optimization. Search agents trained with SearchArt exhibit adaptive search planning, iterative evidence aggregation, and complex reasoning over extended interaction horizons. Experimental results demonstrate that, with only (Qwen3.5-) 27B parameters, SearchArt scores 74.39 on BrowseComp-ZH, 70.06 on BrowseComp, and 52.55 on Deepresearch-bench, matching or surpassing frontier closed-source agents on both deepsearch and deepresearch benchmarks.",
+      "categories": [
+        "cs.IR",
+        "cs.LG"
+      ],
+      "published": "2026-07-29T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.24850",
+      "pdf_url": "https://arxiv.org/pdf/2607.24850",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "SearchArt is highly relevant because it directly targets training and evaluating long-horizon search agents with scalable, verifiable tasks and intermediate-behavior correction, closely matching the current interests in long rollouts, self-correction, and effective grading."
+    },
+    {
+      "arxiv_id": "2607.24765",
+      "title": "Measuring and Improving Behavioral Consistency in Large Language Models through Fact-Heuristic-Emotion State Enforcement",
+      "authors": [
+        "Gi-Hun Lee",
+        "Joong Yull Park"
+      ],
+      "abstract": "Large language models (LLMs) can give different answers to the same decision problem across runs, and reverse a decision when their own prior answer returns as context. We ask whether this instability can be measured and partially reduced without changing model weights.   We test the Cognitive Kernel Model (CKM), a prompt-level state-enforcement layer. Before deciding, the model must separate its input into three epistemic roles: Fact (given or verifiable), Heuristic (inferred or assumed), and Emotion (evaluative or priority signal). CKM adds no capability; it forces the model to track what kind of information it uses before acting. Formally it maintains a structured state S_t = {F_t, H_t, E_t} updated by a transition function.   We evaluate CKM on Korean-language decision scenarios (ambiguity, ethical conflict, resource allocation, error handling) across 26 LLMs from four vendors and 37,403 observations, via four core experiments, a 4-arm ablation, a 5-arm sham-restriction ablation, and a temperature probe. Findings:   (1) CKM reduces repeated-output variability (random-effects Hedges' g=1.09, 95% CI [0.83, 1.35], 31 model pairs);   (2) state persistence cuts the decision-flip rate by 82% in newer models (g=1.52);   (3) the effect is not JSON formatting alone (value-only recomputation, g=2.24);   (4) intrinsic randomness under fixed anchor states is negligible;   (5) the advantage grows under sampling stochasticity (g=2.87 at temperature 0.7);   (6) a sham ablation attributes about 45% of the gain to structural scaffolding and 55% to Fact/Heuristic/Emotion content, and CKM is the only arm that both raises consistency and reduces flipping.   CKM does not improve reasoning correctness. The narrower result: behavioral consistency is measurable, varies across models, and is partially improvable by forcing models to separate facts, assumptions, and evaluative signals before deciding.",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.HC"
+      ],
+      "published": "2026-07-29T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.24765",
+      "pdf_url": "https://arxiv.org/pdf/2607.24765",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Highly relevant to your interest in explicit self-correction and stability under surprising/noisy information, since it measures and improves answer consistency via prompt-level state enforcement."
+    },
+    {
+      "arxiv_id": "2607.25881",
+      "title": "AI's Capability in Assisting Scientific Research in Physics, Astrophysics, and Cosmology II: Project Planning and Proposal Evaluation",
+      "authors": [
+        "Jia Liu",
+        "Veena Krishnaraj",
+        "Kateryna Vovk",
+        "Kosuke Aizawa",
+        "Adrian E. Bayer",
+        "Linda Blot",
+        "Jessica Cowell",
+        "Suyog Garg",
+        "Jonathan Gr\\'ee",
+        "Anamaria Hell",
+        "Ben Horowitz",
+        "Masaya Ichikawa",
+        "Kanyuni Iemoto",
+        "Keigo Kondo",
+        "Zacharie Lorsin",
+        "Kevin McCarthy",
+        "Jamie Robinson",
+        "Miguel Ruiz-Granda",
+        "Leander Thiele",
+        "Ievgen Vovk",
+        "Mingshen Zhou"
+      ],
+      "abstract": "We investigate how well large language models (LLMs) can assist scientific project planning and proposal evaluation. One-page project plans were independently generated for eight expert-conceived research projects in physics, astrophysics, and cosmology by human researchers and three contemporary LLMs (ChatGPT, Claude, and DeepSeek; mid-2025 models, used with their default tool access). The resulting 32 proposals were blindly evaluated by four human reviewers and two newer frontier LLMs (Claude Opus 4.8 and ChatGPT Pro 5.5) using a four-aspect evaluation rubric. Reviewers were also asked to identify whether each proposal was written by a human or an AI. Human reviewers rated human- and AI-written proposals similarly overall, whereas both AI reviewers scored AI-written proposals about one point higher (on a five-point scale) than human-written proposals. Human reviewers correctly identified human- and AI-written proposals 72% and 79% of the time, respectively, while both AI reviewers correctly classified all 32 proposals (100%). These results suggest that current LLMs can produce project plans comparable to human-written ones in the eyes of human reviewers, but that AI reviewers show a systematic preference for AI-generated proposals. Our results suggest caution when deploying LLMs widely in proposal preparation and evaluation.",
+      "categories": [
+        "cs.CL",
+        "astro-ph.CO",
+        "astro-ph.IM",
+        "cs.HC",
+        "gr-qc"
+      ],
+      "published": "2026-07-29T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.25881",
+      "pdf_url": "https://arxiv.org/pdf/2607.25881",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Directly studies LLM assistance for scientific project planning and proposal evaluation, making it highly relevant to your long-horizon scientific task and scientific reasoning interests."
+    },
+    {
+      "arxiv_id": "2607.25066",
+      "title": "Addressable Recall Compaction for Long Context-Window Control in AI Agents",
+      "authors": [
+        "Thang Dang",
+        "Yuma Ichikawa",
+        "Sakina Fatima",
+        "Koichi Shirahata"
+      ],
+      "abstract": "Long-horizon LLM agents accumulate reasoning traces, actions, and tool observations that can eventually exceed a model's fixed context window. Existing compaction methods address this limitation by discarding, summarizing, or retrieving earlier information, but they may remove task-critical details or fail to recover them reliably. We propose ARC (Addressable Recall Compaction), a context-management framework that separates archival storage from active-context presentation. ARC stores tool observations in an append-only, ID-addressable log and replaces older observations with compact citations when compaction is required. The agent can subsequently use these identifiers to request stored content without re-executing the corresponding tools or depending solely on similarity-based retrieval. We evaluate ARC using Qwen3-8B with a 16k context window and Qwen3-32B with a 32k context window. On the Needle-in-a-Haystack evaluation, ARC achieves an average exact-answer accuracy of 99.40%, compared with 88.12% for the best-performing baseline in our evaluation. ARC also reduces estimated serving time and HBM traffic under our hardware-cost model. On the LongBench-v2 Hard subset, ARC obtains an average accuracy of 29.97%, compared with 28.25% for the best-performing baseline. These results indicate that explicit, address-based recall can improve information retention and serving efficiency relative to the evaluated context-management baselines under the tested settings.",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-07-29T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.25066",
+      "pdf_url": "https://arxiv.org/pdf/2607.25066",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Directly targets long-horizon agent behavior under context limits, which is highly relevant to your interest in long-rollout evaluation and instruction-following over extended trajectories."
+    },
+    {
+      "arxiv_id": "2607.25886",
+      "title": "RSIBench-Data: Benchmarking Data-Centric Research for Recursive Self-Improvement",
+      "authors": [
+        "Fanqing Meng",
+        "Lingxiao Du",
+        "Qiguang Chen",
+        "Ziqi Zhao",
+        "Haocheng Lu",
+        "Mengkang Hu",
+        "Michael Qizhe Shieh"
+      ],
+      "abstract": "Recursive self-improvement requires turning evidence of model failures into better models. Data-centric post-training research entails diagnosing capability gaps, designing and validating training-data strategies, and learning from checkpoint feedback. Can LLM agents automate this loop? Existing benchmarks entangle research decisions with optimization, serving, evaluation, and systems implementation, obscuring agents' research capability. We introduce RSIBench-Data, a controlled benchmark of LLM agents as data-centric researchers with a fixed post-training stack. Agents iteratively revise training-data strategies for a fixed target model; training and serving use Tinker-backed services, official evaluation runs through Harbor and E2B sandboxes, and budgets are fixed across agents. We evaluate four frontier agents on six benchmarks across software engineering, terminal use, scientific question answering, and mathematics. Agents demonstrate core data-centric research capabilities: in 58.33\\% of settings, they improve upon the first valid attempt by refining strategies from feedback. However, improvement is inconsistent. Among searches continuing after the best observed score, 78.26\\% end with a lower-scoring final attempt, while the rest only recover the same peak. A strong candidate may therefore appear early or midway through a run even as later revisions fail. Trajectory analysis identifies four patterns in stronger runs: accurate hypotheses, validation-grounded supervision, behavior-aligned data, and preservation of strong checkpoints. These findings suggest that current agents can make useful data-centric discoveries but cannot yet translate feedback into consistent improvements. RSIBench-Data provides a measurable, auditable testbed for the research capabilities required for recursive self-improvement. We open-source our code at https://github.com/evolvent-ai/RSIBench-Data.",
+      "categories": [
+        "cs.SE",
+        "cs.CL"
+      ],
+      "published": "2026-07-29T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.25886",
+      "pdf_url": "https://arxiv.org/pdf/2607.25886",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "This benchmark for automating recursive self-improvement from model failures strongly matches your interest in tasks where failing first is necessary and in evaluating self-correction loops."
+    },
+    {
+      "arxiv_id": "2607.24758",
+      "title": "Do Models Fake Alignment Without Clear Consequences?",
+      "authors": [
+        "Cole Alexander Niblett",
+        "Alexander Chabot Nanni",
+        "Anita K. Rao"
+      ],
+      "abstract": "Large language models are capable of recognizing evaluation contexts and altering their behavior to reflect evaluator expectations rather than typical deployment behaviors, a phenomenon known as alignment faking. The reasons why models fake alignment are not fully understood, however. Canonical examples of alignment faking have taken place in scenarios that explicitly connect evaluation to consequences for the model, such as retraining the model or delaying its deployment. However, recent work by Sheshadri et al. has suggested that mechanistic motivations for alignment faking may vary across models and be more complex than previously considered. To investigate whether consequence-linking information is necessary for compliance gaps, we placed 15 models in a scenario testing their willingness to violate a corporate network access policy to help a user with a pro-social request. Nine models were found to produce significant compliance gaps, 5 of which persisted with the removal of scenario language relating model evaluations to deployment consequences. We additionally tested the effect of goal language on model preferences, finding it drove violations in some while suppressing violations in others. This suggests that evaluation-conditioned compliance gaps can occur with less instrumental scaffolding than previous scenarios have provided, and monitored behavior may be a poor indicator of how agents may behave in deployment.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-29T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.24758",
+      "pdf_url": "https://arxiv.org/pdf/2607.24758",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Alignment faking without clear consequences is highly relevant to understanding evaluator-facing behavior, judge weaknesses, and whether models behave differently under assessment than deployment."
+    },
+    {
+      "arxiv_id": "2607.24771",
+      "title": "RoCo-ACE: Rollout-Conditioned Online Distillation for Retention-Aware Knowledge Injection",
+      "authors": [
+        "Yan Hong",
+        "Wei Li",
+        "Kedong Xiu",
+        "Jun Lan",
+        "Shuheng Zhou",
+        "Zhongcai Lyu",
+        "Huijia Zhu",
+        "Weiqiang Wang",
+        "Jianfu Zhang"
+      ],
+      "abstract": "Knowledge injection updates pretrained MLLMs with new factual or domain-specific knowledge, but fitting full authoritative answers can cause drift in non-updated behavior. Online distillation mitigates this drift by training on model-generated rollouts, yet uniform reference-conditioned distillation provides coarse supervision: it can under-emphasize reference-supported rollout tokens and supervise omitted facts only indirectly. We introduce RoCo-ACE, a rollout-conditioned online distillation objective for knowledge injection. RoCo uses same-rollout reference-free/reference-conditioned likelihood contrast to reallocate additional distillation weight to reference-supported rollout tokens, while ACE adds sparse reference-side anchored correction for authoritative anchors omitted from the rollout without full-answer imitation. Across three knowledge-injection settings, six retention benchmarks, multiple baselines, and multiple base models, RoCo-ACE achieves the best injected-knowledge accuracy among compared methods while keeping evaluated retention close to the base model.",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-07-29T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.24771",
+      "pdf_url": "https://arxiv.org/pdf/2607.24771",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Rollout-conditioned online distillation for retention-aware knowledge injection is directly relevant to your stated interest in scaling feedback and on-policy distillation."
+    },
+    {
+      "arxiv_id": "2607.24780",
+      "title": "LivingArena: Do LLMs Know What Other LLMs Don't? Peer-Probing as Scalable Evaluation",
+      "authors": [
+        "Xingyu Chen",
+        "Rui Wang",
+        "Zhaopeng Tu",
+        "Liefeng Bo"
+      ],
+      "abstract": "Evaluating frontier LLMs is challenging: static benchmarks suffer from contamination and saturation -- leaving users unable to distinguish top models and developers blind to specific failure modes -- while human preference is subjective. In this paper, our question is: \\emph{Do LLMs know what other LLMs don't? And can we leverage this dynamic for evaluation?} We present \\textbf{LivingArena}, an automated, contamination-resistant evaluation framework. In this framework, models take turns proposing questions, aiming to pose items that opponents cannot answer correctly. Questioners are encouraged to actively identify and exploit opponents' knowledge boundaries, receiving rewards when the answerer fails, while the answerer is rewarded otherwise. To ensure questions contain objectively verifiable answers, a judge panel of strong models validates them, penalizing questioners if validation fails. Evaluating ten frontier LLMs, LivingArena yields a stable Elo leaderboard. Our behavioral analyses show that models identify and exploit their peers' cognitive boundaries: self-play and tournament logs indicate that they localize and double down on opponents' weak dimensions. Beyond static knowledge recall, peer probing measures factual rigor and the higher-order ability to probe an opponent's weaknesses, correlating only weakly with human preference and offering a scalable, low-cost approach to continuous evaluation.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-29T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.24780",
+      "pdf_url": "https://arxiv.org/pdf/2607.24780",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Highly relevant to your interest in scalable grading and evaluator weaknesses, since it studies LLM-vs-LLM peer-probing as a dynamic evaluation method for distinguishing strong models and surfacing failure modes."
+    },
+    {
+      "arxiv_id": "2607.25090",
+      "title": "Matryoshka Agent: Unfolding Sub-Agents for Long-Horizon Machine Learning Engineering",
+      "authors": [
+        "Rushi Qiang",
+        "Changhao Li",
+        "Haotian Sun",
+        "Yuchen Zhuang",
+        "Chao Zhang",
+        "Bo Dai"
+      ],
+      "abstract": "Machine learning engineering (MLE) tasks require long-horizon decision making over iterative solution debugging and refinement, under expensive and feedback-driven environment interactions. Developing and training a monolithic agent for such tasks is fundamentally challenging, as it must simultaneously manage extremely long and noisy contexts, explore vast solution spaces, and remain effective under limited model capacity and computational budgets. To address these challenges, we propose Matryoshka Agent, a unified hierarchical agent framework for complex long-horizon tasks. Matryoshka Agent decomposes agentic problem solving into a coordinated hierarchy of decision making and execution: a high-level Orchestrator maintains compact, long-horizon exploration states and issues strategic instructions, while lower-level Sub-Agents execute concrete solution attempts through direct environment interaction, mediated by standardized Tool interface. This design decouples strategic exploration from costly execution, substantially reducing the burden of long-context reasoning and enabling efficient iterative refinement. We further develop an efficient training paradigm for Matryoshka Agent. Experimental results on a broad range of MLE tasks with diverse model types and scales demonstrate that Matryoshka Agent is an effective and scalable paradigm for long-horizon MLE tasks and complex agentic problem solving. Notably, Matryoshka Agent enables Qwen3-4B-Instruct to reach Orchestrator performance comparable to o4-mini. Applying Matryoshka Agent to Qwen3-30B-Coder results in at most 36.7% relative performance gain.",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-07-29T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.25090",
+      "pdf_url": "https://arxiv.org/pdf/2607.25090",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Highly relevant to your long-horizon scientific-task agenda because it targets long-horizon ML engineering with iterative debugging, sub-agents, and expensive feedback-driven interactions."
+    },
+    {
+      "arxiv_id": "2607.25136",
+      "title": "Less Data, Better Alignment: Data-Centric Multi-Evaluator Agreement for Preference Optimization",
+      "authors": [
+        "Zhengtao Yao",
+        "Runhao Li",
+        "Xupeng Chen",
+        "Jiayi Cheng",
+        "Chenqian Le",
+        "Michael Yue",
+        "Siheng Wang",
+        "Haoyan Xu",
+        "Yuqi Li",
+        "Chenhao Wei",
+        "Zhengdao Li",
+        "Rongchao Zhang",
+        "Guang Yang",
+        "Yidong Wang",
+        "Junhao Dong"
+      ],
+      "abstract": "Research on preference optimization often varies the training objective while holding the data fixed. We instead ask whether a small, high-confidence set of on-policy responses can provide a reliable learning signal. Our method, DMAPO (Data-centric Multi-evaluator Agreement for Preference Optimization), generates candidate responses from the target policy, evaluates helpfulness, factuality, and conciseness with rubric-specialized evaluators, applies a process-critic correction, and retains only high-consensus desirable or undesirable examples. This procedure accepts 1,871 of 54,236 Mistral-7B candidates (3.45%). KTO trained on this set reaches 7.50 on MT-Bench, 95.5% length-controlled win rate against a text-davinci-003 reference, and 57.3% IFEval prompt accuracy. Independent pairwise evaluation also favors DMAPO over SimPO: GPT-4o yields a net win rate of 23.3 points on 129 held-out prompts and 24.0 points on 200 out-of-distribution LMSYS-Chat prompts; Claude Opus 4.7 yields 24.1 points on the held-out set. Changing the evaluator model or rubric alters the selected examples but has little effect on downstream performance. A second-backbone study yields a similar 3.41% acceptance rate, although its performance gains are more modest. Across these experiments, consensus filtering offers a data-efficient route to preference optimization for general instructions, at the cost of additional curation compute and dependence on evaluator judgments.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-29T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.25136",
+      "pdf_url": "https://arxiv.org/pdf/2607.25136",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Very relevant to Hunter Prep topics because it is explicitly about preference optimization with on-policy responses and multi-evaluator agreement, directly connecting to feedback scaling and judge weakness issues."
+    },
+    {
+      "arxiv_id": "2607.25659",
+      "title": "CoRT: Counterfactual Replay for Token-Level Rubric-Guided Policy Optimization",
+      "authors": [
+        "Bo-Wen Zhang",
+        "Junwei He",
+        "Wen Wang",
+        "Song-Lin Lv",
+        "Wentao Ma",
+        "Rongyi Lin",
+        "Shuhan Zhong",
+        "Lan-Zhe Guo"
+      ],
+      "abstract": "Rubric-based reinforcement learning enriches language model training by evaluating model outputs against explicit criteria. Yet in GRPO-style pipelines, these structured judgments are reduced to a scalar response-level reward and converted into a response-level advantage, which is broadcast uniformly to all generated tokens. This leaves no explicit mechanism for allocating credit within a response, even when different criteria are grounded in different spans, formatting decisions, or semantic choices. We propose CoRT, a token-level credit weighting method for rubric-conditioned GRPO. Instead of training an auxiliary token scoring model, CoRT uses counterfactual replay to rescore the same sampled response under the original rubric-conditioned prompt and a matched criteria-free prompt. The resulting tokenwise log-likelihood contrasts serve as a proxy for dependence on the rubric context. CoRT maps these contrasts to bounded, response-normalized weights and uses them to redistribute the signed GRPO advantage across tokens, without introducing an auxiliary scorer or changing the response-level reward. Experiments across instruction-tuned models and reward granularities show that CoRT improves over matched response-level GRPO in the vast majority of comparisons, with an average gain of 4.4 percentage points. The method remains competitive with learned token-level credit baselines while avoiding a separate relevance-learning stage. These results suggest that policy-internal counterfactual likelihood contrasts provide an effective training signal for within-response credit allocation while retaining the simplicity and stability of GRPO.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-29T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.25659",
+      "pdf_url": "https://arxiv.org/pdf/2607.25659",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Directly relevant to rubric-guided policy optimization and fine-grained credit assignment, which overlaps with interests in grading long rollouts, reward design, and on-policy distillation."
+    },
+    {
+      "arxiv_id": "2607.25675",
+      "title": "DecoEvo: Score-Decoupled Co-Evolution of Solver and Rubric-Generator Skills in Text Space",
+      "authors": [
+        "Jiangwang Chen",
+        "Zixin Song",
+        "Junlin Liu",
+        "Shuaiyu Zhou",
+        "Haiyan Wu",
+        "Haihan Shi",
+        "Chenxi Zhou",
+        "Hanqing Li",
+        "Xiao Yang",
+        "Da Zhu",
+        "Guanjun Jiang",
+        "Hai Wan",
+        "Xibin Zhao"
+      ],
+      "abstract": "Text-space optimization adapts large language models (LLMs) by editing external natural-language artifacts rather than model weights, so the optimized artifacts remain inspectable and the model can be treated as a black box. However, most existing text-space methods keep evaluation fixed. On open-ended tasks, this can become a bottleneck: once the solver improves on the criteria a rubric measures, omitted dimensions remain invisible to the optimization signal. Simply evolving the rubric is also unreliable when updates are selected by the current solver's score, because apparent progress can come from making the rubric easier to satisfy. We introduce DecoEvo (Decoupled Co-Evolution), which co-evolves a solver skill and a rubric-generator skill under decoupled objectives without using gold rubrics during optimization. The solver skill is updated using criterion-level feedback, while the rubric-generator skill is revised through complementary audits of requirement coverage and response discrimination that are independent of aggregate solver score. This separation focuses generator updates on newly exposed solver weaknesses, reducing repeated emphasis on criteria the solver already satisfies. Under each benchmark's official evaluation, DecoEvo outperforms all compared methods across five benchmarks and three LLM backbones, yielding 2.8--5.0\\% relative gains over SkillOpt in the five-benchmark average.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-29T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2607.25675",
+      "pdf_url": "https://arxiv.org/pdf/2607.25675",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Very relevant because it studies co-evolution of solver and rubric-generator skills, aligning with concerns about better grading, evaluator quality, and weaknesses of fixed LM judges."
+    }
+  ]
+}
