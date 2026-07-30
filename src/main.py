@@ -101,7 +101,8 @@ def main():
         max_pages=twitter_cfg.get("max_pages", 3),
         hours_back=int(hours_since_target),
         target_date=target_date,
-    ) if user_id else []
+        backend=twitter_cfg.get("backend", "auto"),
+    )
     print(f"  Found {len(tweets)} tweets")
 
     # 5. Summarize tweets
@@ -139,12 +140,17 @@ def main():
         f"  OpenAI: {llm_usage.api_calls} calls, {llm_usage.input_tokens:,} in / "
         f"{llm_usage.output_tokens:,} out, ${llm_usage.estimated_cost_usd:.4f}"
     )
-    print(
-        f"  Twitter: {twitter_usage.api_calls} calls, {twitter_usage.posts_read} posts read "
-        f"(${twitter_usage.posts_read * 0.005:.2f}), {twitter_usage.users_read} users read "
-        f"(${twitter_usage.users_read * 0.01:.2f}), total ${twitter_usage.estimated_cost_usd:.4f}"
+    twitter_cost = (
+        f"${twitter_usage.estimated_cost_usd:.4f}"
+        if twitter_usage.cost_estimate_available
+        else "see Xquik usage"
     )
-    print(f"  Total: ${total_cost:.4f}")
+    print(
+        f"  Twitter/X ({twitter_usage.backend}): {twitter_usage.api_calls} calls, "
+        f"{twitter_usage.posts_read} posts read, {twitter_usage.users_read} users read, "
+        f"cost {twitter_cost}"
+    )
+    print(f"  Tracked total: ${total_cost:.4f}")
 
     print("Done!")
 
