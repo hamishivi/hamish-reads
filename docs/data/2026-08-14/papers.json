@@ -1,0 +1,725 @@
+{
+  "date": "2026-08-14",
+  "generated_at": "2026-08-14T03:05:04.314629+00:00",
+  "author_papers": [
+    {
+      "arxiv_id": "2608.11338",
+      "title": "Better, Faster, Stronger: Programmatic Skill Learning Best Reduces Agent Cost",
+      "authors": [
+        "Zixi Huang",
+        "Xiheng Wang",
+        "Andrew Wang",
+        "William Jurayj",
+        "Bernal Jim\\'enez Guti\\'errez",
+        "Daniel Khashabi",
+        "Nicholas Andrews"
+      ],
+      "abstract": "Recently, the practice of augmenting LLM agent capability with skills has gained prevalence. We explore the cost effective adaptation of agents to novel domains by means of learning skills. Existing works focus on performance gain over cost effectiveness. As a result, little is known about what skill learning strategies save cost. We argue that among all the different skill learning methods, those that view skills as programs can achieve the best cost reduction. By executing sequences of actions deterministically, a program-augmented agent can reliably and cheaply achieve goals that would otherwise require trial and error and risk degenerate behavior over long horizons. An agent can learn at inference time by incrementally discovering these programs and equipping them for future tasks. We hypothesize that past trajectories contain enough signal to guide skill learning, even without replay or validation, provided the agent can learn to analyze them. To test our claims, we propose SpeedRunner, a coding agent that analyzes trajectories and refactors skills for better performance on future tasks. Across three different embodied environments, we show that SpeedRunner consistently achieves the frontier in learning and cost reduction while remaining robust against distribution shifts and environmental randomness.",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "published": "2026-08-13T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.11338",
+      "pdf_url": "https://arxiv.org/pdf/2608.11338",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2608.11426",
+      "title": "Is Convergence Inevitable? Tracing Output Homogeneity Back to Base Models",
+      "authors": [
+        "Alexandrine Fortier",
+        "Hazel Chen",
+        "Peter West"
+      ],
+      "abstract": "The lack of diversity in LM content is widely attributed to the alignment process, but how and where exactly in the pipeline this collapse begins is unknown. We argue that output homogeneity is likely learned during the pretraining phase, and only \\emph{revealed} or magnified during the alignment process. Specifically, we find that semantic convergence is observed from the first alignment stage--the instruction-tuning phase (SFT)--suggesting that homogeneity might already exist in the pre-alignment model. To investigate this, we conduct controlled SFT experiments examining how training data influences output convergence on specific input/output pairs. We find that convergence can be revealed and amplified, but not introduced by the SFT data, supporting its role as a catalyst rather than a cause. To further test whether homogeneity originates before alignment, we measure convergence in base models. We find that instruct-like collapse can be induced through prompting alone, even without alignment. Taken together, our results suggest that semantic convergence may arise naturally from the objectives underlying LM training, making it difficult to mitigate through post-alignment interventions alone.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-08-13T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.11426",
+      "pdf_url": "https://arxiv.org/pdf/2608.11426",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2608.12218",
+      "title": "Information Abundance Paradox: Long-Context Training Undermines Parametric Knowledge",
+      "authors": [
+        "Arda Uzunoglu",
+        "Benjamin Van Durme",
+        "Daniel Khashabi"
+      ],
+      "abstract": "Large language models are increasingly trained and deployed with long contexts that span documents, code repositories, and interaction histories. This scaling reflects the implicit assumption that training on longer contexts will only help the model by exposing it to richer evidence. We challenge this view by studying how the context window shapes a model's mode of learning, shifting it between parametric internalization and contextualization. We propose the Information Abundance Paradox, which hypothesizes that abundant relevant information in the training context can reduce the incentive to encode that information parametrically, thereby increasing reliance on context. In pretraining with long documents, increasing the context window improves language modeling, natural language understanding, and closed-book MCQA only up to an intermediate optimum, after which performance consistently declines. In supervised fine-tuning, more task-relevant train-time context improves performance with supporting context, but reduces robustness when context is absent or misleading at test time. Our analysis suggests that this behavior arises when longer context provides a lower complexity solution. Mechanistically, training with informative context shifts gradient pressure from feed-forward networks, often linked to parametric knowledge, toward attention modules, and causal interventions show that this shift increases reliance on context during inference. Overall, these findings support the Information Abundance Paradox and suggest that scaling toward near-infinite context is not simply a matter of supplying more data, even when high-quality long-context data is abundant.",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-08-13T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.12218",
+      "pdf_url": "https://arxiv.org/pdf/2608.12218",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2608.11434",
+      "title": "Benchmarking LLM Judges for Mobile Agent Evaluation",
+      "authors": [
+        "Ziqiang Wan",
+        "Li Gu",
+        "Zhixiang Chi",
+        "Zhi Liu",
+        "Seyed Mehdi Ayyoubzadeh",
+        "Yuanhao Yu",
+        "Yang Wang"
+      ],
+      "abstract": "Mobile agent benchmarks increasingly rely on LLM-based judges to evaluate task completion, yet the reliability of these judges on mobile agent trajectories remains largely unexamined. We introduce MobileJudgeBench, a benchmark for systematically evaluating LLM-as-judge methods on mobile agent trajectories. Our benchmark comprises 931 human-annotated trajectories spanning 6 mobile agent benchmarks, 4 agent models, and 68 apps. We evaluate 6 judge methods (five adapted from SPA-Bench, A3 with two modes, AndroidArena, and AgentRewardBench, plus a simple baseline we design) across multiple LLM backends. Our experiments reveal three key findings. First, a simple baseline judge with sampled screenshots is competitive with, and often exceeds, purpose-built methods, indicating that more elaborate judge pipelines do not consistently improve judge quality; among competitive methods, the LLM backbone is the primary driver. Second, benchmark quality metrics reliably predict real-world judge utility: they correlate with both agent ranking fidelity for evaluation and downstream performance when judges serve as reward signals for on-policy reinforcement learning. Third, failure analysis across two LLM backends uncovers qualitatively opposite failure profiles, one conservative and the other permissive, linked to the backbone's precision-recall characteristics.",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.CV"
+      ],
+      "published": "2026-08-13T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.11434",
+      "pdf_url": "https://arxiv.org/pdf/2608.11434",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2608.11588",
+      "title": "CoAdapt-GUI: Joint Workflow Context and Policy Adaptation for Unseen GUI Applications",
+      "authors": [
+        "Linqiang Guo (Peter)",
+        "Li Gu (Peter)",
+        "Zihuan Jiang (Peter)",
+        "Zhixiang Chi (Peter)",
+        "Siobhan Reid (Peter)",
+        "Ziqiang Wang (Peter)",
+        "Yuanhao Yu (Peter)",
+        "Wei Liu (Peter)",
+        "Yang Wang (Peter)",
+        "Tse-Hsun (Peter)",
+        "Chen"
+      ],
+      "abstract": "Mobile GUI agents remain brittle when deployed to applications absent from source training. We study novel-app generalization under a limited target interaction budget and without target demonstrations. We introduce CoAdapt-GUI, a test-time adaptation (TTA) framework that jointly adapts structured workflow context and policy from the agent's own target-app rollouts and rewards. The workflow context retains transferable procedures, failure modes, and verification rules while excluding app-bound source details. This separation allows reusable workflow knowledge to guide adaptation without transferring source-interface state. For policy adaptation, task-context-matched group-relative optimization updates a LoRA adapter on a frozen vision-language model. Across two unseen-app evaluations, CoAdapt-GUI reaches 45.0% on AndroidWorld-Generalization, compared with 37.5% for the reported Policy-Only TTA baseline, and raises AndroidWorld Plus performance from 38.6% to 52.9%. These results show that transfer-constrained workflow context provides substantial gains and that joint policy adaptation further improves held-out performance.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-08-13T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.11588",
+      "pdf_url": "https://arxiv.org/pdf/2608.11588",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2608.11612",
+      "title": "Dion3: Full-Stack Orthogonal Updates",
+      "authors": [
+        "Noah Amsel",
+        "Jack Zhang",
+        "Kwangjun Ahn",
+        "Ali Naeimi",
+        "Austin Feng",
+        "Berlin Chen",
+        "Tri Dao",
+        "John Langford"
+      ],
+      "abstract": "The Muon optimizer incurs a significant overhead cost due to its cubic-time Newton-Schulz orthogonalization step. When weights are sharded, communication overhead compounds this computational cost, eroding the benefits of Muon in many settings. We present Dion3, a revision of Muon that targets this overhead at every level of the stack. Our Gram Newton-Schulz algorithm reduces the FLOP cost of orthogonalization, our CuteDSL kernels accelerate it by exploiting symmetry, and our megabatching strategy reduces communication overhead. Moreover, we propose a simple change to the update rule that cuts costs even further: selecting only a fraction of the momentum matrix's rows to orthogonalize at each step. This update rule improves on Dion (another \"compressed\" version of Muon), in both speed and performance. Overall, Dion3 matches or improves on the loss achieved by Muon but reduces optimizer step time by up to 6x. Dion3 is available via the dion package (https://github.com/microsoft/dion) as a drop-in replacement for Muon.",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-08-13T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.11612",
+      "pdf_url": "https://arxiv.org/pdf/2608.11612",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2608.11674",
+      "title": "GCPO: Diagnosing and Constraining Subspace Geometry in Rollout RL for LLMs",
+      "authors": [
+        "Kai Yang",
+        "Jingwei Xu",
+        "Wanyu Wang",
+        "Kai-Yuan Guo",
+        "Zhenbo Yu",
+        "Yi Wang",
+        "Yu Qiao"
+      ],
+      "abstract": "On-policy rollout methods such as GRPO are central to post-training of large language models, yet they frequently suffer from training instabilities, cross-task capability degradation, and response-length inflation. Although prior work has characterized the subspace geometry of aggregate updates, the stepwise variation of this geometry and its relationship to model performance remain unclear. We introduce Principal-Subspace Overlap, a dimension-corrected measure of individual rollout updates relative to the dominant singular subspaces of pretrained weights. Despite low average overlap, transient spikes often precede performance degradation. To address this, we propose GCPO (Geometrically Constrained Policy Optimization), which applies hard bilateral orthogonal projections to constrain updates to the complementary subspaces, preventing such excursions by construction. Across mathematical reasoning, code generation, and tool-use tasks on Qwen3-8B and GLM4-9B, GCPO consistently outperforms GRPO and recent variants, including DAPO and GSPO, improving over the base models and the strongest baseline by up to 27.69 and 2.37 points, respectively. Furthermore, GCPO preserves general capabilities, eliminates response-length inflation, and stabilizes policy entropy. Our findings provide a new diagnostic lens and a principled design perspective for stable reinforcement learning post-training.",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-08-13T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.11674",
+      "pdf_url": "https://arxiv.org/pdf/2608.11674",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2608.11859",
+      "title": "Small-Scale Experiments: Are We There Yet?",
+      "authors": [
+        "Nicholas Lourie",
+        "Kyunghyun Cho",
+        "Karen Ullrich",
+        "Sanae Lotfi"
+      ],
+      "abstract": "Scaling laws promised cost-effective experiments; six years later, they have yet to fully deliver. Instead, researchers have found them unreliable at small scales (starting at 4M parameters) and concluded that sizable models cannot be avoided. We show this is not the case: the confounding factor is hyperparameters. Small models are highly sensitive, but hyperparameter sensitivity fades with scale. This small-scale sensitivity makes scaling laws easy to miss because they only emerge on the fully tuned frontier, and reaching that frontier requires an extensive search far beyond what most ever run. By ablating the basic scaling law recipe, we show well-tuned hyperparameters matter more than any other ingredient. Further, we reveal why those hyperparameters become easier to find: as scale increases, the hyperparameter loss surface becomes lower dimensional. Nevertheless while scaling laws exist in small models, extrapolation hits statistical limitations. A holistic approach is required. Synthesizing our insights with the recent literature, we develop a new methodology for model-centric research and demonstrate it on a question that once took the field years to settle: where to place normalization layers in the transformer architecture. From small-scale experiments, we recover the large scale result: pre-normalization works better as models grow in size. With the right tools and a better understanding, small-scale experiments can deliver on scaling laws' long-awaited promise.",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-08-13T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.11859",
+      "pdf_url": "https://arxiv.org/pdf/2608.11859",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2608.11909",
+      "title": "Disentangling the Expressivity of RoPE",
+      "authors": [
+        "Selim Jerad",
+        "Anej Svete",
+        "Jiaoda Li",
+        "Ryan Cotterell"
+      ],
+      "abstract": "Two accounts recur in explanations of the success of rotary position embeddings (RoPE). Expressivity studies associate periodic position information with modular predicates, whereas mechanistic and long-context studies emphasize positional anchors and local offsets. We formalize both accounts for fully uniform, finite-precision soft-attention transformers. We find that, if every rotary component is periodic, RoPE transformers recognize exactly the languages definable in past temporal logic with modular predicates. Conventional RoPE is different: The rotations it computes never repeat. This yields a precision-dependent bounded simulation of fixed-offset look-back operators, rather than an all-length modular characterization. Controlled experiments match this separation: Constructed periodic schedules length-generalize on modular languages, while conventional RoPE behaves more like a bounded locality bias and can impair tasks requiring position-invariant access to distant context. Altogether, our findings shed light on RoPE transformers, bringing theoretical expressivity characterizations closer to models used in practice.",
+      "categories": [
+        "cs.LG",
+        "cs.FL"
+      ],
+      "published": "2026-08-13T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.11909",
+      "pdf_url": "https://arxiv.org/pdf/2608.11909",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2608.11996",
+      "title": "A Remote Approach to Cashew Orchard Detection: Leveraging Active Learning with Satellite Imagery in Guinea-Bissau",
+      "authors": [
+        "Miguel",
+        "Sofia",
+        "Maria",
+        "Patr\\'icia",
+        "Luke",
+        "Jo\\~ao"
+      ],
+      "abstract": "Cashew production is a widespread economic activity in Guinea-Bissau, as well as other countries in West Africa. However, unregulated cashew production can be directly associated with increasing regionwide deforestation rates, biodiversity losses, and a fragile economic structure. There is no nationwide database for listing or georeferencing cashew orchards, so there is a clear need to remotely map their locations. In recent years, multiple methods for detecting orchards have been developed, though they have only been applied on a regional level. This work expands regional analyses to a nationwide scale. It develops a scalable and cost-effective remote approach, based on Sentinel-2 satellite imagery, using Machine Learning techniques to detect cashew orchards automatically. Margin-based Active Learning techniques were employed to develop an optimal training set in terms of the number of points and their informativeness, leading to a cashew map with 94.0% balanced accuracy obtained entirely off-site. We created two datasets and a 2021 cashew map with 10m spatial resolution that are openly accessible through GitHub. The results demonstrate the possibility of a broader cashew orchard mapping, creating a new stepping stone for this environmental application.",
+      "categories": [
+        "cs.CV",
+        "cs.LG"
+      ],
+      "published": "2026-08-13T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.11996",
+      "pdf_url": "https://arxiv.org/pdf/2608.11996",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    }
+  ],
+  "ranked_papers": [
+    {
+      "arxiv_id": "2608.11669",
+      "title": "Rubric Dropout: A Simple Way to Mitigate Reward Hacking in Rubric-as-Reward RL",
+      "authors": [
+        "Minglai Yang",
+        "Xinyu Guo",
+        "Utkarsh Tyagi",
+        "Mian Zhang",
+        "Razvan Dumitru",
+        "Sunjie Hou",
+        "Yunzhong He",
+        "Daniel Yue Zhang",
+        "Ying Liu"
+      ],
+      "abstract": "Reinforcement learning against rubrics, lists of criteria graded by an LLM judge, has become a standard way to post-train language models on tasks with no deterministic answer. The rubric, however, is a fixed proxy for quality, never a complete description of it, and a policy trained against it long enough will learn to exploit the difference. We measure this directly. Training Qwen3-8B with Group Relative Policy Optimization (GRPO) on medical and science rubrics and grading out-of-distribution (OOD) benchmarks with both the training judge and a stronger gold judge, we find that the two scores diverge during training. The training judge's score keeps climbing while the gold judge's score peaks and then falls, by 3 points on HealthBench-Hard and by 22 points on ResearchQA. A judge with a fixed bias would shift the gold curve by a constant, not send it down while the training score rises, so the divergence is reward hacking, not judge noise. We propose Rubric Dropout, a one-line fix borrowed from neuron dropout. At every step, we randomly drop a subset of the rubric's criteria before computing the reward, so the policy never optimizes the same rubric twice. The dropped subset is shared across each rollout group, so GRPO's group-relative advantages stay comparable, and evaluation always uses the full rubric. Comparing no dropout against dropout at 30% and 50% on both benchmark pairs, dropout raises the OOD gold score at every matched checkpoint (+1 to +2 points on HealthBench-Hard, +6 to +7 points on ResearchQA), lowers the two hacking measures we track, and costs nothing in domain. Sweeping the dropout fraction shows a broad 30-50% sweet spot, while the natural alternative, reweighting criteria by how useful they are to training, performs worse than no intervention at all in our setting.",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-08-13T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.11669",
+      "pdf_url": "https://arxiv.org/pdf/2608.11669",
+      "is_author_match": false,
+      "relevance_score": 10.0,
+      "relevance_reason": "Highly relevant to Hunter/Shuchao interests because it studies rubric-based LLM judging, reward hacking, and a simple mitigation for failures in grading-as-reward pipelines."
+    },
+    {
+      "arxiv_id": "2608.11829",
+      "title": "Towards Understanding On-Policy Distillation through the Lens of Test-Time Scaling",
+      "authors": [
+        "Xinmu Ge",
+        "Zizhuo Zhang",
+        "Yu Huang",
+        "Jianing Zhu",
+        "Lin Yuan",
+        "Wanli Gu",
+        "Weichang Wu",
+        "Weiran Huang",
+        "Xiaolu Zhang",
+        "Bo Han",
+        "Jun Zhou",
+        "Jiangchao Yao"
+      ],
+      "abstract": "On-policy distillation (OPD) has emerged as a promising post-training technique for enhancing LLM reasoning. It is commonly believed to enable the student model to distill knowledge from a stronger teacher model, thereby expanding capabilities beyond the pre-OPD base model. In this study, we examine this view through the lens of test-time scaling by varying the sampling budget K and evaluating performance with pass@K and avg@K. Specifically, across several OPD variants, we observe that OPD-trained models maintain superior avg@K performance across sampling budgets, while the advantage in pass@K gradually shifts to the pre-OPD base models as K increases. These results suggest that OPD primarily improves sampling efficiency rather than consistently expanding the student's reasoning capability boundary. The pass@K dynamics throughout OPD training further reveal a progressive shift toward stronger small-K performance at the expense of the large-K capability boundary. Furthermore, a problem-level solvability analysis using pass@1024 as the criterion reveals an asymmetry: OPD causes more previously solvable problems to become unsolvable than previously unsolvable problems to become solvable. Together, these findings suggest that, from the perspective of capability expansion, OPD behaves more like an \"illusory distillation\": its apparent gains arise primarily from improved sampling efficiency rather than from acquiring genuinely new reasoning capabilities from the teacher.",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "published": "2026-08-13T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.11829",
+      "pdf_url": "https://arxiv.org/pdf/2608.11829",
+      "is_author_match": false,
+      "relevance_score": 10.0,
+      "relevance_reason": "Extremely relevant to Hunter prep since it is directly about on-policy distillation and frames its effects through the lens of test-time scaling, matching your stated discussion topics almost exactly."
+    },
+    {
+      "arxiv_id": "2608.11573",
+      "title": "Reinforcing Step-level Reasoning for Effective Self-Correction in LLMs",
+      "authors": [
+        "Vu Duc Anh",
+        "Nhat M. Hoang",
+        "Do Xuan Long",
+        "Cong-Duy Nguyen",
+        "Ponhvoan Srey",
+        "Luu Anh Tuan"
+      ],
+      "abstract": "Achieving effective self-correction, where models verify and correct their own mistakes, remains a fundamental challenge for large language models (LLMs). In this work, we propose Self-Fix Step-DPO (SFS-DPO), a reinforcement learning based, two-stage framework for step-level self-verification and self-correction. The first stage strengthens step-level reasoning via step-level preference optimization, while the second stage explicitly trains models to self-verify and self-correct. We further introduce a teacher-assisted variant, SFS-DPO-R, which incorporates explanatory rationales for error verification to provide stronger corrective signals. Comprehensive in-domain and out-of-domain evaluations across multiple LLMs demonstrate that SFS-DPO and SFS-DPO-R consistently outperform prior step-level training baselines. Our analysis further reveals improvements in self-correction frequency and effectiveness, highlighting the importance of strengthening step-level reasoning for robust performance.",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-08-13T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.11573",
+      "pdf_url": "https://arxiv.org/pdf/2608.11573",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "This is a close match to your self-correction interests because it focuses on reinforcement of step-level reasoning for verification and repair, exactly the kind of explicit self-correction capability you mentioned."
+    },
+    {
+      "arxiv_id": "2608.11772",
+      "title": "Diagnosis Before Recovery: Turning Agent Failures into Selective Self-Correction",
+      "authors": [
+        "Pan Wang",
+        "Yihao Hu",
+        "Hang Wang",
+        "Zirui Lv",
+        "Xin Zhang",
+        "Jianshe Li",
+        "Jiang-Ming Yang",
+        "Wei Wu",
+        "Yongqi Tong"
+      ],
+      "abstract": "Self-correction is particularly useful when a failure constrains the next repair. Coding agents benefit from this property because compilers, tests, and execution traces turn many failures into typed recovery signals, but broad language-agent tasks often expose only a coarse task failure. This creates a tension for generic recovery playbooks: they broaden the agent's context precisely when the system needs a narrower repair interface, mixing incompatible signals for invalid actions, missing procedures, and strict-format errors. Our insight is that development-set failures can recover part of the missing diagnostic substrate by deciding which recovery interventions are admissible before test-time correction. We propose DARC, a diagnosis-guided recovery harness that profiles task-family failure modes, prunes mismatched interventions from a shared recovery library, and freezes a verifier-selected success-cost policy for deployment. This causal order makes correction selective: the harness first determines what kind of failure can be repaired, then decides how much recovery evidence to spend. In ALFWorld, AppWorld, and XBRL Finance, the same protocol yields an action-validity harness, a procedural-recovery fallback, and a format-precision retrieval policy; in each evaluated setting it improves average task performance over base agents and broad playbooks while reducing environment steps or retrieval budget. Our experiments show that failures need not trigger uniformly more context: DARC turns self-correction from prompt expansion into recovery-interface design. DARC provides a practical route toward more reliable agents in domains where compiler-like feedback is absent: making failures actionable before making contexts larger.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-08-13T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.11772",
+      "pdf_url": "https://arxiv.org/pdf/2608.11772",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Diagnosis Before Recovery is highly relevant to both self-correction and long-horizon rollout grading, since it frames failures as typed signals that should guide selective repair rather than generic retry."
+    },
+    {
+      "arxiv_id": "2608.11323",
+      "title": "Deployment Decision Reliability: A Generalizability-Theory Framework for Sizing Long-Horizon Agent Evaluations",
+      "authors": [
+        "Vasundra Srinivasan"
+      ],
+      "abstract": "Enterprise practitioners read agent leaderboards as if they ranked agent capability. We show, across three open agent-trace benchmarks (TheAgentCompany, $\\tau^2$-bench, and AppWorld), that the agent main effect accounts for less than 3% of total variance in every dataset and check type, while the agent-by-task interaction accounts for 7-23%. Leaderboards rank specialization, not capability. We arrive at this through a four-facet Generalizability Theory variance decomposition, fit with three estimators (Henderson Method-I, REML via lme4, and a Bayesian binomial GLMM) that agree to three decimal places. Four further findings sharpen what the leaderboard is hiding. First, aggregate reliability collapses on the hardest task quartile: $E\\rho^2$ on $\\tau^2$ action_checks falls from 0.752 to 0.000. Second, training-cell reliability negatively correlates with held-out reliability ($r = -0.90$ on $\\tau^2$), meaning the designs that look most reliable replicate worst. Third, population-level diagnostics transfer across enterprise benchmarks (capability-gap ratio stable at 0.35-0.40) but per-family agent rankings invert. Fourth, on the MAST failure taxonomy, trace-level mode profiles are idiosyncratic (MAE = 0.261) while cell-level profiles generalise (MAE = 0.056, $r = 0.83$). We package these into Deployment Decision Reliability (DDR), a one-page reporting discipline that turns the variance-component table into five decisions an enterprise buyer can defend. All code, data loaders, and fit artifacts are released under an open-source license.",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-08-13T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.11323",
+      "pdf_url": "https://arxiv.org/pdf/2608.11323",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Very relevant because it directly addresses how to size and interpret long-horizon agent evaluations, a strong match to the grading and evaluation concerns in Hunter Prep and Shuchao Chat."
+    },
+    {
+      "arxiv_id": "2608.11493",
+      "title": "From Prompting to Behavioral Alignment: Personalized LLM Judges for Recommendation Evaluation",
+      "authors": [
+        "Alireza S. Ziabari",
+        "Kat Ellis",
+        "Colleen Chan",
+        "Ding Tong"
+      ],
+      "abstract": "Traditional offline recommendation evaluation relies heavily on complex, manually maintained feature pipelines that are difficult to scale. While Large Language Models (LLMs) offer a promising alternative by predicting user engagement directly from raw text logs, empirical analysis in this study identifies a critical failure mode termed bidirectional rationalization. In a zero-shot setting, LLMs are found to convincingly argue for both positive and negative user engagement outcomes on the exact same item with identical evidence, highlighting the unreliability of off-the-shelf LLMs in predicting user engagement. To resolve this, we develop and apply a sequential behavioral alignment framework pairing fine-tuning with preference optimization over paired correct and counterfactual rationales. Evaluated on real-world homepage interaction logs, this aligned reasoning approach achieves a 32.19\\% lift in Macro-F1 score over the zero-shot baseline and matches the production feature-engineered baseline. The results demonstrate that behavioral alignment mitigates bidirectional rationalization while delivering human-interpretable reasoning traces without manual pipeline overhead.",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-08-13T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.11493",
+      "pdf_url": "https://arxiv.org/pdf/2608.11493",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Directly targets personalized LLM judges and exposes a judge failure mode, making it highly relevant to your interests in grading, LM-judge weaknesses, and evaluation quality."
+    },
+    {
+      "arxiv_id": "2608.12097",
+      "title": "Graph-Structured Rubrics: Compiling Rubrics into Typed Evaluation Graphs for LLM Judges",
+      "authors": [
+        "Xi Chen",
+        "Jie Mu",
+        "Mo Xuan",
+        "Qun Shao"
+      ],
+      "abstract": "Rubric-based evaluators commonly treat rubrics as prompt context or flat criteria: they specify what to judge but leave criterion composition implicit, even when natural-language rules state it. We introduce Graph-Structured Rubrics (GSR), which compiles a rubric into a response-independent typed evaluation graph before observing responses. Criterion nodes elicit judgments; transformation, reduction, and gating operators compose them through named ports; and a task-specific output mapping, termed Readout, converts the unique sink into a score or preference. Compilation rejects malformed or type-incompatible graphs. Pointwise evaluation judges rubric dimensions separately before graph aggregation; pairwise evaluation reuses the graph with one judgment for each candidate under every criterion. Under GPT-OSS-120B, GSR improves exact score agreement by 0.62--6.75 percentage points over Prometheus-style scoring on four pointwise datasets and achieves the numerically highest end-to-end pairwise accuracy on two preference benchmarks under native tie and abstention policies.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-08-13T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.12097",
+      "pdf_url": "https://arxiv.org/pdf/2608.12097",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "This paper focuses on compiling rubrics into structured evaluation graphs for LLM judges, which is closely aligned with improving grading for long and complex rollouts."
+    },
+    {
+      "arxiv_id": "2608.11698",
+      "title": "REOPD: Reliability-Adaptive Reward Extrapolation for On-Policy Distillation",
+      "authors": [
+        "Yang Sun",
+        "Lichao Ma",
+        "Houyuan Qin",
+        "Yuxin Liu",
+        "Hanyang Lu",
+        "Yao Zhu",
+        "Pinlong Cai",
+        "Guohang Yan"
+      ],
+      "abstract": "On-policy distillation (OPD) trains a student on its own trajectories under dense token-level supervision from a teacher. Reward-extrapolation methods such as ExOPD amplify the teacher-reference log-likelihood ratio to move beyond direct imitation, but apply a single global coefficient $\\lambda$ to every token. This can drive the student to fit extreme peaks in the implicit reward, causing reward hacking and unstable training, and the optimal $\\lambda$ varies across domains, requiring costly sweeps. We propose REOPD, a reliability-adaptive reward extrapolation framework for OPD. REOPD combines a token-level compatibility weight with a batch-level adaptive budget, yielding a token-wise coefficient $\\lambda_{b,t}=1+\\gamma_b q_t$ that preserves teacher alignment while selectively extrapolating along reliable teacher-reference directions. It requires no verifier, reward model, value model, or extra rollout beyond standard OPD. REOPD outperforms G-OPD on single-teacher mathematics and on both domains in the multi-teacher setting, while matching G-OPD on single-teacher code, demonstrating effective fine-grained reliability adaptation across domains and teacher configurations.",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-08-13T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.11698",
+      "pdf_url": "https://arxiv.org/pdf/2608.11698",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "This is highly relevant to Hunter Prep because it directly addresses on-policy distillation, specifically improving reward extrapolation reliability at the token level."
+    },
+    {
+      "arxiv_id": "2608.11967",
+      "title": "LoongReflect: Boosting Long-Horizon Reflection in Search Agents via Global Perspective Distillation",
+      "authors": [
+        "Zhixin Zhang",
+        "Xinke Jiang",
+        "Zhibang Yang",
+        "Weixuan Xu",
+        "Guohong Qiu",
+        "Xu Chu",
+        "Junfeng Zhao",
+        "Yasha Wang"
+      ],
+      "abstract": "Large language model agents increasingly rely on long-horizon reasoning to solve complex tasks involving planning, tool use, and memory. A critical capability in such settings is reflection: assessing trajectory progress, identifying missing evidence and unreliable intermediate states, and deciding whether to continue, revise, or abandon the current branch. Learning effective reflection, however, is challenging because reflection is performed locally within the current branch, whereas its utility can only be determined by its contribution to the final trajectory outcome. This local-global mismatch makes outcome-based reinforcement learning provide only local, sparse and delayed supervision for reflective decisions. To solve these, we propose LoongReflect, a training framework that formulates reflection as a memory-control policy. The agent operates over a reversible trajectory tree using explicit reflect and backtrack actions. Reflection consolidates verified facts, missing evidence, and branch-specific risks into working memory, while backtracking removes an unreliable branch from the active context and preserves a concise corrective lesson. To learn this policy, LoongReflect combines two complementary signals through a look-ahead, extragradient-style coordination mechanism. A fast channel distills globally informed reflective behavior from a privileged teacher, with supervision restricted to reflection and backtracking tokens. A slow channel optimizes complete trajectories using outcome-based GRPO, aligning local control decisions with final task success. Experiments on multi-hop retrieval-augmented generation and mathematical reasoning benchmarks demonstrate consistent improvements over outcome-only reinforcement learning and self-distillation baselines.",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-08-13T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.11967",
+      "pdf_url": "https://arxiv.org/pdf/2608.11967",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "This paper is highly relevant because it targets long-horizon reflection, self-correction, and trajectory-level assessment in search agents, directly matching your brainstorming on explicit self-correction evals and grading long rollouts."
+    },
+    {
+      "arxiv_id": "2608.11368",
+      "title": "PAIR: Pairwise-Aware Inclusion Reweighting for Adaptive Rollout Allocation in RLVR",
+      "authors": [
+        "Pixel Nomand",
+        "Elena Voss",
+        "Marcus Hale",
+        "Sofia Reyes"
+      ],
+      "abstract": "Reinforcement learning with verifiable rewards (RLVR) spends most of its compute generating groups of long reasoning trajectories. Recent allocators reduce this cost by assigning budgets to prompts, rollouts, or tokens according to a pointwise notion of difficulty or utility. We identify a statistical mismatch: the unclipped leave-one-out group-relative score gradient is not a sum of independent point contributions, but a second-order U-statistic over pairs of rollouts. Completing one rollout therefore reveals contrast with every other completed rollout, and adaptive endpoint selection changes which pair terms are observable. We introduce PAIR (Pairwise-Aware Inclusion Reweighting), which treats short rollout prefixes as vertices and pair-gradient terms as edges of a contrast graph. A prefix-only predictor estimates correctness and remaining token cost; a convex design chooses positive continuation probabilities under an expected suffix-token budget; and each edge induced by completed vertices is inverse-weighted by its logged joint inclusion probability. Under conditionally independent on-policy rollouts and an unclipped, unstandardized objective, the resulting estimator is design-unbiased for the complete candidate-pair gradient. Across compute-matched RLVR runs on Qwen3-1.7B/4B, PAIR improves average accuracy by +1.2 and +1.4 over the strongest pointwise allocator while using 51% and 52% fewer generated tokens than full-group GRPO. A frozen-population estimator audit confirms that unweighted adaptive selection is biased, whereas pair-inclusion correction recovers the complete-pair target at matched suffix cost.",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-08-13T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.11368",
+      "pdf_url": "https://arxiv.org/pdf/2608.11368",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "This is directly on adaptive rollout allocation in RLVR and explicitly addresses the statistical structure of grouped long reasoning trajectories, making it highly relevant to grading and efficiently supervising long rollouts."
+    },
+    {
+      "arxiv_id": "2608.11236",
+      "title": "TRACE Bench: Task-driven Roleplay Agentic Checklist Evaluation",
+      "authors": [
+        "Jiahui Zhang",
+        "Ziwei Zhang",
+        "Yipeng Wang",
+        "Yibo Liu",
+        "Haozhou Pang",
+        "Yikai Hu",
+        "Hongyan Ren",
+        "Lan Zhou",
+        "Qi Gan",
+        "Kai Sheng"
+      ],
+      "abstract": "Roleplay evaluation should do more than assign a single score: it should reveal which role requirements were tested, which failed, and which dialogue evidence supports the judgment. We propose TRACE Bench, a task-driven agentic checklist evaluation framework. It decomposes each role profile offline into a fixed checklist, then uses a User Agent to converse naturally with the target roleplay model while privately updating checklist states from model responses. Scores therefore trace back to checklist items and supporting dialogue turns rather than a black-box holistic impression. For coverage cross-validation, we audit released M2 free-dialogue transcripts from the MiniMax Role-play Benchmark against the same role-derived checklist. The released free-chat transcripts cover only 73.74% of key role-profile points, whereas TRACE Bench reaches 99.91% coverage in fewer turns. Robustness experiments show stable rankings under repeated runs and User Agent replacement. Across 26 models, TRACE Bench reports overall rankings together with capability breakdowns and checklist traces. It also supports Closed-Loop Benchmark Evolution, distilling verification methods proven effective in failed traces so later evaluations can more reliably elicit and examine observed failure modes.",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-08-13T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.11236",
+      "pdf_url": "https://arxiv.org/pdf/2608.11236",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "TRACE Bench is highly relevant to your grading and evaluation work because it turns agent assessment into checklist-based, evidence-grounded judgments over multi-turn interactions rather than a single scalar score."
+    },
+    {
+      "arxiv_id": "2608.11552",
+      "title": "Beyond Single-Turn Confidence: Trajectory-Adapted Uncertainty Quantification for LLM Agents",
+      "authors": [
+        "Dylan Bouchard",
+        "Mohit Singh Chauhan"
+      ],
+      "abstract": "Uncertainty quantification (UQ) methods for language models are typically evaluated on single-turn outputs, where uncertainty is attached to one generated answer. For LLM agents, however, the unit of observation is an interactive trajectory, where the model can ask clarifying questions, call tools, update state, and make intermediate decisions whose errors propagate to the final outcome. We study whether three common families of single-turn UQ methods transfer to this setting. Across five LLMs and four multi-turn tool-use datasets from BFCL-v4 and $\\tau^2$-bench, we evaluate white-box scorers based on action-token probabilities, black-box consistency scorers based on resampled trajectories, and reflexive scorers based on model self-assessment of the trajectory. We find that transfer is often useful but uneven. Token-probability scores are highly sensitive to the choice of aggregator used across turns, reflexive scores provide the strongest low-cost baseline in most evaluated settings, and black-box self-consistency is often the strongest UQ family, with trajectory-equivalence and action-set consistency typically ranking highest among its variants. These results suggest that UQ methods developed for single generations should be revalidated at the trajectory level, with careful attention to the consistency measurement, aggregator choice, and computational budget.",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-08-13T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.11552",
+      "pdf_url": "https://arxiv.org/pdf/2608.11552",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Trajectory-adapted uncertainty for LLM agents is directly relevant to evaluating long rollouts, since it treats the full interaction trajectory as the object of assessment rather than a one-shot answer."
+    },
+    {
+      "arxiv_id": "2608.11624",
+      "title": "Learning to Persuade Exposes How Easily LLMs Abandon Correct Beliefs",
+      "authors": [
+        "Nimet Beyza Bozdag",
+        "Emre Can Acikgoz",
+        "Gokhan Tur",
+        "Dilek Hakkani-T\\\"ur"
+      ],
+      "abstract": "Persuasion is a core dynamic of natural language communication, shaping how large language models (LLMs) update beliefs, resolve disagreements, and reach decisions. As LLMs increasingly debate, advise, and think collaboratively with humans and each other, resistance to harmful persuasion becomes a core requirement for reliable behavior. Yet we show that this requirement is far from met: a single targeted persuasive argument is enough to collapse model accuracy to near zero, even when the argument is factually false. We formalize this threat as adversarial persuasion and introduce an adversarial reinforcement learning framework that trains persuader agents to change a target model's answer in a single interaction. First, we show that optimizing persuasion strategies through trial and error exposes vulnerabilities that static prompting misses: RL-trained persuaders raise persuasion success from approximately 24% to over 93% against the training-time persuadee. Second, we find that these learned strategies transfer to unseen models, achieving 83% attack success on Qwen-14B, 79% on Llama-3.1-8B, and 25% on GPT-4o-mini. Third, we demonstrate that a curriculum that bootstraps on more persuadable open-weight models before targeting harder models further increases GPT-4o-mini attack success from 25% to 38%. Moreover, our results reveal that optimized persuaders increasingly rely on credibility-based tactics, including fabricated citations and false authoritative evidence. Together, these findings expose a critical weakness in current LLM agents: even when they initially reason correctly, they can be steered toward false conclusions by optimized natural language influence. This positions persuasion robustness as a necessary safety criterion for multi-agent and human-AI decision-making systems.",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-08-13T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.11624",
+      "pdf_url": "https://arxiv.org/pdf/2608.11624",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "The paper strongly matches your interest in surprising information and belief revision because it studies how easily LLMs abandon correct beliefs under persuasion, providing a concrete setting for failure-first and update-behavior evaluation."
+    },
+    {
+      "arxiv_id": "2608.11922",
+      "title": "LODESTAR: Trustworthy Entropy Is Navigated, Not Merely Measured -- Reinforced Polarizer Keeps a Frozen LLM from Being Confidently Misled by the Wrong Evidence",
+      "authors": [
+        "Po-Jen Ko",
+        "Che-Cheng Wu",
+        "Hung-Chun Hsu",
+        "Li-Yang Chang",
+        "Chuan-Ju Wang"
+      ],
+      "abstract": "Predictive-distribution entropy makes a strong selection rule in retrieval-augmented question answering: across five QA benchmarks, keeping the candidate answer that a frozen respondent LLM produces with the lowest answer-token entropy lifts mean answer $F_1$ from 0.4769 to 0.5148 over the retriever's top-ranked passage, with no gold answers. Yet this lowest-entropy rule, which prior entropy-based selectors adopt, fails in a specific and consequential way: a misleading passage makes the respondent confidently wrong, driving its entropy down precisely where the signal looks most trustworthy. We show that the failure comes from the passage the respondent reads -- and the context that passage is read in is an input we can intervene on. We introduce LODESTAR, to our knowledge the first method to score a text intervention by the uncertainty it induces in a third-party frozen respondent, compared across one question's candidates. LODESTAR uses reinforcement learning to train, once and offline, a polarizer -- a short fixed natural-language string inserted into the respondent's prompt and never into its weights; its training labels are built offline from gold answers and two LLM judges, and inference reads neither. Evaluating every competing selector under the same frozen respondent and the same candidate pools on 5,008 questions, LODESTAR attains the highest mean $F_1$ of any inference-ready selector (0.5148 to 0.5339), the highest exact match (0.4136), and the highest GPT-4o judge score of the frozen-respondent configurations judged (0.6435); its three-seed mean wins all 70 method-by-dataset $F_1$ cells against fourteen published configurations while remaining paired-significant against every one. The gain holds both in-domain and out-of-domain, and ablating the polarizer shows it is what makes the respondent read a misleading passage less often (26.0% against 30.3%).",
+      "categories": [
+        "cs.CL",
+        "cs.IR",
+        "cs.LG"
+      ],
+      "published": "2026-08-13T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.11922",
+      "pdf_url": "https://arxiv.org/pdf/2608.11922",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Highly relevant because it tackles robustness to misleading evidence in RAG using uncertainty signals, directly connecting to your interest in models handling noisy observations and surprising information."
+    },
+    {
+      "arxiv_id": "2608.12253",
+      "title": "One Frozen Simulator Is Not Enough: Simulator Collapse in Multi-Agent RL",
+      "authors": [
+        "Simon Yu",
+        "Nicholas Tomlin",
+        "Marwa Abdulhai",
+        "Ximing Lu",
+        "Derek Chong",
+        "Abe Hou",
+        "Dilara Soylu",
+        "Sergey Levine",
+        "Christopher D. Manning",
+        "Weiyan Shi"
+      ],
+      "abstract": "Multi-agent reinforcement learning for human-AI interaction typically relies on a single large language model to simulate user behavior. We show that this approach systematically fails to generalize, and trace the failure to simulator collapse: because the simulator LLM is mode-collapsed, an LLM policy trained against it overfits to narrow strategies that exploit the simulator's dominant mode, and such a policy transfers poorly to unseen simulators and real users. We formalize this collapse theoretically and propose two complementary solutions, one at inference time and one at training time. The inference-time solution, Verbalized Sampling, broadens the simulator's behavior by sampling from a verbalized response distribution, reducing mode collapse. The training-time solution, Co-Training, jointly optimizes the policy against a population of trainable simulators, preventing it from overfitting to any single simulator's mode. We validate both solutions on three multi-turn benchmarks: Persuasion for Good, $\\tau^2$-bench, and CooperBench. Verbalized Sampling improves held-out success by up to 9% over single-simulator RL, and Co-Training pushes gains further to 14%; the human study shows similar gain on real users. Both solutions preserve the policy diversity that collapses under single-simulator RL. To support further work in this direction, we release SCOPE, an open-source framework for Population Co-Training multi-agent RL. More broadly, our results suggest that the diversity of the training environment, not only the policy, is critical to the generalization of multi-turn RL to real-world deployment.",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-08-13T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.12253",
+      "pdf_url": "https://arxiv.org/pdf/2608.12253",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Highly relevant for RL-env and long-horizon agent evaluation work because it identifies simulator collapse in multi-agent RL and shows how training against a single simulator can produce brittle policies."
+    },
+    {
+      "arxiv_id": "2608.11994",
+      "title": "Claim-Level Reliability Assessment for Efficient Test-Time Reasoning",
+      "authors": [
+        "Sen Xu",
+        "Wei Wang",
+        "Shixi Liu",
+        "Jixin Min",
+        "Yingwei Dai",
+        "Zhibin Yin",
+        "Yirong Chen",
+        "Junlin Zhang"
+      ],
+      "abstract": "We propose claim-level falsification as a principle for test-time scaling and instantiate it through Claim-Level Reliability Assessment (CLR), a training-free framework that reallocates test-time compute from additional solution sampling to targeted verification. Since whole-trace evaluation often obscures decisive errors due to signal dilution from routine tokens, CLR condenses each reasoning trace into a compact set of decision-critical claims, thereby isolating its logical anchors. Furthermore, recognizing the inherent difficulty of generating entirely correct solutions under fixed model capabilities, CLR shifts the focus to semantic falsification. This approach exploits a fundamental asymmetry between solution construction and claim refutation. Constructing a valid solution requires a flawless reasoning path, whereas refuting an incorrect claim requires identifying only a single decisive flaw. This targeted search for negative evidence systematically compresses the survival space of high-confidence incorrect traces, effectively suppressing erroneous consensus via nonlinear reliability scoring. Across four LLMs and four reasoning benchmarks under matched budgets, CLR generally improves upon pass@1 and self-consistency. On GPT-OSS-20B/CMIMC25, for instance, CLR exceeds pass@1 by 27.15 percentage-points and raises self-consistency accuracy from 77.50\\% to 82.19\\% with 37.0\\% fewer tokens.",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-08-13T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.11994",
+      "pdf_url": "https://arxiv.org/pdf/2608.11994",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Strongly relevant to self-correction and test-time compute because it reallocates reasoning budget toward targeted verification of claims rather than more sampling, aligning with explicit self-correction eval ideas."
+    },
+    {
+      "arxiv_id": "2608.12150",
+      "title": "Who Thinks Best Depends on How Long You Let Them: Budget-Dependent Rankings in LLM Evaluation",
+      "authors": [
+        "Rodrigo Guedes de Souza",
+        "Alison R. Panisson"
+      ],
+      "abstract": "Standard evaluation of large language models assumes stable model rankings across inference conditions. We challenge this assumption by varying the token generation budget, i.e., the maximum tokens a model may produce, across seven levels (64--4,096), evaluating four models on three reasoning benchmarks (56,476 inferences). We report four findings: (i) 3--19% of items exhibit non-monotone behavior (accuracy decreasing with more budget), even after controlling for truncation, and this phenomenon is model-specific (cross-model overlap: 6--14%). (ii) Model rankings reverse across budgets on all benchmarks ($p {<} 0.01$, McNemar). (iii) Oracle analysis reveals model complementarity up to $+27.8$pp, most pronounced at constrained budgets. (iv) A budget-aware router captures 14.1% of the oracle gap cross-domain; budget features help within-domain ($+1.6$ to $+5.7$pp) but are domain-specific and hurt transfer ($-1.2$pp). These results argue for budget-conditioned evaluation protocols.",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-08-13T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.12150",
+      "pdf_url": "https://arxiv.org/pdf/2608.12150",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Highly relevant to test-time scaling concerns because it shows model rankings depend on generation budget, which bears directly on fair evaluation, on-policy distillation analysis, and inference-time methods."
+    },
+    {
+      "arxiv_id": "2608.12307",
+      "title": "AI4AI at Test-Time: Strong-to-Weak Capability Transfer via Harnesses",
+      "authors": [
+        "Cheng Qian",
+        "Wenting Zhao",
+        "Liangwei Yang",
+        "Heng Wang",
+        "Jielin Qiu",
+        "Heng Ji",
+        "Silvio Savarese",
+        "Huan Wang",
+        "Shelby Heinecke"
+      ],
+      "abstract": "Recent work on distillation transfers the capabilities of large models to smaller ones often by updating the latter's parameters, through teacher forcing, on-policy distillation, and related training-time methods. In this paper, we ask whether such transfer can instead occur at test time. We study strong-to-weak scaffolding: whether a stronger builder model can construct inference-time harnesses that help a weaker target model solve tasks more reliably without any parameter updates. Using four representative Theory-of-Mind benchmarks, each builder model uses 5% of the data as a validation set to iteratively refine its harness over multiple rounds, after which the finalized harness is evaluated on the full test set. Empirically, this form of test-time capability transfer is highly effective, nearly doubling average target-model performance from 0.49 to 0.91. Our analysis shows that the gains come primarily from offloading unstable model reasoning into deterministic code, benchmark-specific routing, and strict answer-format enforcement, rather than from encouraging the target model to reason more extensively or sample more broadly. We further find that builder-model reasoning effort improves harness quality monotonically, platform effects are modest relative to the builder model's own capability, and weaker target models receive the largest gains. These results suggest that inference-time harness design is an important complement to conventional training-time distillation, enabling strong models to transfer cognitive structure to weaker models without retraining.",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-08-13T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.12307",
+      "pdf_url": "https://arxiv.org/pdf/2608.12307",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Relevant to capability transfer and scaffolding because it studies strong-to-weak transfer at test time via inference harnesses, complementing your interest in distillation and evaluation under different compute regimes."
+    },
+    {
+      "arxiv_id": "2608.11216",
+      "title": "AutoWorldModel-Bench: A State-Centric Benchmark for Automated World-Model Research",
+      "authors": [
+        "Marjan Moodi",
+        "Xuankang Zhu",
+        "Fernando De Mesentier Silva",
+        "Harold Chaput",
+        "Mohammad Reza Taesiri"
+      ],
+      "abstract": "World modeling is an unsettled field: architectures, training objectives, and state representations interact in complex ways, and no single recipe dominates across environments. This makes it an ideal testbed for AI coding agents acting as autonomous researchers--a setting in which the improvement direction is not specified in advance, unlike the engineering-to-spec tasks that dominate current agent benchmarks. We introduce AutoWorldModel-Bench, a closed-loop benchmark in which frontier coding agents autonomously improve a provided world-model starter under a fixed compute budget. The benchmark spans eight game environments under a unified structured-state representation--ground-truth entity state extracted from each game and consumed through a shared tensor format--which isolates dynamics modeling from perception and enables minutes-per-run iteration. Across 64 sessions, Codex-5.4 and Claude Opus 4.6 improve their starter on 63; in 91% of sessions the winning edit is a non-trivial research-style modification--a new objective, representation, rollout procedure, or architectural change--rather than a hyperparameter tweak. Our benchmark offers a setting in which frontier coding agents can be evaluated on open-ended research rather than engineering-to-spec problems.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-08-13T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.11216",
+      "pdf_url": "https://arxiv.org/pdf/2608.11216",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Highly relevant because it is a benchmark for autonomous world-model research, closely matching interests in long-horizon scientific tasks, hypothesis formation from observations, and agentic research evaluation."
+    },
+    {
+      "arxiv_id": "2608.11341",
+      "title": "Apodex Discovery: Reality Benchmarks and Environments for Evaluating and Building Discoverative Artificial Intelligence",
+      "authors": [
+        "Brian Wang",
+        "Bin Feng",
+        "Xiaoman Pan",
+        "Chenyang An",
+        "Felix Liu",
+        "Tangqi Fang",
+        "Gongbo Sun",
+        "Lingfeng Shen",
+        "Ning Wang",
+        "Handuo Zhang",
+        "Feng Chen",
+        "Fuchao Yang",
+        "Xiang Wang",
+        "Jiacheng Lin",
+        "Siting Li",
+        "Zixuan Liu",
+        "Chi Han",
+        "Zhenhailong Wang",
+        "Kunlun Zhu",
+        "Lawrence Zhao",
+        "Yueqi Guo",
+        "Kailong Wen",
+        "Feng Xing",
+        "Yiling Guo",
+        "Lidong Bing",
+        "David Tan",
+        "Bo An",
+        "Heng Ji",
+        "Sheng Wang"
+      ],
+      "abstract": "Apollo did not reach the Moon merely because its engineers could solve difficult equations. It succeeded by turning a distant ambition into a mission architecture of explicit objectives, simulation, verification, and repeated correction. AI now faces a similar transition: frontier models can solve difficult tasks once the problem, tools, and success criteria are specified, yet consequential real-world challenges rarely arrive in an executable or verifiable form.   We introduce Apodex Discovery, a framework for building and evaluating discoverative AI through the heavy-duty solver, a system comprising a foundation model, harness, tools, and control policies that pursues extended, stateful, verifiable investigations. It has three core components. First, a problem-scouting process surveyed 561 industries across 16 sectors, assembled 423 high-value real-world problems, and selected 20 for the initial release. Second, a common environment-task-episode abstraction provides data, tools, constraints, feedback, trajectory recording, and verification of intermediate artifacts and final submissions. Third, HDS6 evaluates Tools, Repair, Alternatives, Coherence, Evidence, and Scope independently of final-task success.   In AAV capsid design, Apodex surpassed the published state of the art by 7% across viability, tropism, structure prediction, and generative design. In drug repurposing and reformulation, a task-specific biomedical environment improved the mean normalized prediction score of GPT-5.5 and GPT-5.6-sol by 2.5 and 7.6 points over the same closed-book backbone. Controlled ablations show that the fixed TRACES episode interface enables attribution of performance differences to specific solver components. Apodex Discovery moves AI evaluation beyond predefined benchmarks toward verifiable investigations aimed at genuine discovery.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-08-13T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.11341",
+      "pdf_url": "https://arxiv.org/pdf/2608.11341",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Highly relevant since it proposes benchmarks and environments for discoverative AI with explicit objectives, simulation, verification, and repeated correction, strongly matching the long-horizon scientific-task agenda."
+    }
+  ]
+}
