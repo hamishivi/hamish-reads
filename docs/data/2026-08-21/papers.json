@@ -1,0 +1,616 @@
+{
+  "date": "2026-08-21",
+  "generated_at": "2026-08-21T02:04:21.199893+00:00",
+  "author_papers": [
+    {
+      "arxiv_id": "2608.19197",
+      "title": "SPADE: Self-Play in Adaptive Synthetic Executable Environments",
+      "authors": [
+        "Bo Liu",
+        "Simon Yu",
+        "Yiding Jiang",
+        "Ao Qu",
+        "Andrew Zhao",
+        "Zichen Liu",
+        "Junsu Kim",
+        "Zijian Zhou",
+        "Seungone Kim",
+        "Tongzheng Ren",
+        "Mickel Liu",
+        "Hanfei Yu",
+        "Zhaorun Chen",
+        "Weiyan Shi",
+        "Paul Pu Liang",
+        "Luke Zettlemoyer",
+        "Yejin Choi",
+        "Natasha Jaques"
+      ],
+      "abstract": "Continuous self-improvement requires an ever-expanding pool of self-generated, diverse, adaptive goals. For language agents, existing training environment pools (hand-curated, statically synthesized, or frozen-verifier) keep the goal distribution fixed as the learner scales. We introduce SPADE (Self-Play in Adaptive Synthetic Executable Environments), a self-play RL framework in which a single LLM plays two roles: an Environment Designer that writes complete, long-horizon training environments as executable code with an OpenAI Gym-style reset()/step() interface, and a Reasoning Agent that learns to act in them. Each is a stateful, multi-turn environment (state transitions, reward functions, and verification code), so one interface spans reasoning problems and multi-step agentic tool use. The Reasoning Agent's regret is estimated using the gap between its reward with and without privileged hints; in optimizing this regret signal the Environment Designer learns to target environments at the edge of the agent's capabilities while keeping them feasible. Through extensive experimentation, we find several components critical to success: grounding the Environment Designer on documents sampled from a large pretraining corpus, and giving it an accumulated environment memory. Scaling to 30B-parameter models, SPADE improves over the strongest fixed-environment baseline by +5.3 on average across eight held-out math, science, code, and reasoning benchmarks, and lifts the tool-use setting by +5.7 on BFCL-v4 multi-turn and +13.9 on ACEBench-Agent; on the games setting, the margin over the strongest baseline grows with model scale. By making environment design itself a learnable component, SPADE takes a concrete step toward open-ended self-improvement.",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-08-20T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.19197",
+      "pdf_url": "https://arxiv.org/pdf/2608.19197",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2608.18836",
+      "title": "Verifiable abstention makes AI leak diagnosis accountable in water distribution networks",
+      "authors": [
+        "Tianwei Mu",
+        "Yue Wang",
+        "Mingzhe Yuan",
+        "Manhong Huang",
+        "Wenhong Wang",
+        "Xuerui Yin",
+        "Qing Luo",
+        "Min Xiao",
+        "Hui Yang",
+        "Jun Li",
+        "Dan Xue"
+      ],
+      "abstract": "Utilities lose a substantial share of treated water to leakage, yet rarely trust artificial-intelligence localizers to dispatch crews: guessing everywhere cannot justify excavation. The gap is accountability, not accuracy: no method proves when it should not act. Here we recast leak localization as decision-making under verifiable abstention. A physics-grounded executor agent falsifies hypotheses (leak, demand, sensor, valve) against a digital twin; an independent supervisor agent, with a large-language-model (LLM) auditor, checks evidence against a code-verifiable contract, then certifies a dispatch, requests evidence or abstains. Under field-grade noise, a 32% forced baseline becomes 96% decision precision on acted events. On an independently generated benchmark it acts on only 4 of 33 leaks, all correct. A 194-event register of audited real leak locations with twin-simulated pressures and flows yields five excavation dispatches, three correct, and 44% survey recovery at full district precision. Accountable abstention offers a defensible route to autonomous water-infrastructure operation.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-08-20T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.18836",
+      "pdf_url": "https://arxiv.org/pdf/2608.18836",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2608.18234",
+      "title": "GigaBrain-WBC-0.5: A Behavior World Model for Robust Whole-Body Control with Environment Interaction",
+      "authors": [
+        "Ziyang Cheng",
+        "Tianshu Tang",
+        "Jinxin Lan",
+        "Xinze Chen",
+        "Yuhan Gong",
+        "Zhichao Liu",
+        "Changzhong Wu",
+        "Yahao Mao",
+        "Zongyan Deng",
+        "Mingxuan Ma",
+        "Huasen Xi",
+        "Yilong Liu",
+        "Yutong Wu",
+        "Xiaofeng Wang",
+        "Yang Wang",
+        "Yun Ye",
+        "Guan Huang",
+        "Xiaojie Jin",
+        "Zheng Zhu",
+        "Jiwen Lu"
+      ],
+      "abstract": "Whole-body motion tracking policies turn a humanoid into a robust control interface: the teleoperator---or an upstream model---only supplies a coarse movement intent, while the low-level policy keeps the robot balanced and physically feasible. Existing trackers deliver this interface only on flat ground: trained in empty scenes, they never learn how contact with terrain and objects reshapes their dynamics, and they attempt to teach the policy to balance under any command by continually enlarging the reference-motion corpus, which stops working once feasible behaviors become environment-dependent. We present GigaBrain-WBC-0.5, the first Behavior World Model (BWM) for humanoid whole-body control. Rather than a purely reactive tracker, we train a causal Transformer to jointly predict its next action, next state, and the distribution over its next latent behavior command, so the network that acts also models how the environment shapes what it can do next. An automatic terrain-annotation pipeline recovers full 3D contact geometry from retargeted motion, enabling terrain annotation at the scale of existing motion datasets. The predicted distribution is reused at deployment to detect implausible commands online and retract them onto learned behaviors, so the robot attempts tasks in a \"best-effort\" manner. The result is a unified policy that takes real-time command, interacts with environment, and stays robust to implausible commands, falls, and disturbances. GigaBrain-WBC-0.5 achieves the highest success rate across all four regimes among three large-scale tracker baselines: 81.3% on terrain interaction (4.3x the strongest baseline), 83.1% under implausible commands, and 99.3% fall recovery (16.8x the strongest baseline). Hardware trials show robust interaction under missing supports and disturbances; the Unitree G1 checkpoint transfers to the Maker L01 robot with simple fine-tuning.",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-08-20T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.18234",
+      "pdf_url": "https://arxiv.org/pdf/2608.18234",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2608.18346",
+      "title": "Coupled-cluster molecular properties across the main group that extrapolate beyond training size",
+      "authors": [
+        "Wenhao He",
+        "Xu Chen",
+        "Noah Song",
+        "Haowei Xu",
+        "Tim S. Hindges",
+        "Bohan Li",
+        "Zihan Lin",
+        "Yu Yao",
+        "Avetik R. Harutyunyan",
+        "Fang Liu",
+        "Yao Wang",
+        "Hao Tang",
+        "Ju Li"
+      ],
+      "abstract": "Coupled-cluster theory defines the accuracy standard for molecular electronic-structure properties but scales too steeply for routine application, whereas density-functional theory is affordable yet systematically biased. We resolve this trade-off with a single equivariant network, MEHnet-MG, that predicts an effective one-electron Hamiltonian from one inexpensive B3LYP/def2-SVP calculation and derives a broad suite of properties from it (energy, optical gap, dipole, quadrupole, polarizability, Mulliken atomic charges, and Mayer bond orders) at coupled-cluster accuracy across nine main-group elements, including the under-served phosphorus, sulfur, and chlorine chemistries. The model is trained on a new in-house dataset of multi-property labels computed at the CCSD(T) level for all nine elements. On a held-out test set, it reduces the error of every property by a factor of 3.8 to 230 relative to semi-local, hybrid, and double-hybrid DFT (referenced to composite CCSD(T)/cc-pVTZ; Methods), while adding only ~25 ms wall time per molecule, delivering coupled-cluster-quality predictions at the cost of a single DFT calculation. Critically, deriving every property from a predicted Hamiltonian rather than pooling per-atom features builds the correct size-scaling into the model architecture: on pi-conjugated oligothiophenes it matches finite-field CCSD polarizability and the EOM-CCSD optical gap to ~2% at the largest sizes where those references remain affordable (44 and 37 atoms, where a single CCSD field point already costs ~500x the model's entire inference) and extrapolates the corrected trends to 58-atom chains, a regime where pooling-based architectures fail by construction. Accurate extrapolation is therefore set by the model's inductive bias rather than by the training data.",
+      "categories": [
+        "physics.chem-ph",
+        "cond-mat.mtrl-sci",
+        "cs.AI",
+        "cs.LG",
+        "physics.comp-ph"
+      ],
+      "published": "2026-08-20T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.18346",
+      "pdf_url": "https://arxiv.org/pdf/2608.18346",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2601.21699",
+      "title": "Can David Beat Goliath? On Multi-Hop Reasoning with Resource-Constrained Agents",
+      "authors": [
+        "Hojae Han",
+        "Heeyun Jung",
+        "Jongyoon Kim",
+        "Seung-won Hwang"
+      ],
+      "abstract": "Multi-turn reasoning agents solve complex questions by decomposing them into intermediate retrieval or tool-use steps, for accumulating supporting evidence across turns. Meanwhile, with reinforcement learning (RL), training these agents rely on many on-policy rollouts and large training batches. Under realistic resource constraints that make dense exploration infeasible, each RL batch contains only few useful reasoning paths from the current policy. Existing approaches do not fully address this bottleneck: SFT-based initialization can overfit when annotated trajectories are scarce, retrieval-level rewards can assign credit to individual retrieved documents without directly optimizing coverage of the full evidence set, and expansion can waste rollouts from poorly chosen prefixes. We introduce David-GRPO, which improves small-batch learning by using information from both outside and inside the current policy: (i) expert bootstrapping injects a few off-policy expert trajectories into RL updates, and (ii) evidence-guided exploration turns on-policy partial successes into evidence-coverage scores and additional continuations. On agents up to 1.5B parameters trained on four RTX 3090 GPUs, David-GRPO improves over prior RL baselines under the same low-budget setting on six multi-hop QA benchmarks. The gains come with a behavioral shift: unlike prior low-budget RL baselines that often skip retrieval or stop after shallow search, David-GRPO learns to increase retrieval depth and evidence coverage.",
+      "categories": [
+        "cs.CL",
+        "cs.IR"
+      ],
+      "published": "2026-08-20T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2601.21699",
+      "pdf_url": "https://arxiv.org/pdf/2601.21699",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    }
+  ],
+  "ranked_papers": [
+    {
+      "arxiv_id": "2608.19009",
+      "title": "Grading the Graders: Verification Autonomy Levels (L0-L5) for LLM Reasoning",
+      "authors": [
+        "Yajie Yin"
+      ],
+      "abstract": "Large language models (LLMs) are increasingly paired with verifiers (step checkers, self-consistency filters, tool-based fact checkers, formal proof assistants) that claim to detect the model's errors. Yet the verification literature uses the word \"level\" to mean at least five different things: verification granularity, concept abstraction, risk tier, system-stack layer, and the epistemic source of the ground truth. We propose Verification Autonomy Levels (VAL), a meta-standard that classifies any verification scheme along a single axis: where does the verification spec come from, and what does the verdict guarantee? VAL ranges from L0 (LLM self-declaration; no deterministic anchor) through L2 (objective ground truth; correctness only) to L3/L4 (decidable systems with single-property or domain-level completeness), with L5 impossible in the unrestricted case. Central to VAL is the completeness blind spot: substitution- and sampling-based verifiers can confirm that proposed candidates hold, but cannot prove that no candidate was missed. We further identify a dichotomy the literature has not stated: completeness is reachable only for formally specifiable properties, whereas empirical open-world verification (fact-checking, diagnosis) caps at anchored correctness (L2). We document this gap empirically across four domains (symbolic mathematics, behavior monitoring, medical diagnosis, and code generation, the last a reverse validation with predictions stated before evidence) and in the strongest formal-verification baseline in our survey, whose authors note the verifier focuses on the correctness of each step. We show the levels of granularity, concept hierarchy, risk, and system stack are orthogonal to VAL, resolving a systematic conflation across 17 surveyed papers. Code and full assessment are released as supplementary material.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-08-20T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.19009",
+      "pdf_url": "https://arxiv.org/pdf/2608.19009",
+      "is_author_match": false,
+      "relevance_score": 10.0,
+      "relevance_reason": "Direct match for Hunter/Shuchao grading work since it proposes a framework for understanding levels of verifier autonomy in LLM reasoning and grader design."
+    },
+    {
+      "arxiv_id": "2608.19098",
+      "title": "Open-MOPD: Diagnosing and Fixing Capability Imbalance in Multi-Teacher On-Policy Distillation",
+      "authors": [
+        "Huan-ang Gao",
+        "Haohan Chi",
+        "Yong Yan",
+        "Shiyuan Feng",
+        "Hanlin Wu",
+        "Zheng Jiang",
+        "Bingxiang He",
+        "Wei-Ying Ma",
+        "Ya-Qin Zhang",
+        "Hao Zhou"
+      ],
+      "abstract": "Multi-teacher on-policy distillation (M-OPD) has emerged as a promising paradigm for consolidating domain-specialized reinforcement learning (RL) experts into a single generalist student via dense, token-level reward supervision. Despite its practical success, the optimization dynamics governing multi-teacher capability integration remain poorly understood, and open, rigorously reproducible recipes are conspicuously lacking. In this work, we establish a controlled M-OPD benchmark on SmolLM3-3B-Base with oracle routing, isolating capability integration from routing ambiguity. Our investigation reveals a pronounced capability integration gap: standard M-OPD captures only 35.6% of the available headroom relative to a domain-routed oracle ensemble, with concise tasks such as instruction following suffering severe degradation and premature stagnation. Crucially, we show that this failure stems not from gradient conflict, but from a severe misallocation of the token-level optimization budget. This pathology is driven by three orthogonal factors: structural sequence-length disparities across domains, dynamic convergence drift due to non-uniform learning rates, and multi-step reward staleness from asynchronous policy updates. To resolve these imbalances, we introduce Open-MOPD, a principled framework incorporating token-share balancing, gap-aware dynamic budget allocation, and student reward refresh. Together, these mechanisms systematically restore cross-domain balance, elevating headroom recovery from 35.6% to 83.4% in a single deployable student. We fully open-source our end-to-end post-training recipe, training trajectories, and evaluation suites on an academically accessible hardware budget.",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-08-20T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.19098",
+      "pdf_url": "https://arxiv.org/pdf/2608.19098",
+      "is_author_match": false,
+      "relevance_score": 10.0,
+      "relevance_reason": "Highly relevant to Hunter Prep since it centers on multi-teacher on-policy distillation, capability integration, and failure modes in OPD recipes."
+    },
+    {
+      "arxiv_id": "2608.19181",
+      "title": "Beyond Teacher Likelihood: Group-Calibrated On-Policy Distillation for Long-Context Reasoning",
+      "authors": [
+        "Zhu Zhang",
+        "Jixun Wang",
+        "Xiaoang Xu",
+        "Xiaorong Wang",
+        "Zihan Zhou",
+        "Zhiyuan Wang",
+        "Shuo Wang",
+        "Chaojun Xiao",
+        "Yuezhi Zhou"
+      ],
+      "abstract": "On-policy distillation (OPD) trains a student on its own responses using dense token-level guidance from a stronger teacher. In long-context tasks, however, token-level teacher support can favor locally plausible responses that omit evidence distributed across the input or violate global task constraints. Task-specific verifiers, in contrast, evaluate task completion at the response level and may return graded rewards that reflect partial success. We diagnose this mismatch on fixed responses from two representative long-context evidence-aggregation tasks. Across longer input ranges, trajectory-level OPD scores become progressively less aligned with verifier rewards, indicating teacher-verifier disagreement. Motivated by this observation, we introduce Group-Calibrated On-Policy Distillation (GC-OPD). GC-OPD separately normalizes verifier rewards and trajectory-level OPD scores within each rollout group and uses their difference as a signed teacher-verifier disagreement residual. Relative-advantage-based credit assignment (RACA) distributes this trajectory-level residual across tokens according to their relative OPD advantages while preserving the original OPD signal. Across five long-context benchmarks, post-training with GC-OPD raises the five-benchmark averages of the official Qwen3-4B and Qwen3-8B checkpoints from 29.08 to 40.47 and from 35.12 to 44.65, respectively. Vanilla OPD reaches 39.31 and 43.56 under the same setup. Controlled ablations show that the signed residual is more effective than either an additional OPD-derived term or direct group-normalized verifier reward addition, while RACA further improves over uniform token allocation. Together, these results demonstrate that group-relative residual calibration can incorporate verifier outcomes without discarding dense token-level guidance. Code is available at https://github.com/SolereZhang/GC-OPD.",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-08-20T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.19181",
+      "pdf_url": "https://arxiv.org/pdf/2608.19181",
+      "is_author_match": false,
+      "relevance_score": 10.0,
+      "relevance_reason": "Highly relevant to both Hunter Prep and grading long rollouts because it studies on-policy distillation for long-context reasoning and combines token-level teacher signals with response-level verification."
+    },
+    {
+      "arxiv_id": "2608.18271",
+      "title": "Rethinking Privileged Information in On-Policy Self-Distillation",
+      "authors": [
+        "Samyak Shrestha",
+        "Alexander Tessier"
+      ],
+      "abstract": "On-policy self-distillation (OPSD) trains a student on its own responses using token-level supervision from the same model conditioned on privileged reference information. We investigate whether performance gains from OPSD show that the student learned the information in the reference or instead reflect recovery of reasoning behavior already present in the base model. We perform OPSD experiments on science and mathematics datasets using Qwen3 models ranging from 1.7B to 8B. Our analysis framework separates the supervision induced by the reference from the supervision provided by the teacher without the reference and measures how each aligns with changes in the student's predictions. The correct reference does not provide a consistent performance benefit across teacher generation modes, model sizes, and training datasets. Students can improve without the correct reference, and a solution from another problem can outperform the correct solution on several mathematical reasoning benchmarks. The student's predictions align more strongly with the base model's thinking behavior than with the supervision induced by the reference, but controls constructed from other problems reproduce much of both alignments. Moreover, stronger alignment attributable to the correct reference does not reliably coincide with a greater performance benefit from the reference. Performance gains and distributional alignment alone therefore cannot determine how privileged reference information contributes to student learning in OPSD.",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-08-20T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.18271",
+      "pdf_url": "https://arxiv.org/pdf/2608.18271",
+      "is_author_match": false,
+      "relevance_score": 10.0,
+      "relevance_reason": "Extremely relevant to Hunter Prep because it directly questions what on-policy self-distillation is actually learning and examines the role of privileged information, which matches your concern about scaling feedback and on-policy distillation."
+    },
+    {
+      "arxiv_id": "2608.18091",
+      "title": "Self- and Other-Labels Induce Bidirectional Bias in LLM Judges",
+      "authors": [
+        "Songeun Chae",
+        "Min Kim",
+        "Donghoon Jung",
+        "Seojin Choi",
+        "Seohyon Jung"
+      ],
+      "abstract": "As LLM-as-a-judge systems become increasingly widespread, self-preference in LLMs -- the tendency to favor one's own outputs -- raises growing concerns about evaluation reliability. However, it has been studied predominantly on generated text, where stylistic features and response quality are inevitably conflated. As a result, existing measurements cannot separate genuine self-preference from these confounds. We address this by changing the object of evaluation: instead of judging generated text, ten LLMs assess narrative constraint selections, which carry no model-specific stylistic fingerprint yet retain a recoverable model-specific signature. We run two experiments that yield distinct findings. Under blind evaluation, self-preference largely disappears once selection quality and evaluator severity are controlled. It vanishes on three of four rubric dimensions and reverses on the fourth, where judges rate their own selections as less original. Under matched quality, however, self- and other-labels alone -- without naming any model -- shift scores bidirectionally: LLM judges inflate scores for self-labeled selections and deflate those for other-labeled ones regardless of the selection's actual source. We make two contributions: 1) authorship attribution is a distinct driver of evaluation bias, and 2) open-ended, ground-truth-free tasks can serve as controlled instruments for studying LLM judge behavior.",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-08-20T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.18091",
+      "pdf_url": "https://arxiv.org/pdf/2608.18091",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Highly relevant because it studies systematic bias in LLM judges, directly matching your concerns about LM-judge weaknesses and better grading."
+    },
+    {
+      "arxiv_id": "2608.18312",
+      "title": "Artifact-centered Claim-aware Observability for Autonomous Scientific Agents",
+      "authors": [
+        "Xiangyu Yin",
+        "Ming Du",
+        "Michael H. Prince",
+        "Mathew J. Cherukara"
+      ],
+      "abstract": "Autonomous scientific agents now increasingly propose ideas, write code, run experiments, analyze results, and even draft papers. Observe and audit those agents are necessary but logging every model call is not enough, scientists also need to inspect the artifacts and claims that the systems produced and their relations. This is driven by the fact that failures in scientific agent systems are often distributed across several objects. A manuscript claim may cite the wrong evidence, a search process may select a degenerate candidate, a laboratory novelty claim may depend on an unstated rule, or a multi-agent plan may change without a visible trigger. Existing tracing, experiment tracking, and archival provenance tools are valuable, but their native objects do not make these scientific audit relations first-class. We argue that autonomous scientific systems should emit portable, claim-aware artifact lineage as a minimum audit layer. We propose a compact observability profile organized around individuals, operators, fitness records, lineage, archives, runs, streams, and steering commands. In this profile, scientific claims are ordinary individuals with explicit evidence bindings and verification records. The profile is intended as a semantic layer that complements current telemetry and provenance standards. Execution details can remain in OpenTelemetry. Final packages can export to PROV-O or RO-Crate standards.",
+      "categories": [
+        "cs.CL",
+        "cs.CY",
+        "cs.HC"
+      ],
+      "published": "2026-08-20T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.18312",
+      "pdf_url": "https://arxiv.org/pdf/2608.18312",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Highly relevant to long-horizon scientific-agent work because it focuses on observability and auditing of autonomous scientific agents through artifacts and claims rather than just model-call logs."
+    },
+    {
+      "arxiv_id": "2608.18744",
+      "title": "Metrics That Write Themselves: Evolving an Evaluator from Its Own Blind Spots",
+      "authors": [
+        "Xing Zhang",
+        "Yanwei Cui",
+        "Guanghui Wang",
+        "Zhihao Lin",
+        "Peiyang He"
+      ],
+      "abstract": "Agents improve quickly against a reliable automatic metric and stall without one, and the applications that need them most, report generation among them, are the ones nobody knows how to score. Can the metric write itself? Saying what makes an answer good is hard; pointing at something wrong with one is easier, so the metric we evolve is a pool of small Python operators that each flag a candidate for one named defect, or abstain, and vote. Asking a model for operators directly does not work: 183 candidates realise only 96 distinct behaviours, from one narrow region of an enormous space. EvalCEGAR instead borrows counterexample-guided abstraction refinement from program verification. It reads the pool as an abstraction and searches for a collision, two answers the operators score identically, one correct and one not. That pair, not a prompt, is the authoring request, and when a collision defeats every attempt the loop widens what an operator may read rather than resampling. On MBPP+ and HumanEval+, a sandbox whose hidden unit tests give exact ground truth, the loop writes a 55-line operator that closes 15.4% of the gap between flagging nothing and a perfect filter on 428 unseen tasks (+0.0065, p=0.0010) at a quarter of our best hand-written operator's flags. On the benchmark it never saw it matches that operator's effect exactly on a third of the flags. Six of eight runs admit such an operator and all six help out of sample; our 15 hand-written operators applied together as one filter lose accuracy. An LLM judge on the same information ties that delta on a nearly disjoint set of candidates, and charges a model call per candidate forever where the operator charges none.",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.SE"
+      ],
+      "published": "2026-08-20T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.18744",
+      "pdf_url": "https://arxiv.org/pdf/2608.18744",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Extremely relevant to grading long rollouts because it focuses on automatically evolving evaluators/metrics for tasks where reliable scoring is otherwise hard."
+    },
+    {
+      "arxiv_id": "2608.18300",
+      "title": "The Lifecycle of LLM-as-a-Judge for Large-Scale Recommendation Explanations",
+      "authors": [
+        "Emma Yanyang Kong",
+        "JJ Tan",
+        "Ishan Gupta",
+        "Lars Olds",
+        "Claire Campbell",
+        "David Fagnan",
+        "Veli Balin",
+        "Rohan Gosain",
+        "Louis Garcia",
+        "Minsu Jang"
+      ],
+      "abstract": "LLM-as-a-Judge, which leverages a large language model to evaluate natural language generated by another AI application or model, has become a standard, scalable approach for accelerating and extending costly human evaluation. However, most work treats a judge as a static artifact, evaluating it once at construction or against a fixed benchmark. In contrast, we argue that an LLM judge running in a production system is better understood as having a lifecycle: it must be built, trained, deployed, and continuously maintained as the surrounding data evolves, and each phase poses distinct technical and operational challenges.   We present such a lifecycle for the LLM judges that evaluate user-facing recommendation explanations at Netflix, where our pipeline generates and the judges assess hundreds of thousands of distinct show-level explanations per week, served across the mobile experience to millions of members. Our framework has four phases: (I) Birth, defining multiple evaluation criteria and building curated benchmark datasets with human labels and rationales; (II) Training, refining the judges' rubrics via Reasoning-Aligned Rubric Tuning (RART), a rubric-tuning procedure that uses a meta-judge over reasoning output as the learning signal; (III) Deployment, in which one judge serves two production roles: quality gating and reflective generation; and (IV) Monitoring, a continuous Human-in-the-Loop alignment process that detects drift and triggers re-tuning behind a human review gate. We report post-launch results from a five-week A/B test over tens of millions of members, in which the judge-aligned explanations shifted member viewing toward novel content (previously unwatched) and increased successful browse-to-play sessions relative to a no-explanation control, with no quality-related takedowns.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-08-20T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.18300",
+      "pdf_url": "https://arxiv.org/pdf/2608.18300",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Directly studies lifecycle, drift, and maintenance of LLM-as-a-Judge systems, which is highly relevant to your concerns about judge weaknesses and scalable grading."
+    },
+    {
+      "arxiv_id": "2608.18719",
+      "title": "Competence, Not Accuracy: A Diagnostic for Reference-Free Judge Gates in Skill Optimization",
+      "authors": [
+        "Chenle Chen",
+        "Yangbo Wei",
+        "Chao Yao",
+        "Shaoqiang Lu",
+        "Junhong Qian",
+        "Chen Wu",
+        "Lei He"
+      ],
+      "abstract": "Text-space skill optimization adapts a frozen agent by evolving a natural-language skill document, accepting each candidate through a validation gate. Existing gates rely on verifiable rewards, confining these methods to tasks with an automatic verifier. Replacing the verifier with an LLM-judge gate would lift that restriction, but whether such a gate carries usable signal is untested. We ask a prior question: can we tell, before placing a judge in the loop, whether its scores separate correct from incorrect answers at all? We formalize a reference-free judge as a latent solver -- its verdict rests on agreement with whatever it would itself conclude, so its capacity to evaluate is bounded by its capacity to solve. The model yields a closed-form bound on discriminability (ROC-AUC) in the judge's competence $c$ and answer-space size $k$, a necessary condition $c > 1/k$, and the result that the marginal AUC is confounded by item difficulty while a within-question estimator is not. A non-intervening probe records judge scores on genuine optimization runs without altering any decision. We find discriminability at chance where competence sits near the floor and usable above it; that a judge's benchmark accuracy overstates the competence that matters; and, in a closed-loop study, that the screen predicts which kind of gating error occurs. The result is a cheap pre-deployment diagnostic for judge gates.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-08-20T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.18719",
+      "pdf_url": "https://arxiv.org/pdf/2608.18719",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Directly evaluates whether reference-free LLM judge gates provide usable optimization signal, which is highly aligned with your concerns about LM judges and grading reliability."
+    },
+    {
+      "arxiv_id": "2608.19047",
+      "title": "Eureka: Task-Conditioned Meta-Agent Orchestration for Scientific Discovery",
+      "authors": [
+        "Alizer Wong",
+        "Heng Cui",
+        "Yi Tan",
+        "Xiongchao Zhan",
+        "Liang Lin",
+        "Yuxiang Guo",
+        "Zhaorong Dai",
+        "Zixin Zeng",
+        "Wenyuan Li"
+      ],
+      "abstract": "We present Eureka, a task-conditioned Meta-Agent architecture that compiles long-horizon tasks into dynamic obligation graphs with explicit acceptance semantics. During execution, Eureka forms Macro-Agents with specialized state, memory, operators, tools, verifiers, and local topology via receding-horizon planning, architecture promotion, and minimal-sufficient compilation. When bottlenecks recur, cost-benefit-gated evolution updates the local architecture under constraints. Theoretically, we establish results on regret, planning invalidation, amortization, subtree interfaces, serializability, and verification. Experimentally, Eureka completes 170/170 recursive tasks and generates 3,948 certificates with no false acceptances. Active context compresses median input from 9,490 to 4,005 tokens; incremental processing avoids 65.38% recomputation across 12,000 tasks; 16,000 concurrent executions serialize consistently. The same Meta-Agent instantiates a Theory-Discovery Agent and a Math/Conjecture Agent. The former yields structural results in quantum-process and spacetime theory. The latter identifies bottlenecks in Riemann Hypothesis research and advances a positivity certificate for Suzuki's localized Weil quadratic form to 0 < a <= 69/200 = 0.345, reaching ~99.55% of (log 2)/2. These results suggest that scientific-agent capability depends not only on the base model but on whether an architecture can be formed to match the task's cognitive structure.",
+      "categories": [
+        "cs.AI",
+        "math.NT"
+      ],
+      "published": "2026-08-20T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.19047",
+      "pdf_url": "https://arxiv.org/pdf/2608.19047",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Directly targets long-horizon scientific discovery with dynamic multi-agent orchestration, making it highly relevant to your scientific-task and agent-evaluation interests."
+    },
+    {
+      "arxiv_id": "2608.18183",
+      "title": "Accelerating Visual On-Policy Distillation with Batched Speculative Jacobi Rollouts",
+      "authors": [
+        "Bingqi Shan",
+        "Zhehao Yu",
+        "Kenhong Lin",
+        "Baoquan Zhang"
+      ],
+      "abstract": "Visual on-policy distillation (OPD) improves the training of compact visual autoregressive models by learning from trajectories generated by the current student. However, these online rollouts are still produced token by token with autoregressive decoding, which adds substantial cost to every on-policy training step. Speculative Jacobi Decoding (SJD) provides an alternative because it can process multiple tokens in parallel without an auxiliary draft model, but the original method is designed for single-sequence inference. We introduce HB-SJD, a batched SJD rollout backend for visual OPD. HB-SJD allows each image to advance independently according to its own decoding progress, while images at different sequence positions are still verified in batched model forwards. As images finish, HB-SJD switches between Full and Compact execution to reduce the cost of later rollout rounds. HB-SJD only replaces the student rollout backend and leaves the teacher, distillation objective, and optimization procedure unchanged. Experiments with LlamaGen show that HB-SJD substantially reduces rollout and end-to-end training time while preserving the generation quality of the distilled student.",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-08-20T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.18183",
+      "pdf_url": "https://arxiv.org/pdf/2608.18183",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Directly relevant to Hunter Prep since it is explicitly about accelerating visual on-policy distillation, one of your stated current interests."
+    },
+    {
+      "arxiv_id": "2608.18574",
+      "title": "Continual Reasoning Gym: Diagnosing and Harnessing Shared Reasoning in Continual RLVR",
+      "authors": [
+        "Lirui Luo",
+        "Guoxi Zhang",
+        "Hongming Xu",
+        "Rongqing Li",
+        "Cong Fang",
+        "Lifeng Fan"
+      ],
+      "abstract": "Reinforcement learning with verifiable rewards (RLVR) commonly post-trains reasoning models on multiple tasks, while rerunning multitask RLVR (MTRL) as new tasks are added makes capability expansion costly. We therefore study continual RLVR, which updates the existing model as each task arrives. The central question is whether a model updated this way can perform as well as a jointly trained model. To answer this question, we introduce Continual Reasoning Gym, a continual-RLVR environment that organizes text and visual reasoning tasks into five task sequences. In this setting, we identify two key observations: Sequential RLVR exhibits modest forgetting, yet its final performance remains below that of MTRL. To understand the latter, we decompose final performance and show that forgetting accounts for only part of the gap. To explain the former, we identify shared reasoning: transferable reasoning structure allows training on one task to support others on average. We therefore introduce Continual Prompt Replay (CPR), which harnesses shared reasoning to improve learning on the arriving and future tasks by replaying previous-task prompts and regenerating their responses with the current policy. On average, only CPR reaches MTRL-level performance.",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-08-20T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.18574",
+      "pdf_url": "https://arxiv.org/pdf/2608.18574",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Highly relevant because it studies continual RL with verifiable rewards for reasoning tasks, directly connecting to your interests in long-horizon evaluation, self-correction, and scalable post-training/on-policy distillation."
+    },
+    {
+      "arxiv_id": "2608.18524",
+      "title": "DART-SD: Diamond-topology Aware Retrieval and Tuning for Self-Distillation of Multi-Turn Tool-Calling Agents",
+      "authors": [
+        "Hangrui Xu",
+        "Jiarui Wang",
+        "Yang Yang",
+        "Chuanbo Zhu",
+        "Fangda Chen",
+        "Ziqi Wu",
+        "Jingming Cai",
+        "Yan Song"
+      ],
+      "abstract": "Equipping Large Language Models (LLMs) with multi-turn tool-calling capabilities is essential for building autonomous agents. However, progress is fundamentally limited by the reliance on full-length trajectory imitation. For tasks involving multiple order-independent sub-goals, the optimal solution space forms a vast combinatorial diamond lattice. Forcing this rich topology into monolithic trajectories causes a severe topological collapse, indiscriminately penalizing valid alternative explorations and severely degrading policy diversity. To address this, we propose DART-SD (Diamond-topology Aware Retrieval and Tuning for Self-Distillation), a novel framework that shifts the paradigm from global forcing to topology-guided localized correction. DART-SD first models the execution process as a converging Interaction-State Transition Graph (ISTG), faithfully capturing the inherent diamond topology of successful and failed exploratory paths. During autonomous rollouts, the framework identifies the Critical Topological Breakpoint (CTB) and retrieves success-supported recovery references. Finally, we introduce a progressive self-distillation paradigm through CTB-guided localized supervision, ensuring that the training loss is calculated exclusively on the generated recovery steps while strictly protecting the valid reasoning prefix from destructive gradient updates. Experiments on complex multi-turn tool-calling benchmarks demonstrate that DART-SD significantly outperforms traditional full-trajectory baselines.",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG",
+        "cs.MA"
+      ],
+      "published": "2026-08-20T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.18524",
+      "pdf_url": "https://arxiv.org/pdf/2608.18524",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Directly matches interests in multi-turn agent training, on-policy distillation, and long rollouts by proposing a self-distillation method for tool-calling agents that avoids brittle full-trajectory imitation."
+    },
+    {
+      "arxiv_id": "2608.18681",
+      "title": "Learning What to Fail On: Failure-Mode Contextual Bandits for Adversarial Data Curation",
+      "authors": [
+        "Roie Kazoom",
+        "Ofir Cohen",
+        "Rami Puzis",
+        "Asaf Shabtai",
+        "Ofer Hadar"
+      ],
+      "abstract": "We introduce a failure-aware adversarial retrieval-augmented framework for improving robustness in natural language understanding. Rather than selecting synthetic examples with a fixed reward threshold, our method formulates adversarial data curation as a failure-mode contextual bandit problem. Candidate examples are generated with retrieval-augmented prompting, filtered by the current target model, automatically validated by an LLM judge ensemble, and clustered into recurring failure modes. A stochastic policy then selects which failure modes to sample for retraining, and is updated using validation-based reward that balances robustness gains, forgetting, and data cost. This makes the data curator itself the learning agent, enabling adaptive selection of the most useful model failures across training rounds. On standard benchmarks, our approach improves RoBERTa-base accuracy from 88.48% to 92.60% on SNLI, from 75.04% to 80.95% on ANLI, and from 54.67% to 71.99% on MultiNLI, while consistently outperforming prior adversarial augmentation methods. We further demonstrate transfer to FEVER fact verification, achieving up to 79.86\\% FEVER score and 82.45\\% accuracy with RoBERTa-large. Finally, we provide a theoretical interpretation showing that, under stated assumptions, failure-mode sampling can reduce shortcut-aligned gradient contributions while inducing bounded distributional drift. By combining retrieval, automated validation, contextual-bandit failure selection, and controlled adversarial retraining, our framework enables scalable robustness improvement without additional human annotation.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-08-20T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.18681",
+      "pdf_url": "https://arxiv.org/pdf/2608.18681",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Strong fit for the 'need to fail first' and self-correction evaluation themes since it explicitly learns from failure modes via contextual bandits for adversarial data curation."
+    },
+    {
+      "arxiv_id": "2608.18726",
+      "title": "Execution-grounded evaluation reveals hidden failures in language-model calculations for environmental science",
+      "authors": [
+        "Maohao Ran",
+        "Chendong Ma",
+        "Yanting Zhang",
+        "Dailing Jiang",
+        "Yusen Huang",
+        "Meng Gao",
+        "Jun Song"
+      ],
+      "abstract": "Large language models are increasingly used for quantitative work in the environmental sciences, yet existing evaluations score only final answers, leaving calculation process unobserved. Here we introduce AtmosCoder-Bench, an execution-grounded benchmark that makes the calculation process visible. Built through a transferable semi-automated pipeline (436 problems, 3,910 variants, 7,029 graded quantities), every problem is validated to be unambiguous and human-solvable, with uniquely verifiable answers. We find that (i) multiple-choice formats inflate measured accuracy by at least 12 percentage points; (ii) many failures arise not from missing knowledge but from models failing to apply known formulas and constraints consistently throughout multi-step computation; and (iii) even frontier models remain weak when task-specific conditions invalidate familiar methods, often reverting to canonical solution patterns rather than adapting methods to the relevant physical regime, leaving expert oversight essential.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-08-20T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.18726",
+      "pdf_url": "https://arxiv.org/pdf/2608.18726",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Very relevant to better grading of long rollouts because it introduces execution-grounded evaluation that reveals hidden process failures beyond final-answer scoring."
+    },
+    {
+      "arxiv_id": "2608.18931",
+      "title": "Test-Time Scaling in the Wild: Why Exploitation, Not Exploration, Is the Bottleneck",
+      "authors": [
+        "Davide Romano",
+        "Kanak Raj",
+        "Jerrod Parker",
+        "Daniele Giofr\\`e"
+      ],
+      "abstract": "Test-time scaling (TTS) improves language model outputs by spending additional inference compute - generating multiple candidates, searching over partial sequences, or iteratively refining drafts. These techniques yield large gains on mathematics and code, but have been developed and stress-tested almost exclusively on tasks where verification is straightforward. We conduct the first compute-normalised comparison of five TTS families across five open-ended generation benchmarks spanning medicine, law, finance, general chat, and creative writing - grounded in a unified framework that decomposes the effectiveness of each method's token budget into exploration and exploitation. The answer depends on which side of that decomposition you examine. Scaling exploration works: the best candidate in the pool improves steadily with compute across all settings. What breaks is exploitation - the step that converts a rich candidate pool into a final output. With state-of-the-art generators, reward models correlate at only $\\rho_v \\approx 0.12$ with true quality, rendering selection near-random regardless of budget. Tree search amplifies this failure through diversity collapse. Refinement helps on one of five benchmarks; its apparent gains elsewhere are confounded. Only synthesis across candidates (Fusion) consistently improves over single-sample baselines, yet still recovers only ~40% of available quality. The candidate pool is not the bottleneck - choosing from it is.",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-08-20T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.18931",
+      "pdf_url": "https://arxiv.org/pdf/2608.18931",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Highly relevant to your test-time scaling and long-horizon reasoning interests because it analyzes when extra inference compute helps in realistic settings and argues exploitation is the main bottleneck."
+    },
+    {
+      "arxiv_id": "2608.18222",
+      "title": "Think Shallow, Solve Deep: Controlling Recurrent Dynamics for Reliable Test-Time Depth",
+      "authors": [
+        "Ivan Viakhirev",
+        "Kirill Borodin",
+        "Amirah Almutairi",
+        "Serguei Barannikov",
+        "Maxim Abramov",
+        "Grach Mkrtchian"
+      ],
+      "abstract": "Recurrent-depth reasoners aim to solve harder problems by iterating their update longer at test time, but additional iterations can improve, preserve, or degrade an answer. We show that a measurable property of the trained operator, its finite-time dynamical regime (estimated as settling, marginal, or drifting), indicates which of these occurs. We give a sufficient condition for depth-safety: once an operator's per-step displacement is small relative to the decoder margin, the decoded answer cannot change under further iterations. Empirically, on algorithmic tasks trained from $800$ unaugmented examples per difficulty tier, settling operators do not degrade with added depth, and on some tasks convert it into higher accuracy on harder unseen instances (Sudoku, $0.19$ to $0.34$ past the training horizon). A single terminal fixed-point objective moves the regime and the depth behavior together: removing it induces drift and removes the gains, and adding it to a generic recurrence yields depth-safe extrapolation on carry propagation. We give four operational criteria for useful test-time depth, use them to catalogue failure modes, and, as a consistency check, apply the same measurements to Huginn-3.5B, which falls in the non-settling family.",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "published": "2026-08-20T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.18222",
+      "pdf_url": "https://arxiv.org/pdf/2608.18222",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Very relevant to test-time reasoning and self-correction because it studies when additional recurrent reasoning depth is safe or harmful at inference time."
+    },
+    {
+      "arxiv_id": "2608.19072",
+      "title": "What is Missing from AI Post-Training AI: An Empirical Analysis",
+      "authors": [
+        "Joy Jia Yin Lim",
+        "Xin Huang",
+        "Hao Peng",
+        "Yaxi Lu",
+        "Xin Cong",
+        "Zhong Zhang",
+        "Maosong Sun",
+        "Yankai Lin"
+      ],
+      "abstract": "Large language model (LLM) agents can now post-train an LLM end-to-end. They can write code, launch training, evaluate checkpoints, and improve downstream performance, raising the prospect of AI-for-AI. We argue that this picture conflates two distinct capabilities: execution-level capability, iterating within a selected training strategy; and strategy-level capability, revising the high-level judgment as experimental evidence accumulates. Analyzing a large corpus of publicly released post-training trajectories, we find that across different tasks, the agent's training strategy is locked in at the very beginning, and the entire remaining budget is spent on local adjustments within the selected strategy. We then examine three natural explanations--missing experience, missing guidance, and insufficient reasoning--with escalating interventions. Extensive experiments show that (1) an experience-driven scaffold improves execution across the board (+12.6 points on GSM8K and +40.8 on HumanEval) but leaves the strategy static; (2) human guidance effectively redirects the initial strategy, yet the agent falls back into local adjustment loops once training starts; and (3) additional inference compute pays off on easier tasks but yields almost no gain on the hardest one. In conclusion, what agents lack is neither experience, guidance, nor reasoning compute, but a mechanism for spontaneously reevaluating their strategy during execution.",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "published": "2026-08-20T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.19072",
+      "pdf_url": "https://arxiv.org/pdf/2608.19072",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Directly relevant to your long-horizon scientific-task and self-correction interests because it analyzes the gap between executing a training strategy and revising high-level strategy during autonomous post-training."
+    },
+    {
+      "arxiv_id": "2608.18081",
+      "title": "Position: Behavioral Systems Require Behavioral Tests",
+      "authors": [
+        "Manuel Cherep",
+        "Nikhil Singh",
+        "Pattie Maes"
+      ],
+      "abstract": "Artificial agentic systems increasingly operate as behavioral systems by interacting with dynamic environments, pursuing goals, and adapting over time. Yet, current evaluation methods largely focus on performance outcomes, not the underlying behavioral processes that produce them. This paper argues that AI agents must be evaluated like other behavioral systems: through systematic observation, perturbation, and interpretation of their actions. We draw on lessons from the behavioral sciences to motivate this position, and propose a research agenda focused on developing rigorous behavioral tests. These include methods for recovering decision strategies from action sequences, constructing environments that isolate behavioral differences, and probing emergent dynamics in multi-agent systems. Taken together, these directions offer a roadmap for developing a science of AI behavior.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-08-20T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.18081",
+      "pdf_url": "https://arxiv.org/pdf/2608.18081",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Strongly relevant to your evaluation agenda because it argues for behavioral tests of agentic systems rather than outcome-only metrics, aligning with your focus on self-correction, noisy observations, and fail-first evaluations."
+    },
+    {
+      "arxiv_id": "2608.18303",
+      "title": "SESSE: Sketch, Expand, Sort, Summarize, Evaluate -- LLM-as-Judge Evaluation via Structured Decomposition",
+      "authors": [
+        "Dae Lee",
+        "Mihai Delgeanu",
+        "Adel Youssef"
+      ],
+      "abstract": "LLM-as-judge evaluation reduces response quality assessment to a single holistic A/B preference choice, providing no mechanism to isolate which quality dimensions drove the preference or distinguish model errors from genuine label ambiguity. We propose SESSE (Sketch, Expand, Sort, Summarize, Evaluate), a training-free framework that decomposes holistic judgment into structured sub-questions mined directly from the judge's own error cases; requiring no oracle responses, task-specific rubrics, or fine-tuning. On RewardBench (n=1,000), SESSE achieves near-parity with the chain-of-thought baseline and is competitive with RISE-Judge-32B (92.7%), a fine-tuned specialist, while remaining fully training-free. Per-criterion vote evidence provides an interpretable audit trail for diagnosing label ambiguity and judge failure modes unavailable from a single holistic output token.",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-08-20T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.18303",
+      "pdf_url": "https://arxiv.org/pdf/2608.18303",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Proposes structured decomposition for LLM judging, making it very relevant to improving grading quality and diagnosing failures on long or complex outputs."
+    }
+  ]
+}
