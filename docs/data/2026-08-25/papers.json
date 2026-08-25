@@ -1,0 +1,483 @@
+{
+  "date": "2026-08-25",
+  "generated_at": "2026-08-25T01:58:29.133825+00:00",
+  "author_papers": [
+    {
+      "arxiv_id": "2608.20920",
+      "title": "ForeDreamer: A Self-Evolving Dual-Agent Memory Architecture for Future Event Prediction",
+      "authors": [
+        "Linhao Zhong",
+        "Zongze Du",
+        "Linyu Wu",
+        "Yu Bo",
+        "Hourong Li",
+        "Chenchen Jing",
+        "Hao Chen",
+        "Yuling Xi",
+        "Chunhua Shen"
+      ],
+      "abstract": "Open-web future event prediction requires agents to distill reliable signals from noisy, redundant, and incomplete evidence. Existing retrieval/memory mechanisms directly feed retrieved information to agents or rely on simple memory functions such as storing and reusing prior information for prediction, leaving them insufficient for open-web forecasting. We propose to transform raw web evidence into structured memory before prediction, enabling agents to reason over distilled, question-specific evidence rather than noisy retrieval results. This paper presents ForeDreamer, a self-evolving dual-agent framework for managing memory over open-web evidence. ForeDreamer separates factual memory, a question-specific evidence state for the current forecast, from experiential memory, persistent agent experience accumulated across forecasting episodes. It uses a main agent for search and prediction, and a memory-processing subagent to convert search results into factual memory with dedicated tools. ForeDreamer further evolves experiential memory through two tracks, improving both forecasting decisions and factual-memory construction. Experiments on Prophet Arena and FutureX demonstrate the effectiveness of ForeDreamer. Project page: https://zhongzero.github.io/ForeDreamer",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-08-24T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.20920",
+      "pdf_url": "https://arxiv.org/pdf/2608.20920",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2608.21278",
+      "title": "CLEAR: Continuous Latent Adapter Routing for Utility-Preserving LLM Safety Alignment",
+      "authors": [
+        "Chengxiao Wang",
+        "Enyi Jiang",
+        "Xiaojing Liao",
+        "Sanmi Koyejo"
+      ],
+      "abstract": "Improving the safety of large language models (LLMs) often comes at the expense of utility, as globally applied safety tuning may affect model responses to both harmful and benign inputs. We propose \\textbf{C}ontinuous \\textbf{L}at\\textbf{E}nt \\textbf{A}dapter \\textbf{R}outing (CLEAR), a conditional safety adaptation framework that uses a lightweight hidden-state gate to continuously control the activation strength of a safety low-rank adapter. CLEAR aims to reduce harmful completions while avoiding unnecessary changes to the frozen backbone that could degrade performance on benign prompts. Experiments on widely used safety and utility benchmarks show that CLEAR improves robustness on HarmBench while reducing the utility degradation observed with globally applied safety tuning such as SFT or standard low-rank adaptation (LoRA). On Llama-3-8B-Instruct, CLEAR reduces HarmBench ASR from 32.3\\% to 0.5\\%, while retaining most of the base model's utility and achieving up to 7.1 percentage points higher GSM8K accuracy than globally applied SFT or LoRA. These results suggest that CLEAR is a promising mechanism for improving the safety--utility trade-off in LLM alignment.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-08-24T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.21278",
+      "pdf_url": "https://arxiv.org/pdf/2608.21278",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    }
+  ],
+  "ranked_papers": [
+    {
+      "arxiv_id": "2608.20607",
+      "title": "JuryProbe: An Empirical Consensus-Risk Diagnostic for Routing Reference-Free Factuality Judge Panels to Grounded Verification",
+      "authors": [
+        "Tianxin Zhou",
+        "Ruixi Lin"
+      ],
+      "abstract": "Panels of inexpensive LLM judges increasingly make accept-or-escalate decisions. In factuality settings, accepting a claim because several reference-free judges agree can create a hidden risk: agreement may reflect shared false-negative blind spots rather than independent evidence. We introduce JuryProbe, an empirical consensus-risk diagnostic for reference-free factuality judge panels, paired with a calibration-based routing policy. JuryProbe estimates consensus risk from a labeled calibration probe using false-negative-only (FN-only) judge correlation and false-consensus lift; when flagged high-risk, reference-free majority accepts are routed to the same judges with trusted references. On audited FEVER corruptions, reference-free panels show correlated false negatives (FN-only correlations 0.402 and 0.368; lifts 3.13x and 18.13x), while unanimous false consensus drops to zero under a trusted-reference best-case diagnostic on both minimal-pair and non-minimal-pair evidence. In flagged settings, the routed policy is by construction equivalent to grounding every reference-free majority accept (verified in 34/34 splits): improvement comes from accept-conditioned grounding, while the diagnostic determines whether to activate it. A fixed, pre-specified rule flags 8-10 of 10 splits across synthetic, benchmark-authored, and scientific families and 0 of 10 on a negative control, where standing down avoids 28% of reference acquisitions at a 0.004 increase in false accepts. False-accept reduction persists under weak BM25 retrieval at substantial coverage cost, while stale stand-down labels require periodic recalibration. JuryProbe provides no formal risk guarantee and does not establish reliable stand-down on natural panels; its supported contribution is an empirical diagnostic of high-risk panel error dependence.",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-08-24T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.20607",
+      "pdf_url": "https://arxiv.org/pdf/2608.20607",
+      "is_author_match": false,
+      "relevance_score": 10.0,
+      "relevance_reason": "This is extremely relevant to Hunter/Shuchao work since it studies weaknesses of LLM judge panels and when to escalate to grounded verification, which is central to reliable grading."
+    },
+    {
+      "arxiv_id": "2608.20938",
+      "title": "No Judgment Without a Reason: Counterfactual Receipts for Versioned AI Evaluators",
+      "authors": [
+        "Ye Chen",
+        "Weining Zhang"
+      ],
+      "abstract": "Evaluators often produce correct labels via flawed reasoning, a critical failure for agentic systems gating actions, routing reviews, or supplying training feedback. Standard evaluation only verifies final label correctness, ignoring whether judgment changes stem from valid evidence, consistent rules, or proper rule applicability. We formalize evaluator reasoning accountability via three core sources: grounds, norms, and authority. Varying these sources yields an eight-cell counterfactual judgment cube to characterize judgment updates. We define judgment receipts as minimal source replacement sets that reproduce revised verdicts to explain judgment transitions. We derive certification cost bounds for black-box evaluators and present ReasonBench, a policy and logical reasoning benchmark with verifiable receipts covering 19,520 cases and 7,200 controls. In frozen evaluations, Qwen3-1.7B reaches 98.41% receipt accuracy, while cube prediction scores 96.99%, a consistent 1.42-point drop validated by Qwen3-0.6B replication. Strong standard accuracy masks severe robustness flaws. Meaning-preserving source permutations reduce valid receipt recovery to 54.8% and 49.2% for direct and cube prediction. Models trained on simple single-source changes retain 93.75% verdict accuracy but recover only 7.16% of receipts for complex multi-source updates. Permutation retraining boosts consistency to 96.6% yet worsens cube prediction deficits. Structured counterfactual supervision fails to guarantee robust reasoning. We show reason-aware evaluation must decouple prediction and certification, reporting transformation consistency alongside standard accuracy for trustworthy evaluator auditing.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-08-24T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.20938",
+      "pdf_url": "https://arxiv.org/pdf/2608.20938",
+      "is_author_match": false,
+      "relevance_score": 10.0,
+      "relevance_reason": "Extremely relevant to your evaluator and grading work because it directly studies reasoning accountability in AI evaluators and introduces counterfactual-receipt style checks beyond final-label accuracy."
+    },
+    {
+      "arxiv_id": "2608.20392",
+      "title": "Evaluation-as-Search: Adaptive Discovery of Grounding Failures in Meeting Assistants",
+      "authors": [
+        "Sami Khairy",
+        "Yasaman Hosseinkashi",
+        "Vishak Gopal",
+        "Ross Cutler"
+      ],
+      "abstract": "LLM-powered meeting assistants are deployed at scale, yet systematic evaluation of their grounding fidelity remains limited to static benchmarks that miss failure modes tied to specific discourse structures or reasoning demands. We propose Evaluation-as-Search (EaS), a feedback-driven methodology that frames quality evaluation as an adaptive search over the space of natural questions a meeting participant might ask. Rather than sampling uniformly, EaS learns from evaluator feedback across iterations to concentrate probing effort on cognitive demands where failures are most likely, guided by a UCB-scored coverage map and blind multi-dimensional quality evaluation. Using EaS, we construct MeetingProbe, a benchmark of over $3{,}000$ annotated question--answer pairs spanning 20 transcripts from three meeting genres and three LLM assistants. In ablations, adaptive search surfaces $2.5\\times$ more failures than random probing ($7.1\\%$ vs. $2.9\\%$ finding rate), with the strategic planner contributing the largest individual effect. Across three models, we observe a clear capability gradient and identify eight recurring failure categories dominated by discourse-pragmatic challenges rather than factual recall errors. We further validate MeetingProbe across multiple model families and providers, finding a clean capability gradient and a curated subset of universal failures that no model handles. MeetingProbe is released publicly to support reproducible evaluation of meeting assistant grounding fidelity.",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-08-24T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.20392",
+      "pdf_url": "https://arxiv.org/pdf/2608.20392",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Highly relevant because it treats evaluation as an adaptive search for grounding failures, directly matching your interests in better evals, surprising-information stress tests, and grading long assistant rollouts."
+    },
+    {
+      "arxiv_id": "2608.20664",
+      "title": "DreamBench-SWE: A Multi-Session Memory-Hygiene Benchmark for Software Agents",
+      "authors": [
+        "Sarthak Singh"
+      ],
+      "abstract": "DreamBench-SWE is a multi-session benchmark for software-agent memory hygiene in which later software tasks depend on non-inferable evidence from earlier sessions and are scored by executable hidden oracles. We report the original scaled v2 fold and a separately preregistered v2.1 successor audit designed after that study but frozen before successor outcome inspection. The successor run completed 360/360 work units and 720/720 S3 cells across four conditions. In the original fold, the primary DF-hybrid--B5 contrast was null (95/180 versus 89/180; clustered p=.518, Holm p=1), not evidence of equivalence, and C9/C10 retained B0-headroom limitations. In the successor, no external memory achieved 21/180 passes (rate 0.1167), deterministic verbatim event memory 82/180 (rate 0.4556), the typed-plus-raw reference probe 83/180 (rate 0.4611), and one pinned hosted Mem0 literal-storage configuration 97/180 (rate 0.5389). The registered six-slot Family A retained unavailable slots at p=1; all three available comparisons against no memory rejected after Holm correction. Both preregistered mechanism contrasts were unavailable after pre-evaluation conformance rejection. The secondary literal-storage-versus-verbatim comparison was nonconfirmatory and sensitivity-dependent, while the comparison with the reference probe did not reject. The audit therefore supports DreamBench-SWE as a discriminating executable profile benchmark and characterizes one exact hosted-memory configuration, but it does not establish an external-system mechanism, superiority among memory-bearing conditions, equivalence, or broad product generality. The original v2.0.5 findings and artifacts remain unchanged.",
+      "categories": [
+        "cs.AI",
+        "cs.SE"
+      ],
+      "published": "2026-08-24T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.20664",
+      "pdf_url": "https://arxiv.org/pdf/2608.20664",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Extremely relevant to grading long rollouts and long-horizon agents because it introduces a benchmark for multi-session memory hygiene in software agents with executable hidden-oracle evaluation."
+    },
+    {
+      "arxiv_id": "2608.20797",
+      "title": "Automated Trajectory Evaluation for Mobile Agents via Step-Level Consequence Reasoning and Aggregation",
+      "authors": [
+        "Pengshuai Yang",
+        "Zijing Gao",
+        "Xue Yu",
+        "Benhui Zhuang",
+        "Bo Yuan",
+        "Junlan Feng"
+      ],
+      "abstract": "Evaluating language-guided mobile agents has recently shifted from rule-based to model-based approaches to achieve scalable and automated assessments. However, existing holistic evaluation paradigms process entire trajectories at once, leading to substantial context overload. Moreover, they primarily focus on task completion while overlooking operational safety. To address these limitations, we introduce CRATE, a novel two-stage VLM-as-judge framework for automated mobile agent evaluation that is compatible with both open- and closed-source models. Leveraging a step-level consequence reasoning mechanism, CRATE independently extracts task-relevant visual clues and infers action-conditioned state changes at each step. The resulting step-level textual evidence is then synthesized through trajectory-level aggregation to deliver an evidence-grounded evaluation of task completion. Building upon this evaluation scheme, we further extend CRATE to CRATE-S for operational safety assessment. Extensive experiments validate the effectiveness and robustness of both CRATE and CRATE-S. Powered by Qwen2.5-VL-72B-Instruct, CRATE achieves an F1-score of 0.833 on AndroidWorld (outperforming SPA-Bench by 20%), while CRATE-S reaches an F1-score of 0.697 on MobileRisk, demonstrating strong alignment with benchmark ground truths. Code is available at https://anonymous.4open.science/r/CRATE-D580.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-08-24T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.20797",
+      "pdf_url": "https://arxiv.org/pdf/2608.20797",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Directly relevant to your grading project because it proposes automated step-level evaluation and aggregation for long-horizon agent trajectories, including safety-sensitive errors."
+    },
+    {
+      "arxiv_id": "2608.21097",
+      "title": "When Trust Meets Truth: Trust-Truth Separability in LLM-as-Judge",
+      "authors": [
+        "Xin Sun",
+        "Di Wu",
+        "Yuchen Guo",
+        "Jiahuan Pei",
+        "Isao Echizen",
+        "Abdallah El Ali",
+        "Saku Sugawara"
+      ],
+      "abstract": "LLM-as-Judge systems can produce multi-dimensional evaluations, such as trustworthiness, reliability, and factuality, and these outputs are often interpreted as independent evidence. We test this assumption for a common pair of judgments: trust scoring and binary truth classification. On correctness-controlled QA, LLM judges align trust scores with truth verdicts more tightly than human behavioral reference, suggesting weaker separations between trust and truth judgment. We then apply stress tests by changing only source cues of identical QA between Human and AI. Source attribution shifts not only trust scores but also truth verdicts and logit-derived correct-side probabilities. Results show that current LLM-as-Judge protocols should not treat trust scores as independent evidence for truth judgments.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-08-24T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.21097",
+      "pdf_url": "https://arxiv.org/pdf/2608.21097",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "This is highly relevant because it probes failure modes in LLM-as-Judge, specifically whether trust and truth judgments are entangled, matching your concerns about judge weaknesses and better grading."
+    },
+    {
+      "arxiv_id": "2608.20521",
+      "title": "Large Scale AI Grading of Handwritten Physics Assessments: Score Agreement and Olympiad Team Selection Outcomes",
+      "authors": [
+        "Praveen Pathak",
+        "Siddharth Tiwary",
+        "Charudatt Kadolkar",
+        "Vijay Singh",
+        "David Rakestraw",
+        "Shirish Pathare",
+        "Anwesh Mazumdar"
+      ],
+      "abstract": "Multimodal AI can read handwritten physics solutions, but high-stakes grading requires agreement with official scores and outcomes. This study evaluated GPT-5.5-based grading on 10364 scanned pages from 520 handwritten submissions by 416 unique candidates or students across three assessments: a national Physics Olympiad theory examination, the final Olympiad selection camp with theory and experiment components, and a university quantum-mechanics examination. Each submission was graded twice by AI using the official rubrics. The second round used revised page-by-page and evidence-location instructions developed after first-round disagreement analysis. During grading, AI did not see official human marks or AI--human comparisons. Total-score correlations with official marks were high (0.91--0.97). For the final Olympiad selection, AI recovered the same five-student team as official grading. The second round improved aggregate question-part agreement, especially where first-round disagreements were larger. The main difficulty remained exact partial-credit grading, especially in experimental work. Reliable AI grading therefore depends on detailed rubrics and should be used as a second reader or audit tool under examiner control.",
+      "categories": [
+        "physics.ed-ph",
+        "cs.AI",
+        "cs.CY"
+      ],
+      "published": "2026-08-24T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.20521",
+      "pdf_url": "https://arxiv.org/pdf/2608.20521",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Directly relevant to the grading project because it studies LLM-based grading of long handwritten physics solutions in a high-stakes setting and analyzes agreement with official scores and selection outcomes."
+    },
+    {
+      "arxiv_id": "2608.20563",
+      "title": "Beyond End-to-End Success: Diagnosing Failures in Long-Horizon Security LLM Agents",
+      "authors": [
+        "Wei Shao",
+        "Chongzhou Fang",
+        "Zuxiong Tan",
+        "Zequan Liang",
+        "Setareh Rafatirad",
+        "Avesta Sasan",
+        "Houman Homayoun"
+      ],
+      "abstract": "Long-horizon security LLM agents must carry information and decisions across many dependent interactions, where later actions often depend on services, state, or access discovered much earlier. This makes final task success difficult to interpret: an agent may fail before it ever reaches the point where the capability of interest can be exercised. We present a diagnostic methodology that instruments security tasks with checkpoints, separates failures before and after capability exposure, and uses controlled interventions to test suspected upstream bottlenecks. We evaluate the methodology across four task families involving delayed reuse of discovered information, reuse of observed state, recovery from failed strategies, and decision making after uncertain outcomes. On observed state reuse, checkpoint analysis shows that many Gemini 2.5 Flash failures occur before the model observes the state it is later expected to reuse. In a pre-specified 92-seed study, targeted protocol-disambiguation guidance increases state observation from 65.5\\% under a matched non-guidance control message to 95.4\\%. Repeating the same design with Gemini 3.7 Flash produces the opposite effect, while state observation no longer reliably predicts task completion. These results show that the dominant source of failure can shift across model generations, motivating evaluation that diagnoses where and why long-horizon security agents fail rather than relying only on aggregate task success.",
+      "categories": [
+        "cs.CR",
+        "cs.AI"
+      ],
+      "published": "2026-08-24T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.20563",
+      "pdf_url": "https://arxiv.org/pdf/2608.20563",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Highly relevant to the long-horizon and self-correction interests because it focuses on diagnosing where long-horizon LLM agents fail rather than only measuring end-to-end success."
+    },
+    {
+      "arxiv_id": "2608.21057",
+      "title": "Designing a Robust LLM-Based Evaluation System for Agentic AI in Drug Discovery Through Human Alignment",
+      "authors": [
+        "Emma Granqvist",
+        "Roc\\'io Mercado",
+        "Samuel Genheden"
+      ],
+      "abstract": "Agentic large language model (LLM) systems are reshaping scientific workflows in chemistry and drug discovery, but evaluating their open-ended, tool-augmented outputs remains a fundamental bottleneck. Reference-based metrics such as BLEU and ROUGE fail to capture semantic correctness, while expert human evaluation does not scale to the iteration speed these systems demand. The LLM-as-a-Judge paradigm has emerged as a scalable alternative, but existing drug discovery benchmarks deploy LLM judges without validating their alignment with human experts. In this work, we present an LLM-as-a-Judge evaluation framework for ChatInvent, an agentic drug discovery assistant deployed at AstraZeneca, with four contributions. First, we define four output-quality evaluation dimensions---Completeness, Relevancy, Structural Clarity, and Scope Adherence---alongside deterministic Tool Call Correctness checks. Second, we validate the judge through a human alignment study with five expert annotators, comparing Gemini 3.1 Pro, Claude Opus 4.7, GPT-5, and Llama 3.1 70B as candidate judges. Third, we optimize the best-performing judge using few-shot demonstrations of human-annotated examples, improving alignment with the human majority vote from 0.80 to 0.86. Fourth, applying the optimized judge to 70 held-out questions, we surface concrete limitations and find that informal phrasings do not systematically degrade output quality; if anything, it is helpful to have the LLM rewrite the original question before querying the agent. Our framework provides a reusable template for human-aligned evaluation of agentic systems in scientific domains.",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-08-24T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.21057",
+      "pdf_url": "https://arxiv.org/pdf/2608.21057",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Highly relevant to your grading project because it is explicitly about building a robust LLM-based evaluation system for agentic AI with human alignment, directly matching interests in better grading of long rollouts and weaknesses of LM judges."
+    },
+    {
+      "arxiv_id": "2608.21345",
+      "title": "Asymmetric Capacity Allocation in Self-Refinement Pipelines",
+      "authors": [
+        "Zhuoyi Yang",
+        "Ian G. Harris",
+        "Salar Hashemitaheri",
+        "Cassie Huang",
+        "Yuangang Li",
+        "Hyunwoo Oh",
+        "Paul Dourish",
+        "Tony Givargis",
+        "Mohsen Imani",
+        "Li Zhang"
+      ],
+      "abstract": "Self-refinement, typically structured as generation, critique, and revision, is a widely adopted paradigm for improving LLM generation and serves as a core mechanism in many LLM agents. While the three stages involve different cognitive demands, most existing approaches conveniently treat the model size as an implementation detail rather than a subject of study, which may lead to a waste of resources. Little work has systematically examined how model size affects each stage or whether effective self-refinement requires equally capable models for generation, critique, and revision. We present the first stage-wise model size study of the self-refinement pipeline on 5 benchmarks from different domains using 6 model sizes of Qwen3 and 4 model sizes of Gemma 3. We conclude that larger generators and refiners generally improve the pipeline, whereas an undersized refiner can even harm performance. Second, performance is highly insensitive to the size of the critic, although including even a small critic consistently outperforms omitting critique altogether. Our findings demonstrate that model capacity should not be allocated uniformly across self-refinement pipelines. Instead, different stages exhibit distinct size scaling characteristics, providing practical guidance for designing more computationally efficient multi-stage language model systems.",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-08-24T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.21345",
+      "pdf_url": "https://arxiv.org/pdf/2608.21345",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "This directly studies self-refinement pipelines with generation/critique/revision capacity allocation, making it highly relevant to your interests in explicit self-correction, scaling feedback, and grading long rollouts."
+    },
+    {
+      "arxiv_id": "2608.20362",
+      "title": "Multilingual Verifier Bias in RLVR: Benchmark, Rollout Diagnosis, and the Cross-Lingual Selection Bottleneck",
+      "authors": [
+        "Chenyu Zhou",
+        "Qiliang Jiang",
+        "Xu Zhou"
+      ],
+      "abstract": "Reinforcement learning with verifiable rewards (RLVR) is a standard recipe for training large language models on mathematical reasoning, where an answer verifier serves as a language-neutral reward function. We show that this assumption fails in multilingual settings: an exact-match verifier turns format and script variation into language-dependent false-negative reward noise. We introduce a reusable protocol for auditing multilingual RLVR rewards: a verifier-robustness suite, a rollout-diagnosis procedure, and language-conditioned reward-error metrics for Japanese, English, and Chinese answers. On MGSM rollouts with k=8, the exact-match proxy rejects trusted-correct answers at sharply different rates by language across Qwen3-4B, Qwen3-8B, and Llama-3.1-8B-Instruct; for Qwen3-8B, the false-negative rate reaches 0.642 on JP against 0.122 on EN and 0.073 on CN. A plain-numeric probe localizes the mechanism to the final-answer interface: an interface model drives reward-error VLB to zero while the residual accuracy gap is unchanged. We then expose a cross-lingual selection bottleneck: on MGSM250 rollouts, a target-local aggregation rule using no trusted labels closes 55-78% of the average selection gap, and over 95% of repairs require genuine cross-lingual support. The bottleneck replicates on a 483-problem MATH-500 set. A controlled training audit shows that rule-GRPO raises trusted accuracy while the reward-error VLB stays high. The unifying message is operational: multilingual RLVR rewards should be audited by language and by answer interface before they are optimized.",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "published": "2026-08-24T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.20362",
+      "pdf_url": "https://arxiv.org/pdf/2608.20362",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "This is highly relevant because it studies verifier bias, reward noise, and rollout diagnosis in RLVR, directly connecting to your interests in scaling feedback, on-policy distillation, and weaknesses of judge/verifier-based evaluation."
+    },
+    {
+      "arxiv_id": "2608.20385",
+      "title": "Using Human-LLM Disagreement to Improve Checklist-Based Quality Appraisal",
+      "authors": [
+        "Timo van der Kuil (Methodology and Statistics Utrecht University)",
+        "Bruno Messina Coimbra (Methodology and Statistics Utrecht University)",
+        "Mirjam van Zuiden (Clinical Psychology Utrecht University)",
+        "Robert A. Bagheri (Methodology and Statistics Utrecht University)",
+        "Rens van de Schoot (Methodology and Statistics Utrecht University)",
+        "Klaas Dieleman (Methodology and Statistics Utrecht University)",
+        "Berend Greijn (Methodology and Statistics Utrecht University)",
+        "Stefan Houkes (Methodology and Statistics Utrecht University)",
+        "Sebastiaan Rodenhuis (Methodology and Statistics Utrecht University)",
+        "Elizabeth M. Grandfield (Methodology and Statistics Utrecht University)"
+      ],
+      "abstract": "Systematic reviews rely on quality appraisal of included studies, a process that is time-consuming and sensitive to ambiguity in checklist criteria. Although large language models (LLMs) offer opportunities to support these tasks, appraisal checklists are typically treated as fixed inputs, and it remains unclear how their design affects agreement with expert judgments. Therefore, we investigate (1) whether LLMs can approximate human judgments in checklist-based appraisal and (2) whether patterns of human-LLM disagreement can be used to identify and improve ambiguous checklist items. Using the Guidelines for Reporting on Latent Trajectory Studies (GRoLTS) checklist, we compare LLM-generated assessments with expert annotations across three research topics and two checklist versions. Agreement is assessed using item-level accuracy, chance-corrected agreement, and preservation of study-level rank ordering.   We find that performance varies substantially across checklist items, with ambiguous and conditional criteria producing the greatest disagreement. Revising these items improves both raw and chance-corrected agreement. Although item-level misclassifications persist, LLM-generated scores often preserve the relative ranking of studies when high-agreement items are retained. These results indicate that reliable LLM-assisted appraisal depends not only on model choice but also on checklist design. The findings suggest that analyzing human-LLM disagreement can help identify problematic checklist items and support the iterative improvement of research synthesis workflows.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-08-24T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.20385",
+      "pdf_url": "https://arxiv.org/pdf/2608.20385",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "This is strongly relevant because it uses human-LLM disagreement to improve evaluation criteria, directly relating to your work on better grading, LM-judge weaknesses, and assessing long rollouts."
+    },
+    {
+      "arxiv_id": "2608.20627",
+      "title": "When Failures Propagate: Causal Failure Attribution in Agentic Retrieval-Augmented Generation",
+      "authors": [
+        "Lauren Pothuru"
+      ],
+      "abstract": "Agentic retrieval-augmented generation (RAG) interleaves retrieval, reasoning, and answer generation across multiple hops. A retrieval error at hop 1 can surface only as a wrong answer at hop 3, while later retrieval can also repair the trajectory. This paper introduces AgenticRAG-FP, an interventional benchmark for causal failure attribution in agentic RAG. The benchmark injects a certified fault at a specified hop, re-executes the downstream trajectory, and evaluates diagnosers against the known intervention. Its central question is whether a post-hoc trace still identifies the injected hop after the suffix changes. In the completed strict dense Claude Haiku 4.5 sweep on 80 three-hop MuSiQue questions, coverage-based diagnosis is 0.91 at hop 1 and 0.00 at hops 2 and 3 (n=43,36,21 failed trajectories). A smaller content-corruption study changes an answer-bearing or bridge fact in topically intact evidence. At depth 2, where 18 failed cases remain after filtering, coverage-based diagnosis is 0.00 and a frozen-hop counterfactual probe is 0.67 in an exploratory pooled comparison. Depth-3 content estimates are descriptive only because they contain three failed cases. These results make propagation depth an explicit evaluation axis for diagnosing agentic RAG failures while distinguishing broad evidence of post-hoc signal loss from small-sample method comparisons.",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-08-24T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.20627",
+      "pdf_url": "https://arxiv.org/pdf/2608.20627",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Its focus on causal failure attribution in multi-hop agentic RAG aligns well with long-horizon tasks, explicit self-correction analysis, and diagnosing where rollouts go wrong."
+    },
+    {
+      "arxiv_id": "2608.20831",
+      "title": "STAR-OPD: Structured Aspect-Cascade-Aware On-Policy Reward Distillation for ABSA Quadruple Extraction",
+      "authors": [
+        "Tong Sun",
+        "Mingyang Ma",
+        "Jiayang Yu"
+      ],
+      "abstract": "Aspect-based sentiment analysis (ABSA) quadruple extraction requires jointly predicting target, aspect, opinion, and sentiment over reviews that often contain multiple fine-grained sentiment tuples. While large chain-of-thought (CoT) models perform well on this task, distilling them into smaller deployable models remains difficult. We identify a task-specific failure mode in distilled ABSA extraction: student errors at the target-aspect interface create structurally invalid states, such as broken target-aspect bindings and hallucinated targets, which then corrupt downstream predictions. Conventional off-policy distillation is poorly suited to this setting because it trains only on teacher-generated trajectories and provides little supervision on the student-induced structural states that dominate inference. To address this mismatch, we propose STAR-OPD (STructured Aspect-cascade-aware On-Policy Reward Distillation), which builds on generic on-policy distillation and instantiates it for ABSA quadruple extraction with cascade-aware, set-structured rewards. STAR-OPD trains on student rollouts and applies set-structured rewards that directly target binding consistency, target grounding, and fine-grained aspect disambiguation. Experiments on E-ABSA20K and SemEval-2014 show that STAR-OPD consistently outperforms off-policy and general on-policy baselines, reduces target hallucination, and substantially improves performance on structurally hard cases. With Qwen3-4B, STAR-OPD substantially narrows the student-teacher gap while improving inference efficiency, highlighting the importance of on-policy structural correction for distilled ABSA extraction.",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-08-24T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.20831",
+      "pdf_url": "https://arxiv.org/pdf/2608.20831",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Very relevant to Hunter Prep because it explicitly studies on-policy reward distillation and a failure mode in distilling long-CoT behavior into smaller models."
+    },
+    {
+      "arxiv_id": "2608.20432",
+      "title": "ProofJudge: Tool-Grounded LLM Evaluation of Formal Proof Quality in Mathlib",
+      "authors": [
+        "Shane Caldwell"
+      ],
+      "abstract": "Formal proofs in Lean 4 that pass the kernel's type checker can nonetheless vary widely in quality. We introduce ProofJudge, an agentic LLM-as-judge system that scores formal proof quality along five dimensions beyond correctness: library leverage, automation fit, structural clarity, statement quality, and Mathlib conventions. We evaluate ProofJudge on a novel dataset of 218 declarations drawn from distinct Mathlib PRs. The judge agent is grounded by tool access to the commit the PR is applied to, enabling it to query the library state when scoring. A judge is considered aligned with human preferences when it rates the version of the PR Mathlib accepted above the initial version that was sent back for revision. All six judge models evaluated recover the reviewers' preference well above chance, from 80.8% to 63.5%, and two open-weight judges reach roughly 70% at a tenth of the best judge's cost. We release the judge harness, evaluation dataset, and evaluation traces as open-source artifacts to support further research.",
+      "categories": [
+        "cs.LO",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-08-24T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.20432",
+      "pdf_url": "https://arxiv.org/pdf/2608.20432",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Highly relevant to the grading project because it proposes a tool-grounded LLM-as-judge framework for evaluating quality beyond simple correctness, which maps well to grading long rollouts."
+    },
+    {
+      "arxiv_id": "2608.20729",
+      "title": "Calibrating Criterion Revision in LLM Agents: Failure Modes and a Trace-Anchored Protocol",
+      "authors": [
+        "Guodong Xu"
+      ],
+      "abstract": "Language-model agents can improve after failure or carry text across episodes without revising what counts as success. We study the narrower attribution problem of criterion revision: when criterion K0 accepts an outcome violating a broader commitment B, what observations justify saying that the system formed and persistently used K1? We require five non-compensatory conditions: criterion-failure detection, a model-emitted proposal, new-episode transfer, intervention sensitivity on the claimed carrier, and preservation.   We evaluate CMB-0.1 on twelve cross-domain cases and four arms: stateless inference, append-only history, model-generated but harness-committed state, and evaluator-written oracle state. Seven mechanism fixtures yield 84 deterministic scorer trials; four local quantized artifacts yield 96 calls and 192 model-case-arm trials. No model trial satisfies all five conditions, but this zero does not establish general capability absence. Eleven calls remain invalid after one retry; several commitments disclose the target distinction; the harness performs commits; deletion reuses a stateless call; and conflict changes multiple factors. Qwen2.5-7B answers every transfer and preservation item without revision state, exposing zero-state reconstruction.   These failures make CMB-0.1 an instrument-calibration result rather than a model ranking. We derive a prospective, trace-anchored CMB-0.4 protocol requiring concealed transfer, explicit WRITE/NO-WRITE/ESCALATE actions, a separately logged policy-selected commit, matched interventions, repeated hidden items, and a frozen executable oracle. It is a successor design, not a completed confirmatory result. The paper contributes a measurement chain, an empirical diagnosis of its first implementation, and a more discriminating protocol for future tests of criterion revision.",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-08-24T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.20729",
+      "pdf_url": "https://arxiv.org/pdf/2608.20729",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Very relevant to your interest in failing first, self-correction, and on-policy improvement because it analyzes when an LLM agent genuinely revises its success criteria after failure."
+    },
+    {
+      "arxiv_id": "2608.20574",
+      "title": "FlavourBench: Ranking Frontier Language Models with Executable Culinary Ground Truth",
+      "authors": [
+        "Josef Chen",
+        "Erim Hayretci"
+      ],
+      "abstract": "Open-ended language-model benchmarks usually inherit a judge: a human preference panel, another model, or a brittle exact-match key. We introduce FlavourBench, an automated benchmark in which a versioned culinary system supplies dense, executable ground truth. Each task presents eight ingredients and asks for a three-ingredient portfolio; before model execution, Epicure scores all 56 possible portfolios. We evaluate 27 frontier endpoints on an identical 534-task core spanning substitution, pairing, and constrained composition. Every ranked model has exactly 89 valid responses per panel and family (14,418 model-task cells total), eliminating differential missingness from the leaderboard. The FlavourBench Score is the equal-family mean of the frozen task scores. We use 50,000 anchor-cluster bootstrap replicates for simultaneous 95% score bands and 100,000 sign-flip draws for all 351 paired model contrasts, with Holm control. The two independently compiled panels correlate at r = 0.89 (rank rho = 0.80). Grok 4.6 has the largest point estimate at 65.1 (simultaneous 95% CI 61.0-69.2); 101 of 351 model pairs are resolved. The release includes the prompts, all portfolio score maps, raw responses, exact routes, content hashes, and an offline verifier that reconstructs every result.",
+      "categories": [
+        "cs.AI",
+        "cs.CY",
+        "cs.LG",
+        "cs.SE"
+      ],
+      "published": "2026-08-24T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.20574",
+      "pdf_url": "https://arxiv.org/pdf/2608.20574",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Very relevant to grading and LM-judge concerns because it proposes an executable-ground-truth benchmark explicitly avoiding subjective judges for open-ended model evaluation."
+    },
+    {
+      "arxiv_id": "2608.20614",
+      "title": "Evaluating Skills, Not Just Agents: Agentic Continuous Evaluation of Skills",
+      "authors": [
+        "Christopher Kevin",
+        "Narendran Raghavan",
+        "Jean-Francois Puget",
+        "Roshni Malani",
+        "Meghana Puvvadi",
+        "Moshe Abramovitch",
+        "Mohit Gupta",
+        "Rama Akkiraju",
+        "Subodh Prabhu",
+        "Yogesh Dangi",
+        "Wei Luo",
+        "Seong Hee Lee"
+      ],
+      "abstract": "Enterprise agent programs are moving from prototypes into production, where reusable skills, tools, and workflow packages must be reviewed with evidence rather than prose. Current gates often scan these artifacts for structure, style, and security, but they do not answer the deployment question: does the capability package help a live agent complete enterprise tasks under the same model, sandbox, and grading policy?   We present ACES (Agentic Continuous Evaluation of Skills), a repository-native framework for evaluating skills and product capability packages as executable agent artifacts. ACES runs paired live trials with and without a target skill, normalizes trajectories into the Agent Trajectory Interchange Format (ATIF), grades six default runtime metrics, and reports Skill Lift: the target skill's added value for a fixed task, harness, workspace, and scorer. The same protocol supports product-owned task suites that compare baseline, skill, bundle, team-skill, and plugin targets.   On 145 real skills from internal enterprise repositories and public catalogs, scan-only gates surface useful authoring issues but measure complementary facets (structural versus LLM-judge Spearman $\\rho = 0.14$). Across 947 scored paired cases from 58 of 64 production skills and four primary harnesses, mean composite Skill Lift is 0.2134 (95\\% paired-case CI [0.1967, 0.2301]); mean outcome-only lift, the average of accuracy and goal accuracy, is 0.1799. Composite lift is positive in 72.8\\% of paired cases. The largest process-metric gains appear in skill execution, behavior check, and skill efficiency---signals about discovery, routing, workflow following, and tool use that document scans cannot observe. An open-source implementation of the methodology is available in NVIDIA SkillEvaluator.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-08-24T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.20614",
+      "pdf_url": "https://arxiv.org/pdf/2608.20614",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Highly relevant to current work on grading and agent assessment because it argues for evaluating reusable skills directly under live agent execution rather than only evaluating whole agents or artifact quality."
+    },
+    {
+      "arxiv_id": "2608.20631",
+      "title": "Weighted Memory Tree: Remembering What Matters for Long-Horizon LLM Agents",
+      "authors": [
+        "Quang Dao",
+        "Purvi Kathalkar",
+        "Kenneth Eaton"
+      ],
+      "abstract": "Large language model (LLM) agents have demonstrated the ability to solve multi-step tasks requiring planning, tool use, and external information access, yet growing execution histories increase inference cost and expose reasoning to outdated, irrelevant, or misleading information, potentially degrading reasoning quality. Existing memory approaches organize or compress execution histories but provide limited mechanisms for deciding which memories remain active. We introduce the, a hierarchical memory system that organizes execution into tasks, subtasks, and actions while assigning each memory a dynamic retention score. Event-based updates and selection-based decay revise these scores, allowing WMT to preserve useful information, fold completed trajectories, suppress low-utility content, and retain access to folded context. We evaluate WMT on GAIA-Text using Qwen3-8B, Gemma 4 E4B, and Llama-3.1-8B, with ablations and memory-poisoning experiments. Relative to linear memory, WMT improves accuracy by an average of 9.97 percentage points while reducing prompt-token usage by 32.8%. Memory-poisoning experiments show that WMT limits the persistence and propagation of unreliable information. Our results suggest that effective long-horizon agent memory depends less on storing more information than on deciding which information should remain active.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-08-24T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.20631",
+      "pdf_url": "https://arxiv.org/pdf/2608.20631",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Highly relevant to long-horizon agent research because it addresses memory selection and retention for extended trajectories, directly connecting to effective rollout management and evaluation."
+    },
+    {
+      "arxiv_id": "2608.20686",
+      "title": "CDRL: Certification-Driven Reinforcement Learning for Neutrino Flavor Model Discovery",
+      "authors": [
+        "Piyush Jha",
+        "Jake Rudolph",
+        "Victoria Knapp-P\\'erez",
+        "Max Fieg",
+        "Aishik Ghosh",
+        "Vijay Ganesh"
+      ],
+      "abstract": "Many scientific discovery problems require searching combinatorial hypothesis spaces under complex domain constraints. Reinforcement learning (RL) offers a promising approach, but existing methods rely on scalar rewards that provide limited information about why candidate solutions fail, leading agents to repeatedly explore invalid regions. We introduce Certification-Driven Reinforcement Learning (CDRL), a framework that leverages structured feedback from symbolic reasoning tools. When a candidate violates domain constraints, these tools produce certificates identifying the actions responsible for failure. CDRL converts these certificates into reusable constraints that eliminate classes of invalid solutions and guide exploration toward valid regions. We evaluate CDRL on neutrino flavor model discovery in theoretical particle physics, where the hypothesis space exceeds $10^{26}$ possible models, and compare it with the state-of-the-art RL approach previously used for this task. Across three theory spaces, CDRL achieves up to 1.95$\\times$ higher valid model rates and up to 6.33$\\times$ higher neutrino model rates while evaluating up to 4$\\times$ fewer candidates. We further extract 40 interpretable rules from search trajectories using a post-hoc decision-tree framework and show that reusing them as soft constraints yields gains of up to 2$\\times$ in valid model rates and 3$\\times$ in neutrino model discovery across all three theory spaces. These results suggest that CDRL uncovers reusable structure in combinatorial search spaces and provides a general framework for scientific model discovery.",
+      "categories": [
+        "cs.AI",
+        "cs.LG",
+        "cs.LO",
+        "hep-ph"
+      ],
+      "published": "2026-08-24T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.20686",
+      "pdf_url": "https://arxiv.org/pdf/2608.20686",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Highly relevant to the 'fail first to get somewhere' and scientific-discovery agenda because it uses RL with structured failure certificates to guide search through constrained hypothesis spaces."
+    }
+  ]
+}
