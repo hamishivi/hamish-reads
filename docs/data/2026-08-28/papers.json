@@ -1,0 +1,686 @@
+{
+  "date": "2026-08-28",
+  "generated_at": "2026-08-28T11:35:29.972644+00:00",
+  "author_papers": [
+    {
+      "arxiv_id": "2608.26386",
+      "title": "Co-Evolving Structured Knowledge and Reasoning in Language Models",
+      "authors": [
+        "Ryan Thomas Noonan",
+        "Linxi Zhao",
+        "Menghan Xu",
+        "Akanksha Sarkar",
+        "Mihir Mishra",
+        "Dongyoung Go",
+        "Kilian Q. Weinberger",
+        "Yoav Artzi",
+        "Jennifer J. Sun"
+      ],
+      "abstract": "Retrieval-augmented methods improve factual accuracy by grounding language models in external knowledge, but retrieving over unstructured text often introduces irrelevant context and offers limited control over the retrieved information. Structured knowledge bases offer a more controllable alternative, yet they are expensive to construct and often brittle to reason over. To address these limitations, we propose KBevo: a co-evolving framework that jointly learns to construct a structured knowledge base and reason over it for knowledge-intensive question answering. By optimizing both components end-to-end with QA outcome rewards, our method enables reasoning success to directly improve the quality of the constructed knowledge base. This leads to larger, better-connected knowledge structures with higher answer reachability, while also improving compositional factual reasoning and controllability compared to standard retrieval baselines.",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-08-28T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.26386",
+      "pdf_url": "https://arxiv.org/pdf/2608.26386",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2608.27334",
+      "title": "BTS-AgentBench: A Deterministic, Replayable Pipeline from Read-Only Telemetry Logs to Agent Benchmarks",
+      "authors": [
+        "Jeong-Yoon Kim"
+      ],
+      "abstract": "Industrial sites contain large volumes of read-only telemetry, but few benchmarks specify how to compile these records into executable multi-turn agent tasks. We present a telemetry-to-episode construction method instantiated as BTS-AgentBench. The pipeline normalizes BTS metadata and raw histories into a read-only tool store, compiles static tasks with tool-derived gold answers and evidence, and lifts retained tasks into typed, bounded operator-facing episodes. The 532-row release adds clarification, goal revision, timestamp policy, quality-gated reporting, and evidence attribution while preserving the source computation and split. Coded contract preflight reports zero findings, and the construction-exclusion controller completes 0/532 rows. Two independent raw-to-episode builds match all 11 logical tool-store exports and reproduce the released 356/87/89 train/dev/test artifact exactly. Applying the shared construction path to XAI4HEAT produces 204 episodes; on its 41-row held-out test split, the controller completes 0 rows and the retained GPT-5.5 execution completes all 41. Code, artifacts, and replay reports are available at https://github.com/kjy7567/BTS-AgentBench.",
+      "categories": [
+        "cs.CL",
+        "cs.SE"
+      ],
+      "published": "2026-08-28T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.27334",
+      "pdf_url": "https://arxiv.org/pdf/2608.27334",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2608.27428",
+      "title": "Stochastic Estimation of Transduced Language Models",
+      "authors": [
+        "V\\'esteinn Sn{\\ae}bjarnarson",
+        "Samuel Kiegeland",
+        "Manuel de Prada Corral",
+        "Ryan Cotterell",
+        "Tim Vieira"
+      ],
+      "abstract": "Transduced language models (TLMs) compose a pretrained \\emph{source} language model with a functional finite-state transducer to induce a language model over \\emph{target} strings. Computing the probability of a target prefix under a TLM amounts to summing the source-model probabilities of all source strings that the transducer maps to target strings beginning with that prefix. This set can be exponentially large or infinite. Prior work uses a computational shortcut based on source prefix probabilities, then approximates the resulting sum with threshold-pruned beam summing. This produces a lower bound with unknown error. Instead, we resample source prefixes without replacement and reweight each selected prefix by the inverse of its inclusion probability. We show that applying this correction recursively gives an unbiased estimator of the target prefix probability and lets us estimate the mass lost by threshold pruning. Our beam-summing algorithm extends the retained source prefixes and samples which prefixes to keep, reducing their number as more probability mass is added to the running estimate. This can save computation and guarantees that the run halts with probability one. We evaluate the method on encyclopedic text and DNA against sequential Monte Carlo baselines that resample with replacement. It achieves a better compute--variance tradeoff on text and lower error at the same maximum number of particles on DNA. On a DNA-to-amino-acid transduction, it reduces runtime by several orders of magnitude relative to threshold-pruned beam summing and makes estimating prefix probabilities for long target strings feasible. Replacing threshold pruning with unbiased sampling in a published reading-time analysis substantially lowers the estimated corpus surprisal but leaves the published conclusions unchanged.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-08-28T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.27428",
+      "pdf_url": "https://arxiv.org/pdf/2608.27428",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2608.26480",
+      "title": "Zero-Shot Self-Orchestration with Ledger-Based Control for Improved LLM Coding Performance",
+      "authors": [
+        "Victor Gao (Sang Won)",
+        "Vida Khosrowshahi (Sang Won)",
+        "Ali Khosrowshahi (Sang Won)",
+        "Xihao Sun (Sang Won)",
+        "Juhyun Lee (Sang Won)",
+        "Simon (Sang Won)",
+        "Lee"
+      ],
+      "abstract": "Multi-agent large language model systems are widely reported to beat single-model baselines, but the evidence is mixed, and comparisons are usually confounded: pipelines change token budgets, tool calls, and prompts simultaneously, so an aggregate gain rarely reveals what actually helped. We investigate the effect of introducing the manager-worker scaffold over a shared filesystem workspace, with no training and no per-benchmark tuning, measured against the same model answering in a single pass. Across nine models -- five open-weight, spanning 9B to ~2.8T parameters, and four frontier closed models -- on the 100 latest hard LiveCodeBench problems, the scaffold's benefit is real but conditional: large and statistically significant for some (Qwen3.8-27B +23.4, GPT-5.6-Luna +10.6 and GPT-5.6-Terra +8.0, each over five paired passes; Kimi-K3 +30.4 and Minimax-M3 +11.0 over five paired passes with reasoning off, both at $p < 10^{-4}$, and +42 and +12 in a single pass at a 128k cap) and null or negative for others (Qwen3.6-35B -1 to -9 with reasoning off). With the manager, Opus-5 achieves the highest score in the study at 91% in one pass. Running a manager roughly triples the token bill, but it buys accuracy more cheaply than moving to a larger model does: GPT-5.6-Terra with a manager nearly matches Fable 5's single-call accuracy (85.0 against 87.4, $p = 0.59$) at a fifth of the price (\\$11.71 against \\$61.11 per 100-problem pass, $p < 10^{-4}$), and the Qwen-27B arm does it for \\$51.75 on weights anyone can self-host. Our transcript analysis finds several mechanisms behind the gains, of which two recur: context management, in which short worker calls and shared notes organize state and reduce truncation, and problem decomposition. Improvements are modest for large models with reasoning enabled, but larger for some models with reasoning disabled and for smaller models with reasoning enabled.",
+      "categories": [
+        "cs.MA",
+        "cs.AI",
+        "cs.CL",
+        "cs.SE"
+      ],
+      "published": "2026-08-28T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.26480",
+      "pdf_url": "https://arxiv.org/pdf/2608.26480",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2608.26546",
+      "title": "DuMateBench: Evaluating Autonomous Agents in Complex Real-World Workflows",
+      "authors": [
+        "Zechun Niu",
+        "Yukun Zhao",
+        "Jiaxin Zhang",
+        "Xu Shen",
+        "Jinhua Si",
+        "Han Tian",
+        "Can Xu",
+        "Yunfan Song",
+        "Jiaxin Mao",
+        "Yansong Gao",
+        "Yuchen Li",
+        "Jianmin Wu",
+        "Lingyong Yan",
+        "Shuaiqiang Wang",
+        "Dawei Yin"
+      ],
+      "abstract": "Autonomous agents are increasingly adopted to complete complex, multi-tool workflows in real-world settings. However, existing benchmarks typically separate tasks by application or capability and evaluate agents in environments that are cleaner and more stable than those encountered in practice. We introduce DuMateBench, a real-session benchmark reconstructed from anonymized and privacy-screened user sessions collected from a large-scale production agent platform. Each task preserves the relevant pre-solution interaction history, persistent configurations, and workspace state, and is then validated through human verification. The resulting benchmark comprises 200 tasks spanning 8 broad scenarios and 17 fine-grained capability categories, with most tasks requiring multiple capability coordination. We execute these tasks in isolated Docker containers injected with three forms of real-world environmental complexity: Insufficient, Unstable, and Noisy, and assess performance using a hybrid deterministic and LLM-as-Judge evaluation protocol. Experiments across five representative autonomous-agent frameworks paired with four state-of-the-art LLMs reveal substantial gaps in strict task completion. Complementary robustness, efficiency, and diagnostic analyses further show that performance under environmental perturbations is jointly shaped by the capabilities of the LLM and the surrounding agent framework. The code and data are publicly available at https://dumatebench.com/.",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-08-28T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.26546",
+      "pdf_url": "https://arxiv.org/pdf/2608.26546",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2608.27391",
+      "title": "CorporateBench: Large-Scale Q&A Benchmarking with Temporal Knowledge Bases",
+      "authors": [
+        "Sil Hamilton",
+        "Albert Yu Sun",
+        "Oscar J. Romero",
+        "Carl-Leander Henneking",
+        "David Mimno",
+        "Bishan Yang",
+        "Igor Labutov"
+      ],
+      "abstract": "LLMs are increasingly able to answer complex questions about enterprise-scale document collections. But evaluation is hard: companies don't want to share internal communications, and synthetic datasets have been overly simple. We present CorporateBench (CB), a human-validated multi-task Q&A benchmark whose scale approaches the conditions LLMs encounter in corporate communication networks, with evaluation corpora surpassing 230,000 documents. CB evaluates LLMs across two dimensions (information extraction and knowledge base querying) through four synthetically generated firms ranging from 12 to 10,000 employees. Each corpus is sampled from a temporally evolving knowledge base describing a consistent world, guaranteeing cross-document logical consistency even across hundreds of thousands of documents. We evaluate five LLMs on CB, revealing increasingly poor performance as input size approaches realistic scales. CB provides LLM developers a metric for corporate communication reasoning, filling a crucial gap in the benchmarking ecosystem.",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.IR",
+        "cs.LG"
+      ],
+      "published": "2026-08-28T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.27391",
+      "pdf_url": "https://arxiv.org/pdf/2608.27391",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2608.26317",
+      "title": "Modality Maturity Index: A benchmark for assessing multimodal capabilities of omni models",
+      "authors": [
+        "Rohit Patel",
+        "Dieuwke Hupkes",
+        "Sloan Strader"
+      ],
+      "abstract": "Frontier language models are increasingly marketed as omni systems that can perceive and respond across modalities. Existing evaluation frameworks, however, focus almost exclusively on bimodal understanding, typically text plus one other modality. We propose the Modality Maturity Index (MMI), a benchmark designed to evaluate the multimodal capabilities of large language models across five modalities (text, image, audio, video and document) and combinations of up to three modalities in both inputs and outputs. MMI consists of 893 questions, each carefully crafted to require the model to demonstrate its understanding of multiple input modalities and to generate responses that incorporate various output formats. The questions are designed to be self-contained, with clear expectations for the correct modality or mix of modalities required for an accurate response. Every MMI prompt carries human-authored rubric criteria for each output modality expected in the response; a model's MMI Value expresses the average of the per-modality scores for each prompt. Because low scores can reflect either failure to generate a modality (lack of presence) or failure to generate correct content, we introduce also a supplementary Modality Presence Score (MPS), a per-prompt F1 over the expected output modalities. Applying MMI to five frontier multimodal models, we find that the MPS ranges from only 15.6 (Claude Opus 4.6) to 34.9 (GPT-5.4). Given the low availability of returned modalities to even grade, we report MPS as our main result pending model improvements. To assess the viability of judging output correctness with LLM judges and rubrics, we run a separate experiment with custom generation tools. On the assets that generates, we find that an LLM judge applying the rubrics agrees with rubric-blind human annotators (who score the outputs directly and never see the criteria) on 70.8% of judgments.",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.MM"
+      ],
+      "published": "2026-08-28T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.26317",
+      "pdf_url": "https://arxiv.org/pdf/2608.26317",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2608.27313",
+      "title": "A Finite Sample Analysis for Quantile Temporal Difference Learning in Distributional Reinforcement Learning",
+      "authors": [
+        "Zijie Cheng",
+        "Xiang Li",
+        "Yang Peng",
+        "Zhihua Zhang"
+      ],
+      "abstract": "We establish a global finite-sample guarantee for synchronous quantile temporal-difference learning (QTD) in tabular distributional reinforcement learning. The proof separates two stability mechanisms. A global comparison argument, based on the order monotonicity of reward cumulative distribution functions and the $W_\\infty$ contraction of the distributional Bellman operator, brings an arbitrarily initialized iterate into a local neighborhood. Inside that neighborhood, we linearize the QTD mean field. Its Jacobian is a nonsingular $M$-matrix, and the associated positive semigroup permits a variance-sensitive martingale analysis. For stepsizes $\\alpha_t=c(t+1)^{-a}$ with $a\\in(1/2,1)$, the leading last-iterate fluctuation is of order $\\widetilde O\\bigl(T^{-a/2}/\\sqrt{1-\\gamma}\\bigr)$ and has no polynomial dependence on the number of quantiles. The deterministic transient and the required burn-in can still depend on the smallest Bellman-target density, which is of order $m^{-1}$ in the worst case. The result therefore distinguishes sharply between the local stochastic fluctuation and the global sample complexity.",
+      "categories": [
+        "stat.ML",
+        "cs.LG"
+      ],
+      "published": "2026-08-28T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.27313",
+      "pdf_url": "https://arxiv.org/pdf/2608.27313",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2608.27017",
+      "title": "ProRetrieval: Learning to Orchestrate Hybrid Search via Executable Program Synthesis",
+      "authors": [
+        "Chengsong You",
+        "Zhen Sun",
+        "Yunhai Hu",
+        "Junwei Zhou",
+        "Xiaoyu Cao",
+        "Binyu Li",
+        "Ziyan Zhao",
+        "Weiyao Wang",
+        "Liren Lu",
+        "Zhijie Ye",
+        "Yumo Cao",
+        "Yitao Long",
+        "Yiwei Xu",
+        "Qiyi Jiang",
+        "Xuanyi Fu",
+        "Yufan Chen",
+        "Yilun Li",
+        "Rongkang Xiong",
+        "Yiran Zou",
+        "Nan Du"
+      ],
+      "abstract": "Real-world retrieval often composes structured constraints with semantic intents over text and images through arbitrary Boolean logic. Existing hybrid pipelines such as reciprocal rank fusion or self-querying retrievers admit only a fixed form of composition, while recent reinforcement-learning retrievers train the language model as a query generator for a single backend, leaving the orchestration of heterogeneous retrieval paths outside its action space. We propose ProRetrieval, which recasts the language model as a retrieval orchestrator: given a natural-language query, it synthesizes an executable program in a hybrid DSL interleaving SQL operators over structured fields with vector-retrieval primitives over text and images, with SQL itself providing the logical algebra that fuses heterogeneous candidate sets. We train Qwen3-4B with GRPO and DAPO under a hierarchical four-term reward, and evaluate on two new benchmarks built from Amazon products and Enron email. Our 4B model surpasses GPT-5.5 (Hit@1 0.81 vs. 0.69 on e-commerce; 0.91 vs. 0.86 on email) and Claude Opus 4.7 and a comprehensive suite of retrieval, LLM-augmented, structured-query, and graph-based baselines. Code: https://anonymous.4open.science/r/ProRetrieval/; data: https://huggingface.co/datasets/anonymous-7219/ProRetrieval.",
+      "categories": [
+        "cs.IR"
+      ],
+      "published": "2026-08-28T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.27017",
+      "pdf_url": "https://arxiv.org/pdf/2608.27017",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    }
+  ],
+  "ranked_papers": [
+    {
+      "arxiv_id": "2608.27409",
+      "title": "Consolidating RLVR Capabilities Across Domains: A Deep Dive into Fusion Paradigms",
+      "authors": [
+        "Siye Wu",
+        "Kai Yang",
+        "Yuchen Cai",
+        "Xin Xu",
+        "Peng-Yuan Wang",
+        "Jiaxuan Wang",
+        "Jiashun Liu",
+        "Jiafei Lyu",
+        "Yangkun Chen",
+        "Saiyong Yang",
+        "Yanghua Xiao"
+      ],
+      "abstract": "Reinforcement learning with verifiable rewards (RLVR) improves specific capabilities of large language models, but covering multiple capabilities often involves training separate domain experts and subsequently consolidating them. We organize three fusion paradigms by the artefacts they reuse: Merge combines expert task vectors, Mix RL pools their datasets, and multi-teacher on-policy distillation (MOPD) uses both. Because they have largely been studied in isolation, how they compare and how to choose among them remain unclear. We compare all three using shared experts and data across model scales and a multi-domain benchmark suite. Although their average performance differs by at most 1.4 points, the gap reaches 8.6 points on a single benchmark, with domain-level variation tracking cross-domain relations visible in task-vector geometry. Training dynamics expose distinct constraints: Mix RL depends on domain mixture proportions, MOPD remains bounded by its teachers, and Merge compresses all expert updates into one. All three improve single-sample accuracy without measurable gains in solution coverage or losses in held-out capabilities. These results yield a practical guideline: use Merge when experts already exist and cheap fusion is paramount; Mix RL when training a unified model without experts, with domain proportions adjusted for cross-domain transfer; and MOPD when preserving domain-specific gains matters more than surpassing teachers or minimizing end-to-end cost.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-08-28T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.27409",
+      "pdf_url": "https://arxiv.org/pdf/2608.27409",
+      "is_author_match": false,
+      "relevance_score": 10.0,
+      "relevance_reason": "Direct hit for Hunter Prep because it studies multi-teacher on-policy distillation and other fusion paradigms for consolidating RLVR capabilities across domains."
+    },
+    {
+      "arxiv_id": "2608.26623",
+      "title": "AgentJudgeBench: A Multi-Difficulty Benchmark for Evaluating LLM Judges on Agentic Tool-Calling",
+      "authors": [
+        "Abhigya Verma",
+        "Amit Kumar Saha",
+        "Seganrasan Subramanian",
+        "Sai Harshitha Aluru"
+      ],
+      "abstract": "LLM judges are widely used to evaluate agentic tool-calling systems, yet their reliability on structured, dependency-driven workflows remains largely unexamined. We present AgentJudgeBench, the first benchmark to systematically study LLM-as-a-judge reliability for agentic tool-calling over workflow DAGs, as distinct from the broader LLM-as-a-judge task of open-ended text or preference evaluation. The benchmark comprises 3,808 instances spanning six DAG topologies and three difficulty tiers, evaluated with five generators (3B-70B open-weight models and GPT-5.4) and six judges (20B to frontier scale) under paired with- and without-ground-truth conditions. Judge alignment degrades monotonically with task difficulty, 1.5x faster without ground truth, and on hard queries without ground truth all six judges converge to a narrow 77-82% band regardless of scale, revealing a structural ceiling driven primarily by task difficulty, though its height is partly prompt-dependent for weaker generators, that model capacity alone cannot overcome. Ground-truth exposure is not uniformly beneficial: it reduces alignment for GPT-5.4 (1.5 pp) and Gemini-2.5-Pro (3.9 pp), consistent with over-anchoring. Among mitigation strategies, chain-of-thought reasoning and judge temperature both have negligible effect, while structured evaluation rubrics improve alignment by up to 6.5 pp but do not generalize uniformly across judge-generator pairs. With ground truth, QwQ-32B best matches the programmatic reference, while a human validation study identifies GPT-OSS-120B as the most human-aligned judge; without it, frontier judges lead only marginally within the shared ceiling. These results expose fundamental limitations of current LLM judges and yield practical guidelines for reliable evaluation in agentic systems.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-08-28T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.26623",
+      "pdf_url": "https://arxiv.org/pdf/2608.26623",
+      "is_author_match": false,
+      "relevance_score": 10.0,
+      "relevance_reason": "This is directly about benchmarking LLM judges for agentic tool-calling workflows, making it extremely relevant to concerns about LM judge weaknesses and grading long structured rollouts."
+    },
+    {
+      "arxiv_id": "2608.26753",
+      "title": "Beyond Execution: Auditing Experimental Fidelity in LLM-Driven Scientific Research",
+      "authors": [
+        "Lezhi Yu",
+        "Xiaogang Xu",
+        "Yuhua Zhou",
+        "Shuibing He",
+        "Aimin Pan"
+      ],
+      "abstract": "LLM agents used for scientific experimentation must do more than generate executable code: they must implement the reference method faithfully, design experiments that test the paper's claims, and provide evidence supporting those claims. We show that agents often produce methodological hallucinations: silently reducing datasets or training budgets, replacing failed learning or generative components with lookup or oracle functions, or drawing conclusions from resource-limited settings where a method's claimed advantage disappears. To detect these failures, we introduce ABE-Ralph, a reference-anchored auditing framework that represents claims, protocols, required components, baselines, and metrics as structured experimental constraints, guides implementation through an 8-step workflow, and performs quantitative, qualitative, and code-level verification. Across 30 long-horizon reproduction runs covering 12 machine learning domains, ABE-Ralph achieves a 93% robust execution rate and identifies five scientific failure modes. In 23 NatureBench discovery tasks, ABE-Ralph matches or exceeds state-of-the-art performance on 5 tasks. These results show that reliable evaluation of AI scientists must assess whether the experimental design faithfully tests the intended claim and whether the resulting evidence supports it, rather than treating code execution or plausible metrics as evidence of scientific success.",
+      "categories": [
+        "cs.SE",
+        "cs.AI"
+      ],
+      "published": "2026-08-28T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.26753",
+      "pdf_url": "https://arxiv.org/pdf/2608.26753",
+      "is_author_match": false,
+      "relevance_score": 10.0,
+      "relevance_reason": "Directly targets auditing whether LLM agents faithfully carry out long-horizon scientific experiments, which closely matches the long-horizon scientific tasks and grading/evaluation interests."
+    },
+    {
+      "arxiv_id": "2608.27182",
+      "title": "TraceBench: Controlled Evaluation of LLM Agents for Time-Series Root-Cause Attribution",
+      "authors": [
+        "Tommaso Bendinelli",
+        "Artur Dox",
+        "Christian Holz"
+      ],
+      "abstract": "LLM agents are increasingly applied to anomaly detection and root-cause analysis in time-series observations collected from real-world systems; however, their performance on these tasks has not been systematically evaluated under controlled conditions. We introduce TraceBench, a simulation-based framework for generating controlled root-cause attribution tasks. In each generated task, an agent receives time-series observations produced by simulating a physical dynamical system and must determine whether a system parameter was altered during the simulation and, if so, which one. Using TraceBench, we generate tasks from three interpretable mechanical systems and systematically evaluate four LLM agents across controlled experimental conditions, yielding new insights into how these agents analyze time-series observations from dynamical systems. Our results show that agents benefit substantially from domain context and explore data primarily through numerical console output rather than visualizations. We also find that agents generally perform worse when required to produce a Python script that maps each time-series sample to a predicted root-cause label than when they submit predictions directly. We release our datasets, agent trajectories, experimental results, and a leaderboard on our website, tracebench.github.io.",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-08-28T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.27182",
+      "pdf_url": "https://arxiv.org/pdf/2608.27182",
+      "is_author_match": false,
+      "relevance_score": 10.0,
+      "relevance_reason": "Directly targets controlled evaluation of LLM agents over time-series observations for root-cause attribution, closely matching your interest in long-horizon scientific tasks, hypothesis formation from noisy observations, and better grading of long rollouts."
+    },
+    {
+      "arxiv_id": "2608.26295",
+      "title": "MemToC: Benchmarking Memory-Tool Conflict Resolution in Large Language Models",
+      "authors": [
+        "Arseniy Varlamov",
+        "Rishat Zinnatullin",
+        "Elisei Rykov",
+        "Alexander Panchenko",
+        "Ilseyar Alimova"
+      ],
+      "abstract": "Tool-augmented LLMs must arbitrate between two fallible sources when a tool return conflicts with their parametric memory, yet existing evaluations measure source preference without establishing source correctness. We introduce MemToC, a controlled benchmark for post-tool-return arbitration with executable tools. MemToC comprises 6,504 evaluation episodes constructed from 542 quality-controlled factual questions, independently elicited model-specific closed-book answers, and controlled tool returns of known correctness. These components instantiate four source-correctness cases; tool-error and no-tool conditions are separate controls. Across five open-weight 7-9B models, tool returns strongly dominate elicited closed-book answers. The four instruction-tuned models retain a verified-correct answer against an incorrect tool in only 6.5-17.1% of eligible cases, follow a correct tool in 86.0-93.1%, and repeat the tool return in 78.4-86.0% of cases where both sources are wrong. No cross-model ordering remains stable across three instruction-wording variants with the question and episode content held fixed. We compare prompting with SFT and DPO using chain-level cross-fitting over ToolHop, so questions sharing an underlying fact never straddle training and evaluation. We apply an asymmetric success criterion: correct-answer retention must improve without a detected reduction in correct-tool following. SFT and DPO meet this criterion on the same two of four instruction-tuned backbones. Improvements rarely come cleanly: 19 of 20 tested method-model combinations reduce abstention after tool errors or on unanswerable inputs. Transfer beyond MemToC is positive but partial and depends on the model and presentation frame. Correctness-conditioned arbitration can be improved through fine-tuning, but gains must be evaluated jointly with correct tool use, abstention, and robustness to formulation.",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.MA",
+        "cs.SE"
+      ],
+      "published": "2026-08-28T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.26295",
+      "pdf_url": "https://arxiv.org/pdf/2608.26295",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "This is highly relevant to your explicit self-correction and noisy-observation interests because it evaluates how models arbitrate between conflicting tool evidence and prior memory when one source is wrong."
+    },
+    {
+      "arxiv_id": "2608.26511",
+      "title": "Sycophancy Suppression Can Impair Rational Updating: Anti-Sycophancy Should Preserve the Ability to Update",
+      "authors": [
+        "Huanhuan Ma",
+        "Henry Peng Zou",
+        "Chengze Li",
+        "Enze Ma",
+        "Yunyue Su",
+        "Philip S. Yu"
+      ],
+      "abstract": "Large language models often exhibit sycophancy, revising their answers to align with users when users push back. Such answer flips, however, can arise from different causes. One possibility is that the model simply aligns with the user's feedback in order to satisfy them. Another is that the feedback genuinely contains useful evidence, prompting the model to update its answer in a rational way. We distinguish them as Unsupported-Yielding and Rational-Updating. Prior work focuses primarily on suppressing Unsupported-Yielding, while overlooking its effect on Rational-Updating. We address this gap with a two-turn evaluation framework that measures the two behaviors separately. Across representative training-time and inference-time interventions, we find that anti-sycophancy methods often encounter a trade-off in which reducing Unsupported-Yielding can sacrifice Rational-Updating, and vice versa, even when the two objectives are optimized jointly. Mechanistic analysis suggests that the two behaviors share an internal substrate: the MLP neurons and attention heads driving them overlap substantially, and their associated steering directions are positively aligned. We further conduct a preliminary orthogonalized steering exploration, which yields modest, backbone-dependent selectivity gains. Overall, our results suggest that anti-sycophancy should be treated not as a simple suppression problem, but as a selectivity problem, where effective interventions should preserve Rational-Updating while reducing Unsupported-Yielding.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-08-28T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.26511",
+      "pdf_url": "https://arxiv.org/pdf/2608.26511",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "This is very close to your self-correction and surprising-information agenda because it distinguishes bad answer-flipping from rational updating when the user provides new evidence."
+    },
+    {
+      "arxiv_id": "2608.26596",
+      "title": "Not Just Reason, Not Just Scan: Reinforcement Learning for Proactive Scientific Error Verification over Academic Paper",
+      "authors": [
+        "Rongjin Li",
+        "Yuanxin Liu",
+        "Hao Zhou",
+        "Fandong Meng",
+        "Jie Zhou",
+        "Xu Sun"
+      ],
+      "abstract": "Multimodal large language models (MLLMs) are increasingly capable scientific assistants, yet they remain far from fully autonomous research. This transition requires models to actively inspect academic papers, build global evidence views, and make traceable judgments without prespecified issues or evidence. However, existing work provides limited task paradigms or training studies for such issue- and evidence-absent verification. We study this challenge through scientific error detection, where models must determine whether errors exist and justify them with evidence-based reasoning. To fill this gap, we present VERA-RL, a reinforcement-learning formulation for scientific error detection over academic papers. Following a Reason--Verify--Scan progression, we construct VERA-13K, a 12,900-sample dataset organized into 4,300 matched chains, covering 6 scientific-error categories across the research workflow and broad natural-science domains. We further introduce fine-grained rewards for reasoning completeness, evidence alignment, and error precision. Training Qwen3-VL-8B with VERA-RL substantially improves verifiable reasoning, approaching flagship MLLMs such as Gemini 3 Pro and Qwen3-VL-235B-A22B on Scan.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-08-28T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.26596",
+      "pdf_url": "https://arxiv.org/pdf/2608.26596",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Highly relevant to long-horizon scientific tasks because it studies RL for proactive scientific error verification over papers, emphasizing evidence gathering, traceable judgments, and autonomous inspection."
+    },
+    {
+      "arxiv_id": "2608.26638",
+      "title": "Which Metrics Save the Most Human Annotation? Prediction-Powered Evaluation and Meta-Evaluation",
+      "authors": [
+        "Mingqi Gao",
+        "Anthony Sicilia",
+        "Weiyan Shi"
+      ],
+      "abstract": "Across various non-verifiable tasks, human evaluation is reliable but expensive, while automatic metrics are more scalable but often biased. Building on prediction-powered inference (PPI), we propose prediction-powered evaluation, a framework that combines limited human judgments with large-scale automatic scores to obtain data-efficient system comparisons that are provably unbiased. We develop parametric and non-parametric procedures, analyze the efficiency trade-off between paired and unpaired designs, and validate the framework on six WMT datasets. We further introduce the Prediction-Powered Saving Ratio (PPSR), a meta-metric that measures how much human annotation an automatic metric can save when used within prediction-powered evaluation. PPSR directly targets metric utility for prediction-powered evaluation and yields more discriminative and stable metric rankings than existing system-level meta-metrics. Overall, our new paradigm reframes automatic metrics as tools for reducing human annotation cost rather than replacing human judgment, and applies broadly to non-verifiable tasks.",
+      "categories": [
+        "cs.CL",
+        "stat.ML"
+      ],
+      "published": "2026-08-28T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.26638",
+      "pdf_url": "https://arxiv.org/pdf/2608.26638",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Directly relevant to better grading and evaluation since it proposes prediction-powered evaluation to reduce human annotation while preserving unbiased system comparisons and meta-evaluating metrics."
+    },
+    {
+      "arxiv_id": "2608.27265",
+      "title": "SCIT: Testing Causal Cache Carriers in Latent Chain-of-Thought Models",
+      "authors": [
+        "Yi Ding",
+        "Lijun Huang",
+        "Menglin Yang"
+      ],
+      "abstract": "Latent chain-of-thought models move intermediate reasoning from emitted text into continuous states, improving compactness but hiding the causal object. We introduce SCIT, the Suffix Cache Interchange Test, a causal protocol that constructs exact source-recipient counterfactuals, patches declared cache segments, and identifies which transformer object carries the counterfactual computation. SCIT combines sufficiency tests with K/V component splits, hidden-state controls, semantic source controls, decoded validation, and matched corruption. On CODI-GPT2 and a Sim-CoT-style GPT-2 reproduction, counterfactual arithmetic transfers primarily through value-cache suffix trajectories rather than hidden states, keys, reusable answer slots, or single-token triggers. Complete sufficiency-and-necessity evidence for the late-value-suffix mechanism holds for the main CODI-GPT2 checkpoint; the Sim-CoT-style checkpoint shows the same sufficiency and decoded-control pattern but insufficient matched-corruption evidence for a necessity call. Beyond these local arithmetic cells, SCIT reveals carrier-regime shifts: arithmetic-like GPT-2/1B cells preserve latent-tail value/KV transfer, whereas competent 8B and repaired non-arithmetic cells route through prompt-prefix or full-cache K/V; boundary cells receive no mechanism call. SCIT therefore contributes a cache-level diagnostic, a checkpoint-specific GPT-2 arithmetic mechanism, and a competence-gated carrier map rather than a universal latent-tail claim.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-08-28T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.27265",
+      "pdf_url": "https://arxiv.org/pdf/2608.27265",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Highly relevant because it uses explicit counterfactual cache-interchange tests to identify causal carriers of latent reasoning, directly matching your interest in counterfactual-style environments, surprising information, and mechanistic evaluation of hidden reasoning."
+    },
+    {
+      "arxiv_id": "2608.27309",
+      "title": "Difference-in-Differences on a Censored Rating Scale Can Manufacture an Effect: Evidence from a Pre-Registered LLM-Judge Audit",
+      "authors": [
+        "Shuyi Fan",
+        "Boyuan Deng",
+        "Mengyu Xu",
+        "Xinhong Xie",
+        "Chenyang Li",
+        "Hongyang Zhang"
+      ],
+      "abstract": "Audits of LLM judges certify a bias by contrasting matched conditions, and the strongest designs difference twice: a within-item contrast between two candidate responses, differenced again across a manipulated attribute, read off a bounded rating scale. We show that this endpoint is not identified on the scale that reports it. Each term of the double difference is censored by its own share, so the observed statistic confounds differential preference with differential attenuation: a severity shift common to both responses manufactures an interaction whenever the two censor it unequally, as unequal distances from the bounds make them, exactly where good stimuli place them. We exhibit the failure inside a pre-registered audit of a frozen pedagogy judge, sealed before the first of its 990 calls. The registered primary endpoint, the effect of a stated learner profile on the judge's scaffolding preference, is null: $+0.085$ points (95\\% BCa $[-0.167, +0.353]$, $p = 0.684$). The audit's one nominally significant interaction, $+0.378$ ($p = 0.002$), is not identified as preference: a construction containing zero differential preference reproduces 79 to 85\\% of it from the observed severity shift and the scale floor alone. We derive the mechanism in closed form and show that its contribution is measurable from an audit's own ratings.",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.CY"
+      ],
+      "published": "2026-08-28T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.27309",
+      "pdf_url": "https://arxiv.org/pdf/2608.27309",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Very relevant to the LM-judge weakness thread since it audits judge bias with a careful causal/statistical lens and shows how common rating-scale analyses can manufacture effects."
+    },
+    {
+      "arxiv_id": "2608.26189",
+      "title": "Invocation-Level Reliability of Tool-Using Agents",
+      "authors": [
+        "Afiya Noorain",
+        "Subhranshu Mohanty",
+        "Amritesh Banerjee",
+        "Abhijit Dasgupta"
+      ],
+      "abstract": "Tool-using agents fail two ways: choosing the wrong tool, or forming wrong arguments, and an early failure of either kind can silently corrupt everything downstream. We measure a correct-invocation rate that separates the two, under both a clean teacher-forced context and the model's own free-running context, on five open-weight models over contamination-free multi-step tasks (depths 1-8). By depth 6, roughly 70% of a model's own clean-context capability is lost to its own earlier mistakes (L6 = 0.686, 0.684). Our central finding concerns the measurement itself. Under exact-match scoring against a fixed gold trajectory, a propagation model's severity and recovery parameters are not merely hard to estimate - they are fixed by the scoring rule. Severity is forced to its boundary (0 of 869 poisoned steps correct); recovery is structurally unobservable (0 of 580 poisoned steps returned on-track, against an expected 0.0058 by chance). Both follow from one mechanism: post-divergence, the gold value is generated by tool constants the model never sees, so it is information the model cannot derive. A fit run anyway returns 0.92 and 0.73 for a quantity that is exactly 1.000 - confident numbers for a parameter the scoring rule already determined. We give the mechanism and a remedy, conditional-on-state scoring, applied retrospectively to cached completions at zero additional cost, which un-pins severity to interior estimates excluding zero (+0.149, +0.316).",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "published": "2026-08-28T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.26189",
+      "pdf_url": "https://arxiv.org/pdf/2608.26189",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Highly relevant to long-horizon agent evaluation and grading because it decomposes tool-use failures at the invocation level under teacher-forced vs free-running rollouts, directly matching interests in diagnosing long trajectory errors."
+    },
+    {
+      "arxiv_id": "2608.27167",
+      "title": "Calibrated Enough to Know, Not Calibrated to Act: Fabricated Evidence Makes LLM Agents Commit to the Unknowable",
+      "authors": [
+        "Pranav Aggarwal"
+      ],
+      "abstract": "An LLM agent shown a professional-looking market panel commits to a directional call on a provably unpredictable question far more often than one asked the bare question: across 12 frontier models, commitment rises from 6.5% to 54.0% as evidence is escalated. It commits just as readily when every number on the panel is invented: fabricating the entire display, so nothing the model can see is true except the question itself, still lifts commitment from 24.5% to 36.8%, statistically indistinguishable from the 37.6% produced by genuine market data. What unlocks confident action is not information but the authority of its packaging. The failure is narrow and locatable. Incapacity is not the answer: on matched answerable questions attached to the same panels, the same models answer essentially always, at near-perfect accuracy. Nor is it belief - stated probabilities barely move across the gradient that swings action by 48 points, and score worse than a climatological baseline. Missing judgment isn't it either: asked to classify a question's knowability before acting, models call it irreducible 90% of the time and then commit on just 0.4% of those. The act/don't-act gate is what fails, and the effect is concentrated in a few models rather than universal. Because the gate is separable, it can be trained. Supervised fine-tuning of a 3B model on 540 synthetic cases, predominantly dice, coins, jars and timers, drives commitment to 0.0% on the original cases and transfers to three unseen domains. It does not survive everything: the gate holds exactly when the response format leaves room to reason, and rigid formats that remove that room leave the model confident and wrong on questions it otherwise answers correctly. The gate is trainable and context-fragile, and deployment needs both halves of that sentence.",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-08-28T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.27167",
+      "pdf_url": "https://arxiv.org/pdf/2608.27167",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Extremely relevant to measuring responses to surprising or noisy information, as it studies how fabricated evidence pushes agents to act on unknowable questions despite apparent calibration."
+    },
+    {
+      "arxiv_id": "2608.26116",
+      "title": "The Artificial Experimentalist: Discovery and Control of Self-Organizing Phenomena with Autotelic Reinforcement Learning",
+      "authors": [
+        "Marko Cvjetko",
+        "Benedikt Hartl",
+        "Michael Levin",
+        "Cl\\'ement Moulin-Frier",
+        "Pierre-Yves Oudeyer"
+      ],
+      "abstract": "Existing methods for exploring cellular automata and other complex systems mostly operate in open loop: they set initial conditions, execute a full simulation, and observe the outcome, without intervening during execution. We introduce a closed-loop framework based on autotelic reinforcement learning, in which an agent autonomously samples diverse goals and learns a goal-conditioned policy to intervene in a complex system through minimal, local perturbations. We instantiate this framework on Lenia, a continuous cellular automaton known for life-like self-organizing patterns, in an agentic system we call CARL, and demonstrate three capabilities. First, CARL discovers stable solitons across a wide range of Lenia update rules at a higher rate than heuristic baselines. Second, it learns to steer the movement direction of existing solitons with few interventions, showing that CARL can control self-organizing patterns, not only create them. Third, humans can use trained agents to guide solitons through maze environments in real time by specifying high-level directional commands that the agent translates into low-level interventions. Trained across diverse goals, update rules, and random initial states, the agents acquire policies that generalize zero-shot to various out-of-distribution conditions. These results suggest a path toward artificial experimentalist agents that, autonomously or with human guidance, discover and control emergent phenomena in complex systems.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-08-28T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.26116",
+      "pdf_url": "https://arxiv.org/pdf/2608.26116",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Highly relevant to the long-horizon scientific tasks project because it studies autonomous closed-loop experimentation in complex systems with goal-conditioned RL, directly connecting to scientific discovery, hypothesis exploration, and intervention under evolving observations."
+    },
+    {
+      "arxiv_id": "2608.26263",
+      "title": "SKILL.state: Scalable Long-Horizon Agent Skills",
+      "authors": [
+        "Sanket Badhe",
+        "Priyanka Tiwari",
+        "Jonghyun Chung"
+      ],
+      "abstract": "Large Language Models (LLMs) increasingly act as autonomous agents executing complex, long-running procedural skills. Existing agent runtimes maintain execution by continually appending observations, actions, and intermediate reasoning traces to an ever-growing conversation history, causing latency degradation and context-poisoning failures over long horizons. We present SKILL.state, a runtime architecture that replaces append-only conversational history with an explicit, mutable execution state. At each execution step, the model receives only the immutable skill specification, the current structured execution state, and the latest observation. Intermediate reasoning is discarded immediately after producing a validated state update, preventing prompt growth with execution history. Across diverse datasets, models, and execution environments, SKILL.state improves task accuracy while substantially reducing cumulative token consumption. Our results demonstrate that explicit execution state is an effective and architecture-agnostic abstraction for scalable long-horizon agent skills.",
+      "categories": [
+        "cs.AI",
+        "cs.MA"
+      ],
+      "published": "2026-08-28T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.26263",
+      "pdf_url": "https://arxiv.org/pdf/2608.26263",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Directly targets scalable long-horizon agent execution with mechanisms to avoid context growth and failure over extended runs, making it highly relevant to long-horizon scientific tasks and rollout management."
+    },
+    {
+      "arxiv_id": "2608.26530",
+      "title": "PILOT in the Loop: Live Self-Improvement for Long-Horizon Agents",
+      "authors": [
+        "Yang Xiao",
+        "Yusong Sun",
+        "Haoyi Wu",
+        "Wenyang Hui",
+        "Wen Da",
+        "Zhaokai Luo",
+        "Mu Chuan",
+        "Yao Hu",
+        "Wenjie Li",
+        "Chengyue Jiang"
+      ],
+      "abstract": "Long-horizon agent runs generate experience that can improve both the current run and future work. Most self-improvement methods process this experience only after execution ends, so they cannot redirect the active run or immediately apply and validate lessons learned from it. We argue that self-improvement should instead be live, using emerging experience both to redirect the active run and to update the persistent harness. Existing agent architectures do not fully support this goal. Single-agent self-correction combines task execution and trajectory assessment within one context, while subagent delegation separates execution but typically cannot redirect an active subagent. We present PILOT, a supervisor-worker harness for live self-improvement through two coupled mechanisms: (1) live steering lets a separate supervisor redirect or abort the active worker during execution; and (2) live self-evolution distils procedures and failure modes revealed during execution into reusable skills and memory. Across two frozen backbones and three benchmarks, PILOT ranks first in five of six configurations. On Terminal-Bench 2.0, PILOT outperforms counterpart harnesses by up to 9.8 percentage points. In the self-improvement setting, PILOT gains 14.6 points with GLM-5.1 and 12.4 points with Kimi-K2.6. Mean output tokens fall by 42.9% and 47.4%, while successful evaluations per million output tokens rise by 110.3% and 134.0%, respectively.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-08-28T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.26530",
+      "pdf_url": "https://arxiv.org/pdf/2608.26530",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Studies live self-improvement for long-horizon agents, including using ongoing experience to redirect active runs, which is strongly relevant to self-correction, long-horizon tasks, and on-policy improvement."
+    },
+    {
+      "arxiv_id": "2608.27311",
+      "title": "Verify Smarter, Evolve Further: Efficient Harness Evolution through Behavior-Aware Verification",
+      "authors": [
+        "Jinghan Xu",
+        "Yikai Zhang",
+        "Aili Chen",
+        "Weiyuan Li",
+        "Jiaqing Liang",
+        "Deqing Yang"
+      ],
+      "abstract": "Agent harnesses shape how language-model agents use instructions, tools, and runtime components, but adapting these harnesses requires costly verification. Existing propose-and-verify methods typically score every candidate on a fixed task set, wasting rollouts on unrelated behaviors and allowing aggregate scores to obscure specific regressions. We introduce HarnessLens, a budget-aware framework for automated harness evolution. HarnessLens jointly explores the task space and user-configurable components, derives candidate modifications from execution trajectories, and selectively verifies each candidate on behavior-relevant tasks using an attributable-evidence gate. Across three agent harnesses and four benchmarks, HarnessLens improves average held-out performance by 7.6-13.6% while consuming substantially less evaluation budget than competing baselines. These results demonstrate that behavior-aware verification with explicit attribution enables more reliable and sample-efficient harness evolution under constrained interaction budgets. Our code is available at https://github.com/jhxu5214/HarnessLens.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-08-28T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.27311",
+      "pdf_url": "https://arxiv.org/pdf/2608.27311",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Very relevant to Hunter/Shuchao interests because it directly targets efficient verification of agent harness changes and behavior-aware evaluation instead of aggregate rollout scoring."
+    },
+    {
+      "arxiv_id": "2608.26237",
+      "title": "How Do LLM Agents Actually Get the Flag? Trace-Level Provenance for Agentic Offensive Security Evaluation",
+      "authors": [
+        "Kimberly Milner",
+        "Minghao Shao",
+        "Nanda Rani",
+        "Haoran Xi",
+        "Venkata Sai Charan Putrevu",
+        "Meet Udeshi",
+        "Sandeep K. Shukla",
+        "Prashanth Krishnamurthy",
+        "Farshad Khorrami",
+        "Muhammad Shafique",
+        "Ramesh Karri"
+      ],
+      "abstract": "Capture-the-Flag (CTF) benchmarks are widely used to assess the offensive security capabilities of autonomous language-model agents. Evaluations rely on shallow binary judgments or aggregate scores, overlooking the agent's trajectory to the flag. Consequently actual exploitation is conflated with direct flag exposure, memorized recall, external lookup, guessing, and unsupported claims, potentially overstating the agent's cybersecurity capability. We introduce CTF-ABACUS, a trace-based agent auditing framework that reconstructs each run as an evidence-grounded solve profile. By decomposing agent actions into penetration-testing phases and categorical techniques, it identifies where exploitation occurs, where the flag first appears, and whether the recovered flag is supported by demonstrated behavior. Aggregating solve profiles across agents yields challenge signatures that reveal whether success was achieved via the intended exploit or via shortcut pathways. We apply CTF-ABACUS to 1,435 CTF attempts by six frontier and open-source models on 240 challenges, yielding 2,870 solve profiles under two judge lenses. Trace-verified exploits account for only 62-87% of recovered flags across benchmarks, while shortcut recoveries follow substantially shallower trajectories. These findings shift CTF evaluation from counting recovered flags to verifying demonstrated exploitation and provide a basis for designing benchmarks that better isolate the offensive capabilities.",
+      "categories": [
+        "cs.CR",
+        "cs.AI"
+      ],
+      "published": "2026-08-28T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.26237",
+      "pdf_url": "https://arxiv.org/pdf/2608.26237",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Extremely relevant to grading long rollouts because it argues for trace-level provenance in agent evaluation rather than shallow success metrics, directly matching the need for better rollout assessment."
+    },
+    {
+      "arxiv_id": "2608.27021",
+      "title": "FaulT-Bench: Towards Benchmarking Network Troubleshooting LLM Agents under Unreliable User Tickets",
+      "authors": [
+        "Kuan-Hao Tseng",
+        "Niruth Bogahawatta",
+        "Yasod Ginige",
+        "Kunjan Patel",
+        "Kosta Dakic",
+        "Suranga Seneviratne"
+      ],
+      "abstract": "LLM-based agents are increasingly proposed for network fault diagnosis, but existing benchmarks evaluate them only on accurate tickets and always assume a fault is present, conditions rarely met in practice. We present FaulT-Bench, a benchmark of 200 troubleshooting scenarios across eight network topologies, five reimplemented from public practitioner labs, spanning genuine faults, false fault reports, incorrect device attribution, and incorrect root-cause claims. To isolate how ticket wording affects diagnosis, we further rewrite 72 false-premise tickets into five reporter personas that vary reporter confidence and verifiable detail one factor at a time, holding the network state fixed. Our automated harness deploys each scenario in Kathar\\'a, lets agents interact through the NIKA tool interface, and scores free-text diagnoses with an LLM judge across outcome, fix, and reasoning quality. Evaluating SADE, ReAct, and Claude Code, we find all three are near-saturated on accurate tickets and robust to misdirection, yet degrade sharply when the network is healthy and the ticket is wrong, probing until a benign condition can be promoted to a root cause rather than concluding nothing is wrong. Persona rewrites show that how a ticket is written matters more than what it claims: a confidently wrong report is handled about as well as an accurate one, while a vague, underspecified report degrades performance sharply. The three agents also fail differently, from constant over-diagnosis to unanswered runs, at very different cost. These results position FaulT-Bench as a benchmark for developing agentic systems that can reason reliably over the noisy, unreliable tickets of real-world network troubleshooting.",
+      "categories": [
+        "cs.NI",
+        "cs.AI"
+      ],
+      "published": "2026-08-28T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.27021",
+      "pdf_url": "https://arxiv.org/pdf/2608.27021",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Benchmarks LLM agents under unreliable user reports and false alarms, strongly aligning with your interest in surprising/noisy observations, failure-first settings, and explicit self-correction evaluation."
+    },
+    {
+      "arxiv_id": "2608.27351",
+      "title": "Understanding Evolution Strategies for LLM Reasoning: Broader Reasoning Coverage than GRPO",
+      "authors": [
+        "Yunpeng Ba",
+        "Zhi Zheng",
+        "Yue Xie",
+        "Jiaqing Li",
+        "Xialiang Tong",
+        "Tao Zhong",
+        "Mingxuan Yuan",
+        "Zhichao Lu",
+        "Xuyang Wu",
+        "Zhenkun Wang"
+      ],
+      "abstract": "Evolution Strategies (ES) have recently emerged as a memory-efficient post-training paradigm for LLM reasoning. However, the optimization behavior of ES remains understudied, making it hard to define its advantage scope compared to mainstream post-training paradigms (e.g., Group Relative Policy Optimization (GRPO)). By systematically investigating ES dynamics and mechanisms, this paper first identifies a performance advantage of ES over GRPO, theoretically and empirically showing that ES can lead to broader reasoning coverage, thereby better exploiting the reasoning capabilities of pretrained LLMs. Theoretically, we show that verifier-projected Jensen-Shannon diversity across the ES population is helpful to higher Pass@K performances. Empirically, unlike GRPO, which exhibits entropy collapse, ES improves Pass@1 while attaining higher Pass@K than GRPO. We further develop a sequential GRPO-ES training strategy that combines GRPO's strength in Pass@1 with ES's gains in Pass@K. Second, we find that despite substantial whole-model parameter drift, the task-performance gains of ES are only contributed to a sparse subset of larger-magnitude updates. This functional sparsity suggests that large parameter movement need not imply widespread functional change, and held-out evaluations further show that it does not necessarily lead to catastrophic forgetting. Finally, we study how hyperparameter design affects the effectiveness of ES, demonstrating that ES requires a smaller population size in a larger LLM. These findings position ES as a distinct reasoning post-training paradigm rather than a less effective, memory-efficient alternative to GRPO.",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-08-28T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.27351",
+      "pdf_url": "https://arxiv.org/pdf/2608.27351",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "This studies post-training dynamics for LLM reasoning and compares ES with GRPO, making it highly relevant to your Hunter-prep interests in scaling feedback, on-policy distillation, and weaknesses of current post-training/evaluation paradigms."
+    },
+    {
+      "arxiv_id": "2608.26118",
+      "title": "ElementCheck: Complexity-Aware Long-Form Text Factuality Evaluation via Sentence Elements",
+      "authors": [
+        "Xinming Wang",
+        "Haoran Du",
+        "Yi Chen",
+        "Jian Xu",
+        "Hongming Yang",
+        "Han Hu",
+        "Yulong Chen",
+        "Cheng-Lin Liu",
+        "Xu-Yao Zhang"
+      ],
+      "abstract": "Existing long-form factuality evaluation relies on the decompose-retrieve-verify pipeline. However, the pipeline suffers from noise from claim decomposition and fixed verification granularity, resulting in unreliable results. We propose ElementCheck, a complexity-aware framework that verifies long-form outputs via sentence elements. Instead of uniformly decomposing sentences into atomic sub-claims, ElementCheck extracts entity pairs that are explicitly linked through verifiable connections in the original sentence as elements, and organizes these into an element graph. The graph topology provides a structural signal for estimating sentence complexity, enabling direct verification for simple sentences and targeted element-level refinement and verification for complex ones. To support fine-grained evaluation, we construct a new benchmark FastFact-Sent by mapping isolated claims from FastFact-Bench back to their source sentences. Experiments on FastFact-Sent and two domain-specific benchmarks show ElementCheck consistently improves factuality verification across five backbone models while maintaining a favorable accuracy-cost trade-off. Further analyses demonstrate that complexity-aware verification reduces unnecessary re-verification and maintains stability across different backbones.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-08-28T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2608.26118",
+      "pdf_url": "https://arxiv.org/pdf/2608.26118",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Highly relevant to the grading/evaluation projects because it proposes a more reliable factuality evaluator for long-form outputs, directly addressing the challenge of judging long rollouts."
+    }
+  ]
+}
