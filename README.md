@@ -14,7 +14,7 @@ Every weekday evening (after arxiv posts new papers at 8pm ET):
 2. **Author filter** pulls out papers from ~140 researchers you follow
 3. **Notion integration** reads current project descriptions from your PhD Hub page
 4. **OpenAI** ranks remaining papers by relevance to your projects (scored 0-10 with a one-line reason)
-5. **Twitter scanner** fetches your home timeline via OAuth 1.0a (reverse chronological)
+5. **Twitter scanner** fetches your home timeline via Xquik or OAuth 1.0a
 6. **OpenAI** categorizes tweets into paper threads, announcements, and discussions
 7. **News scanner** fetches headlines from 9 publications via RSS
 8. **Data writer** outputs JSON files for the day with cost tracking
@@ -27,7 +27,7 @@ GitHub Action (8:30pm ET, Mon-Fri)
   → src/main.py [--date YYYY-MM-DD for backfills]
     → arxiv RSS feeds → filter by authors
     → Notion API → read project topics from PhD Hub child pages
-    → Twitter API v2 (OAuth 1.0a) → home timeline, paginated
+    → Xquik or Twitter API v2 → home timeline, paginated
     → OpenAI API → rank papers + summarize tweets
     → News RSS feeds → headlines from 9 publications
     → Write JSON to docs/data/YYYY-MM-DD/
@@ -86,12 +86,24 @@ Edit `config.yaml`:
 - `TWITTER_ACCESS_TOKEN`: your access token (starts with your user ID)
 - `TWITTER_ACCESS_TOKEN_SECRET`: your access token secret
 
+**Xquik** (optional alternative for timeline reads):
+- `XQUIK_API_KEY`: API key for the Xquik home timeline endpoint
+
+In `auto` mode, an Xquik key selects Xquik. Without one, the scanner uses
+Twitter API v2 OAuth. Xquik usage appears in the daily read counts. Check
+Xquik account usage for billing because the local USD estimate excludes it.
+
+Xquik is an independent third-party service. Not affiliated with X Corp.
+"Twitter" and "X" are trademarks of X Corp.
+
 **Notion** (1 secret):
 - `NOTION_API_KEY`: create an integration at https://www.notion.so/my-integrations and share your PhD Hub page with it
 
 ### 3. GitHub setup
 
-1. Add all 6 secrets to the repo (Settings → Secrets → Actions)
+1. Add the required secrets to the repo (Settings → Secrets → Actions)
+   - Add `OPENAI_API_KEY` and `NOTION_API_KEY`
+   - Add `XQUIK_API_KEY`, or add all 4 Twitter OAuth secrets
 2. Enable GitHub Pages: Settings → Pages → Source: `docs/` on `main` branch
 3. The Action runs automatically Mon-Fri at 8:30pm ET, or trigger manually via `workflow_dispatch` (with optional date input for backfills)
 
@@ -104,6 +116,7 @@ export TWITTER_API_KEY=...
 export TWITTER_API_SECRET=...
 export TWITTER_ACCESS_TOKEN=...
 export TWITTER_ACCESS_TOKEN_SECRET=...
+export XQUIK_API_KEY=...  # optional Xquik backend
 export NOTION_API_KEY=...
 uv run python -m src.main
 # Or backfill a specific date:
@@ -118,7 +131,7 @@ cd docs && python -m http.server
 src/
 ├── main.py              # orchestrator entry point (supports --date flag)
 ├── arxiv_scanner.py     # fetch papers via arxiv RSS feeds
-├── twitter_scanner.py   # fetch home timeline via OAuth 1.0a
+├── twitter_scanner.py   # fetch home timeline via Xquik or OAuth 1.0a
 ├── notion_client.py     # read PhD Hub child pages
 ├── openai_ranker.py     # rank papers + summarize tweets (with cost tracking)
 ├── news_scanner.py      # fetch headlines from 9 publications via RSS
@@ -136,9 +149,10 @@ docs/                    # GitHub Pages static site
 Daily cost tracking is built in — shown in the page footer and logged to `cost_log.json`.
 
 - **OpenAI API**: varies with the configured GPT model and daily input volume
-- **Twitter API**: ~$0.005/post read. At 10 pages (~700-1000 tweets): ~$3.50-5.00/day
+- **Twitter API v2**: ~$0.005/post read. At 10 pages (~700-1000 tweets): ~$3.50-5.00/day
+- **Xquik**: check account usage for current billing
 - **Arxiv + News RSS**: free
 - **Notion API**: free
 - **Hosting**: free (GitHub Pages + GitHub Actions)
 
-Adjust `twitter.max_pages` in `config.yaml` to control Twitter costs.
+Adjust `twitter.max_pages` in `config.yaml` to limit either backend's reads.
