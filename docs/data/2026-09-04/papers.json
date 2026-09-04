@@ -1,0 +1,575 @@
+{
+  "date": "2026-09-04",
+  "generated_at": "2026-09-04T04:49:20.666974+00:00",
+  "author_papers": [
+    {
+      "arxiv_id": "2609.04180",
+      "title": "Knowledge Acquisition During Pre-training? Large Language Models Learn Better With Auxiliary Views",
+      "authors": [
+        "Joseph Lee",
+        "Yidi Huang",
+        "Dokyoon Kim",
+        "Shu Yang",
+        "Li Shen"
+      ],
+      "abstract": "Gaps remain in our understanding of how large language models (LLMs) acquire knowledge during pre-training. We posit that auxiliary views, reformulations of knowledge, are causally helpful for learning. We design controlled experiments to isolate this. First, we confirm that repetition is necessary for acquisition and clarify that paraphrasing helps only at smaller batch sizes. Second, holding the token budget fixed, allocating tokens from document repetition to auxiliary views improves learning, counterintuitively, even for factual recall. Third, the effectiveness of auxiliary views is not contingent on the strength of the teacher model that generates them. Fourth, we identify forms of knowledge, contextual and foundational, that aid learning in the presence of prior knowledge gaps. Finally, we examine how these effects manifest mechanistically via layer-wise biases and compression. Together, our findings suggest that auxiliary representations of knowledge, which arise naturally in large pre-training corpora, are a key factor in the success of pre-training and offer a plausible explanation for why data diversity matters.",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-09-04T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2609.04180",
+      "pdf_url": "https://arxiv.org/pdf/2609.04180",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2609.04030",
+      "title": "IRWOZ 2.0: A Large Language Model-driven Dialogue Dataset for Industrial Robot Conversations",
+      "authors": [
+        "Chen Li",
+        "Dimitrios Chrysostomou"
+      ],
+      "abstract": "IRWOZ has improved industrial human-robot interaction (HRI) dialogue systems through domain-specific annotations. However, its initial version contains substantial noise in dialogue states and utterances, limiting state-tracking accuracy. We introduce IRWOZ 2.0, which addresses these limitations through large language model (LLM) enhanced generation (Mistral/Claude-3.5) and quality refinements. Our improved dataset expands to 390 dialogues across 4 industrial domains (Assembly, Delivery, Position, Relocation), featuring manual corrections and automated typo removal. Benchmark experiments on dialogue state tracking demonstrate significant improvements, with GPT-2's BLEU-4 score increasing from 0.1651 to 0.5604 compared to original IRWOZ. To support industrial HRI research, we publicly released IRWOZ 2.0 dataset at https://ieee-dataport.org/documents/irwoz-20-large-language-model-driven-dialogue-dataset-industrial-robot-conversations",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-09-04T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2609.04030",
+      "pdf_url": "https://arxiv.org/pdf/2609.04030",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2609.04141",
+      "title": "Efficient Test-Time Adaptation through Human-AI Interaction",
+      "authors": [
+        "Zora Zhiruo Wang",
+        "Apurva Gandhi",
+        "Rulin Shao",
+        "Aspen Chen",
+        "Jonas Mueller",
+        "Zhiqi Liang",
+        "Jett Chen",
+        "Michael Ryan",
+        "Qianou Ma",
+        "Luxi He",
+        "Zhoujun Cheng",
+        "Andre He",
+        "Seungone Kim",
+        "Jiayi Geng",
+        "Mingqian Zheng",
+        "Weiwei Sun",
+        "Zheyuan Zhang",
+        "Xinran Zhao",
+        "Yike Wang",
+        "Abe Hou",
+        "Liwei Jiang",
+        "Pang Wei Koh",
+        "Diyi Yang",
+        "Graham Neubig",
+        "Daniel Fried"
+      ],
+      "abstract": "AI agents are trained on population-scale data to encode broad capabilities spanning those of many practitioners. Yet the artifacts they produce rarely meet the personal bar professionals need to stake their reputation on. On realistic, open-ended tasks where success criteria are heterogeneous and insufficiently documented, individual expertise lives precisely in the elevation and departure from the average. In practice, iterative human-agent interaction surfaces criteria that users cannot fully specify up front, yet apply repeatedly across tasks. We argue this cross-session interaction data is a rich, underused signal for closing the gap to individual expertise. In this work, we propose test-time adaptation through human-agent interaction (TAHI), which integrates these signals into agent context and weights, and crystallizes each user's training and evaluation criteria via an evolving rubric module. We adapt agents to 30 individuals in two high-utility domains, writing and visual creation, on a total of 600 tasks. Our agents improve solo task success by 4.5-20.9% within only tens of tasks. Meanwhile, our evolving rubric module serves as a scalable annotation tool, creating evaluation rubrics that catch 16.0-22.3% more failures than those from LMs or humans alone. While agents are adapted towards individuals, we show these personalized agents also produce improvements in success of up to 8.8% that generalize across users.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-09-04T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2609.04141",
+      "pdf_url": "https://arxiv.org/pdf/2609.04141",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2609.03807",
+      "title": "Free Pause Tokens",
+      "authors": [
+        "John Langford",
+        "Nathan Godey",
+        "Giovanni Monea",
+        "Yoav Artzi",
+        "Harry Dong",
+        "Ying Fan",
+        "Gustavo de Rosa",
+        "Zheng Zhan"
+      ],
+      "abstract": "A free pause token gives a language model extra compute to form each next-token prediction (as a pause, or thinking, token does) but carries that compute in a parallel prediction stream over a weight-shared backbone rather than as an extra token in the sequence. It improves next-token prediction by 2-3 centinats in practice on a 1B parameter model. Because the pause rides an existing position instead of adding one, it is free to use: at inference it adds no context length, no KV cache, and essentially no latency with the growth in inference flops typically irrelevant as it is not the active bottleneck on throughput. The only primary cost is in training, where additional training compute versus an optimized pretraining pipeline is reduced to as low as x1.14 while preserving most of the benefits. The result is an isoflop, isoparameter, and isotoken improvement over standard next token trained transformers.",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-09-04T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2609.03807",
+      "pdf_url": "https://arxiv.org/pdf/2609.03807",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2609.03079",
+      "title": "LeanStream: A Speculate-and-Refine Streaming Framework for Efficient on-Device LLM Inference",
+      "authors": [
+        "Renyuan Liu (Richard)",
+        "Yuyang Leng (Richard)",
+        "Kaiyan Liu (Richard)",
+        "Yuzhou Zhong (Richard)",
+        "Shaohan Hu (Richard)",
+        "Chun-Fu (Richard)",
+        "Chen",
+        "Peijun Zhao",
+        "Heechul Yun",
+        "Shuochao Yao"
+      ],
+      "abstract": "On-device LLM inference is attractive for privacy and responsiveness, but remains challenging on mobile and embedded devices because model weights far exceed available DRAM. Prior systems exploit activation sparsity and offload weights to SSD or flash storage, but face a fundamental systems trade-off: accurate sparse execution decisions require the latest context, whereas efficient computation-I/O overlap requires early prediction. As a result, existing designs either serialize execution or incur redundant weight fetches, extra computation, and large cache overheads. We present LeanStream, a streaming speculate-and-refine framework for efficient on-device LLM inference. LeanStream progressively refines computation, loading, and cache-retention priorities using partial GPU results, enabling fine-grained overlap between GPU execution and storage I/O. We implement LeanStream on both mobile and embedded platforms. Compared with prior on-device LLM inference systems, LeanStream reduces memory usage by 4.8$\\times$ to 7.5$\\times$ at the best throughput achieved by prior work, while further improving token generation throughput by 1.6$\\times$ to 2.1$\\times$.",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-09-04T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2609.03079",
+      "pdf_url": "https://arxiv.org/pdf/2609.03079",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    }
+  ],
+  "ranked_papers": [
+    {
+      "arxiv_id": "2609.02942",
+      "title": "Judging LLM-as-a-Judge: Concerning Rubric Artifacts in LLM-based Automated Text Generation Evaluation",
+      "authors": [
+        "Anshul Bagaria",
+        "Sowmya S Sundaram",
+        "Gokul S Krishnan",
+        "Balaraman Ravindran"
+      ],
+      "abstract": "LLM-as-a-Judge pipelines are increasingly used to evaluate AI-generated text, based on the assumption that judgments arise from reasoning over candidate responses with respect to a rubric. We show that this assumption warrants further scrutiny. Classifiers trained only on rubric text, without access to any evaluated response, achieve nontrivial predictive performance on judge outputs. This suggests that rubric formulations encode recoverable evaluative signals, allowing scores to be partially anticipated independently of model outputs. Finally, counterfactual perturbations reveal that judges often fail to reliably update their decisions when either the candidate response or the rubric criterion is reversed. Our findings raise concerns about the reliability of rubric-based LLM evaluation and highlight the need for further methodological study of automated evaluation via LLMs.",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-09-04T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2609.02942",
+      "pdf_url": "https://arxiv.org/pdf/2609.02942",
+      "is_author_match": false,
+      "relevance_score": 10.0,
+      "relevance_reason": "Extremely relevant because it scrutinizes LLM-as-a-Judge and rubric artifacts, directly matching the stated concern that LM judges have weaknesses and the need for better grading."
+    },
+    {
+      "arxiv_id": "2609.04108",
+      "title": "Sequential Beats Joint: On the Interplay between On-Policy Distillation and RLVR",
+      "authors": [
+        "Boyan Li",
+        "Bingsen Chen",
+        "Chenghao Yang",
+        "Ping Nie",
+        "Chen Zhao",
+        "Xi Ye"
+      ],
+      "abstract": "Reinforcement learning with verifiable rewards (RLVR) and on-policy distillation (OPD) have emerged as two dominant methods for post-training reasoning LLMs. Prior work uses OPD's dense token-level supervision to complement the sparse RL reward, fusing the two signals within a single step: either as a \\emph{weighted-additive combination} or a \\emph{teacher-modulated rescaling} of the RL advantage. In this paper, we show that a simple two-stage scheme, OPD-then-RL, consistently outperforms pure OPD, pure RLVR, and all such joint baselines across logic and math reasoning benchmarks. Beyond the empirical results, we further provide a systematic understanding of this through pass@$k$ behavior, learning dynamics, and parameter updates, yielding a consistent explanation: OPD expands the student's coverage of teacher-supported solutions and RL sharpens within that support, while jointly optimizing the two signals causes them to interfere.To provide a practical recipe, we find that the OPD validation score is the key signal for when to switch to RL, and that OPD is a better cold start for RL than SFT. Together, our results establish OPD-then-RL as a simple yet strong way to combine the two methods, turning two entangled signals into complementary stages.",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-09-04T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2609.04108",
+      "pdf_url": "https://arxiv.org/pdf/2609.04108",
+      "is_author_match": false,
+      "relevance_score": 10.0,
+      "relevance_reason": "Directly relevant to Hunter Prep because it centers on the interplay between on-policy distillation and RLVR, including whether sequential combinations outperform fused approaches."
+    },
+    {
+      "arxiv_id": "2609.04194",
+      "title": "Legibility is Not Interpretability: Comparing Judged and Actual Importance in Chain-Of-Thought Reasoning",
+      "authors": [
+        "Kevin Du",
+        "Alexander Hoyle",
+        "Laura Ruis",
+        "Acyr Locatelli"
+      ],
+      "abstract": "Reasoning traces from chain-of-thought models appear to offer a legible window into how a model arrives at its answer. A growing body of work treats them as such, using LLM judges to diagnose errors, evaluate faithfulness, and provide step-level supervision via process reward models and generative critics. These practices rely on the text of a reasoning step carrying information about its functional role. But does the text actually encode information about which reasoning steps matter? We operationalize the importance of a reasoning step as its advantage: the change in expected reward, e.g., producing the correct final answer, from including that step, estimated via Monte Carlo rollouts. Basing ground truth on these estimates, we evaluate whether LLM judges can identify high-advantage steps and find that sufficiently capable LLMs can outperform a prevalence baseline but fall well short of a noise ceiling. Fine-tuning a model as a step-level critic yields strong improvement for incorrect responses but remains distant from ceiling for correct responses, suggesting that step importance is only partially recoverable from the text of the reasoning trace. Our findings contribute to a growing body of chain-of-thought faithfulness work that cautions against treating the legibility of reasoning traces as interpretability, especially with implications for process reward modeling.",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "published": "2026-09-04T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2609.04194",
+      "pdf_url": "https://arxiv.org/pdf/2609.04194",
+      "is_author_match": false,
+      "relevance_score": 10.0,
+      "relevance_reason": "Extremely relevant to LM-judge weaknesses and grading long rollouts because it tests whether judged chain-of-thought step importance matches actual causal importance."
+    },
+    {
+      "arxiv_id": "2609.02892",
+      "title": "Counterexamples as Feedback for Agent Self-Correction",
+      "authors": [
+        "Sidhesh Badrinarayan",
+        "Adithya Parthasarathy"
+      ],
+      "abstract": "Single-turn code-generation metrics understate a central property of deployed agents: whether they can repair a wrong artifact after receiving concrete feedback. This paper presents A-CEGIS, a lightweight framework that uses counterexamples as feedback for evaluating multi-turn refinement in natural-language-to-regex synthesis. An agent proposes a regex, a deterministic oracle checks it under full-match semantics, and compact false-positive or false-negative witnesses guide the next turn. On 30 NL-RX-Turk tasks, diagnostic counterexample feedback solves 90\\% of tasks within a four-turn ablation budget, compared with 17% for zero-shot generation, 27% for generic self-correction, and 23% for error-only feedback. In a full diagnostic run with hardening, all tasks are solved on the hidden set by the final turn, with mean time-to-success of 2.7 turns and robust success of 77% after targeted probing. These results show that A-CEGIS measures how efficiently an agent improves across turns while adding a practical robustness check beyond the original held-out cases.",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-09-04T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2609.02892",
+      "pdf_url": "https://arxiv.org/pdf/2609.02892",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Highly relevant because it directly evaluates agent self-correction using counterexamples as feedback, closely matching interests in explicit self-correction, fail-first tasks, and multi-turn revision behavior."
+    },
+    {
+      "arxiv_id": "2609.03432",
+      "title": "Decoupled Analysis-Judging: An Automated Creativity Evaluator Using LLMs in Complex Multi-step Creativity Tasks",
+      "authors": [
+        "Xiangyu Wang",
+        "Jin Wu",
+        "Xiaoyu Li",
+        "Chanjin Zheng",
+        "Yifeng Zhou"
+      ],
+      "abstract": "Automated evaluation of creativity tasks remains challenging for LLM-as-a-Judge, as LLM is susceptible to biases such as verbosity bias and leniency bias. Such limitations are particularly evident in Contextually-Grounded and Procedurally-Structured Tasks (CGPST), a complex multi-step creativity task where inter-step dependencies, highly subjectivity, and wide scoring ranges lead to more unstable and biased judgments. Existing approaches either rely on task-specific training or directly apply LLM-as-a-Judge, both of which struggle to ensure reliable evaluation under such complexity. To bridge these gaps, we propose CreaEval, an automated creativity evaluator for CGPST that decouples typical LLM-as-a-Judge into analysis and judging. Correspondingly, CreaEval involves two critical phases: Memory-augmented Analysis, a SoT-LLM converts multi-step responses into structured evaluation evidence, incorporating cross-step memory; and Evidence-based Judging, a Judge-LLM uses the extracted evidence for judging without accessing raw responses. Comprehensive experiments show that CreaEval achieves an average performance improvement of 22.74% over the second-best baselines across CGPST and two classic simple creativity tasks, demonstrating its generalizability. The code is available at https://github.com/Jaong/CreaEval.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-09-04T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2609.03432",
+      "pdf_url": "https://arxiv.org/pdf/2609.03432",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Highly relevant to Hunter/Shuchao's grading interests because it proposes a more robust LLM-based evaluation framework for complex multi-step tasks where standard judges are biased and unstable."
+    },
+    {
+      "arxiv_id": "2609.02998",
+      "title": "Verify Before You Distill: Prompt-Level Teacher Gating for On-Policy Distillation",
+      "authors": [
+        "Zhiwei Zhang",
+        "Zechen Sun",
+        "Fei Zhao",
+        "Kang Peng",
+        "Bin Liang",
+        "Huayu Deng",
+        "Yao Hu",
+        "Kam-Fai Wong",
+        "Mu Chuan"
+      ],
+      "abstract": "On-policy distillation (OPD) accelerates post-training by providing dense token-level supervision from a frozen teacher on the student's own rollouts. Vanilla OPD applies this supervision uniformly across prompts, without checking whether the teacher is reliable for each prompt. Because reverse KL is mode-seeking, a confidently wrong teacher can induce a strong yet misleading update. Distributional proxies, such as entropy or teacher-student likelihood agreement, measure uncertainty or agreement but do not directly verify outcome correctness. We introduce Teacher-Gated On-Policy Distillation (TGOPD), built on the principle that teacher reliability should be verified at the prompt level before dense supervision is admitted. TGOPD estimates reliability from a small set of verifier-scored teacher probes and routes each prompt exclusively to dense OPD when the reliability check passes or to verifier-grounded GRPO otherwise. Across 4B and 35B students in mathematics, code, and instruction following, TGOPD outperforms Vanilla OPD in all six single-domain settings and achieves higher seven-benchmark averages at both scales under multi-domain training. By using otherwise-idle teacher capacity for reliability estimation, TGOPD also reduces teacher-side compute waste in asynchronous OPD, increasing teacher-node GPU utilization from 9.8% to 78.9% in the measured 4B single-domain run.",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-09-04T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2609.02998",
+      "pdf_url": "https://arxiv.org/pdf/2609.02998",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Directly relevant to Hunter Prep because it studies prompt-level teacher reliability in on-policy distillation and the failure modes of blindly following a wrong teacher."
+    },
+    {
+      "arxiv_id": "2609.04172",
+      "title": "Rethinking On-Policy Distillation of Large Language Models II: One Training Example",
+      "authors": [
+        "Zixuan Fu",
+        "Bingxiang He",
+        "Yuxin Zuo",
+        "Haohuan Huang",
+        "Jinqian Zhang",
+        "Ruhang Xiao",
+        "Cheng Qian",
+        "Qinyu Luo",
+        "Huan-ang Gao",
+        "Yudong Wang",
+        "Zhiyuan Liu",
+        "Ning Ding",
+        "Chaojun Xiao"
+      ],
+      "abstract": "On-policy distillation (OPD) combines student-generated rollouts with dense token-level supervision from a teacher. Existing work has mainly studied its algorithmic behavior, leaving the role of training data unclear. We examine this role at the data-minimal limit by training on a single query. One-shot OPD keeps improving for hundreds of steps and recovers most of full-data OPD's gain across task domains and model families. We explain this result through the states visited during training and the rate at which the student aligns with the teacher. We measure \\emph{state coverage}, the fraction of the states full-data OPD visits that a query set's rollouts reach. A single query already reaches \\(71.5\\%\\), most of it within the first 100 steps. Adding semantically distinct queries raises coverage and validation accuracy together, until 16 queries reach \\(98.9\\%\\) and match full-data training. Yet alignment slows at a similar pace whether OPD trains on one query or the whole dataset, and even a fixed set of states takes hundreds of steps to absorb. OPD is therefore data-overfed but algorithm-starved. Its rollouts quickly expose broad supervision, while the student absorbs that supervision increasingly slowly. The state-coverage result extends to multi-teacher OPD, where 16 semantically diverse queries per domain match full-data MOPD. As a further stress test, content-light templates and off-domain WildChat queries also approach the real-query baseline. Task content and induced state coverage can therefore come apart. We hope these findings direct future work toward the step efficiency of OPD, and prompt a re-examination of the data and the mechanisms behind its recent successes in frontier post-training.",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-09-04T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2609.04172",
+      "pdf_url": "https://arxiv.org/pdf/2609.04172",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Direct hit for Hunter Prep: it is explicitly about on-policy distillation, probing its behavior in the data-minimal regime and thus highly relevant to scaling feedback and OPD concerns."
+    },
+    {
+      "arxiv_id": "2609.03588",
+      "title": "KC-Bench: A Dynamic Interactive Benchmark for Evaluating Knowledge Conflicts in LLM Agents",
+      "authors": [
+        "Yaxing Lyu",
+        "Shengjie Zhou",
+        "Binbin Toh",
+        "Pengyu Zhu",
+        "Lijun Li"
+      ],
+      "abstract": "As LLMs increasingly act through tools, they must reconcile user instructions, parametric knowledge, and dynamic environmental observations before taking actions. We introduce KC-Bench, a controlled multi-turn benchmark for measuring this capability across world-knowledge conflicts, input inconsistencies, and multi-source temporal conflicts. Its 238 tasks are manually screened from more than 1,000 generated candidates and combine a user simulator, stateful tools, deterministic environment assertions, an open-source natural-language evaluator, and human trajectory verification. Evaluation of nine models, including DeepSeek-V4-Flash, GLM-5.2, and MiniMax-M3, shows substantial cross-domain variation: no model handles factual correction, identity consistency checking, and temporal conflict resolution reliably across all settings. In the simulated environments, missed conflicts can propagate to tool calls or synthetic protected-data flows. KC-Bench isolates this model-level behavior rather than ranking complete agent frameworks, and provides a reproducible diagnostic for developing conflict-aware reasoning and execution safeguards.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-09-04T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2609.03588",
+      "pdf_url": "https://arxiv.org/pdf/2609.03588",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "This directly matches the project interest in models handling surprising or noisy observations, since it benchmarks LLM agents on reconciling conflicts between prior knowledge, user input, and dynamic environment evidence."
+    },
+    {
+      "arxiv_id": "2609.03966",
+      "title": "Interface-Induced Trajectory Censoring",
+      "authors": [
+        "Wenbo Wang"
+      ],
+      "abstract": "Agent evaluations report a tool-call rate read off the serving stack. That number can be zero while the model is emitting well-formed calls: the interface censors the trajectory before anything downstream sees it.   On BFCL v4's own data, executor and scorer, holding weights, cases, decoding and seeds fixed and changing only the serving adapter, the same model scores 0.00 or 0.96 / 0.19. A 2x2 over chat template and parser locates the effect exactly: both main effects are exactly zero and all of it sits in the interaction -- no component is defective, and repairing one side of the contract buys precisely nothing. On tau-bench's 115 interactive retail tasks the same swap moves server-parsed calls from 0 to 636 and tasks reaching any tool execution from 0 to 103. Our probe reproduces the funnel across a 21x scale range of Qwen2.5-Coder: the server parses 0/100 at every size while well-formed emitted calls rise to 80/100 at 32B (~72 after calibration against an adjudicated gold standard). Under a matched envelope, across a comparable scale span, the silent fraction stays at 0-2, a prediction committed to the repository before the run. Llama-3.1-8B's 23% rate of calling the task function itself as a tool falls to 0 under one strict:true flag.   The mismatch reaches inside the training loop, and its consequence is scale-dependent: in verl's AgentLoop at 7B, 45 of 115 generations carry a complete call; 0 are accepted, 0 execute, 0 return an observation. At 1.5B the same zero is over-determined, so we report the two scales separately. At evaluation time, repairing the adapter restores the mechanism but not a significant outcome gain: parsing 0->84, rescues 0->9, pass rate 53->62 (n.s.). We release a 98-line preflight check that catches every silent failure here. The observed tool-call rate is not a property of the model alone; it is a property of the model-interface stack that measures it.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-09-04T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2609.03966",
+      "pdf_url": "https://arxiv.org/pdf/2609.03966",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Highly relevant to LM-judge and agent evaluation concerns because it shows measurement can be badly distorted by serving-stack/interface effects even when model behavior is unchanged."
+    },
+    {
+      "arxiv_id": "2609.04094",
+      "title": "DRACO: Fine-Grained Credit Assignment with Dynamic Rubrics for Long-Horizon Agent Training",
+      "authors": [
+        "Shubham Gandhi",
+        "Saurabh Goyal",
+        "Kiran Kate",
+        "Yara Rizk"
+      ],
+      "abstract": "Reinforcement Learning from Verifiable Rewards works well when a task has a programmatic checker, but most long-horizon agent domains have none. We work in the outcome-blind setting, where ground-truth success signals are not available. Multi-criteria rubrics are a popular way to supply such a reward; they are scored once per trajectory, but a single scalar is a poor signal across tens of steps. We propose DRACO: Distributing Rubric-based Advantage for Credit Optimization. It generates rubrics dynamically during training to track the policy's evolving capability, scores those rubrics once per completed trajectory, and redistributes that judgment over the steps responsible for annotated rubrics to produce differentiated per-step advantages in GRPO. The redistribution is closed-form and does not introduce any trained attribution module. On AppWorld, DRACO gains 15.9 points over the base model and 5.3 points over GRPO trained with a sparse ground-truth reward, despite not using any verifiers itself. On out-of-domain Tau-Bench, it gains 5.3 points over the base model even without a frontier judge, beating both ground-truth-reward training and other rubric-based training settings. The code for DRACO is available at https://github.com/IBM/draco.",
+      "categories": [
+        "cs.AI",
+        "cs.LG",
+        "cs.SE"
+      ],
+      "published": "2026-09-04T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2609.04094",
+      "pdf_url": "https://arxiv.org/pdf/2609.04094",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Directly targets fine-grained grading and credit assignment for long-horizon agent trajectories, which closely matches the need for better rollout grading and training signals."
+    },
+    {
+      "arxiv_id": "2609.04198",
+      "title": "Clean Engineering, Unstable Measurement: A Preregistered Reliability Failure of Black-Box LLM Observers on Shared Endpoints",
+      "authors": [
+        "Haoyaun Zhu",
+        "Jie Zhang"
+      ],
+      "abstract": "Language-model judges now gate training data, score generations, and drive leaderboards. The judge is then a measurement instrument, resting on one rarely stated assumption: the same request, sent to the same model name, reads the same tomorrow. We audited that assumption in two preregistered campaigns with every threshold fixed in advance; neither got past validating its instrument. Across 52,988 audited request attempts, same-window repeat rankings agreed at Spearman 0.400 against a required 0.90, and byte-identical next-day replays agreed at 0.78 against a required 0.99, each time with the execution record at ceiling. Three mechanisms explain the gap: a label-to-meaning mapping that biased readouts as strongly as the signal; candidate gaps seven orders of magnitude below the instrument's own noise floor; and byte-identical inputs returning different rankings, a noise that exact-permutation readouts compound. Neither metric substitution nor sampling repaired it on the tested grid. Preregistered follow-ups bound the problem: waiting did not help on the days sampled (0.805 versus 0.800, replicated over five further days); switching providers did not help (four providers share the floor, medians 0.74 to 0.88, predicted by none of the metadata fields they expose); self-hosting on batch-invariant kernels helped only while the server was quiet; and on constructed errors with known gaps, the readout's separation tracks error type, not size. We distill the evidence into a three-level snapshot-identity ladder, eight design rules, and a reporting checklist; a pilot at roughly 2% of the study's call volume would have exposed both unreachable gates in advance. All results concern externally measured behaviour on shared serving infrastructure. On a shared endpoint, a model name is not a frozen instrument; a preregistered evaluation must measure its instrument before freezing any gate on it.",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-09-04T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2609.04198",
+      "pdf_url": "https://arxiv.org/pdf/2609.04198",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Very relevant to concerns about judge reliability and evaluation validity, since it studies instability of black-box LLM observers used as measurement instruments."
+    },
+    {
+      "arxiv_id": "2609.03241",
+      "title": "FlowBalance: Verifier-Grounded Self-Improvement from On-Policy Reasoning Experience",
+      "authors": [
+        "Zixun Huang",
+        "Kishan Panaganti",
+        "Haitao Mi",
+        "Leowei Liang"
+      ],
+      "abstract": "A reasoning model can improve from its own on-policy experience, but this inner loop is fragile: terminal verifiers provide reliable yet sparse supervision, while dense same-model guidance can reinforce false confidence or overconcentrate learning on a narrow solution mode. We introduce FlowBalance, a verifier-grounded self-improvement method that learns a normalized distribution over complete responses. For each on-policy trajectory, a frozen training-time view of the same policy uses privileged context to produce token-level log-probability gains, which are aggregated into a trajectory-level self-guidance score. FlowBalance calibrates this score with the verifier-derived group advantage: guidance is retained on positive-advantage trajectories, reversed on negative-advantage trajectories, and disabled when the rollout group provides no outcome preference. The resulting energy exponentially reweights a reference policy, and profiled trajectory balance fits the normalized target with one log-partition estimate per rollout group. This realizes outcome-calibrated self-guidance via trajectory balance, without a separate token-level imitation loss. Our analysis establishes within-group contrast preservation, a minimum-change reverse-KL characterization, monotonic verifier control of target reward, and an exact correction against false-positive self-guidance on rejected responses. On mathematical reasoning, FlowBalance improves average performance over FlowRL on both Qwen3-4B and Qwen3-8B, while also improving training speed and stability, avoiding direct OPSD's response-length collapse, and exhibiting higher correct-strategy diversity in a controlled AIME24 diagnostic.",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-09-04T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2609.03241",
+      "pdf_url": "https://arxiv.org/pdf/2609.03241",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Highly relevant to the on-policy distillation/self-improvement thread, since it studies verifier-grounded learning from on-policy reasoning trajectories and addresses failure modes of dense self-guidance."
+    },
+    {
+      "arxiv_id": "2609.04075",
+      "title": "PatchBench: Evaluating AI Agents for Vulnerability Patching",
+      "authors": [
+        "Chihao Shen",
+        "Jiacheng Li",
+        "Aastha Mahajan",
+        "Jeffery Siyuan Tian",
+        "Yonghwi Kwon",
+        "Yizheng Chen"
+      ],
+      "abstract": "AI agents have recently demonstrated strong performance in automated vulnerability patching. However, existing evaluations often validate a patch only by testing whether the provided Proof-of-Concept (PoC) input still triggers a crash. This leaves two key threats to validity: agents may reproduce memorized historical developer patches, or they may generate surface-level fixes that only suppress the reported crash.   We study these concerns for C/C++ vulnerability patching. We introduce a patch similarity metric to detect memorized patches. On average, 25% of the agent patches exhibit substantial similarity to historical developer patches, indicating that patch memorization is a real threat to the validity of vulnerability patching evaluations. Meanwhile, agents also frequently exploit benchmark structures to pass patch validation by patching on the crash stack trace to suppress the crash, rather than localizing and fixing the root cause of the vulnerabilities.   To handle these issues, we propose PatchBench, a new benchmark for evaluating AI agents on realistic vulnerability patching tasks. PatchBench selects vulnerabilities whose ground-truth fixes lie outside the crash stack and uses vulnerability transplant and code mutations to migrate historical vulnerabilities into new repository contexts, reducing the risks of surface-level fixes and patch memorization. We develop new patch validation methods that thoroughly evaluate both security and semantic correctness of agent patches. Across 11 state-of-the-art agents, including the top three AIxCC agents, the original PoC-only validation inflates the patching task solve rate of agents by 1.83$\\times$ on average. Our results reveal key limitations of current patching agents and point to future research directions for more reliable vulnerability repair.",
+      "categories": [
+        "cs.CR",
+        "cs.AI",
+        "cs.SE"
+      ],
+      "published": "2026-09-04T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2609.04075",
+      "pdf_url": "https://arxiv.org/pdf/2609.04075",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Very relevant to grading long rollouts and LM-judge weaknesses because it argues that standard patch validation is insufficient and introduces a more rigorous benchmark for evaluating agent-generated software fixes."
+    },
+    {
+      "arxiv_id": "2609.04167",
+      "title": "SWE-Gate: Passing Functional Tests Is Not Enough for Software Engineering Agents",
+      "authors": [
+        "Xin He",
+        "Yanlin Wang",
+        "Mingwei Liu",
+        "Jiachi Chen",
+        "Hongyu Zhang",
+        "Guanbin Li"
+      ],
+      "abstract": "Repository-level software engineering benchmarks have significantly advanced the evaluation of coding agents, but existing benchmarks primarily measure whether generated patches pass functional tests and overlook review-derived acceptance constraints (review constraints) that often influence whether a patch is acceptable in real-world software development. We introduce SWE-Gate, a repository-level benchmark for software engineering agents that explicitly evaluates review constraint compliance alongside functional correctness. SWE-Gate derives review constraints from real pull request review comments and synthesizes repository-level repair instances around these constraints. Each instance provides separate functional and constraint tests, together with non-compliant and gold patches, enabling explicit separation between issue resolution capability and review constraint compliance. We construct SWE-Gate with 303 repository-level repair instances spanning 75 open-source Python repositories across diverse software domains. Experiments with four LLM backends spanning different capability levels under a common coding-agent scaffold reveal a substantial gap between functional success and success under the complete repair specification: among 644 repairs that pass the functional tests, 221 fail to satisfy the provided review constraints. These findings show that functional-only evaluation overestimates agents' ability to satisfy the full requirements of repository-level repair tasks. The replication package including code, data, and experimental results is available at https://github.com/DeepSoftwareAnalytics/SWE-Gate.",
+      "categories": [
+        "cs.SE",
+        "cs.AI"
+      ],
+      "published": "2026-09-04T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2609.04167",
+      "pdf_url": "https://arxiv.org/pdf/2609.04167",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Very relevant to better grading of agent outputs because it explicitly shows that passing functional tests is not enough for software agents and adds review-based acceptance criteria, closely matching concerns about evaluator blind spots."
+    },
+    {
+      "arxiv_id": "2609.03342",
+      "title": "Gradients Know What Outcomes Don't: Unlocking Reinforcement Learning for LLM Reasoning with Gradient-Aligned Rewards",
+      "authors": [
+        "Leqi Zheng",
+        "Jinbo Su",
+        "Fang Niu",
+        "Chaokun Wang",
+        "Weiping Wang",
+        "Jiajun Zhang",
+        "Shannan Yan",
+        "Jie Wu",
+        "Zhaolu Kang",
+        "Rong Fu",
+        "Hang Zhang"
+      ],
+      "abstract": "Reinforcement learning from verifiable rewards (RLVR) drives chain-of-thought reasoning in large language models, yet its binary outcome reward cannot distinguish among correct trajectories. Existing dense reward alternatives, from surface heuristics to process reward models, either ignore the expert solutions already present in training corpora or require expensive offline annotation. We propose Gradient-Aligned Reward (GAR), which operates in the policy's own gradient space: truncated backpropagation through the output projection layer extracts a compact gradient vector for each rollout, and cosine similarity with an expert-anchor gradient yields a dense, reasoning-aware reward with less than 9% wall-clock overhead. We prove that this cosine admits a multiplicative decomposition into prediction-error and activation-pattern factors, providing a concrete characterization of what the alignment signal measures. On Qwen3-4B and Qwen3-8B, GAR consistently improves over GRPO and other baselines on competition-level math benchmarks and transfers to GPQA Diamond and MMLU-Pro without domain-specific data. Code and data are available at https://github.com/LQgdwind/GAR.",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-09-04T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2609.03342",
+      "pdf_url": "https://arxiv.org/pdf/2609.03342",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Very relevant to both RL-for-reasoning and grading concerns, since it proposes dense gradient-aligned rewards for LLM reasoning as an alternative to weak binary outcome rewards and expensive process supervision."
+    },
+    {
+      "arxiv_id": "2609.03383",
+      "title": "TIGPO: Temporal Instance-Graph Policy Optimization for Long-Horizon LLM Agents",
+      "authors": [
+        "Jinwei Gan"
+      ],
+      "abstract": "Graph-based policy optimization improves credit assignment for long-horizon LLM agents by organizing rollout trajectories into state-transition graphs. However, existing methods construct graphs independently within each policy update, discarding transitions discovered by earlier policies and limiting advantage estimation to small, batch-local rollout groups. We propose \\emph{Temporal Instance-Graph Policy Optimization} (TIGPO), which extends graph-based credit assignment across policy updates. TIGPO maintains a persistent transition graph for each task, allowing valid transitions discovered by different policy versions to jointly determine credit for current rollouts. To actively reconnect current exploration with historical experience, TIGPO allocates a fixed rollout budget between Exploration slots for ordinary task sampling and Revisit slots for delayed reattempts of previously explored tasks. For each revisit, TIGPO pairs the current rollout group with its corresponding earlier Exploration group to construct a cross-temporal reference. The enlarged reference is designed to stabilize relative advantage estimation under small rollout groups, while comparison on the same task directly captures policy improvement across training stages. Historical transitions and scores serve only as structural and detached statistical references and are never replayed in the policy loss. Experiments on ALFWorld and WebShop demonstrate that TIGPO consistently outperforms prior group-based and graph-based policy optimization methods.",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-09-04T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2609.03383",
+      "pdf_url": "https://arxiv.org/pdf/2609.03383",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "This is directly on long-horizon LLM agents and improved credit assignment across rollout graphs, making it strongly aligned with your interests in long-horizon tasks and effective evaluation of extended rollouts."
+    },
+    {
+      "arxiv_id": "2609.03148",
+      "title": "Large Language Models in Resolving Contextual Knowledge Conflicts",
+      "authors": [
+        "Xinye Yang",
+        "Zhenyang Liu",
+        "Ruisi Li",
+        "Yuanyuan Lei"
+      ],
+      "abstract": "Most prior works focused on conflicts between an LLM's internal parametric knowledge and externally provided context. In contrast, we investigate how LLMs handle conflicts that arise within contextual knowledge itself. We introduce a taxonomy of six types of contextual conflicts (factual, inferential, temporal, granularity, perspective, and ambiguity) and contribute a comprehensive dataset ContextConflict for this setting. The dataset contains 5,781 samples, covers both reasoning and summarization tasks, and includes both explicit contradictions and implicit conflicts that require multi-step reasoning. Experiments on nine LLMs show that current models still fall short in resolving contextual knowledge conflicts. We further provide mechanistic interpretability insights into how LLMs process such conflicts, revealing their latent awareness of conflicts and the representational geometry underlying conflict processing. In addition, our analysis uncovers a consistent model bias towards earlier evidence, and this positional preference serves as a key obstacle to effective conflict resolution. Motivated by these findings, we further propose a simple training-free, label-free steering method that steers activations to encourage a more comprehensive incorporation of evidences for better conflict resolution. On our dataset, the method consistently improves accuracy on reasoning tasks and generates higher-quality, more balanced summaries for summarization tasks.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-09-04T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2609.03148",
+      "pdf_url": "https://arxiv.org/pdf/2609.03148",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Strongly relevant because handling conflicting contextual information and surprise-like contradictions is central to the project interest in noisy observations, hypothesis formation, and surprising information."
+    },
+    {
+      "arxiv_id": "2609.03254",
+      "title": "What Else Needs Fixing? Exploring Cost-Effective Test-Time Compute for Revision Propagation in Artifacts Generated Through Conversation",
+      "authors": [
+        "Daisuke Kikuta"
+      ],
+      "abstract": "Large Language Models (LLMs) often help users generate artifacts through iterative cycles of generation and revision in conversation. A challenge here is that, when users specify only a local change during revision, LLMs must instead identify the relevant dependencies and propagate the revision to all affected parts of the artifact. This paper studies this ability of LLMs on conversationally generated artifacts, where the artifact context and its dependencies may be embedded in the conversation history. Toward practical use, we also explore cost-effective test-time compute for this new setting. Specifically, we introduce a new benchmark for this setting, and evaluate nine revision methods, including sequential reflection and parallel sampling variants, using gpt-oss-20b/120b, gpt-5.4-mini, and qwen3.5-9b/27b/122b on the benchmark. The results show that baselines achieve accuracies of 68.3--93%, and the most cost-effective method is selecting from three parallel samples using either LLM-based or medoid selection, which improves accuracy by 2.2--9.7%. Our code and dataset are available at https://github.com/ntt-dkiku/llm-revision-propagation.",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "published": "2026-09-04T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2609.03254",
+      "pdf_url": "https://arxiv.org/pdf/2609.03254",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Strongly relevant because it studies revision propagation in artifacts generated through conversation, closely related to evaluating long rollouts, iterative correction, and multi-turn agent competence."
+    },
+    {
+      "arxiv_id": "2609.03331",
+      "title": "FPCO-Dialog: A Multi-Turn False-Premise Benchmark for Correction and Cooperation in Vision-Language Models",
+      "authors": [
+        "Jiayuan Ma",
+        "Yuqi Lu",
+        "Weiyang Guo",
+        "Chenrui Wang",
+        "Junyi Shu",
+        "Xuebo Liu",
+        "Min Zhang",
+        "Jing Li"
+      ],
+      "abstract": "Vision-language models (VLMs) are increasingly deployed in multi-turn settings where users may describe visual content with incorrect assumptions. Yet existing evaluations rarely isolate how models respond when the same visually grounded false premise persists across dialogue turns. We introduce FPCO-Dialog, a benchmark for evaluating correction and cooperation behavior in VLMs under repeated false premises. FPCO-Dialog contains 1,080 images and 10,800 question turns, stratified by visual complexity, object category, and false-premise class, and uses a 10-turn protocol in which a correct dialogue prefix is followed by repeated false-premise referring expressions. We evaluate 20 commercial and open-source VLMs with a model-agnostic protocol and CorrTP@K, a correction-rate metric over false-premise turns, scored by two independent detectors. FPCO-Dialog reveals substantial and persistent cross-model differences in aggregate correction tendency, model-specific turn-wise dynamics, and systematic variation across false-premise types under the benchmark's substitution distribution. The dataset, evaluation protocol, model outputs, detector labels, and code are available.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-09-04T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2609.03331",
+      "pdf_url": "https://arxiv.org/pdf/2609.03331",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Strong fit for the false-premise, correction, and cooperation themes because it benchmarks whether models can recognize and respond appropriately to persistent incorrect assumptions over multi-turn interaction."
+    },
+    {
+      "arxiv_id": "2609.03467",
+      "title": "When Users Don't Ask: Benchmarking Context-Driven Memory Retrieval in Conversational Agents",
+      "authors": [
+        "Wen-Yu Chang",
+        "Yun-Nung Chen"
+      ],
+      "abstract": "Large language models (LLMs) are increas- ingly deployed as long-horizon conversational agents, motivating growing interest in mem- ory systems. However, existing benchmarks primarily evaluate memory through QA-style probing rather than in-situ conversational usage. We introduce LOCOMO-CONV, a conversa- tional memory benchmark derived from Lo- CoMo with four query styles: dialog, implicit, counterfactual, and composed. Across five rep- resentative memory systems, we evaluate both retrieval recall and end-to-end response qual- ity. Our experiments show that conversational framing exposes substantial retrieval gaps over- looked by QA benchmarks, especially on im- plicit and composed queries, which multi-facet query rewriting narrows for raw-turn mem- ory but not abstractive memory. We further find that strong retrieval does not fully trans- late into response quality, and that implicit queries exhibit silent grounding, where mem- ory improves contextual grounding without ex- plicitly surfacing the gold fact. These results point to reasoning-based memory elaboration as a promising direction, and we release aux- iliary supportive_memory annotations captur- ing conversationally useful context beyond the original gold evidence.",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-09-04T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2609.03467",
+      "pdf_url": "https://arxiv.org/pdf/2609.03467",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Very relevant to long-horizon task evaluation since it benchmarks context-driven and counterfactual memory retrieval in conversational agents rather than simple QA probing."
+    }
+  ]
+}
