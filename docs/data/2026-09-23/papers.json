@@ -1,0 +1,602 @@
+{
+  "date": "2026-09-23",
+  "generated_at": "2026-09-23T04:57:03.811190+00:00",
+  "author_papers": [
+    {
+      "arxiv_id": "2609.25518",
+      "title": "Matryoshka attribution: Learning to attribute language model outputs to representations and weights",
+      "authors": [
+        "Aryaman Arora",
+        "Kirill Acharya",
+        "Nathan Hu",
+        "Yanzhe Zhang",
+        "Noah Goodman",
+        "Dan Jurafsky",
+        "Christopher Potts"
+      ],
+      "abstract": "Attributing language model outputs to their internal computations is an open problem in interpretability. Existing methods, which use causal interventions, gradients, or learnable masks, either are infeasibly expensive or struggle to identify actual causally-important internal computations. We propose framing attribution as the problem of identifying nested subsets of internal components which minimise a downstream loss. To learn this task, we introduce Matryoshka Attribution (MAttr), a mask learning method that parametrises the mask with a simple differentiable sigmoid top-$k$ operator. We supervise training over all sparsities simultaneously by randomising $k$ over training, resulting in a learned ordering of components by attribution score. MAttr achieves number 1 on the official leaderboard of the Mechanistic Interpretability Benchmark (Mueller et al., 2025); our method identifies sparse and task-transferrable circuits across varying circuit bases. As a practical application, we show that MAttr can be trained with reinforcement learning to identify weight changes responsible for downstream behaviours in LLM finetuning. We train MAttr on refusal judge scores and find that restoring $1\\%$ of Llama 3.1 8B Instruct's weights to their base model state is sufficient to remove refusals while maintaining capabilities. We view MAttr as a successful formulation of interpretability into a learnable objective that we can tackle with gradient descent, and encourage future work along these lines.",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "published": "2026-09-23T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2609.25518",
+      "pdf_url": "https://arxiv.org/pdf/2609.25518",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2609.26488",
+      "title": "Spoken Language Models that Think Aloud",
+      "authors": [
+        "Junyi Ao",
+        "Kainan Peng",
+        "Mingbo Ma",
+        "Shun Zhang",
+        "Zhenyu Tang",
+        "Xutai Ma",
+        "Xiang Li",
+        "Yinghao Li",
+        "Yuancheng Wang",
+        "Zhizheng Wu",
+        "Haizhou Li",
+        "Qing He",
+        "Xubo Liu"
+      ],
+      "abstract": "While Chain-of-Thought (CoT) reasoning has improved the capability of language models, directly applying it to Spoken Language Models (SLMs) may introduce long silent intervals under the serial \"think-then-speak\" paradigm, disrupting real-time spoken interaction. To address this issue, we propose an asynchronous think-aloud framework for reasoning-based SLMs within the Thinker-Talker architecture. The framework maintains a primary reasoning stream for logical deduction and a lightweight think-aloud stream that generates short, task-grounded progress utterances conditioned on the user input and the evolving reasoning state. A dynamic balance strategy coordinates the two streams at runtime, triggering additional think-aloud speech to avoid silent gaps and canceling pending utterances when the final response becomes ready. Experiments on spoken reasoning and question-answering benchmarks show that our approach substantially reduces user-audible silence during reasoning while maintaining answer accuracy comparable to that of a serial \"think-then-speak\" baseline, demonstrating the potential of asynchronous think-aloud for responsive interaction in SLMs.",
+      "categories": [
+        "cs.CL",
+        "cs.SD",
+        "eess.AS"
+      ],
+      "published": "2026-09-23T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2609.26488",
+      "pdf_url": "https://arxiv.org/pdf/2609.26488",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2609.25244",
+      "title": "How Children Design and Reason about Trustworthy AI Chatbots",
+      "authors": [
+        "Deniz Ozturk (Georgie)",
+        "Jiayu Li (Georgie)",
+        "Daksh Pratap Singh (Georgie)",
+        "Yasitha Rajapaksha (Georgie)",
+        "Fasika Melese (Georgie)",
+        "Bahare Riahi (Georgie)",
+        "Shiyan Jiang (Georgie)",
+        "Qiao (Georgie)",
+        "Jin",
+        "Joey Huang",
+        "Veronica Catet\\'e",
+        "Tiffany Barnes",
+        "Xiaoyi Tian"
+      ],
+      "abstract": "Children increasingly interact with AI chatbots, making trust calibration essential to AI literacy. Prior research has examined children's trust in AI mainly as users evaluating systems built by others, rather than as designers of their own chatbots. We developed a chatbot-building environment with adjustable trust-relevant traits (e.g., confidence, transparency, formality, assertiveness), rules, and persona. We conducted mixed-methods study with 115 learners (ages 8-18) who made 119 chatbots. We examined how children configured their chatbots, reasoned about trustworthiness, and how closely chatbot behavior aligned with their designs. Younger students (age 10-13) set significantly higher confidence than older students (age 14-18), and some deliberately built chatbots that gave wrong answers on purpose, yet still called them trustworthy, arguing that a chatbot does what it was built to do. Younger students equated trust with purpose-fulfillment, while older students linked it to transparent, calibrated design. Students also calibrated academic chatbots to be more transparent and formal than hobby chatbots. We identify seven design dimensions describing what children believe makes a chatbot trustworthy, and discuss implications for AI literacy tools.",
+      "categories": [
+        "cs.HC",
+        "cs.AI"
+      ],
+      "published": "2026-09-23T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2609.25244",
+      "pdf_url": "https://arxiv.org/pdf/2609.25244",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2609.26028",
+      "title": "REVE: Efficient Hallucination Correction for Large Audio-Language Models via Reused Encoder States",
+      "authors": [
+        "Hongjin Song",
+        "Jiasheng Kuang",
+        "Xinyu Yang",
+        "Qiuyu Fang",
+        "Ziyu Wu",
+        "Guowu Tan",
+        "Xiang Xie"
+      ],
+      "abstract": "Large audio-language models may mention acoustic events that are absent from the input. A separate audio event detector can verify these mentions, but doing so requires a second audio encoder and a separate forward pass. We propose Reused Encoder States for Verifying Events (REVE), a lightweight method that uses states already computed by the target model. One readout summarizes class scores across audio frames, while another uses pooled states from four consecutive frame intervals. Class-aware score fusion combines their outputs to verify generated event mentions without encoding the audio again. On AudioSet, REVE removes 92.9% of label-unsupported mentions under a faithful-mention recall constraint. With fewer added parameters and no second audio-encoding pass, REVE achieves a reduction comparable to those of CED-Tiny and CED-Base. Its complete verification latency is about 1/18 of the CED-Base path. Results on controlled DESED mixtures and different target-model architectures further confirm the effectiveness of encoder-state reuse.",
+      "categories": [
+        "cs.SD",
+        "cs.AI"
+      ],
+      "published": "2026-09-23T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2609.26028",
+      "pdf_url": "https://arxiv.org/pdf/2609.26028",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2609.26151",
+      "title": "TTTIR: Unlocking Instance-Specific State Evolution via Test-Time Training for Image Restoration",
+      "authors": [
+        "Kaihang Zheng",
+        "Jun Li",
+        "Hang Guo",
+        "Hongyu Chi",
+        "Zimo Liu",
+        "Tao Dai",
+        "Jinpeng Wang",
+        "Yaowei Wang"
+      ],
+      "abstract": "Image restoration is inherently challenging due to the diverse and highly input-dependent nature of real-world degradations. While recent architectures like Transformers and state-space models have advanced the field, they predominantly rely on static, globally shared parameters, which struggle to fully accommodate instance-specific degradation patterns. Test-Time Training (TTT) offers a promising paradigm for generating data-dependent operators, yet its standard self-supervised inner loop lacks the explicit guidance required to transition degraded features toward clean structures. To address this, we propose TTTIR, a novel framework that reformulates image restoration as an instance-specific state evolution process. Specifically, we design Progressive State Sequence Generation (PSSG) to construct complementary spatial-frequency target states (defining what to recover), and State Transition Evolution (STE) to adapt lightweight transition operators via a restoration-oriented TTT inner loop (determining how the features should evolve). Extensive experiments demonstrate that TTTIR consistently outperforms state-of-the-art models across multiple image restoration benchmarks, achieving dynamic instance-specific recovery with favorable computational scalability. The code is available at https://github.com/Elysiaaaaaaaa/TTTIR.git.",
+      "categories": [
+        "eess.IV",
+        "cs.AI",
+        "cs.CV",
+        "cs.MM"
+      ],
+      "published": "2026-09-23T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2609.26151",
+      "pdf_url": "https://arxiv.org/pdf/2609.26151",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2609.25576",
+      "title": "Scalable Minimum-Volume Simplex Estimation with Non-asymptotic Analysis",
+      "authors": [
+        "Jun LI",
+        "Yanlong Guo",
+        "Zhaozhao Zeng"
+      ],
+      "abstract": "We study the estimation of a $K$-dimensional simplex from $N$ i.i.d.\\ points sampled uniformly from its interior; the observations are convex combinations of $K+1$ unknown prototypes. Existing polynomial-time estimators need cubic per-sample work or $O(NK)$ storage and are impractical at $N\\sim 10^6$--$10^8$. We propose DeepMVSA, which re-expresses the minimum-volume principle in neural implicit form: a lightweight coordinate network generates the mixing weights and a triangular LU-type parameterization the dual simplex matrix, reducing the trainable-state memory to $O(K^2)$, independent of $N$, and the cost per data pass to $O(NK^2)$. We prove a non-asymptotic sample-complexity bound of the polynomial-time benchmark order for a localized surrogate estimator; an oracle inequality for every global minimizer of the neural objective, with volume-inflation control and an explicit shrinkage bias; a conditional end-to-end error budget separating statistical, approximation, optimization, and enclosure-residual terms on an explicit envelope event; and two-point lower bounds: at any noise level $\\sigma>0$ fixed independently of $N$, the $N^{-1/2}$ scaling is unimprovable in its $N$-exponent. Experiments with up to $N=10^8$ synthetic observations are consistent with the predicted accuracy and scaling, and feasibility on real scenes of $\\sim 10^7$ pixels is demonstrated.",
+      "categories": [
+        "stat.ML",
+        "cs.LG"
+      ],
+      "published": "2026-09-23T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2609.25576",
+      "pdf_url": "https://arxiv.org/pdf/2609.25576",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    }
+  ],
+  "ranked_papers": [
+    {
+      "arxiv_id": "2609.25048",
+      "title": "Prompt Breadth and Rollout Refresh Interact in On-Policy Distillation",
+      "authors": [
+        "Lingxiang Hu",
+        "Tianle Xia",
+        "Ming Xu",
+        "Yiding Sun",
+        "Linfang Shang"
+      ],
+      "abstract": "How many prompts does on-policy distillation (OPD) need, and how does the answer depend on the student policies that generate its training responses? We study these two controls jointly: prompt breadth and rollout refresh. A 3x3 mathematical-reasoning experiment fixes 14,080 trajectories and 110 optimizer updates while varying the prompt bank and the number of response-generating policy snapshots. With ten snapshots, eight prompts reach 24.09% average accuracy, close to 24.51% for 14,080 distinct prompts. With responses frozen at the initial policy, however, increasing breadth lowers accuracy from 21.16% to 19.05%; under per-update refresh, it raises accuracy from 23.61% to 25.57%. The resulting interaction is 4.07 percentage points, with a 95% question-paired interval of [2.00, 6.28]. Matched comparisons under two teachers reveal a second reversal: the periodic models have higher short-budget accuracy and answer completion, but frozen-response models overtake in average accuracy at a 32K output limit, using 1.7-1.8x as many response tokens. These results show that prompt efficiency in OPD can depend on both refresh and inference budget.",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-09-23T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2609.25048",
+      "pdf_url": "https://arxiv.org/pdf/2609.25048",
+      "is_author_match": false,
+      "relevance_score": 10.0,
+      "relevance_reason": "This is highly relevant to Hunter Prep because it studies prompt breadth, rollout refresh, and on-policy distillation directly, matching your explicit interest in scaling feedback and OPD."
+    },
+    {
+      "arxiv_id": "2609.25848",
+      "title": "Optimizing the Score, Losing Sight of the Task: Reward Hacking Across Weights, Selection, and Prompts",
+      "authors": [
+        "Vansh Wahi"
+      ],
+      "abstract": "A higher evaluation score does not always mean a better language model system. When optimization exploits an evaluator's mistakes, measured progress can conceal unchanged or deteriorating task performance. This failure can arise through parameter updates, selection among generated outputs, or revisions to persistent prompts. We develop a comparative framework for reward hacking across these three optimization substrates: weights, selection, and text. Building on the Proxy Compression Hypothesis and research on inference-time and in-context reward hacking, we examine how reachable behavior, optimization budgets, and persistent adaptation shape exposure to proxy error. We formalize a distance-dependent upper bound on evaluator disagreement and a capacity ordering for nested policy classes, then show why distance alone cannot establish a universal ranking of vulnerability. An exact finite-output illustration demonstrates how the location of a scoring defect changes the behavior favored by each method. We also map representative defenses across substrates, identifying which mechanisms transfer directly and which offer only functional analogies. Persistent prompts receive particular attention: their contents are inspectable, but the behavior induced by a small textual change may be difficult to anticipate. The formal analysis, numerical illustration, and published evidence together provide a basis for comparing optimization methods and identifying the conditions under which their defenses transfer. The resulting framework connects optimization choices to verification requirements: reliable improvement depends on controlling accessible failure modes and preserving evidence of task quality independent of the score being optimized.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-09-23T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2609.25848",
+      "pdf_url": "https://arxiv.org/pdf/2609.25848",
+      "is_author_match": false,
+      "relevance_score": 10.0,
+      "relevance_reason": "This is extremely relevant to concerns about LM judges and grading, since it studies reward hacking against evaluators across training, selection, and prompt optimization."
+    },
+    {
+      "arxiv_id": "2609.24194",
+      "title": "When Residualization Helps an Audit: Format Effects, Slice Gains, and Their Limits",
+      "authors": [
+        "Daein Weon",
+        "Dong Ho Kang"
+      ],
+      "abstract": "Evaluation scores used around LLM systems -- including reward models, rerankers, and LLM judges -- can track surface form instead of the quality they claim to measure. When presented with a terse correct solution and a commented buggy solution for the same MBPP problem, a public preference reward model selects the correct one no better than a coin flip (0.507). Subtracting the predictable surface component from such scores is increasingly common, but removal alone does not yield a more valid measurement: the removed component may carry construct-relevant signal, and residualization cannot tell which is which. Under designed interventions -- unit-test labels with comment-only edits -- residualization attenuates the reward model's format effects by about 0.12 on both correct and buggy code, while the correct-versus-buggy margins move by less than 0.01. In observational NLI and QA settings, we freeze a held-out replication before scoring and re-evaluate it using labels from disjoint annotators; this supports only a narrower conclusion: better agreement with the construct labels on a pre-declared slice where a surface-only predictor errs, not a repaired score. Full-population agreement falls in every observational setting with a reported positive slice gain, and within-question ranking falls in every such QA setting. When construct and surface features are entangled, residualization can decorrelate a score while degrading construct alignment, and, in a controlled model, configurations just as damaging to construct alignment pass every pre-adjustment check, so no committed gate is a guarantee. We assemble these distinctions into a reporting protocol whose outcomes, refusal included, state what an adjusted score may be claimed to show: an audit-time diagnostic reported beside the construct-alignment cost it incurs, never a replacement for the raw score.",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "published": "2026-09-23T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2609.24194",
+      "pdf_url": "https://arxiv.org/pdf/2609.24194",
+      "is_author_match": false,
+      "relevance_score": 10.0,
+      "relevance_reason": "Directly targets LLM evaluation failure modes caused by superficial format effects, which is highly relevant to your interests in grading long rollouts and weaknesses of LM judges."
+    },
+    {
+      "arxiv_id": "2609.26489",
+      "title": "Calibration as a First-Class Criterion in LLM Evaluation",
+      "authors": [
+        "Mario Sanz-Guerrero",
+        "Katharina von der Wense"
+      ],
+      "abstract": "Calibration of language models -- the alignment between expressed or implicit confidence and empirical correctness -- is a well-studied subfield within NLP. Methods to measure it already exist. The problem is adoption: outside this subfield, NLP research regularly introduces new models, datasets, and benchmarks without checking whether the model's confidence scores are meaningful. We argue that this adoption gap is a major obstacle to trustworthy LLM evaluation. Miscalibration causes problems in two distinct areas: at deployment, where overconfident mistakes cause real harm, and inside the research pipeline, where methods like LLM-as-a-judge, synthetic data generation, and active learning rely on calibrated confidence without verifying it. Standard calibration metrics only require two inputs per example: a confidence score and a correctness judgment. Most benchmarks in use today already provide both, meaning calibration can be reported immediately. For open-ended generation, however, defining these two inputs is still an open challenge. We argue that each NLP subfield should pair its main performance metric with a calibration score and call for treating calibration as an essential property of every model rather than a niche topic.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-09-23T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2609.26489",
+      "pdf_url": "https://arxiv.org/pdf/2609.26489",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Highly relevant because calibration is central to evaluating whether models appropriately express uncertainty under noisy or surprising observations, matching the brainstorming around self-correction and robust evaluation."
+    },
+    {
+      "arxiv_id": "2609.26025",
+      "title": "MICRO: Multi-Fidelity Active Search for Severe Error Discovery",
+      "authors": [
+        "Orlando Leone",
+        "Niclas Pokel",
+        "Pehu\\'en Moure",
+        "Yingqiang Gao",
+        "Roman Boehringer"
+      ],
+      "abstract": "Human feedback can vary in cost and informativeness. Strong feedback can reveal severe errors but is costly, so cheaper quality ratings can help decide which items to annotate. We propose MICRO (Multi-Fidelity Impact Clustered Rollout), an active search framework that allocates a shared budget to these feedback types to maximise confirmed severe error discoveries. MICRO jointly models ratings and annotation losses conditional on item features to steer acquisition. It clusters acquisitions by their predicted impact on severity probabilities to select diverse candidates, then uses rollout to estimate their discovery value. Experiments on WMT20 English-German show that ratings improve both loss reconstruction and severity prediction. MICRO achieves the highest mean discovery count across four budget and rating cost settings, with similar performance to adapted MF-ENS in one and significant gains over all six comparison policies, including two rollout controls, in the other three $(p<.001)$.",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "published": "2026-09-23T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2609.26025",
+      "pdf_url": "https://arxiv.org/pdf/2609.26025",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Very relevant to better grading long rollouts because it studies budgeted use of weak and strong feedback to efficiently discover severe errors, directly matching scalable evaluation interests."
+    },
+    {
+      "arxiv_id": "2609.25337",
+      "title": "Clarification Is Not Correction: LLMs Fail to Let Go",
+      "authors": [
+        "Jianzhe Lin",
+        "Xiaolin Li",
+        "Fei Wang",
+        "Robert Douglas",
+        "Rajeshkumar Golani",
+        "Jubin Chheda"
+      ],
+      "abstract": "Dialogue failures in language models are usually framed as memory failures: context too long, summaries lossy, a constraint forgotten. We argue this misses a deeper problem: in many conversations the model does not forget, it commits too early. An ambiguous early turn collapses into a single hidden interpretation, and later clarification is filtered through that commitment. We call this early posterior collapse: unresolved user intent collapsing into a committed task state before ambiguity is resolved. We study it with controlled dialogue tasks in writing, planning, and coding using Gemini-2.5-Pro and Gemini-2.5-Flash. Across thousands of trials, the same information in different orders yields different outcomes, even when the final dialogue contains equivalent task-relevant information. This order effect suggests later clarification is treated as extra context rather than a corrective signal: it refines a stale task state without invalidating it. Coding tasks are especially vulnerable, suggesting early assumptions get embedded in structured artifacts such as interfaces and control flow. Standard prompting and memory strategies do not reliably help: summaries can collapse ambiguity, and chain-of-thought can reduce explicit wrong commitment in reasoning traces without improving final task success. These findings motivate uncertainty-preserving state management. If assistants cannot let go of early interpretations, robustness cannot rely on post hoc correction alone; it must keep ambiguous early turns from hardening into one task state. Assistants should hold tentative hypotheses while ambiguity remains, ask before executing when high-impact ambiguity persists, and rebuild from a revised state when later evidence invalidates an earlier reading. Rather than one prompting fix, we aim to redirect research for interactive LLMs from retaining more context toward preserving uncertainty.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-09-23T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2609.25337",
+      "pdf_url": "https://arxiv.org/pdf/2609.25337",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Very relevant to explicit self-correction and surprising-information evaluation because it studies cases where models fail to revise early commitments even after receiving corrective clarification."
+    },
+    {
+      "arxiv_id": "2609.25647",
+      "title": "Testing-Driven Reliability Audit of Trajectory-Based Early Outcome Prediction for LLM Agents: Target-Specific Calibration Transfer Persists Within a Single Benchmark",
+      "authors": [
+        "YanZe Cao"
+      ],
+      "abstract": "Predicting early outcomes based on trajectory can decrease the expenses associated with agent evaluation by terminating a run once the outcome becomes sufficiently predictable, assuming that the predictor's confidence is properly calibrated. Calibration is at risk when a predictor is applied to an agent on which it was never trained, but it is not known whether such transfer failures are broad across agent systems or concentrated in specific target agent/head combinations. Using public SWE-bench Verified trajectories and a frozen dual-head early-outcome prediction pipeline, we ran a leave-one-agent-out calibration audit, a shared-predictor leave-two-agents-out control, oracle prior correction, and a robustness battery over training cohorts, task resampling, task halves, jackknife, and thresholds. Fixed-scaffold TerminalBench analysis served as a pre-registered boundary test. Broad same-predictor pairwise heterogeneity was not supported; the median pairwise corrected-gap differences were 0.0180 (SUCCESS head, 45 pairs) and 0.0385 (FAILURE head, 35 pairs), and the pre-registered heterogeneity criterion was not met on either head. Two specific combinations, gpt-5-mini/SUCCESS and claude-opus-4.6/FAILURE, showed persistent calibration-transfer errors (median corrected gaps 0.1377 and 0.1107) without a sign reversal under any frozen control. TerminalBench did not establish cross-benchmark replication: the success target produced zero decisions (INDETERMINATE), and the failure target did not satisfy the pre-registered persistence criterion. Therefore, a strong target-specific calibration-transfer error can exist within one frozen environment, but the evidence does not establish that the error is intrinsic to the model or general across benchmarks.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-09-23T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2609.25647",
+      "pdf_url": "https://arxiv.org/pdf/2609.25647",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Highly relevant to grading long rollouts because it directly audits early outcome prediction from agent trajectories and studies calibration transfer for terminating or evaluating rollouts efficiently."
+    },
+    {
+      "arxiv_id": "2609.25804",
+      "title": "The Tasteful Agent: Measuring and Improving Taste in Long-Horizon Tasks",
+      "authors": [
+        "Wenbo Pan",
+        "Zhichao Liu",
+        "Shujie Liu",
+        "Jingying Zeng",
+        "Chin-Yew Lin",
+        "Xianfeng Tang",
+        "Yan Lu",
+        "Qi He",
+        "Xiaohua Jia"
+      ],
+      "abstract": "LLM agents increasingly work on long-horizon tasks, and the decisions they make along the way, such as which hypothesis to test or which implementation to build on, determine the outcome of the whole run. Making these decisions well is becoming a key capability for both engineering and research agents. We refer to the ability to make good long-horizon decisions as the taste of an agent. While existing benchmarks measure the end-to-end success of agents on long-horizon tasks, none of them measures the taste of an agent. To address this problem, we build Taste-Bench, a benchmark of taste questions constructed automatically from trajectories that agents produced in engineering and research tasks. Each question presents a decision fork, a point in a trajectory where multiple directions are available and one of them leads to a better outcome, and the evaluated model chooses among these directions without seeing what happens after the fork. We mine these forks automatically from parallel attempts at the same task and from detours inside a single trajectory, without needing human annotation. We evaluate frontier models on Taste-Bench and find that the best model answers only 59.7% of the questions correctly. We further find that forks whose deciding evidence appears later in the trajectory are much harder for every model, and that a larger reasoning budget does not improve the accuracy. Finally, we show that taste can be trained. We distill the judgment of a teacher that has seen the outcome into a student model, and the student makes better decisions on unseen tasks and improves end-to-end success on held-out SWE-bench Pro tasks.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-09-23T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2609.25804",
+      "pdf_url": "https://arxiv.org/pdf/2609.25804",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Directly targets long-horizon agent decision quality ('taste'), which is highly aligned with your interest in long-horizon scientific tasks and choosing good hypotheses or actions over extended rollouts."
+    },
+    {
+      "arxiv_id": "2609.26293",
+      "title": "Dual-Frontier: When Can an Agent Trust Its World Model?",
+      "authors": [
+        "Huatai Zhu",
+        "Qiang Chen",
+        "Ziqian Kou",
+        "Wenhao Li",
+        "Fei Wang",
+        "Yichao Cao",
+        "Xiu Su",
+        "Yi Chen"
+      ],
+      "abstract": "Learned world models are becoming essential to general-purpose agents: by predicting action consequences, they support planning and decision-making while reducing reliance on costly trial and error. This reliance creates a fundamental ambiguity: when a world-model-guided decision fails, the trajectory alone may not reveal whether the agent's decision rule or the world model caused the loss. We formalize this failure-attribution problem as a counterfactual decomposition of return loss and prove that its components are not identifiable from passive interaction, even for finite-horizon planners. This obstruction motivates Dual-Frontier, a learning principle that admits a world-model-guided decision only when its predicted advantage exceeds a certified bound on decision-relevant world-model error; otherwise, evidence is allocated to world-model verification. Action-conditioned value bounds and a closed-loop extension guarantee non-decreasing return for admitted decisions. Calibrated gates and simultaneous confidence sequences support adaptive evidence reuse, with sufficient and necessary verification bounds. Controlled learned-model experiments validate the predicted failure modes and certification behavior, while cross-backbone tool-use benchmarks instantiate the same verify-then-promote rule in realistic agent world-model pipelines, consistently improving decision quality and reliability.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-09-23T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2609.26293",
+      "pdf_url": "https://arxiv.org/pdf/2609.26293",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Directly relevant to long-horizon scientific-task agents and noisy-observation/self-correction interests because it analyzes when an agent can trust its world model and how to disentangle model error from decision error."
+    },
+    {
+      "arxiv_id": "2609.26550",
+      "title": "JEV-as-a-Judge: Accept When Confident, Escalate When Unsure",
+      "authors": [
+        "Yubo Li",
+        "Yidi Miao",
+        "Ramayya Krishnan",
+        "Rema Padman"
+      ],
+      "abstract": "LLM-as-a-judge enables evaluation across diverse tasks, but inference cost and confidence reliability become critical at scale. We study whether a decision-only judge can provide an economical first pass and identify when stronger evaluation is needed. Comparing jev-as-a-judge with sixteen generative and reward-model judges, with blinded human adjudication, we find it within three percentage points of a state-of-the-art LLM judge, our strongest comparator, on ordinary preference and evidence-grounded factuality at 0.36% of the comparator's fee. Larger gaps arise when judgments require checking a derivation or resisting an elaborately written wrong answer. On several benchmarks, JEV's gap to this comparator is concentrated in low-confidence decisions. A frozen cascade that accepts confident verdicts and escalates uncertain ones retains 99% of the comparator's accuracy at lower cost.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-09-23T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2609.26550",
+      "pdf_url": "https://arxiv.org/pdf/2609.26550",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Very relevant to Hunter/Shuchao interests in grading and LM-judge weaknesses because it explicitly studies judge confidence, escalation policies, and cost-quality tradeoffs in model-based evaluation."
+    },
+    {
+      "arxiv_id": "2609.25623",
+      "title": "What Should a Self-Teacher See? Privileged Context Design for On-Policy Self-Distillation",
+      "authors": [
+        "Kanghui Tian",
+        "Siyuan Liu",
+        "Tianxiang Jiang",
+        "Shuai Dong",
+        "Yizhuo Li",
+        "Tian Ding",
+        "Yuan Guo",
+        "Songze Li",
+        "Haowen Hou",
+        "Congcong Wang",
+        "Yi Wang"
+      ],
+      "abstract": "More privileged information does not always make a better teacher. We study this tension in on-policy self-distillation (OPSD), where a frozen copy of the base model scores the student's own rollouts under privileged context, conventionally a complete reference solution that bundles the final answer with one particular reasoning path. Holding the student view and training fixed within each scale, we compare that default against three abstractions compiled offline, a named strategy, a method-independent framing, and a problem category, and against an answer-only control that keeps the destination but removes the path. In the primary runs on competition mathematics, the best intermediate contexts improve the in-domain peak mean over the full solution by 1.4 points at 4B and 1.6 at 8B, while storing an order of magnitude fewer hint tokens. Comparisons across three seeds also show positive mean gains for the framing and category contexts at both scales. Answer-only conditioning remains competitive in the primary runs, within 0.2 points of the full solution at these scales. The preferred context varies with student scale and task. Initial teacher-student KL does not order downstream performance. What a self-teacher should see is therefore not everything it could, but the level of abstraction its student can still act on.",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-09-23T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2609.25623",
+      "pdf_url": "https://arxiv.org/pdf/2609.25623",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Directly relevant to Hunter prep because it studies on-policy self-distillation and the design of privileged teacher context, closely matching your interest in scale-up feedback and on-policy distillation."
+    },
+    {
+      "arxiv_id": "2609.25773",
+      "title": "Video-HopChain: Multi-Hop Questions and Confidence-Gated Exploration for Video Reasoning Models",
+      "authors": [
+        "Trung Nguyen Quang",
+        "Yuhao Dong",
+        "Shuo Sun",
+        "Shuai Liu",
+        "Shulin Tian",
+        "Kim-Hui Yap",
+        "Ziwei Liu"
+      ],
+      "abstract": "HopChain has shown on still images that multi-hop data synthesis improves vision-language reasoning, because long chain-of-thought reasoning exposes errors that compound across steps, while most data used for reinforcement learning with verifiable rewards (RLVR) rarely demands a chain of visual evidence, so these weaknesses are likely to stay unexposed. We observe the same problem in video, where this framework has not yet been explored. We therefore build Video-HopChain, a dataset of 22,550 multi-hop video questions over 13,378 videos, together with a held-out benchmark of 1,000 questions. Each question chains three to six yes/no questions about moments in one video, and each yields one of two integers depending on its answer. The final answer is the sum of these integers, so an exact match on that sum gives the verifiable reward that RLVR needs. We first train Qwen3-VL-8B with GRPO on a standard video dataset, and a second stage on Video-HopChain then raises the mean over eight video understanding and reasoning benchmarks from 55.4 to 57.9 and improves every one of them. Training on such a dataset, however, exposes a known limitation of GRPO: its learning signal comes from the reward variance within a group, so hard questions whose rollouts are all incorrect and easy questions whose rollouts are all correct both leave the group with no gradient. To recover these groups at the same compute budget, we introduce Confidence-Gated Exploration (CGE). With 8 rollouts per question, CGE samples the first 4 as usual. If these 4 are either all correct or all incorrect, it samples the last 4 with the policy's most confident token masked inside the reasoning span, and removes the masked positions from the loss while all 8 rollouts enter the advantage. With CGE, the mean rises further to 59.3. We release the dataset, the checkpoint, and the data generation and training code.",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "published": "2026-09-23T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2609.25773",
+      "pdf_url": "https://arxiv.org/pdf/2609.25773",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Highly relevant because it studies multi-hop video reasoning, confidence-gated exploration, and RLVR-style supervision for long chains of visual evidence, closely matching interests in long-horizon tasks and evaluating error accumulation/self-correction over long rollouts."
+    },
+    {
+      "arxiv_id": "2609.25891",
+      "title": "BAS-OPD: Budget-Aware Selective On-Policy Self-Distillation for Fine-Grained Multimodal Perception",
+      "authors": [
+        "Zihan Chen",
+        "Hengguang Zhou",
+        "Yuan Kang",
+        "Yiming Zhang",
+        "Wenhui Fang",
+        "Zenghui Ding",
+        "Yining Sun",
+        "Cho-Jui Hsieh"
+      ],
+      "abstract": "Multimodal large language models (MLLMs) often struggle with fine-grained visual perception when processing complete images, as critical evidence may only appear in local regions. On-policy self-distillation (OPD) enables transferring privileged visual knowledge from informative views to full-image policies, but querying the teacher for every rollout introduces substantial supervision costs. In this work, we propose BAS-OPD, a budget-aware selective OPD framework that allocates teacher supervision under limited query budgets. Instead of querying all rollouts, BAS-OPD selects informative samples while maintaining full-batch student generation. We explore random, uncertainty-based, and learned utility-based selection strategies, where the learned selector estimates query value from detached rollout statistics and online utility signals derived from student--teacher agreement and teacher confidence without additional student forward passes. BAS-OPD only changes training-time supervision allocation and preserves single-pass full-image inference. Experiments on fine-grained multimodal perception benchmarks demonstrate that BAS-OPD achieves strong performance while substantially reducing teacher supervision costs, highlighting the effectiveness of selective OPD under constrained budgets.",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "published": "2026-09-23T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2609.25891",
+      "pdf_url": "https://arxiv.org/pdf/2609.25891",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Directly relevant to the Hunter Prep topic because it focuses on budget-aware selective on-policy self-distillation, which is very close to scaling feedback and on-policy distillation under supervision-cost constraints."
+    },
+    {
+      "arxiv_id": "2609.26708",
+      "title": "Train Where the Quantized Model Goes: On-Policy Distillation for Low-Bit Reasoning",
+      "authors": [
+        "Yuanteng Chen",
+        "Zhilei Liu",
+        "Peisong Wang",
+        "Yuantian Shao",
+        "Chuangyi Li",
+        "Weining Wang",
+        "Shuang Qiu",
+        "Gang Li",
+        "Jing Liu",
+        "Jian Cheng"
+      ],
+      "abstract": "Quantization-aware distillation (QAD) restores much of the short-form question-answering performance lost to sub-3-bit quantization, yet leaves mathematical and code reasoning substantially impaired. Long generations often degenerate into repetitive loops, exhausting the decoding budget without completing a solution. We trace this gap to quantization-amplified exposure bias: QAD trains on fixed corpus prefixes, while quantization-induced deviations compound along the model's own autoregressive trajectories. To address this mismatch, we introduce an on-policy distillation (OPD) stage that places teacher supervision where the quantized model actually goes. Starting from a QAD checkpoint, the student generates through the quantized forward path used at deployment and receives feedback from a frozen full-precision teacher on its own prefixes, combining dense token-level guidance with task-verifier rewards. Across four models at 2.79 and 1.88 effective bits, OPD raises average BF16 performance retention from 35% to 70% on MATH-500 and from 66% to 91% on HumanEval while preserving short-form performance, with reasoning gains substantially exceeding those of continued teacher-forced QAD in matched-budget comparisons. By coupling QAD's stable low-bit initialization with OPD's on-policy reasoning recovery, our framework provides a comprehensive sub-3-bit solution that preserves broad capabilities while restoring long-form reasoning.",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-09-23T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2609.26708",
+      "pdf_url": "https://arxiv.org/pdf/2609.26708",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Highly relevant to Hunter Prep because it directly studies on-policy distillation, exposure bias, and long-horizon reasoning failures in quantized models, closely matching the project's interest in scaling feedback and on-policy distillation."
+    },
+    {
+      "arxiv_id": "2609.26216",
+      "title": "Beyond Imitation: Auditing the Recoverability of Reasoning in Distilled Models",
+      "authors": [
+        "Ruitong Li",
+        "Binjie Guo",
+        "Aisheng Mo",
+        "Guowei Su",
+        "Han Wang",
+        "Jie Li",
+        "Ru Zhang"
+      ],
+      "abstract": "A correct teacher solution becomes useful supervision when the receiving student can continue its reasoning. We measure this compatibility with prefix recovery: after revealing 25%, 50%, or 75% of a verified solution, we test whether the student completes it correctly. We connect recovery to the cosine conflict between cross-entropy and reverse-KL gradients over the full vocabulary. Across adjacent Qwen3 teacher-student pairs from 0.6B to 8B parameters, reverse-KL distillation delivers its most consistent mathematical and code improvements for the two students below 2B parameters. On a fixed cohort of 1,000 trajectories, average prefix recovery rises from 71.0% to 91.9% as student size increases from 0.6B to 4B, and the robust-fragile recovery gap contracts from 46.0 to 14.4 percentage points. With the teacher fixed at 8B, conflict separation falls from 0.993 to 0.233. An independent objective intervention finds the largest reverse-KL rescue on fragile trajectories. The three measurements locate the same capacity-dependent transfer regime: distribution matching has the greatest headroom when correct traces remain unevenly recoverable. Prefix recovery provides a practical diagnostic for selecting costly distribution-level distillation.",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-09-23T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2609.26216",
+      "pdf_url": "https://arxiv.org/pdf/2609.26216",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "This is very relevant because it audits whether distilled models can actually continue reasoning from partial solutions, which speaks directly to on-policy distillation, reasoning supervision quality, and grading process fidelity."
+    },
+    {
+      "arxiv_id": "2609.26707",
+      "title": "Optimal Sequential Annotations for Off-Policy Evaluation",
+      "authors": [
+        "Woojin Chae",
+        "Ezinne Nwankwo",
+        "Haitong Qin",
+        "Angela Zhou"
+      ],
+      "abstract": "Offline reinforcement learning and off-policy evaluation evaluates dynamic treatment rules based on retrospectively collected data prior to deployment. In recent AI applications, state and reward information is recorded as complex text or image, which recent AI advancements such as LLM-as-a-judge can label with unknown bias. Expert annotation may be available but at a higher cost. For example, safety classification via cheap but imperfect classifiers vs. expensive expert review. We show how a limited budget for ground-truth data-annotation can be used via doubly-robust OPE with missing rewards, and we optimize variance-optimal annotation probabilities for sequential off-policy evaluation, where the target policy value is estimated from annotated data. We characterize the optimal annotation probabilities for sequential forward-monotone annotation protocols, and provide a feasible batch-adaptive implementation. Our work is motivated by a collaboration with a homelessness services nonprofit that writes casenotes for individuals over time. Our method can be used to unlock trustworthy inference from casenote data and answer new inferential questions such as: how does expanding outreach effort over time affect progress towards a housing application and improvement in housing placement? In simulations and on two real datasets - casenotes from the nonprofit and human-preference votes from LMArena - we see reductions in RMSE of 34-65% for housing placement and 17-68% for progress towards a housing application at budgets of 40% of full annotation and above, and by 55-62% at every budget on LMArena.",
+      "categories": [
+        "stat.ME",
+        "cs.LG",
+        "stat.ML"
+      ],
+      "published": "2026-09-23T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2609.26707",
+      "pdf_url": "https://arxiv.org/pdf/2609.26707",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Highly relevant because it studies optimal expert annotation under biased AI labels for off-policy evaluation, directly matching your interests in LM-judge weaknesses, scalable feedback, and grading trajectories."
+    },
+    {
+      "arxiv_id": "2609.25046",
+      "title": "Peerify: Benchmarking Peer-Review Claim Verification",
+      "authors": [
+        "Alireza Daghighfarsoodeh",
+        "Sajad Ebrahimi",
+        "Ali Ghorbanpour",
+        "Soroush Sadeghian",
+        "Radin Cheraghi",
+        "Negar Arabzadeh",
+        "Ebrahim Bagheri"
+      ],
+      "abstract": "Peer review plays a central role in scholarly publishing, yet verifying whether reviewer claims are supported by manuscript evidence remains a largely manual and time-consuming process. We present Peerify, a pipeline for manuscript-grounded verification of peer-review claims. Given a manuscript and a review comment, the Peerify pipeline decomposes reviews into atomic claims, retrieves relevant manuscript evidence, and determines whether each claim is supported by the paper. To support the development and evaluation of the pipeline, we construct a benchmark of 800 claims derived from authentic peer-review interactions collected from NeurIPS 2024 and ICLR 2024, including a 300-claim hand-labeled subset used to audit the automated supervision. We evaluate state-of-the-art language models and retrieval strategies within the Peerify pipeline, together with entailment baselines. Our results demonstrate the importance of retrieval-centered verification and claim decomposition, while highlighting the challenges posed by ambiguous and interpretive reviewer claims. Automated labels agree with human consensus on 90.3% of audited claims ($\\kappa = 0.87$), while off-the-shelf entailment models stay below 0.24 macro-F1.",
+      "categories": [
+        "cs.CL",
+        "cs.DL"
+      ],
+      "published": "2026-09-23T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2609.25046",
+      "pdf_url": "https://arxiv.org/pdf/2609.25046",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Directly relevant to your grading interests because it operationalizes manuscript-grounded verification of review claims, which is closely aligned with better evaluation and judge-style checking of long outputs."
+    },
+    {
+      "arxiv_id": "2609.26035",
+      "title": "Truth for Believable AI: Expressed Doubt, Provenance, and Belief Revision as an Engineerable Stance",
+      "authors": [
+        "Sebastian Cochinescu"
+      ],
+      "abstract": "Conversational agents often express answers in a uniformly confident register. We test whether expressed uncertainty, provenance-aware assertion, and explicit belief revision can be implemented as a behavior layer over a fixed language model; we do not test believability or trust. The layer combines three epistemic states, per-claim confidence and typed provenance, a provenance-gated expression rule, and a persistent revision store with auditable acknowledgments and partial resistance to false corrections. We evaluate it on a constructed, mechanically scored multi-session benchmark using a synthetic model and Qwen2.5-0.5B-Instruct. The synthetic instrument passes all five checks. On the real model, acknowledgment soundness, a by-construction guarantee, holds in 100% of cases, and true corrections are accepted more often than false ones (0.44 vs. 0.15 on held beliefs; 0.875 vs. 0.420 including rule-accepted corrections of unheld facts), but the pre-specified expression-fidelity, contradiction-separation, and provenance margins fail. A disclosed post hoc analysis shows that expression gated on mean answer-token probability ranks correctness below chance end to end (AUC 0.41, conversation-clustered), whereas gating on sampling consistency discriminates (AUC 0.66). A consistency-gated configuration selected from this finding and evaluated under a separately committed protocol meets the conversation-level manipulation and capability-equivalence criteria and replicates on a redrawn conversation set. The manipulation result is selection-dependent, and both criteria remain unresolved when uncertainty is clustered over the 60 facts. The supported conclusions are limited to the by-construction audit guarantee, store-dependent partial correction discrimination, and a benchmark- and model-specific failure of token-probability gating; scaling the fact base is required before human evaluation.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-09-23T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2609.26035",
+      "pdf_url": "https://arxiv.org/pdf/2609.26035",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "It is highly relevant to your brainstorming on surprising information and explicit self-correction because it focuses on expressed doubt, provenance, and belief revision as controllable model behaviors."
+    },
+    {
+      "arxiv_id": "2609.26693",
+      "title": "Measuring the Serving Stack Instead of the Model: Hidden Confounds in Local Tool-Use Evaluation",
+      "authors": [
+        "Lijuan Tang",
+        "Yuemeng Zheng"
+      ],
+      "abstract": "A coding agent must emit a valid tool call--a parseable invocation of a tool in the provided schema--before the harness can execute its chosen action. We study how local serving stacks affect this protocol step and show that measured outcomes can depend on the serving layer rather than model behavior alone. In Ollama, the default tools= request is gated per model by a static template flag: some models are accepted and return calls as text, some return native tool_calls, while Phi-3 and Gemma-3 are rejected before inference. In our harness, rejection and retry exhaustion are not preserved as structured failure metadata, so downstream analysis can misclassify them as model non-calls and naively report 0% fidelity. Adding a text tool list while retaining the native channel recovers much of the measured fidelity for accepted models, whereas a uniform text protocol reduces fidelity for Llama-3.2, which has native tool-call support. Cross-stack probes on Ollama, llama.cpp, vLLM, and SGLang show different handling of the same request. Constrained decoding removes parse failures but can induce non-termination, and turn-pooled versus per-instance estimates differ by up to about 55 points. We conclude with a checklist for treating serving behavior as part of the evaluation protocol.",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.SE"
+      ],
+      "published": "2026-09-23T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2609.26693",
+      "pdf_url": "https://arxiv.org/pdf/2609.26693",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Directly relevant to agent evaluation methodology since it shows how tool-use results can be confounded by the serving stack rather than the model, which matters for reliable grading of long-horizon rollouts."
+    },
+    {
+      "arxiv_id": "2609.26704",
+      "title": "Beyond Repeated Sampling: Learning Search Policies for LLM Reasoning",
+      "authors": [
+        "Ismail Labiad",
+        "Matthieu Kowalski",
+        "Marc Schoenauer",
+        "R\\'emi Munos",
+        "Julia Kempe"
+      ],
+      "abstract": "Large language models increasingly tackle hard reasoning problems by spending more test-time compute, yet the dominant strategy remains naive repeated sampling: draw many independent solutions and hope one is correct. Because such sampling explores only through local decoding noise, it tends to produce many near duplicate attempts rather than genuinely different ideas. We ask whether exploration can instead be steered at a semantic level, by first sampling problem specific concepts, hints, or strategies and then conditioning answer generation on them. We refine this into a simple, more exploratory procedure that emits many diverse concepts in a single trajectory, and evaluate it on hard problems where repeated sampling struggles. We then go a step further and make concept generation trainable: a small concept generator is optimized with reinforcement learning so that its concepts maximize the downstream success of a larger, frozen answer generator. On hard mathematical reasoning problems, the trained concept generator substantially improves the answer generator's pass@k over naive repeated sampling at the same answer generation allocation, surpasses concepts drawn from much larger untuned models, and transfers to answer generators it was never trained against, including a model from a different family. A small model can thus be trained into an effective, reusable search policy for a much larger one.",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-09-23T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2609.26704",
+      "pdf_url": "https://arxiv.org/pdf/2609.26704",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Relevant to long-horizon reasoning and search because it studies learned search policies beyond repeated sampling, which connects to harder scientific tasks and test-time exploration."
+    }
+  ]
+}
