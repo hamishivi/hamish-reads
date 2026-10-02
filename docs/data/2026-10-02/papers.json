@@ -1,0 +1,868 @@
+{
+  "date": "2026-10-02",
+  "generated_at": "2026-10-02T05:59:34.571796+00:00",
+  "author_papers": [
+    {
+      "arxiv_id": "2610.00492",
+      "title": "EurekaBench: Measuring Agentic Ability to Discover New Scientific Insights",
+      "authors": [
+        "Jiayi Geng",
+        "Zhengxuan Wu",
+        "Kevin S. Chen",
+        "Seungone Kim",
+        "Joseph Janssen",
+        "Zora Zhiruo Wang",
+        "Bhupalee Kalita",
+        "Runtian Gao",
+        "Aaron Ho",
+        "Andrew Oakleigh Nelson",
+        "Olexandr Isayev",
+        "Francisco Villaescusa-Navarro",
+        "Ching-Yao Lai",
+        "Howard Chen",
+        "Graham Neubig"
+      ],
+      "abstract": "When Isaac Newton discovered the law of gravitation, he did so through an iterative process of analyzing observed data such as planetary patterns, finding the underlying mechanisms by describing patterns in mathematical equations, and refining his theory against the Moon's orbit, revealing the startling insight that the same force governs both falling apples and orbiting planets. Would it be possible for AI agents to make similar discoveries? To measure this ability, we introduce EurekaBench, a cross-domain benchmark that tests AI agents' ability to conduct long-horizon experiments and discover mechanisms that explain observations. We evaluate these mechanisms by the scientific insights that can be derived from them. EurekaBench contains an expert-verified set of 26 long-horizon tasks across neuroscience, computer science, chemistry, astrophysics, geophysics, and plasma physics, with a total of 306 scientific insights that the discovered mechanisms are expected to support. Our evaluation framework tests three axes of scientific discovery: agents' ability to follow known scientific constraints, the predictive accuracy of the discovered mechanisms, and whether these mechanisms yield scientific insights or inform future research. Our results show that current AI agents often overly fixate on predictive accuracy optimization, surpassing human scientists, while falling substantially short in deriving scientific insights.",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-10-02T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.00492",
+      "pdf_url": "https://arxiv.org/pdf/2610.00492",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2610.00724",
+      "title": "Reason in Style: Discovering and Controlling Style in Language Models",
+      "authors": [
+        "Ioana Marinescu",
+        "Eric Karl Oermann",
+        "Kyunghyun Cho"
+      ],
+      "abstract": "Language models learn content and style jointly, making stylistic variation in their outputs difficult to identify and control. We study whether recurring styles in model responses can be discovered without supervision and explicitly controlled. We design an algorithm that learns to separate representations of content and style from language models' outputs and validate its effectiveness on math questions in a controlled setting. By applying this method to over 100K verified traces from nine distinct teacher models, we discover six recurring yet imbalanced styles. We then fine-tune smaller student models to follow these styles when explicitly conditioned on them, using importance weighting to balance the contribution of the styles represented in the corpus. This approach improves Pass@$k$ over standard fine-tuning on the same data across six math reasoning benchmarks, demonstrating that we can diversify the style of answers effectively. We confirm that this also results in strong correspondence between requested and realized styles. We find that style affects correctness: the probability of solving a problem depends on the style we condition on, and different problems benefit from different styles. In summary, our results show that stylistic variation in model-generated data can be discovered in an unsupervised way, and made explicit, providing a source of both control and improved reasoning performance.",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "published": "2026-10-02T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.00724",
+      "pdf_url": "https://arxiv.org/pdf/2610.00724",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2610.01161",
+      "title": "My FAULT: Self-Diagnosis as Credit Assignment in Self-Evolving Agentic Reinforcement Learning",
+      "authors": [
+        "Yihua Zhu",
+        "Qianying Liu",
+        "Weixu Qiao",
+        "Xuan Ren",
+        "Weiwei Xu",
+        "Wenbo Li",
+        "Wei Wang",
+        "Ruijia Chen",
+        "Xinmiao Luan",
+        "Yin Luo",
+        "Hao Huang",
+        "Xiang Zheng",
+        "Hidetoshi Shimodaira"
+      ],
+      "abstract": "Agentic reinforcement learning (RL) has emerged as a powerful approach for training large language model agents on multi-step tasks, yet reliance on terminal outcome rewards creates two credit-assignment problems, particularly in long-horizon tasks. First, same-outcome rollout groups provide no learning signal from terminal rewards. Second, terminal rewards provide only trajectory-wide feedback, making it difficult to identify which decisions caused a failure. Recent work supplements terminal rewards with finer-grained information from trajectory analysis, such as natural-language reflections on intermediate decisions and errors. However, natural-language diagnoses are difficult to use directly for credit assignment: their error claims may be unreliable, and they do not quantify how much each error should affect learning. We propose Self-Diagnosis-guided Terminal Credit Redistribution (FAULT), which turns diagnosed errors into explicit step-level credit anchored by terminal outcomes. FAULT checks diagnostic evidence and learns relative error costs from task outcomes. During training, the policy and self-diagnoser co-evolve, while error costs are updated online from recent outcomes. On ALFWorld, FAULT recovers learning signals from same-outcome groups, reaching 95% signal coverage versus 41% for GRPO and 72% for GiGPO, while better localizing credit to specific error steps. Across two model scales, FAULT delivers strong. improvements on the long-horizon ALFWorld and WebShop tasks while remaining competitive on short-horizon Search-based QA.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-10-02T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.01161",
+      "pdf_url": "https://arxiv.org/pdf/2610.01161",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2610.00707",
+      "title": "Initialization Improves LLM-Driven Discovery",
+      "authors": [
+        "Mansi Sakarvadia",
+        "Marco Ciccone",
+        "Colin Raffel"
+      ],
+      "abstract": "Large Language Models (LLMs) have been used for novel discovery of algorithms, theorems, drugs, and other tasks through the use of harnesses that prompt an LLM to iteratively optimize an objective. In this work, we study the relationship between the population of previous iterates and eventual discovery success. We generalize past work on harness design to develop a suite of 12 harnesses called 'Modular' and characterize their performance across 5 diverse discovery tasks, finding that discovery success is brittle and sensitive to harness design. We uncover mode collapse, characterized by a dramatic drop in the diversity of iterates, as a common failure mode. We find that popular state-of-the-art harnesses and diversity-inducing harness interventions, which aim to prolong this collapse, yield inconsistent gains. Our results instead uncover that the performance of early discoveries is predictive of eventual success. We therefore propose a universally applicable intervention that performs an initial stage of parallel exploration in order to initialize subsequent iterative optimization. Our method provides consistent gains across many harnesses and target applications, confirming the importance of initialization in LLM-driven discovery.",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-10-02T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.00707",
+      "pdf_url": "https://arxiv.org/pdf/2610.00707",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2610.01382",
+      "title": "Gacha Decoding: Eliciting Diverse Generations Through Instruction Following",
+      "authors": [
+        "Scott Geng",
+        "Yufei Zhang",
+        "Joseph Lee",
+        "Jerry Li",
+        "Marjan Ghazvininejad",
+        "Pang Wei Koh"
+      ],
+      "abstract": "We introduce Gacha Decoding, an inference-time method for eliciting diverse language model generations that scales with model capability. Across open-ended domains (in-the-wild chat, creative writing, planning for image generation, and protein design), Gacha Decoding significantly outperforms existing generation diversity approaches at equal quality (up to 2.4x Vendi over the next-best prior approach), reaching the same number of high-quality modes with over an order of magnitude fewer samples (11.0x) and discovering novel modes that no other approach surfaces. Our key insight is to treat diversity as an instruction-following problem: rather than relying on the LM's token entropy, we combine its instruction-following capability with randomness from an external RNG tool to scalably identify and realize distinct modes of the response space. This approach of \"planning with dice\" enables Gacha to invert the long-observed tension between diversity and model capability. As the underlying LM becomes a better instruction follower, diversity under Gacha Decoding consistently improves--even as its token entropy and diversity under prior approaches decline. Together, our results highlight that instruction following, rather than token entropy alone, can drive generation diversity.",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-10-02T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.01382",
+      "pdf_url": "https://arxiv.org/pdf/2610.01382",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2610.02202",
+      "title": "ScholarCatalyst: A Benchmark for Retrieving Papers That Inspire New Research",
+      "authors": [
+        "Sohyeon Kim",
+        "Yoonho Lee",
+        "Bo Liu",
+        "Dayoon Ko",
+        "Rulin Shao",
+        "Seungone Kim",
+        "Graham Neubig",
+        "Pang Wei Koh",
+        "Aakanksha Chowdhery",
+        "Akari Asai",
+        "Omar Khattab",
+        "Yejin Choi",
+        "Gunhee Kim",
+        "Chelsea Finn"
+      ],
+      "abstract": "What makes great scientists great? Even as AI systems start to make progress on open problems, scientists remain far ahead of them at sensing which prior idea, buried in an ever-growing archive of research, a new problem needs. To study this skill, we draw on researchers who know firsthand which earlier work advanced their completed projects, with papers serving as pointers to the ideas within. Using our automated pipeline that makes author annotation scalable, we build ScholarCatalyst by having 184 lead authors of 207 recent computer science papers label which candidates did or could have advanced their project, each with a detailed rationale. We introduce a retrieval task with author-provided judgments: given an initial research question, retrieve these papers from only the literature available when the project began. Agentic search does no better than embedding retrieval (0.42 vs. 0.48 Recall@20) despite calling that same retriever as a tool. Even an agent built on Claude Fable 5.1, which may have seen the completed papers during training, reaches only 0.51 R@20. These results highlight the need for new training recipes that equip models with expert intuition for searching broad corpora. We envision ScholarCatalyst as a step toward scientific agents that can take a half-formed idea and point to the prior research it needs.",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.IR"
+      ],
+      "published": "2026-10-02T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.02202",
+      "pdf_url": "https://arxiv.org/pdf/2610.02202",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2610.00651",
+      "title": "Agent Evaluation Reliability: More Tasks Won't (Always) Fix An Agent Leaderboard",
+      "authors": [
+        "Michael Hardy",
+        "Ruhana Azam",
+        "Anka Reuel",
+        "Mykel Kochenderfer",
+        "Sanmi Koyejo"
+      ],
+      "abstract": "Agent evaluations are increasingly used to compare LLMs and inform deployment decisions, yet ranks can reflect not only the model but also the effects of the evaluation conditions such as the scaffolds or tasks. This makes reliability claim-dependent: an evaluation that reliably ranks deployed systems may not reliably rank underlying models. We ask which conclusions current agent evaluations reliably support and what additional evaluation would improve them. We develop a Bayesian variance-decomposition framework for sparse, imbalanced agent leaderboards and apply it to 22 benchmarks from the Holistic Agent Leaderboard and Harbor Index. The framework separates signal, performance differences relevant to the intended claim, from noise, irrelevant variation that can still change rankings. We find: (1) Reliability depends on the measurement goal. Fixed model-scaffold systems are ranked reliably (0.935-0.994), while underlying-model reliability is substantially lower (0.148-0.841). (2) Scaffold choice can change conclusions. Inter-scaffold reliability measures whether scaffolds preserve model rankings, showing that scaffold effects vary substantially across evaluations. (3) More tasks cannot resolve all uncertainty. Even infinitely many similarly constructed tasks improve model-ranking reliability of a benchmark by at most 0.097 when uncertainty is dominated by limited scaffold coverage. (4) Pooling diverse benchmarks can improve cross-task rankings at lower cost. For rankings across diverse agentic tasks, pooling benchmarks raises projected reliability from 0.44 to 0.75 at the same task budget and can reduce projected cost by up to 83\\%. Evaluation design should follow the intended claim: identify what a score or ranking should mean, diagnose what limits its reliability, and spend evaluation budget on the sources of uncertainty that matter.",
+      "categories": [
+        "cs.AI",
+        "cs.LG",
+        "stat.AP"
+      ],
+      "published": "2026-10-02T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.00651",
+      "pdf_url": "https://arxiv.org/pdf/2610.00651",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2610.01124",
+      "title": "CortexBridge: Cortical Alignment of EEG Montages for Foundation Models",
+      "authors": [
+        "Jiazhen Hong",
+        "Xiaotian Zhou",
+        "Zihao Ding",
+        "Kailong Wang",
+        "Yu Wu"
+      ],
+      "abstract": "Electroencephalography (EEG) foundation models are often pretrained with a fixed channel vocabulary or a limited set of montages, making transfer difficult when electrode layouts change. We propose CortexBridge, a lightweight adapter that combines EEG features with electrode and atlas coordinates to map arbitrary montages into a shared cortical latent space. Evaluated with three frozen foundation models on five brain-computer interface (BCI) datasets from the Mother of All BCI Benchmarks (MOABB), CortexBridge improves performance in 13 of 15 evaluations. The gains in balanced accuracy average 0.80% for EEGPT, 0.70% for LaBraM, and 3.26% for CBraMod, with a maximum gain of 13.02% on 12-class steady-state visual evoked potential (SSVEP) classification. Visualizations of the learned atlas representations reveal task-dependent spatial patterns, with SSVEP showing a more concentrated representation in the Yeo Visual network than auditory P300. These results establish cortical alignment as a learnable and anatomically grounded routing mechanism from heterogeneous EEG montages to pretrained foundation models.",
+      "categories": [
+        "cs.AI",
+        "eess.SP"
+      ],
+      "published": "2026-10-02T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.01124",
+      "pdf_url": "https://arxiv.org/pdf/2610.01124",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2610.02048",
+      "title": "HydroJEV: A one-second, training-free screen for cyber-attack and fault attribution in water distribution networks",
+      "authors": [
+        "Tianwei Mu",
+        "Shengyan Jiang",
+        "Mingzhe Yuan",
+        "Qing Luo",
+        "Min Xiao",
+        "Wenhong Wang",
+        "Jun Li",
+        "Manhong Huang"
+      ],
+      "abstract": "When a SCADA alarm is raised in a water distribution network, operators must decide quickly whether it reflects a cyberattack, a physical fault, a normal transient or a faulty sensor. Supervised classifiers need labelled incidents that utilities rarely have, and frontier large language models (LLMs) take tens of seconds per decision. We tested whether Jev, a training-free model that returns class probabilities in about one second, can serve as the first tier of this triage. On a four-class cause-attribution benchmark built on the C-Town network in EPANET, Jev was compared with a hand-written rule tree, a supervised classifier and seven cloud LLMs on identical evidence in four sealed, pre-registered rounds. With only a label-free prior correction, Jev matched the rule tree (macro-F1 0.62-0.64 against 0.56-0.61 in distribution) and exceeded the supervised classifier by 0.36-0.42 on event subtypes absent from its labels, in all four rounds, and it outperformed the classifier whenever fewer than about four labelled events per class were available. Jev also decided 20-40 times faster than frontier LLMs. Accepting only benign Jev verdicts confirmed by the rule tree spared an LLM reviewer 35-38% of windows on fresh sealed sets without loss of macro-F1. Transferred unchanged to two further networks, this gated cascade stayed within the non-inferiority margin of its reviewer on all four sets. A fast, training-free screen can therefore take over about a third of the review load in SCADA anomaly triage while preserving the accuracy of deliberate review.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-10-02T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.02048",
+      "pdf_url": "https://arxiv.org/pdf/2610.02048",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2610.00093",
+      "title": "Safety in Self-Evolving Agents: A Survey",
+      "authors": [
+        "Jiahao Chen",
+        "Zhou Feng",
+        "Oubo Ma",
+        "Yichen Yan",
+        "Ruixiao Lin",
+        "Hangtao Zhang",
+        "Linkang Du",
+        "Hengyu An",
+        "Yong Yang",
+        "Jun Liu",
+        "Junhao Li",
+        "Naen Xu",
+        "Chunyi Zhou",
+        "Yuan Su",
+        "Zehao Jin",
+        "Qianli Ma",
+        "Leyi Qi",
+        "Yiming Wang",
+        "Zhe Ma",
+        "Yuwen Pu",
+        "Mengyao Du",
+        "Yuanyi Song",
+        "Enhao Huang",
+        "Zhihui Fu",
+        "Jun Wang",
+        "Jinfeng Li",
+        "Yuefeng Chen",
+        "Hui Xue",
+        "Yiming Li",
+        "Tianyu Du",
+        "Shouling Ji"
+      ],
+      "abstract": "Large language models (LLMs) exhibit strong general capabilities, yet their parameters typically remain fixed after deployment, limiting learning from new interactions. In open-ended environments, this motivates self-evolving agents that continually update reusable state-including model parameters, memories, tool definitions, skills, and workflows-from data, feedback, and accumulated experience. This shift changes the safety problem: once experience becomes reusable state, past events become future causes, and information harmless in one context may later influence decisions with greater persistence, authority, or scope. Self-evolving agent safety therefore asks not only whether a response is aligned or an action authorized, but whether safety properties survive the accumulation, generalization, and cross-context reuse of locally useful experience. We introduce SAVER, a transition-centered framework in which Substrate locates reusable influence, Adaptation captures how it changes, Violation identifies compromised safety attributes, Exposure marks where failures become observable, and Response assesses containment, repair, or revocation. Our survey reveals that failures need not originate from harmful information: legitimate state can become unsafe when adaptation expands its persistence, authority, or scope beyond the conditions under which it was valid. Existing work provides comparatively strong evidence for admission, retrieval, activation, exposure, and local containment, but much less for descendant repair and evaluation after adaptation resumes. We therefore argue for longitudinal evaluation that traces unsafe influence to its originating transition, verifies repair across descendants, and tests whether it can re-emerge under continued evolution.",
+      "categories": [
+        "cs.CR",
+        "cs.AI"
+      ],
+      "published": "2026-10-02T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.00093",
+      "pdf_url": "https://arxiv.org/pdf/2610.00093",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2610.00948",
+      "title": "GUI-HARVEST: Self-Improving GUI Agents through Evidence-Driven Harness Evolution",
+      "authors": [
+        "Geyi Yang",
+        "Zikun Qu",
+        "Xiang Li",
+        "Zhiyong Wang",
+        "Min Zhang",
+        "Shipei Zeng",
+        "Zhongxiang Dai"
+      ],
+      "abstract": "The executable harness surrounding a GUI model determines how observations are assembled, actions are executed, and verification, recovery, and termination are controlled. Compared with harness optimization for non-GUI agents, automatically optimizing this harness poses three coupled challenges: reconciling model intent with observed visual effects, diagnosing failures under variable execution outcomes, and identifying recurrent failure patterns across tasks and translating them into reusable runtime changes. We introduce GUI-HARVEST, an automatic harness optimizer that enables self-improving GUI agents with frozen backbone models. First, to ground diagnosis in observed action effects, it aligns model outputs and executed actions with before-and-after screenshots, tying findings to specific interface transitions. Second, to account for execution variability, it treats repeated runs of the same task as a joint evidence unit, using within-task comparisons to locate outcome-relevant behavioral differences. Third, it consolidates verified findings across tasks into recurring failure patterns, maps them to bounded source-code edits with predictions recorded before evaluation, and checks the predicted behavioral effects alongside task performance through repeated execution. Experiments on OSWorld-Verified show consistent held-out gains across six general-purpose open, GUI-specialized open, and proprietary backbone models; Qwen3-VL-32B-Instruct gains 12.33 points on the full suite. Frozen-harness transfer improves GPT-5 by 13.87 percentage points on WindowsAgentArena at 50 steps without further optimization. With the same backbone and initial harness, GUI-HARVEST outperforms Self-Harness and Meta-Harness, suggesting that GUI-specific diagnosis and validation help harness improvements generalize to unseen tasks. The code is available at https://github.com/GaryYang12345/GUI-HARVEST.",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-10-02T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.00948",
+      "pdf_url": "https://arxiv.org/pdf/2610.00948",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2610.01349",
+      "title": "PACE: Provenance-Aware Capability Enforcement for Tool-Using LLM Agents",
+      "authors": [
+        "Fengpeng Li",
+        "Qizhou Wang",
+        "Yuke Hu",
+        "Kemou Li",
+        "Jun Liu",
+        "Haiwei Wu",
+        "Jiantao Zhou",
+        "Di Wang"
+      ],
+      "abstract": "Tool-using large language model (LLM) agents turn generated text into real side effects, so poisoned tool metadata, retrieved pages, memory, and reusable skills can steer the next call. Vetting an artifact before admission does not settle this. A safe variant and a leaking variant can produce the same admission evidence, and a sound gate then cannot relax that site for either. We make that condition precise, which leaves the last boundary a deployment can still act on. We present Provenance-Aware Capability Enforcement (PACE), which mediates every tool call immediately before it executes. Path confinement proposes an executable cut of represented influence paths, while capability and effect verification checks schema-defined effects against authority compiled from the authenticated request. We distinguish the certified execution contract from the evaluated configuration, which can restore an authorized call after a proposed block or apply a declared repair. Confinement requires the final action to preserve the certified cut. On eight executable agent-security benchmarks with three target-model families, the evaluated configuration gives strictly lowest attack success in 62 of 79 eligible attack columns and ties in 14; full-benchmark native utility loses at most three points relative to the undefended agent. A complete ablation over 1167 paired cases attributes most security gains to effect verification and refusal control to boundary adaptation. A reduced-scale adaptive search succeeds on 0/30 out-of-authority targets against the defense.",
+      "categories": [
+        "cs.CR",
+        "cs.AI"
+      ],
+      "published": "2026-10-02T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.01349",
+      "pdf_url": "https://arxiv.org/pdf/2610.01349",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2610.00268",
+      "title": "MOVE: Multimodal Open-world Verification and Expansion for Graph Learning",
+      "authors": [
+        "Zekai Chen",
+        "Jiayang Xing",
+        "Xun Wu",
+        "Miao Zhang",
+        "Xunkai Li",
+        "Kairui Yang",
+        "Zhengyu Wu",
+        "Xu Wang",
+        "Rong-Hua Li",
+        "Guoren Wang"
+      ],
+      "abstract": "Multimodal graph learning faces a fundamental challenge: new classes may emerge after deployment, while models are trained with a fixed label space. Existing approaches typically detect unknown nodes and use LLMs to generate candidate class descriptions, but they do not determine whether existing classes are insufficient to cover these nodes or whether a generated class is reliable enough to expand the class space. Our empirical study reveals three challenges: multimodal information beyond individual modalities is required for unknown-node identification, LLM-generated class descriptions may not fully capture multimodal class characteristics, and directly adding candidate classes can introduce redundant categories. Based on these observations, we propose MOVE, a multimodal open-world class verification and expansion framework. MOVE identifies nodes that cannot be assigned to existing classes by jointly considering visual tokens, textual attributes, and graph context, leverages a multimodal LLM to generate candidate classes, and selectively expands the class space only when candidates are consistently supported by multimodal evidence without introducing unnecessary categories. Experiments demonstrate that MOVE achieves an average improvement of 11.87\\% across unknown recognition, open-domain annotation, and downstream graph learning tasks.",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-10-02T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.00268",
+      "pdf_url": "https://arxiv.org/pdf/2610.00268",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2610.00722",
+      "title": "JEPA-TTT: Persistent Test-Time Training of Latent World Models for Planning under Dynamics Shifts",
+      "authors": [
+        "Zheyuan Zhang",
+        "Suyu Ye",
+        "Nakul Agarwal",
+        "Hossein Nourkhiz Mahjoub",
+        "Ehsan Moradi Pari",
+        "Daniel Khashabi",
+        "Tianmin Shu",
+        "Vaishnav Tadiparthi"
+      ],
+      "abstract": "World models enable agents to plan by predicting future states of the environment, but their predictions can become unreliable when test-time dynamics differ from those seen during training. We present JEPA-TTT, which adapts the latent dynamics predictor of a pretrained action-conditioned Joint-Embedding Predictive Architecture world model throughout test time. Self-supervised updates accumulate across episodes, while the visual encoder and reward head remain fixed, preserving the pretrained representation and task objective. Planning requires neither a goal image nor online environment reward. JEPA-TTT uses dense replay, which forms prediction windows at every temporal offset, retains them in a growing buffer, and samples minibatches from that buffer for predictor updates. Across eight dynamics shifts in four continuous-control environments, JEPA-TTT improves planning on every shift. After 500 test-time episodes, it reduces autoregressive latent prediction error by 83% on average and improves planning performance by 153% over the frozen JEPA world model. These results show that persistent self-supervised test-time training can adapt a pretrained latent world model under changed dynamics.",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-10-02T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.00722",
+      "pdf_url": "https://arxiv.org/pdf/2610.00722",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2610.01425",
+      "title": "Why Does Train-Validation Separation Emerge? Update-Pressure Density Dynamics in Pretrained Backbones",
+      "authors": [
+        "Yuchen Li",
+        "Mingyu Du",
+        "Zongqi Fan",
+        "Ken-Tye Yong",
+        "Nguyen H. Tran"
+      ],
+      "abstract": "Train-validation separation is the evolving difference between performance on observed training examples and a finite held-out validation set. We propose a dynamic structural account of how this gap develops during adaptation of pretrained models: continued fitting can shift update demand from broadly reusable support toward narrower support with weaker held-out transfer. A conditional local model links this shift to increasing heterogeneity in gradient allocation and train-validation separation. Fixed training probes make this structural evolution observable without validation examples entering the readouts; held-out performance is used separately to evaluate its relation to the gap. In a constructed hierarchy implemented with a residual multilayer perceptron (ResMLP), increasing the target share of example-private features from $p=.3$ to $.5$ to $.7$, while preserving the relative mixture $1{:}2{:}3{:}4$ among the four shared feature levels, increases the final mean accuracy gap from $.185$ to $.331$ to $.527$ across five runs per condition. Masked-input losses measured separately on training and validation examples expose the corresponding transfer asymmetry. The natural language processing (NLP) analysis uses 10-epoch runs of RoBERTa, DeBERTa, and Qwen on six datasets (90 runs): the training-probe-weighted within-class and overall dispersion readouts each have positive raw and smoothed level correlations with the accuracy gap in all 90 runs. Raw changes paired at approximately one-epoch intervals remain positively associated in 86/90 and 87/90 runs, respectively. A 40-epoch ResNet-18 study tests both readouts on three vision datasets. Together, controlled simulation, NLP, and vision support the dynamic structural account across settings, with real-model evidence testing its observable predictions under the specified monitors.",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-10-02T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.01425",
+      "pdf_url": "https://arxiv.org/pdf/2610.01425",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2610.01908",
+      "title": "Same Reward, Different Skills: When Multimodal RL Learns to Look",
+      "authors": [
+        "Haocun Ye",
+        "Xinlong Jiang",
+        "Qile Chen",
+        "Bingyu Wang",
+        "Teng Zhang",
+        "Shubai Chen",
+        "Tingyu Wu",
+        "Zhenkun Zheng",
+        "Yiqiang Chen"
+      ],
+      "abstract": "Reinforcement learning with verifiable rewards (RLVR) improves vision-language benchmark scores even without visual information during training. With images at test, blind-trained models recover roughly half of the real-image gain at 3B and nearly four fifths at 7B. Prolonged real-image training can erode grounding while benchmark gains persist. Both findings expose the same gap: an image in the prompt is not an image in the learning signal. Our design rule, visual resolvability, asks that visual evidence be necessary for a correct answer and that the task remain learnable. We test it on counterfactual coordinate scenes in which the question stays fixed and the target is never named, so a correct answer requires finding the target in the image. With standard GRPO and correctness-and-format rewards, a 7B model raises its accuracy at finding the target (discovery) from 0.425 to 0.875 on held-out scenes denser than any it trained on, and it improves on question types it never trained on. Two controls locate the source of the gain. Replacing test images with gray canvases drops discovery to zero; training on gray canvases instead, at matched step 30 and in each of four seeds, yields essentially none of the gain even when the model is then tested with real images. The learned skill carries over to grounding tasks built independently of the training corpus. A caption that answers the training question, added to the same images, reward and budget, cuts the gain by nearly two thirds. Changing what reward requires changes what RL learns.",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-10-02T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.01908",
+      "pdf_url": "https://arxiv.org/pdf/2610.01908",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    }
+  ],
+  "ranked_papers": [
+    {
+      "arxiv_id": "2610.00054",
+      "title": "The First Token Is Not the Verdict: Hidden Costs of Reading LLM Judges Without Generating",
+      "authors": [
+        "Gnaneswar Villuri",
+        "Hashmath Shaik",
+        "Alex Doboli"
+      ],
+      "abstract": "Reading an LLM judge's verdict from the logits of its first generated token is cheap, requires no generation, and is exactly what constrained decoding and likelihood-scoring evaluation harnesses produce. We show that this readout distorts position bias in one direction: it overstates it in every condition we test, so figures obtained this way behave as upper bounds. The mechanism is that judges do not always lead with a verdict token, on 12% to 49% of pairs for three Qwen3 judges and under 3% for Llama-3.1-8B and Phi-3.5-mini, and forcing a read on those pairs returns whichever response was shown first rather than a judgment. Pooled over the 924 pairs where a judge did not commit, the forced read flips on 89.7% of them when the responses are swapped, against 47.5% read after generation (paired difference +0.422, 95% CI [+0.365, +0.467]). The distortion is specific to what is measured: it moves position bias by 42 points while moving judge accuracy by under one point in seven of ten conditions, so it misleads whoever audits a judge rather than whoever uses one. A second, smaller failure occurs even when the judge does lead with a verdict token, since it sometimes opens with one letter and reasons its way to the other, on 0 to 5.5% of pairs at a rate uncorrelated with compliance. We recommend reporting the rate at which a judge leads with a verdict token, which costs one forward pass and no labels, alongside any position-bias figure.",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-10-02T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.00054",
+      "pdf_url": "https://arxiv.org/pdf/2610.00054",
+      "is_author_match": false,
+      "relevance_score": 10.0,
+      "relevance_reason": "Directly targets a core Hunter Prep concern by analyzing weaknesses in LLM-as-a-judge methodology, especially cheap first-token verdict readouts that can systematically distort evaluation."
+    },
+    {
+      "arxiv_id": "2610.01306",
+      "title": "DAYJOB: A Benchmark for Long-Horizon Professional Work",
+      "authors": [
+        "Stephanie Finley",
+        "Liudas Panavas",
+        "Thomas Mikkelson",
+        "Cam Hinton",
+        "Stacey Ganss",
+        "Bradley Monton",
+        "Emily Kendall",
+        "Michelle Spradlin",
+        "Lydia Bye",
+        "Michael O'Brien",
+        "Lauren Ylvisaker",
+        "Derek Ray",
+        "Suhaas Garre",
+        "Sushant Mehta",
+        "Edwin Chen"
+      ],
+      "abstract": "Professional work often starts with a brief request that leaves the professional to work out what is needed, which documents matter, and whether the request's premise holds. We introduce DAYJOB, a benchmark of 130 tasks built by professionals in healthcare (50) and finance (80). The tasks are estimated to take a professional 13.6 hours on average in healthcare and 16.6 in finance. Each task is a containerized Harbor environment with an expert rubric of binary criteria (median 47.5 and 57.5 per task) that an agentic judge applies to the delivered files, and an attempt passes only if it meets every criterion. Across 30 model configurations from 13 developers, the strongest, Claude Opus 5.5, passes 24.7% of healthcare and 23.9% of finance attempts, and the median configuration passes 0.6% and 2.5%. In case studies, agents accept premises that the record contradicts and carry wrong inputs through otherwise consistent analyses. We release all healthcare tasks, 50 of the 80 finance tasks, the evaluation harness, and the leaderboard.",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-10-02T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.01306",
+      "pdf_url": "https://arxiv.org/pdf/2610.01306",
+      "is_author_match": false,
+      "relevance_score": 10.0,
+      "relevance_reason": "A benchmark for long-horizon professional work is extremely aligned with your long-horizon scientific/professional task agenda and likely useful for brainstorming evaluation settings beyond short static tasks."
+    },
+    {
+      "arxiv_id": "2610.00972",
+      "title": "VeriHarness: Scaling Agentic Verification for Long-Horizon Tasks",
+      "authors": [
+        "Caiqi Zhang",
+        "Rujun Han",
+        "Zifeng Wang",
+        "Zoey CuiZhu",
+        "Nigel Collier",
+        "Tomas Pfister",
+        "Chen-Yu Lee"
+      ],
+      "abstract": "As LLM agents undertake increasingly complex, long-horizon tasks, verifying their outputs becomes increasingly challenging. We study how verification capability can be strengthened with a fixed base model, without access to reference answers or grading rubrics at test time. Repeated sampling yields multiple rollouts that can contain complementary correct claims, but we need a reliable verification mechanism to determine which claims to trust. We first find that disagreement often exposes correct alternatives, while consensus can conceal errors. These observations motivate VeriHarness, which turns the underlying LLM a generator uses into an agentic verifier by giving it a workspace, evidence tools, and reusable verification skills. A disagreement resolver checks competing claims against environmental evidence, while a consensus challenger tests shared claims and searches for omitted requirements. Their findings guide the selection and revision of the final artifact. Across five long-horizon workspace benchmarks and two frontier models, VeriHarness achieves the highest selection scores among the evaluated baselines. Evidence-backed revision further improves average performance, bringing gains over a single rollout to 6.2 points with Gemini 3.5 Flash and 6.4 points with Claude Opus 4.8. We further show that verification skills can self-improve from failure feedback, demonstrating VeriHarness as a novel and critical approach for scaling long-horizon agentic verification. We release the full pool of approximately 26,000 rollouts across all five benchmarks and both models, produced at a cost of over $100,000, to support future research on agentic verification.",
+      "categories": [
+        "cs.AI",
+        "cs.MA"
+      ],
+      "published": "2026-10-02T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.00972",
+      "pdf_url": "https://arxiv.org/pdf/2610.00972",
+      "is_author_match": false,
+      "relevance_score": 10.0,
+      "relevance_reason": "It is squarely about scaling verification for long-horizon agent tasks without gold answers or rubrics, making it extremely relevant to grading long rollouts effectively."
+    },
+    {
+      "arxiv_id": "2610.02179",
+      "title": "From Gradients to Capabilities: Understanding Multi-Teacher On-Policy Distillation",
+      "authors": [
+        "Siqi Zhu",
+        "Suozhi Huang",
+        "Kaixuan Zhang",
+        "Yuheng Yang",
+        "Zhanyang Jin",
+        "Yihang Sun",
+        "Jiaxuan You"
+      ],
+      "abstract": "Multi-teacher on-policy distillation (MOPD) aims to combine the strengths of RL-trained teachers in a single student, but how teacher signals affect parameter changes remains underexplored. We study Qwen3-1.7B with four domain teachers trained with RL from the same initialization as the student, comparing gradients, optimizer updates, and task learning curves, with additional SmolLM3-3B diagnostics. We find that several factors influence teacher signals. First, loss averaging implicitly weights responses: token averaging favors longer responses, and equalizing domain contributions retains this weighting within domains. Second, Adam's first moment reduces differences in parameter updates: the cosine similarity is 0.83 between teachers and 0.96 between averaging rules, despite differences in raw gradients. Third, BF16 rounding hides small changes: about 97\\% of FP32 master weights differ from initialization, but only 7--11\\% of BF16 weights do. Finally, the top-64 intersection KL gradient closely matches Qwen's full-vocabulary gradient, but the effect on task performance depends on averaging: mathematics accuracy is 2.6 points higher than with sampled-token policy-gradient (PG) under response averaging and 2.1 points lower under global token averaging.",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-10-02T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.02179",
+      "pdf_url": "https://arxiv.org/pdf/2610.02179",
+      "is_author_match": false,
+      "relevance_score": 10.0,
+      "relevance_reason": "This is a direct match to Hunter Prep because it studies multi-teacher on-policy distillation, analyzes gradient/update behavior, and speaks exactly to questions about scaling feedback and on-policy distillation."
+    },
+    {
+      "arxiv_id": "2610.00562",
+      "title": "Can LLMs Reason Over Long Horizons? An Empirical Evaluation of Context Strategies for Longitudinal Clinical Reasoning",
+      "authors": [
+        "Taye Akinrele",
+        "Noorbakhsh Amiri Golilarz",
+        "Subash Neupane",
+        "Sudip Mittal",
+        "Shahram Rahimi"
+      ],
+      "abstract": "Longitudinal clinical reasoning requires large language models (LLMs) to identify and integrate relevant evidence distributed across extended patient histories. Although long-context models can process increasingly large amounts of information, providing more history does not necessarily make relevant evidence more accessible or improve reasoning. We compare five context strategies (Full, Recent, Episodic, Semantic, and Hybrid) on MedLoCoMo across four open-weight LLMs, examining answer correctness, robustness to query-evidence distance, and abstention on questions with unsupported premises. Episodic and Hybrid generally achieve the strongest overall accuracy, while Recent Context degrades most as supporting evidence becomes more distant; Episodic and Hybrid maintain the highest accuracy at long distances. Analysis of adversarial questions further shows that strong performance on answerable questions does not necessarily translate to successful abstention when the available history does not support the requested conclusion. These findings show that reliable longitudinal reasoning depends not only on how much history an LLM can access, but critically on how relevant evidence is selected and presented for reasoning.",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-10-02T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.00562",
+      "pdf_url": "https://arxiv.org/pdf/2610.00562",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Very relevant to the long-horizon scientific tasks agenda because it explicitly evaluates how LLMs reason over extended histories and compares context strategies for longitudinal reasoning."
+    },
+    {
+      "arxiv_id": "2610.01491",
+      "title": "Auditing Web Agent Evaluation on WebArena-Lite: Human Review of Outcomes and Trajectories",
+      "authors": [
+        "Chengguang Gan",
+        "Zimeng He",
+        "Yoshihiro Tsujii",
+        "Ken-ichiro Kobayashi",
+        "Hiroki Itoh",
+        "Kotaro Funakoshi"
+      ],
+      "abstract": "Web agents are an important application of large language models, yet their evaluation often depends on rule based or language model evaluators that inspect only the final outcome. Human verification of task completion and detailed analysis of failed trajectories remain limited. We audit all 165 WebArena Lite tasks under six evaluation conditions built from GPT 5.5 and an untrained Qwen3.5 9B model. The audit retains the original score, corrects false negatives from the automatic evaluator, identifies the first consequential error, and examines progress across the trajectory. We also study a Memory and Analysis Support Mechanism (MASM), which maintains explicit execution state, and Guide Text, which provides task relevant procedural guidance. Across four GPT 5.5 settings, human review recovers 5.45 to 8.49 percentage points of success missed by the evaluator. With a 25 step budget, Guide Text raises corrected success with MASM from 34.55% to 38.18%. On the untrained Qwen3.5 9B model, MASM raises the evaluator score from 13.90% to 18.80%. Review of 102 failed GPT 5.5 trajectories reveals frequent scrolling loops, unfinished exploration, premature answers, invalid actions, and incomplete form workflows. Step level evidence further shows that substantial early progress can coexist with a final failure. These results show why final scores alone provide an incomplete account of web agent behavior and motivate human grounded, trajectory aware verification.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-10-02T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.01491",
+      "pdf_url": "https://arxiv.org/pdf/2610.01491",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Extremely relevant because it audits web-agent evaluation with human review of both outcomes and trajectories, directly matching your need for effective grading of long rollouts and concerns about evaluator reliability."
+    },
+    {
+      "arxiv_id": "2610.02022",
+      "title": "Old Ideas, Novel Problems: The Instability of LLM-Based Novelty Evaluation",
+      "authors": [
+        "Noy Sternlicht",
+        "Simra Shahid",
+        "Peter Jansen",
+        "Daniel S. Weld",
+        "Pao Siangliulue",
+        "Tom Hope"
+      ],
+      "abstract": "Automated ideation systems are often evaluated on the novelty of the ideas they produce, and that judgment is increasingly delegated to large language models. Such judges are typically built ad hoc and validated, if at all, on human-authored papers rather than on the generated ideas they are meant to score. So, how do novelty judges perform?   Not well. We present a systematic controlled study of novelty evaluation design choices. We first build an evaluation set automatically, mining OpenReview for passages where reviewers explicitly affirm or dispute a paper's originality and keeping only submissions with unanimous agreement at the extremes of their research area; we pair these with ideas from a vanilla LLM generator. Across six judges, we find that small prompt design choices have large consequences; e.g., simply telling the judge that reviewers found one idea novel and the other not can change its verdict on more than half of the identical idea pairs it is shown, shifting pairwise accuracy by over 50 points and occasionally pushing it below chance. The same change helps one judge and hurts another. Retrieval and larger reasoning budgets help little, and two purpose-built novelty evaluators are outperformed by our cheapest prompted baseline. These results raise questions about reported novelty gains of automated ideation systems, and call for robust novelty evaluation methods.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-10-02T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.02022",
+      "pdf_url": "https://arxiv.org/pdf/2610.02022",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Directly relevant to Hunter Prep because it shows instability in LLM-based novelty evaluation, strongly connecting to concerns that LM judges have systematic weaknesses."
+    },
+    {
+      "arxiv_id": "2610.00333",
+      "title": "LEGO-OPD: Factorized Teacher Composition for Multimodal On-Policy Distillation",
+      "authors": [
+        "Jaeyun Shin",
+        "Hangeol Chang",
+        "Jong Chul Ye"
+      ],
+      "abstract": "Multimodal on-policy distillation (OPD) aims to improve visual grounding while preserving the strong reasoning capabilities of language models. Recent multi-teacher approaches combine LLM and VLM teachers to provide complementary supervision. However, directly using a VLM's full predictive distribution entangles its visual grounding signal with its own language prior, preventing the grounding information from being transferred independently. Conversely, increasing the strength of visual supervision can improve perception but may overemphasize visual evidence and degrade language reasoning. To address this trade-off, we introduce LEGO-OPD, which selectively composes factors from a Language Expert and a Grounding expert into One teacher distribution for multimodal OPD. Under a generalized Bayesian formulation, the language expert provides a prior over candidate tokens, while the grounding expert contributes a visual likelihood that updates this prior, rather than transferring its complete predictive distribution. This factorized composition allows language reasoning and visual grounding to be controlled independently. We further introduce adaptive calibration to determine how strongly the visual likelihood should update the language prior at each decoding prefix. Specifically, LEGO-OPD uses the grounding expert's image-induced prediction shift as a prefix-dependent reference, preventing both insufficient and excessive visual supervision. Experiments with Qwen3 models show that LEGO-OPD consistently outperforms the evaluated single- and multi-teacher OPD baselines on both multimodal and text-only reasoning tasks. Moreover, it improves the initial student's visual perception while preserving text-only reasoning.",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "published": "2026-10-02T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.00333",
+      "pdf_url": "https://arxiv.org/pdf/2610.00333",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Directly relevant to Hunter Prep because it is about multimodal on-policy distillation, one of the explicitly listed current project interests."
+    },
+    {
+      "arxiv_id": "2610.01023",
+      "title": "Groundability, Not Scale Alone: When Weak Reviewers Can Audit Strong Coding Agents",
+      "authors": [
+        "Junyu Guo",
+        "Shangding Gu",
+        "Ming Jin",
+        "Javad Lavaei"
+      ],
+      "abstract": "Coding agents can return plausible patches that omit required behavior. These failures are hard to review because long traces and confident summaries often hide what was missed. We ask when a nominally weaker reviewer can reliably decide whether a patch solves its issue. We study 411 execution-labeled traces from three agents and 101 controlled cases. On 154 GPT-5.4 traces, structured but unchecked evidence raises both defect catch and over-rejection. We then provide official execution evidence as an upper-bound diagnostic. After choosing and freezing one of two formats per reviewer, five of six reviewers improve both rates on 122 held-out traces; two classify every trace correctly. Reviewer size is not a consistent predictor of quality. Because official tests are unavailable in deployment, we also evaluate a frozen cascade with patch-caused static errors and generated tests that first fail on the unpatched repository. On 121 scored held-out GPT-5.4 traces and 59 Gemini traces, its coverage is 0.89 and 0.86, risk is 0.33 and 0.26, catch is 0.76 and 0.80, and over-rejection is 0.66 and 0.67. Most false rejections occur when unresolved cases reach the reviewer. Official execution evidence shows the potential of weak review when decisive checks are available. Producing equally reliable checks without official tests remains the main bottleneck.",
+      "categories": [
+        "cs.SE",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-10-02T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.01023",
+      "pdf_url": "https://arxiv.org/pdf/2610.01023",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Very relevant to LM-judge weaknesses and grading long rollouts because it directly studies when weaker reviewers can reliably audit stronger coding agents and emphasizes groundability."
+    },
+    {
+      "arxiv_id": "2610.00511",
+      "title": "Before Agents Decide: Epistemic Action in LLM-Based Systems",
+      "authors": [
+        "Yizhi Liu",
+        "Balaji Padmanabhan",
+        "Siva Viswanathan"
+      ],
+      "abstract": "Before a difficult decision, people often act simply to understand the situation better. We turn an object to see another side, place alternatives next to each other, or change one condition and observe what happens. These actions may not complete the task, but they improve the evidence needed for the next choice. LLM-based agents can search and explore, yet agent design gives less attention to an earlier question: is the available evidence ready for the decision? Sometimes necessary evidence is missing. In other cases, the evidence is present but its form hides what matters, or the comparison needed to judge it does not yet exist. Cognitive science calls actions that improve the basis for a later choice epistemic actions. We bring this idea to LLM-based agents and distinguish three modes: acquiring missing evidence, transforming available evidence, and probing a system to create a revealing response. We use the term epistemic scaffolding for the interfaces, tools, and environments that make these actions possible and auditable. This paper argues that agent design must address how decision-ready evidence is produced.",
+      "categories": [
+        "cs.AI",
+        "cs.MA"
+      ],
+      "published": "2026-10-02T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.00511",
+      "pdf_url": "https://arxiv.org/pdf/2610.00511",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Extremely relevant because it centers epistemic actions taken to improve evidence before deciding, which strongly overlaps with surprising-information handling, counterfactual/inspection-style environments, and self-correction-oriented agent evaluation."
+    },
+    {
+      "arxiv_id": "2610.00710",
+      "title": "ReLiveGym: Evaluating Long-Lived Agents over Weeks of Replayed Reality",
+      "authors": [
+        "Xisen Jin",
+        "Jingheng Li",
+        "Zhenglun Chen",
+        "Junyi Du",
+        "Xiang Ren"
+      ],
+      "abstract": "As large language model (LLM) agents become widely adopted, they are increasingly deployed for tasks that require persistent monitoring or recurring actions (e.g., market analysis). These agents are expected to operate unattended for days or weeks, act at the right timing, and adapt to the dynamic environment over time. These challenges are not fully captured in the existing long-horizon agent work, as they often consider a static environment that is not temporally changing. We introduce ReLiveGym, a diagnostic evaluation environment of long-lived tasks in which agents act sparsely over simulated weeks of chronologically replayed real-world news, market, and social-media streams. The tasks span diverse levels of time sensitivity, reasoning intensity, and recurrence. Across eight base language models, we investigate how model choice and harness design affect agent performance on such long-lived tasks. Our results show that how agents determine when to act arises as an important harness-design axis for long-lived tasks; and that the optimal design varies across tasks and sometimes model choices as well. We also evaluate how continuous learning from hindsight feedback affects performance and addresses failure modes observed in these long-lived tasks. These findings indicate model choice, action timing mechanism, and use of feedback as important considerations in the design of long-lived agents. Code: https://github.com/SaharaLabsAI/ReLiveGym",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-10-02T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.00710",
+      "pdf_url": "https://arxiv.org/pdf/2610.00710",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Directly targets evaluation of long-lived, long-horizon agents in dynamic environments over weeks, which is highly aligned with your interest in long-horizon scientific tasks and realistic agent evals."
+    },
+    {
+      "arxiv_id": "2610.01207",
+      "title": "Dependency-Aware Reward Shaping for Agentic Reinforcement Learning",
+      "authors": [
+        "Ziyi Chen",
+        "Yan Zhang",
+        "Jianhui Wei",
+        "Daoan Zhang",
+        "Zuozhu Liu"
+      ],
+      "abstract": "When training large language models with reinforcement learning, terminal rewards provide little guidance about which steps matter. Common methods for assigning step credit overlook that work built on uncorrected mistakes is wasted while independent work remains valid. With only a final success/failure reward, every step in a failed episode has zero total future reward, even when it made progress. We propose Dependency-Aware Reward Shaping (DARS), which represents task progress as predicates linked by prerequisite relations and assigns step-level credit over the dependency graph. An annotator marks which predicates each step verifies, invalidates, or repairs. Verified predicates are discounted according to graph distance from the nearest broken prerequisite, while independent predicates are unaffected. Repairs update these weights based on any errors that remain; invalidated predicates need re-verification to regain credit. A fixed potential converts these annotations into signed per-step rewards. A common reward and annotation interface allows DARS to integrate with a range of reasoning and agentic training methods, such as GiGPO and ARPO/AEPO, without changing their rollout strategies or optimizers. Across five task families and models from 1.5B to 8B, DARS improves success by up to 10 points over GiGPO trained with the same budget and harness (ALFWorld), raises the WebShop task score and Search-R1 QA accuracy, complements AEPO's entropy-based training on AIME24/25 with a Python interpreter, and exceeds OmniOPD in controlled tool-free reasoning comparisons at 1.7B and 4B. Ablations show that step-level credit, dependency attenuation, and graph topology each contribute. On ALFWorld, a distilled 8B annotator matches the API annotator, enabling DARS to run efficiently without a frontier judge. Code is available at https://github.com/JianhuiWei7/DARS.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-10-02T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.01207",
+      "pdf_url": "https://arxiv.org/pdf/2610.01207",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Highly relevant to grading long agent rollouts and on-policy RL because it tackles step-level credit assignment with dependency-aware reward shaping in agentic trajectories."
+    },
+    {
+      "arxiv_id": "2610.01256",
+      "title": "DeFA: Dependency-Guided Failure Attribution for LLM Agents",
+      "authors": [
+        "Bo Deng",
+        "Xinlei Zheng",
+        "Yi Wei",
+        "Kang Zhou",
+        "Chongyang Tao",
+        "Renzhao Liang",
+        "Xuanren Chen",
+        "Lifan Guo",
+        "Chi Zhang"
+      ],
+      "abstract": "Errors in LLM agent executions and their visible consequences can be separated by many steps, making decisive-error localization a matter of understanding both step content and step dependencies. We introduce DeFA, a dependency-guided framework for agent failure attribution. DeFA first combines protocol relations and semantic dependencies into an event dependency graph spanning the trajectory. It then identifies events that may violate task requirements and traces their sources and subsequent effects to construct a failure propagation graph. Finally, DeFA uses step evidence and the steps' roles in failure propagation to identify the decisive error, responsible agent, and error category. To support long trajectories, DeFA partitions executions into segments and combines the current segment's detailed content with summaries of the other segments, giving local diagnosis access to global execution context. Across Who and When and the Who and When Pro text subset, DeFA achieves the highest responsible-agent and exact step accuracy with all evaluated backbones, and the highest failure-mode accuracy among taxonomy-aligned methods on Pro. Further experiments on image and video trajectories demonstrate its applicability to multimodal failure attribution. Ablations support the contributions of segmentation, the event dependency graph, and the failure propagation graph. Using DeFA's diagnostic feedback for skill evolution in Trace2Skill improves downstream task accuracy by 6-15 percentage points over the native pipeline, showing that the diagnoses can also support agent improvement on subsequent tasks.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-10-02T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.01256",
+      "pdf_url": "https://arxiv.org/pdf/2610.01256",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Very relevant to better grading and self-correction evaluation since it localizes decisive errors in long LLM-agent trajectories using dependency graphs."
+    },
+    {
+      "arxiv_id": "2610.01618",
+      "title": "Agents Are Systems, Not Models: Rethinking Agentic Evaluation",
+      "authors": [
+        "Luis Wiedmann",
+        "Leander Girrbach",
+        "Cordelia Schmid",
+        "Zeynep Akata"
+      ],
+      "abstract": "Agent evaluations increasingly go beyond a single success rate, reporting metrics such as cost, consistency, and robustness. Yet they typically treat the agent itself as fixed. In practice, an agent is a configurable system: users decide what to tell it, how long to let it run, and which model to use, and each of these choices can change how well and how consistently it performs. We study these choices on a new benchmark of four scientific tasks, where a coding agent must find and correctly operate a published specialist model. We investigate five parts of the agent's configuration: task information, reasoning, self-verification, time budget, and backbone model. We find substantial run-to-run variability, with approximately 54% of the outcome variance coming from repeating the same configuration rather than changing it. Across configurations, the information provided to the agent has the largest effect, exceeding both time budget and model size, while also reducing cost and improving calibration. Configuration choices also interact: additional time helps only when the agent has sufficient information or a capable enough model to use it. Finally, a trajectory-based taxonomy of agent behavior reveals that prompting an agent to verify its answer has little effect on its verification behavior, whereas providing a dedicated verification tool changes that behavior substantially. These results suggest that agents should be evaluated as configurable systems themselves, and that some desired behaviors are more effectively implemented in the system than requested through prompting. We release the benchmark and more than 18,000 agent trajectories.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-10-02T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.01618",
+      "pdf_url": "https://arxiv.org/pdf/2610.01618",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Directly targets agentic evaluation under varying system configurations, which is highly relevant to your interests in better grading, long-rollout evaluation, and understanding weaknesses of current evaluation setups."
+    },
+    {
+      "arxiv_id": "2610.01833",
+      "title": "Continuous Process-Level Evaluation for Evolving Enterprise AI Agent Skills",
+      "authors": [
+        "Ngoc Phuoc An Vo",
+        "Aarya Doshi",
+        "Vadim Sheinin"
+      ],
+      "abstract": "Enterprise AI agent skills evolve as tool APIs, models, and specifications change, yet final-output evaluation can miss process-level behavioral drift. We present a continuous evaluation framework combining outcome-level and process-level checks, applied to Revenue and Productivity variants of a Business Value Determination skill in an enterprise Value Aware Resiliency system. The framework independently computes per-run ground truth, materializes reusable template tests, and evaluates tool selection, arguments, execution order, and database integrity through programmatic checks and a narrowly scoped LLM judge. We evaluate 240 trials across two skills, two specification variants, two agent harnesses, and three models. Of 175 trials passing all applicable final numerical checks, 162 (92.6 percent; Wilson 95 percent CI: 87.7-95.6 percent) contained another evaluator-detected deviation. Under a broader seven-check final-state definition, 151 of 164 passing runs (92.1 percent; 95 percent CI: 86.9-95.3 percent) still violated a trajectory check. Dependency attribution reduced a mean of 6.34 failed checks per run to 2.65 roots. Specification sensitivity varied by model and harness, with exploratory bootstrap interaction intervals excluding zero for all three Revenue comparisons and one of three Productivity comparisons. Runtime-resolved templates provided reusable regression coverage across the evaluated configurations; longitudinal validation under actual API evolution remains future work.",
+      "categories": [
+        "cs.AI",
+        "cs.SE"
+      ],
+      "published": "2026-10-02T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.01833",
+      "pdf_url": "https://arxiv.org/pdf/2610.01833",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Its focus on continuous process-level evaluation for evolving agent skills closely matches your project on grading long rollouts effectively beyond just final outcomes."
+    },
+    {
+      "arxiv_id": "2610.02200",
+      "title": "VISTA: A Visual Harness for Reasoning in an Interactive World",
+      "authors": [
+        "Qiushi Han",
+        "Keya Hu",
+        "Linlu Qiu",
+        "Cathy Wu",
+        "Kaiming He"
+      ],
+      "abstract": "We show that multimodal models possess strong reasoning abilities and that an appropriate harness can unlock their potential to solve tasks across diverse interactive environments. We introduce VISTA, a visual harness that gives a general-purpose multimodal model long-horizon vision. VISTA allows the model to directly perceive the environment through visual observations and maintains a lossless visual memory that preserves past observations in their original form. The model can actively retrieve these observations and reorganize its visual input as it reasons. On ARC-AGI-3, VISTA improves Claude Opus 5.0's Relative Human Action Efficiency score from 40.68 to a perfect 100.00, with the model completing all 25 public games using 57.4% fewer actions than first-time human participants. VISTA's simple design also allows it to extend naturally to diverse visual environments with minimal adaptation. Across three additional benchmarks covering a diverse range of visual games and puzzles, it substantially outperforms baselines using the same underlying model with minimal harnesses. Our results highlight VISTA's potential as a general-purpose visual harness for advancing multimodal agents in complex visual environments.",
+      "categories": [
+        "cs.AI",
+        "cs.CV"
+      ],
+      "published": "2026-10-02T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.02200",
+      "pdf_url": "https://arxiv.org/pdf/2610.02200",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Highly relevant because it targets long-horizon reasoning in interactive visual environments, closely matching the brainstorming interest in complex sequential tasks and model behavior over extended horizons."
+    },
+    {
+      "arxiv_id": "2610.00126",
+      "title": "A Verifier Can Leak the Answer: Diagnosability Before Optimization in Closed-Loop Agent Debugging",
+      "authors": [
+        "Peiying Zhu",
+        "Sidi Chang"
+      ],
+      "abstract": "Agent developers increasingly compare prompts, tools, policies, and diagnosis algorithms through simulator-grounded verifiers. A verifier can nevertheless make a solver comparison vacuous: if its probes or predicates encode the target identity, an exact optimizer may appear effective without resolving any genuine ambiguity. We report such a failure in an aggregate-trace debugger for a closed-loop decision agent. Exact minimum hitting set (MHS) and a propagation-aware greedy method returned identical supports in 12/12 development cases and the same planted-fault recovery in 9/12. A subsequent audit found that exact-anchor predicates produced the planted pair in 9/9 cases. After removing those anchors, overall planted-pair recovery was 8/9; hard-probe singleton pairs nevertheless matched the planted pair in 9/9, and no case retained a nonempty residual conflict family after propagation (0/9). The optimizer was correct, but the verifier had already disclosed the answer. We replace solver-first evaluation with a support-gated verification contract. A clean reference map must first show repeated component exposure; a matched reference/current gate must then establish comparable runtime evidence; only afterward may an independently calibrated signal rule return a detection. In a preregistered heldout comprising 1,440 cases and 21,600 partition rows, 55/72 regime-component units passed the reference gate, 54/55 passed the runtime gate, and stable false admission was 0/20 represented components with a one-sided exact 95% upper bound of 0.1391. Within admitted units, affected clean traffic predicted detection better than nominal fault-cell fraction. The main lesson is structural: verify evidence eligibility and non-revelation before optimizing the component selector. Otherwise a stronger solver can merely certify a stronger verifier artifact.",
+      "categories": [
+        "cs.CR",
+        "cs.AI",
+        "cs.MA"
+      ],
+      "published": "2026-10-02T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.00126",
+      "pdf_url": "https://arxiv.org/pdf/2610.00126",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Very relevant to grading and LM-judge concerns because it shows how verifiers can leak answers and invalidate closed-loop agent evaluation, directly speaking to weaknesses in judge-based assessment."
+    },
+    {
+      "arxiv_id": "2610.00332",
+      "title": "The Weakest Link: Distilling LLM Reasoning with Worst-Case Constrained Reinforcement Learning",
+      "authors": [
+        "Matthieu Zimmer",
+        "Xiaotong Ji",
+        "Tu Nguyen",
+        "Haitham Bou-Ammar"
+      ],
+      "abstract": "Distilling the reasoning capabilities of large language models (LLMs) into smaller students is a central challenge for efficient deployment. Current approaches face a fundamental tension: optimizing purely for verifiable task rewards (e.g., via GRPO) leads to reward hacking, where students arrive at correct final answers through flawed intermediate logic, while regularizing with soft divergence penalties against a teacher (e.g., KL-based distillation) dilutes task performance and, critically, allows the student to compensate for severe logical violations at one step with high teacher agreement at others. We argue that this averaging is fundamentally misaligned with the nature of reasoning: a chain-of-thought is only as valid as its weakest link. Motivated by this observation, we formulate reasoning distillation as a constrained reinforcement learning problem in which the task reward is maximized subject to a worst-case constraint on the teacher log-likelihood along every prefix of the trajectory. To avoid the prohibitive cost of dual Lagrangian solvers and the test-time teacher dependence of state-augmented methods such as Saute, we derive an unaugmented constrained MDP whose reward transformation preserves the hard-constraint semantics, admits a low-variance policy gradient decomposition into single-step and long-term terms, and provably satisfies the worst-case constraint almost surely in the penalty limit. Through extensive experiments on mathematical reasoning and code generation tasks, we demonstrate that our method significantly expands the accuracy-fidelity Pareto front. By matching the high Final Answer Correctness of pure RL and drastically reducing teacher constraint violations, we ultimately achieve the highest rigorous Reasoning Success Rate across all evaluated settings.",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-10-02T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.00332",
+      "pdf_url": "https://arxiv.org/pdf/2610.00332",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Highly relevant because it directly addresses reasoning distillation under reinforcement learning while constraining worst-case failures, which speaks to both on-policy distillation and robust grading of reasoning quality."
+    },
+    {
+      "arxiv_id": "2610.00435",
+      "title": "How AI Agents Discover Scientific Equations: From Hydrotope Rediscovery to New Water-Wave Amplitudes",
+      "authors": [
+        "Zihan Zhou",
+        "Digvijay Wadekar",
+        "Matias Zaldarriaga"
+      ],
+      "abstract": "We study how AI agents discover and validate scientific formulas using a controlled case study of the hydrotope, a recently discovered geometric formula that combines the different polynomial pieces of nonlinear surface-wave scattering into one global expression. This problem is deceptively difficult: simple formulas can hold within individual frequency regions, but the global result must identify their boundaries and combine exponentially many potentially active terms. We reconstruct how the formula was originally discovered through human--agent collaboration and analyze 18 single-prompt rediscovery runs under no hint and two forms of human guidance: a false hint representing an incorrect prior and a true hint representing domain-informed insight. Only four recover the formula across all kinematic chambers (i.e., regions in which a single polynomial form applies), while most unsuccessful runs find correct chamber polynomials but fail to combine them or test their full domain. Conventional and LLM-assisted symbolic regression and standard machine-learning regressors likewise fail to recover the global formula in our experiments. Guided by these failure modes, we test a PI$+$two-student workflow in which a coordinating lead agent assigns complementary analytic and numerical tasks to two research agents and independently evaluates their results. The PI$+$two-student team successfully rediscovers the complete hydrotope formula, while the same workflow applied to the harder three negative wavenumber problem discovers a new independent verified analytic expression for the six-point amplitude $A_6$.",
+      "categories": [
+        "hep-th",
+        "cs.AI"
+      ],
+      "published": "2026-10-02T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.00435",
+      "pdf_url": "https://arxiv.org/pdf/2610.00435",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Extremely relevant to the scientific-task agenda because it is explicitly about AI agents discovering and validating scientific equations, including handling region-specific hypotheses before finding a global law."
+    },
+    {
+      "arxiv_id": "2610.00592",
+      "title": "ALER: Adaptive Learnable Experience Rewriting for Reinforcement Learning",
+      "authors": [
+        "Oleg Shchendrigin",
+        "Egor Cherepanov",
+        "Aleksandr I. Panov",
+        "Alexey K. Kovalev"
+      ],
+      "abstract": "In partially observable reinforcement learning (RL), a later observation can make stored information obsolete or change what it implies for the next decision. Memory architectures and benchmarks for RL mostly test retention, the ability to keep information unchanged until it is needed. We formalize two further requirements. Rewriting sets the decision-relevant content to a value independent of the old one, and experience fusion transforms the old content by a rule that a later observation specifies. For tasks built from such updates, we count the memory states that a solution needs, and several baselines reach their lowest success rates on compositions that need more states. We introduce ALER (Adaptive Learnable Experience Rewriting), an agent that pairs an LSTM with a slot memory. An independently addressed Gumbel-Softmax write that concentrates its weight on one slot overwrites that slot, and a learned gate fuses the retrieved content with the recurrent state before the policy and value heads. We also introduce Rune-Mazes, three environments in which rune observations invert, cancel, reset, or repeat updates of a hidden cue under vector and pixel observations. Against seven baselines, ALER reaches a success rate of at least $0.82$ in all sixteen Endless T-Maze configurations and at least $0.99$ on all five Rune T-Maze compositions, and it has the highest mean success rate on four-branch Rune Multi-Corridor with an Invert rune. On pixel-based Rune MiniGrid Memory, it has a higher mean success rate than PPO-LSTM in eight of ten configurations. Project page: https://quartz-admirer.github.io/ALER-Adaptive-Learnable-Experience-Rewriting/.",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-10-02T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.00592",
+      "pdf_url": "https://arxiv.org/pdf/2610.00592",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Very relevant to your brainstorming on surprising information, noisy observations, and fail-then-correct settings because it explicitly studies experience rewriting in partially observable RL when later observations change earlier interpretations."
+    }
+  ]
+}
