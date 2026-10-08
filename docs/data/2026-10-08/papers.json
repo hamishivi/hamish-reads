@@ -1,0 +1,782 @@
+{
+  "date": "2026-10-08",
+  "generated_at": "2026-10-08T06:24:38.367978+00:00",
+  "author_papers": [
+    {
+      "arxiv_id": "2610.09639",
+      "title": "On-Policy Distillation Teaches New Skills but Not New Knowledge",
+      "authors": [
+        "Yixuan Tang",
+        "Yi Yang"
+      ],
+      "abstract": "On-policy distillation (OPD) strengthens language-model reasoning, yet whether students acquire new factual knowledge or compositional skill for multi-step reasoning remains unknown. We separate these capabilities using a controlled synthetic framework that measures the student's initial capabilities and independently controls the teacher's additional facts, compositional skill, or both. Across four models from three families, reverse-KL OPD reliably transfers compositional skill across unseen reasoning structures, but transfers minimal factual knowledge. Decoupling the distillation recipe reveals the source of this asymmetry: replacing reverse KL with forward KL restores factual transfer, whereas student rollouts specifically improve the execution of multi-step reasoning. Experiments on recent factual QA and competition mathematics show a similar asymmetry under reverse-KL OPD, yielding notable reasoning gains without factual memory expansion. Together, these results demonstrate that on-policy distillation does not expand a model's parametric knowledge, but instead teaches it to organize and compose the knowledge it already possesses.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-10-08T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.09639",
+      "pdf_url": "https://arxiv.org/pdf/2610.09639",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2610.10091",
+      "title": "ExperienceIndex: Artifact-Grounded Memory",
+      "authors": [
+        "Peter Baile Chen",
+        "Geoffrey X. Yu",
+        "Xinming Liu",
+        "Samuel Madden",
+        "Dan Roth",
+        "Jacob Andreas",
+        "Doug Downey",
+        "Michael Cafarella"
+      ],
+      "abstract": "Knowledge-intensive tasks require answering many questions by reasoning about a shared corpus of artifacts (e.g., court cases, or scientific literature). As humans interact with these corpora, they naturally accumulate experiential knowledge about artifacts, enabling them to quickly identify the complete set of relevant artifacts for each new task. However, existing AI agents lack appropriate memory solutions to build or reuse such artifact-grounded experience, leading to lower answer quality and higher online cost. Existing memory solutions extract and reuse information from prior task-solving traces, but they primarily focus on user preferences, factual attributes, or abstract reasoning patterns rather than persistent artifact-specific knowledge. We introduce ExperienceIndex, a novel experience layer for AI agents that captures and reuses knowledge about artifacts based on prior reasoning traces. ExperienceIndex stores two complementary forms of experience: (i) single-artifact experiences that summarize an artifact's contribution to prior tasks and (ii) artifact-pair experiences that encode structural relationships discovered during past reasoning. Integrated as lightweight middleware, ExperienceIndex uses an experience retrieval mechanism to guide agents toward the complete set of relevant artifacts for new tasks, improving both answer quality and efficiency. Across diverse corpora and agentic solutions with different search frameworks, ExperienceIndex delivers consistent gains, raising answer quality by up to 11.0 points and reducing online dollar cost by up to 50.5%. We further demonstrate two benefits: (i) cross-task generalization, where experiences accumulated from text-to-SQL tasks transfer to factoid QA tasks over the same artifact corpus, and (ii) teacher-student learning, where experiences from a stronger model enable a weaker model to reach comparable performance.",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.IR",
+        "cs.LG"
+      ],
+      "published": "2026-10-08T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.10091",
+      "pdf_url": "https://arxiv.org/pdf/2610.10091",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2610.10426",
+      "title": "CoTrace: Data Recipes for Training Terminal Agents with Harness-Model Co-Evolution",
+      "authors": [
+        "Jixuan Chen",
+        "Jiaxin Zhang",
+        "Qinyuan Ye",
+        "Yada Pruksachatkun",
+        "Haoxiang Zhang",
+        "Jingming Zhuo",
+        "Yifan Zhang",
+        "Yutong Dai",
+        "Juntao Tan",
+        "Xiangyu Peng",
+        "Silvio Savarese",
+        "Zeyuan Chen",
+        "Lianhui Qin",
+        "Chien-Sheng Wu"
+      ],
+      "abstract": "Terminal-agent capability depends jointly on model weights and the runtime harness that formats prompts, binds tools, and handles error recovery. Existing harness-model co-evolution approaches improve both components, yet often treat trajectories produced during harness search as an undifferentiated replay buffer. This practice overlooks that a trajectory's value for model training depends on the harness under which it was generated. To systematically analyze this interface, we establish an alternating co-evolution framework that decouples harness search and policy training through component-wise promotion decisions. Within this framework, we introduce CoTrace, a harness-aware data recipe that explicitly governs trajectory routing, provenance matching, and curriculum refresh. Under CoTrace, recurring execution failures guide harness synthesis, while policy training is strictly conditioned on verified rollouts matched to the adopted runtime for supervised fine-tuning (SFT) or fresh online interactions for reinforcement learning (RL). On the Tmax promotion split, CoTrace advances Qwen3.5-9B from 78 to 88 solved tasks under supervised fine-tuning while an online reinforcement variant reaches 90. Specifically, a compact harness-matched corpus produces steady model gains at substantially lower compute than much larger corpora pooled across sibling harnesses. Furthermore, evaluations on Terminal-Bench 2.1 and SWE-bench Lite show that out-of-distribution transfer depends fundamentally on harness compatibility, where maintaining consistency between training and evaluation runtimes prevents procedural execution breakdowns observed under foreign scaffolds.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-10-08T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.10426",
+      "pdf_url": "https://arxiv.org/pdf/2610.10426",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2610.10536",
+      "title": "Decoupling Exploration from Optimization in RLVR",
+      "authors": [
+        "Saif Punjwani",
+        "Micah Goldblum"
+      ],
+      "abstract": "Modern language models undergo reinforcement learning with verifiable rewards (RLVR) on top of already-trained checkpoints. A key promise of RLVR is the discovery of new reasoning strategies. In principle, a model can sample novel ideas absent from its prior training data. In practice, however, augmenting RLVR with strong novelty incentives has seen limited success and can degrade model quality. Because verifiable rewards supervise only a narrow slice of the model's knowledge and behavior, such degradations are difficult to recover from. Instead, we decouple exploration from optimization in a framework we call Exploration-Distillation (ExpDis). We train one or more explorer policies with a novelty bonus in the reward, filter their trajectories for correctness and quality, and distill them into a separate student policy. The student policy is then trained without a novelty bonus. We repeat the above procedure for several rounds, alternating between exploration and optimization. This decoupling allows us to aggressively scale exploration without degrading the student policy. Across seven mathematical reasoning benchmarks and two model families, ExpDis outperforms DAPO at the same wall-clock budget. Moreover, we observe improved pass@$k$ scaling, indicating that ExpDis produces models that generate more diverse correct solutions.",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-10-08T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.10536",
+      "pdf_url": "https://arxiv.org/pdf/2610.10536",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2610.09016",
+      "title": "PAIR: Bridging Perception and Action in Vision-Language-Action Models",
+      "authors": [
+        "Kaixi Feng",
+        "Guoheng Sun",
+        "Ang li"
+      ],
+      "abstract": "Vision-language-action (VLA) models map visual observations and language instructions to continuous robot actions. This task requires a transition from representations that describe the scene and instruction to representations that support action generation. Many continuous-action VLAs leave this transition implicit and supervise it mainly through the final action-prediction loss. We introduce PAIR, a framework that learns a shared perception-action representation between these two spaces. During training, a Masked Action Autoencoder encodes expert action chunks into horizon-aligned Action Latent Tokens. A Bridge Module extracts task-relevant features from the current visual-language representations. PAIR aligns these features with the Action Latent Tokens to form Bridge Tokens that preserve task information and capture the structure of expert actions. The Bridge Tokens are then projected into the action-token space and injected into the initial Action Tokens, providing an action-ready starting point for Action Expert refinement. At inference, the autoencoder is removed, and the Bridge Tokens are generated only from the current observation and instruction. Experiments on LIBERO, LIBERO-Plus, and CALVIN ABC-D show gains for the evaluated OpenVLA-OFT and VLA-Adapter models. On LIBERO-Plus, PAIR raises VLA-Adapter's success rate from 59.1% to 64.2%. On CALVIN, it increases VLA-Adapter's average completed sequence length from 4.42 to 4.53. Across seven real-world tasks, PAIR raises OpenVLA-OFT's success rate from 51.4% to 65.0%. Representation analyses show that Bridge Tokens retain task information while making continuous-action information accessible before Action Expert refinement. These results support a shared intermediate representation as a useful interface between perception and action in continuous-action VLAs.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-10-08T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.09016",
+      "pdf_url": "https://arxiv.org/pdf/2610.09016",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2610.09144",
+      "title": "DIVA: Dual-Space Intent-Aware Visual Attenuation for Vision-Language-Action Policies",
+      "authors": [
+        "Kaixi Feng",
+        "Guoheng Sun",
+        "Ziyao Wang",
+        "Yexiao He",
+        "Zheyu Shen",
+        "Ang Li"
+      ],
+      "abstract": "Vision-language-action (VLA) policies typically feed dense visual patch tokens into a language-action backbone, preserving scene context but offering no explicit mechanism to regulate how strongly different visual tokens influence policy computation. We introduce DIVA, a Dual-Space Intent-Aware Visual Attenuation module with an anchor-then-attenuate design. DIVA combines high-level task intent with low-level visual evidence to estimate patch-wise relevance anchors, then applies them in two complementary spaces: it reweights projected visual tokens before backbone entry and persistently attenuates low-relevance visual states within the backbone. DIVA preserves the full visual token sequence and requires no external grounding supervision. On LIBERO, DIVA improves OpenVLA-OFT from 96.6% to 98.0% average success and raises its zero-shot LIBERO-Plus score from 69.6 to 72.6. Real-world experiments further show consistent gains under task-irrelevant visual perturbations, supporting the robustness of intent-aware visual attenuation beyond simulation.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-10-08T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.09144",
+      "pdf_url": "https://arxiv.org/pdf/2610.09144",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2610.09146",
+      "title": "Frozen Models, Evolving Expertise: Model-Agnostic Learning from Deployment Experience for Multimodal Medical AI",
+      "authors": [
+        "Yexiao He",
+        "Yucheng Tang",
+        "Pengfei Guo",
+        "Yufan He",
+        "Andriy Myronenko",
+        "Can Zhao",
+        "Ang Li",
+        "Daguang Xu",
+        "Dong Yang"
+      ],
+      "abstract": "Large language models (LLMs) and vision-language models (VLMs) are usually frozen after deployment, so they do not learn from the cases they solve. This is especially concerning in medicine, where new clinical evidence, updated guidelines, and new therapies can change established practice. Fine-tuning can update the model, but it requires access to model weights and additional training. Parameter-free methods avoid training, but they may overfit a fixed validation set, lack reliable domain knowledge, or lose visual details by saving experience only as text. To address these limitations, we present a model-agnostic framework that allows frozen LLMs and VLMs to learn from deployment experience through three forms of external expertise: a Skill that guides reasoning and tool use, a Knowledge Memory that stores reliable facts supported by earlier cases or trusted external evidence, and a Multimodal Knowledge Base that keeps visual examples and guides the model to relate each retrieved case to the current image. Instead of relying on a fixed validation set, a validation strategy keeps an update only if it helps on new cases without degrading performance on earlier ones. Across six benchmarks covering clinical diagnosis, clinical workflows, medical reasoning, and medical and non-medical visual reasoning, and with four open-weight and closed-source base models, our framework improves performance during online deployment by up to 34.2% over the base model on medical tasks, generalizes to unseen cases, transfers to other models without further optimization, and works in non-medical domains.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-10-08T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.09146",
+      "pdf_url": "https://arxiv.org/pdf/2610.09146",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2610.09296",
+      "title": "The AI Evaluation Ecosystem",
+      "authors": [
+        "Yash Dave",
+        "Sang T. Truong",
+        "Serena Wang",
+        "Sanmi Koyejo"
+      ],
+      "abstract": "AI evaluation shapes the decisions of model providers, users, funders, and regulators. We argue that designing valid benchmarks requires contextualizing design choices in the dynamics of this ecosystem of actors. We develop a simulation architecture that combines rule-based market dynamics with LLM-driven strategic actors, building on advances in Generative Agent-Based Modeling (GABM). We model benchmarks, consumer needs, and provider capabilities as vectors over a six-dimensional capability space (reasoning, coding, knowledge, safety, communication, agentic), with structural information partitions across actors. As a case study, we apply this stylized simulation to explore benchmark holdout design. We find that moving from public benchmarks to private holdout benchmarks shrinks the gap between benchmark scores and user satisfaction on most benchmarks but widens it on a few, depending on where holdout weights shift scoring credit. We stress-test our findings at both the instrument and case-study level, drawing on the V&V framework of Sargent (2013) and GABM-specific evidence criteria. Beyond holdout design, our simulation is a hypothesis-generating sandbox for studying how evaluator and policy choices, in turn, reshape the ecosystem.",
+      "categories": [
+        "cs.AI",
+        "cs.CY"
+      ],
+      "published": "2026-10-08T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.09296",
+      "pdf_url": "https://arxiv.org/pdf/2610.09296",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2610.09055",
+      "title": "MimicX: Policy-in-the-Loop Supervision Refinement for Video-Driven Humanoid Motion Tracking",
+      "authors": [
+        "Shuaijun Liu",
+        "Chenglong Zhang",
+        "Xuhao Liu",
+        "Feiyang You",
+        "Yifan Liao",
+        "Shuyang Hao",
+        "Chaozhe Zhang",
+        "Chengyu Wu",
+        "Zhen Sun",
+        "Ningxin Su"
+      ],
+      "abstract": "Human videos provide rich motion targets for humanoid learning, yet visually plausible references can still produce persistent failures under physics-based execution. These failures reveal where training supervision should change. We present MimicX, a policy-in-the-loop framework that uses execution feedback to refine video-driven humanoid motion tracking. Starting from reconstructed and retargeted motion, MimicX localizes difficult transitions and affected body regions, then jointly adapts tracking objectives and the reset curriculum for policy continuation. Repeated rollout verification selects execution-priority improvements subject to tracking guards. Across four core video tasks, MimicX consistently improves tracking accuracy and Robust Execution Horizon relative to the Fixed Reference baseline. Task-averaged results show a 25.7% reduction in body-tracking error and a 255.6% increase in execution horizon. Additional video, motion-reference, and collision-scene studies evaluate the method beyond the core tasks, while MimicX-HLoop accelerates feedback through heterogeneous execution. Overall, MimicX turns policy failure into actionable supervision for deciding what to refine and which refinement to retain.",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "published": "2026-10-08T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.09055",
+      "pdf_url": "https://arxiv.org/pdf/2610.09055",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2610.09424",
+      "title": "Democratizing MoE inference on commodity GPUs with CoMoE",
+      "authors": [
+        "Ruwen Fan (Jimmy)",
+        "Yuezhi Zu (Jimmy)",
+        "Junru Li (Jimmy)",
+        "Qingda Hu (Jimmy)",
+        "Xinjun (Jimmy)",
+        "Yang",
+        "Jiwu Shu",
+        "Youyou Lu"
+      ],
+      "abstract": "Deploying Mixture-of-Experts (MoE) models relies heavily on Expert Parallelism, which generates intense inter-GPU communication. Consequently, state-of-the-art inference systems require high-bandwidth, P2P interconnects (e.g., NVLink) in datacenter GPUs to handle massive token routing, making deployment prohibitively expensive. Consumer GPUs offer comparable compute power at significantly lower cost, promising to democratize MoE inference for individuals and enable privacy-preserving local deployments. However, their bandwidth-limited (only weak PCIe bus bandwidth) and host-mediated interconnects (no P2P support) introduce severe communication bottlenecks.   We present CoMoE, a communication-efficient MoE inference system that resolves this mismatch through novel host-centric routing. Our key insight is that the unique communication topology provides the opportunity to elevate the host to an active routing hub, which can fundamentally reduce communication volume and eliminate global synchronization-induced stalls. Specifically, for token dispatch, we introduce host-backed token multicast to write shared tokens to the host exactly once, eliminating outbound transmission redundancy. For token combine, we propose a fine-grained, token-level aggregation mechanism using host staging buffers, which replaces rigid global synchronization and mitigates straggler effects. Evaluation on RTX 5090 GPUs shows that CoMoE improves inference throughput by up to 1.46x, approaching the performance of NVLink-capable A800 GPUs at only 23.4% of the hardware cost.",
+      "categories": [
+        "cs.DC",
+        "cs.LG"
+      ],
+      "published": "2026-10-08T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.09424",
+      "pdf_url": "https://arxiv.org/pdf/2610.09424",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2610.10409",
+      "title": "RobotWorld: Benchmarking Multimodal Agents for Robot Use Across Diverse Tasks and Embodiments",
+      "authors": [
+        "Zhiqin Yang",
+        "Chenxin Li",
+        "Xiaomeng Hu",
+        "Yibin Liu",
+        "Weidong Huang",
+        "Jiankai Sun",
+        "Haitao Li",
+        "Zijian Wu",
+        "Yuzhi Huang",
+        "Fanding Huang",
+        "Hanwen Sun",
+        "Jiashun Liu",
+        "Jingqi Tong",
+        "Mingxin Huang",
+        "Shaoli Hu",
+        "Shijue Huang",
+        "Tianyi Bai",
+        "Xinyuan Wang",
+        "Yunlong Lin",
+        "Zhengyang Tang",
+        "Zhexin Zhang",
+        "Zhuo Chen",
+        "Xierui Song",
+        "Juntao Dai",
+        "Boyuan Chen",
+        "Jiaming Ji",
+        "Fangneng Zhan",
+        "Mengkang Hu",
+        "Wei Xue",
+        "Yonggang Zhang",
+        "Han Hu",
+        "Tsung-Yi Ho",
+        "Yike Guo"
+      ],
+      "abstract": "General-purpose agents increasingly write code, use tools, and complete complex digital tasks, raising the question of how far these capabilities carry into the physical world. To investigate this, we introduce RobotWorld, a challenging simulation testbed for robot use: turning instructions and observations into physical task execution through robot interfaces. Its 84 tasks span manipulation, mobile manipulation, locomotion, driving, and aerial control, with explicit interaction budgets and executable success checks. By analysing task outcomes alongside execution traces, we identify both the capabilities that transfer and the gaps that prevent reliable completion. Furthermore, we find that current agents can construct sophisticated perception and control workflows, including image segmentation, camera calibration, spatial estimation, and dynamics-based computation. These capabilities, however, do not consistently compose into successful behaviour: agents lose task-relevant object states despite reaching commanded poses, fail to correct ineffective actions, recover too late, or mistake unfinished tasks for completion. This uneven transfer also differs across models: Astra succeeds more often on spatial and constrained-contact goals, whereas Opus 5.5 succeeds more often on continuous-balance and timed-interaction goals. By linking these outcomes to execution behaviour, RobotWorld provides both a rigorous proving ground and an empirical account of the remaining capability gaps, thereby establishing concrete targets for training and designing more reliable physical-world agents.",
+      "categories": [
+        "cs.RO",
+        "cs.LG"
+      ],
+      "published": "2026-10-08T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.10409",
+      "pdf_url": "https://arxiv.org/pdf/2610.10409",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2610.10441",
+      "title": "CrossWeave: Bridging Perspectives Across Online Communities with a Dual-Pane Design",
+      "authors": [
+        "Fei Fang",
+        "Reva Hirave",
+        "William Jurayj",
+        "Yuqi Li",
+        "Brian Lu",
+        "Tarik Metin",
+        "Tsugunobu Miyake",
+        "Kateryna Morhun",
+        "Yash Permalla",
+        "Kenan Rustamov",
+        "Allen Shen",
+        "Haojun Shi",
+        "Prabhav Singh",
+        "Xiheng Tom Wang",
+        "Kevin Xu",
+        "Qingcheng Zeng",
+        "Jiayi Zhang",
+        "Daniel Khashabi",
+        "Andrew Perrin",
+        "Tiziano Piccardi",
+        "Ziang Xiao",
+        "Jason Eisner"
+      ],
+      "abstract": "Social media systems typically display conversations among already familiar contributors, which can be predictable and one-sided. In civic discourse, this design narrows discussion, reinforces divides, and distorts the perception of public opinion. To encourage cross-community engagement, we present CrossWeave, an AI-powered bridging system that augments the standard social media feed. As the user reads a post, CrossWeave surfaces diverse relevant posts from other threads in a side pane and highlights the connections. Users are invited to venture out of their echo chamber, explore a broader range of views and arguments, and ``click across'' to engage with their authors. When they do, CrossWeave facilitates constructive posting, not only by showcasing relevant past content but also by simulating possible reactions as the user drafts a post.",
+      "categories": [
+        "cs.SI",
+        "cs.HC",
+        "cs.IR"
+      ],
+      "published": "2026-10-08T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.10441",
+      "pdf_url": "https://arxiv.org/pdf/2610.10441",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    }
+  ],
+  "ranked_papers": [
+    {
+      "arxiv_id": "2610.08902",
+      "title": "Agent Plasticity: Measuring Self-Improvement Through Experience",
+      "authors": [
+        "Harman Singh",
+        "Anton Bakhtin",
+        "Rulin Shao",
+        "Gabriel Synnaeve",
+        "Ilia Kulikov",
+        "Rob Fergus",
+        "Sanjeev Arora",
+        "Kurt Keutzer",
+        "Jason Weston",
+        "Anuj Mahajan",
+        "Anirudh Goyal"
+      ],
+      "abstract": "AI agents increasingly operate in environments where they can diagnose failures and improve through experience, yet existing evaluations largely measure what an agent can do at a fixed point in time rather than how effectively it learns. Evaluating self-improvement requires answering three questions: does future performance improve and generalize beyond the interactions that enabled learning; how efficiently are new capabilities acquired; and where does the self-improvement process break down? To answer these questions, we study self-improvement in a controlled setting where agents amortize past experience into reusable artifacts that are inherited by future instances. At each checkpoint, we measure performance on training and held-out environment interactions while accounting for learning cost. We introduce agent plasticity, the efficiency with which an agent converts experience into gains in future held-out performance. Across multiple environments, frontier models exhibit sharply different improvement trajectories despite comparable opportunities to learn. Some achieve substantial and persistent gains, while others remain near or below their initial performance, and gains within the training regime often transfer only partially to out-of-distribution conditions. Endpoint capability and acquisition efficiency also diverge: the agent that ultimately performs best need not be the one that improves most efficiently. Tracing failures through the improvement loop further reveals different candidate bottlenecks. Agents with low plasticity often fail to reuse relevant artifacts, whereas more plastic agents may still fail despite reusing relevant artifacts, pointing to limitations in artifact quality, generalization, or application. Evaluating self-improving agents requires measuring not only what they can do, but how effectively they become better through experience.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-10-08T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.08902",
+      "pdf_url": "https://arxiv.org/pdf/2610.08902",
+      "is_author_match": false,
+      "relevance_score": 10.0,
+      "relevance_reason": "Directly targets evaluation of agent self-improvement through experience, which strongly matches your interests in long-horizon learning, explicit self-correction, and tasks where agents must fail first to improve."
+    },
+    {
+      "arxiv_id": "2610.10513",
+      "title": "SciExam for ENSO: Can AI Agents Build Climate Models?",
+      "authors": [
+        "Yinling Zhang",
+        "Langchen Liu",
+        "Dongbin Xiu",
+        "Xueyan Zou",
+        "Xu Kuang",
+        "Mengdi Wang",
+        "Shilong Liu"
+      ],
+      "abstract": "Language-model agents are increasingly asked to carry out open-ended scientific research, yet their results are usually graded against a known answer, a rubric, or a language-model reviewer, none of which can tell whether a new scientific model is valid. The AI Science Exam for El Nino-Southern Oscillation (SciExam for ENSO) is a benchmark in which agents build low-order stochastic models of ENSO, the dominant mode of interannual climate variability, from real observations. Within a six-hour budget, agents process the observations, write their own diagnostics, which are then frozen, and develop a model using only these diagnostics as feedback. Hidden graders then test whether the model reproduces ENSO's statistics, recovers unobserved variables, and forecasts held-out years, and score a published model in the same way. Across twelve agent systems, six produce models that score higher than the published model, mainly through better reconstruction and forecasting. The simplified forms of the stronger models are each compatible with one of the two competing explanations of ENSO's warm-cold asymmetry, an open debate that the task never mentions. Controlled runs of the top system under varied information suggest that its scores do not come from recalling the dated observational record and that the information it receives shapes how it builds its model. SciExam for ENSO can thus evaluate agent research where no answer is known, and the results suggest that agents can already build competitive models whose structures bear on questions that scientists still debate.",
+      "categories": [
+        "cs.AI",
+        "cs.LG",
+        "physics.ao-ph"
+      ],
+      "published": "2026-10-08T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.10513",
+      "pdf_url": "https://arxiv.org/pdf/2610.10513",
+      "is_author_match": false,
+      "relevance_score": 10.0,
+      "relevance_reason": "Extremely relevant to the long-horizon scientific-task project because it introduces a benchmark for agents doing open-ended scientific modeling where validity cannot be judged by simple answer matching or LM judges."
+    },
+    {
+      "arxiv_id": "2610.09229",
+      "title": "Conditional Accuracy Profiles: Diagnosing LLM Judges across Deployment Conditions",
+      "authors": [
+        "Wenqi Li",
+        "Bin Liu",
+        "Mindi Ruan",
+        "Chuanbo Hu",
+        "Minglei Yin",
+        "Xin Li"
+      ],
+      "abstract": "LLM-as-judge is now a standard tool for scalable evaluation, but judge performance is still often summarized by a single accuracy number. This aggregate view hides the deployment conditions under which a judge succeeds or fails. We introduce \\textbf{Conditional Accuracy Profiling} (CAP), a post-hoc diagnostic framework that decomposes pairwise LLM-judge accuracy into eight conditions organized into content sensitivity, robustness, and rationale quality. CAP is benchmark-agnostic: it can be applied directly when a benchmark provides the required annotations, approximately through task-subset proxies, or through controlled augmentation when perturbation pairs can be generated. We instantiate CAP on seven LLM judges across six pairwise judging benchmarks, including \\textsc{judgerEva-Standard}, a controlled testbed we created to support all eight conditions. CAP exposes profile differences hidden by aggregate accuracy: on \\textsc{judgerEva}'s judge-independent Hard-Constructed subset, the two judges most sensitive to omitted qualifications rank in the bottom three of seven by overall accuracy, so omission sensitivity is not predicted by aggregate accuracy. Across benchmarks, Position Robustness shows the strongest rank stability (mean Spearman $\\bar{\\rho}{=}0.87$) but is itself fragile under JudgeBench-Pro adversarial stress, showing the largest mean accuracy drop among the shared conditions, though the dominant degradation channel varies by judge. Condition-level profiles provide a more actionable basis than aggregate accuracy for selecting LLM judges.",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-10-08T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.09229",
+      "pdf_url": "https://arxiv.org/pdf/2610.09229",
+      "is_author_match": false,
+      "relevance_score": 10.0,
+      "relevance_reason": "Directly targets weaknesses of LLM-as-judge by diagnosing judge accuracy across conditions, making it highly relevant to your grading, LM judge weakness, and long-rollout evaluation interests."
+    },
+    {
+      "arxiv_id": "2610.10447",
+      "title": "A Good Self-Teacher Meets the Student Where They Are: Joint On-Policy Learning and Teaching",
+      "authors": [
+        "Randy Ardywibowo",
+        "Arnav Dalal",
+        "Jiantao Jiao"
+      ],
+      "abstract": "Reinforcement Learning (RL) from outcome rewards suffers from sparse supervision, particularly on difficult, long-horizon tasks where successful trajectories are rare and costly to generate. On-Policy Distillation (OPD) offers an attractive alternative by providing dense token-level supervision from a stronger teacher along the student's own generations. Self-distillation methods further remove the need for a separate teacher model by conditioning the same policy on privileged information to serve as its own teacher. However, privileged conditioning alone does not guarantee that the resulting distillation update improves the student. Indeed, privileged information can lead the teacher to solve tasks through shortcuts unavailable to the student, producing supervision poorly matched to the student's current behavior. Consequently, even a higher-performing teacher can provide guidance that degrades student performance. To address this, we analyze how the choice of privileged teacher affects the student's update. We derive a necessary and sufficient condition for the teacher's local distillation update to be a positive multiple of the student's reward gradient. Our analysis suggests that the teacher should not only perform well on the task, but also provide guidance suited to the student's current capabilities. This characterization motivates a practical teacher-training surrogate that combines outcome rewards with token-level Kullback-Leibler (KL) regularization toward the student. Based on this result, we propose Joint On-Policy Learning and Teaching (JOLT), which jointly trains a single policy in two roles: a privileged teacher using a KL-regularized objective, and an unprivileged student using dense on-policy distillation. Across mathematical reasoning, coding, tool use, and terminal use, JOLT improves training efficiency and performance, with further gains from student rewards.",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-10-08T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.10447",
+      "pdf_url": "https://arxiv.org/pdf/2610.10447",
+      "is_author_match": false,
+      "relevance_score": 10.0,
+      "relevance_reason": "Extremely relevant to Hunter Prep since it directly focuses on joint on-policy learning/teaching and addresses on-policy distillation for difficult long-horizon tasks."
+    },
+    {
+      "arxiv_id": "2610.09471",
+      "title": "When Should an In-Context Learner Expand Its Hypothesis Space?",
+      "authors": [
+        "Weihan Li",
+        "Xinlei Chen",
+        "Junhao Wu",
+        "Tianshi Zheng"
+      ],
+      "abstract": "Learning systems adapt quickly inside a familiar family of models. The harder step comes earlier: deciding, from observations that could be noise, an exception, a change within the family or structure outside it, whether opening a richer family is worth its cost. We treat this as a costly sequential decision: prediction failure must be turned into structural evidence, evidence into a value of expansion, and value into action. The Structural Revision Environment produces matched failures from each source, varies the price of expansion and the remaining horizon independently of the evidence, and admits exact Bayesian calculations and an exact normative solution of the one-shot decision. Its solution shows that revision is a value boundary and not an evidence threshold: one history has different optimal actions under different prices, horizons and announced queries, the boundary between local repair and expansion is set by the inputs a rule predicts and a repair cannot cover, and belief in the richer family crosses long before the decision does. Transformers trained in the environment reproduce this boundary from utility alone. Language models of three post-training lineages carry a failure-sensitive signal in their predictions that is not reflected in their revision decisions, and given the gain of expanding they read it without weighing it against price and horizon. Three models allowed to reason weigh the stated gain in the reference's proportions and still do not turn the history into an estimate of what expansion would buy. Controlled post-training of the meta-trained learners moves the prior and the sharpness of predictions, and neither moves the criterion.",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-10-08T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.09471",
+      "pdf_url": "https://arxiv.org/pdf/2610.09471",
+      "is_author_match": false,
+      "relevance_score": 10.0,
+      "relevance_reason": "This is highly aligned with your brainstorming about models handling surprising/noisy observations, failing first, self-correction, and deciding when evidence warrants expanding hypotheses."
+    },
+    {
+      "arxiv_id": "2610.09346",
+      "title": "OnlineQAT: On-Policy Distillation for Ultra-Low-Bit Large Language Models",
+      "authors": [
+        "Wenjun Wang",
+        "Heng Li",
+        "Yanggan Gu",
+        "Hongxia Yang"
+      ],
+      "abstract": "Quantization-aware training (QAT) can recover much of the accuracy lost when large language models are compressed below four bits. Existing re- covery stages, however, are commonly optimized on fixed completions or teacher-generated answers, whereas the deployed quantized model condi- tions on prefixes generated by itself. Quantization errors can therefore move the model into states that are absent from offline recovery data. We introduce OnlineQAT, a two-stage framework that first obtains a usable low-bit initialization through block-wise QAT and then performs on-policy distillation (OPD) on student-generated responses. At each visited pre- fix, a frozen full-precision teacher provides a sampled reverse-KL training signal. On Qwen3-1.7B, OnlineQAT obtains the best average among the compared quantized methods: 57.28 at W3A16 and 32.52 at W2A16, im- proving over ReasoningQAT by 2.90 and 0.44 points, respectively. The results suggest that student-visited states provide a useful recovery signal beyond fixed-completion training, particularly at three bits.",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-10-08T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.09346",
+      "pdf_url": "https://arxiv.org/pdf/2610.09346",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Extremely relevant to Hunter Prep since it is explicitly about on-policy distillation, addressing the exact train-test mismatch that arises when student models condition on their own rollouts."
+    },
+    {
+      "arxiv_id": "2610.09858",
+      "title": "Training Advisors for LLM Agents from Task Outcomes",
+      "authors": [
+        "Sergei Polezhaev",
+        "Barys Liskavets",
+        "Ori Press",
+        "Alexander Golubev"
+      ],
+      "abstract": "Large language model agents tackle multi-step tasks by interleaving reasoning and tool calls with observations from the environment. Prior work has shown that natural-language feedback can help these agents revise their decisions during task execution. We introduce Caddie, a method for training critics to provide natural-language analysis and advice as agents work through a task. Unlike approaches that rely on step-level labels or reference critiques, Caddie learns from whether the agent ultimately succeeds after receiving the critic's feedback. We optimize the critic through reinforcement learning while keeping the base model frozen. Trained on multi-hop question answering with a single base model, our Qwen3-4B critic improves success rates across four base models of different scales and architectures, including three not used during critic training. On the MuSiQue benchmark, the trained critic improves Qwen3-4B's success rate by more than 25 percentage points, surpassing the performance of Kimi K3 without a critic. The same critic also yields gains on out-of-domain interactive benchmarks, including $\\tau^3$ and DeepDive, with no additional training. Our results show that agents can decide when to seek help from a critic at inference time and that outcome-based critic training can produce guidance that transfers across base models and task domains.",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-10-08T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.09858",
+      "pdf_url": "https://arxiv.org/pdf/2610.09858",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Training advisors from task outcomes is strongly aligned with self-correction, long-horizon agents, and process-level feedback, especially for helping models revise decisions during rollouts."
+    },
+    {
+      "arxiv_id": "2610.10179",
+      "title": "Beyond Outcome Rewards: Constructing and Assigning Retrieval Credit for Search Agents",
+      "authors": [
+        "Wenyu Huang",
+        "Xinyu Hou",
+        "Pavlos Vougiouklis",
+        "Ruofei Lai",
+        "Jeff Z. Pan"
+      ],
+      "abstract": "Search agents enable Large Language Models (LLMs) to iteratively retrieve and use information for complex multi-hop questions. Reinforcement Learning with Verifiable Rewards (RLVR) offers a promising approach for post-training such agents, but its reliance on sparse, outcome-based supervision can make credit assignment difficult and limit learning efficiency. In this paper, we systematically investigate how intermediate supervision can improve reinforcement learning for search agents. We study a range of reward-shaping and credit-assignment strategies that provide learning signals from intermediate retrieval steps. Building on these insights, we develop a training framework that combines intermediate signals with final outcome rewards to improve learning from multi-step search trajectories. Experiments across multiple benchmarks under matched training conditions demonstrate improvements in aggregate search-agent performance and show that both the choice of intermediate signal and where its credit is assigned affect training behaviour. These findings show that reward design and credit assignment are important design dimensions for training effective search agents.",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-10-08T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.10179",
+      "pdf_url": "https://arxiv.org/pdf/2610.10179",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Retrieval credit assignment for search agents is highly relevant to long-horizon scientific tasks and RL environments, since it focuses on dense supervision beyond sparse outcome rewards in multi-step agent behavior."
+    },
+    {
+      "arxiv_id": "2610.10455",
+      "title": "PHRBench: A Behavioral Evaluation of Post-Hallucination Reasoning in LLMs",
+      "authors": [
+        "Linghao Meng",
+        "Feng He",
+        "Xuan Yang",
+        "Junyuan Mao",
+        "Pinze Ren",
+        "Deqing Mu",
+        "Hesen Yang",
+        "Qiankun Li"
+      ],
+      "abstract": "Hallucinated information can propagate through multi-stage LLM systems and become part of the context for subsequent reasoning. Existing studies of post-hallucination reasoning (PHR) mainly characterize changes in final outcomes and aggregate reasoning dynamics, leaving how models resolve hallucinated premises at the response level insufficiently understood. In this work, we introduce PHRBench, a controlled benchmark for behaviorally structured PHR across four domains and 18 large language models. PHRBench characterizes each reasoning trajectory independently of final-answer correctness through Hallucination Compliance, Hallucination Avoidance, and Heuristic Correction, and defines an insightful trajectory as successful correction that ultimately reaches the correct answer. Across 4820 controlled instances, we find that successful recovery remains relatively rare and is associated with more frequent belief updates along the reasoning trajectory. We further find that properties of the hallucinated prompt contain substantial predictive signal for successful recovery, with a lightweight predictor achieving an AUROC of 0.847. These findings provide a behavioral view of post-hallucination reasoning, characterizing how LLMs resolve erroneous context and when successful recovery is likely to occur.",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-10-08T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.10455",
+      "pdf_url": "https://arxiv.org/pdf/2610.10455",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "PHRBench is an excellent fit for your surprising-information and fail-first interests because it evaluates how models reason after being given hallucinated or misleading premises in context."
+    },
+    {
+      "arxiv_id": "2610.08963",
+      "title": "On KL-Regularized Policy Optimization",
+      "authors": [
+        "Yifan Zhang"
+      ],
+      "abstract": "Asynchronous reinforcement learning (RL) for large language model (LLM) agents trains one policy on trajectories generated by another: rollouts come from stale checkpoints, and the inference engine's probabilities differ from the trainer's even at identical parameters. Standard remedies either clip importance ratios, which biases the update, or, as in GRPO, sample a group of responses per prompt, which is costly when episodes are long. We propose KL-Regularized Policy Optimization (KLPO), a framework that anchors the KL regularizer at the sampler. The regularized improvement step then has a closed-form Gibbs solution, and KLPO fits its log-ratio optimality condition by least squares on the sampler's own trajectories, so the sampler probability enters through a log-ratio and no importance weights are needed. Profiling out the regression intercept replaces the intractable log-partition function with the signal's sampler mean plus a sampler-to-trainer KL divergence. For token-level policy mirror descent targets, we show that the resulting gradient can be computed from terminal returns without a critic, via sampler-centered scores or a single trajectory residual, even under stochastic tool outputs. We further prove that independent Monte Carlo estimates of the KL term keep these gradients unbiased, derive the exact KL gap of cheaper top-$K$ and binary approximations, and show that SPPO, GPO, REBEL, and BPO arise as special cases of KLPO. The result is a critic-free update that uses one rollout per prompt and requires neither a learned normalizer nor a group of responses.",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-10-08T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.08963",
+      "pdf_url": "https://arxiv.org/pdf/2610.08963",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Directly relevant to Hunter Prep because it studies KL-regularized policy optimization under stale/off-policy rollouts, which is central to scaling feedback and on-policy distillation for LLM agents."
+    },
+    {
+      "arxiv_id": "2610.10422",
+      "title": "Which Rollout Taught It That? BehaviorTrace and the Limits of Training-Data Attribution in Online RL",
+      "authors": [
+        "Amit Nautiyal"
+      ],
+      "abstract": "When reinforcement learning teaches a language model a new behavior, can we find the training rollouts that taught it? And when an attribution method says it can, how do we know the answer is real? We study both questions on online RL fine-tuning with GRPO, using a planted behavior with a known cause. We release BehaviorTrace, an open evaluation harness that combines full-gradient sketching, the planted-behavior setup, and controls for gradient magnitude, fluency, headroom, and variation across seeds and generation draws. Across three seeds on Qwen2.5-1.5B, much of the apparent attribution signal comes from confounds. A control that ranks training steps by gradient size alone, with no behavior target, reaches 4.2 to 4.5 times chance and matches or beats the best targeted estimator on two of three seeds. At saturated checkpoints, model fluency predicts the behavior label at least as well as every gradient method we compared it with. Once fluency is controlled, the per-rollout results change from seed to seed and from one generation draw to the next, so a single run cannot settle the question. One signal does hold on all three seeds. The gradient of the trigger tokens aligns with a target built where the behavior actually occurs. We turn these findings into a checklist for evaluating attribution in RL. We test existing estimators, including GAS (renormalized TracInCP) and a TRAK-style estimator, and do not propose a new one.",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "published": "2026-10-08T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.10422",
+      "pdf_url": "https://arxiv.org/pdf/2610.10422",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "This is one of the most relevant papers because it directly studies online RL, identifies which rollouts teach behaviors, and probes the limits of training-data attribution for RL-finetuned models."
+    },
+    {
+      "arxiv_id": "2610.09239",
+      "title": "The Winner's Curse in LLM Self-Improvement Loops: Selection Noise, Lock-in, and Acceptance Rules",
+      "authors": [
+        "Litao Hu",
+        "Yutong Tang"
+      ],
+      "abstract": "Self-improving LLM systems propose changes to themselves and keep those that score better on a small evaluation set. We treat this keep-if-better step as selection under measurement noise, model the correlated errors of the candidates in a single decision, and study empirically what happens when the evaluation set is reused. In runs where Qwen models rewrite their own instructions and every candidate is also scored on 600 held-out items, most proposals after the first are harmful, and the model gives the size of the winner's curse of a generation's best candidate. With a prior from a separate pilot, it matches the average overstatement of first-generation commits in native loops, though not setting by setting. In a pre-registered study, the final selection-set score of greedy loops exceeded held-out accuracy by 13 to 20 points with 16 selection items and by 1 to 5 points with 256. Held-out gains grew with the selection set on TREC but not on GSM8K, and the tested acceptance rules did not beat greedy acceptance over whole runs. Gains measured on the selection set also exceeded held-out gains when a current model refined a competent instruction, and in the validation scores of GEPA and MIPROv2. Scoring the starting and the current instruction on 64 items never used for selection removes the average bias of a loop's reported gain, but single estimates remain off by about 6 points. Self-improvement studies should report held-out gains with their uncertainty.",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-10-08T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.09239",
+      "pdf_url": "https://arxiv.org/pdf/2610.09239",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Analyzes noise, lock-in, and acceptance rules in LLM self-improvement loops, making it highly relevant to your interests in scaling feedback, on-policy distillation, and reliable evaluation of iterative self-improvement."
+    },
+    {
+      "arxiv_id": "2610.10062",
+      "title": "Loud Failures, Quiet Failures: Fault Detection and Recovery in Tool-Using Language Model Agents",
+      "authors": [
+        "Obada Kraishan"
+      ],
+      "abstract": "Tool-using agents are usually scored on whether they finish a task while the tools work. Deployments are less forgiving: services time out, endpoints disappear, parameter names change, and results come back well formed but wrong. Prior work has shown that language models over-trust tool outputs that fail silently; we ask how that over-trust plays out across the stages of failure handling in multi-turn agents. Wrapping the executable environments of an established function-calling benchmark in a fault-injection layer, we inject one of four typed faults at a controlled point in the trajectory and record whether the agent notices, changes plan, recovers the task, or repeats itself. Six models from three families, half of them reasoning variants, ran 1,920 trials over 24 multi-step tasks. Agents treat a failure as a problem in 91.3% of trials when the tool returns an explicit error, but in 58.8% of trials when it returns a plausible wrong value, against a 26.8% rate of reporting problems when nothing was wrong. Reasoning models are not better placed: paired against instruct siblings, they notice less (-9.3 points, p < .001) and change plan more (+10.4 points, p < .001), and recovery is unchanged (p = .512). Because agents are stochastic, two fault-free runs of the same task end in the same state only 63.3% of the time; against that baseline, only a missing tool clearly lowers recovery (39.9%), while timeouts, schema drift, and corruption stay within run-to-run variation. After a fault, agents return to the same tool three or more times in a row in up to 22.2% of trials, though strictly identical repeats are rare. A prompt line asking the agent to check each result did not move detection. Agents respond to the error channel rather than to the content of what a tool returns, so failures that stay inside the expected format pass through.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-10-08T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.10062",
+      "pdf_url": "https://arxiv.org/pdf/2610.10062",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Highly aligned with your interest in surprising/noisy observations and self-correction because it analyzes fault detection and recovery in tool-using agents, including silent failures and over-trust."
+    },
+    {
+      "arxiv_id": "2610.08959",
+      "title": "GraphOPD: Graph-Augmented On-Policy Distillation for LLM Agents",
+      "authors": [
+        "Bohan Lin",
+        "Liyi Chen",
+        "Zhuoning Guo",
+        "Muyang Li",
+        "Qimeng Wang",
+        "Yan Gao",
+        "Yao Hu",
+        "Yudong Zhang"
+      ],
+      "abstract": "On-policy distillation post-trains large language model agents by supplying dense, step-level guidance from a teacher policy when the reinforcement-learning reward is sparse and arrives only once per trajectory. Existing instantiations allocate this guidance by the size of the teacher-student divergence at each step, on the single-turn intuition that a large disagreement marks a mistake worth correcting. Once decisions chain over many turns, that rule misfires, since an early drift enters every later context both policies condition on, leaving the teacher consistent with the drifted trajectory instead of flagging its cause, while interchangeable steps register large but outcome-irrelevant divergences. We demonstrate this on an agentic benchmark, where distilling the highest-divergence steps brings no consistent benefit over random selection. To this end, we introduce GraphOPD, the first method to bring graph-based structural augmentation into on-policy distillation for agent capabilities. It reads which steps enabled which later ones from the environment's own record of state changes, immune to the drift that corrupts the teacher-student gap, organizes them into a dependency graph, scores each step by a random-walk stationary distribution over it, and fuses that structural credit with the divergence signal into a trajectory-relative mask concentrating supervision on each rollout's highest-aptitude steps. Across three model scales and eleven baselines on ALFWorld, WebShop, and SearchQA, GraphOPD shows competitive performance throughout, improving over the strongest baseline by up to +5.8 pp. An executed-replay audit further shows that this structural credit score tracks true causal impact far above chance, that both fused signals are independently necessary, and that the same signal transfers to out-of-domain tool-integrated reasoning.",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-10-08T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.08959",
+      "pdf_url": "https://arxiv.org/pdf/2610.08959",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Highly relevant because it is explicitly about graph-augmented on-policy distillation for LLM agents, matching the stated Hunter Prep interest in scaling feedback and on-policy distillation."
+    },
+    {
+      "arxiv_id": "2610.09914",
+      "title": "RollVerify: Bridging Efficiency and Accuracy in Long-Tail Rollout Reinforcement Learning",
+      "authors": [
+        "Yongqiang Yao",
+        "Jinru Tan",
+        "Kaihuan Liang",
+        "Zixin Yin",
+        "Yazhe Niu",
+        "Ruihao Gong",
+        "Dahua Lin",
+        "Ningyi Xu"
+      ],
+      "abstract": "Reinforcement learning is crucial for improving large language models' reasoning and generalization. It relies on massive rollouts whose lengths become increasingly long-tailed as context windows grow. In on-policy training, these long-tail rollouts can result in GPU bubbles, reducing system utilization and limiting RL scalability. Asynchronous or partial-rollout methods improve throughput by relaxing synchronization, but inevitably introduce stale off-policy samples (trajectories) that may hurt final accuracy. Existing approaches mainly mitigate this off-policy issue by reweighting off-policy samples during training, yet they can still leave a performance gap compared to fully on-policy training. In this work, rather than passively reweighting samples during training, we propose RollVerify, a lightweight RL framework built on partial rollout that actively verifies and repairs samples before they enter training. Specifically, it introduces an off-policy shift metric OPS, to quantify the off-policy deviation of partially generated trajectories. Guided by the OPS constraint, RollVerify performs both sequence-level and token-level verification to identify and truncate invalid suffixes of trajectories. This yields high-quality samples that protect the models' accuracy while preserving the efficiency gains of partial rollout. Experiments on mathematical and tool-assisted mathematical reasoning show that RollVerify achieves accuracy comparable to on-policy training while reducing training cost. Additional code-generation results provide preliminary evidence beyond mathematics.",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-10-08T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.09914",
+      "pdf_url": "https://arxiv.org/pdf/2610.09914",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Extremely relevant to scaling long-rollout RL and on-policy training because it targets the efficiency/accuracy tradeoff for long-tail rollouts, directly matching the current focus on rollout-heavy post-training."
+    },
+    {
+      "arxiv_id": "2610.10460",
+      "title": "Composing What Each Teacher Learned: Multi-Teacher On-Policy Distillation through Teacher-Relative Shifts",
+      "authors": [
+        "Hejian Sang",
+        "Zhengze Zhou",
+        "Shayan Mohajer Hamidi",
+        "Xiaomin Li",
+        "Rohit Jain",
+        "Alborz Geramifard"
+      ],
+      "abstract": "Multi-teacher on-policy distillation (MOPD) is used in two settings. In common-domain composition, several teachers score each student rollout from one prompt domain and their signals form a single target; in routed-domain distillation, prompts from different domains are assigned to the corresponding specialist. Both settings usually transfer each teacher's endpoint policy, which mixes what post-training changed with preferences inherited from the teacher's base. We introduce $\\Delta$-MOPD, which transfers each teacher's teacher-minus-base logit shift re-anchored at the student's frozen initialization, and compare it with endpoint supervision in both settings while holding teacher selection fixed. We first expose the mechanism that impedes endpoint transfer: inherited base pull can exceed the post-training shift. Removing it reduces the teacher-term norm ratio and target--student KL.   Across our experiments, the results suggest that shift targets are particularly useful when teacher signals are combined at a state. With three composed teachers, $\\Delta$-MOPD exceeds endpoint composition by $4.11$ Math and $1.95$ five-benchmark points; with two, it matches endpoint accuracy. Under phased routing, it achieves higher mean performance in both phase orders and reduces the observed order gap from $10.50$ to $6.42$ points. Under interleaved routing, where each update involves one teacher, the two targets perform comparably. The phased results provide supporting evidence that the benefit may extend to signals accumulated across training phases. Target construction is thus an independent design axis in MOPD, complementary to teacher selection.",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-10-08T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.10460",
+      "pdf_url": "https://arxiv.org/pdf/2610.10460",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Very relevant to the feedback and distillation agenda because it studies multi-teacher on-policy distillation and how teacher signals should be combined."
+    },
+    {
+      "arxiv_id": "2610.09074",
+      "title": "TAP: Efficient Long-Horizon Agent Pruning via Trajectory-Anchored Recovery",
+      "authors": [
+        "Yuanzhe Li",
+        "Pengxin Wang",
+        "Yuxin Ren",
+        "Jianing Deng",
+        "Jingtong Hu",
+        "Song Wang",
+        "Jingdi Chen",
+        "Huanrui Yang"
+      ],
+      "abstract": "Emerging long-horizon agentic tasks require repeated model calls, worsening the inference cost of already-costly language models. While narrow agentic tasks suggest potential for aggressive model pruning without performance drop, empirical results show existing methods proposed for question answering tasks severely degrade task performance when applied to agentic models. We trace this failure to two decisions: what to prune and how to recover. For pruning, one-shot importance estimates fail to track how the pruned model adapts. For recovery, offline distillation covers only teacher prefixes, while full-trajectory on-policy distillation causes student errors to compound across turns. In this work, we propose Trajectory-Anchored Pruning (TAP), the first structural pruning framework for reinforcement learning (RL)-trained agents. TAP couples structural pruning with efficient on-policy recovery, anchoring interactions to teacher trajectories while allowing the student to generate each reasoning-action response. A frozen dense teacher supervises the student's response prefixes, addressing within-response training-inference mismatch while preventing student-induced deviations from propagating across training turns. Instead of one-shot pruning, TAP re-scores channels using gradients of the recovery objective on the recovered student, connecting iterative channel selection to the evolving policy. With 60% of FFN channels removed, TAP retains 99.2% and 88.0% of the dense 7B agents' task success rates on ALFWorld and WebShop, respectively, while reducing GPU time per successful task by approximately 22% and 17%. These results demonstrate effective structural compression of long-horizon agents under a limited recovery budget.",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-10-08T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.09074",
+      "pdf_url": "https://arxiv.org/pdf/2610.09074",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Very relevant to your long-horizon agent work because it directly targets efficient pruning for long-horizon agents and analyzes why QA-style compression methods fail on agentic tasks."
+    },
+    {
+      "arxiv_id": "2610.09597",
+      "title": "COPC: Coupled Off-Policy Correction for Asynchronous LLM Reinforcement Learning",
+      "authors": [
+        "Zicheng Hu",
+        "Zhijian Zhou",
+        "Xuan Zhang",
+        "Yuchen Liu",
+        "Cheng Chen",
+        "Yuan Li",
+        "Qi Gu",
+        "Yan Feng",
+        "Hongyan Hao",
+        "Chao Qu"
+      ],
+      "abstract": "Asynchronous RL accelerates large language model post-training by decoupling rollout generation from optimization, but trains on stale trajectories. Existing methods primarily correct token-level policy mismatch through importance-ratio control in the actor objective. We show that this \\emph{policy-side correction} alone is insufficient: advantage estimates also inherit mismatch from behavior-policy continuations, which we term \\emph{advantage staleness}. We derive exact bias and variance decompositions for a general two-channel actor update, revealing nonseparable coupling between policy-weight and advantage-estimation errors: their interaction induces multiplicative bias terms, while squared policy weights amplify advantage uncertainty in gradient variance. This motivates the hypothesis that policy- and advantage-side correction should be coordinated. We introduce Coupled Off-Policy Correction (COPC), an actor--critic method combining token-level ratio masking with two-sided clipped-ratio weighting of TD residuals for return and advantage estimation. Joint parameter sweeps across staleness levels support this hypothesis: the effect of one correction parameter depends on, and can reverse with, the other. COPC achieves the highest reported performance on tool-integrated mathematical reasoning and search, outperforming the strongest reported asynchronous baseline in each setting. It also offers a broad high-performing parameter region and improved training stability. In search, COPC remains stable throughout training, while most evaluated asynchronous baselines collapse late in training. These gains persist at 64-step policy staleness. COPC adds minimal step-time overhead over asynchronous PPO and retains a $1.7\\times$ step-time speedup over synchronous PPO.",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-10-08T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.09597",
+      "pdf_url": "https://arxiv.org/pdf/2610.09597",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Highly relevant to Hunter Prep because it directly studies asynchronous LLM RL, off-policy correction, and stale-trajectory issues that matter for scaling on-policy distillation and feedback-based post-training."
+    },
+    {
+      "arxiv_id": "2610.08840",
+      "title": "Beyond the Sycophancy Score: How Task, Model, and Pressure Shape LLM Yielding",
+      "authors": [
+        "Guang Yang",
+        "Homa Hosseinmardi",
+        "Fengchen Liu",
+        "Amir Ghasemian"
+      ],
+      "abstract": "Large language models (LLMs) often abandon a correct answer, or endorse a user's position, once the user pushes back. This behavior, called sycophancy, is usually reported as a single rate per model, which says little about when it happens or how a user can avoid it. We study the conditions that produce it with 103,939 graded replies from ten configurations: eight LLMs with reasoning disabled, and two of them again with maximum reasoning, all facing the same 200 items, 13 pressure conditions, and four-turn conversations, with every reply labeled by two independent LLM judges. We find that the dominant factors are how costly it is for the model to verify the user's claim, and whether a trained guardrail covers it. Removing this task factor from a logistic model costs 0.485 of McFadden $R^2$, against 0.139 for model family and 0.009 for pressure tactic. Anchored facts are almost never conceded (1.3%), while adoption on logic puzzles rises with the number of clues needed to refute the pushed answer. Personal choices are endorsed in 77.0% of conversations. Most concessions on hard items come from models that cannot reliably solve them; models that can solve them rarely give the answer up. For both models tested, maximum reasoning removes these concessions completely: adoption on deep puzzles falls from 19.2% and 12.5% to 0%. Fallacious or emotional framing adds nothing beyond plain repetition. Three human annotators agree with the judges' consensus on 118/120 calibration items. These results give practical rules for reliable use: simplify hard-to-verify problems and reason deeply, state the question rather than one's preferred answer, ask for evidence on open questions, and choose models by their measured guardrail profile.",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-10-08T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.08840",
+      "pdf_url": "https://arxiv.org/pdf/2610.08840",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Highly relevant to your interest in explicit self-correction and failure-under-pressure evaluation because it studies when models abandon correct answers after user pushback using large-scale graded responses."
+    },
+    {
+      "arxiv_id": "2610.09087",
+      "title": "U-Space: Uncovering When and Why Uncertainty Arises in Language Models",
+      "authors": [
+        "Tobias Braun",
+        "Nils Loose",
+        "Alexander Herzog",
+        "Virginia Ceccatelli",
+        "Marcus Rohrbach",
+        "Thomas Eisenbarth",
+        "Lorenzo Cavallaro"
+      ],
+      "abstract": "Large language models are informing decisions with ever-higher stakes. As the consequences of their errors grow, a central question becomes harder to ignore: how much can we trust an individual answer? Yet recognizing when to defer remains difficult because language models can present incorrect conclusions with fluent explanations and an authoritative tone. Uncertainty quantification seeks to address this disconnect by estimating the reliability of individual predictions. However, many existing methods require repeated generations or separately trained components, and their scalar estimates do not reveal where uncertainty arises or how it evolves during reasoning. Recent work has also shown that generation length can be strongly associated with uncertainty estimates and correctness, raising the question of how much of an estimator's predictive power comes from uncertainty-specific information rather than output length alone. Mechanistic interpretability offers a way to address these limitations by connecting human-interpretable concepts to intermediate model states. Building on this capability, we introduce the U-Space, a low-dimensional subspace that makes a model's evolving uncertainty measurable and interpretable. We identify semantic anchors for doubt and certainty, map their unembedding directions back into the residual space, and combine their contrasts into an orthogonal basis. The U-Lens projects each token state onto these basis vectors, yielding an interpretable token-level uncertainty map that can be inspected directly or aggregated into a scalar uncertainty score. Our approach requires no correctness labels, repeated generations, or training. Across reasoning benchmarks, its confidence score outperforms established baselines under both standard and length-controlled evaluation and transfers more reliably than supervised estimators. Code: https://github.com/s2labres/U-Space.",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-10-08T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.09087",
+      "pdf_url": "https://arxiv.org/pdf/2610.09087",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Directly useful for brainstorming around surprising/noisy observations and hypothesis formation because it analyzes when and why uncertainty arises in language models and how trust in individual answers should be calibrated."
+    }
+  ]
+}
