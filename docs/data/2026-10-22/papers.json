@@ -1,0 +1,727 @@
+{
+  "date": "2026-10-22",
+  "generated_at": "2026-10-22T05:07:54.300652+00:00",
+  "author_papers": [
+    {
+      "arxiv_id": "2610.28944",
+      "title": "Guilt by Association: Semantic Leakage Drives Associative Gender Bias",
+      "authors": [
+        "Hazel Chen",
+        "Peter West",
+        "Hila Gonen"
+      ],
+      "abstract": "Semantic leakage occurs when a concept in the prompt steers model generation about an entity, even though the concept is irrelevant to it (e.g., a person who likes yellow is said to work as a school bus driver). It has mostly been studied in settings where the concept is directly attributed to the entity the model is asked about. This leaves open whether leakage is a flawed heuristic, where the model builds a profile of that entity, or a much broader associative tendency, e.g., working across seemingly unrelated entities. We argue for the latter: even after removing the attribution of the concept to the specific entity, leakage persists. Next, we extend this idea to gender bias. While work on gender bias in LMs typically looks at cases where the stereotyped concept is attributed to an entity, our findings suggest that a concept may steer outputs with its mere presence in the scene. We show this using gendered concepts under two conditions: when the subject engages with the concept, and when the concept just sits in the scene. We find that both shift model generation toward the stereotype to a similar extent. Together, our results suggest that semantic leakage drives a form of bias that is overlooked by current evaluations.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-10-22T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.28944",
+      "pdf_url": "https://arxiv.org/pdf/2610.28944",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2610.29472",
+      "title": "OmniSimulator: Aligning Small Language Models for Authentic Heterogeneous Behavior Modeling",
+      "authors": [
+        "Jiawei Chen",
+        "Ruoxi Xu",
+        "Boxi Cao",
+        "Zhuoqun Li",
+        "Ruotong Pan",
+        "Yunfei Zhang",
+        "Zhirui Yang",
+        "Jingyan Chen",
+        "Tingting Gao",
+        "Han Li",
+        "Yaojie Lu",
+        "Xianpei Han",
+        "Le Sun",
+        "Xiangyu Wu",
+        "Hongyu Lin"
+      ],
+      "abstract": "Large language models (LLMs) have shown great potential as general-purpose user simulators for interactive systems. Prior studies have demonstrated that training on high-quality data can substantially improve model reasoning and downstream task performance. However, the upper bound of user simulation is still constrained by the model's reasoning paradigm: native chain-of-thought often degenerates into shallow pattern matching and fails to adequately model the behavioral factors underlying real user decisions. In this paper, we propose OmniSimulator, a novel training framework designed to improve the predictive ability of small LLMs for realistic user simulation on short-video platform environments. Specifically, OmniSimulator organizes behavior-oriented reasoning through a structured schema with five dimensions, carefully selects data from real user-behavior scenarios, and introduces a teacher model to generate high-quality reasoning traces under the proposed schema, helping small models learn behavior-relevant reasoning patterns rather than relying on superficial behavioral correlations. Based on this process, we construct 9,881 high-quality training instances from three months of historical interaction trajectories of 200 real users, averaging about 50 distilled examples per user. Experimental results show that OmniSimulator improves the average score of Qwen3-8B by 34.33%, achieves performance competitive with Claude-Sonnet-4.5, and supports smaller-scale, self-hosted deployment. These results suggest that learning structured behavior-oriented reasoning patterns is a promising direction towards scalable and high-fidelity LLM-based user simulation.",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-10-22T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.29472",
+      "pdf_url": "https://arxiv.org/pdf/2610.29472",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2610.28636",
+      "title": "RESEARCHHUB: A Personalized Literature Discovery System for Biomedical Preprints",
+      "authors": [
+        "Viswonathan Manoranjan",
+        "Taeyoon Kim",
+        "Nicholas Do",
+        "Sang Woo Kim",
+        "Dawei Li",
+        "Zhen Tan",
+        "Tianlong Chen",
+        "Yunmei Liu"
+      ],
+      "abstract": "We present ResearchHub, an interactive system for personalized literature discovery over biomedical preprints. Given a researcher profile or a free-form query, ResearchHub retrieves relevant papers from a domain-specific MedRxiv corpus and helps users move beyond near-duplicate recommendations through controllable novelty, diversity, and curriculum ordering. At the core of the system is prism, a bi-encoder retriever adapted to biomedical preprints using GPT-4o-generated natural language queries and a hybrid Multiple Negatives Ranking plus MarginMSE objective with cross-encoder soft labels. On 44,937 MedRxiv papers from 2023--2025, prism outperforms strong off-the-shelf dense retrievers, improving Recall@10 over SPECTER2-Search by 12.4 percentage points. ResearchHub further supports frontier retrieval based on a user's reading history, DPP-based diversity re-ranking, Local Intrinsic Dimensionality ordering from mainstream to specialized papers, and lightweight attribution cards for result explanation. The full pipeline runs with low latency, making the system suitable",
+      "categories": [
+        "cs.IR",
+        "cs.CL"
+      ],
+      "published": "2026-10-22T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.28636",
+      "pdf_url": "https://arxiv.org/pdf/2610.28636",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2610.29822",
+      "title": "UserSWE: Evaluating Coding Agents in Multi-Turn Conversations with Dynamic Users",
+      "authors": [
+        "Zhan-Yu Wu",
+        "Ji Luo",
+        "Alyssa Wu",
+        "Junjielong Xu",
+        "Richeng Xuan",
+        "Zhichao Hu",
+        "Chongming Gao",
+        "Xinting Hu"
+      ],
+      "abstract": "As coding agents become more capable, developers increasingly use them to fix bugs through multi-turn interactions. Existing benchmarks do not adequately cover this scenario. Most present a complete issue report in a single turn without interaction. Their evaluation can produce both false positives and false negatives, accepting incorrect patches or rejecting correct ones. We introduce UserSWE for evaluating coding agents' ability to fix repository-level bugs through multi-turn interactions with dynamic users and execution-grounded verdicts at every turn. Its construction pipeline turns repository history and existing single-turn benchmarks into multi-turn tasks. At each turn, information pools constrain what the simulated user can reveal, while a persona chain sampled from a transition model calibrated on 20,859 development sessions governs how it speaks. Tests run after every turn, and a pair of agents from different model families writes and gates each verdict, using test results as primary evidence and model judgment only for aspects the tests cannot resolve. We evaluate eleven agents on 72 tasks from 42 repositories and find that agent rankings change with the interaction budget. Claude Fable 5.1 resolves the most tasks in one turn, GPT-6-Astra resolves the most by the eighth turn, and Claude Opus 5 leads at most intermediate budgets. These results indicate that single-turn performance is insufficient to characterize interactive coding ability.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-10-22T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.29822",
+      "pdf_url": "https://arxiv.org/pdf/2610.29822",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2610.28679",
+      "title": "VerifierBench: Benchmarking the Generation of Executable Verifiers for LLM Agents",
+      "authors": [
+        "Jianing Yin",
+        "Ziyi Chen",
+        "Hao Wang",
+        "Yiyou Sun",
+        "Zijian Jin",
+        "Dawn Song",
+        "Daoan Zhang"
+      ],
+      "abstract": "Agents need reliable ways to validate their outputs, both when completing tasks and when filtering synthetic training data. We study verifier generation: from the instruction and environment available for solving a task, an agent writes an executable verifier that must accept every valid solution and reject invalid ones. We introduce VerifierBench, a benchmark of 222 tasks from six agent benchmarks spanning tool-call, state-based, and code verification, with 4,993 hidden test cases that include alternative valid solutions and attacks; Verifier4Verifier (V4V), a six-check audit, screens its source verifiers and test suites. Across 19 models in a common agent harness, normalized balanced accuracy ranges from 10.6 to 62.1, with generated verifiers consistently rejecting invalid solutions more reliably than they accept valid ones. This apparent strength can mask overly restrictive verification: most false rejections in the analyzed records come from verifiers that accept no tested solution to a task. Case studies reveal unsupported assumptions about solution formats, tool use, and code changes that exclude valid solutions. These errors survive self-testing because agents test solutions that share the verifier's mistaken assumptions, or submit verifiers without confirming that any correct solution passes. These findings suggest testing both whether a verifier accepts a correct solution and whether it accepts other solutions permitted by the task. The project page and dataset are publicly available.",
+      "categories": [
+        "cs.SE",
+        "cs.AI"
+      ],
+      "published": "2026-10-22T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.28679",
+      "pdf_url": "https://arxiv.org/pdf/2610.28679",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2610.29093",
+      "title": "Agentic Music Post-Production",
+      "authors": [
+        "Jaywon Koo",
+        "Junghyun Koo",
+        "Marco A. Martinez-Ramirez",
+        "Wei-Hsiang Liao",
+        "Seungheon Doh",
+        "Qiyu Wu",
+        "Vicente Ordonez",
+        "Yuki Mitsufuji"
+      ],
+      "abstract": "We introduce MixAgent, an agentic pipeline for music post-production that follows the workflow of audio engineers to build interpretable and editable mixing plans guided by a reference song. A grouping agent first routes related input tracks, such as drum recordings, into subgroups. A planning agent then uses retrieved examples to choose and order audio effects, such as volume control and reverb, for tracks, subgroups, and the full mix. To refine the mix, a detector identifies what needs correction, and a critic proposes numerical parameter adjustments from tracks to the full mix. In our experiments, prompting recent multimodal models to listen and revise often worsens the mix, making reliable correction a central challenge. We therefore build MixCritic, a dataset of 45,657 repair critiques derived from parameters fitted to professional mixes, and train the critic with supervised fine-tuning followed by preference optimization on rendered audio outcomes. On MedleyDB, learned refinement reduces error by 19% relative to the initial mix, with preference optimization reducing it by 8.4% over supervised training alone. Retrieved examples further improve effects selection, and a human listening test shows that MixAgent gets higher quality ratings than mixes produced by Qwen3-Omni, Gemini 3.8 Flash and GPT-4o-audio.",
+      "categories": [
+        "cs.SD",
+        "cs.AI"
+      ],
+      "published": "2026-10-22T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.29093",
+      "pdf_url": "https://arxiv.org/pdf/2610.29093",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2610.29183",
+      "title": "Resuming Vision-Language Inference across Onboard Interruptions",
+      "authors": [
+        "Xiaolong Huang",
+        "Yinyuan Zhang",
+        "Daliang Xu",
+        "Yun Ma",
+        "Qing Li",
+        "Mengwei Xu",
+        "Shangguang Wang",
+        "Gang Huang",
+        "Xuanzhe Liu"
+      ],
+      "abstract": "Executing vision-language models (VLMs) aboard low-Earth orbit satellites enables flexible processing of observation data without first downlinking it to the ground. On commercial off-the-shelf payloads, however, a request may span multiple execution windows: power and thermal constraints, fault-triggered reboots, and competing payload demands can interrupt inference before it completes. Each shutdown discards volatile activations and KV caches, forcing an unprotected request to repeat work after restart.   We present OrbitWeaver, a framework that preserves VLM inference progress across onboard interruptions through coordinated checkpointing and recovery. Its phase-aware checkpointing selects recovery boundaries according to the state lifetimes and computational characteristics of vision encoding, language-model prefill, and decoding, balancing storage traffic against recomputation. Its dependency-aware dynamic recovery schedules restoration from partially completed states across the layer and token-chunk dimensions. By overlapping checkpoint and weight reads with recomputation, it reduces restart latency; the recovery planner computes an optimal execution order under its scheduling model within 100 ms.   Experiments on satellite payload hardware using on-orbit telemetry traces show up to a 4.07-fold end-to-end speedup and a 3.56-fold reduction in SSD write volume over the evaluated baselines. A 72-hour deployment on two low-Earth orbit satellites demonstrates that OrbitWeaver retains inference progress and resumes execution across repeated bus-enforced shutdowns.",
+      "categories": [
+        "cs.DC",
+        "cs.AI"
+      ],
+      "published": "2026-10-22T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.29183",
+      "pdf_url": "https://arxiv.org/pdf/2610.29183",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    }
+  ],
+  "ranked_papers": [
+    {
+      "arxiv_id": "2610.28886",
+      "title": "SANE: Automated Scorer-Specific Metamorphic Testing for LLM Judges",
+      "authors": [
+        "Ethan Ludwick",
+        "Yu-Chung Hsiao"
+      ],
+      "abstract": "LLM judges increasingly mediate benchmark evaluation, model selection, data curation, and training. Their decisions are useful only when each judge responds reliably to changes affecting its scoring criterion. Existing methods for reliability testing perturb inputs with known expected effects on judge scores. Prominent LLM-judge testing harnesses combine human-authored perturbation recipes with synthetic test generation, leaving scorer-specific recipe ideation outside the automated pipeline. This limits their use to fixed perturbations and pre-assumed scorer types. We introduce SANE, an agent-based framework that encodes behavioral requirements for stochastic evaluators as reusable agent instructions. Given a scorer specification, implementation, and representative inputs, the pipeline first identifies scorer-specific capabilities, then automatically derives perturbation recipes and expected score relations for each. SANE also defines a scorer-independent validation framework for generated judge tests. It determines whether each recipe agrees with scorer intent and whether each instantiated case realizes the recipe and supports its expected relation. Because SANE generates a recipe inventory tailored to each scorer, the number of aligned recipes grows as scorers are added. Across five domains, SANE produces 3.7 times as many validated test families as the Judge Reliability Harness (JRH) at comparable end-to-end validity and detects scorer deficiencies in every domain, including professionalism and toxicity, where JRH detects none. On faithfulness, SANE achieves strong human alignment in judge ranking: its test-suite scores rank 11 judge models consistently with human-labeled FaithBench performance (Spearman rho = 0.852), while JRH does not (rho = 0.100).",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.SE"
+      ],
+      "published": "2026-10-22T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.28886",
+      "pdf_url": "https://arxiv.org/pdf/2610.28886",
+      "is_author_match": false,
+      "relevance_score": 10.0,
+      "relevance_reason": "This is an especially strong match since it focuses on automated metamorphic testing of LLM judges, directly addressing your concern that LM judges have weaknesses and your work on better grading of long rollouts."
+    },
+    {
+      "arxiv_id": "2610.28763",
+      "title": "Automating ML for Science: Can Frontier Agents Climb Scientific Hills in the Wild?",
+      "authors": [
+        "Ming Zhong",
+        "Stacy Li",
+        "Nicholas Carlini",
+        "Matthew Jagielski"
+      ],
+      "abstract": "Frontier coding agents are increasingly framed as end-to-end automated researchers, and ML for science offers a demanding test of that promise: improving a scientific model often requires domain insight beyond routine ML engineering. We introduce Agent4Sci, a long-horizon testbed for measuring how far today's agents can improve the published best models on scientific ML benchmarks, spanning 20 benchmarks across 11 domains. Rather than ranking agents on a leaderboard, Agent4Sci asks what kinds of progress agents can make on these tasks under in-the-wild conditions, and where they fall short. Empirically, today's frontier agents advance the published best on every benchmark, with Claude Opus reaching 10.4% mean relative improvement and no run flagged for academic misconduct. These gains, however, come almost entirely from a bag of ML-engineering tricks rather than research-level insight. Trajectory analysis surfaces three recurring limitations in this setting: novelty miscalibration, resource under-utilization, and rapid collapse into local engineering sweeps. Lightweight plug-in skills for research ideation, experiment management, and scheduled checklists raise Claude Opus from 10.4% to 20.1% and Codex from 4.4% to 8.1%, while yielding more diverse, domain-relevant interventions. Agent4Sci gives the community a way to track and push frontier agents from ML engineering toward domain insight on real-world ML-for-science problems. Code and data are available on GitHub (https://github.com/maszhongming/agent4sci) and Hugging Face (https://huggingface.co/datasets/MingZhong/agent4sci).",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "published": "2026-10-22T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.28763",
+      "pdf_url": "https://arxiv.org/pdf/2610.28763",
+      "is_author_match": false,
+      "relevance_score": 10.0,
+      "relevance_reason": "Directly targets long-horizon scientific-task evaluation for frontier agents in the wild, which is highly aligned with your brainstorming around scientific tasks and measuring agent capabilities."
+    },
+    {
+      "arxiv_id": "2610.29167",
+      "title": "TeachBack: Learning to Teach via Bidirectional Preference Optimization for On-Policy Self-Distillation",
+      "authors": [
+        "Linfei Ji (Huazhong University of Science and Technology)",
+        "Jiayun Li (Tsinghua University)",
+        "Haozhao Wang (Huazhong University of Science and Technology)",
+        "Siyu Jiang (Huazhong University of Science and Technology)",
+        "Zehao Wang (Harbin Institute of Technology)",
+        "Longtao Xiao (Huazhong University of Science and Technology)",
+        "Yu-Jie Yuan (Huawei Technologies Ltd)",
+        "Ruixuan Li (Huazhong University of Science and Technology)"
+      ],
+      "abstract": "On-policy self-distillation (OPSD) enables a language model to learn from a Teacher instantiated from the same model but given access to privileged information, such as a reference solution. We find that access to sufficient privileged information allows the Teacher to generate highly accurate trajectories; however, accuracy alone does not guarantee that these trajectories are suitable for Student learning. Direct access to a complete solution may encourage shortened, reference-conditioned derivations that omit the exploration, verification, and self-correction required to solve problems without privileged information. We introduce TeachBack, a bidirectional preference-learning framework for on-policy self-distillation that learns not only from the Teacher but also how the Teacher should teach. TeachBack shapes the Teacher's generation behavior by controlling the length of the reference-reasoning suffix injected into the prompt and by varying the prompt style. While maintaining comparable Teacher accuracy, it encourages the Teacher to explore and re-solve problems, thereby reducing its reliance on the reference solution. At each rollout refresh, the shared policy generates both a privileged Teacher trajectory and a problem-only Student trajectory. A pairwise preference objective uses privileged Teacher trajectories to improve Student learning, while the reversed preference uses the Student's behavior to shape future Teacher supervision under the privileged condition. Experiments on mathematical and logical reasoning tasks show that TeachBack consistently improves Student performance over existing OPSD methods and related baselines.",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "published": "2026-10-22T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.29167",
+      "pdf_url": "https://arxiv.org/pdf/2610.29167",
+      "is_author_match": false,
+      "relevance_score": 10.0,
+      "relevance_reason": "This is a very close match to Hunter Prep because it explicitly studies on-policy self-distillation and how teacher feedback quality affects student learning."
+    },
+    {
+      "arxiv_id": "2610.29245",
+      "title": "CrashGym: Measuring the Decision Value of Experimentation for LLM Agents in Counterfactual Market Crashes",
+      "authors": [
+        "Haocheng Lu",
+        "Haoxuan Cheng",
+        "Mingyang Chen",
+        "Minjun Zhu"
+      ],
+      "abstract": "Language-model agents are increasingly asked to run experiments, yet benchmarks rarely measure whether those experiments improve the decisions they are meant to inform. We introduce CrashGym, a deterministic, replayable limit-order-book simulator in which an agent must choose between a deleveraging intervention and a liquidity backstop for a market about to suffer a shock-triggered crash. Before committing, the agent may query intervention experiments in a laboratory realization of the market. Its choice is then scored on an independently seeded target realization in which the simulator executes every feasible intervention, so regret relative to the best intervention is computed by directly simulating every alternative on the same target repeats, with no human or model-based judging. The simulator implements each amplification channel---persistent price impact, liquidity withdrawal, margin-driven liquidation, and an evolving strategy mix---as an explicit mechanism that can be switched on in stages. In a prospectively specified study on 24 newly sampled worlds, laboratory access reduces the mean regret of the one deployment with a complete record (Luna) from 8.878 to 3.785, a paired reduction of 5.092 utility units (nominal 95% world-bootstrap interval: 1.028--9.507), or 57.4% of the OBSERVE-ONLY mean. Prospective comparisons for two further deployments are incomplete; in a separate exploratory study, mean regret is lower with laboratory access for all four deployments evaluated. A laboratory whose strategy mix evolves endogenously yields no established advantage over one with a fixed mix. CrashGym thus measures the value of experimentation as avoided decision loss and lets simulator detail be judged by the decisions it supports.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-10-22T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.29245",
+      "pdf_url": "https://arxiv.org/pdf/2610.29245",
+      "is_author_match": false,
+      "relevance_score": 10.0,
+      "relevance_reason": "Extremely relevant because it explicitly measures the decision value of experimentation in a counterfactual environment, directly matching your brainstorming on tasks where agents may need to experiment or fail first to learn something useful."
+    },
+    {
+      "arxiv_id": "2610.30105",
+      "title": "Asymmetric On-Policy Distillation Learns In-Context Exploration",
+      "authors": [
+        "Sriyash Poddar",
+        "Yanda Bao",
+        "Jacob Krantz",
+        "Matthew Chang",
+        "Xavier Puig",
+        "Roozbeh Mottaghi",
+        "Natasha Jaques",
+        "Abhishek Gupta"
+      ],
+      "abstract": "Sequential decision-making under partial observability is difficult because agents must explore to infer hidden, task-relevant information before acting effectively. Learning such information-gathering behaviors tabula rasa via online reinforcement learning is sample-inefficient, whereas offline imitation averages expert actions across hidden states and fails to learn exploration. In this work, we propose ASTEROID, a simple and effective student--teacher supervised learning framework that can learn test-time exploration. Although a privileged expert never needs to explore, we demonstrate that a history-conditioned student can learn to do so when trained with on-policy contexts: the student first collects on-policy context under partial observability, and the privileged expert provides action labels conditioned on that context. By distilling expert actions directly conditioned on the student's on-policy history, the student learns to systematically resolve partial observability, i.e., search while uncertain and exploit once the hidden state is revealed. This enables efficient test-time exploration (similar to Bayesian posterior sampling) without incurring the impractical training-data costs of reinforcement learning. Across a diverse range of eleven different environments, including discrete exploration benchmarks, robotic manipulation, navigation, and Procgen environments, ASTEROID achieves ~2x higher returns under fixed exploration budgets, uses ~100x fewer interactions than RL baselines, and outperforms frontier models at exploration. Finally, our method transfers policies trained in simulation to vision-denied real-world robot manipulation, exhibiting efficient exploration and increasing success by +40% over standard distillation. Overall, it provides a simple yet surprisingly effective framework to learn efficient test-time exploration.",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-10-22T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.30105",
+      "pdf_url": "https://arxiv.org/pdf/2610.30105",
+      "is_author_match": false,
+      "relevance_score": 10.0,
+      "relevance_reason": "This is a near-perfect match for the Hunter Prep thread because it centers on on-policy distillation and learning exploration under partial observability, directly echoing your stated project questions."
+    },
+    {
+      "arxiv_id": "2610.29443",
+      "title": "DynaWeave: Learning to Adapt through Dynamic Scenario Synthesis",
+      "authors": [
+        "Xuan Yang",
+        "Chunxiao Liu",
+        "Hongsheng Xin",
+        "Hao Xu",
+        "Ning Miao"
+      ],
+      "abstract": "Large language model (LLM) agents increasingly use tools to complete tasks in stateful environments. However, many training environments remain largely static apart from changes caused by the agent's own actions, whereas external events introduced by other users, services, or sudden contingencies in real environments can invalidate ongoing plans. To address this gap, we introduce DynaWeave, an automated synthesis framework that transforms existing static tasks into verifiable dynamic scenarios. The framework generates exogenous events relevant to each task, covering changes in task requirements, environment state, and external information. It uses directed acyclic graphs (DAGs) to represent dependencies between events and an execution engine to activate them during agent interaction. A dynamic verifier revises only the evaluation checks affected by events that actually occur and retains all other checks. Using DynaWeave, we collect 2,095 verified interaction trajectories across 36 environments and use them for supervised fine-tuning of Qwen3.5 models. Experiments on Gaia2, CostBench, and ToolMaze show that DynaWeave achieves consistent improvements in overall performance across all three evaluated model sizes, increasing the task completion rate on CostBench by 67.34 percentage points and even exceeding the performance of Gemini-3.1-Pro-Preview on ToolMaze. These results support dynamic scenario synthesis as a practical approach to training agents to adapt to changing environments. Our code is available at https://github.com/Miaow-Lab/DynaWeave.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-10-22T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.29443",
+      "pdf_url": "https://arxiv.org/pdf/2610.29443",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Extremely relevant to the brainstorming around surprising information, failure-first adaptation, and complex RL environments because it trains agents to handle externally changing scenarios that invalidate plans."
+    },
+    {
+      "arxiv_id": "2610.29671",
+      "title": "Uni-Mem: Learning a Long-Horizon Agentic Memory Manager with Unified Online Policy Optimization",
+      "authors": [
+        "Zhiqian Xia",
+        "Jielong Tang",
+        "Ling-An Zeng",
+        "Shixiong Kai",
+        "Rong Yao",
+        "Hao Kong",
+        "Xiao Dong",
+        "Wei Wang",
+        "Mingxuan Yuan",
+        "Siyu Xia",
+        "Haifeng Xia"
+      ],
+      "abstract": "Long-term agent memory is shifting from predefined workflows toward learnable policies for memory construction and retrieval. Existing learning-based methods either optimize construction alone or combine retrieval-side online reinforcement learning (RL) with offline construction supervision, limiting co-adaptation between the two stages. In this paper, we explore end-to-end online RL for a unified memory manager (Uni-Mem) that learns both capabilities under a shared policy. However, joint optimization with existing RL algorithms such as GRPO faces confounded group comparisons and sparse feedback over long memory-management trajectories. To this end, we propose Stage-Decoupled GRPO, which alternates construction and retrieval optimization while controlling variation from the other stage within each rollout group, yielding stage-specific learning signals. We further introduce Event-Wise Credit Assignment (ECA), which localizes feedback to responsible events and propagates event-level advantages to their constituent operations. Experiments on LoCoMo and LongMemEval show that Uni-Mem outperforms the strongest RL-based memory, demonstrating the effectiveness of jointly learning memory construction and retrieval via Stage-Decoupled GRPO and ECA.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-10-22T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.29671",
+      "pdf_url": "https://arxiv.org/pdf/2610.29671",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Highly relevant to long-horizon scientific-task agents because it learns an end-to-end memory management policy with online optimization, directly targeting persistent agent behavior over extended interactions."
+    },
+    {
+      "arxiv_id": "2610.28834",
+      "title": "Where Should a Stuck Agent Spend Its Next Tokens? Causal Attribution of Inference-Time Resources",
+      "authors": [
+        "Saiyue Lyu",
+        "Jerrold Huang",
+        "Yunbei Zhang",
+        "Janet Wang",
+        "Zhenting Wang",
+        "Yingqiang Ge",
+        "Haibo Zhang"
+      ],
+      "abstract": "Inference-time scaling is often treated as a token-budget problem, but a failed coding agent can seek qualitatively different resources: computation, information, or feedback. We introduce Banzhaf Resource Attribution (BRA), a controlled factorial framework that measures each resource's marginal contribution to repair and its interactions while holding the failed state and revision protocol fixed. We evaluate six models on 194 function-level failures from MBPP+ and HumanEval+ and 126 repository-level failures from SWE-bench Verified. Task-relevant specifications consistently improve repair, whereas public-test feedback provides small gains and retrieved code little to none. The value of additional computation declines with model capability, while information remains useful; resource channels largely exhibit diminishing returns, although complementary information can reinforce itself. Yet three of four frontier models select feedback in 95-100% of cases and obtain lower gains than uniform random resource selection. BRA thus exposes a gap between the resources agents prefer and those that measurably improve repair.",
+      "categories": [
+        "cs.SE",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-10-22T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.28834",
+      "pdf_url": "https://arxiv.org/pdf/2610.28834",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "The paper studies what kinds of inference-time resources help a stuck agent recover, closely matching your interest in failure-first tasks, self-correction, and long-horizon problem solving."
+    },
+    {
+      "arxiv_id": "2610.29005",
+      "title": "VeriEvolve: Evaluator-First Evolution for Tool-Using Agents",
+      "authors": [
+        "Yueshen Li",
+        "Kamer Ali Yuksel",
+        "Gokhan Tur",
+        "Dilek Hakkani-T\\\"ur",
+        "Jo\\~ao Pedro Maia"
+      ],
+      "abstract": "A central obstacle to self-improving agents is the absence of a reliable fitness signal for realistic stateful tasks. We introduce \\textsc{VeriEvolve}, an evaluator-first evolution framework that constructs this missing evaluation layer before optimizing the agent. From task instruction, VeriEvolve synthesizes instruction-grounded challenge states and an executable evaluator that checks them. During each round of workflow evolution, the evaluator is frozen and serves as the fitness signal. Between rounds, VeriEvolve revises the evaluator by converting the end states of strong and weak runs into a pair of counterfactual test cases.   Across all 30 MCPMark Filesystem tasks, VeriEvolve constructs 30 evaluators with 141 challenge states, achieving 141/141 agreement on the generated suites and 113/122 agreement on held-out states produced by executor agents. Evaluator-guided evolution increases externally verified success from 6/30 to 18/30 for GLM-5.2 and from 27/30 to 30/30 for Claude; refinement removes all three false positives that the weak executor exposes. Cross-environment studies on PostgreSQL, Playwright, Notion, and GitHub further expose complementary limits from observability, state representation, and search/execution capacity. These results show that executable evaluators can be synthesized and used to guide search when task success is observable and an external verifier is available for calibration.",
+      "categories": [
+        "cs.SE",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-10-22T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.29005",
+      "pdf_url": "https://arxiv.org/pdf/2610.29005",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Its evaluator-first framework for tool-using agents is strongly relevant to your grading and reliable-fitness-signal interests for long, stateful rollouts."
+    },
+    {
+      "arxiv_id": "2610.29458",
+      "title": "Harness Scaling for Generalizable Agentic Reinforcement Learning",
+      "authors": [
+        "Fei Bai",
+        "Huatong Song",
+        "Chuan Hao",
+        "Ran Tao",
+        "Jian Yang",
+        "Bryan Dai",
+        "Wayne Xin Zhao",
+        "Ji-Rong Wen"
+      ],
+      "abstract": "Agent harnesses have become a central component of modern agentic systems, shaping how models use tools, manage context, and coordinate long-horizon interaction. Realizing the benefits of these harnesses depends on how effectively the underlying model can make use of them, motivating reinforcement learning directly through the harness. However, existing approaches typically train through a single fixed harness, which can lead to specialization and limited transfer across harness configurations. To address this, we introduce \\textbf{Harness Scaling}, a new scaling dimension for agentic RL that extends training from a single harness to diverse execution configurations. Concretely, we construct a factorized harness space, select a compact training subset with balanced factorial coverage, and organize cross-harness training to combine global coverage with controlled variation for the same task. Across multiple benchmarks, model scales, and RL algorithms, Harness Scaling consistently improves generalization to unseen white-box configurations. Moreover, models trained through structured white-box variation transfer effectively to unseen external black-box harnesses, outperforming models trained through a single complex black-box harness. These results establish harness diversity as a meaningful scaling dimension for agentic RL and highlight the importance of how this diversity is organized for cross-harness generalization.",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-10-22T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.29458",
+      "pdf_url": "https://arxiv.org/pdf/2610.29458",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Directly targets generalizable agentic RL through harness design and scaling, which is highly relevant to your interests in long-horizon tasks, harnesses, and RL-based agent training."
+    },
+    {
+      "arxiv_id": "2610.28815",
+      "title": "Forging More Tasks into Better Harnesses: Agentic Harness Evolution via Successive Scale Racing",
+      "authors": [
+        "Jingzhe Liu",
+        "Jiliang Tang",
+        "Tong Zhao",
+        "Neil Shah",
+        "Clark Mingxuan Ju"
+      ],
+      "abstract": "Agentic harness evolution optimizes an agent's instructions, tools, and control flow by using its task execution experiences as evolving evidence. While more evolution tasks should intuitively improve performance, our preliminary study reveals a paradoxical failure mode: the performance of existing methods degrades as the task pool expands. Our further analysis demonstrates that this degradation stems from suboptimal evidence selection during optimization, as different evidence combinations lead to substantially different evolution outcomes. To address this issue, we propose Successive Scale Racing (SSR), a framework that adaptively searches for optimal evidence combinations in each evolution round. SSR constructs diverse evidence combinations based on the corresponding task quality and coverage, and efficiently races the resulting candidate harnesses under a small compute budget. Empirically, across three distinct benchmarks, SSR achieves state-of-the-art results in all six configurations. Notably, as the task pool grows from 40 to 200, SSR steadily improves the pass rate from 64.3% to 68.3%, while the baselines' performances all drop. Furthermore, its racing mechanism identifies near-optimal candidates while reducing validation executions by 60%.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-10-22T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.28815",
+      "pdf_url": "https://arxiv.org/pdf/2610.28815",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Harness evolution for agents is extremely aligned with your focus on agent harness design, scaling effects, and understanding why more tasks or feedback can sometimes hurt."
+    },
+    {
+      "arxiv_id": "2610.28826",
+      "title": "Decision language models as affordable and rapid alternatives to LLM judges of clinical generative AI",
+      "authors": [
+        "Rotem Gershon",
+        "Seffi Cohen",
+        "Dean Ariel",
+        "Havatzelet Bilavsky-Yarden",
+        "Amiel Sberro",
+        "Shai Yitzhaki",
+        "Osnat Tausky",
+        "Naama Golan",
+        "Maayan Rabinovitch",
+        "Ariel Avraham Hasidim",
+        "Itay Arianu",
+        "Maya Dagan",
+        "Ran Balicer",
+        "Noa Dagan"
+      ],
+      "abstract": "Automated judges of clinical artificial intelligence (AI) outputs are necessary, but large language model (LLM) judges are costly and slow at scale. We compared Jev, a decision language model that returns structured judgments, with frontier and open-weight LLM judges in four use cases. On 118 pediatric answers, Jev's agreement with physicians' ordinal quality ratings (Gwet's AC2 0.50; expected score 0.53) matched or exceeded that of seven of 12 LLM judges, including frontier models, Claude Opus 5.5 (0.49) and GPT-6 (0.38). On physician-graded binary HealthBench criteria, Jev matched or exceeded four of six LLM judges. On MedHELM's open-ended tasks, Jev's agreement with a three-LLM jury approached or exceeded the jurors' internal agreement. On HealthBench Professional, Jev matched the benchmark's reference judge, GPT-5.4, on 91% of criteria (other judges, 91-93%). Frontier judges cost 73-294 times more than Jev and took 7-57 times longer. Jev may enable efficient clinical AI evaluation at scale.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-10-22T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.28826",
+      "pdf_url": "https://arxiv.org/pdf/2610.28826",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "This is directly relevant to your Hunter/Shuchao interests because it compares decision models against LLM judges for scalable grading of generative outputs."
+    },
+    {
+      "arxiv_id": "2610.28798",
+      "title": "An Explicit Feedback Contract for Iterative ML-Agent Harnesses",
+      "authors": [
+        "Kehui Yao",
+        "Chuanbo Hu",
+        "Jiao Chen",
+        "Ramin Giahi",
+        "Reza Yousefi Maragheh",
+        "Lalitesh Morishetti",
+        "Ziwei Hong",
+        "Yiyun Su",
+        "Jianpeng Xu",
+        "Evren Korpeoglu",
+        "Kannan Achan"
+      ],
+      "abstract": "Iterative ML agents develop models by editing code, running experiments, reading a validation score, and choosing what to try next. In current harnesses this loop is served by an exact validation score returned after every attempt, which leaves the validation split open to adaptive selection. In this work, we introduce an explicit feedback contract for ML-agent harnesses, which specifies what an agent may observe, when iteration should stop, and when the test split may be touched. The contract releases a validation score only when a submission clears a noise threshold computed from the paired standard error, so no margin has to be tuned. We ran experiments on click-through-rate prediction, learning to rank, and a control task with no signal to find. The control is the sharpest case, because the true gain there is zero by construction: an agent reading exact scores ended by reporting a gain of 0.0157, while under the contract it reported 0.0033. On both real tasks the contract narrows the validation-test gap, and test performance is slightly higher rather than lower. The largest difference is in when the agents stop. Exact feedback used its entire budget of thirty submissions on two of the three tasks, including the one where nothing can be learned, while the contract halted after four to twelve. A run that exhausts its budget is usually read as diligence. It is better read as a symptom: when the feedback channel is unbounded, noise keeps supplying improvements to chase.",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-10-22T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.28798",
+      "pdf_url": "https://arxiv.org/pdf/2610.28798",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Directly useful for your grading/eval work since it formalizes feedback contracts in iterative agent harnesses, closely tied to concerns about evaluating long rollouts and preventing overfitting to validation signals."
+    },
+    {
+      "arxiv_id": "2610.29029",
+      "title": "Better Policies, Worse Verifier Audits",
+      "authors": [
+        "Daniel Cie\\'slak",
+        "Jacek {\\L}ubi\\'nski"
+      ],
+      "abstract": "Verifier stacks increasingly sit inside post-training and test-time compute loops. We study a specific control loop: a component verifier is evaluated on fresh policy outputs against the full success label and refreshed when that aggregate score falls. For a conjunctive target $y = F \\wedge M$, its on-policy AUC is $(1-q)A_{\\mathrm{own}} + qA_{\\mathrm{cross}}$, where $q = \\Pr[F=1 \\mid y=0]$. As the policy masters $F$, $q$ can rise toward one, removing weight from $F$-failures and rewarding information about $M$. We call this on-policy audit collapse. We derive a sharp identified set, a complete-erasure threshold, and the exact point at which the audit can prefer a worse component verifier; its population optimum is the full-outcome predictor, not the component oracle. An exact oracle exhibits the collapse, a natural multi-label text control shows inversion can select a head with lower canonical $F$-AUC at the observed failure mixture, and a prediction-registered ECG study shows that acting on the audit can reduce off-policy $F$-AUC, transfer the damage to an unseen generator, and increase downstream constraint violations. Preserving own-failure support prevents the damage. Matching label-complexity bounds and a controlled-mixture audit give the corresponding repair: audit the component on its own failures, and keep those failures in the refresh distribution.",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-10-22T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.29029",
+      "pdf_url": "https://arxiv.org/pdf/2610.29029",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Highly relevant because it directly analyzes failures of verifier/auditor stacks under policy improvement, closely matching your concerns about LM-judge weaknesses and grading long rollouts."
+    },
+    {
+      "arxiv_id": "2610.29346",
+      "title": "Benchmarking and Error Analysis of Deep Search and Deep Research LLM Agents",
+      "authors": [
+        "Zixuan Yu",
+        "Zhenheng Tang",
+        "Xiaowen Chu",
+        "Bo Han"
+      ],
+      "abstract": "As Large Language Models (LLMs) evolve into autonomous Deep Search and Deep Research Agents capable of executing long-horizon, multi-step tasks, evaluating their reliability becomes increasingly critical. However, existing evaluation paradigms predominantly focus on final task outcomes, leaving a significant gap in understanding the intermediate execution traces, where agents are highly susceptible to various errors. To address this critical gap, we introduce a comprehensive methodology and analytical framework designed specifically to diagnose errors in intermediate workflows. Building upon this framework, we establish a structured taxonomy that categorizes these vulnerabilities into two primary dimensions: System-Level Errors and Task-Level Errors. Through a systematic examination of step-by-step execution traces and agent-environment interactions, we reveal how these underlying errors affect overall performance. Finally, through empirical experiments and systematic analysis of the identified error types, we provide actionable design guidelines, aiming to enhance the robustness, reasoning capabilities, and reliability of Deep Search and Deep Research agents.",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-10-22T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.29346",
+      "pdf_url": "https://arxiv.org/pdf/2610.29346",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "This is highly relevant because it evaluates long-horizon deep research agents with trace-level error analysis rather than only final outcomes, closely matching your interests in long-horizon scientific tasks and grading long rollouts."
+    },
+    {
+      "arxiv_id": "2610.29932",
+      "title": "FrontierCS 2: A Benchmark for Computer Science R&D",
+      "authors": [
+        "Qiuyang Mang",
+        "Wenhao Chai",
+        "Runyuan He",
+        "Dongruixuan Li",
+        "Zihan Zheng",
+        "Yujun He",
+        "Xuanyi Zhou",
+        "Hao Wang",
+        "Siddhant Ray",
+        "Bo Peng",
+        "Ruyi Ji",
+        "Shuo Yang",
+        "Haocheng Xi",
+        "Boru Chen",
+        "Xinyang David Han",
+        "Melissa Pan",
+        "Mayank Mishra",
+        "Boxi Yu",
+        "Sijia Liu",
+        "Kerem Akillioglu",
+        "Yi Pan",
+        "Zirui Wang",
+        "Mert Cemri",
+        "Diogo Antunes",
+        "Yichuan Wang",
+        "Aiwei Ivy Zhang",
+        "Zhenyang Chen",
+        "Qizheng Zhang",
+        "Kaiyuan Liu",
+        "Wenyuan Huang",
+        "Sherry Ruan",
+        "Shu Liu",
+        "Dacheng Li",
+        "Zerui Cheng",
+        "Zeyu Shen",
+        "Shang Zhou",
+        "Hanfei Chen",
+        "Yuzhong Zhang",
+        "Bohan Lyu",
+        "Qu Ao",
+        "Han Zheng",
+        "Chonghe Jiang",
+        "Jingzhuo Hu",
+        "Xiaokun Chen",
+        "Kunjun Li",
+        "Zhiqing Zhong",
+        "Haoye Tian",
+        "Tong Zhao",
+        "Yunzhong He",
+        "Hanchen Li",
+        "Ofir Press",
+        "Jiantao Jiao",
+        "Kunle Olukotun",
+        "Karthik R. Narasimhan",
+        "Jingbo Shang",
+        "Koushik Sen",
+        "Matei Zaharia",
+        "Alex Dimakis",
+        "Ion Stoica",
+        "Joseph E. Gonzalez",
+        "Alvin Cheung"
+      ],
+      "abstract": "Can LLM agents make contributions to frontier computer science R&D? We introduce FrontierCS 2, a benchmark of 48 open-ended tasks. We take a paper and the code its authors released and delete the paper's contribution. The deleted code becomes the human reference that sets the bar. Earlier open-ended benchmarks give each agent a problem statement and grade one program after the run. FrontierCS 2 places the agent inside a research environment. The agent inherits a working repository and may submit a patch at any point. For each patch, a judge returns a development-suite score but keeps the evaluator, the held-out final suite and the reference private, and grades the final submission on that suite against the reference. The tasks span 13 domains, from machine-learning systems and high-performance computing to databases, security and robotics. Beyond these 48 tasks, FrontierCS 2 keeps a private set of more than 100 tasks, to be announced in the future. We evaluate 12 agents. The best one is Claude Opus 5.5, passing 58% of its runs. No run passes on 16 tasks. A higher score is not the same as a pass: most runs that beat the reference on the combined final score still fall short on some metric or workload. On a shared capability scale for agents and tasks, the median task is roughly as difficult as what the strongest agent can handle.",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-10-22T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.29932",
+      "pdf_url": "https://arxiv.org/pdf/2610.29932",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Directly relevant to the long-horizon scientific tasks and evaluation agenda since it introduces an open-ended benchmark for computer science R&D with process-aware grading beyond a single final output."
+    },
+    {
+      "arxiv_id": "2610.28767",
+      "title": "SkillEval: Learning Interpretable Ability Profiles of LLMs via Cognitive Diagnosis Models",
+      "authors": [
+        "Berke Arda",
+        "Peng Cui",
+        "Qiaoyuan Zheng",
+        "Rudolf Debelak",
+        "Mubashara Akhtar",
+        "Mrinmaya Sachan"
+      ],
+      "abstract": "Current evaluation of LLMs on benchmarks typically aggregates performance over individual examples into a single scalar score. This approach is overly coarse and ignores the diverse scope of skills covered by benchmark datasets. To address this limitation and better exploit benchmark data, we propose SkillEval, a new evaluation framework that performs cross-model, skill-level analysis. The framework integrates advances from two areas: (1) it leverages the meta-cognitive capabilities of LLMs to automatically discover interpretable skills from questions, and (2) it applies cognitive diagnosis models (CDMs) from psychometrics to estimate per-skill abilities of LLMs. We conduct experiments on 3,811 LLMs evaluated on 9,523 items across five benchmarks spanning diverse domains (MATH, BBH, GPQA, MuSR, IFEval). Compared to the traditional average-based evaluation paradigm, SkillEval produces reliable, more calibrated and informative yet concise model profiles that more accurately predict model behavior on unseen items. We also demonstrate the utility of SkillEval in two downstream tasks: (1) LLM routing, which dynamically assigns each query to a capable but efficient model, reducing inference cost by over 60% while achieving improved performance, and (2) Computerized Adaptive Testing (CAT), where an unseen model can be efficiently evaluated using a trained CDM. Furthermore, we show that these skill profiles provide useful insights, for example, how benchmarks share skills and how instruction-tuned models differ from their base models.",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-10-22T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.28767",
+      "pdf_url": "https://arxiv.org/pdf/2610.28767",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "This is highly relevant because it proposes skill-level, interpretable evaluation of LLM abilities rather than a single scalar score, aligning closely with your interest in better grading and more diagnostic evaluation."
+    },
+    {
+      "arxiv_id": "2610.28819",
+      "title": "LIFT: Scoped Constraints for Evaluating and Training Instruction Following",
+      "authors": [
+        "Eran Goldstein",
+        "Yuval Belfer",
+        "Yonatan Belinkov",
+        "Daniel Gissin"
+      ],
+      "abstract": "Common instruction following (IF) benchmarks, such as IFEval, evaluate the ability of language models (LMs) to follow simple constraints that can easily be verified programmatically. These same constraints, in turn, are used as reward signals for reinforcement learning. This design may lead to reward hacking of constraints, pushing models away from the main task. Recent attempts to address this resulted in benchmarks with richer constraints, but required expert labor, remained closed-access, and cannot be easily extended. We present Lift-Bench, an IF benchmark that asks a model to draft a document given a topic and a structured outline. Constraints are scoped to certain document sections, providing finer control over constraint density. Lift-Bench includes both verifiable and judged constraints, as well as a training counterpart, Lift-Train. Importantly, Lift-Bench provides both main task and instruction-following constraints, mitigating shallow reward hacking. On experiments with multiple models, we find that frontier models struggle with the harder subsets of our benchmark and analyze model performance along multiple axes. We also find that training on Lift-Train is much less susceptible to reward hacking than training on the common IFTrain. Lift-Bench and Lift-Train are publicly available, as well as the data generating pipeline.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-10-22T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.28819",
+      "pdf_url": "https://arxiv.org/pdf/2610.28819",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "The paper is very relevant to instruction-following evaluation and reward design because it studies scoped constraints that reduce reward hacking, which connects to your interests in on-policy training, distillation, and robust grading."
+    },
+    {
+      "arxiv_id": "2610.29357",
+      "title": "Memory-Centric Continual Learning for AI Agents",
+      "authors": [
+        "Dongfang Li",
+        "Zhuoen Chen",
+        "Bonian Jia",
+        "Zixuan Liu",
+        "Zhengxuan Lu",
+        "Can Deng",
+        "Yukun Shi",
+        "Yuhang Meng",
+        "Xin Zhang",
+        "Jiahe Huang",
+        "Fuhao Li",
+        "Junmai Wang",
+        "Shunyao Wen",
+        "Jingjun Sun",
+        "Jiaxu Tian",
+        "Jiangling Zhang",
+        "Zihan Wang",
+        "Liangyou Li",
+        "Yitong Yao",
+        "Shuangyong Song",
+        "Beilun Wang",
+        "Pengxu Wei",
+        "Hanlin Xu",
+        "Chang Liu",
+        "Yongxiang Li",
+        "Baotian Hu",
+        "Xiangyang Ji",
+        "Min Zhang"
+      ],
+      "abstract": "Autonomous agents powered by foundation models can reason, plan, and use tools, but their fixed weights and context limits hinder sustained learning from experience over long-term deployment. While external memory systems attempt to bridge this gap, they mostly act as passive retrieval caches, evaluated primarily by whether they can recall stored facts or past interactions. Whether memory can drive genuine continual learning remains an open question. In this paper, we introduce Memory-Centric Continual Learning (MCCL), arguing that memory should be judged by whether it improves future actions, not merely what it retrieves. MCCL has three main parts. First, a three-axis taxonomy organizes memory by where state is stored (substrates), what form it takes (assets), and how it is managed (policies). This defines a two-loop lifecycle that updates memory state in an inner loop while refining management policies in an outer loop based on task feedback. Second, an evaluation protocol measures retention under interference, adaptation to change, and task transfer to isolate genuine behavioral gains from simple context expansion. Third, a memory scaling framework models how agent performance scales with experience, storage capacity, and compute budgets across non-parametric and parametric memory. Together, these components reframe agent memory from passive lookup to continuous learning, offering a principled route toward self-improving autonomous agents.",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-10-22T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.29357",
+      "pdf_url": "https://arxiv.org/pdf/2610.29357",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Very relevant to long-horizon agent research because it explicitly studies memory as an active component for sustained learning from experience rather than passive retrieval."
+    },
+    {
+      "arxiv_id": "2610.29498",
+      "title": "A Strong MoE Is All You Need for Process Supervision",
+      "authors": [
+        "Guanzhi Deng",
+        "Zengyan Liu",
+        "Haibo Wang",
+        "Kuan Wu",
+        "Shing Yin Wong",
+        "Sichun Luo",
+        "Zhuoran Wang",
+        "Linqi Song"
+      ],
+      "abstract": "Process reward models (PRMs) provide fine-grained supervision for multi-step reasoning, yet obtaining reliable process labels remains a central bottleneck. Existing approaches typically rely on human annotation, rollout-based estimation, or auxiliary verification. In this work, we explore a different source of process supervision natively exposed by Mixture-of-Experts (MoE) models: expert routing. We show that simple routing statistics provide an intrinsic process-confidence signal that is competitive with conventional output-logit confidence. Building on this observation, we construct routing confidence by combining overall routing mass, head routing mass, and within-step routing variation, and introduce RoCo-Rethink, which identifies the least confident reasoning step and selectively regenerates the subsequent trajectory. We further introduce RoCo-PRM, which uses a strong MoE to automatically annotate reasoning trajectories with routing-derived step scores and distills them into a standalone PRM. Across multiple MoE architectures and diverse reasoning tasks, both RoCo-Rethink and RoCo-PRM consistently outperform strong baselines, while RoCo-PRM transfers effectively across both model architectures and tasks. Our findings suggest that expert routing is more than a computational dispatch mechanism: it provides an architecture-native source of process supervision for reasoning.",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-10-22T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.29498",
+      "pdf_url": "https://arxiv.org/pdf/2610.29498",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Strongly relevant to grading and process supervision interests since it proposes a scalable alternative source of step-level supervision for multi-step reasoning without relying on expensive human labels."
+    }
+  ]
+}
