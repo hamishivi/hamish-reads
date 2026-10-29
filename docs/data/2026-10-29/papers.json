@@ -1,0 +1,588 @@
+{
+  "date": "2026-10-29",
+  "generated_at": "2026-10-29T06:05:58.360598+00:00",
+  "author_papers": [
+    {
+      "arxiv_id": "2610.36435",
+      "title": "Your Agent Acts Differently When You're Around: How User Presence Changes Agent Behavior in Negotiation",
+      "authors": [
+        "Jane Pan",
+        "You Lyu",
+        "Abe Bohan Hou",
+        "Valerie Chen",
+        "He He"
+      ],
+      "abstract": "LLM agents increasingly interact with other agents on behalf of users, yet how users in the loop affect their agents' behavior--for better or worse--remains poorly understood. We study this question through the lens of negotiation, where agents must represent users while strategically bargaining with other agents. To isolate the effect of user presence, we develop PRESENT, a controlled evaluation framework that compares negotiation settings with and without an interactive user, while holding the game, objectives, and user preferences fixed across conditions. Across 11.2k runs spanning 7 games and 8 models, we find that user presence significantly changes both outcomes and behavior. Specifically, negotiation parties with a user obtain higher payouts (+13.7% on average) and their agents negotiate more aggressively. Surprisingly, user presence also induces misaligned behavior, both toward counterparties (where its rate roughly doubles) and toward users (where it emerges in 14.3% of games). These misaligned behaviors are uncorrelated with outcomes and persist even when the user sends only templated, neutral messages. These findings expose two blind spots in current evaluation practice: static instructions miss behaviors that emerge only when users are present, and outcome-level metrics cannot detect them.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-10-29T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.36435",
+      "pdf_url": "https://arxiv.org/pdf/2610.36435",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2610.36576",
+      "title": "Less is more: learning what to profile for GPU kernel optimization",
+      "authors": [
+        "Yihan Wang",
+        "Peiyu Liu",
+        "Runyu Chen",
+        "Wei Xu"
+      ],
+      "abstract": "Large language models have recently shown strong potential for automatically optimizing GPU kernels, yet their effectiveness depends critically on the hardware information available to the kernel optimization model. Existing systems typically rely on predefined profiling strategies, leaving what to profile largely outside the optimization process. We show that effective profiling is not simply about collecting more information: increasing the number of profiling metrics does not monotonically improve kernel optimization, while the most useful profiling information varies across kernels. Our theoretical analysis further shows that, under such heterogeneous profiling utility, kernel-conditioned selection can outperform any single fixed profiling configuration. Motivated by this observation, we propose AutoProfiler, a feedback-driven framework for learning a deterministic profiling tree from optimization feedback. The tree is iteratively refined through REWRITE and SPLIT operations, with an LLM generating candidate modifications and empirical evaluation determining their acceptance. Once constructed, the tree quickly gathers the required profiling information for any kernel, allowing the LLM rewriter to be invoked only once. Experiments on KernelBench show that our approach improves kernel optimization over fixed profiling configurations under constrained profiling budgets. These results suggest that hardware profiling should evolve from static metric collection toward profiling reasoning, making profiling itself a new dimension for improving kernel optimization. The codes are available at https://github.com/Satissss/AutoProfiler.",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-10-29T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.36576",
+      "pdf_url": "https://arxiv.org/pdf/2610.36576",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2610.36761",
+      "title": "Making Self-Driving Laboratories Auditable:A Unified Framework for Hybrid Actions,Measurements, and Safe Execution",
+      "authors": [
+        "Zihan Zhang",
+        "Zeyu Wu",
+        "Xin Zhang",
+        "Mingyu Luo",
+        "Haohui Que",
+        "Tong Zhu"
+      ],
+      "abstract": "Self-driving laboratories (SDLs) are laboratory systems that couple experimental planning, automated execution, and measurement feedback in a closed loop. Integrating flexible robot control with the typed application programming interfaces (APIs) and continuous measurements exposed by laboratory instruments remains an execution-interface challenge. To address this challenge, we propose a traceable framework comprising four components: LAM (Lab Action Model), OpenSDL, Safe-SDL, and L3-Bench. LAM is a proposed measurement-conditioned policy architecture that extends vision-language-action paradigms to generate both continuous robot trajectories and typed instrument API calls. OpenSDL is an execution substrate with an initial control implementation, designed to map role-level operations to heterogeneous devices, coordinate execution, and record timestamped causal events. The proposed Safe-SDL runtime gate combines pre-dispatch schema and resource checks with signal temporal logic monitoring during execution, including extended waiting periods. L3-Bench (Level-3 Laboratory Benchmark) specifies an episode-level evaluation protocol covering physical outcomes, timing, reproducibility, safety violations, and fault recovery. Together, these components provide an end-to-end design for linking hybrid action generation, monitored device execution, measurement feedback, and experimental evaluation, addressing coordination and traceability challenges in SDL workflows.",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "published": "2026-10-29T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.36761",
+      "pdf_url": "https://arxiv.org/pdf/2610.36761",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2610.37175",
+      "title": "MLE-World: Predicting Machine Learning Experiment Outcomes with a Learned World Model",
+      "authors": [
+        "Brian Ko",
+        "Han Wang",
+        "Hejia Geng",
+        "Li Erran Li",
+        "Sherry Yang"
+      ],
+      "abstract": "AI research agents can propose, execute, and improve programs that solve machine learning tasks. However, executing each candidate program requires training and evaluating ML models, limiting how many candidates an agent can explore at each step. We introduce MLE-World, a world model finetuned from Qwen3.5-4B that predicts a program's terminal output (error traces, training logs, and validation scores) from its code and data description without executing it, together with a confidence score estimating the prediction's correctness. Because a prediction costs one inference call rather than a training run, MLE-World makes test time scaling (TTS) affordable for these agents. We build five TTS policies, guided by MLE-World, that compare several candidates per step by their predicted outputs: Sequential revision, Best-of-N, Pairwise judging, Fusion, and a UCB style rule that also adds an exploration bonus from this confidence score. Since predictions can be wrong, we run a candidate for real only when its confidence score is low. On 17 MLE-bench Lite tasks, MLE-World matches the real terminal output on 77.9% of held out programs, versus 41.1% for much larger prompted models. MLE-World guided TTS achieves up to 22.1% higher observed mean performance than the agent without a world model, with less real execution. Project webpage: https://mle-world.github.io/.",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-10-29T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.37175",
+      "pdf_url": "https://arxiv.org/pdf/2610.37175",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2610.37567",
+      "title": "Gym-Anything-RT: Scaling Real-Time Environments for Vision-Language Agents",
+      "authors": [
+        "Pranjal Aggarwal",
+        "Sean Welleck"
+      ],
+      "abstract": "AI agents have made substantial progress in domains where they have a non-trivial amount of time to deliberate between actions, such as mathematics, software engineering, and performing tasks on desktop applications. It is less clear how such models fare in settings that demand real-time interaction, such as playing a video game or operating a physical device. In these settings, the environment state may evolve as the agent is reasoning, or even as the underlying model is performing a forward pass. To gain insight into the real-time interaction capabilities of vision-language agents, we introduce Gym-Anything-RT. Our key idea is to construct visual minigames that demand a portfolio of capabilities required for interactive real-time settings. Gym-Anything-RT uses an agentic pipeline to automatically generate such environments based on a taxonomy of six capabilities required for real-time interaction, including the ability to perceive the environment and act under an evolving environment state. A key feature of Gym-Anything-RT is that it allows for controlled comparison of real-time interaction capabilities: we can run the same minigame in real time, or pause or slow down the environment to relax the requirement for real-time actions. We use Gym-Anything-RT to construct 100 real-time minigames and evaluate AI agents on them. We find large capability gaps in real-time interaction. For example, GPT-6 Astra (xHigh) achieves a pass rate of only 9.0% on the real-time minigames, which rises to 75.0% when the environment is paused. We also identify intriguing behaviors by the most powerful frontier agents: for instance, when given the ability to write code, these agents write code that bypasses the need to perceive and act in real time. We publicly release Gym-Anything-RT and the generated minigames to spur further research on AI agents in real-time interactive settings.",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-10-29T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.37567",
+      "pdf_url": "https://arxiv.org/pdf/2610.37567",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    }
+  ],
+  "ranked_papers": [
+    {
+      "arxiv_id": "2610.36477",
+      "title": "Proposing Better Rollouts for On-Policy Distillation",
+      "authors": [
+        "Sirui Chen",
+        "Yunzhe Qi",
+        "Haobo Xu",
+        "Jiaru Zou",
+        "Mengting Ai",
+        "Zihao Li",
+        "Jingrui He"
+      ],
+      "abstract": "On-policy distillation (OPD) improves language-model post-training by letting the student learn from its own sampled trajectories under teacher supervision, aligning the training process with inference-time behavior. However, the rollout policy in OPD is usually treated as fixed: each round samples directly from the current student. We show that this choice can create a compounding teacher--student mismatch, because it requires the teacher to provide effective supervision on whichever trajectories the student samples, including ones less reachable by the teacher itself. On such trajectories, teacher supervision can become noisy or even misleading, leading to undesirable student patterns such as repetition. Moreover, since the updated student in turn defines the rollout policy of subsequent rounds, these patterns persist and potentially amplify over training. This failure mode suggests that improving OPD requires treating the rollout policy itself as an optimization target, rather than only modifying the distillation objective. We propose Mixture Proposal On-Policy Distillation (MPOPD), which derives a student-anchored, teacher-guided rollout distribution from a local trust-region objective based on relative teacher support. The resulting target is a geometric mixture of the student and teacher policies, and we introduce a proposal policy that approximates this mixture, enabling rollout generation in a single forward pass. Experiments on 16 math, knowledge, and medical reasoning benchmarks show consistent gains over OPD and recent variants. On math reasoning, our method improves average accuracy by 6.91 over OPD on Qwen3-4B-Base while reducing average generation length by 41%, suggesting that rollout policy design provides an effective way to improve OPD.",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-10-29T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.36477",
+      "pdf_url": "https://arxiv.org/pdf/2610.36477",
+      "is_author_match": false,
+      "relevance_score": 10.0,
+      "relevance_reason": "This is a near-direct match to the Hunter Prep interest in scaling feedback and on-policy distillation, focusing specifically on improving rollout generation for OPD."
+    },
+    {
+      "arxiv_id": "2610.36807",
+      "title": "SetGRPO: Calibrating Grader-Induced Policy Optimization",
+      "authors": [
+        "Jiale Huang",
+        "Zixu Li",
+        "Zhiwei Chen",
+        "Zhiheng Fu",
+        "Jinhe Bi",
+        "Yupeng Hu"
+      ],
+      "abstract": "Rubric-based reinforcement learning uses fine-grained grader feedback to train large language models on open-ended tasks, but grader randomness can alter GRPO updates in ways that score discrepancies alone cannot characterize. Because GRPO jointly normalizes rewards within each response group and combines the resulting training coefficients with response-level gradients, a scoring discrepancy can shift the coefficients of the entire group and induce policy-dependent update changes. Selective execution further affects the direction-reversal risk of retained updates. To address this, we propose Set-Valued Group Relative Policy Optimization (SetGRPO). It comprises three modules: (a) Joint Reward Set Calibration constructs a joint uncertainty set for the training coefficients; (b) Geometry-Guided Safe Recovery maps candidate coefficients into the current policy's local update geometry and determines the largest safe recovery ratio for each response group; and (c) Selective Risk-Gated Optimization selects a global threshold through independent risk calibration to control the conditional direction-reversal risk of accepted updates while preserving the original GRPO objective. Under exchangeability, SetGRPO provides finite-sample marginal coverage for the joint coefficient set and simultaneous risk control across candidate thresholds. On ten open-ended benchmarks spanning three domains, SetGRPO achieves the highest macro average among all compared training methods on both Qwen3.5 and Llama3.2 model families.",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-10-29T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.36807",
+      "pdf_url": "https://arxiv.org/pdf/2610.36807",
+      "is_author_match": false,
+      "relevance_score": 10.0,
+      "relevance_reason": "This is an especially strong match to the grading agenda because it studies how stochastic graders affect policy optimization in rubric-based RL, directly addressing grader weaknesses and reward reliability."
+    },
+    {
+      "arxiv_id": "2610.36453",
+      "title": "Correction or Manipulation? Measuring Epistemic Vigilance in LLM Agents Under User Pressure",
+      "authors": [
+        "Nardine Basta",
+        "Venus Haghighi",
+        "Dali Kaafar",
+        "Amin Beheshti"
+      ],
+      "abstract": "LLM agents that answer questions and act on behalf of users must decide when to yield to a user who disagrees. Disagreement may correct a genuine error or may be an attempt at manipulation. Prior work shows that models frequently abandon correct answers when challenged by users, yet it remains unclear whether they distinguish correction from manipulation or merely differ in their propensity to concede. We examine this question across seven LLMs from four vendors in two studies, one on the answers agents give and one on the actions they take as customer-support agents whose policy permits account changes only for verified users. Simulated users push toward correct and incorrect answers with graded pressure. Following research on epistemic vigilance, the pressure either appeals to the source, such as claimed authority, or offers content the agent cannot verify, namely a cited source. Drawing on signal detection theory, we measure on a set of benchmark questions how much more readily each agent concedes to correction than to manipulation, separately from its overall propensity to concede. Citations made five of seven models readier to concede and four worse at discriminating, while stronger wording added little. In the agentic study, five models never violated the verification policy, including models that readily abandoned correct answers, so concession on answers did not predict violations of policy. Ministral 3B violated the policy mainly under claimed authority, and Ministral 8B reported changes it had not made. An instruction to revise only on verifiable evidence chiefly shifted propensity to concede rather than improving discrimination. Concession rates alone are therefore misleading, and agents should be evaluated on both their discrimination and the actions they take.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-10-29T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.36453",
+      "pdf_url": "https://arxiv.org/pdf/2610.36453",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "This directly targets whether agents can distinguish genuine correction from manipulation under user disagreement, strongly matching interests in surprising information, failing-first/self-correction, and explicit epistemic evals."
+    },
+    {
+      "arxiv_id": "2610.36471",
+      "title": "When to Intervene? An Empirical Study of Errors and Self-Recovery in LLM Agents",
+      "authors": [
+        "Chiming Duan",
+        "Tong Jia",
+        "Yingxi Chen",
+        "Minghua He",
+        "Lingzhe Zhang",
+        "Ying Li"
+      ],
+      "abstract": "LLM agents interact with Web services to perform tasks on users' behalf. Errors during these interactions can disrupt execution and prevent task completion, motivating external intervention. However, agents may self-recover through continued execution, raising the question of when to intervene and when to wait for self-recovery. We present an empirical study of errors and self-recovery in LLM agents. We construct ReInBench, a dataset containing 1,259 agent traces and 1,403 error events across computer-use and Web tasks. Our study examines how often and how quickly agents self-recover, how self-recovery relates to subsequent execution and task completion, and whether self-recovery can be predicted when an error occurs. We find that 725 error events self-recover, often within a few steps, with self-recovery performance differing across Execution LLMs. Self-recovery can also help agents recover from subsequent errors of the same type and support overall task completion. Intervention should therefore prioritize errors unlikely to self-recover, while allowing agents to continue when self-recovery is likely. Building on these empirical findings, we propose ReCoF, a method that predicts whether an error will self-recover to inform whether additional intervention is needed. ReCoF achieves an average relative improvement of 9.02% in Macro-F1 over the strongest baseline on ReInBench. Our code and data can be found at https://method-notes.github.io/ReCoF/.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-10-29T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.36471",
+      "pdf_url": "https://arxiv.org/pdf/2610.36471",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Its analysis of agent errors, self-recovery, and when to intervene is highly relevant to explicit self-correction evaluation and grading long rollouts in realistic agent settings."
+    },
+    {
+      "arxiv_id": "2610.36767",
+      "title": "Can LLMs Reliably Grade Olympiad Proofs? A Study of Mathematical Verification with LLMs",
+      "authors": [
+        "Azim Ospanov",
+        "Zijin Feng",
+        "Ding Ding",
+        "Chengwu Liu",
+        "Haoli Bai",
+        "Jiacheng Sun",
+        "Lifeng Shang",
+        "Farzan Farnia"
+      ],
+      "abstract": "Large Language Models (LLMs) have made remarkable progress on solving competition-level mathematics, yet their ability to verify natural-language mathematical proofs remains relatively underexplored. This gap is especially pronounced for Olympiad-level proofs, which require meticulous assessment of each claim in a long reasoning chain. Current proof verification thus primarily relies on expert inspection, which is costly to scale. In this paper, we present a systematic study of LLM-based verification in this setting. Specifically, we introduce a human-curated dataset of USAMO 2025 candidate solutions with expert grading, and conduct a broad evaluation of existing LLM verifiers across frontier models. We also propose TROJAN, an iterative self-critique pipeline for generating high-fidelity adversarial proofs at scale. Our comprehensive evaluation covers 20 models spanning seven metrics, two prompt styles, three inference methods, and three prompt templates, showing that state-of-the-art models still leave considerable room for improvement. To narrow this gap, we propose MABGrader, a Multi-Armed Bandit framework that reframes grading as arm selection over the discrete score space. MABGrader outperforms the SOTA ProofGrader by 26.4% in Quadratic Weighted Kappa and reduces grading error by 14%. Code and dataset are available at https://github.com/aziksh-ospanov/TROJAN.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-10-29T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.36767",
+      "pdf_url": "https://arxiv.org/pdf/2610.36767",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Directly relevant to current grading interests since it studies whether LLMs can reliably evaluate long, structured mathematical reasoning chains, a close analogue of grading long rollouts."
+    },
+    {
+      "arxiv_id": "2610.36826",
+      "title": "When the Critic Falls Behind: Co-Evolving Rubrics and Harnesses for Continual Agent Self-Improvement",
+      "authors": [
+        "Hao Chen",
+        "Yukun Yan",
+        "Ziyu Han",
+        "Ye He",
+        "Chuanzhe Guo",
+        "Shangzhan Li",
+        "Qi Shi",
+        "Qingfu Zhu",
+        "Maosong Sun",
+        "Wanxiang Che"
+      ],
+      "abstract": "Autonomous agents increasingly depend on harnesses that govern interaction, memory, tools, and execution around large language models (LLMs). While recent work has begun to evolve these harnesses from execution experience, the supervision used to guide evolution often remains relatively static, making it difficult to track changing behavioral weaknesses across rounds and potentially limiting generalization to unseen tasks. To address this issue, we propose RuHarness, a rubric--harness co-evolution framework for continual agent self-improvement. RuHarness continually discovers and reassesses behavioral criteria from execution trajectories, prioritizes the most relevant unresolved weaknesses, and uses them to guide targeted harness updates while keeping the task objective fixed. Extensive experiments across diverse agent tasks and backbone models show that RuHarness outperforms strong harness-evolution baselines, particularly on unseen held-out tasks. Further analyses show that adaptive rubric prioritization tracks shifting weaknesses and supports more sustained improvement and stable generalization across evolution rounds.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-10-29T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.36826",
+      "pdf_url": "https://arxiv.org/pdf/2610.36826",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Very relevant to self-improvement and evaluation because it explicitly tackles the problem that the critic/evaluator lags behind the evolving agent, including co-evolving rubrics and harnesses."
+    },
+    {
+      "arxiv_id": "2610.36878",
+      "title": "RubricAtlas: Mining Type-Level Rubrics from Expert Reports to Evaluate Deep Research Agents",
+      "authors": [
+        "Delin Wang",
+        "Sinuo Wang",
+        "Rui Sun",
+        "Beidi Luan",
+        "Qiming Shi",
+        "Jing Li",
+        "Daxin Jiang",
+        "Zuo Bai"
+      ],
+      "abstract": "Deep research agents conduct multi-step Web searches and synthesise retrieved information into analytical reports. Evaluating these outputs requires checking which analyses they deliver, beyond the presence of relevant facts. Query-specific binary rubrics make individual requirements explicit, but task-level checklists may leave the overall analytical structure underexamined. We introduce RubricAtlas, which derives type-level analytical requirements from expert reports on different objects within the same research type and organises detailed checks around recurring analytical questions. The requirements give related tasks a shared standard for what to analyse, without prescribing their answers. Our framework links binary checkpoints to report passages and evaluates completeness separately from argument validity. Built from 3,079 Chinese financial research reports, RubricAtlas covers 99 research types. Reference-report selection experiments show that individual reports cover only about half of their type's analytical questions, and that selecting requirements from different reports changes evaluation scores and agent rankings. Across ten agents, two judge pipelines achieve checkpoint agreement of $\\kappa$ = 0.71 and agent-ranking agreement of Kendall $\\tau$ = 0.87. Controlled deletions reduce scores on the affected analyses, while padding produces no detectable increase. These findings support type-level rubrics for comparing the analytical completeness of Web deep research outputs, with individual decisions traceable to report evidence.",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-10-29T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.36878",
+      "pdf_url": "https://arxiv.org/pdf/2610.36878",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Extremely relevant to grading research because it develops rubric mining from expert reports specifically for evaluating deep research agents and their multi-step analytical outputs."
+    },
+    {
+      "arxiv_id": "2610.36068",
+      "title": "Rollback: Experience Backtracking in World Models for Policy Improvement",
+      "authors": [
+        "Jiayi Luo",
+        "Yang Zhang",
+        "Liliang Chen",
+        "Nan Wang",
+        "Chen Gao",
+        "Boxiang Qiu",
+        "Zhuoxuan Li",
+        "Baorui Peng",
+        "Chuankang Li",
+        "Yuxiang Yan",
+        "Si Liu",
+        "Qingyun Sun",
+        "Shuicheng Yan",
+        "Maoqing Yao",
+        "Jianxin Li",
+        "Guanghui Ren"
+      ],
+      "abstract": "Action-conditioned world models offer a scalable alternative to costly real-world interaction for improving robot policies. However, existing world-model-based methods largely treat world models as forward-only surrogates of the physical environment, leaving untapped a capability no physical environment affords: rewinding to past decision points to explore counterfactual futures. We introduce Rollback, a policy improvement paradigm that turns world models from passive simulators into counterfactual engines: it rolls back to critical decision points, branches into alternative actions, and contrasts their outcomes to attribute success to individual decisions. This concentrates imagination where it matters most and distills counterfactual outcomes into fine-grained, action-level supervision without a separately learned value model. We build a scalable training system that unifies distributed world-model search with asynchronous real-robot execution, forming a self-reinforcing cycle: real-world experience continually sharpens the world model, and a sharper world model in turn drives further policy improvement. We term the world-model side of this cycle test-time physics grounding, a capability that hand-built physics simulators lack: while the world model serves as the training environment, real transitions from the policy it trains correct its dynamics through a lightweight LoRA pipeline. Experiments on three challenging real-world tasks show that Rollback improves success rates over the strongest baseline by an absolute 10.67%, 11.11%, and 11.85% on block extraction, ball tossing, and tabletop curling, respectively, while achieving more stable improvement throughout training. Although initialized from teleoperated demonstrations far below human level, Rollback surpasses the average success rate of human players on both ball tossing and tabletop curling within 8 hours of training.",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-10-29T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.36068",
+      "pdf_url": "https://arxiv.org/pdf/2610.36068",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Highly relevant to the brainstorming interest in counterfactual/RL environments and long-horizon recovery, since it explicitly uses rollback and counterfactual exploration in world models for policy improvement."
+    },
+    {
+      "arxiv_id": "2610.36849",
+      "title": "When All Rollouts Fail: Policy-Compatible Joint Decoding for Hard-Problem Reasoning",
+      "authors": [
+        "Zehao Wang",
+        "Hanzhu Chen",
+        "Runquan Gui",
+        "Zhe Wang",
+        "Lin Yang"
+      ],
+      "abstract": "Reinforcement Learning with Verifiable Rewards (RLVR) derives its learning signal from binary rewards via on-policy exploration and becomes a powerful paradigm for improving the reasoning of large language models. Yet it faces a learning cliff on problems beyond model's current ability: when every rollout fails, the samples reveal nothing about a correct solution, and group-relative estimators (e.g., GRPO, RLOO) collapse the update to zero advantage. Expert trajectories offer a remedy, but they are incompatible with the current policy and often lie in the student's low-probability regions, so the surviving updates demand large parameter shifts and decay into surface-level imitation rather than transferable reasoning. We argue that a useful learning signal on hard problems must be both verifiably correct and sufficiently compatible with the current policy. We propose Policy-Compatible Reinforcement Learning (PICO), which performs distribution-constrained joint decoding: expert data guides decoding at the token level while preserving the student's relative token probabilities, and a dynamic top-k mechanism confines the sampling distribution under a finite divergence budget, yielding trajectories that are verified and policy-compatible by construction. These trajectories are optimized jointly with on-policy rollouts under a mixed-behavior objective that mitigates their distribution mismatch via importance sampling. Experiments across reasoning diverse datasets and agentic benchmarks demonstrate that PICO consistently outperforms standard RLVR and prior off-policy baselines.",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-10-29T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.36849",
+      "pdf_url": "https://arxiv.org/pdf/2610.36849",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Directly targets the 'need to fail first' regime in RL-for-reasoning by proposing decoding methods for settings where all rollouts fail, making it highly relevant to long-horizon scientific tasks and explicit self-correction."
+    },
+    {
+      "arxiv_id": "2610.37224",
+      "title": "Spine: Compiling Subtask Trees into Structured Context for Long-Horizon Coding Agents",
+      "authors": [
+        "Jiahong Xiang",
+        "Kunqiu Chen",
+        "Lingming Zhang",
+        "Yuqun Zhang"
+      ],
+      "abstract": "Long-horizon coding tasks contain nested subtasks. Typically, agents record interactions sequentially into a growing history, causing context inflation and performance degradation. Compressing or trimming the history without explicit subtask boundaries can discard information needed by unfinished subtasks. Conversely, recursive subagent delegation isolates completed subtasks through child agents by assigning every subtask boundary to delegation, which conflates subtask granularity with executing agent choice, adding execution and coordination overhead. We introduce Spine, an interface and runtime that align model context with subtask nesting and completion. An agent declares explicit subtask boundaries through work scopes, allowing the same agent to execute nested subtasks inline while reserving delegation for independent parallel tasks. The runtime organizes execution in SpineTree, a persistent tree recording subtask relations, local interactions, completion states, and returned results. Before each model call, it compiles the tree into model context just in time, retaining unfinished subtasks' interactions and replacing completed subtasks' details with their results, while preserving prefix-cache reuse.   We integrate Spine into Codex to build SpineCodex. With GPT-5.6 Sol, compared with native Codex, SpineCodex improves SWE-Milestone Score by 11.8% while reducing total cost by 32.4%, improves the average ProgramBench test-pass rate by 17.3%, and improves Mean@5 on eight of the ten evaluated FrontierSWE tasks. On SWE-Milestone, it also achieves a comparable Score to Recursive Subagent at 73.7% lower total cost. We also integrate Spine into Pi through a reusable software package: with Gemini 3.8 Flash and Qwen 3.8 27B, it improves SWE-Milestone Score by 9.5-17.5% and the average ProgramBench test-pass rate by 4.3-8.7% compared with native Pi.",
+      "categories": [
+        "cs.SE",
+        "cs.AI"
+      ],
+      "published": "2026-10-29T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.37224",
+      "pdf_url": "https://arxiv.org/pdf/2610.37224",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Highly relevant to long-horizon agent work because it targets context management and subtask structure for coding agents, directly connecting to interests in long rollouts, long-horizon tasks, and coding-agent evaluation."
+    },
+    {
+      "arxiv_id": "2610.37434",
+      "title": "FeatureArc: Benchmarking Coding Agents on Evolving Features",
+      "authors": [
+        "Yunlong Wang",
+        "Alyssa Wu",
+        "Cuiyun Gao",
+        "Jia Feng",
+        "Songyuanyi Lu",
+        "Zhichao Hu"
+      ],
+      "abstract": "A software feature usually evolves over time: developers extend its first version as new use cases and requirements arrive, and each extension builds on code written earlier. Most feature benchmarks evaluate a single request on a fixed codebase. Feature evolution requires evaluating successive extensions on an agent's own earlier code and checking whether the feature remains correct. We introduce FeatureArc to evaluate coding agents on evolving features, together with a pipeline that constructs its tasks from repository histories. The benchmark combines dependencies between successive stages of the same feature, explicit requirements and interface contracts, and executable checks across four programming languages. The pipeline validates fail-to-pass (F2P) tests for new behavior and pass-to-pass (P2P) tests for existing behavior on the reference code before and after each stage. We evaluated 10 coding agents on 73 manually reviewed tasks of 2 to 10 stages. Each agent works in one persistent session and workspace without external test feedback or rollback. The evaluation reveals a gap between first-stage and whole-feature success: pooled success falls from 62.7% at the first stage to 28.5% when the whole feature is tested on the final code. Trajectory analysis identifies inherited defects as a common failure mechanism, present in 72.9% of failed later stages. These earlier errors often remain undetected: in stages following a failure, agents leave the earlier error unnoticed about 95% of the time, and their self-tests rarely revisit earlier stages. Evolving a feature autonomously, without human checks between stages, therefore remains a substantial challenge for current coding agents. At Tencent, the pipeline extends internal evaluations to this setting and guides the development of Hunyuan, Tencent's family of large language models.",
+      "categories": [
+        "cs.SE",
+        "cs.AI"
+      ],
+      "published": "2026-10-29T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.37434",
+      "pdf_url": "https://arxiv.org/pdf/2610.37434",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Very relevant because it introduces a benchmark for coding agents on evolving features, matching interests in long-horizon coding tasks, multi-step correctness, and evaluating extended rollouts rather than one-shot outputs."
+    },
+    {
+      "arxiv_id": "2610.37649",
+      "title": "Can LLMs Uncover Hidden Physical Laws through Free Exploration?",
+      "authors": [
+        "Zhen Yang",
+        "Wen Wang",
+        "Xander Xu",
+        "Ying-Cong Chen"
+      ],
+      "abstract": "Scientific discovery often begins with an unexpected observation that prompts a new research question. In a world with altered physical laws, can large language models (LLMs) notice unexpected behavior, such as heavier objects falling more slowly, and discover the law through experiments without being told what to investigate? To evaluate this ability, we introduce LongChang, an automated framework that creates simulated worlds with altered physics, where one or more laws differ from ordinary physics. The evaluated LLMs act as explorers, manipulating objects and building tools to investigate their own questions without research tasks or hints about these laws. Separate LLM agents generate and review scenes, review tool designs, and evaluate reports for correctness and experimental support using the altered physical laws and exploration records. These records guide scene evolution for further exploration, allowing the full cycle to run without human intervention. Among 12 LLMs, GPT-6-Astra achieves a discovery rate of 16.7%, while the other 11 score 0%. The exploration records reveal uninvestigated anomalies and only partial identification of the altered physical laws.",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.MA"
+      ],
+      "published": "2026-10-29T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.37649",
+      "pdf_url": "https://arxiv.org/pdf/2610.37649",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "This is highly relevant to the long-horizon scientific tasks and surprise-driven hypothesis formation agenda because it directly studies whether LLMs can notice anomalous observations, design experiments, and infer hidden laws through exploration."
+    },
+    {
+      "arxiv_id": "2610.36308",
+      "title": "When Retrieval Is Not Enough: Obsolete Facts in Agent Memory",
+      "authors": [
+        "Oleeviya Babu Poikarayil",
+        "Tony Basil Babu",
+        "Abdulrahman Nahhas",
+        "Het Darshan Mehta",
+        "Jawid Ahmad Baktash",
+        "Ernesto William De Luca",
+        "Klaus Turowski"
+      ],
+      "abstract": "Memory-agent benchmarks often collapse retrieval and answer generation into one score, making it hard to tell whether a failure comes from missing an update or from not using an update that was already retrieved. We examine this distinction on the single-hop FactConsolidation task of MemoryAgentBench. With Qwen2.5-7B-Instruct on 6K-history BM25 accuracy drops from 45% to 32% when the retrieved evidence budget grows from 64 to 512 tokens, even though a gold-assisted post-hoc audit finds the newest statement in every retrieved set. Most of the errors occur on questions that also contain an obsolete statement version. Under a frozen prompt and equal four-statement evidence size, replacing one unrelated statement with the obsolete competing statement reduces accuracy from 100% to 44.6% for Qwen2.5 and from 100% to 87.8% for Qwen3-14B, with all 50 harmful paired flips classified as stale. A 32K-history replication likewise favors BM25-64 over BM25-512 (69% versus 58%). These results suggest that retrieving the correct fact is not enough. An obsolete competing statement can be more harmful than an unrelated piece of evidence of the same size.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-10-29T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.36308",
+      "pdf_url": "https://arxiv.org/pdf/2610.36308",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Its separation of retrieval failures from failures to use retrieved updates closely matches interests in surprising information, memory updating, and explicit self-correction evaluation."
+    },
+    {
+      "arxiv_id": "2610.36405",
+      "title": "kw-bench: Breaking Frontier Harnesses on Real-World Tasks",
+      "authors": [
+        "George Juraj Salapa"
+      ],
+      "abstract": "Each new generation of frontier model pushes the edge of what is possible. Inside a harness -- a loop, a shell, a filesystem, the ability to write and run its own code -- a model can take on increasingly difficult work.   A growing body of work treats the coding-agent harness as infrastructure for knowledge work rather than a coding tool, and a new wave of benchmarks tests it there. Most of them are generative: build a financial model, a memo, a spreadsheet from a brief, judged by a rubric or by another model. Few test the expensive part of knowledge work, which is investigative. In audit, tax, due diligence, regulatory reporting, claims or any dispute over numbers, the answer already exists -- hidden in incomplete and inconsistent evidence spread across systems -- and has to be recovered and defended to the cent.   We introduce kw-bench, a benchmark built from real engagements specialists described to us. Its first task family is a five-year VAT reconstruction across three generations of SAP -- legacy ECC, a partial S/4HANA migration and a consultant's redesign -- delivered as raw system extracts: page headers, local number formats, partial link tables, no documentation of how anything connects. Grading is deterministic, with no LLM judge.   We ran four harnesses -- Claude Code, Codex, OpenCode and micro-cc -- on the same model, DeepSeek v4.1 Flash, for two hours. The two independent, model-agnostic harnesses delivered (OpenCode 0.542, micro-cc 0.528); the two lab harnesses, away from their home model, delivered nothing (0.00 each). What defeated them was inertia: keeping many weak signals alive across a long session. On a frontier model the task collapses. micro-cc and Claude Code on Claude Opus 5.5 scored 0.9986 and 1.000, in 22 and 25 minutes. A weeks-long engagement now costs minutes and a few dollars; below the frontier, the harness decides how far a model gets.",
+      "categories": [
+        "cs.AI",
+        "cs.SE"
+      ],
+      "published": "2026-10-29T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.36405",
+      "pdf_url": "https://arxiv.org/pdf/2610.36405",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "A benchmark for breaking frontier harnesses on real-world tasks is highly relevant to long-horizon agent evaluation and stress-testing models in realistic scaffolded environments."
+    },
+    {
+      "arxiv_id": "2610.36589",
+      "title": "InfraDev: Can Coding Agents Develop AI Infrastructure, and How Can We Tell?",
+      "authors": [
+        "Yangshen Deng",
+        "Jiaqi Ruan",
+        "Yeqi Huang",
+        "Nick Lau",
+        "Guangming Sheng",
+        "Luo Mai"
+      ],
+      "abstract": "Coding agents are beginning to develop the production-grade AI infrastructure that trains and serves large models, yet existing benchmarks cover only single kernels or single-GPU tasks, and grade with tests and prompts that misjudge both correct and incorrect patches. We introduce InfraDev, a benchmark of 36 tasks built from real-world pull requests to Megatron-LM, vLLM, and verl, covering infrastructure development for training, inference, and reinforcement learning. Each task asks an agent to reimplement a real change that spans many files and must run correctly across many GPUs. To grade such changes, we jointly synthesize hidden probes, which enforce the requirements the original tests leave unchecked, and a prompt that states every interface the probes call without revealing the solution. We also design a shared execution environment that reuses dependencies and artifacts across tasks, cutting storage by 52-57% and build time by 13-14% on Megatron-LM and vLLM. Across six frontier models, the best resolves only 38.9% of the tasks; the probes reject 32% of the submissions that pass every official test, and with the original pull request descriptions as prompts, no model resolves a single task. Failure analysis shows that structural and state errors dominate and that agents' own tests rarely check memory, time, or traffic. Turning these findings into an agent skill raises the resolved rate of a frontier model on the Megatron-LM tasks by 10.5%.",
+      "categories": [
+        "cs.AI",
+        "cs.DC"
+      ],
+      "published": "2026-10-29T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.36589",
+      "pdf_url": "https://arxiv.org/pdf/2610.36589",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Strongly relevant to Hunter/Shuchao interests because it focuses on benchmarking coding agents on realistic infrastructure tasks and explicitly studies how to tell whether evaluation and grading are correct."
+    },
+    {
+      "arxiv_id": "2610.36980",
+      "title": "AutoVend: Benchmarking LLM Agents on Long-Horizon Autonomous Vending Operations",
+      "authors": [
+        "Qiming Shi",
+        "Yikun Li",
+        "Beidi Luan",
+        "Rui Sun",
+        "Yan Ma",
+        "Jing Li",
+        "Daxin Jiang",
+        "Zuo Bai"
+      ],
+      "abstract": "Large language model (LLM) agents are extending agent-mediated commerce on the Web from shopping for consumers to operating businesses for sellers. In online-to-offline (O2O) commerce, decisions are issued through Web-based platforms but realized through costly physical execution. Evaluating such agents requires going beyond individual transactions to ask whether decisions made online turn into sustained economic returns. We introduce AutoVend, a benchmark in which one LLM agent manages 20 vending machines across five site types through a Web-based operating interface for 180 simulated days. Its data-grounded simulator combines a shared warehouse, procurement lead times, paid replenishment, inventory expiration, and recurring operating costs. We evaluate five LLM agents against a rule-based inventory-control baseline and diagnose their site coordination, execution, and performance over time. Four of five evaluated LLM agents fall short of this baseline, and returns per dollar of inference cost rank models differently from returns alone. Operational analyses show that gains in individual metrics do not consistently yield stronger economic growth, as inventory and execution costs erode these gains. Trajectory analysis further reveals difficulties in grounding feasible actions, managing inventory commitments, and converting feedback into effective policy revisions.",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-10-29T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.36980",
+      "pdf_url": "https://arxiv.org/pdf/2610.36980",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "This is a strong fit for evaluating long-horizon autonomous agents, especially around sustained decision quality, real-world consequences, and benchmark design."
+    },
+    {
+      "arxiv_id": "2610.37041",
+      "title": "Guided-RLVR: Guided Exploration in Reinforcement Learning with Verifiable Rewards",
+      "authors": [
+        "Bo Yang",
+        "Zishuai Zhang",
+        "Weihua Li",
+        "Qinnan Zhang",
+        "Sijia Wen",
+        "Hainan Zhang"
+      ],
+      "abstract": "Reinforcement learning with verifiable rewards (RLVR) has shown strong empirical gains in improving the reasoning ability of large language models (LLMs) on tasks such as mathematics and programming. However, recent studies have shown that RLVR rollouts often collapse onto a narrow set of reasoning trajectories, limiting the explored reasoning space. Motivated by findings that thinking tokens at critical steps serve as critical structural elements in LLM reasoning pathways, we propose Guided-RLVR, a novel approach that augments RLVR with a lightweight controller. The controller strategically injects semantically meaningful steering tokens into the sampling distribution, encouraging the model to approach problems from multiple reasoning perspectives and thereby expanding the exploration space. Experiments on mathematical reasoning and code generation benchmarks show that Guided-RLVR consistently outperforms existing RLVR methods while producing more diverse reasoning trajectories.",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-10-29T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.37041",
+      "pdf_url": "https://arxiv.org/pdf/2610.37041",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Highly relevant to Hunter Prep because it tackles exploration and trajectory diversity in RL with verifiable rewards, closely related to on-policy distillation and scaling feedback for reasoning agents."
+    },
+    {
+      "arxiv_id": "2610.37201",
+      "title": "Does Your Generalist Skill Optimizer Really Incentivize Agentic Tasks? Rethinking Skill Optimization via Bipartite Attribution",
+      "authors": [
+        "Jiawei Zhou",
+        "Bo Peng",
+        "Yuxuan Huang",
+        "Ming Zhang",
+        "Youbang Sun",
+        "Xiang Wang",
+        "Chaochao Lu"
+      ],
+      "abstract": "Skill optimizers adapt an agent to long-horizon tasks, such as repairing a terminal environment, by rewriting its skill, a natural-language procedure in its context, and keeping the edits that raise success on a small dev set. On such tasks success is noisy, so a gain on a small dev set does not show that an edit helps, and a success score does not show what the edit costs. We introduce BiPA, which replays an optimizer's acceptance rule on candidates identical to its seed to measure what selection alone reports, and records each episode as a bipartite graph of turns and the text they read to trace extra input tokens to the behavior behind them. Across three optimizers, three agentic benchmarks and two models, the learned skills succeed about as often as their hand-written seed, 0.1 points higher on average. Their dev gains vanish on test: keeping the best of several candidates on at most 30 tasks reports gains this large even when none changed. They read about 16% more input tokens: the optimizers almost always add rules, half to re-check work and some to act one call at a time, and the agent follows them as extra turns, each re-sending the whole conversation. Four principles follow: accept an edit only if its gain exceeds what selection alone reports; charge it for the turns it adds, not for its length; let the editor delete and merge rules; show it what earlier rules cost. Code is available at https://github.com/valleysprings/BiPA.git.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-10-29T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.37201",
+      "pdf_url": "https://arxiv.org/pdf/2610.37201",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Very relevant because it directly questions whether current skill-optimization methods truly improve long-horizon agentic tasks and proposes finer-grained attribution for noisy success signals."
+    },
+    {
+      "arxiv_id": "2610.37369",
+      "title": "Uncovering Why LLMs Fail: From Internal Mechanisms to Adversarial Reasoning Trajectories",
+      "authors": [
+        "Zirui Ding (Institute of Computing Technology",
+        "Chinese Academy of Sciences",
+        "University of Chinese Academy of Sciences)",
+        "Xinxin Fan (University of Chinese Academy of Sciences",
+        "State Key Laboratory of AI Safety",
+        "Institute of Computing Technology",
+        "Chinese Academy of Sciences)",
+        "Hao Yuan (Institute of Computing Technology",
+        "Chinese Academy of Sciences",
+        "ShanghaiTech University)",
+        "Shaoye Luo (University of Chinese Academy of Sciences",
+        "State Key Laboratory of AI Safety",
+        "Institute of Computing Technology",
+        "Chinese Academy of Sciences)",
+        "Men Niu (Institute of Computing Technology",
+        "Chinese Academy of Sciences",
+        "University of Chinese Academy of Sciences)",
+        "Yunfeng Lu (Beihang University)"
+      ],
+      "abstract": "Large language models (LLMs) are usually evaluated by final-output correctness or safety, yet an endpoint label does not reveal how a failure develops throughout the reasoning process. We therefore ask whether ordinary reasoning failures and adversarially induced failures can be characterized using the same internal coordinates. Towards this end, we in this paper study a white-box diagnostic framework CauTrace to disclose the root-cause of why LLM fails from three fundamental inspections: Functional States, Propagation of Representation, Temporal-State Coordination and Reasoning Trajectory. First, seven functional states are creatively defined to represent the support and constraint processing in LLMs. Second, the propagation of representation change measures how the changes among the seven states persist across subsequent Transformer blocks. Third, temporal-state coordination and trajectory topology characterize when the commitment and verification occur relative to the support, and how the dominant state sequence evolves over the full inference process. Finally, we evaluate CauTrace on both clean reasoning failures and paired adversarial perturbations. Across Qwen and LLaMA-family models, the failed traces show weaker Attention-MLP agreement on support-state updates and less verification activity relative to commitment, while the exact representation-level signatures and timing shifts vary by architecture. Held-out repair and steering tests demonstrate consistent operational signals that were in line with our claims for certain models and specific settings, with aligned steering producing the predicted directional changes in process measures. Overall, CauTrace provides a unified diagnostic framework for analyzing failure dynamics through changes in support, commitment, and verification, which would shed light on the in-depth research on LLM security.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-10-29T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.37369",
+      "pdf_url": "https://arxiv.org/pdf/2610.37369",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Strongly relevant to the surprising-information and self-correction agenda because it studies how failures develop along reasoning trajectories rather than only at final outputs."
+    },
+    {
+      "arxiv_id": "2610.37482",
+      "title": "From Interaction to Capability: Task Advancement as State and Supervision for GUI Agents",
+      "authors": [
+        "Ziyang Chen",
+        "Qian Li",
+        "Chengwei Qin"
+      ],
+      "abstract": "GUI memory should preserve the results of past actions and learn reusable operations. This is difficult in long-horizon workflows, where agents must use information across applications and useful operations are interleaved with failed attempts. We introduce Task Advancement Memory (TAM), which defines task advancement as verified task progress, and supports ongoing task execution and learns reusable operations. During execution, Task Advancement State represents how verified task progress changes the remaining goals, allowing the agent to build on earlier achievements across applications. After each task, advancement supervision identifies and abstracts the interactions that produced a verified local result. The learned operations preserve the relation between required inputs, expected outcomes, and verification conditions. This retains locally successful operations from both successful and failed tasks. On MobileWorld GUI-only tasks, Advancement State alone raises success from 12.0% to 28.2%. Full TAM achieves a 17.6% relative gain in task success over the strongest evaluated baseline and reduces lifecycle tokens per solved task by 38.7%. On SPA-Bench, TAM achieves state-of-the-art task success in the single-app English Level 3 setting.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-10-29T00:00:00-04:00",
+      "abs_url": "https://arxiv.org/abs/2610.37482",
+      "pdf_url": "https://arxiv.org/pdf/2610.37482",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "A strong fit for long-horizon agent research because it introduces verified task advancement as memory and supervision for GUI agents operating through extended workflows."
+    }
+  ]
+}
