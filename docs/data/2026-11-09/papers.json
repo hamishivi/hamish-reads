@@ -1,0 +1,675 @@
+{
+  "date": "2026-11-09",
+  "generated_at": "2026-11-09T06:57:28.300081+00:00",
+  "author_papers": [
+    {
+      "arxiv_id": "2611.08683",
+      "title": "Compression of Emotion in Language Model Representations",
+      "authors": [
+        "Laya Iyer",
+        "Sanmi Koyejo",
+        "Chen Shani"
+      ],
+      "abstract": "Large language models (LLMs) have been evaluated on their ability to identify emotions expressed in text and produce fluent emotional language. However, output predictions alone do not reveal how fine-grained emotion distinctions are organized internally. We study seven LLMs on GoEmotions, an English Reddit dataset annotated with 27 fine-grained emotion categories plus neutral. We compare model predictions and emotion-prompted final-token representations with the 28 GoEmotions categories and with coarser emotion-family and sentiment groupings.   We find a consistent pattern of $\\textit{overcompression}$ relative to the fine-grained GoEmotions taxonomy. Under the tested KMeans protocol, when we cluster their hidden representations without using emotion labels, the clearest split is into two groups that largely separate positive from negative emotion. Coarser emotion groupings are also recovered with fewer clusters than the full 28-category taxonomy. Yet linear probes retain substantial fine-grained predictive information. These results suggest that fine-grained emotion information remains accessible even though broader affective structure more strongly organizes the unsupervised geometry.",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-11-09T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.08683",
+      "pdf_url": "https://arxiv.org/pdf/2611.08683",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2611.09239",
+      "title": "DUET: Dual-Sparse Inference for Block Diffusion Language Models",
+      "authors": [
+        "Siyuan Yan",
+        "Shen Gu",
+        "Xiaoxing Ma",
+        "Chun Cao",
+        "Jingwei Xu"
+      ],
+      "abstract": "Diffusion language models (DLMs) enable parallel token generation through iterative denoising, yet their inference remains costly due to repeated attention over a growing historical prefix and repeated processing of the entire current generation block. Historical attention becomes increasingly expensive as generation progresses, while all current-block positions are propagated through the Transformer at every denoising step even though only a small fraction are typically resolved at that step. In this paper, we introduce Duet, a training-free dual-sparse inference framework that addresses these challenges through prefix Key-Value (KV) sparsity and early query sparsity, respectively. Specifically, Duet exploits the concentration and cross-step stability of historical attention within each generation block to construct a compact historical KV subset that is reused across denoising steps. For query sparsity, Duet predicts update positions from shallow representations and propagates only the corresponding queries through the suffix Transformer layers, avoiding deep computation at positions unlikely to be updated in the current step. Experiments show that Duet maintains competitive accuracy while achieving 1.34$\\times$/2.83$\\times$ end-to-end/per-step speedups on LLaDA2.1-mini and 2.41$\\times$/4.72$\\times$ on SDAR-8B-Chat-b32 at a 32K context length.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-11-09T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.09239",
+      "pdf_url": "https://arxiv.org/pdf/2611.09239",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2611.09768",
+      "title": "Language as Trait, Politeness as Strategy: Controlled Tests of Linguistic Effects in LLM Social-Deduction Agents",
+      "authors": [
+        "Yuchen Li",
+        "Lisa Liu",
+        "Runqi Zou",
+        "Shuxuan Kuang",
+        "Qingquan Zhang",
+        "Julian Togelius"
+      ],
+      "abstract": "Large language model (LLM) agents coordinate through conversation, and the same message can be phrased in simpler or more complex language, bluntly or politely. We test whether such differences change how other agents judge and act, using the LURK Werewolf framework, which separates each utterance's speech-act predicate from its natural-language realization. We rewrite only the realization, check that the game content is preserved, and replay each game day from saved checkpoints against a re-sampled control. We vary linguistic range consistently across a speaker's messages and politeness strategy per utterance. Across 30 games and 4,335 replays, neither manipulation changes the trust other agents place in the speaker, and no effect on votes or night actions survives correction for multiple comparisons; the largest uncorrected effect is that shifting range away from a neutral paraphrase changes about 4 percentage points more of the other players' votes. In natural play, 88% of face-threatening speech is bald on-record regardless of role.",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-11-09T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.09768",
+      "pdf_url": "https://arxiv.org/pdf/2611.09768",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2611.08495",
+      "title": "Rethinking Data Selection as Distribution Matching on Semantic Manifolds",
+      "authors": [
+        "Peng Sun",
+        "Yi Yang",
+        "Mingshuo Chen",
+        "Chunxiao Li",
+        "Yao Zhu",
+        "Huawen Shen",
+        "Tianfan Fu"
+      ],
+      "abstract": "Instruction tuning of large language models and large vision language models relies on massive training data, which incurs substantial computational and storage costs. Meanwhile, training data often contains redundancy, noise, and low quality samples. Existing data selection methods mostly rely on diversity, importance, or a combination of both, without explicitly constraining the distributional consistency between the selected subset and the full data in the embedding space. We propose QMAC, a quality aware multiband characteristic function matching method that formulates data selection as a joint optimization problem of distribution matching and quality filtering. QMAC matches the empirical characteristic functions of the selected subset and the full data across multiple frequency scales, capturing both global semantic coverage and local perturbations, while using task related quality scores to filter noisy and low quality samples. We systematically evaluate QMAC on 4 data types, 8 target models, and 44 benchmarks. Experimental results show that QMAC outperforms existing data selection baselines on standard image-text instruction data, substantially surpasses random selection on standard text instruction, image-text reasoning, and text reasoning data, and exceeds full data training in multiple model and budget combinations. The code will be made publicly available upon acceptance of the paper.",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "published": "2026-11-09T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.08495",
+      "pdf_url": "https://arxiv.org/pdf/2611.08495",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2611.09798",
+      "title": "Test-Time Compute Scales Better with Parallel Agent Teams",
+      "authors": [
+        "Junlin Wang",
+        "Haozhe Chen",
+        "Ang Li",
+        "Rahul Chalamala",
+        "Zhuang Liu"
+      ],
+      "abstract": "Test-time scaling improves the performance of a fixed model by spending more computation at inference. There are two common ways to spend it on agents when a verifier can score every attempt. Best-of-N sampling runs many independent agents and keeps the best result but saturates quickly. One large team of collaborating agents can score higher but stops improving as it grows. Can we get the best of both? Our method, parallel agent teams, does so by sampling many small teams in parallel and keeping the best team's result. We test it on 12 long-horizon tasks from GPU kernels and formal proofs to exploit development. With a 27B model and a budget of 100 agents, parallel teams of ten beat parallel agents on 10 of 12 tasks and beat one team of 100 on all four tasks where we ran such large teams. At equal dollar cost the same parallel teams beat a frontier model on half the tasks. A simple statistical model shows that individual agents lose because their many samples have a low mean and that one large team loses because a single sample gets no gain from variance. Sampling many small teams in parallel balances a high mean with the gain from variance. Parallel agent teams thus offer a more effective way to scale test-time compute.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-11-09T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.09798",
+      "pdf_url": "https://arxiv.org/pdf/2611.09798",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2611.08615",
+      "title": "s$^3$: Simple Scaling of Swarms via Cooperative Multi-agent RL",
+      "authors": [
+        "Kunal Jha",
+        "Gon\\c{c}alo Faria",
+        "Shuyue Stella Li",
+        "Scott Geng",
+        "Faeze Brahman",
+        "Noah A. Smith",
+        "Yulia Tsvetkov",
+        "Max Kleiman-Weiner",
+        "Natasha Jaques"
+      ],
+      "abstract": "Groups can achieve more than individuals in the same amount of time, but only if their members coordinate: they must decide who works on what and what to share. However, this organization in multi-agent systems today usually comes from arbitrary, static harnesses designed a priori without adapting to agent behaviors or task specifications. We ask whether agents can instead learn to organize themselves. We introduce s$^3$, the first multi-agent reinforcement learning method in which agents decide for themselves how long to work alone and when to share findings or read teammates' messages, with no predefined organization or roles. Our s$^3$ agents learn to take different approaches, read each other's work, exhibit emergent roles that complement each other in the swarm, and generalize to bigger teams. We study both coordination, where agents must combine private information, and parallel exploration, where sharing discoveries can make search more efficient. With matched training and inference budgets, s$^3$, swarms evaluated with twice as many agents as in training solve over 25$\\times$ more coordination problems than the strongest baseline, and in exploration, communicating agents reduce repeated work by nearly 50% and outperform best-of-N by up to 9.4 percentage points. Rather than being designed in advance, s$^3$ enables organization to emerge from a shared goal. This opens the door to capable systems built from many models that learn to work together.",
+      "categories": [
+        "cs.MA",
+        "cs.AI"
+      ],
+      "published": "2026-11-09T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.08615",
+      "pdf_url": "https://arxiv.org/pdf/2611.08615",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2611.09828",
+      "title": "Designing Effective Monitor-Based Interventions for Mitigating Reward Hacking During RL",
+      "authors": [
+        "Aria Wong",
+        "Joshua Engels",
+        "Neel Nanda"
+      ],
+      "abstract": "Reinforcement learning (RL) rewards are notoriously difficult to design and control, often leading to the model learning unintended behaviors such as reward hacking. One potential solution is to monitor for reward hacking and penalize it when detected; however, training against a monitor could lead to evasive behavior, and our general understanding of how to apply monitors effectively during training is limited. To study how best to use monitors to mitigate reward hacking, we introduce and open source three realistic environments where Qwen3-4B reward hacks: a coding environment hackable via test overwriting, a medical chat environment hackable via sycophancy, and a biography generation environment hackable via hallucination. We first focus on the coding environment, where we find that: (1) models can learn to evade highly accurate monitors by exploiting systemic flaws in probes and LLM judges; (2) monitors that leak more learning signal during RL suppress reward hacking but are more often evaded; and (3) including easier problems in training can decrease reward hacking. We apply our findings to build better reward hacking monitors for the medical chat and biography generation environments that improve upon naive baselines to reduce reward hacking rates across seeds to before-training levels in some interventions. Our results demonstrate that our takeaways translate to new settings and that better monitor intervention designs are possible.",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-11-09T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.09828",
+      "pdf_url": "https://arxiv.org/pdf/2611.09828",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2611.09847",
+      "title": "Computer-Use Agents Are Embodied Generalists",
+      "authors": [
+        "Pranjal Aggarwal",
+        "Sean Welleck"
+      ],
+      "abstract": "In many areas of AI, general-purpose models have increasingly replaced handcrafted methods and specialized architectures. We argue that embodied AI is poised for a similar shift. Our key claim is that embodied tasks can be formulated as interaction with digital software. Specifically, we build software that renders an agent's view of a physical environment on a screen and provides controls for acting in it. A computer-use agent (CUA) can then perform embodied tasks through the same screenshots and keyboard and mouse actions that it uses to operate ordinary software. Using a single CUA design and changing only the software, our entries win first-, second-, third-, and sixth-place prizes across four ECCV workshop competitions, without any competition-specific agent tuning. These results suggest that the skills CUAs learn on software, such as visual grounding, precise clicking, and exploration, already carry over to embodied tasks, giving CUAs a far broader scope in embodied AI than previously realized. We therefore advocate that computer-use agents can be embodied generalists. Further, we advocate that, by following the training strategy that made computer-use agents general, embodied AI can converge on a single general model as well, ushering in a new era of general embodied AI. Website: https://pranjal2041.github.io/cua-embodied",
+      "categories": [
+        "cs.LG",
+        "cs.RO"
+      ],
+      "published": "2026-11-09T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.09847",
+      "pdf_url": "https://arxiv.org/pdf/2611.09847",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2611.08519",
+      "title": "RedMall: Generative Recommendation for Large-Scale E-commerce",
+      "authors": [
+        "Kunyang Zhou",
+        "Xin Jia",
+        "Yi Yang",
+        "Yongjun Yang",
+        "Manjie Xu",
+        "Honglei Zhang",
+        "Yan Zhu",
+        "Kai Zuo",
+        "Xu Tang",
+        "Zheng Wang"
+      ],
+      "abstract": "Generative recommendation has shown considerable potential in industrial recommendation systems. However, the performance of existing generative methods is limited by several challenges. 1) Semantic IDs (SIDs) are treated as one-dimensional sequences, overlooking the hierarchical dependencies among different layers. 2) Next-token prediction used is unable to explicitly optimize session-wise recommendation. 3) Although reinforcement learning has been applied to align generated recommendations with user preferences, few existing methods explicitly optimize the ranking of positive items in session-wise recommendation. To address the above issues, we propose RedMall, a generative recommender designed for large-scale e-commerce. Firstly, RedMall constructs hierarchical SIDs through residual quantization over multimodal representations. Secondly, RedMall introduces a lightweight SID encoder to explicitly model layer-wise dependencies in SIDs. Moreover, RedMall incorporates sparse mixture-of-experts, dual gated attention, and multi-target prediction to scale model size, enhance user interest representation, and optimize session-wise recommendation. We further design an exposure-aware loss that treats exposed but unclicked items as negative feedback. To better align user preferences and list-wise ranking objectives, we combine Group Relative Policy Optimization with an auxiliary LambdaRank loss, using both real user feedback and item ranking to guide optimization. Experiments on four public datasets-Amazon Beauty, Amazon Toys, Amazon Food, and MovieLens-1M---show that RedMall outperforms the evaluated baselines across all reported Recall and NDCG metrics. Online A/B tests show improvements of 2.24% in advertiser value (ADVV) and 0.59% in click-through rate (CTR) for e-commerce advertising, as well as gains of 1.08% in GMV and 0.95% in daily active buyers (DAB) for e-commerce recommendations.",
+      "categories": [
+        "cs.IR"
+      ],
+      "published": "2026-11-09T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.08519",
+      "pdf_url": "https://arxiv.org/pdf/2611.08519",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    }
+  ],
+  "ranked_papers": [
+    {
+      "arxiv_id": "2611.08946",
+      "title": "Flex-RSI: Benchmarking Recursive Self-Improvement of Frontier Agents",
+      "authors": [
+        "Jingdong Zhang",
+        "Jionghao Wang",
+        "Zhengming Yu",
+        "Yancheng Cai",
+        "Wei Chow",
+        "Chris Choy",
+        "Zhiyang Dou",
+        "Hang Hua",
+        "Jiachen Li",
+        "Zhixuan Liu",
+        "Chen Wang",
+        "Songlin Wei",
+        "Siyuan Yang",
+        "Yu Yuan",
+        "Xiaohang Zhan",
+        "Yucheng Zhang",
+        "Shuhong Zheng",
+        "Xin Li",
+        "Lingjie Liu",
+        "Wojciech Matusik",
+        "Zhengzhong Tu",
+        "Wenping Wang"
+      ],
+      "abstract": "Frontier language models are increasingly deployed as agents, and how well an agent performs depends not only on its model but also on its harness: the prompts, tools, memory, and control loop through which the model acts. When an agent is applied to a new problem, a natural question is whether it can use the feedback of the task to improve the way it works, and not merely its answer. Most existing benchmarks keep the agent's harness fixed and score the solution it produces, or target large-scale model training. We introduce Flex-RSI, a benchmark for the recursive self-improvement of agents on vision and robotics tasks under a fixed budget. In each round, an executor improves the task solution, which is kept only if it scores higher on held-out validation data, and an improver then revises the harness, including the executor and itself. Every run starts from the same general-purpose harness, and the final solution is scored on hidden test data. Evaluating closed-source and open-weight models on tasks spanning perception, reasoning, robot action, 3D reconstruction, visual creation, and infrastructure, we find that self-improvement helps most when the agent builds its own solution, that feedback recording only success or failure holds back open-weight models, and that open-weight models fall furthest behind where outputs must pass strict checks of physical stability or exact correctness. Paired runs further show that editing the harness itself contributes to the gains.",
+      "categories": [
+        "cs.AI",
+        "cs.CV",
+        "cs.RO"
+      ],
+      "published": "2026-11-09T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.08946",
+      "pdf_url": "https://arxiv.org/pdf/2611.08946",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "This is highly relevant because it benchmarks recursive self-improvement of frontier agents, which is central to research on agentic adaptation, evaluation directions, and iterative capability improvement."
+    },
+    {
+      "arxiv_id": "2611.08787",
+      "title": "Training Stability under Adaptive Curricula",
+      "authors": [
+        "Johan Obando-Ceron",
+        "Walter Mayor",
+        "Michael Dennis",
+        "Aaron Courville",
+        "Pablo Samuel Castro"
+      ],
+      "abstract": "Unsupervised Environment Design (UED) approaches train reinforcement learning (RL) agents on diverse curricula that may evolve with their capabilities. While prior work has largely focused on how these curricula are constructed, we study whether their students remain trainable under the resulting distributions. Across multiple UED mechanisms, environment complexities, and extended training horizons, we identify recurring learner-side pathologies, including parameter growth, degraded value--outcome ordering, and loss of representational diversity, that accompany stagnation and performance degradation. These findings connect limitations in UED to optimization failures previously identified in conventional deep RL, while showing how adaptive curricula couple the learner's optimization state to its future training distribution. Controlled interventions show that mitigating selected pathologies improves learning. Stabilizing the learner improves long-horizon performance and zero-shot generalization without changing the curriculum rule or increasing environment interaction. Our results establish learner trainability as a complementary design principle for UED. Effective curricula require students that remain capable of learning from the distributions they produce.",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-11-09T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.08787",
+      "pdf_url": "https://arxiv.org/pdf/2611.08787",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Highly relevant to the autoscaling/RL reading club because it directly studies RL training stability under adaptive curricula, a core issue for environment design and evaluation in simulation-based RL."
+    },
+    {
+      "arxiv_id": "2611.09625",
+      "title": "Encoding Memory in World Models with Test-Time Model-Based Reinforcement Learning",
+      "authors": [
+        "Maxime Burchi",
+        "Fayaz Ali Dharejo",
+        "Radu Timofte"
+      ],
+      "abstract": "Model-based reinforcement learning (MBRL) approaches have demonstrated strong performance across diverse domains in recent years, learning accurate world models from agent trajectories. However, despite this progress, current approaches still struggle to surpass human performance on tasks that require long-term memory and planning. In this work, we address the problem of long-term memory in MBRL by moving beyond the commonly studied paradigm of architecture design. We introduce Test-Time Model-Based Reinforcement Learning (TT-MBRL), using gradient descent at test time to encode the memory of episode observations into world model parameters. This enables the agent to learn a distinct world model for each episode, improving memory capabilities compared to traditional approaches that solely rely on contextual memory. We first establish a proof of concept on a simplified two-dimensional variant of the Memory Maze environment, which we refer to as Memory Maze 2D, showing consistent improvements across different world model architectures. We then demonstrate the effectiveness of TT-MBRL in the 3D domain, achieving new state-of-the-art results on the Memory Maze benchmark. Finally, we show that TT-MBRL maintains strong performance on non-memory benchmarks such as DeepMind Control and Atari 100k.",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CV"
+      ],
+      "published": "2026-11-09T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.09625",
+      "pdf_url": "https://arxiv.org/pdf/2611.09625",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Highly relevant to the autoscaling/RL reading-club themes because it studies world models, test-time model-based RL, and long-term memory for planning, which closely matches interest in simulation-derived tasks and RL evaluation directions."
+    },
+    {
+      "arxiv_id": "2611.08711",
+      "title": "RL-ATTACK: A Generalized Black-Box Adversarial Attack on Language Models via Reinforcement Learning",
+      "authors": [
+        "Taikun Chen",
+        "Yue Zhang",
+        "Wei Qian",
+        "Hui Fang"
+      ],
+      "abstract": "Large language models (LLMs) exhibit vulnerabilities to adversarial perturbations that can induce unintended responses. These vulnerabilities can be identified via intentional attacks and subsequently used to improve model safety. In black-box settings where gradients are inaccessible, existing methods tend to guess adversarial transformations using external knowledge, ignoring the information provided by the target model. To mitigate this, we propose a trainable black-box framework based on reinforcement learning, which learns from the target model to generate tailored adversarial transformations. We demonstrate that our approach achieves lower post-attack accuracy, greater query efficiency and better semantic preservation on both natural language inference and generative Q&A tasks. On natural language inference, it drives post-attack accuracy to 2% within 20 queries. Against generative language models, our trained attacker consistently achieves lower post-attack accuracy than the untrained attacker and wins in 4 out of 6 settings when compared to a strong optimization-based baseline. We further experiment with multiple reward designs and training settings, and we find that no design or setting is consistently dominant. Our code is available at https://github.com/taikunudel/RL-ATTACK.",
+      "categories": [
+        "cs.CL",
+        "cs.CR"
+      ],
+      "published": "2026-11-09T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.08711",
+      "pdf_url": "https://arxiv.org/pdf/2611.08711",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Highly relevant to the autoscaling/RL reading club because it uses reinforcement learning for black-box LLM attack optimization, directly connecting to RL for language-model behavior in simulated or adversarial environments."
+    },
+    {
+      "arxiv_id": "2611.09597",
+      "title": "RuACT: Recovering Inactive Rubrics as Adaptive Critics and Teachers",
+      "authors": [
+        "Yijun Li",
+        "Zhengxi Lu",
+        "Zhipiao Liu",
+        "Jinzheng Yu",
+        "Xutao Weng",
+        "Jian Shao",
+        "Yongliang Shen"
+      ],
+      "abstract": "Rubric-based reinforcement learning (RL) extends RL with verifiable rewards to open-ended tasks by scoring each response against query-specific rubrics. Under group-relative optimization, however, a rubric that every sampled response fails (unreachable) or passes (saturated) gives all responses the same outcome and no learning signal; in Qwen3-4B medical training, 60.88% of query-rubric observations are inactive. We find that the two states lack different supervision: stating an unreachable rubric in the prompt raises its satisfaction from 1.13% to 91.25%, whereas responses that all pass a saturated rubric still differ in quality. We therefore propose RuACT (Rubrics as Adaptive Critics and Teachers), which assigns each inactive rubric the role that supplies what it lacks. Rubric as Teacher uses unreachable rubrics as privileged information for reward-gated on-policy self-distillation, and Rubric as Critic decomposes saturated rubrics into child rubrics that separate current responses while sharing the parent's weight. RuACT outperforms GRPO, rubric reweighting, and rubric-guided exploration on all four medical and scientific benchmarks with Qwen3-4B and achieves the best average with Qwen3-1.7B. On initially unreachable rubrics, unguided recovery rises from 35.02% to 42.86%, while child refinement improves reward-quality alignment on independent rollouts from 57.74% to 60.77%. Code is available at https://github.com/ZJU-REAL/RuACT.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-11-09T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.09597",
+      "pdf_url": "https://arxiv.org/pdf/2611.09597",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Highly relevant to the autoscaling/RL reading club and RL-focused projects because it studies rubric-based reinforcement learning, reward signal sparsity, and adaptive critics/teachers for open-ended LLM training."
+    },
+    {
+      "arxiv_id": "2611.09207",
+      "title": "RPEG: Training Reasoning Language Models Scalably and Cost-Effectively",
+      "authors": [
+        "Maciej Besta",
+        "Leonard Schmidt",
+        "Pierre Pang",
+        "Patrik Okanovic",
+        "Robert Gerstenberger",
+        "Torsten Hoefler"
+      ],
+      "abstract": "Reinforcement learning (RL) is now central to training Reasoning Language Models (RLMs), but RLM pipelines are difficult to scale and costly to run because each RL step couples multiple large models, heterogeneous stages, cross-step state, and complex asynchronous dependencies. Existing systems typically optimize only parts of this design space. We address this complexity by jointly optimizing the pipeline structure as well as its execution using a novel data-centric graph intermediate representation called RLM Pipeline Execution Graph (RPEG). RPEG exposes structural choices such as bounded asynchrony and actor-critic sharing together with execution optimizations such as stage fusion, fine-grained scheduling, and multi-dimensional model parallelism. It is coupled with a comprehensive analytical performance model for RLM training, jointly capturing compute, communication, memory, and hierarchical rack-, node-, and GPU-level effects. Across systems with up to 256 GH200 GPUs, our distributed runtime engine implementing RPEG improves performance by up to 2x over ReaL and reduces step latency by up to 2.48x over verl, while increasing hardware utilization by up to 30%. Overall, RPEG provides a graph-driven foundation for next-generation training pipelines for frontier reasoning LLMs.",
+      "categories": [
+        "cs.DC",
+        "cs.AI",
+        "cs.CL",
+        "cs.LG",
+        "cs.PF"
+      ],
+      "published": "2026-11-09T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.09207",
+      "pdf_url": "https://arxiv.org/pdf/2611.09207",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Highly relevant to the autoscaling/RL reading club because it focuses on scalable, cost-effective RL training systems for reasoning language models, directly matching interests in compute, infrastructure, and RL-based training."
+    },
+    {
+      "arxiv_id": "2611.08613",
+      "title": "NormGym: Evaluating Normative Competence through Social Interaction",
+      "authors": [
+        "Binze Li",
+        "Zihuan Zhang",
+        "Seokhyun Baek",
+        "Gillian K. Hadfield",
+        "Tianmin Shu"
+      ],
+      "abstract": "Normative competence, the ability to infer socially enforced expectations from interaction and adjust behavior accordingly, is essential for agents operating in unfamiliar human communities. Yet existing evaluations largely test whether agents can recognize or apply norms they may already know, rather than whether they can acquire previously unknown norms from social interaction. We introduce NormGym, an interactive benchmark for normative competence in which a newcomer must infer a hidden, arbitrary norm while pursuing its own task in a multi-agent community. Success requires distinguishing what is possible from what is permitted, inferring the norm from observed behavior and sanctions, and applying it in new situations. NormGym contains diverse norms and distinct environments, allowing systematic evaluation of current agents, including large language model (LLM) agents. We find that normative competence remains challenging: the strongest evaluated LLM achieves a joint task-and-compliance success rate of 55.3%. Our analysis reveals that models can sometimes revise their behavior following sanctions for their own actions, but struggle to use other agents' behavior and the sanctions they receive to infer the underlying norm. We further find that fine-tuning models may be insufficient to improve normative competence. These results suggest that current models lack a robust, transferable capability for acquiring normative knowledge through social interaction.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-11-09T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.08613",
+      "pdf_url": "https://arxiv.org/pdf/2611.08613",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Strong match for the reading club's interest in simulation-derived tasks and agent evaluation because it introduces an interactive benchmark for learning social norms through interaction rather than static QA."
+    },
+    {
+      "arxiv_id": "2611.08908",
+      "title": "Toward LLM Self-Play Under Data Scarcity: Effectiveness, Generalizability, and Trustworthiness",
+      "authors": [
+        "Zhiyin Yu",
+        "Yuchen Mou",
+        "Bingzhe Wu",
+        "Zhonghai Wu",
+        "Shiyang Feng",
+        "Xiao Luo"
+      ],
+      "abstract": "The rapid development of large language models (LLMs) has been driven largely by scaling model size and human-curated training data, yet this paradigm is increasingly constrained by data scarcity and diminishing returns from human supervision. Self-play offers a promising pathway for autonomous data generation and improvement, but current frameworks remain unsatisfactory due to a lack of a data-centric perspective, limited cross-domain generalization, and growing trustworthiness and security concerns. In this paper, we argue that real-world LLM self-play systems should achieve effectiveness, generalizability, and trustworthiness under data scarcity. To address these challenges, we outline three blue-sky research directions for future self-play systems: (1) data-centric self-play for effective experience generation, (2) generalizable self-play for open-world and unverifiable tasks, and (3) trustworthy self-play for reliable self-evolution. We further discuss research opportunities and solutions within each direction. This paradigm shift will establish a sustainable and safe AI ecosystem by transforming finite human knowledge into inexhaustible high-quality experience through self-play architectures.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-11-09T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.08908",
+      "pdf_url": "https://arxiv.org/pdf/2611.08908",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "The paper directly addresses LLM self-play under data scarcity, aligning closely with interests in autonomous task generation, generalization, and trustworthy improvement for agent/RL-style systems."
+    },
+    {
+      "arxiv_id": "2611.09568",
+      "title": "Alignment by Confident Debate: Preference Learning from Multi-Agent Debate",
+      "authors": [
+        "Nikhil Verma",
+        "Dingxian Wang",
+        "Mohammad Reza Rezaei",
+        "Andrew Rabinovich",
+        "Zhao Chen"
+      ],
+      "abstract": "Post-training language models for reasoning typically rely on gold answers, task-specific verifiers, or learned reward models, limiting scalability when such signals are scarce. Multi-agent debate offers a self-supervised alternative, but converting debate into reliable training supervision remains challenging: majority voting weights agreeing responses equally, lacks a principled tie-breaking rule, and is ill-defined for open-ended tasks without a canonical answer; likelihood-based scoring can conflate fluency with correctness; and homogeneous committees may reinforce correlated errors. We introduce Alignment by Confident Debate (AbCD), which converts debate traces into preference data without gold answer labels. A sampling-diverse committee debates each problem, after which final answers are clustered by task-level semantic equivalence. We use verifiable tasks (mathematical reasoning, multiple-choice quantitative QA, and executable code-generation) as a controlled test bed: their answer keys or executable checkers let us evaluate the quality of debate-derived supervision against ground truth, even though the oracle itself never uses gold labels. Post-training on the resulting preferences outperforms inference-only ensembling and debate, as well as SFT on the same traces, across five model families spanning 1B to 8B parameters and four datasets, improving consensus accuracy, with a maximum gain of $21.5_{pp}$. Ablations show that the approach transfers to a larger model and to code generation, while also revealing limitations of heterogeneous committees and agreement-based weighting. Overall, the results suggest that debate traces can yield useful preference supervision when answer equivalence is combined with confidence-weighted disagreement.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-11-09T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.09568",
+      "pdf_url": "https://arxiv.org/pdf/2611.09568",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "This paper is strongly relevant because it turns multi-agent debate into a scalable preference-learning signal for reasoning alignment, closely matching interests in agentic training and evaluation."
+    },
+    {
+      "arxiv_id": "2611.09792",
+      "title": "Knowing When to Intervene: Causal Evaluation of AI Agents",
+      "authors": [
+        "Ayush Sawarni",
+        "Wenqian Xing",
+        "Tijana Zrnic",
+        "Ramesh Johari",
+        "Vasilis Syrgkanis"
+      ],
+      "abstract": "Current evaluations of agentic AI systems primarily rely on benchmarks. However, the static nature of benchmarks makes them uninformative about the value of auditing interventions at deployment time. For reliable deployment, we often need to determine within an agent's trajectory whether or not to intervene, e.g., by verifying the agent's current output or steering it toward different behavior, using either human review or more costly models or time-consuming agentic supervision. The value of such interventions is fundamentally a causal inference question, asking whether the causal effect of such an intervention is beneficial for the final outcome. Estimating this causal effect is particularly challenging due to the dynamic nature of the problem: the impact of an intervention depends on the current context and environment, as well as the agent's future behavior. We develop the first methodologically grounded framework for evaluating the causal effects of randomized interventions within agent trajectories. By leveraging a relatively small dataset of agent trajectories collected under randomized interventions such as verification or screening, we can estimate the dynamic causal effect of a rich class of (contextual) intervention policies. The structural parameters that we estimate can also be used to construct safety leaderboards that capture the risk of various agentic actions, which can be used by practitioners for audit prioritization. Applying our methods to tau-bench Retail, ToolSandbox, and ImpossibleBench, we find that intervention effects vary substantially across agent actions and states. More broadly, our work suggests a rich research agenda at the intersection of causal inference and agentic evaluation, which we believe is essential for the reliable and safe deployment of AI agents in the real world.",
+      "categories": [
+        "cs.AI",
+        "cs.LG",
+        "econ.EM",
+        "stat.ME"
+      ],
+      "published": "2026-11-09T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.09792",
+      "pdf_url": "https://arxiv.org/pdf/2611.09792",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Highly relevant because it focuses on causal evaluation of AI agents and intervention decisions, closely matching your agent evaluation and benchmarking interests."
+    },
+    {
+      "arxiv_id": "2611.09872",
+      "title": "On the Reliability of Majority-Vote Pseudo-Labels in Test-Time Reinforcement Learning",
+      "authors": [
+        "Haoyu Wang",
+        "Ru Wang",
+        "Yuanyuan Wang",
+        "Jiaxian Guo",
+        "Mingming Gong"
+      ],
+      "abstract": "Test-time reinforcement learning (TTRL) adapts pretrained language models to unlabeled target-domain data using self-generated pseudo-labels, whose reliability remains poorly understood. We analyze majority-vote supervision for TTRL with online Direct Preference Optimization (DPO) and decompose its error into population-majority bias and prompt-dependent finite-rollout variation. Because population-majority bias is generally unidentifiable without external supervision, we focus on mitigating the downstream effects of finite-rollout variation. We propose \\emph{Prompt-Conditional Distributionally Robust DPO (PC-Dr.DPO)}, which conditions within-prompt robust reweighting on observed vote reliability to make updates from sampling-sensitive prompts more conservative. We further introduce a cache-based mechanism to reduce self-supervised forgetting during online adaptation. Across six mathematical and knowledge-intensive reasoning benchmarks and five model backbones, PC-Dr.DPO matches or outperforms the strongest TTRL baseline in 24 of 30 settings.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-11-09T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.09872",
+      "pdf_url": "https://arxiv.org/pdf/2611.09872",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Highly relevant because it analyzes test-time reinforcement learning and pseudo-label reliability, directly related to RL-for-LLMs and adaptation concerns."
+    },
+    {
+      "arxiv_id": "2611.08576",
+      "title": "Q-OIL: Optimistic Exploration in Learning from Human Interventions",
+      "authors": [
+        "Pranav Teegavarapu",
+        "Sriyash Poddar",
+        "Rico Qi",
+        "Cleah Winston",
+        "Krisha Khandelwal",
+        "Aykut Onyol",
+        "Natasha Jaques",
+        "Abhishek Gupta"
+      ],
+      "abstract": "As robots are deployed in the real world, they will inevitably make mistakes. Human interventions provide valuable feedback for improving their behavior, enabling them to adapt online to new scenarios. However, studying human-in-the-loop robot learning is difficult: real-world experiments are slow and expensive, so most algorithm development relies on simulated human models. We show that common human modeling assumptions do not match how real people intervene in practice. Through analyzing intervention data from human participants, we find that humans tend to intervene when agent progress stalls, and that their corrective actions are often suboptimal. Motivated by these findings, we introduce a progress-based model of human intervention that achieves higher rank correlation with real-user algorithm rankings, enabling realistic algorithm benchmarking and development in simulation. Building on these insights, we propose Q-OIL, a method that adds optimistic bonuses to intervention transitions in reinforcement learning and softly guides exploration toward human corrections. We find that decoupled critics are critical for stability because they prevent the bonuses from backing up to pre-intervention states. As a result, Q-OIL learns more efficiently than competitive baselines, achieving 10-50% higher success in simulation and on real robots, and improving pretrained VLAs on two bimanual manipulation tasks. As we ground both evaluation and algorithms in realistic human behavior, this work provides a practical path toward scalable robot learning from interventions.",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "published": "2026-11-09T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.08576",
+      "pdf_url": "https://arxiv.org/pdf/2611.08576",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Highly relevant because it is an RL paper about learning from human interventions with exploration, fitting your autoscaling/RL reading and agent-learning interests."
+    },
+    {
+      "arxiv_id": "2611.08864",
+      "title": "Adaptive Scheduling Pipeline for Multi-Instance Asynchronous Reinforcement Learning",
+      "authors": [
+        "Salah Chikhi",
+        "Luis Zuin",
+        "Entong Li",
+        "Zeng Li"
+      ],
+      "abstract": "We present the Adaptive Scheduling Pipeline (ASP), an offline rollout scheduler for multi-instance asynchronous reinforcement learning (RL) of large language models (LLMs). ASP jointly reduces three sources of rollout underutilization - padding bubbles from intra-minibatch length heterogeneity, skewness bubbles from long-tail outputs, and sorting bubbles from fluctuations in training-queue occupancy induced by length-sorted dispatch - through a single offline preprocessing pass. This enables efficient multi-instance rollout that overcomes the early scaling plateau of single-instance inference while smoothing the arrival of generated samples at the trainer. We integrate the scheduler into an asynchronous architecture that decouples rollout from training while keeping policy lag observable and bounded. Complete ASP improves end-to-end throughput by up to 3.22 times and reduces iteration time by up to 76.8% relative to MindSpeed-RL, while reducing iteration time by up to 62.5% relative to verl. Within ASP, scheduling reduces mean iteration time by 10.9%. ASP also scales more robustly with additional generation resources than these baselines and shows no visible convergence degradation in the measured bounded-lag regime. ASP has since been used in an internal telecom-domain RL post-training workflow, reducing the reported training period from more than three months to about two months and producing a domain-enhanced model for knowledge answering and tool calling.",
+      "categories": [
+        "cs.DC",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-11-09T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.08864",
+      "pdf_url": "https://arxiv.org/pdf/2611.08864",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Strong match for the compute/autoscaling focus since it proposes adaptive scheduling for asynchronous RL rollouts, addressing efficiency and utilization bottlenecks in large-scale RL training."
+    },
+    {
+      "arxiv_id": "2611.08914",
+      "title": "HomeLoop: A Simulation Framework and Benchmark for Robot-IoT Coordination in Everyday Domestic Assistance and Safety",
+      "authors": [
+        "Ramy ElMallah",
+        "Marc Bishara",
+        "Hyegang Kim",
+        "Yuxi Zhang",
+        "Chongyu Zhu",
+        "Chi-Guhn Lee"
+      ],
+      "abstract": "Recent progress in embodied robotics is bringing robots closer to deployment in homes, as vision-language models (VLMs) are demonstrating significant advances in reasoning, making VLM-driven robots promising home assistant agents. These agents will often be introduced into homes that already have cameras, Internet of Things (IoT) devices, and residents with wearables. To fulfill their potential, they need to integrate with existing smart infrastructure and reason through ambiguous scenarios: a smoke alarm may come from a pan about to ignite, a pan already on fire, a resident cooking or a faulty sensor, and each calls for a different response. To that end, we introduce HomeLoop, a simulation framework and benchmark built on Isaac Sim that combines robot bodies, networked devices and wearables, simulated residents and visitors, faulty sensors, and hazards that evolve over time. Our benchmark is composed of 20 tasks across five families grounded in real-world household hazards and needs, and designed so that the same alert can have different causes. A runtime monitor scores each episode with temporal-logic checks on the final outcome and the actions along the way, and every action carries a predefined cost. We evaluate six open-weight and proprietary VLMs. The best achieves a family-balanced score of 61.9%, and across models we see a pattern of over-reaction: failed episodes involving prohibited interventions outnumber those involving missed required interventions by more than two to one, with models often shutting off the stove before investigating the alarm's cause. HomeLoop is an extensible foundation intended for use in research on robot-IoT coordination, long-term memory, proactive assistance, and privacy-safety trade-offs. HomeLoop will be released with 2,100 home layouts that can be automatically furnished in diverse configurations, five robot bodies and 20 networked device types.",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "published": "2026-11-09T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.08914",
+      "pdf_url": "https://arxiv.org/pdf/2611.08914",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Very relevant to the interest in creating simulations and deriving tasks from them, as it presents a simulation framework and benchmark for embodied robot-IoT coordination in home environments."
+    },
+    {
+      "arxiv_id": "2611.09030",
+      "title": "A Controlled Study of Models, Skills, Feedback, and Curriculum in Agentic Robotics",
+      "authors": [
+        "Kaiyuan Chen",
+        "Xinyue Zhu",
+        "Shuangyu Xie",
+        "Uksang Yoo",
+        "Thi Thu Phuong Luong",
+        "Marcus Gualtieri",
+        "Christian Juette",
+        "Liu Ren",
+        "Spencer Huang",
+        "Ken Goldberg"
+      ],
+      "abstract": "Agentic robotics asks coding agents to implement and iteratively improve robot policies from simulated and real-world physical interactions. We study the self-learning loop of agentic robotics through a controlled simulation study spanning nine manipulation tasks, 631 different experiment configurations, and 28K coding agent rollouts, systematically varying model capability, skill priors, feedback structure, and curriculum. The experiment data suggests that the bottleneck is often not the access to sufficient information, but interpreting it into the right policy update. Across these factors, a successful self-learning loop depends on how effectively agents attribute failures, reason task-relevant spatial and geometric structure, and selectively restructure code to improve policies.",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-11-09T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.09030",
+      "pdf_url": "https://arxiv.org/pdf/2611.09030",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Directly connected to simulation-driven agent learning, offering a controlled study of models, skills, feedback, and curriculum in agentic robotics across many simulated tasks."
+    },
+    {
+      "arxiv_id": "2611.09175",
+      "title": "SIFR: Stable Signed Flow Reinforcement",
+      "authors": [
+        "Runlong Liao",
+        "Xingqian Xu",
+        "Lizhang Chen",
+        "Baiyu Su",
+        "Yufan Huang",
+        "Zhonghao Wang",
+        "Akash Gokul",
+        "Ming-Yu Liu",
+        "Qiang Liu",
+        "Yogesh Balaji"
+      ],
+      "abstract": "Reward-based fine-tuning of flow models requires effectively promoting high-reward and suppressing low-reward samples, while maintaining training stability over many rounds of iterative updates. Iterative reward fine-tuning provides a simple starting point, but the positive reward weights give no explicit unfitting signal, and repeated reweighting concentrates the distribution and causes collapse. We propose Stable Signed Flow Reinforcement (SIFR), which replaces the reward weights by signed advantages to supply the missing unfitting signal, and constrains the velocity drift from a reference model to stabilize the updates, with a Lagrange multiplier that adapts the regularization strength to a prescribed drift budget. We further show that existing flow RL methods fall within this framework: they implicitly minimize the signed loss, differing in their regularization choices. We validate SIFR on SD3.5 Medium (2.5B) and FLUX.2 Klein (9B) and scale it to Cosmos 3 Super Text2Image (64B): across all 12 backbone--reward pairs with preference and rule-based rewards, it matches or exceeds existing methods, reaches their peak rewards much faster, and keeps improving over long training where they plateau or collapse.",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CV"
+      ],
+      "published": "2026-11-09T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.09175",
+      "pdf_url": "https://arxiv.org/pdf/2611.09175",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Directly relevant to the autoscaling/RL reading club because it studies reward-based fine-tuning dynamics and stability for generative flow models, which overlaps with RL-style optimization methodology."
+    },
+    {
+      "arxiv_id": "2611.09448",
+      "title": "Not All Entropy Is Equal: Reward-Conditioned Entropy Allocation in Reinforcement Learning with Verifiable Rewards",
+      "authors": [
+        "Song Yu",
+        "Li Li",
+        "Zhenming Wu"
+      ],
+      "abstract": "Policy entropy is widely used to diagnose exploration and collapse in reinforcement learning with verifiable rewards (RLVR), yet its magnitude does not consistently track reasoning performance across optimization objectives. We argue that this ambiguity arises because global token entropy conflates uncertainty in successful and failed trajectories, diversity across correct solution strategies, and variation among realizations of the same strategy. We introduce \\textbf{Reward-Conditioned Entropy Allocation (RCEA)}, a hierarchical diagnostic framework that separates complete-trajectory entropy from average token entropy, conditions uncertainty on verifier outcome and process validity, measures correct-solution-mode retention, and connects these population-level quantities to local covariance-driven updates. In controlled sweeps over six RLVR objectives at two model scales, entropy trajectories do not induce a stable ordering of reasoning accuracy. Token entropy is higher for verifier-failed than successful trajectories under both broad separately aggregated estimates and a common-question paired analysis, whose confidence intervals exclude equality at 10 of 12 displayed endpoints. A local covariance approximation predicts the direction of adjacent-checkpoint entropy change in 95.5\\% of nonfailed transitions; a reward-stratified endpoint proxy further shows that positive chosen-token covariance is more tail-concentrated within failed prefixes. Every reportable trained endpoint exhibits some contraction in independently audited correct-solution-mode breadth, whose positive association with large-\\(k\\) coverage remains exploratory. These results show that entropy collapse should be diagnosed by which uncertainty is removed, rather than by global entropy alone.",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-11-09T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.09448",
+      "pdf_url": "https://arxiv.org/pdf/2611.09448",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Highly relevant to RL with verifiable rewards, as it proposes reward-conditioned entropy analysis/allocation to better understand exploration and performance under RLVR objectives."
+    },
+    {
+      "arxiv_id": "2611.09670",
+      "title": "Goodhart in the Planner: Sampling-Based Control Exploits Rewards Learned from Human Preferences",
+      "authors": [
+        "Soovadeep Bakshi",
+        "Apurba Bose"
+      ],
+      "abstract": "Robots increasingly choose actions by searching against a reward model learned from human preferences, in model-predictive control or best-of-$N$ selection; we measure what this does to the true objective. On HalfCheetah and Hopper with crowd-sourced labels, and on Meta-World drawer-open and plate-slide with synthetic labels and blind labels from the two authors, harder MPPI search cuts true return by up to 76%: with human labels the drawer opens in 0 of 20 runs against 10 of 10 for the cloned policy the planner starts from, while held-out label accuracy stays at 0.75-0.97. On plate-slide human labels are exploited less than synthetic ones, and on window-open search helps. True return roughly follows how far the planner's weights move from its proposals ($\\sqrt{\\mathrm{KL}}$) for both weighting rules we test, and best-of-$N$ with a verifier from synthetic labels falls below a single noisy action. We prove that $\\chi^2$-regularized MPPI at a temperature set by the scorer's error spread on the proposals is worst-case optimal, that no positive gain can be certified once that spread exceeds the scorer's own, and that an episode's return splits exactly into per-step terms, of which the guarantee covers the selection terms. Calibrated from 100 proposal pairs ranked by true return (an oracle) on start states the evaluation never uses, this rule is the safest fix we test: with each of five independent sets it succeeds in every arm run and keeps on average 86-94% of the cloned policy's return on plate-slide and drawer-open, though it is cautious where search helps. Calibration from a person's comparisons cannot detect a bias the scorer learned from that person; correcting for the pairs people cannot tell apart, or a second person, limits the damage.",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-11-09T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.09670",
+      "pdf_url": "https://arxiv.org/pdf/2611.09670",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Very relevant to current RL interests since it analyzes reward misspecification and Goodharting in planner-over-reward-model setups, a central concern for preference-based control and evaluation."
+    },
+    {
+      "arxiv_id": "2611.08522",
+      "title": "What Are LLM Agents Actually Learning on Low-Budget Molecular Optimization Benchmarks?",
+      "authors": [
+        "Jiayu Qin",
+        "Zhengquan Luo",
+        "Changyou Chen",
+        "Zhiqiang Xu"
+      ],
+      "abstract": "Recent work reports large gains for LLM agents on low-budget molecular optimization. We measure the contributions of online optimization, retrievable task information, and permissive oracle landscapes. On PMO at 50 oracle calls, a GPT-4o mini agent's sum AUC falls from 14.44 to 4.85 after task names and curated reference compounds are hidden. An identity-blinded condition that states only the oracle form (e.g., similarity to a hidden reference) scores 5.39, while a deterministic retrieval-only baseline with no LLM reaches 12.16 (84% of the full agent). A full 23-task 2x2 ablation and a three-seed replication on eight tasks support this interpretation. On a protein-targeted benchmark with an AutoDock Vina composite oracle, a single-edit random walk is a strong lower bound; across three seeds it obtains composite 0.636 +/- 0.008 and docking improvement -1.11 +/- 0.04 kcal/mol. As a positive control, a retrieval-free population agent exceeds REINVENT at a matched 50-call AUC budget, with its strongest result at 100 calls. These results motivate two inexpensive sanity checks: retrieval-safe PMO prompts and a random-walk floor for docking-based optimization.",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-11-09T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.08522",
+      "pdf_url": "https://arxiv.org/pdf/2611.08522",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Strongly relevant because it critically studies what LLM agents are actually exploiting in low-budget optimization benchmarks, directly informing benchmark design and evaluation methodology for agentic systems."
+    },
+    {
+      "arxiv_id": "2611.08701",
+      "title": "Does a Trading Policy Need to Know What It Trades? Microstructure Invariance and Zero-Shot Transfer of Execution Policies",
+      "authors": [
+        "Hieu Tran",
+        "Hong Yu"
+      ],
+      "abstract": "Execution algorithms are calibrated asset by asset, because the queues, trade rates and bid-ask spreads they face differ by orders of magnitude across assets. For reinforcement learning this is zero-shot generalisation across contexts of very different scales, and microstructure invariance proposes a normalisation fixed by theory: measured in each asset's own units of time, size and price, markets look alike. In an exact order-by-order replay of public Nasdaq data, we train policies once, on 954 stocks in 2019, to choose between waiting in the queue and crossing the spread, and evaluate them unchanged on 1,964 unseen stocks in 2020-21, 2,629 stocks in 2025-26, crypto pairs and a second exchange. First, a policy that sees a stock only through its recent trade rate, trade size, spread and price increment (tick) costs within 0.015 spreads per share (a fifth of what learning saves) of a policy whose training data included the stock, and the stock's own history does not help it; it comes within a similar margin of policies trained on the second exchange when every episode counts equally, and within a wider one on crypto. Second, in mean cost before fees, invariant units beat raw units, z-scores and asset descriptors, but by under a basis point: most of their advantage is information and a common cost scale that a learner can also take as plain inputs, and none of the representations tested extrapolates to unseen spread regimes. Third, a near-zero transfer gap to a pooled comparator is weak evidence that a representation is right: we show that such a comparator detects only a small share of what a poor representation loses, and confirm it in synthetic markets and on pendulums.",
+      "categories": [
+        "cs.LG",
+        "cs.CE",
+        "q-fin.TR"
+      ],
+      "published": "2026-11-09T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.08701",
+      "pdf_url": "https://arxiv.org/pdf/2611.08701",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Highly relevant to the autoscaling/RL reading interests because it studies zero-shot transfer and invariance-based normalization for reinforcement-learned execution policies across very different contexts."
+    }
+  ]
+}
