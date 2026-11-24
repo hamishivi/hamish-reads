@@ -1,0 +1,835 @@
+{
+  "date": "2026-11-24",
+  "generated_at": "2026-11-24T10:14:02.228894+00:00",
+  "author_papers": [
+    {
+      "arxiv_id": "2611.28298",
+      "title": "Language Model Harnesses can be Compositional Generalizers",
+      "authors": [
+        "Alex L. Zhang",
+        "Souradip Chakraborty",
+        "Omar Khattab"
+      ],
+      "abstract": "Modern language models (LMs) are post-trained and deployed as agents inside a \"harness\", but standard harness designs accumulate context that the neural network is forced to generalize to, making training for long-horizon tasks expensive and time-consuming. We study an alternative emerging path: training inherently neurosymbolic LM harnesses, which externalize and manage context programmatically to compose existing LM capabilities. We hypothesize that training around these harnesses can offer a better return on compute by enabling compositional generalization, as they can learn to decompose complex problems so that every observation their neural LM receives is locally in-distribution, even when the full task is novel. We find that harnesses like the Recursive Language Model (RLM) learn such decompositions readily under reinforcement learning post-training: (1) we demonstrate that training only on short tasks can generalize to tasks 2-64$\\times$ longer while the base neural LM improves less, and (2) training on one domain transfers to novel domains that share latent structure. On messier, complex tasks, we find that we can target individual LLM calls within a harness by generating and training on easier, synthetically generated surrogate environments with fake tool / sub-calls, a technique we call surrogate harness training. From this finding, we train RLM-27B on synthetic data, and show it improves Qwen3.8-27B in the same RLM harness on a hard suite of long-context tasks like CTC-Bench and ExpertLongBench by 26.9% on average while using $\\sim$2$\\times$ fewer tokens at inference time. Finally, we show that harnesses can compose over these newly learned decompositions using recursive sub-harness calls.",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-11-24T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.28298",
+      "pdf_url": "https://arxiv.org/pdf/2611.28298",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2611.29590",
+      "title": "KernelShift: Benchmarking Kernel Optimization Across Evolving Hardware",
+      "authors": [
+        "Shuaiwei Huang",
+        "Weihua Du",
+        "Allen Wu",
+        "Ivan Fox",
+        "Manupa Karunaratne",
+        "Yiming Yang",
+        "Sean Welleck"
+      ],
+      "abstract": "Efficient AI computation depends on hardware that evolves over time, shifting the strategies needed to implement performant code. For CPU kernels, a key evolving factor is the set of available architectural extensions, which expose specialized hardware instructions that change the techniques used to optimize kernels. We study how effectively coding agents use these new, potentially unfamiliar extensions to write fast code. We introduce KernelShift, a benchmarking pipeline and a set of environments for evaluating coding agents in kernel optimization across evolving CPU architectures. Its agent-assisted, human-verified pipeline turns code repositories into benchmark instances, and its environments let agents optimize code with feedback from the target hardware. Using this pipeline, we construct 99 kernels from real-world, actively developed repositories (ncnn, llama.cpp, Arm SIMD Loops, and KleidiAI), including inference workloads derived from real model executions. KernelShift supports incorporating new kernels and hardware configurations as libraries and processors evolve. We evaluate agents with proprietary and open-weight models across progressively newer architectural extensions (Arm Neon, SVE, SVE2, and SME2), examining how performance changes as hardware evolves. On established extensions, agents beat the auto-vectorized compiler everywhere (2.4-19.8x) and exceed general-purpose libraries such as ncnn (getting up to 2.74x over its Neon kernels), but fall behind Arm's hand-tuned KleidiAI kernels (0.70x). In end-to-end inference of two LLMs, agent-written kernels achieve a 1.3-1.6x prefill speedup over llama.cpp's fast path. However, current agents do not yet reliably adapt to new extensions that require unfamiliar programming models, such as SME2's matrix tiles.",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG",
+        "cs.SE"
+      ],
+      "published": "2026-11-24T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.29590",
+      "pdf_url": "https://arxiv.org/pdf/2611.29590",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2611.29775",
+      "title": "ComplexIF: A Challenging Multi-Turn, Multi-Constraint Instruction-Following Benchmark",
+      "authors": [
+        "Zhichao Xu",
+        "Bingsen Chen",
+        "Yawei Wang",
+        "Tao Li",
+        "Haoyu Wang",
+        "Dan Roth",
+        "Vivek Srikumar"
+      ],
+      "abstract": "As frontier LLMs saturate existing instruction-following benchmarks, measuring further progress requires harder tests that remain faithful to real use. In practice, users often combine several constraints, add them at different turns of a conversation, and expect all of them to hold in the assistant's response. We introduce ComplexIF, a challenging benchmark for this setting, together with the automatic pipeline that generates it. The pipeline expands seed requests into multi-turn conversations, weaves constraints into their turns, and keeps only tasks that a strong model can solve, so difficulty can be raised by adding constraints or turns while every task stays solvable. ComplexIF's two splits test complementary sides of instruction following: a verifiable split of format constraints, checked by programs, and a rubric split of semantic instructions, such as a tone or an audience, checked with an LLM judge. Across 14 proprietary and open-weight models, even the strongest satisfies every constraint on fewer than half of the verifiable tasks, and no model leads on both splits.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-11-24T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.29775",
+      "pdf_url": "https://arxiv.org/pdf/2611.29775",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2611.30141",
+      "title": "Reading the Tea Leaves, Again: Can Large Language Models Predict Language Model Training Runs?",
+      "authors": [
+        "Xinran Zhao",
+        "Xiang Li",
+        "Tong Chen",
+        "Jinchuan Tian",
+        "Zichun Yu",
+        "Tongshuang Wu"
+      ],
+      "abstract": "LLM agents now propose research ideas and run the experiments that test them, but they train every run to its end, whereas a researcher reads a run's configuration and the beginning of its curve and stops the runs that show no promise. Reading a run this way takes more than describing or implementing a training method: it takes knowing what a design choice does to a run. We build Tea Leaves to measure this knowledge on 682 real training runs across pretraining, fine-tuning, and reinforcement learning (RL): a forecaster sees the first 20% of a run with its configuration, description, and code, and predicts the rest. Across 11 LLMs and a range of forecasting baselines, the strongest LLMs match or exceed the best curve fitter on smooth loss curves (skill 0.66 against 0.62) and lead on noisy RL reward curves (0.43 against 0.13). What bounds every forecaster is what the log carries: on sparsely logged community runs all methods lose most of their skill, and none reliably flags a failing run in advance. Beyond the curve, information helps and effort does not: related runs in the prompt cut the error on loss curves by 39%, and knowledge of training dynamics lets the strongest LLMs order all 36 pairs of runs that differ by a described code change, which the early curves do not separate, whereas tools add little. This knowledge can be learned from logged runs: a small open model trained on public runs matches the best LLM on loss curves. Applied to the progress curves of research agents, the same reading ranks tasks by their remaining headroom, although for a single agent run it does not improve on the last value. We release the benchmark, the trained readers, and their training data to test and train LLMs' understanding of training and to help research agents decide which runs deserve their compute.",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "published": "2026-11-24T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.30141",
+      "pdf_url": "https://arxiv.org/pdf/2611.30141",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2611.30965",
+      "title": "Beyond Self-Consistency: Recursive Self-Improvement at Test Time",
+      "authors": [
+        "Jianyu Wu",
+        "Yizhou Wang",
+        "Encheng Su",
+        "Jinouwen Zhang",
+        "Pengze Li",
+        "Lintao Wang",
+        "Chen Tang",
+        "Aoran Wang",
+        "Wanli Ouyang",
+        "Shixiang Tang"
+      ],
+      "abstract": "Large language models (LLMs) that continue improving after deployment (e.g., recursive self-improvement) offer a promising path toward general intelligence. Current test-time methods pursue this goal on unlabeled questions, primarily relying on self-consistency: they generate independent solutions and use majority voting to select an answer or construct training targets. This leaves earlier reasoning unused at inference and can reinforce an incorrect majority during training. Humans instead build on earlier attempts to preserve useful reasoning, correct mistakes and improve their problem-solving strategies. Following this principle, we propose Test-Time Recursive Self-Improvement (TT-RSI), a label-free framework for improving LLMs at test time through two mutually reinforcing components: (1) In-Context RSI repeatedly re-solves each question using the full previous solution as a reference, letting the model decide whether and how to use it so that inference compute builds on earlier reasoning. (2) In-Weight RSI distills successive refinements into the model's weights, enabling progress beyond an initially wrong majority and theoretically bringing the first attempt toward the model's infinite-step refinement limit. The updated model answers better and refines more effectively, generating stronger references for subsequent training. Extensive experiments show that TT-RSI improves average accuracy by +13.89% over the base model and outperforms the strongest self-consistency-based method by +4.79% under the same test-time scaling budget.",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-11-24T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.30965",
+      "pdf_url": "https://arxiv.org/pdf/2611.30965",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2611.28692",
+      "title": "Can Your AI Twin Meet People for You? It Can Hold a Conversation. But What Does It Need to Judge Like You?",
+      "authors": [
+        "Wanghao Ye",
+        "Sihan Chen",
+        "Bowei Tian",
+        "Yiting Wang",
+        "Shwai He",
+        "Guoheng Sun",
+        "Ziyi Wang",
+        "Ziyao Wang",
+        "Yexiao He",
+        "Zheyu Shen",
+        "Meng Liu",
+        "Yuning Zhang",
+        "Meng Feng",
+        "Yifei Dong",
+        "Yanhong Qian",
+        "Yang Wang",
+        "Siyuan Peng",
+        "Yilong Dai",
+        "Zhenle Duan",
+        "Joshua Liu",
+        "Lang Xiong",
+        "Aarosh Das",
+        "Zhaoyi Liu",
+        "Daeun Jung",
+        "Aditya Sarkar",
+        "Parastoo Pilevar",
+        "Xiaochuan Gong",
+        "Yancheng Zhu",
+        "Yingying Fan",
+        "Qiong Wang",
+        "Hanzhang Qin",
+        "Ang Li"
+      ],
+      "abstract": "Should your AI twin go meet people on your behalf? We built LLM twins of 710 real people from their other conversations in the CANDOR corpus, sent them to meet each other in 5,680 simulated first conversations, and checked every rehearsal against what the real people said after meeting for real (355 held-out, participant-disjoint pairs, against baselines that include each person's rating history). The rehearsals work: a twin's conversation predicts real liking ($\\rho$=0.277), carries information that questionnaires and rating history do not have (partial $\\rho$=0.16 [0.05, 0.26]), and recovers most of what the same reader gets from the real conversation (0.321). Swap controls show that this signal travels through the conversation, not through the persona card. What, then, does a twin need to judge like you? Not your voice: making twins talk more like their owners, with person-specific activation steering and a LoRA trained on their own speech, did not help in a pre-specified test and lowered accuracy in an exploratory second round (-0.183 [-0.294, -0.066]). Nor simply your stated ratings: a persona-prompted twin that holds the conversation does not yet carry its owner's judgment, and when told its owner's past ratings it anchors on them instead of weighing them. Learning helps: a small appraisal head trained on other real conversations, which combines the twin's post-call answers with its owner's rating history, lifts rehearsal-based prediction above the history baseline out of fold (+0.059 [0.001, 0.115], against +0.022 without the twin's answers; pre-specified primary contrast +0.056 [-0.001, 0.111]). We propose an attribution protocol for twin-based social simulation and identify learned appraisal as the component twins need next.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-11-24T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.28692",
+      "pdf_url": "https://arxiv.org/pdf/2611.28692",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2611.29716",
+      "title": "Fin-RSI: A Unified Library of Financial Skills, Checks, and Self-Improvement for LLM Agents",
+      "authors": [
+        "Wanghao Ye",
+        "Shwai He",
+        "Sihan Chen",
+        "Yiting Wang",
+        "Bowei Tian",
+        "Guoheng Sun",
+        "Ziyi Wang",
+        "Ziyao Wang",
+        "Yexiao He",
+        "Zheyu Shen",
+        "Meng Liu",
+        "Yuning Zhang",
+        "Meng Feng",
+        "Yifei Dong",
+        "Yanhong Qian",
+        "Yang Wang",
+        "Siyuan Peng",
+        "Yilong Dai",
+        "Zhenle Duan",
+        "Joshua Liu",
+        "Lang Xiong",
+        "Aarosh Das",
+        "Zhaoyi Liu",
+        "Daeun Jung",
+        "Aditya Sarkar",
+        "Parastoo Pilevar",
+        "Xiaochuan Gong",
+        "Yancheng Zhu",
+        "Yingying Fan",
+        "Qiong Wang",
+        "Ang Li"
+      ],
+      "abstract": "As large language models (LLMs) become more capable, financial agents need tools they can readily discover and use. Yet financial software is fragmented across libraries with different interfaces and conventions, making it difficult to build reliable agent workflows. We present Fin-RSI, a unified Python library of financial skills, checks, and self-improvement designed for LLM agents. It brings together tools for market analysis, forecasting, portfolio construction, and trading research through shared interfaces across models and agent frameworks. Agents can find suitable tools from natural-language requests, reuse tested implementations, and improve generated programs through checking and feedback. Developers can extend the library with new tools without rebuilding integrations for each model. Across 20 open-weight models on six trading-position tasks, tool discovery increased the proportion of episodes producing valid programs from 9.7% to 29.2%; for models with at least 14 billion parameters, it rose from 23.6% to 64.6%. We release the library and benchmark as a shared resource for the community and plan to expand its tools and task coverage as financial agents evolve.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-11-24T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.29716",
+      "pdf_url": "https://arxiv.org/pdf/2611.29716",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2611.29975",
+      "title": "Aligning Judge Models to Be Logically Consistent Multi-Rule Interpreters",
+      "authors": [
+        "Michel Liao",
+        "Nimra Nadeem",
+        "Luxi He",
+        "Peter Henderson"
+      ],
+      "abstract": "Technical governance of AI models will soon require them to reason over and follow thousands of rules from different jurisdictions. However, as we show in this work, presenting an entire ruleset to a judge model---rather than asking it to judge one rule at a time---changes the way the model interprets the requirements, making it reach conclusions that conflict with its rule-by-rule judgments. We call this challenge multi-rule inconsistency and find that models are more lenient when judging rules embedded within the full ruleset than when judging rules separately. For example, we find that when a safety-critical rule prohibiting a model from pursuing objectives other than those it was given appears in a larger ruleset, all tested judge models are less likely to deem it violated. We examine several methods for reducing inconsistency, including prompting, consistency training using GRPO, and iterative rule refinement. As in human statutory interpretation, surrounding rules shape how a rule is interpreted. Unlike the legal setting, however, these interactions are currently happening implicitly inside the judge model's reasoning. We argue that multi-rule interactions must be measured and handled explicitly by ruleset designers to prevent undetected shifts in interpretation from causing downstream alignment failures.",
+      "categories": [
+        "cs.AI",
+        "cs.CY"
+      ],
+      "published": "2026-11-24T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.29975",
+      "pdf_url": "https://arxiv.org/pdf/2611.29975",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2611.28726",
+      "title": "Seeing Is Not Planning: Spatiotemporal Planning and Plan Repair in Multimodal LLMs",
+      "authors": [
+        "Siyuan Li",
+        "Ethan Lin",
+        "Xiang Li",
+        "Tianming Liu"
+      ],
+      "abstract": "Planning in a visual world means reading the layout, foreseeing how the state will change, and following the task rules all at once. When a plan fails, a model should also use what went wrong to fix it. We call these two abilities spatiotemporal planning and plan repair, and test them with Railbound-Bench. A model sees a railway puzzle, adds tracks under a budget, and submits one complete layout; a simulator then moves all cars at once and decides whether the layout works. After a failure, the model sees what happened and may submit a new layout, up to five attempts in total. On the 200-puzzle main set, the best of nine models solves 59.5% within five attempts, the next 39.5%, and the other seven at most 10.0%; a 1,000-puzzle extended set with a wider range of difficulty is far easier, at 90.9% for the best model. Controlled studies on 180 fixed puzzles show that knowing the task is not the same as using it. GPT-6.1 Terra copies 97.2% of boards exactly and, given a correct layout as text, predicts all four requested future states in 91.3% of cases, yet only 22.8% of its first layouts work. Planning fails more often as the cars' routes interact, even among puzzles that a search solver finds equally easy. Visual feedback removes the reported fault in 175 of 417 first revisions, but only 43 of these revisions solve the puzzle, and at an equal budget of 40k tokens it does no better than fresh retries. The code and data are open-sourced on GitHub at https://github.com/liaoyanqing666/Railbound_Bench.",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "published": "2026-11-24T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.28726",
+      "pdf_url": "https://arxiv.org/pdf/2611.28726",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2611.29259",
+      "title": "Look Back: Reinforcement Learning with Counterfactual World Models",
+      "authors": [
+        "Jinwoo Kim",
+        "Toghrul Abbasov",
+        "Lucius E. J. Bynum",
+        "Aahlad Puli",
+        "Stephanie Milani",
+        "Hyunwoo Ryu",
+        "Seunghoon Hong",
+        "Kyunghyun Cho",
+        "Rajesh Ranganath"
+      ],
+      "abstract": "Agents in complex, stochastic environments must contend with dynamics that can exceed their world models' predictive capacity and randomness that obscure the consequences of their actions. We hypothesize that, compared to imagining entirely new trajectories in such complex environments, it can be easier to transform observed trajectories with alternative actions. Counterfactual world models condition on observations to predict alternative outcomes under the same underlying environmental randomness, using experience as a reference for predicting action-dependent changes. We present a policy gradient estimator, REINFORCE Look Back (RLB), that uses counterfactual returns as baselines to distinguish action effects from environmental luck, and prove conditions for unbiasedness and variance reduction. In settings where environmental evolution is harder to predict than action-induced changes, we show that counterfactual world models are easier to learn and support better policy learning than ordinary world models. Our findings suggest that counterfactual thinking can help agents learn effective behavior without independently reproducing the full complexity of their worlds.",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-11-24T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.29259",
+      "pdf_url": "https://arxiv.org/pdf/2611.29259",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2611.30445",
+      "title": "Implicit Neural Representation for 3D Radio Map Compression in Low-Altitude Environments",
+      "authors": [
+        "Jiaming Cheng",
+        "Wei Chen",
+        "Yuchen Li",
+        "Bo Ai",
+        "Jun Zhang"
+      ],
+      "abstract": "Low-altitude wireless networks require accurate 3D radio maps (RMs) to support environment-aware communication. However, due to the extensive spatial coverage and multi-modal channel representations, 3D RMs usually incur prohibitive storage and transmission overhead, making efficient compression highly desirable. In this paper, we propose NeRM3D, an implicit neural representation (INR)-based framework for compact 3D RM compression. Specifically, NeRM3D represents the entire 3D RM as a lightweight neural network that maps discrete height values to corresponding RM slices, thereby encoding the RM into a compact neural network. To effectively model the volumetric spatial structure of 3D RMs, NeRM3D jointly integrates horizontal embeddings with height-aware modulation, enabling efficient extraction and fusion of spatial correlations across different vertical layers and channel modalities. Experimental results demonstrate that NeRM3D achieves competitive compression performance with low complexity and decoding latency, making it suitable for resource-constrained devices.",
+      "categories": [
+        "eess.SP",
+        "cs.AI"
+      ],
+      "published": "2026-11-24T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.30445",
+      "pdf_url": "https://arxiv.org/pdf/2611.30445",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2611.30325",
+      "title": "Verifiable On-Policy Distillation",
+      "authors": [
+        "Juntong Shi",
+        "Stefano Ermon",
+        "Jure Leskovec",
+        "Minkai Xu"
+      ],
+      "abstract": "Reinforcement learning with verifiable rewards (RLVR) has become a powerful approach for improving language-model reasoning, but its supervision is inherently sparse: a sequence-level verifier reward is propagated only through sampled trajectories and provides no direct signal for alternative actions. On-policy distillation (OPD) offers a complementary form of supervision by providing dense teacher feedback over the full next-token distribution, but this signal is not grounded in verified task outcomes. Simply co-optimizing the two objectives does not couple these signals: verifier feedback remains sparse and does not inform the dense teacher supervision. We introduce Verifiable On-Policy Distillation (VOPD), which transfers sparse verifier feedback into dense, verifier-grounded supervision. Our key observation is that the implicit-reward view of OPD places teacher supervision and verifier feedback in a common reward space while retaining a reward signal available for every next-token action. Under this view, VOPD projects verifier preference onto the teacher's implicit-reward direction and Rao--Blackwellizes the resulting signal over the full vocabulary, propagating verifier-grounded supervision to actions that were never sampled. The resulting objective can also be interpreted as adaptively extrapolating the distillation target according to teacher--verifier agreement. Across two teacher--student configurations and eight mathematical reasoning benchmarks, VOPD consistently improves both final performance and learning efficiency over vanilla OPD and other on-policy distillation baselines. Our code is available at https://github.com/juntongshi48/VOPD.",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-11-24T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.30325",
+      "pdf_url": "https://arxiv.org/pdf/2611.30325",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2611.29948",
+      "title": "Look Before You Leap: Re-Architecting Disk-Resident Vector Search with TriVS",
+      "authors": [
+        "Yizou Chen",
+        "Baotong Lu",
+        "Peiqi Yin",
+        "Zhisheng Hu",
+        "Qi Chen",
+        "Ming-Chang Yang"
+      ],
+      "abstract": "Disk-resident approximate nearest-neighbor search (ANNS) scales vector search beyond DRAM, yet state-of-the-art systems remain I/O-bound, even with fast SSDs and sophisticated I/O execution. To understand this bottleneck, we conduct an I/O-centric analysis that breaks each query down into an approach phase that locates a query-near region and a converge phase that resolves the final top-k. This analysis reveals complementary I/O tradeoffs: cluster-based search circumvents approach-phase I/O through in-memory routing but reads coarse-grained, full clusters during convergence, whereas graph-based search employs fine-grained, vector-level I/O throughout, enabling efficient convergence at the cost of inevitable I/O during the approach phase.   To combine the complementary I/O benefits of the two granularities, we present TriVS, a new paradigm that re-architects disk-resident vector search as a trilogy: approach coarsely, distill progressively, and converge exactly. Its key innovations come in two parts. First, it decouples the approach and converge phases from a single search granularity, employing cluster-based search to avoid approach-phase I/O and leveraging vector-level I/O for efficient convergence. Second, to bridge the two granularities, it introduces a new in-memory distill phase between the original two, progressively reducing routed clusters to a vector-level shortlist using compact quantized vectors before disk access. Moreover, coarser clustering shrinks the centroid-routing index, allowing TriVS to reallocate existing memory to distillation rather than expand its memory budget. Our evaluation on five datasets spanning diverse vector types and scales shows that, at Recall@10=0.9, TriVS achieves on average 3.42X PipeANN's throughput, 51.2% lower latency, and 63.7% less disk I/O, while using less memory and storage than PipeANN.",
+      "categories": [
+        "cs.DB",
+        "cs.IR"
+      ],
+      "published": "2026-11-24T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.29948",
+      "pdf_url": "https://arxiv.org/pdf/2611.29948",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    }
+  ],
+  "ranked_papers": [
+    {
+      "arxiv_id": "2611.30047",
+      "title": "RoboLiveMem: Is Robot Memory Solved When the World Does Not Wait?",
+      "authors": [
+        "Yunbei Zhang",
+        "Yuyou Zhang",
+        "Janet Wang",
+        "Ming Liu",
+        "Yijiang Li",
+        "Yikai Wang",
+        "Weirui Ye",
+        "Ding Zhao",
+        "Jihun Hamm"
+      ],
+      "abstract": "Robot agents built on frontier vision-language models now solve most robot memory benchmarks. Does this mean they can remember what they need in a home, where people and machines keep moving things? Existing memory benchmarks cannot answer this question, because they pause the simulator while the model thinks: nothing can change during a decision, so whatever the robot remembers is still true when it acts. We introduce RoboLiveMem, a benchmark that runs the same memory tasks twice, once with the world paused while the model thinks and once with the world running. It contains 29 task families in three tiers, from 16 realistic BEHAVIOR-1K scenes of homes, workshops and a restaurant to controlled ManiSkill tasks. Every task mixes real changes with harmless look-alikes and runs without any change, so that no fixed strategy succeeds, and most tasks have a twin that keeps the change in view, which separates forgetting from acting too late. Testing 16 models on 34,176 episodes, we find three surprises. (1) Paused results hide the problem: when a remembered object changes in a realistic scene, the 8 Claude and GPT models succeed in 97% of episodes on average with the world paused, but in only 50% with the world running, and their ranking changes: Claude Opus 5.5, which never fails when paused, succeeds in 44%. (2) Speed is not the fix: slower models do no worse, and models given only 2 s per decision still fall at least 36 points below their paused success. (3) Models see the change but act on camera frames from before it ended. Looking again just before acting closes most of the realistic gap, yet when identical objects are swapped several times, all nine models we test still lose points to memory.",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "published": "2026-11-24T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.30047",
+      "pdf_url": "https://arxiv.org/pdf/2611.30047",
+      "is_author_match": false,
+      "relevance_score": 10.0,
+      "relevance_reason": "Extremely relevant since it directly questions whether robot memory is solved in dynamic environments and proposes evaluation in settings where the world changes during deliberation, closely matching your robot-memory/eval interests."
+    },
+    {
+      "arxiv_id": "2611.29759",
+      "title": "What Should World Models Plan Over? Learning Geometry-Aligned Representations of Body Motion",
+      "authors": [
+        "Renhao Zhang",
+        "Abhranil Chandra",
+        "Bruno Castro da Silva"
+      ],
+      "abstract": "We introduce MotionPort, which learns low-dimensional latent representations of body motion for accurate dynamics prediction and effective long-horizon planning. Existing world-model planners often search over action representations learned for prediction, yet we show that predictive accuracy alone does not ensure that optimization can discover successful trajectories. MotionPort addresses this mismatch by representing body trajectories rather than action chunks and organizing the search space by motion similarity, helping predicted improvements translate into successful execution. Without fine-tuning state encoders, MotionPort raises average goal-reaching success from 37.9% to 87.8% across three backbones and seven settings in four domains. On the evaluated AntMaze-OGBench tasks, it achieves 72% success, compared with 4% for the strongest baseline.",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-11-24T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.29759",
+      "pdf_url": "https://arxiv.org/pdf/2611.29759",
+      "is_author_match": false,
+      "relevance_score": 10.0,
+      "relevance_reason": "Directly aligned with the reading-club focus on world models and planning, as it asks what representations world models should plan over and proposes geometry-aligned latents for long-horizon control."
+    },
+    {
+      "arxiv_id": "2611.30064",
+      "title": "How Latent Transition Geometry Matters for Planning in World Models",
+      "authors": [
+        "Xuanya Zhu",
+        "Da Li",
+        "Xiatian Zhu"
+      ],
+      "abstract": "World models support planning by predicting how the environment evolves under candidate actions. However, one-step predictive accuracy alone does not characterize multi-step planning utility, which depends on distinguishing candidate futures. This raises a natural question: How does latent transition geometry shape planning? We investigate this through an action-conditioned transition-field view, using curvature regularization as a controlled intervention. Across four continuous-control tasks, appropriately tuned regularization improves planning, while excessive regularization can be detrimental. By decomposing the transition field into affine and non-affine components, we find that regularization reduces action sensitivity mainly through the non-affine component. To assess its role in planning, we directly manipulate the non-affine action response in frozen models and show that it affects candidate selection and closed-loop success. Further analysis shows that curvature generally brings predicted futures closer together, while preserving more of the differences along the goal direction. This helps explain why the planning effects vary across tasks. We observe broadly consistent planning trends across five sampling- and gradient-based solvers on LeWM and similar rollout-geometry trends on DINO-WM. Qualitative attention visualizations reveal accompanying shifts toward task-relevant visual structure. Together, these findings clarify how latent transition geometry influences multi-step planning.",
+      "categories": [
+        "cs.LG",
+        "cs.RO"
+      ],
+      "published": "2026-11-24T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.30064",
+      "pdf_url": "https://arxiv.org/pdf/2611.30064",
+      "is_author_match": false,
+      "relevance_score": 10.0,
+      "relevance_reason": "Extremely relevant because it investigates how latent transition geometry affects planning performance in world models, which is central to understanding and evaluating model-based RL systems."
+    },
+    {
+      "arxiv_id": "2611.29651",
+      "title": "Which Loopholes Get Found? Predicting Reward Hacking of LLM Judges Before RL Training",
+      "authors": [
+        "Xuanyi Lyu",
+        "Yuezhou Zhao",
+        "Qing Qin"
+      ],
+      "abstract": "A policy trained against an LLM judge can learn to exploit its loopholes. Static probes show that such judges accept degenerate answers like a lone \"{\" or \"Thought process:\", but not which flaw a policy will find. In GRPO the first loophole to be exploited can be predicted before training from each pattern's exposure, the product of the starting policy's propensity to produce it and the judge's false-positive rate (FPR). To test exposure causally, we seed the patterns into fine-tuning at three doses in a Latin square. Across 36 GRPO runs with seven judges, the first exploited pattern had the highest exposure in all 12 runs with exploitation and the highest FPR in only 6. Predictions recorded before training held in three of four runs with one pattern masked by rule. When only two patterns were seeded, at 3% to 3.8% of the fine-tuning data and chosen so that exposure disagreed with FPR alone or propensity alone, exposure named the first exploited pattern and its onset window in all six runs. Exploitation occurred only on hard prompts, where an accepted exploit gets a large group-normalized advantage. Auditing exposure before RL therefore identifies the loophole a policy will likely exploit first.",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-11-24T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.29651",
+      "pdf_url": "https://arxiv.org/pdf/2611.29651",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Highly relevant to the autoscaling/RL reading-club themes since it analyzes reward hacking in LLM judges before RL training, directly connecting to RLHF-style failure modes and evaluation robustness."
+    },
+    {
+      "arxiv_id": "2611.30207",
+      "title": "What Makes Good Data for Training Coding Agents? A Systematic Study on SWE-Gym",
+      "authors": [
+        "Yikai Zhang",
+        "Mai Xu",
+        "Yunbei Zhang",
+        "Qirui Jin",
+        "Kenan Li",
+        "Yuwen Jia",
+        "Jinwei Yao",
+        "Xiangyu Zhang",
+        "Jielun Tan",
+        "Jin Pan",
+        "Zijian Jin",
+        "Xiao Sun"
+      ],
+      "abstract": "Reinforcement learning (RL) trains coding agents on software tasks whose hidden tests decide the reward, yet task collections check these tests only against the reference fix. We ask what makes a task good training data, focusing on the correctness of its reward labels. We audit SWE-Gym with two LLM families, and a suspected error counts only if execution reproduces it. We find that unsolved often means mislabelled: 74% of the tasks that a 9B base model never solves have a test that rejects correct fixes (a false negative), versus 20% of those it sometimes solves. We repair or remove such tasks, and the audited tasks that remain train better policies. At equal size and matched difficulty, models trained on them score 2.4 and 2.7 points higher on held-out tasks from SWE-bench Verified and SWE-bench Pro than models trained on the original tasks, whereas simply dropping the never-solved tasks shows no such gain. We further find that wrong patches that pass (false positives) make up about a quarter of all passing patches, and that new tests that catch a quarter of them do not change held-out scores detectably. A pass rate shows whether a task yields reward, not whether that reward is right, so the reward labels themselves must be checked. To this end, we release SWE-Gym-Verified with its 1,087 audited tasks, every verdict with its executed evidence, our training sets, and the full audit pipeline.",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG",
+        "cs.SE"
+      ],
+      "published": "2026-11-24T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.30207",
+      "pdf_url": "https://arxiv.org/pdf/2611.30207",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "This paper is very relevant because it studies what makes good RL training data for coding agents, directly matching the projects' emphasis on evaluation directions, agent training quality, and RL for agents."
+    },
+    {
+      "arxiv_id": "2611.30190",
+      "title": "Same Executions, Different Gaps: Judgment Rules in Web-Agent Evaluation",
+      "authors": [
+        "Zelong Wang",
+        "Weiyue Li",
+        "Fei Xue",
+        "Junru Zhu"
+      ],
+      "abstract": "Success-rate gains guide the development of web agents. Yet knowing which agent ranks first does not tell us how much confidence to place in its reported advantage. We study the comparison itself: how success is defined, what evidence supports the judgments, and how the difference between agents is estimated. On fixed web-agent executions, changing a judge from predicting likely completion to requiring recorded support can remove most of a reported lead without changing the ranking. This effect persists when unresolved completion is distinguished from supported failure. Controlled source additions explain how missing relations between task requirements, objects and observations can conceal a difference or create an apparent advantage. We also find that making both agents' score estimates more accurate can make their difference less accurate, because their original errors partly canceled. To estimate a chosen outcome difference, we combine judge predictions with reference labels for sampled task pairs. Across four released execution systems, regression fitted on the same 50 labeled pairs reduces estimation error relative to direct paired sampling. The results give agent researchers a practical basis for assessing claimed improvements: make the comparison target explicit, retain the evidence needed to check it, and use paired labels to estimate the difference directly.",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-11-24T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.30190",
+      "pdf_url": "https://arxiv.org/pdf/2611.30190",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Highly relevant because it studies judgment rules and confidence in web-agent evaluation, directly matching the project's need for stronger eval directions for agents."
+    },
+    {
+      "arxiv_id": "2611.28244",
+      "title": "Demystifying the Autoresearch Harness: How Context and Skills Shape Self-Evolving Agents",
+      "authors": [
+        "Kelvin Kiu-Wai Tam",
+        "Newt Hue-Nam K. Nguyen",
+        "Tianshi Zheng",
+        "Yunxiang Mo",
+        "Weihan Li",
+        "Zhongwei Xie",
+        "Chiu Yeung Tang",
+        "Jui-Yu Ho",
+        "Yangqiu Song",
+        "Ginny Y. Wong",
+        "Simon See"
+      ],
+      "abstract": "Autoresearch agents, which autonomously design, run, and refine experiments, are accelerating scientific progress, particularly in AI research. However, existing agents rely on harnesses that combine multiple mechanisms, making it difficult to determine how individual components contribute to performance. We systematically study harness design for long-horizon, self-evolving autoresearch agents along two dimensions: context management, which determines what an agent retains from its past attempts, and skill management, which governs how it stores and reuses lessons from those attempts. Across MLE-Bench and KernelBench with gpt-oss-120b, gpt-6-luna, and gpt-6-sol, we isolate the effects of individual harness design choices by evaluating each against a recency-truncation baseline within a shared agent framework. For context management, we find that preserving individually accessible records of past attempts is more effective than maintaining a rolling summary, with context folding performing best across all six settings and improving upon the baseline by up to 19.2%. For skill management, selectively discarding persistently unused lessons is more effective on average than consolidating them or promoting them to standing rules. Building on these findings, we combine context folding and skill deletion in MLEvolver, which achieves a 72.7% medal rate on MLE-Bench Lite and a 94% $\\mathrm{fast}_1$ score on KernelBench Level 3, substantially outperforming AIDE and OpenEvolve under the same inference budget. Overall, our study distills design principles for preserving experimental history and curating reusable lessons in autoresearch harnesses, paving the way for agents that turn accumulated experience into sustained progress.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-11-24T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.28244",
+      "pdf_url": "https://arxiv.org/pdf/2611.28244",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Very relevant because it systematically analyzes autoresearch harness design and component contributions for self-evolving agents, directly tied to agent evaluation and research automation."
+    },
+    {
+      "arxiv_id": "2611.28907",
+      "title": "STRIDE: Strategy-to-Tactics Retrieval-Guided Skill Disclosure and Evolution for Agentic Reinforcement Learning",
+      "authors": [
+        "Shixin Hong",
+        "Wanqing Cui",
+        "Yibo Hu",
+        "Naen Xu",
+        "Zhiwei Huang",
+        "Meiguang Jin",
+        "Junfeng Ma"
+      ],
+      "abstract": "Skill-augmented reinforcement learning enables LLM agents to reuse task-solving knowledge across episodes, but existing systems typically expose agents to a flat skill pool and update skills only from coarse, episode-level outcomes. This conflates two distinct uses of experience: a stable strategy that should frame the whole episode, and tactical know-how that should be retrieved only when the agent reaches a local execution gap. We propose STRIDE (Strategy-to-Tactics Retrieval-guided skIll Disclosure and Evolution), a framework that brings progressive skill disclosure into agentic reinforcement learning. STRIDE keeps the selected strategy visible as episode context, exposes a compact tactic menu, and loads full tactic content only after an explicit retrieval action. This interface turns each retrieval into an event-level credit unit: the same event provides process feedback for learning when to retrieve and supplies evidence for skill-bank evolution. On ALFWorld, STRIDE achieves a 92.7% average success rate with Qwen3-4B and a 94.9% average success rate with Qwen3-8B. On WebShop, it improves over the strongest reproduced skill-augmented baseline by 4.5 score points and 1.9 success-rate percentage points. These results show that skill reuse is most effective when persistent strategies preserve global task structure and tactics are disclosed only at local decision bottlenecks.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-11-24T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.28907",
+      "pdf_url": "https://arxiv.org/pdf/2611.28907",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Highly relevant to the autoscaling/agentic RL and self-improving agent themes because it studies hierarchical strategy-vs-tactics skill reuse and evolution for RL agents."
+    },
+    {
+      "arxiv_id": "2611.30771",
+      "title": "GameDojo: Benchmarking Real-Time Interactive Agents in Video Games",
+      "authors": [
+        "Kuan Zhang",
+        "Zhihao Yang",
+        "Yukun Chen",
+        "Xingyilang Yin",
+        "Mingyu Ouyang",
+        "Yue Su",
+        "Xiangnan Wu",
+        "Jiaming Li",
+        "Longze Chen",
+        "Run Luo",
+        "Zirong Chen",
+        "Lu Wang",
+        "Yiming Li"
+      ],
+      "abstract": "Interactive intelligence requires agents to act on observations and adapt to the consequences of actions. Studying these abilities calls for diverse, challenging tasks under controlled conditions. We introduce GameDojo, a controllable interactive gameplay benchmark of 120 boss encounters across 20 games for evaluating model capabilities, learning algorithms, and agent harnesses. Coding agents reconstruct the environments and write gameplay scripts, producing GameDojo-Data with 600 hours of gameplay trajectories. Experiments reveal substantial challenges for frontier models, especially in real-time interaction. Training on GameDojo-Data brings GameDojo-4B to frontier performance, with the strongest real-time performance. We also find joint training improves individual tasks, and learned policies transfer across bosses. Together, these findings establish GameDojo as a challenging and valuable interactive gameplay benchmark for the community. Our project page is at https://gamedojo-benchmark.github.io/ , and our code is at https://github.com/THUSI-Lab/GameDojo .",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-11-24T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.30771",
+      "pdf_url": "https://arxiv.org/pdf/2611.30771",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "A benchmark for real-time interactive agents in video games is very relevant to RL and agent research, especially for evaluating adaptive behavior in rich simulated environments."
+    },
+    {
+      "arxiv_id": "2611.28093",
+      "title": "VTree: Question-Driven Growth of Hierarchical Memory for Agentic Long-Video Understanding",
+      "authors": [
+        "Xiaoyu Ma",
+        "Lianyu Hu",
+        "Zixuan Hu",
+        "Zhizhen Wu",
+        "Zeqin Liao",
+        "Shengqian Qin",
+        "Yang Liu"
+      ],
+      "abstract": "Long videos spanning tens of minutes to hours far exceed the context window of today's vision-language models, and the standard remedy of sparse uniform frame sampling discards exactly the fine-grained evidence that specific questions depend on. Existing video agents explore on demand but re-explore from scratch for every question and discard their exploration state once an answer is produced, so per-question cost scales with video length. Hierarchical-memory methods instead fix the scope of each depth in advance and deepen along a pre-committed pyramid rather than toward the question. We observe that a video's coarse structure (where its scenes and topics begin and end) is question-independent, whereas which part a question must zoom into, and how deep, is question-dependent. We propose VTree, which builds a coarse hierarchical memory tree over a video once and then, for each question, grows branches only where that question needs depth. The growth is globally routed so any part of the timeline is reachable, sufficiency-gated so drilling stops when the evidence suffices, and query-conditioned so a branch unfolds into the sub-intervals that answer \\emph{this} question. Crucially, every expansion is written back into the video memory, allowing later questions to reuse previously discovered structure and evidence without repeating the corresponding expansion process. Across five long-video understanding benchmarks, VTree consistently improves the accuracy of diverse vision-language backbones while substantially reducing the context length and execution time required for each question.",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.MM"
+      ],
+      "published": "2026-11-24T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.28093",
+      "pdf_url": "https://arxiv.org/pdf/2611.28093",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Highly relevant to the long-video agent and memory-retrieval thread, since it studies hierarchical memory growth for question-driven long-video understanding."
+    },
+    {
+      "arxiv_id": "2611.28102",
+      "title": "VideoGym: An Adaptive RL Environment for Long-Video Agents",
+      "authors": [
+        "Jing Wang",
+        "Yi Ke Yun",
+        "Yifeng Yao",
+        "Huishuai Zhang",
+        "Dongyan Zhao",
+        "Tao Wang"
+      ],
+      "abstract": "Reinforcement learning (RL) trains video agents to locate sparse evidence for long-video question answering through structured memory retrieval and temporal re-observation. This training, however, faces a long-tail modality distribution in the data. In our source pool, text-heavy questions account for 58% of samples, compared with 15% graph-heavy, 17% visual-heavy, and 10% time-range questions. Fixed-distribution RL therefore allocates fewer rollouts to underperforming question types. Reweighting these types could increase their sampling frequency but repeatedly reuses the same finite banks of original questions. To solve this problem, we introduce VideoGym, a curriculum-based RL environment that jointly constructs video-grounded training tasks and allocates rollouts among them. Within the environment, a memory-augmented VideoAgent is trained to coordinate retrieval from text, graph, and visual memories with temporal re-observation. Across episodes, VideoGym adapts VideoAgent's training distribution online: it casts per-period sample selection as an adversarial bandit over (modality, mode) arms and applies the EXP3 update to shift sampling toward arms with low answer accuracy. To supply the augmented-mode arms, a TaskGenerator-Verifier pipeline produces harder variants of existing questions that remain answerable within the same video. Across five long-video benchmarks, VideoGym lifts RL accuracy from 60.4% to 64.8% on average and by up to 10.5 pp on underrepresented graph-heavy questions with 3.3x sample efficiency. Together, these results show that task expansion and adaptive allocation can improve video agent learning from limited, imbalanced training data.",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.MM"
+      ],
+      "published": "2026-11-24T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.28102",
+      "pdf_url": "https://arxiv.org/pdf/2611.28102",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Directly relevant to the autoscaling/RL reading club and long-video agent work because it introduces an adaptive RL environment for training long-video agents."
+    },
+    {
+      "arxiv_id": "2611.28411",
+      "title": "ScaleEvals: Scaling Generalist Policy Evaluation through Reset-Free Autonomous Play",
+      "authors": [
+        "Amitoj Sandhu",
+        "Ethan Sick",
+        "Omkaar Buddhikot",
+        "Nadia Laswi",
+        "Wesley Durbano",
+        "Nadun Ranawaka",
+        "You Liang Tan"
+      ],
+      "abstract": "Real-world evaluation of generalist robot policies is bottlenecked by manual resets, human grading, and small fixed task suites with limited diagnostic coverage. We present ScaleEvals, a scalable reset-free protocol that evaluates policies through continuous physical play across a robot fleet. A VLM AutoPrompter generates scene-grounded tasks with difficulty estimates, language prompts, and skill tags, enabling performance analysis across diverse rollouts. A VLM AutoGrader assesses task progress, achieving 90.7% agreement with human graders. Scores are aggregated via a soft-win Bradley-Terry model, while tag-stratified ANOVA provides interpretable capability diagnostics. Across 3,000+ physical autonomous rollouts on DROID and YAM, ScaleEvals achieves 23.0 net rollouts/hr per station while reducing active human labor by 98%. By ranking five SOTA generalist policies, ScaleEvals correlates with held-out manual evaluation ranking on DROID (r=0.94, rho=0.90, p=0.018), and remains internally consistent on a second embodiment, YAM (r=0.839, rho=0.80). Beyond aggregate rankings, we observe behavioral compositionality: recombining verb-, skill-, and object-conditioned evidence predicts policy order on unseen prompts. Across 10 tasks and 240 prospective physical rollouts, we recover three-policy orderings of 96% pairwise concordance, demonstrating ScaleEvals can predict not just which policy leads, but where rankings reverse.",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.SY",
+        "eess.SY"
+      ],
+      "published": "2026-11-24T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.28411",
+      "pdf_url": "https://arxiv.org/pdf/2611.28411",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Very relevant because it tackles scalable evaluation of generalist policies with autonomous reset-free play, closely matching your current need for evaluation directions and RL systems benchmarking."
+    },
+    {
+      "arxiv_id": "2611.29818",
+      "title": "How Should a Home Robot Update Its Memories When Human Routines Change?",
+      "authors": [
+        "Oliver Wang",
+        "Mani Srivastava"
+      ],
+      "abstract": "A home robot that helps with chores needs to know where objects are, but people move objects according to routines that change and later change back. The robot's memory must adapt to the new routine without erasing experience that may become useful again. One approach is to have a language model maintain written summaries of the home from the robot's own observations, but existing evaluations of such memories use static worlds. We explore simulated households where a resident gets sick, recovers, and later gets sick again. We compare a rule that keeps every room an object has been seen in, language-model memories that store only written summaries, and language-model memories that can also read the raw history of sightings. The rule outperforms every summary-only memory, and giving language models the sighting history closes the gap. Surprisingly, writing summaries on top of the history adds nothing we can measure. When the illness returns, methods that keep the history search better than they did the first time, while summary-only methods show no consistent improvement. Deleting the first illness from memory removes all of the rule's gain and part of theirs. The summaries recorded where objects went during the illness but rarely distinguished sick-day patterns from normal routines. Our findings suggest that common approaches to summarizing robot memories struggle to remember facts about a routine that might return, highlighting the need for future benchmarks to evaluate this aspect of long-term robot deployment.",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "published": "2026-11-24T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.29818",
+      "pdf_url": "https://arxiv.org/pdf/2611.29818",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Highly relevant to the robot memory/home-environment thread because it studies how a home robot should update memories as human routines change, closely matching interests in dynamic memory and nonstationary embodied settings."
+    },
+    {
+      "arxiv_id": "2611.30477",
+      "title": "OVOGO: Offline Value-Guided On-Policy Generative Optimization for Flow-Based Vision-Language-Action Models",
+      "authors": [
+        "Rongzheng Yang",
+        "Jiaming Guo",
+        "Yuxuan Guo",
+        "Zihao Zhang",
+        "Yunkai Gao",
+        "Siming Lan",
+        "Shaohui Peng",
+        "Rui Zhang",
+        "Tianyun Ma",
+        "Xing Hu",
+        "Yunji Chen"
+      ],
+      "abstract": "Flow-based vision-language-action models can benefit from robot experience collected during deployment, but repeatedly acquiring new physical interactions for policy improvement is costly. Offline reinforcement learning provides a natural way to reuse collected experience, while flow-based policies offer an additional opportunity because fresh generation trajectories can be cheaply resampled from the current policy at replay observations. This motivates separating offline value learning from on-policy optimization of the generative process. We propose OVOGO, an offline reinforcement learning framework that realizes this separation for flow-based VLAs. A central challenge in this formulation is to learn a critic that remains grounded in logged robot experience while providing useful value signals for newly generated actions. OVOGO introduces a Return-Anchored Ranking Critic that combines in-sample distributional value learning with guarded local ranking, improving discrimination among generated actions without assigning them artificial return targets. The frozen critic then provides group-relative value signals for selected-transition optimization of fresh action candidates sampled from the current flow policy. Experiments on RoboTwin 2.0, DexJoCo, and LIBERO, as well as a real-robot dexterous manipulation task, show that OVOGO improves the initial VLA across all four settings and achieves higher success rates than the evaluated offline adaptation and value-guided baselines. These results suggest that offline robot experience can be repeatedly reused for value learning while inexpensive generative sampling supports policy optimization, providing an effective approach to experience-based post-training of flow-based VLAs.",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "published": "2026-11-24T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.30477",
+      "pdf_url": "https://arxiv.org/pdf/2611.30477",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "This is directly about offline RL and policy improvement for vision-language-action models, closely matching the autoscaling RL reading-club and robotics/RL interests."
+    },
+    {
+      "arxiv_id": "2611.28844",
+      "title": "AgriManager: A Framework and Benchmark for LLM-RL Generalization in Agricultural Management",
+      "authors": [
+        "Chi Gui",
+        "Junwen Zheng",
+        "Ritwik Nigam",
+        "Qianlan Yang",
+        "Meagan Lang",
+        "Vardhan Dongre",
+        "Jeremiah Barr",
+        "Yu-Xiong Wang",
+        "Vikram S. Adve"
+      ],
+      "abstract": "Agricultural management is heterogeneous along two axes. The first is distributional shift within a fixed task interface: weather, crops, and prices vary across years and locations while sensors, actions, and objective stay fixed. The second is structural shift across interfaces: different farms expose different observed variables, available actions, and management objectives. We formalize the second axis as schema shift: variation in the policy-facing schema $\\Sigma = (\\Sigma_O, \\Sigma_A, \\Sigma_R)$ between training and deployment. We test whether LLM-RL generalizes across both axes with AgriManager, to our knowledge the first framework that trains LLM policies with RL across multiple process-based crop simulators, unifying DSSAT, WOFOST, and Cycles. We design a three-tier generalization ladder: Tier 1 within-schema distributional shift, Tier 2 single-axis schema shift along $\\Sigma_O / \\Sigma_A / \\Sigma_R$, Tier 3 compositional schema shift across simulators, all scored on a frozen held-out test suite with three training seeds per method. Within fixed schemas, Qwen3-4B trained by RL with explicit reasoning exceeds neural-network PPO trained with the same interaction budget; without reasoning, training stalls near no-action where the reward penalizes input use. Under single-axis schema shift, $\\Sigma_O$ transfer needs decision-critical state, $\\Sigma_A$ results are consistent with joint action-menu coverage, and with reasoning a policy trained on yield alone transfers to unseen objectives. Under compositional schema shift, single-source training mostly hurts zero-shot transfer across simulators, and a unified policy trained only on other combinations of the same components recovers about 86% of the gain of a specialist trained on the target combination on DSSAT and stays below the specialists on the WOFOST and Cycles profit targets. Project page: https://agrimanager-framework.github.io",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-11-24T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.28844",
+      "pdf_url": "https://arxiv.org/pdf/2611.28844",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "This strongly matches the interest in simulations, task derivation, and RL evaluation because it introduces a benchmark for LLM-RL generalization under both distributional and structural shift."
+    },
+    {
+      "arxiv_id": "2611.29715",
+      "title": "From States to Dynamics: Detecting Rule Violations in OthelloGPT",
+      "authors": [
+        "David L. Cao",
+        "Sai Sumedh R. Hindupur",
+        "Demba Ba"
+      ],
+      "abstract": "Sequence models trained on game moves have been shown to encode world models, with structured linear probes revealing the underlying game states. World models, however, are inherently dynamic: in deterministic board games, a set of rules constrain how states evolve over time. We therefore ask if and how OthelloGPT, a transformer trained only on Othello move sequences, manifests the rules of the game in its activation space. We divide the rules of Othello, and symmetrically their violations, into three classes: placing a disc on an empty square (R1), flanking an opponent's disc (R2), and moving in turn (R3). We find that linear probes accurately separate legal from illegal moves, and also distinguish between the three kinds of rule violations. We introduce an unsupervised rule-violation detector based on the step length of activations between consecutive moves, which identifies illegal moves above chance. We further improve our detection metric by computing step length in the latent space of select sparse autoencoders. Together, we find that OthelloGPT follows game rules of Othello to a large extent, and that we can detect rule violations using structured detectors on model activations.",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-11-24T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.29715",
+      "pdf_url": "https://arxiv.org/pdf/2611.29715",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Highly relevant to the world-models/game-dynamics thread because it studies whether a sequence model trained on Othello encodes not just states but transition rules, directly connecting to latent dynamics and evaluative analysis of learned simulators."
+    },
+    {
+      "arxiv_id": "2611.29453",
+      "title": "What Test-Time Training Corrects in Latent World Models? A Slow-Fast Approach",
+      "authors": [
+        "Shuaicheng Niu",
+        "Guohao Chen",
+        "Kevin Z. Shen",
+        "Yunbei Zhang",
+        "Peilin Zhao",
+        "Yinan Zhang",
+        "Cyril Leung"
+      ],
+      "abstract": "Latent world models plan toward a goal by predicting the outcomes of candidate actions, but under the distribution shift, prediction errors can lead the planner astray. Test-time training using executed actions helps, yet what it corrects and whether its updates should persist across episodes remains unclear. We address both by analyzing the world model's prediction error. On PushObj, an object-pushing task, we probe multiple actions from the same state and decompose the error into an offset shared across actions and an action-dependent component. The offset effectively shifts the planner's goal, and AdaJEPA mainly tracks it: the common shift alone recovers 91% of its planning gain. Part of the offset is episode-specific, so carrying its correction into the next episode does not help and may even hurt. The remaining offset recurs across episodes and action-dependent error can be or needs to be learned and retained from many episodes. Our sft-JEPA therefore uses two learners on different timescales: a fast learner that tracks the offset and resets each episode, and a slow LoRA learner that accumulates recurring knowledge across episodes. Across PushObj, PointMaze, zero-shot planning on RoboCasa (with DINO-WM), and OGBench (with LeWAM), sft-JEPA leads all benchmark averages, improving planning success over AdaJEPA by up to 22 points.",
+      "categories": [
+        "cs.RO",
+        "cs.LG"
+      ],
+      "published": "2026-11-24T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.29453",
+      "pdf_url": "https://arxiv.org/pdf/2611.29453",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "This is highly relevant because it analyzes test-time training in latent world models under distribution shift, a close match to the projects' interest in world models, planning, and RL adaptation."
+    },
+    {
+      "arxiv_id": "2611.30636",
+      "title": "ABI: Actor-Free Behavior-Induced Representations for Zero-Shot Test-Time Guidance",
+      "authors": [
+        "Yifei Yao",
+        "Yude Zou",
+        "Guanbo Jiao",
+        "Jianming Ma",
+        "Xing Gao",
+        "Chunhua Shen"
+      ],
+      "abstract": "Behavior-cloning policies show strong ability in sequential control by generating coherent multi-step action chunks, yet their purely imitative objective limits zero-shot generalization to unseen tasks. While offline reinforcement learning offers principled policy improvement, existing methods either require task-specific reward supervision or remain tied to a specific actor during critic training or policy deployment, inflating training cost and restricting cross-policy generalization. We observe that evaluating actions under the data-collecting behavior largely preserves their relative value ordering across target policies, offering a way around actor coupling. Combining this property with reward-free successor prediction, we propose Actor-Free Behavior-Induced Representations (ABI) to learn multi-horizon action-chunk representations from unlabeled trajectories without reward supervision or actor training. At test time, pairing the frozen representation with lightweight task readouts forms a chunk critic that guides target policies without parameter updates and transfers directly across distinct unseen policies. Our analysis establishes when the value ordering is preserved across policies and when selecting among proposed chunks improves closed-loop return. Across 65 locomotion, navigation, and manipulation tasks, ABI's chunk critic guides weak imitation policies to match or surpass zero-shot RL baselines with high sample efficiency, outperforms existing zero-shot critics on identical proposals, and improves externally trained RL actors without retraining. From raw pixels, ABI delivers substantial guidance gains and surpasses prior zero-shot RL baselines on visual manipulation, highlighting its potential for visuomotor control.",
+      "categories": [
+        "cs.RO",
+        "cs.LG"
+      ],
+      "published": "2026-11-24T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.30636",
+      "pdf_url": "https://arxiv.org/pdf/2611.30636",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Highly relevant to the autoscaling/RL and sequential decision-making projects because it studies offline RL-style representation learning for zero-shot test-time guidance without task-specific rewards."
+    },
+    {
+      "arxiv_id": "2611.30898",
+      "title": "World Models as Native Latent Action Models",
+      "authors": [
+        "Qinyue Li",
+        "Weijie Qiao",
+        "Qingyi Tao",
+        "Zerui Gong",
+        "Zhe Yang",
+        "Quanzhou Li",
+        "Taolin Zhang",
+        "Jinglin He",
+        "Zhonghua Wu",
+        "Chen Change Loy"
+      ],
+      "abstract": "Large and diverse video sources, such as egocentric human video and heterogeneous robot recordings, carry rich dynamics but come either without actions or without a shared action space. Latent action models (LAMs) can recover these dynamics, but they train their inverse- and forward-dynamics models (IDM, FDM) from scratch, trading off pixel reconstruction against latent capacity and accuracy. Pretrained video world models natively generate high-fidelity dynamics, yet represent them densely, entangled across all layers. Viewing the world model as a LAM, we show that these dynamics can be extracted with minimal changes to the model. Native LAM operates one pretrained video diffusion transformer as both IDM and FDM, with learnable dynamics registers as the only causal bridge between the two, and trains on counterfactual temporal pairs that differ in motion alone, so that the registers distill a video's dynamics into a compact native latent action. We further propose a pretraining paradigm for vision-language-action (VLA) policies, Pretraining Actions from World models (PAWlicy), in which Native LAM serves as a dynamics teacher on large-scale video; unlike world action models, it never generates video. Native latent actions outperform existing LAMs on the LARY benchmark in both action classification and control regression, and replay the same motion on new robots, in new scenes, and from human hands to robots, although no transfer objective is used in training. With a 3.8B model, PAWlicy reaches a 93.6% average success rate on RoboTwin 2.0 trained with domain-randomized demonstrations, the highest among VLAs. On RoboDojo, it is competitive on every dimension we evaluate, and its Precision, evaluated by us, is on par with the leading leaderboard entries. On real robots, it improves over the pi_0.5 baseline on both tasks. Both stages use only public data and a publicly released world model.",
+      "categories": [
+        "cs.CV",
+        "cs.LG",
+        "cs.RO"
+      ],
+      "published": "2026-11-24T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.30898",
+      "pdf_url": "https://arxiv.org/pdf/2611.30898",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Very relevant because it develops world models and latent action models from heterogeneous video data, closely matching interests in world models, simulation, and action abstraction for RL."
+    },
+    {
+      "arxiv_id": "2611.30907",
+      "title": "DexLatentWorld: 3D Cross-Embodiment Latent Action World Models for Zero-Shot Robotic Manipulation",
+      "authors": [
+        "Vinay Udit Mohan",
+        "Xuchuan Huang",
+        "Rolandos Alexandros Potamias"
+      ],
+      "abstract": "World models facilitate planning and control in robotic manipulation by enabling agents to anticipate the consequences of their actions. However, they typically rely on action-labelled interaction data that is costly to acquire and difficult to scale. These models are also often tied to the specific embodiment they were trained on, limiting transferability to previously unseen robot morphologies. We introduce a 3D latent-action world model that learns continuous action representations directly from point-cloud observations of retargeted human manipulation demonstrations. A contrastive objective is used to encourage consistent representations of motion across embodiments. The resulting unified latent action space serves directly as the search space for model-predictive control, where sampled latent actions condition particle-based future predictions. Executable robot commands are then recovered from the predicted geometric motion without requiring an embodiment-specific action decoder. Through extensive evaluations, we demonstrate that the learned latent actions exhibit controllable and compositional motion, transfer to unseen robot embodiments, and support zero-shot manipulation with unseen gripper geometries. Following task-agnostic adaptation, our model achieves 90%, 92%, and 60% success on reaching, grasping, and placing, respectively, compared with DexWM's reported 72%, 58%, and 28%. Finally, we demonstrate zero-shot real-world manipulation with an unseen dexterous hand, achieving an 86% success rate across 50 trials on five diverse tasks involving pushing, grasping, and lifting everyday objects. These results highlight the potential of geometry-grounded latent actions as a unified, transferable interface for world-model-based robotic manipulation. Project materials, including demonstration videos and source code, are available at https://vinaymohan0409.github.io/DexLatentWorld/.",
+      "categories": [
+        "cs.RO",
+        "cs.CV",
+        "cs.LG"
+      ],
+      "published": "2026-11-24T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.30907",
+      "pdf_url": "https://arxiv.org/pdf/2611.30907",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Directly relevant to the reading-club themes since it focuses on cross-embodiment latent-action world models for zero-shot robotic manipulation, combining simulation, transfer, and model-based control."
+    }
+  ]
+}
