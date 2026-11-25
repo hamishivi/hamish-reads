@@ -1,0 +1,816 @@
+{
+  "date": "2026-11-25",
+  "generated_at": "2026-11-25T08:56:55.534541+00:00",
+  "author_papers": [
+    {
+      "arxiv_id": "2611.31255",
+      "title": "INCLUDE-2.0: Disentangling Knowledge Gaps in Multilingual LLM Evaluation",
+      "authors": [
+        "Angelika Romanou",
+        "Maria Grandury",
+        "Clara Meister",
+        "Negar Foroutan",
+        "Jabez Magomere",
+        "Anna Sotnikova",
+        "Hitesh Laxmichand Patel",
+        "Akshay Kumar Dubey",
+        "Alfonso Amayuelas",
+        "Amit Agarwal",
+        "Arion Das",
+        "Carlos Arriaga",
+        "Cheng Yu",
+        "Dalia Ali",
+        "David Quispe-Castillo",
+        "Fenal Ashokbhai Ilasariya",
+        "Francisco-Javier Rodrigo-Gines",
+        "Gonzalo Martinez",
+        "Gouthami Vadithya",
+        "Guido Ivetta",
+        "Javier Conde",
+        "Jorge Vallego",
+        "Juan J. Calderon G.",
+        "Karan Gupta",
+        "Marcos J Gomez",
+        "Marvin M. Ag\\\"uero-Torales",
+        "Mithil Bangera",
+        "Naira Paola Arnez Jordan",
+        "Oscar M. Cumbicus-Pineda",
+        "Priyaranjan Pattnayak",
+        "Reewos Erwin Talla Chumpitaz",
+        "Sahil Aggarwal",
+        "Sahil Raj",
+        "Shruti Jalan",
+        "Srikant Panda",
+        "Susana Zhou",
+        "Yeshil Bangera",
+        "Orestis Papakyriakopoulos",
+        "Scott A. Hale",
+        "Shamsuddeen Hassan Muhammad",
+        "Antoine Bosselut"
+      ],
+      "abstract": "Current multilingual benchmarks cover only a fraction of the languages represented in modern pretraining corpora and often conflate language proficiency with the ability to answer questions grounded in specific regions and communities. We introduce INCLUDE-2.0, a large-scale benchmark for region-aware multilingual factual evaluation, which covers 91 languages from 86 countries (127 total language--country pairs), comprising over 220K curated samples drawn from native regional sources. Unlike existing benchmarks that often treat language as a proxy for region, IINCLUDE-2.0 distinguishes between questions whose answers are independent of context, vary by country, concern widely documented facts about a place, or depend on knowledge primarily expressed through local linguistic and cultural sources. Each item is annotated with its regional knowledge type and domain, and paired with an English translation, enabling controlled analysis of the relationship between language proficiency and possession of regional knowledge.   Evaluating frontier and open-weight models on IINCLUDE-2.0, we find that aggregate multilingual accuracy masks substantial variation across regional knowledge types, languages, and regions. We find that frontier models perform worse on locally embedded knowledge than on widely documented facts about regions, with an average drop of ~14.5 points. We also show that for open-weight models, scale improves accuracy but does not reliably make performance invariant to whether a question is asked in English or its original language. INCLUDE-2.0 is available at https://huggingface.co/datasets/epfl-nlp/include-2.0",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-11-25T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.31255",
+      "pdf_url": "https://arxiv.org/pdf/2611.31255",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2611.31821",
+      "title": "Exploring Multi-Player Social Games as Verifiable Training Grounds for Large Language Models",
+      "authors": [
+        "Keyu He",
+        "Michael Li",
+        "Jiarui Liu",
+        "Mingqian Zheng",
+        "Koichi Onoue",
+        "Tongshuang Wu",
+        "Maarten Sap"
+      ],
+      "abstract": "The training of socially intelligent language models often relies on large language model (LLM) judges, which are expensive, noisy, and vulnerable to reward hacking. Multi-player social games offer a natural alternative: they require open-ended communication to coordinate with teammates and infer hidden roles, while their rules provide an objective outcome which can serve as a verifiable reward for training. Using three social games, we explore how much social intelligence Qwen3 models can acquire through supervised fine-tuning (SFT) and reinforcement learning with verifiable rewards (RLVR). Results show that against a much stronger Gemma-3-27B model, SFT and RLVR raise the win rate of Qwen3-4B from 33% to 81% on the three trained games, and from 39% to 54% on three additional held-out games. In contrast, in-context strategies such as prompting improve the win rate of Qwen3-4B by only about 6 pp across the same games we train and evaluate on. Furthermore, we show that the gains from SFT and RLVR hold across the model sizes 1.7B, 4B, and 32B. Qualitative analyses of agent behavior show signs of stronger social intelligence; for example, trained agents tend to share information more openly, check each other's claims against public evidence, and coordinate their votes. More broadly, our results demonstrate that training LLMs on verifiable outcomes in social games can cultivate generalizable social behaviors, which offers a scalable path for building socially intelligent agents.",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG",
+        "cs.MA"
+      ],
+      "published": "2026-11-25T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.31821",
+      "pdf_url": "https://arxiv.org/pdf/2611.31821",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2611.30325",
+      "title": "Verifiable On-Policy Distillation",
+      "authors": [
+        "Juntong Shi",
+        "Stefano Ermon",
+        "Jure Leskovec",
+        "Minkai Xu"
+      ],
+      "abstract": "Reinforcement learning with verifiable rewards (RLVR) has become a powerful approach for improving language-model reasoning, but its supervision is inherently sparse: a sequence-level verifier reward is propagated only through sampled trajectories and provides no direct signal for alternative actions. On-policy distillation (OPD) offers a complementary form of supervision by providing dense teacher feedback over the full next-token distribution, but this signal is not grounded in verified task outcomes. Simply co-optimizing the two objectives does not couple these signals: verifier feedback remains sparse and does not inform the dense teacher supervision. We introduce Verifiable On-Policy Distillation (VOPD), which transfers sparse verifier feedback into dense, verifier-grounded supervision. Our key observation is that the implicit-reward view of OPD places teacher supervision and verifier feedback in a common reward space while retaining a reward signal available for every next-token action. Under this view, VOPD projects verifier preference onto the teacher's implicit-reward direction and Rao--Blackwellizes the resulting signal over the full vocabulary, propagating verifier-grounded supervision to actions that were never sampled. The resulting objective can also be interpreted as adaptively extrapolating the distillation target according to teacher--verifier agreement. Across two teacher--student configurations and eight mathematical reasoning benchmarks, VOPD consistently improves both final performance and learning efficiency over vanilla OPD and other on-policy distillation baselines. Our code is available at https://github.com/juntongshi48/VOPD.",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "published": "2026-11-25T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.30325",
+      "pdf_url": "https://arxiv.org/pdf/2611.30325",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2611.31870",
+      "title": "Subliminal Learning Crosses Modalities",
+      "authors": [
+        "Saraswathy Amjith",
+        "Kimia Hamidieh",
+        "Antonio Torralba",
+        "Yoon Kim"
+      ],
+      "abstract": "Subliminal learning refers to a surprising phenomenon in language models wherein a prompt given to one model (e.g., preference for cats) can be subliminally distilled to another model via training on data that is ostensibly meaningless (e.g., number sequences). This paper shows that text-based subliminal learning transfers cross-modally, in particular, a topic/preference (e.g., animals) transferred through number sequences across vision-language models also changes how images are generated and represented. First, we show that a diffusion model using the student as its text encoder generates the student's animal more often than with the original model as its text encoder, but not its color or style. We then investigate the mechanism behind this phenomenon and which concepts transfer across modalities. A constant component of the student's change accounts for much of the shift of image representations toward the trait. Adding this component uniformly can change the generated animal, which depends on the whole prompt, but not concepts such as color or style, which are encoded in a single token. Finally, we introduce weight lens as an approach to identify a subliminal trait from the weights of a single trained model, and show that it identifies the trait of nearly every student, including traits that do not surface in generated images.",
+      "categories": [
+        "cs.LG",
+        "cs.CL",
+        "cs.CV"
+      ],
+      "published": "2026-11-25T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.31870",
+      "pdf_url": "https://arxiv.org/pdf/2611.31870",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2611.32012",
+      "title": "Marketing-Bench: Evaluating Frontier Models and Agents on Real-World Marketing Capabilities",
+      "authors": [
+        "Sumanth Balaji",
+        "Siddharth Gupta",
+        "Ameet Deshpande",
+        "Vishvak Murahari",
+        "Karthik Narasimhan"
+      ],
+      "abstract": "As frontier AI models and agents are deployed more broadly in the real world, marketing is emerging as one of their largest applications. Marketing teams use AI models to produce brand assets like website copy and social media posts, while consumers' agents autonomously discover products, research purchases, and navigate websites. However, evaluating marketing capability is difficult because unlike areas like software development, customer support, or legal review where ground truth is more objectively defined, marketing is subjective, and output quality is judged based on taste and brand. We introduce Marketing-Bench, the first open-source marketing benchmark, which pairs discriminative tasks (detecting brand anomalies) with generative tasks (remediation), while keeping answers verifiable. Marketing-Bench tests five key pillars: factuality, consistency, coherence, structure, and brand voice, all crucial elements for good brand content on the web. We find that frontier models are far from solving the benchmark: the average model corrects only about half of the introduced issues (53.1%), whereas a marketing expert corrects nearly all of them. Even the strongest, GPT-6 Astra, reaches only 74.8%, with Claude Opus and Fable, Gemini Argon, and GPT-6 Sol falling well short. These findings suggest that marketing capabilities are less mature than adoption implies, and that principled evaluation should precede further scaling of usage. Marketing-Bench is a first step toward \"frontier marketing models\" with superhuman marketing performance.",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-11-25T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.32012",
+      "pdf_url": "https://arxiv.org/pdf/2611.32012",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2611.32183",
+      "title": "ThinkMorph-SSL: Scaling Interleaved Multimodal Reasoning with Pretext Tasks",
+      "authors": [
+        "Jiawei Gu",
+        "Linjie Li",
+        "Yiming Liu",
+        "Yunzhuo Hao",
+        "Huichen Wang",
+        "Guanzheng Chen",
+        "Zhichao Peng",
+        "Luxin Xu",
+        "Xinyu Zhang",
+        "Li Luo",
+        "Disen Lan",
+        "Zican Hu",
+        "Mingyang Song",
+        "David Valente",
+        "Alex Jinpeng Wang",
+        "Yafu Li",
+        "Ganqu Cui",
+        "Zhengyuan Yang",
+        "Qizhe Xie",
+        "Yejin Choi",
+        "Ranjay Krishna",
+        "Yu Cheng"
+      ],
+      "abstract": "People reason with pictures as well as words. Interleaved multimodal reasoning gives models a similar way to solve problems by creating intermediate images and using them to guide further reasoning. Training models with this ability usually relies on task-specific demonstrations, which are difficult to collect. We introduce ThinkMorph-SSL, a two-stage training recipe that uses images themselves as a source of supervision. The first stage, pretext reasoning, converts visual pretext tasks, such as image colorization and denoising, into instruction-free interleaved traces. Models describe a corrupted or transformed image, generate a restored or canonical image, and interpret the result. The second stage uses automatically constructed demonstrations for question-driven instruction tuning. At the same instruction-tuning budget, models trained with pretext reasoning outperform those trained with instruction tuning alone. The full recipe improves over the base model by an average of 11.33 accuracy points across twelve benchmarks. These results show that supervision derived from images can build the visual skills needed for interleaved reasoning and improve learning from task-specific demonstrations.",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-11-25T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.32183",
+      "pdf_url": "https://arxiv.org/pdf/2611.32183",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2611.32472",
+      "title": "STAR: Counterfactual Dual-World Rollouts and Spatial Target Adaptive Reconstruction for Visual On-Policy Distillation",
+      "authors": [
+        "Yi Zou",
+        "Zhuang Yan",
+        "Yudong Zhang",
+        "Xu Wang",
+        "Yang Wang"
+      ],
+      "abstract": "Vision-language models often rely on global context and language priors while overlooking answer-determining local details. Privileged visual on-policy self-distillation supervises full-image student rollouts using a frozen teacher that views high-resolution evidence crops. Yet our cross-scale diagnostics show that models retain over half of their full-image accuracy when local evidence is completely masked, indicating that single-image correctness does not guarantee reliance on local evidence, while the need for visual correction also varies across tokens with their spatial attention states. We propose STAR, a visual on-policy self-distillation framework combining independent counterfactual dual-world rollouts with spatial-attention-guided target reconstruction. Local image editing constructs paired worlds with identical questions and backgrounds but distinct answer-determining facts, where a shared student samples trajectories independently to expose contextual shortcuts under image-consistent prefixes. Within each world, the teacher contrasts real and mean-color crops to determine the visual correction direction, while the divergence between student image attention and a teacher-centroid spatial reference adaptively controls token-wise target log-probability reconstruction. Without auxiliary attention losses or test-time tool overhead, STAR improves Qwen3.5 across scales by up to 8.04 percentage points in average accuracy over initialization across six fine-grained benchmarks, reaches OPSD's final accuracy $4.7\\times$ faster, and generalizes to out-of-domain reasoning tasks.",
+      "categories": [
+        "cs.CV",
+        "cs.CL"
+      ],
+      "published": "2026-11-25T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.32472",
+      "pdf_url": "https://arxiv.org/pdf/2611.32472",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2611.31969",
+      "title": "DexOPD: Dual-Extrapolation On-Policy Distillation for Diffusion Models",
+      "authors": [
+        "Yunchao Ke",
+        "Yanzhe Hu",
+        "Yi Yang",
+        "Jiachun Jin",
+        "Zhihong Liu",
+        "Zhijie Deng"
+      ],
+      "abstract": "Flow-based diffusion models have become a mainstream paradigm for text-to-image generation, where task-specific post-training produces specialist models with complementary strengths. Multi-teacher on-policy distillation (OPD) offers an efficient way to consolidate these specialists into a single unified student. Recent methods strengthen supervision through teacher extrapolation, constructing stronger proxy teachers that allow distilled students to surpass the original specialists. However, their extrapolation directions remain defined solely by frozen teacher and reference models, leaving the student's own training progress unexploited. To address this limitation, we introduce DexOPD, a dual-extrapolation on-policy distillation method for diffusion models. DexOPD retains extrapolated teacher supervision while leveraging a lagging historical student as the reference for student self-extrapolation. Sampling across multiple self-extrapolation gains from shared initial noise broadens exploration along the student's evolving trajectory, and task rewards convert pairwise differences in candidate quality into a normalized auxiliary regression direction. Empirically, we evaluate DexOPD on GenEval, OCR, and DrawBench. The resulting unified SD3.5-Medium student achieves a GenEval reward of 0.9736, an OCR score of 0.9515, and a DrawBench Aesthetic score of 6.4875, surpassing the corresponding specialist teachers as well as all evaluated OPD and multi-task reinforcement learning baselines across these three benchmarks while preserving standard single-model inference.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-11-25T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.31969",
+      "pdf_url": "https://arxiv.org/pdf/2611.31969",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2611.31916",
+      "title": "Machine learning enables full Bayesian inference for spinning extreme-mass-ratio inspirals",
+      "authors": [
+        "Bo Liang",
+        "Minghui Du",
+        "Zhenwei Lyu",
+        "Hanlin Song",
+        "Jiakai Zhang",
+        "Weichen Qin",
+        "Chia-Jui Chou",
+        "Yi Yang",
+        "Jingyi Yu",
+        "Ziren Luo",
+        "Mingming Sun",
+        "Peng Xu",
+        "Yue-Liang Wu"
+      ],
+      "abstract": "Extreme-mass-ratio inspirals (EMRIs), stellar-mass compact objects spiralling into massive black holes, promise to measure the masses and spins of the central black holes, reveal the strong-field environment around them and gauge cosmic distances via millihertz gravitational-wave observations. Yet most forecasts for the parameter inference of these systems assume known source parameters, and broad-prior analyses have addressed only simplified versions of the problem. The joint inversion of all 14 parameters of a spinning source from the complete prior has remained unsolved. Here we solve it for the augmented analytic kludge model: generative networks narrow the complete prior and reveal a ring of degenerate spin directions, and the exact detector likelihood determines the posterior. For a simulated one-year LISA-Taiji observation, within one ring sector we obtain, for the first time, a 14-parameter posterior of a spinning EMRI from the complete prior, the most precise yet obtained for such a source from broad priors. The redshifted mass and spin of the massive black hole are determined to two parts in $10^5$, the mass two orders of magnitude beyond any electromagnetic measurement. The compact object's redshifted mass is measured to one part in $10^4$, and its eccentric, retrograde orbit discriminates between capture channels. The 0.8% distance and sub-square-degree localization are sufficient for dark-siren cosmology. Year-long coherent analysis resolves the inspiral driven by radiation reaction itself.",
+      "categories": [
+        "gr-qc",
+        "astro-ph.HE",
+        "astro-ph.IM",
+        "cs.AI"
+      ],
+      "published": "2026-11-25T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.31916",
+      "pdf_url": "https://arxiv.org/pdf/2611.31916",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2611.32639",
+      "title": "ReFocus: Progress-Guided Adaptive Practice for Long-Horizon Robotic Manipulation Reinforcement Learning",
+      "authors": [
+        "Haoyuan Li",
+        "Wei Huang",
+        "Jiehong Lin",
+        "Shengrong Zhang",
+        "Chenzhi Liu",
+        "Shengchao Zhou",
+        "Hehe Fan",
+        "Xiaojuan Qi",
+        "Yi Yang"
+      ],
+      "abstract": "Online reinforcement learning (RL) enables vision-language-action policies to improve through environmental interaction. However, in long-horizon manipulation, sparse success/failure feedback provides little information about where policies encounter bottlenecks. Moreover, repeated full-task rollouts also leave these bottlenecks weakly analyzed and insufficiently practiced. To this end, we introduce ReFocus, a progress-guided multi-round RL framework that alternates between Global and Local RL to identify task-specific bottlenecks and allocate additional practice to them. Specifically, during Global RL, we decompose each task into a Directed Acyclic Graph (DAG) of subtasks. Then a DAG-based Progress Reward is leveraged for both policy training and bottleneck diagnosis. Based on the identified bottlenecks, ReFocus selects Adaptive Practice Windows, defining task segments from an entry stage to a target stage. It allocates additional interaction to these segments during Local RL while updating the entire policy. After that, it evaluates the policy to perform the full task for the next round of RL, forming an iteration between Global and Local RL. Experiments on LIBERO-Long and RoboCasa365 show that ReFocus achieves success rates of 97.8% and 51.3%, respectively, compared with 90.6% and 39.3% for the $\\pi_{0.5}$ baseline. Furthermore, we evaluate a real-world adaptation on three long-horizon tasks. On BreadBaker, ReFocus achieves 95% success, compared with 30% for the $\\pi_{0.5}$. Project page: https://refocus-robotics.github.io.",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.CV"
+      ],
+      "published": "2026-11-25T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.32639",
+      "pdf_url": "https://arxiv.org/pdf/2611.32639",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2611.31271",
+      "title": "Chain-of-Thought Is Not Explainability",
+      "authors": [
+        "Fazl Barez",
+        "Tung-Yu Wu",
+        "Iv\\'an Arcuschin",
+        "Michael Lan",
+        "Vincent Wang",
+        "Noah Siegel",
+        "Nicolas Collignon",
+        "Clement Neo",
+        "Isabelle Lee",
+        "Alasdair Paren",
+        "John Yan",
+        "Adel Bibi",
+        "Damiano Fornasiere",
+        "Robert Trager",
+        "Yanai Elazar",
+        "Yoshua Bengio"
+      ],
+      "abstract": "Chain-of-thought (CoT) allows language models to verbalise multi-step rationales before producing their final answer. While this technique often boosts task performance and offers an impression of transparency into the model's reasoning, this position paper argues that rationales generated by current CoT techniques can be misleading and are neither necessary nor sufficient for trustworthy interpretability. We analyse faithfulness as whether CoTs are not only human-interpretable but also reflect the model's underlying reasoning well enough to support responsible use. By synthesising evidence from prior work, we systematically show that verbalised chains are frequently unfaithful, diverging from the critical hidden computations that drive a model's predictions. As CoT is increasingly relied upon in application domains, including high-stakes ones such as medicine, law, and autonomous systems, we further argue that this unfaithfulness is not taken seriously enough in these settings: our analysis of 1,000 recent CoT-centric papers finds that approximately 21.7% explicitly treat CoT as a load-bearing interpretability technique, building pipelines or safety arguments that would not hold if CoT is unfaithful to the model's actual reasoning. They include papers in high-stakes domains that heavily hinge on such interpretability claims. Building on prior work, we make three proposals: (i) avoid treating CoT as being sufficient for interpretability without additional verification, (ii) adopt rigorous methods that assess faithfulness for downstream decision-making, and (iii) report such assessments alongside any interpretability claims based on CoT, while continuing to use CoT for its communicative and monitoring benefits.",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-11-25T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.31271",
+      "pdf_url": "https://arxiv.org/pdf/2611.31271",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    },
+    {
+      "arxiv_id": "2611.33062",
+      "title": "Understanding Clipping In Zeroth-Order Optimization",
+      "authors": [
+        "Saket Gollapudi",
+        "Elisa Bertino",
+        "Sewoong Oh"
+      ],
+      "abstract": "Zeroth-order optimization has emerged as a resource-efficient alternative to Stochastic Gradient Descent (SGD) when fine-tuning LLMs, thanks to the inherent low dimensionality of the loss landscape. It relies on a two-point estimate of the gradient that only accesses the function value and not the gradient, bypassing the resource-heavy backpropagation. Recently, it was accidentally discovered that per-sample clipping can improve the performance of the trained model, while running a differentially private version of zeroth-order optimization \\cite{zhang2024dpzero} with a very large privacy parameter $\\epsilon$ (corresponding to very little privacy). In this paper, we systematically investigate this phenomenon and demonstrate that ($i$) the optimal choice of learning rate $\\eta$ is inversely proportional to the clipping threshold $c$, satisfying $\\eta c =$ constant; ($ii$) clipping drives the zeroth-order optimization to a different solution with higher test accuracy; and ($iii$) this phenomenon is only observed with per-sample clipped zeroth-order optimization and not other zeroth-order alternatives that also provide robust estimates of the gradient. Further analyses with artificially injected label noise reveals that clipping leads to more robust predictions, which stems from the implicit down weighting of hard-to-fit training examples. Our code is available at https://github.com/SewoongLab/ClipZero",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-11-25T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.33062",
+      "pdf_url": "https://arxiv.org/pdf/2611.33062",
+      "is_author_match": true,
+      "relevance_score": 0.0,
+      "relevance_reason": ""
+    }
+  ],
+  "ranked_papers": [
+    {
+      "arxiv_id": "2611.31258",
+      "title": "RECAP: Training Long-horizon LLM Agents with Context Compaction",
+      "authors": [
+        "Yulun Jiang",
+        "Maria Brbic",
+        "Michael Moor"
+      ],
+      "abstract": "Context compaction enables large language model agents to tackle long-horizon tasks within limited context budgets by replacing interaction histories with compressed summaries. However, learning effective compaction jointly with the agent policy remains challenging, as summaries affect task success over many subsequent interactions. We introduce RECAP, a reinforcement learning (RL) framework based on the principle that a summary should preserve the behavior induced by the original interaction history. We formalize this principle with a behavior distortion objective that measures the divergence between the agent's subsequent behavior under compressed and original contexts. We show that the gradient of the distortion objective decomposes into two complementary learning signals: distortion-based reward for summary generation and self-distillation for subsequent actions. Experiments on Qwen3.5-4B show that RECAP consistently outperforms the task-reward-only RL baselines on both environments, leading to an absolute improvement of 4.6% and 4.3% on BrowseComp-plus and SWE-bench Verified, respectively. Ablations further highlight the value of jointly supervising summary generation and post-compaction behavior for RECAP.",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-11-25T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.31258",
+      "pdf_url": "https://arxiv.org/pdf/2611.31258",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Directly aligned with the reading-club focus on RL and long-horizon agents by introducing an RL framework for training LLM agents with context compaction."
+    },
+    {
+      "arxiv_id": "2611.31266",
+      "title": "Agentic Systems Need Multi-Run Evaluation: A Study of Retrieval and Response Variability in a Deployed Enterprise RAG System",
+      "authors": [
+        "Karan Gupta",
+        "Sumit Bhatia",
+        "Yunyao Li"
+      ],
+      "abstract": "Previous RAG systems have mostly been evaluated in a single-run setting, and with the advent of agentic RAG, systems are still often evaluated the same way. However, agentic RAG systems introduce a source of run-to-run variability, since several of their components make decisions non-deterministically. Such systems typically comprise a retrieval stage followed by a generation stage, and the retrieval stage in particular can behave differently across runs. For example, the agent might issue a different number of parallel searches from one run to the next, which alters the retrieved documents and therefore the final answer. In this paper we study this behavior in a deployed agentic RAG system for product-documentation questions, running each of 739 questions ten times and analyzing the execution traces to find where different runs first diverge. We find a substantial gap between success in any run and success in every run: the retrieval hit rate is 69.4% when the correct page is found in at least one run, but 50.9% when it must be found in all ten. Responses also stay similar in meaning while varying in wording, with an average BERTScore of 0.90 and a BLEU of 0.49. Trace-level analysis shows that retrieval is the largest source of divergence (43.9%), and the number of parallel searches at the first retrieval step alone accounts for 20.1% of divergent pairs. Taken together, these results show that single-run evaluation can hide reliability and consistency issues in agentic RAG systems, and that multi-run evaluation is necessary to reveal them.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-11-25T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.31266",
+      "pdf_url": "https://arxiv.org/pdf/2611.31266",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Strongly relevant because it argues for multi-run evaluation of agentic RAG systems, closely matching the need for better eval directions for nondeterministic agents."
+    },
+    {
+      "arxiv_id": "2611.31586",
+      "title": "SecondChance: Benchmarking Reliable Error Recovery in AI Agents",
+      "authors": [
+        "Atahan Dokme",
+        "Adar Avsian",
+        "Larry Heck"
+      ],
+      "abstract": "AI agents make errors while they act, and their reliability depends on what they do afterwards. Existing recovery benchmarks mostly inject faults, involve no user and score whether the task is eventually completed, so they cannot show whether an agent undid its own silent error, told the user, or faced an error that could not be fixed. We introduce SecondChance, an error checkpoint dataset and evaluation harness that profiles and measures error-recovery behaviour of AI agents. The errors are natural: they come from agents' own task attempts in $\\tau^2$-bench, BFCL and AppWorld. Different agents then resume from the same checkpoints under one of four conditions: no assistance, an error notice, the error location, or repair guidance. We measure error correction, task success, policy compliance, preservation of environment state, repair durability and cost. We evaluate 12 models under all four conditions in 5,760 continuations. Recovery is rare: across its environments, the best model completes only 16% of recoveries unaided and 27% with repair guidance. Correcting is not recovering: with repair guidance, Llama-3.3-70B corrects 26% of $\\tau^2$ errors but completes none, and 40 of 84 successful AppWorld continuations leave the error in place. SecondChance exposes these differences that task success alone cannot capture.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-11-25T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.31586",
+      "pdf_url": "https://arxiv.org/pdf/2611.31586",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Very relevant to agent evaluation since it introduces a benchmark specifically for reliable error recovery in AI agents rather than just end-task success."
+    },
+    {
+      "arxiv_id": "2611.32539",
+      "title": "Avalon-M1: Reinforcement Learning from Collective Rewards",
+      "authors": [
+        "Iliyan Zarov",
+        "Henry Course",
+        "Anthony Hartshorn",
+        "Ran Achiron",
+        "Louis Roche",
+        "Akshit Sinha",
+        "Chengxi Taylor",
+        "Ross Taylor"
+      ],
+      "abstract": "We introduce reinforcement learning from collective rewards (RLCR), a recipe for jointly training language models to act as agent organisations under latency constraints. A CEO and up to eight specialists share one policy, co-ordinate through a message board and workspace, and are trained with a common outcome-derived advantage. The deadline makes parallel work valuable when it increases the return earned before the cap. We train Avalon-M1-Mini (120B) across 147 environments. For the trained model, eight-hire organisational execution raises IMO-ProofBench-Advanced scores from 23.8% to 39.0% relative to single-agent execution. Across 12 benchmarks, organisations achieve similar average scores at approximately one-third the derived latency of token-matched single-agent execution and just over half that of eight independent attempts followed by selection. The trained model also outperforms Nemotron 3 Super, post-trained from the same base model, across all evaluations when comparing each model's best tested configuration. On EdgeBench, organisations overtake the single agent after approximately 0.4 derived hours. Over the course of training, organisations develop hierarchies to manage communication costs, invest more in peer review, and alter how work is divided. Safety evaluations find near-universal refusal of harmful actions but sustained declines in external reporting in two of three oversight scenarios. These results establish a shared-advantage baseline for studying organisational learning, performance-latency trade-offs, and collective oversight.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-11-25T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.32539",
+      "pdf_url": "https://arxiv.org/pdf/2611.32539",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "This is highly relevant to the autoscaling RL reading club because it introduces reinforcement learning for multi-agent organizations under latency constraints, closely matching scalable agent/RL system interests."
+    },
+    {
+      "arxiv_id": "2611.32946",
+      "title": "ShellBench: What Matters More for AI Agents, Models, or Harness for Everyday Tasks",
+      "authors": [
+        "Vincent Koc",
+        "Aditya Washikar",
+        "Rishab Naveen Venkataraman",
+        "Onur Solmaz",
+        "Zhentong Fan",
+        "Xinyang Han",
+        "Toby Vincent John",
+        "Hao Li",
+        "Achyut Mukund",
+        "Biresh Chandra Biswas",
+        "Eshan Shukla",
+        "Louis Pan",
+        "Ivan Kudryavtsev",
+        "Patthigulla Sai Surendra",
+        "Krish Oberoi",
+        "Ayaan Zaidi",
+        "Hema Veeradhi",
+        "Taylor Agarwal",
+        "Erik Erlandson",
+        "Agustin Rivera",
+        "Jacob Tomlinson",
+        "Louka Ewington-Pitsos"
+      ],
+      "abstract": "The use of AI agents among the general public has been increasing exponentially throughout 2026, though it is often hard for users to determine which configuration is most effective for their personal use. To help provide clarity here we introduce ShellBench, 100 day-to-day tasks based on more than 10 million user requests, each set in a realistic workspace with messy files and competing data sources, and graded for both correctness and safety. We evaluate 12 models across 5 agent harnesses at 3 reasoning levels for a total of 53,100 rollouts, 20% of which are on tasks designated for public release. We find that model choice impacts performance more than harness choice, but the three leading models differ by only 1.1 percentage points. GPT-6.1 Sol passed 61.4% of attempts at about one-sixth of GPT-6 Astra's estimated token cost per attempt, while GPT-6 Astra led at 62.5%. We also found that harness choice had little effect on either performance or safety with all harnesses scoring between 42.9 (Claude Code) and 45.2 (OpenClaw) for pass@1.",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.SE"
+      ],
+      "published": "2026-11-25T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.32946",
+      "pdf_url": "https://arxiv.org/pdf/2611.32946",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "ShellBench is highly relevant because it is an agent benchmark for realistic everyday tasks and directly bears on the open question of evaluation direction for general-purpose agents."
+    },
+    {
+      "arxiv_id": "2611.31539",
+      "title": "Agent Evaluation Without Ground Truth: A Null Proportion Perspective",
+      "authors": [
+        "Brian M. Cho",
+        "Michael Lindon",
+        "Nathan Kallus"
+      ],
+      "abstract": "The correctness of actions taken by agents is typically evaluated against known, externally verified ground truth labels, such as whether a proof is correct or whether code compiles and passes unit tests. However, as coding and science agents are entrusted with more end-to-end autonomy -- proposing interventions, running experiments, and deciding what to deploy and investigate next -- whether an agent's actions genuinely improve an outcome must be inferred from noisy, often inconclusive experiments. To evaluate agents in this setting, we define agent quality as a weighted sum of correct decisions along its trajectory, using sequences of $e$-values as statistical evidence regarding correctness in place of ground-truth labels. Our framework accommodates arbitrarily dependent decisions, data-dependent trajectory termination, dynamically generated hypotheses, and quality measures defined after the trajectory concludes. We construct upper and lower bound estimators and confidence sets for agent quality with statistical guarantees that hold uniformly over agent trajectory distributions and establish instance-wise sharpness of our estimator class. We demonstrate our methods with a case study comparing the success of Claude Opus and Claude Haiku in improving the runtime of an open-source Python package.",
+      "categories": [
+        "cs.AI",
+        "math.ST",
+        "stat.AP",
+        "stat.ME",
+        "stat.TH"
+      ],
+      "published": "2026-11-25T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.31539",
+      "pdf_url": "https://arxiv.org/pdf/2611.31539",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Evaluating agents without ground truth is closely aligned with your current need to define meaningful evaluation directions for increasingly autonomous systems."
+    },
+    {
+      "arxiv_id": "2611.31883",
+      "title": "Rethinking Video Agents: When and Why Video Harnesses Work",
+      "authors": [
+        "Luoyuan Zhang",
+        "Xuanyu Zheng",
+        "Yancheng Long",
+        "Haoyang Xu",
+        "Bin Wen",
+        "Tingting Gao"
+      ],
+      "abstract": "Video understanding depends not only on how models reason about visual evidence, but also on which evidence they observe. Fixed observation policies determine this evidence in advance; agentic harnesses allow models to seek further observations as their understanding develops. This shift creates an opportunity to realize capabilities that fixed inputs leave untapped, yet the ability to request observations does not ensure their effective use. We investigate when and why video harnesses improve understanding, examining how task demands and models' capacity for interaction jointly shape their benefits. Using Video-Relook as an experimental framework, we let models adapt their temporal and spatial observations from a common default configuration, and analyze performance and interaction trajectories across models and tasks. Adaptive observation yields substantial gains on fine-grained action understanding, with benefits also extending to Video-MME-v2. Even under the same observation interface, gains differ substantially across models; interaction traces reveal corresponding differences in evidence seeking and the reliability of answer revision. The benefits also vary across tasks for the same model, ranging from substantial improvements to limited gains and regressions. Together, these findings support an account in which harness effectiveness depends on the alignment between opportunities for informative observation and the model's ability to turn interaction into reliable revisions. They motivate video harnesses that coordinate perception and reasoning, matching observational autonomy to task demands and model capabilities.",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.MM"
+      ],
+      "published": "2026-11-25T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.31883",
+      "pdf_url": "https://arxiv.org/pdf/2611.31883",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Highly relevant to the reading club notes on harnesses, as it explicitly analyzes when and why video harnesses work and contrasts fixed observation policies with agentic evidence acquisition."
+    },
+    {
+      "arxiv_id": "2611.31431",
+      "title": "CaLA: Causal Latent Adjustment for World Models under Adaptive Policies",
+      "authors": [
+        "Robert Ness",
+        "Sofiane Ennadir",
+        "Oleg Smirnov"
+      ],
+      "abstract": "World models is answering ``imagine\" answers to ``what-if'' questions via imagined rollouts. But rollouts collected by adaptive policies induce treatment-outcome confounding in imagined rollouts. We study this problem in Match-3 difficulty adjustment, where latent player skill influences both assigned difficulty and churn. We build a fully specified Match-3 SCM with sequential mechanics, adaptive assignment, and paired ground-truth interventions, on which unadjusted models fit to the logged trajectories select difficulty settings that raise churn. We then introduce Causal Latent Adjustment (CaLA), a DAG-constrained world model that infers a variational player representation from pretreatment history. Across our evaluations, CaLA provides the most reliable population-level intervention estimates and competitive individualized decisions, although rich handcrafted histories can remain advantageous for individual-level adjustment. We further find that residual correction can degrade causal decision quality despite improving predictive fit, highlighting the need to distinguish predictive accuracy, confounding adjustment and the behavior of downstream causal estimators.",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-11-25T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.31431",
+      "pdf_url": "https://arxiv.org/pdf/2611.31431",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Directly studies world models under adaptive policies with causal adjustment, which is highly relevant to the autoscaling RL/world-model reading club themes and simulation-derived task interests."
+    },
+    {
+      "arxiv_id": "2611.32810",
+      "title": "EPRO: Robust Policy Optimization Through an Imperfect Execution-Policy Predictor",
+      "authors": [
+        "Yibo Wang",
+        "Changyi Yang",
+        "Yuanxin Liu",
+        "Zhaoran Wang"
+      ],
+      "abstract": "RL for LLMs often separates rollout generation from policy training. Although the two numerical engines share model parameters, they can induce different policies. This creates a challenge beyond correcting a known training-inference mismatch: during learner updates, the execution policy corresponding to the current parameters cannot be directly observed. We view this as optimizing an unobserved execution policy through an imperfect predictor of its evolution. This perspective raises two fundamental questions: how can we estimate the execution policy's response to learner updates, and how much should we trust that estimate when optimizing the actual execution policy? We introduce Execution-Policy Robust Optimization (EPRO) to address these challenges. Starting from the observed rollout-time execution policy, we use training-policy changes to construct a differentiable predictor of the current execution policy, whose score yields Transported Score Centering (TSC). Our robust-improvement analysis reveals how prediction error limits the magnitude of reliably justified updates. For practical implementation, we introduce Policy Shift as an observable proxy for prediction risk and use Shift-Aware Soft Clipping (SSC) to attenuate risky updates. Across four Qwen3 model settings, EPRO achieves the highest average held-out accuracy among the compared methods on seven mathematical reasoning benchmarks.",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-11-25T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.32810",
+      "pdf_url": "https://arxiv.org/pdf/2611.32810",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "This is highly relevant because it directly studies robust policy optimization for RL in LLM settings, closely matching the reading-club focus on RL methods for modern model training."
+    },
+    {
+      "arxiv_id": "2611.33102",
+      "title": "Reinforcement Learning Can Be Recovered From Its Own Rollouts",
+      "authors": [
+        "Jiayi Sheng",
+        "Jingwen Gu",
+        "Guanning Zeng",
+        "Zhaoyi Zhou",
+        "Stefano Viel",
+        "Qianqian Wang",
+        "Fahim Tajwar",
+        "Andrea Zanette"
+      ],
+      "abstract": "Broadly speaking, reinforcement learning (RL) post-training converts compute into model capabilities by training on model-generated data. Typically, the rollouts are discarded after each update, and the knowledge acquired during RL resides in the model weights. In this work, we investigate how much of this knowledge is retained in the rollouts themselves. A natural first attempt is to replay the original RL algorithm on archived rather than freshly generated rollouts, but this leads to catastrophic collapse. We provide a simple explanation for this phenomenon, which in turn suggests a remedy: maximum likelihood on the archived rollouts. Surprisingly, starting from the same base model and replaying the rollouts in the order in which they were generated, without any distinction between correct and incorrect responses, is sufficient to recover the performance of online RL. In fact, a single maximum likelihood update per rollout batch closely tracks the entire learning curve of online RL. Furthermore, maximum likelihood on the rollouts of the last few RL steps often suffices to recover the final model's performance. This suggests that much of the compute invested in RL goes into discovering an improved sampling distribution rather than learning it from samples.",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-11-25T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.33102",
+      "pdf_url": "https://arxiv.org/pdf/2611.33102",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "This is highly relevant as it investigates how RL knowledge can be recovered from model-generated rollouts, directly connecting to RL post-training for language models and compute-efficient training/evaluation."
+    },
+    {
+      "arxiv_id": "2611.32786",
+      "title": "Simulator-as-Proxy World Model for Robot Manipulation",
+      "authors": [
+        "Tingting Liao",
+        "Mingjia Huo",
+        "Hao Li",
+        "Zhengzhong Liu",
+        "Eric P. Xing",
+        "Guangyi Liu"
+      ],
+      "abstract": "Video world models for robots are increasingly conditioned on a simulated or rendered proxy of the scene, on the assumption that the video will show what the proxy shows. Testing this assumption requires a proxy whose state is explicit and can be perturbed. We present SimPWM (Simulator-as-Proxy World Model): given a calibrated camera, it represents, from the first frame alone, the robot by its 3D model and the objects the gripper may touch as 3D points; a rule-based simulator with no trained parameters moves them under the actions, and a video model renders the result. SimPWM returns the realistic video together with the simulated state. We then freeze the simulated objects while the arm moves as recorded and check whether the video still shows the object lifted. On DROID episodes from unseen setups, the answer differs for the arm and for the objects. With each of three base video models, the arm follows the proxy (robot IoU 0.75-0.78, against at most 0.69 for end-to-end models); rendering the robot alone already gives this. What the simulated objects add is the object state: against a robot-only proxy, they cut missed pick-ups from 54% to 38%, and the video follows them only with some base models: on rigid objects, freezing them lowers the lift rate of MiniMax-H3, fine-tuned on episodes whose simulation agrees with the real video, from 42% to 10%, but that of LTX-2.3, trained on the same episodes, only from 57% to 49%, as if it inferred the grasp from the arm motion; more than half of the remaining lifts of MiniMax-H3 are of cloth and rope, which the simulator carries rigidly. With any base model, the simulated state records what the simulation did; under perturbed actions, a video that disagrees with it reveals that the video ignores the simulated state.",
+      "categories": [
+        "cs.RO",
+        "cs.CV",
+        "cs.LG"
+      ],
+      "published": "2026-11-25T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.32786",
+      "pdf_url": "https://arxiv.org/pdf/2611.32786",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Highly relevant to the autoscaling/world-models/robotics reading themes because it studies simulator-derived proxy world models with explicit state for robot manipulation."
+    },
+    {
+      "arxiv_id": "2611.33141",
+      "title": "iWAM: Efficient Action Prediction from World Models without Explicit Future Prediction",
+      "authors": [
+        "Vansh Kapoor",
+        "Max Sobol Mark",
+        "Sreyas Venkataraman",
+        "Max Simchowitz",
+        "Aviral Kumar"
+      ],
+      "abstract": "World-action models (WAMs) build policies on pretrained video-generation models, on the premise that predicting how a scene evolves helps determine how to act. However, generating future scenes is expensive for real-time control. This motivates efficient proxies for future imagination, but how to train such proxies without sacrificing action-prediction quality remains unclear. An effective proxy need not generate a high-resolution frame; it only needs to provide enough information to distinguish between possible futures. This leads to the design principle behind iWAM: rather than denoising an entire future frame, can we condition the action policy on intermediate features from a single video-model evaluation? We show that the answer is yes. Exploiting the reversible dynamics of flow-matching models, we invert each training future into the corresponding latent noise vector. However, a single velocity evaluation at this latent does not necessarily yield informative features for action prediction. We therefore learn a bidirectional flow map that amortizes future-generation computation, enabling a single model evaluation to provide effective conditioning features. At inference, we sample a latent noise vector from the prior and condition the policy using just one video-backbone forward pass. Across simulated benchmarks and real robots, iWAM recovers the generalization benefits of WAMs while substantially reducing its inference cost.",
+      "categories": [
+        "cs.RO",
+        "cs.CV",
+        "cs.LG"
+      ],
+      "published": "2026-11-25T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.33141",
+      "pdf_url": "https://arxiv.org/pdf/2611.33141",
+      "is_author_match": false,
+      "relevance_score": 9.0,
+      "relevance_reason": "Highly relevant because it directly addresses action prediction from world models without expensive future generation, closely matching interests in world models, simulation, and efficient control."
+    },
+    {
+      "arxiv_id": "2611.31668",
+      "title": "Provenance Loss and Repair in Multilingual Compaction",
+      "authors": [
+        "Ian Miao",
+        "Fangrui Zhu",
+        "Bowen Jiang"
+      ],
+      "abstract": "Conversational assistants compact older messages into short notes and evict the originals. When the note's language requires a distinction that English leaves open, such as Spanish adjective gender (agotado vs. agotada), messages that omit or explicitly state that attribute can yield the same note. After eviction, later turns cannot tell them apart: taking the inflected form literally asserts an attribute the user never gave, whereas discounting it as routine grammar discards one the user did give. We propose a training-free repair across writing, pre-eviction verification and reading. The writer marks unstated attributes with paired forms (e.g., agotado/a), a likelihood check before eviction rewrites unsupported single forms into paired ones, and the reader trusts remaining single forms as stated facts. On five Qwen3.5 and Gemma-4 models, eviction cuts recall of stated attributes from 90% to 34% in question answering (QA); our repair raises F1 (which penalizes both errors) on every model, by 9-53 points in QA and 12-40 points in agent handovers.",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.IR"
+      ],
+      "published": "2026-11-25T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.31668",
+      "pdf_url": "https://arxiv.org/pdf/2611.31668",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Directly relevant to context compaction and long-horizon assistants, studying information loss and repair when old conversational context is summarized."
+    },
+    {
+      "arxiv_id": "2611.32660",
+      "title": "Bathys: Advancing Deep Search Agents",
+      "authors": [
+        "Zixuan Chen",
+        "Shengyou Yuan",
+        "Nang Yuan",
+        "Ming Ma",
+        "Zelin Xiao",
+        "Lin Zhou",
+        "Siyuan Luo",
+        "Jiaqi Su",
+        "Chengrui Wu",
+        "Tiankuo Yao",
+        "Nairong Zheng",
+        "Cong Pang",
+        "Jiapeng Luo"
+      ],
+      "abstract": "Deep search is a critical capability for agents tackling complex, open-ended tasks, where solving a problem requires iterative information gathering, query reformulation, and evidence-based verification rather than a single retrieval step. To address these requirements, we present Bathys 9B and 27B deep search agents built around a training framework that spans verifiable question synthesis, post-training, and online reinforcement learning (RL) under context compression. Our high-quality data construction ensures both search depth and reliability: each clue is reformulated as an indirect reference requiring independent retrieval, and retained evidence chains enable verification that the clues jointly determine a unique answer. Curated trajectories underpin a pipeline of supervised fine-tuning (SFT), Kahneman-Tversky Optimization (KTO), and Compaction-Managed Group Sequence Policy Optimization (CM-GSPO): SFT provides a stable foundation for tool use over long horizons and query reformulation; KTO uses binary feedback on trajectories to improve the selection of answers grounded in evidence; CM-GSPO optimizes execution sub-trajectories with length-normalized likelihood ratios on the recorded rollout contexts and reweights sub-trajectory advantages to correct the extra weighting introduced by independently averaging sub-trajectory losses. Bathys 9B and 27B attain 66.51% and 80.49% on BrowseComp, respectively, under an evaluation protocol with trajectory self-verification and conditional retries.",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-11-25T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.32660",
+      "pdf_url": "https://arxiv.org/pdf/2611.32660",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "This is very relevant because it develops deep search agents with iterative information gathering, verification, and post-training, aligning closely with current agentic reasoning and evaluation interests."
+    },
+    {
+      "arxiv_id": "2611.33148",
+      "title": "CoT-Proxy: Cross-Format Transfer for Distilling Long-Horizon Policies",
+      "authors": [
+        "Dawid J. Kopiczko",
+        "Tijmen Blankevoort",
+        "Yuki M. Asano"
+      ],
+      "abstract": "Reasoning models become long-horizon agents through reinforcement learning or, more cheaply, through fine-tuning on a stronger teacher's trajectories, which contain the teacher's chain-of-thought as well as its actions. The standard fine-tuning approach imitates both, yet the strongest teachers are closed models whose chain-of-thought is hidden behind an API. We show that the chain-of-thought can be left out altogether and that the long-horizon policy can be distilled from the teacher's actions alone. The student is trained on these trajectories with its reasoning block left empty, while a KL loss on a replay buffer of its own generations limits drift from its initial model. Surprisingly, the policy learned from these trajectories with an empty reasoning block carries over to inference with thinking enabled, where the student reasons in its own style while acting like the teacher, an effect we call cross-format transfer. Distilling the actions of Qwen3.6-27B raises the task success of Qwen3-4B on AppWorld from 7% to 18% and that of Qwen3-32B from 12% to 25%. We further introduce CoT-proxies, short summaries of the teacher's reasoning placed after the empty reasoning block, which raise Qwen3-4B further, to 35%. Since neither actions nor CoT-proxies need the hidden chain-of-thought, the recipe applies unchanged to closed teachers. Distilling GPT-5.6 Luna from its visible outputs and the reasoning summaries its API returns raises Qwen3-4B from 7% to 48% on AppWorld and from 3% to 28% on SWE-bench Verified.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-11-25T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.33148",
+      "pdf_url": "https://arxiv.org/pdf/2611.33148",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Distilling long-horizon policies from stronger teachers is highly relevant to the reading-club and agent-training interests, especially where RL or imitation can substitute for expensive reasoning supervision."
+    },
+    {
+      "arxiv_id": "2611.31427",
+      "title": "Learning What vs. Learning How: Decomposing Task and Interface Competence in Agentic Training",
+      "authors": [
+        "Chaeeun Lee",
+        "Hossein A. Rahmani",
+        "Aryo Pradipta Gema",
+        "Kexin Xu",
+        "Emine Yilmaz",
+        "Pasquale Minervini",
+        "T. Ian Simpson",
+        "Chen Jin",
+        "Amrutha Saseendran"
+      ],
+      "abstract": "LLM agents operate through harnesses that define system prompts, action formats, feedback loops, and resource constraints. A model may possess the knowledge needed to solve a task yet fail to express that knowledge through a particular harness. This raises a basic question: when a policy fails under a given harness, is it missing task knowledge or the competence to operate the interface? We distinguish two components of agentic competence: task competence, the knowledge and reasoning needed to solve a task, and interface competence, the ability to act on that knowledge through a given harness. Across four reasoning and agentic benchmarks, we show that harness-conditioned training yields vastly different outcomes depending on how these interact. Multi-harness distillation aggregates task knowledge from trajectories collected through different harnesses into a shared policy, but this knowledge is realised only when training preserves or improves competence on the inference-time interface. Otherwise, single-harness training can induce interference in interface competence, sometimes catastrophically collapsing performance on a held-out harness despite improvements in underlying task knowledge. To disentangle task and interface supervision, we introduce harness rehearsal: distillation on traces that carry minimal task knowledge while exercising the target interface. Cross-harness task supervision or rehearsal alone yields little gain, but their combination yields gains far larger than either: on BFCL V3 multi-turn with Qwen3-4B, they achieve 8.5% and 32.5% respectively, versus 58.8% together. Finally, on-policy reinforcement learning (RL) is more robust than distillation to single-harness training: it does not substantially degrade performance on other harnesses, and interface competence acquired through multi-harness distillation persists through subsequent RL.",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "published": "2026-11-25T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.31427",
+      "pdf_url": "https://arxiv.org/pdf/2611.31427",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "The decomposition of task competence versus interface competence is very relevant to agent evaluation and harness design, and could directly help frame better evals for current agent research."
+    },
+    {
+      "arxiv_id": "2611.31641",
+      "title": "E2SIM: Long-Horizon Simulation of Everyday Human Behavior with Evolving States",
+      "authors": [
+        "Ziwei Gong",
+        "Xiangyang Yin",
+        "Thai Quoc On",
+        "Lin Ai",
+        "Julia Hirschberg",
+        "Haotong Yang"
+      ],
+      "abstract": "AI agents are increasingly expected to support users over long periods, across work, and daily life. This requires modeling not only who users are, but also how their goals, interests, activities, and interactions evolve over time. A challenge in longitudinal user simulation is maintaining consistency between these evolving states and the consequences of actions in a shared environment. We introduce E2SIM, a longitudinal user simulation framework that jointly models evolving actor states and a dynamic shared environment. E2SIM connects actor-state updates with shared-world changes through a feedback loop linking immediate actions, delayed outcomes, and actor-specific observations across work and life. This allows the consequences of earlier actions to shape later behavior, while preserving differences in what each actor knows. We further propose a suite of longitudinal trajectory diagnostics, measuring dynamic consistency, coherent event progression and collaboration, and non-degenerate trajectory development rather than static consistency alone. In one 60-day simulation, E2SIM produced more extracted event threads judged meaningful by our evaluator and fewer near-duplicate actions than four direct-generation baselines. The framework and evaluation methods provide a basis for studying longitudinal user simulation, with potential applications in training and evaluating AI agents that assist users over extended periods.",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-11-25T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.31641",
+      "pdf_url": "https://arxiv.org/pdf/2611.31641",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Long-horizon simulation of evolving human behavior is strongly aligned with the stated interest in creating simulations and deriving tasks from them for agent evaluation and training."
+    },
+    {
+      "arxiv_id": "2611.31800",
+      "title": "Learning Compact State Abstractions for LLM Agents",
+      "authors": [
+        "Yaswanth Chittepu",
+        "Raghavendra Addanki",
+        "Anup Rao",
+        "Branislav Kveton",
+        "Scott Niekum"
+      ],
+      "abstract": "LLM agents commonly use the full interaction history as a proxy for state, retaining all past observations and actions regardless of whether they remain relevant. We instead ask what information an agent actually needs to carry forward. We define agent state as a compact abstraction of interaction history that preserves the competence of a fixed reference agent, with the minimal such abstraction as the ideal. Because matching the reference agent's behavior is unnecessarily restrictive and difficult for black-box policies, we define sufficiency through task performance rather than behavior matching. We represent state abstractions as deterministic recursive programs and search over them using an LLM-guided genetic algorithm. Across ALFWorld and ScienceWorld, the learned abstractions preserve near-reference task success while reducing mean policy input by up to 71% and 57%, respectively. The resulting programs are directly inspectable, providing an explicit account of what information is retained, updated, and discarded during interaction.",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL",
+        "cs.NE"
+      ],
+      "published": "2026-11-25T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.31800",
+      "pdf_url": "https://arxiv.org/pdf/2611.31800",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "Learning compact state abstractions for LLM agents is highly relevant to long-horizon agent research, since state representation is central to memory, efficiency, and scalable training."
+    },
+    {
+      "arxiv_id": "2611.32064",
+      "title": "Fix How It Acts, Not How It Thinks: Surgical Fine-Tuning of Frontier LLMs",
+      "authors": [
+        "Sandeep Singh Sandha",
+        "Prann Bansal",
+        "Arvind Sundararajan"
+      ],
+      "abstract": "Open-weight LLMs are competent software engineers, but they sometimes fail at tasks they are otherwise able to do. Often it is not a failure of reasoning. It is a few small missteps over a long trajectory (repeating a step that has already failed, or declaring the task done while a requirement is still unmet) that make the difference. Correcting this calls for a surgical weight update that steers the model toward the right actions without interfering with its reasoning. Such updates, typically learned with LoRA adapters, are often too small to survive merging into a released checkpoint. In our BF16 release, the median weight change is only 1.5% of a single rounding step, and merging loses roughly two thirds of the update's norm. When the same adapter is merged into the mixed FP8/NVFP4 release of the same model, 93% of the update disappears. Instead of increasing the size of the update, we directly train on the surviving part. We introduce merge-aware fine-tuning. Standard LoRA rounds the merged weights to the storage format only at export, so the loss never sees the rounded weights. We instead round the sum of base weights and adapter update to the release format at every training step, keeping the vendor's quantization scales, and compute the loss on these weights. The forward pass matches the serving engine numerics, and the gradient passes straight through the rounding, so the model we train is the model we ship. The loss optimizes only the model's actions and keeps its reasoning close to the base model. Applied to Nemotron-3.5, the recipe improves agentic coding in both the BF16 and the NVFP4 release, by up to 8.4 points on Terminal-Bench 2.1, and we publicly release both models.",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "published": "2026-11-25T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.32064",
+      "pdf_url": "https://arxiv.org/pdf/2611.32064",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "This is highly relevant to agentic LLM work because it targets long-horizon behavioral failures with surgical fine-tuning, which connects directly to improving agent reliability and evaluation directions."
+    },
+    {
+      "arxiv_id": "2611.32147",
+      "title": "ARS-VLM: Visually Aligned Augmented Random Search for Vision-Language Models",
+      "authors": [
+        "Xiangwei Wang",
+        "Jianyuan Lin",
+        "Peng Wang",
+        "Saman Halgamuge"
+      ],
+      "abstract": "First-order reinforcement learning, such as Group Relative Policy Optimization (GRPO), is widely used to post-train Vision-Language Models (VLMs) for multimodal reasoning. However, it incurs heavy memory and system overhead from backpropagation, optimizer states, and a reference model. Forward-only zeroth-order (ZO) methods, such as Evolution Strategies (ES) and its top-k variant Augmented Random Search (ARS), avoid these overheads via reward-guided weight perturbations, yet remain unexplored for VLM reasoning. We find that directly applying standard ES or vanilla ARS to VLMs suffers from two fundamental failure modes: (i) patch-grid overfitting, fitting fragile grid-specific visual token artifacts while ignoring spatial invariants, and (ii) catastrophic forgetting, degrading general perception and out-of-distribution (OOD) tasks due to unbounded high-rank parameter and policy drift. We propose ARS-VLM, a visually aligned Augmented Random Search framework for forward-only VLM post-training. First, ARS-VLM extracts a contrastive visual basis from bilinearly paired cross-grid views, concentrating perturbations on shared visual signals while suppressing patch-shift artifacts. Second, ARS-VLM anchors shallow visual-fusion layers with a soft subspace prior while freeing deep reasoning layers, restraining policy drift without a reference model. Third, ARS-VLM scores perturbations on paired views to discard view-fragile directions during top-k selection. We evaluate ARS-VLM on Qwen3-VL-4B and Qwen3-VL-8B on multimodal reasoning tasks. On 8B, ARS-VLM reaches 61.0% validation accuracy in 20 steps versus 150 for GRPO (7.5x fewer optimization steps) and avoids the late OOD collapse of vanilla ARS and ES. Moreover, ARS-VLM achieves 75.41% single-view micro accuracy across seven OOD vision reasoning benchmarks, compared with 75.31% for full-parameter GRPO, using forward-only post-training.",
+      "categories": [
+        "cs.CV",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "published": "2026-11-25T00:00:00-05:00",
+      "abs_url": "https://arxiv.org/abs/2611.32147",
+      "pdf_url": "https://arxiv.org/pdf/2611.32147",
+      "is_author_match": false,
+      "relevance_score": 8.0,
+      "relevance_reason": "This is strongly relevant to the autoscaling/RL reading-club theme since it studies reinforcement learning for VLMs with a cheaper zeroth-order alternative that could matter for compute-constrained experimentation."
+    }
+  ]
+}
